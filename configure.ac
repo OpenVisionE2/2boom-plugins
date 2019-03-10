@@ -26,6 +26,8 @@ AM_PATH_PYTHON
 AX_PYTHON_DEVEL
 AX_PTHREAD
 
+PKG_CHECK_MODULES(ENIGMA2, enigma2)
+
 AC_ARG_WITH(arch,
 	[  --with-arch=NAME box arch [[none,ah4,mipsel...]]],
 	[ARCH="$withval"],[ARCH="mipsel"])
