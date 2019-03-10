@@ -50,7 +50,7 @@ config.plugins.epanel.path = ConfigSelection(default = "/usr/keys/", choices = [
 		("/usr/keys/", "/usr/keys/"),
 		("/etc/keys/", "/etc/keys/"),
 		("/etc/tuxbox/config/", "/etc/tuxbox/config/"),
-		("/etc/tuxbox/config/oscam-stable/", "/etc/tuxbox/config/oscam-stable/"),
+		("/etc/tuxbox/config/oscam/", "/etc/tuxbox/config/oscam/"),
 		])
 config.plugins.epanel.keyname = ConfigSelection(default = "SoftCam.Key", choices = [
 		("SoftCam.Key", "SoftCam.Key"),
@@ -75,14 +75,14 @@ config.plugins.uswmgcamd.configext = ConfigText(default="nl", visible_width = 10
 config.plugins.uswwicardd = ConfigSubsection()
 config.plugins.uswwicardd.active = ConfigYesNo(default = False)
 config.plugins.uswwicardd.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswwicardd.configpath = ConfigText(default="/etc/tuxbox/config", visible_width = 200, fixed_size = False)
+config.plugins.uswwicardd.configpath = ConfigText(default="/etc/tuxbox/config/wicardd", visible_width = 200, fixed_size = False)
 config.plugins.uswwicardd.configfile = ConfigText(default="wicardd.conf", visible_width = 200, fixed_size = False)
 config.plugins.uswwicardd.configext = ConfigText(default="wc", visible_width = 100, fixed_size = False)
 
 config.plugins.uswoscam = ConfigSubsection()
 config.plugins.uswoscam.active = ConfigYesNo(default = False)
 config.plugins.uswoscam.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam-stable", visible_width = 200, fixed_size = False)
+config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configfile = ConfigText(default="oscam.conf", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
 
@@ -191,37 +191,8 @@ class emuSel5(Screen):
 	def update_rc(self):
 		if not fileExists('/etc/init.d/softcam'):
 			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/softcam.None && ln -s /etc/init.d/softcam.None /etc/init.d/softcam")
-		if not fileExists('/etc/init.d/cardserver'):
-			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/cardserver.None && ln -s /etc/init.d/cardserver.None /etc/init.d/cardserver")
-		if not fileExists('/etc/rc0.d/K50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc0.d/K50softcam')
-		if not fileExists('/etc/rc1.d/K50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc1.d/K50softcam')
-		if not fileExists('/etc/rc2.d/S50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc2.d/S50softcam')
 		if not fileExists('/etc/rc3.d/S50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc3.d/S50softcam')
-		if not fileExists('/etc/rc4.d/S50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc4.d/S50softcam')
-		if not fileExists('/etc/rc5.d/S50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc5.d/S50softcam')
-		if not fileExists('/etc/rc6.d/K50softcam'):
-			self.iConsole.ePopen('ln -s /etc/init.d/softcam /etc/rc6.d/K50softcam')
-		
-		if not fileExists('/etc/rc0.d/K50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc0.d/K50cardserver')
-		if not fileExists('/etc/rc1.d/K50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc1.d/K50cardserver')
-		if not fileExists('/etc/rc2.d/S50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc2.d/S50cardserver')
-		if not fileExists('/etc/rc3.d/S50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc3.d/S50cardserver')
-		if not fileExists('/etc/rc4.d/S50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc4.d/S50cardserver')
-		if not fileExists('/etc/rc5.d/S50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc5.d/S50cardserver')
-		if not fileExists('/etc/rc6.d/K50cardserver'):
-			self.iConsole.ePopen('ln -s /etc/init.d/cardserver /etc/rc6.d/K50cardserver')
+			self.iConsole.ePopen('echo /etc/init.d/softcam restart > /etc/rc3.d/S50softcam | chmod 777 /etc/rc3.d/S50softcam')
 		
 	def selemulist(self):
 		self.list = []
