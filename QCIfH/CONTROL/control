@@ -1,3 +1,4 @@
 Package: enigma2-plugin-extensions-qcifh
 Version: 0.2-r0
 Description: QuickChannelInfo for Hotkey plugin by 2boom
+Depends: bitratecalc

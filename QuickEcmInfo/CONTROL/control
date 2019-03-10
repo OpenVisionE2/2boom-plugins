@@ -1,3 +1,4 @@
 Package: enigma2-plugin-extensions-quickecminfo
 Version: 3.1-r2
 Description: Quick Ecm Info plugin by 2boom
+Depends: bitratecalc
