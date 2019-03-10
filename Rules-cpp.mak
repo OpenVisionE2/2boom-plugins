@@ -8,7 +8,6 @@ AM_CPPFLAGS = \
 AM_CXXFLAGS = \
 	-Wall \
 	-fno-exceptions \
-	@ENIGMA2_CFLAGS@ \
 	@PTHREAD_CFLAGS@
 
 PLUGIN_LIBTOOL_FLAGS = \

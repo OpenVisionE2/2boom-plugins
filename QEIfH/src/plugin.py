@@ -42,7 +42,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-if os.path.isfile('%s%sbitratecalc.so' % (resolveFilename(SCOPE_PLUGINS), "Extensions/QEIfH/")):
+if os.path.isfile('/usr/lib/bitratecalc.so'):
 	from bitratecalc import eBitrateCalculator
 	binary_file = True
 else:

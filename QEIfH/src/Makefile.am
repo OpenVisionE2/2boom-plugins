@@ -1,5 +1,3 @@
-SUBDIRS = bitratecalc
-
 installdir = $(libdir)/enigma2/python/Plugins/Extensions/QEIfH
 
 install_PYTHON = *.py

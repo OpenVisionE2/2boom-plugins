@@ -22,7 +22,7 @@ from Components.config import config, getConfigListEntry, ConfigText, ConfigPass
 from Components.Element import cached
 from Tools.Directories import fileExists
 import os, time
-if os.path.isfile('/usr/lib/enigma2/python/Components/Converter/bitratecalc.so'):
+if os.path.isfile('/usr/lib/bitratecalc.so'):
 	from bitratecalc import eBitrateCalculator
 	binaryfound = True
 else:
