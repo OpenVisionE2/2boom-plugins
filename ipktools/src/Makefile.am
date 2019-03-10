@@ -1,6 +1,6 @@
 SUBDIRS = images
 
-installdir = $(libdir)/enigma2/python/Plugins/Extensions/PackageManager
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/ipktools
 
 install_PYTHON = *.py
 
