@@ -6,72 +6,12 @@ msgstr ""
 "PO-Revision-Date: 2014-05-30 19:58+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team: \n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: uk_UA\n"
 "X-Generator: Poedit 1.6.4\n"
-
-msgid "Select service type in default bouquet"
-msgstr "Оберіть тип послуги в фавориті за замовчуванням"
-
-msgid "Input new proxy ip"
-msgstr "Введення нового проксі IP"
-
-msgid "Input password (if needed)"
-msgstr "Введіть пароль (при необхідності)"
-
-msgid "Proxy updater in ExtensionMenu"
-msgstr "Показати RPUlite в меню додатків"
-
-msgid "IP & Ch.List Update"
-msgstr "Оновити IP в фав."
-
-msgid "Donwloading ip & channel list"
-msgstr "Завантаження IP та списку каналів"
-
-msgid "Please wait"
-msgstr "Будь ласка зачекайте"
-
-msgid "configuration is saved"
-msgstr "Конфігурацію збережено"
-
-msgid "IP Update"
-msgstr "Пошук IP"
-
-msgid "TV"
-msgstr "ТБ"
-
-msgid "Stream TV"
-msgstr "Потокове ТБ"
-
-msgid "Select source"
-msgstr "Оберіть джерело"
-
-msgid "source 1"
-msgstr "джерело 1"
-
-msgid "source 2"
-msgstr "джерело 2"
-
-msgid "source 3"
-msgstr "джерело 3"
-
-msgid "Reload servicelist"
-msgstr "Перезавантаження списку каналів"
-
-msgid "Input Name of default bouquet"
-msgstr "Оберіть им'я в букеті за замовчуванням"
-
-msgid "Reference in default bouquet"
-msgstr "Вказати референси каналів"
-
-msgid "Set time to update ip (cron needed)"
-msgstr "Встановити час оновлення (cron)"
-
-msgid "Update ip on startup"
-msgstr "Обновити ip при старті"
 
 msgid "1 hour"
 msgstr "1 година"
@@ -82,8 +22,68 @@ msgstr "2 години"
 msgid "3 hours"
 msgstr "3 години"
 
+msgid "Current proxy: %s  Not working"
+msgstr "Поточний ip: %s  не работает"
+
 msgid "Current proxy: %s  Status: OK user(s): %s"
 msgstr "Поточний ip: %s  статус: OK клієнт (ів): %s"
 
-msgid "Current proxy: %s  Not working"
-msgstr "Поточний ip: %s  не работает"
+msgid "Donwloading ip & channel list"
+msgstr "Завантаження IP та списку каналів"
+
+msgid "IP & Ch.List Update"
+msgstr "Оновити IP в фав."
+
+msgid "IP Update"
+msgstr "Пошук IP"
+
+msgid "Input Name of default bouquet"
+msgstr "Оберіть им'я в букеті за замовчуванням"
+
+msgid "Input new proxy ip"
+msgstr "Введення нового проксі IP"
+
+msgid "Input password (if needed)"
+msgstr "Введіть пароль (при необхідності)"
+
+msgid "Please wait"
+msgstr "Будь ласка зачекайте"
+
+msgid "Proxy updater in ExtensionMenu"
+msgstr "Показати RPUlite в меню додатків"
+
+msgid "Reference in default bouquet"
+msgstr "Вказати референси каналів"
+
+msgid "Reload servicelist"
+msgstr "Перезавантаження списку каналів"
+
+msgid "Select service type in default bouquet"
+msgstr "Оберіть тип послуги в фавориті за замовчуванням"
+
+msgid "Select source"
+msgstr "Оберіть джерело"
+
+msgid "Set time to update ip (cron needed)"
+msgstr "Встановити час оновлення (cron)"
+
+msgid "Stream TV"
+msgstr "Потокове ТБ"
+
+msgid "TV"
+msgstr "ТБ"
+
+msgid "Update ip on startup"
+msgstr "Обновити ip при старті"
+
+msgid "configuration is saved"
+msgstr "Конфігурацію збережено"
+
+msgid "source 1"
+msgstr "джерело 1"
+
+msgid "source 2"
+msgstr "джерело 2"
+
+msgid "source 3"
+msgstr "джерело 3"

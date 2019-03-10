@@ -6,19 +6,56 @@ msgstr ""
 "PO-Revision-Date: 2016-01-26 09:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: 4bob@ua.fm\n"
+"Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: sk_SK\n"
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#, fuzzy
+msgid "%3.02f m/s"
+msgstr "V vietor %3.02f m/s"
+
+msgid "%d mmHg"
+msgstr ""
+
+msgid "%s km"
+msgstr "%s km viditeľnosť"
+
+msgid "%s mb"
+msgstr ""
+
+msgid "%s%% humidity"
+msgstr "%s%% vlhkosť"
+
+#, fuzzy
+msgid "1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma"
+msgstr "1. Navštívte stránku http://woeid.rosselliot.co.nz\\n2. Zadajte mesto alebo PSČ\\n3. Skopírujte WOEID\\n4. Uložte a reštartujte enigmu"
+
+msgid "2boom's Yahoo! Weather"
+msgstr ""
+
+msgid "2boom's Yahoo! Weather for Hotkey"
+msgstr ""
 
 msgid "Blowing snow"
 msgstr "sneh s vetrom"
 
 msgid "Blustery"
 msgstr "silný vietor"
+
+msgid "Built-in"
+msgstr ""
+
+#, fuzzy
+msgid "City code"
+msgstr "Kód mesta (WOEID)"
+
+#, fuzzy
+msgid "City name"
+msgstr "Názov mesta"
 
 msgid "Clear (night)"
 msgstr "jasno"
@@ -35,11 +72,23 @@ msgstr "mrholenie"
 msgid "Dust"
 msgstr "prašno"
 
+msgid "E, %3.02f m/s"
+msgstr "V vietor %3.02f m/s"
+
+msgid "ENE, %3.02f m/s"
+msgstr "VSV vietor %3.02f m/s"
+
+msgid "ESE, %3.02f m/s"
+msgstr "VJV vietor %3.02f m/s"
+
 msgid "Fair (day)"
 msgstr "takmer jasno"
 
 msgid "Fair (night)"
 msgstr "takmer jasno"
+
+msgid "Feels: %s"
+msgstr "pocitová teplota: %s"
 
 msgid "Foggy"
 msgstr "hmlisto"
@@ -49,6 +98,9 @@ msgstr "mrznúce mrholenie"
 
 msgid "Freezing rain"
 msgstr "mrznúci dážď"
+
+msgid "Friday"
+msgstr "Piatok"
 
 msgid "Hail"
 msgstr "kurpobitie"
@@ -86,11 +138,32 @@ msgstr "dážď so snehom"
 msgid "Mixed snow and sleet"
 msgstr "sneh s dažďom"
 
+msgid "Monday"
+msgstr "Pondelok"
+
 msgid "Mostly cloudy (day)"
 msgstr "prevažne zamračené"
 
 msgid "Mostly cloudy (night)"
 msgstr "prevažne zamračené"
+
+msgid "N, %3.02f m/s"
+msgstr "S vietor %3.02f m/s"
+
+msgid "NE, %3.02f m/s"
+msgstr "SV vietor %3.02f m/s"
+
+msgid "NNE, %3.02f m/s"
+msgstr "SSV vietor %3.02f m/s"
+
+msgid "NNW, %3.02f m/s"
+msgstr "SSZ vietor %3.02f m/s"
+
+msgid "NW, %3.02f m/s"
+msgstr "SZ vietor %3.02f m/s"
+
+msgid "Not available"
+msgstr "Nie je k dispozícii"
 
 msgid "Partly cloudy"
 msgstr "polojasno"
@@ -104,6 +177,27 @@ msgstr "polojasno"
 msgid "Rain"
 msgstr "dážď"
 
+msgid "Restart"
+msgstr "Reštartovať"
+
+msgid "S, %3.02f m/s"
+msgstr "J vietor %3.02f m/s"
+
+msgid "SE, %3.02f m/s"
+msgstr "JV vietor %3.02f m/s"
+
+msgid "SSE, %3.02f m/s"
+msgstr "JJV vietor %3.02f m/s"
+
+msgid "SSW, %3.02f m/s"
+msgstr "JJZ vietor %3.02f m/s"
+
+msgid "SW, %3.02f m/s"
+msgstr "JZ vietor %3.02f m/s"
+
+msgid "Saturday"
+msgstr "Sobota"
+
 msgid "Scattered showers"
 msgstr "občasný dážď"
 
@@ -112,6 +206,9 @@ msgstr "občasné sneženie"
 
 msgid "Scattered thunderstorms"
 msgstr "občasné búrky"
+
+msgid "Select plugin key"
+msgstr ""
 
 msgid "Severe thunderstorms"
 msgstr "silné búrky"
@@ -134,6 +231,24 @@ msgstr "slabé snehové prehánky"
 msgid "Snow showers"
 msgstr "snehové prehánky"
 
+msgid "Style 1"
+msgstr ""
+
+msgid "Style 2"
+msgstr ""
+
+msgid "Style 3"
+msgstr ""
+
+msgid "Style 4"
+msgstr ""
+
+msgid "Style 5"
+msgstr ""
+
+msgid "Sunday"
+msgstr "Nedeľa"
+
 msgid "Sunny"
 msgstr "jasno"
 
@@ -143,221 +258,26 @@ msgstr "prehánky alebo búrky"
 msgid "Thunderstorms"
 msgstr "búrky"
 
+msgid "Thursday"
+msgstr "Štvrtok"
+
+msgid "Tomorrow"
+msgstr "zajtra"
+
 msgid "Tornado"
 msgstr "tornádo"
 
 msgid "Tropical storm"
 msgstr "tropická búrka"
 
-msgid "Windy"
-msgstr "veterno"
-
-msgid "Monday"
-msgstr "Pondelok"
-
 msgid "Tuesday"
 msgstr "Utorok"
-
-msgid "Wednesday"
-msgstr "Streda"
-
-msgid "Thursday"
-msgstr "Štvrtok"
-
-msgid "Friday"
-msgstr "Piatok"
-
-msgid "Saturday"
-msgstr "Sobota"
-
-msgid "Sunday"
-msgstr "Nedeľa"
-
-msgid "Tomorrow"
-msgstr "zajtra"
-
-msgid "Jan."
-msgstr "Jan"
-
-msgid "Feb."
-msgstr "Feb"
-
-msgid "Mar."
-msgstr "Mar"
-
-msgid "Apr."
-msgstr "Apr"
-
-msgid "May"
-msgstr "Máj"
-
-msgid "June"
-msgstr "Jún"
-
-msgid "July"
-msgstr "Júl"
-
-msgid "Aug."
-msgstr "Aug"
-
-msgid "Sept."
-msgstr "Sep"
-
-msgid "Oct."
-msgstr "Okt"
-
-msgid "Nov."
-msgstr "Nov"
-
-msgid "Dec."
-msgstr "Dec"
-
-msgid "Not available"
-msgstr "Nie je k dispozícii"
-
-msgid "N/A"
-msgstr "Nie je k dispozícii"
-
-msgid "no data"
-msgstr " "
-
-msgid "Off"
-msgstr "vypnuté"
-
-msgid "5 sec"
-msgstr "5 sekúnd"
-
-msgid "8 sec"
-msgstr "8 sekúnd"
-
-msgid "10 sec"
-msgstr "10 sekúnd"
-
-msgid "12 sec"
-msgstr "12 sekúnd"
-
-msgid "16 sec"
-msgstr "16 sekúnd"
-
-msgid "%s km"
-msgstr "%s km viditeľnosť"
-
-msgid "%s%% humidity"
-msgstr "%s%% vlhkosť"
-
-msgid "%s hPa(mbar)"
-msgstr "%s hPa"
-
-msgid "Feels: %s"
-msgstr "pocitová teplota: %s"
-
-msgid "%s S"
-msgstr "%s J"
-
-msgid "%s N"
-msgstr "%s S"
-
-msgid "%s W"
-msgstr "%s Z"
-
-msgid "%s E"
-msgstr "%s V"
-
-msgid "1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma"
-msgstr "1. Navštívte stránku http://woeid.rosselliot.co.nz\\n2. Zadajte mesto alebo PSČ\\n3. Skopírujte WOEID\\n4. Uložte a reštartujte enigmu"
-
-msgid "[YWeather] Download finished"
-msgstr "[YWeather] Sťahovanie dokončené"
-
-msgid "[YWeather] Download failed!"
-msgstr "[YWeather] Sťahovanie neúspešné!"
-
-msgid "City code (woeid)"
-msgstr "Kód mesta (WOEID)"
-
-msgid "City name (alias)"
-msgstr "Názov mesta"
-
-msgid "Weather info timeout"
-msgstr "Vypnúť info o počasí"
-
-msgid "Weather icons style"
-msgstr "Štýl ikon počasia"
 
 msgid "User skin"
 msgstr "Užívateľské zobrazenie"
 
-msgid "Close"
-msgstr "Zavrieť"
-
-msgid "Save"
-msgstr "Uložiť"
-
-msgid "Restart"
-msgstr "Reštartovať"
-
-msgid "Get WOEID"
-msgstr "Získať WOEID"
-
-msgid "Get"
-msgstr "Získať"
-
-msgid "configuration is saved"
-msgstr "Nastavenia boli uložené"
-
-msgid "The name of the location"
-msgstr "Názov miesta"
-
-msgid "no woeid code yet"
-msgstr "WOEID zatiaľ nezistené"
-
-msgid "error location name"
-msgstr "Chyba v zadaní miesta"
-
-msgid "weatherserver not respond"
-msgstr "Server s počasím neodpovedá"
-
-msgid "/tmp/woeid.xml not found"
-msgstr "/tmp/woeid.xml nenájdený"
-
-msgid "E, %3.02f m/s"
-msgstr "V vietor %3.02f m/s"
-
-msgid "ENE, %3.02f m/s"
-msgstr "VSV vietor %3.02f m/s"
-
-msgid "ESE, %3.02f m/s"
-msgstr "VJV vietor %3.02f m/s"
-
-msgid "N, %3.02f m/s"
-msgstr "S vietor %3.02f m/s"
-
-msgid "NE, %3.02f m/s"
-msgstr "SV vietor %3.02f m/s"
-
-msgid "NNE, %3.02f m/s"
-msgstr "SSV vietor %3.02f m/s"
-
-msgid "NNW, %3.02f m/s"
-msgstr "SSZ vietor %3.02f m/s"
-
-msgid "NW, %3.02f m/s"
-msgstr "SZ vietor %3.02f m/s"
-
-msgid "S, %3.02f m/s"
-msgstr "J vietor %3.02f m/s"
-
-msgid "SE, %3.02f m/s"
-msgstr "JV vietor %3.02f m/s"
-
-msgid "SSE, %3.02f m/s"
-msgstr "JJV vietor %3.02f m/s"
-
-msgid "SSW, %3.02f m/s"
-msgstr "JJZ vietor %3.02f m/s"
-
-msgid "SW, %3.02f m/s"
-msgstr "JZ vietor %3.02f m/s"
+msgid "User-def"
+msgstr ""
 
 msgid "W, %3.02f m/s"
 msgstr "Z vietor %3.02f m/s"
@@ -368,50 +288,26 @@ msgstr "ZSZ vietor %3.02f m/s"
 msgid "WSW, %3.02f m/s"
 msgstr "ZJZ vietor %3.02f m/s"
 
-msgid "E, %s km/h"
-msgstr "V vietor %s km/h"
+msgid "Weather icons style"
+msgstr "Štýl ikon počasia"
 
-msgid "ENE, %s km/h"
-msgstr "VSV vietor %s km/h"
+msgid "Wednesday"
+msgstr "Streda"
 
-msgid "ESE, %s km/h"
-msgstr "VJV vietor %s km/h"
+msgid "Windy"
+msgstr "veterno"
 
-msgid "N, %s km/h"
-msgstr "S vietor %s km/h"
+msgid "configuration is saved"
+msgstr "Nastavenia boli uložené"
 
-msgid "NE, %s km/h"
-msgstr "SV vietor %s km/h"
+msgid "max: %s"
+msgstr ""
 
-msgid "NNE, %s km/h"
-msgstr "SSV vietor %s km/h"
+msgid "min: %s"
+msgstr ""
 
-msgid "NNW, %s km/h"
-msgstr "SSZ vietor %s km/h"
+msgid "press menukey for config"
+msgstr ""
 
-msgid "NW, %s km/h"
-msgstr "SZ vietor %s km/h"
-
-msgid "S, %s km/h"
-msgstr "J vietor %s km/h"
-
-msgid "SE, %s km/h"
-msgstr "JV vietor %s km/h"
-
-msgid "SSE, %s km/h"
-msgstr "JJV vietor %s km/h"
-
-msgid "SSW, %s km/h"
-msgstr "JJZ vietor %s km/h"
-
-msgid "SW, %s km/h"
-msgstr "JZ vietor %s km/h"
-
-msgid "W, %s km/h"
-msgstr "Z vietor %s km/h"
-
-msgid "WNW, %s km/h"
-msgstr "ZSZ vietor %s km/h"
-
-msgid "WSW, %s km/h"
-msgstr "ZJZ vietor %s km/h"
+msgid "yahoo! weather plugin config"
+msgstr ""

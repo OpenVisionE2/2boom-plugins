@@ -6,15 +6,24 @@ msgstr ""
 "PO-Revision-Date: 2014-06-15 01:04+0200\n"
 "Last-Translator: Ednaz <edik_info@mail.ru>\n"
 "Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.6.5\n"
 
-msgid "Select service type in default bouquet"
-msgstr "Выберите тип услуги в фаворите по умолчанию"
+msgid "Donwloading ip & channel list"
+msgstr "Загрузка IP и списка каналов"
+
+msgid "IP & Ch.List Update"
+msgstr "Обновить список"
+
+msgid "IP Update"
+msgstr "Обновить IP"
+
+msgid "Input Name of default bouquet"
+msgstr "Введите имя в букете по умолчанию"
 
 msgid "Input new proxy ip"
 msgstr "Ввод нового прокси IP"
@@ -22,35 +31,29 @@ msgstr "Ввод нового прокси IP"
 msgid "Input password (if needed)"
 msgstr "Введите пароль (при необходимости)"
 
-msgid "Input Name of default bouquet"
-msgstr "Введите имя в букете по умолчанию"
+msgid "Please wait"
+msgstr "Пожалуйста подождите"
 
 msgid "Proxy updater in ExtensionMenu"
 msgstr "Показать TPUlite в меню дополнений"
 
-msgid "IP & Ch.List Update"
-msgstr "Обновить список"
+msgid "Reload servicelist"
+msgstr "Перезагрузка списка каналов"
 
-msgid "Donwloading ip & channel list"
-msgstr "Загрузка IP и списка каналов"
+msgid "Select service type in default bouquet"
+msgstr "Выберите тип услуги в фаворите по умолчанию"
 
-msgid "Please wait"
-msgstr "Пожалуйста подождите"
-
-msgid "configuration is saved"
-msgstr "Конфигурация сохранена"
-
-msgid "IP Update"
-msgstr "Обновить IP"
-
-msgid "TV"
-msgstr "ТВ"
+msgid "Select source"
+msgstr "Выберите источник"
 
 msgid "Stream TV"
 msgstr "Потоковое ТВ"
 
-msgid "Select source"
-msgstr "Выберите источник"
+msgid "TV"
+msgstr "ТВ"
+
+msgid "configuration is saved"
+msgstr "Конфигурация сохранена"
 
 msgid "source 1"
 msgstr "источник 1"
@@ -60,6 +63,3 @@ msgstr "источник 2"
 
 msgid "source 3"
 msgstr "источник 3"
-
-msgid "Reload servicelist"
-msgstr "Перезагрузка списка каналов"

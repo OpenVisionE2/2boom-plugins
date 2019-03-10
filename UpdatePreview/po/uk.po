@@ -6,46 +6,46 @@ msgstr ""
 "PO-Revision-Date: 2014-07-12 18:03+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team:  <4bob@ua.fm>\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: uk_UA\n"
 "X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-msgid "Update preview: %s aviable"
-msgstr "Оновлення: %s доступно"
-
-msgid ". Image may not be stable."
-msgstr ". Імідж може бути не стабільний."
 
 msgid ". Image is stable."
 msgstr ". Імідж стабільний."
 
-msgid "Updating..."
-msgstr "Оновлення..."
-
-msgid "Software update preview"
-msgstr "Перегляд оновлень ПО"
-
-msgid "No updates available"
-msgstr "Hе має доступних оновлень"
-
-msgid "Latest Commits"
-msgstr "Зміни"
-
-msgid "Please wait"
-msgstr "Будь ласка, зачекайте"
+msgid ". Image may not be stable."
+msgstr ". Імідж може бути не стабільний."
 
 msgid "Error receive list-upgradable, try later"
 msgstr "Помилка одержання списку оновлень, спробуйте пізніше"
 
-msgid "Updating list of available packages"
-msgstr "Оновлення списку доступних пакетів"
+msgid "Latest Commits"
+msgstr "Зміни"
+
+msgid "No updates available"
+msgstr "Hе має доступних оновлень"
+
+msgid "Please wait"
+msgstr "Будь ласка, зачекайте"
+
+msgid "Select files"
+msgstr "Оберіть файли"
+
+msgid "Software update preview"
+msgstr "Перегляд оновлень ПО"
+
+msgid "Update preview: %s aviable"
+msgstr "Оновлення: %s доступно"
 
 msgid "Updating list installed and upgradable packages"
 msgstr "Оновлення списку встановлених і оновлюваних пакетів"
 
-msgid "Select files"
-msgstr "Оберіть файли"
+msgid "Updating list of available packages"
+msgstr "Оновлення списку доступних пакетів"
+
+msgid "Updating..."
+msgstr "Оновлення..."

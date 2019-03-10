@@ -6,36 +6,36 @@ msgstr ""
 "PO-Revision-Date: 2012-11-05 21:34+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
+"Language: ru_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: ru_UA\n"
 "X-Generator: Poedit 1.5.3\n"
-
-msgid "Close"
-msgstr "Закрыть"
 
 msgid "2boom's Easy CCcam"
 msgstr "Простая конфигурация CCcam (c) 2boom"
 
-msgid "Server"
-msgstr "Сервер"
+msgid "Close"
+msgstr "Закрыть"
 
-msgid "Port"
-msgstr "Порт"
-
-msgid "UserName"
-msgstr "ИмяПользователя"
+msgid "Easy Edit CCcam.cfg"
+msgstr "простое редактирование CCcam.cfg"
 
 msgid "Password"
 msgstr "Пароль"
 
+msgid "Port"
+msgstr "Порт"
+
 msgid "Save"
 msgstr "Сохранить"
 
+msgid "Server"
+msgstr "Сервер"
+
+msgid "UserName"
+msgstr "ИмяПользователя"
+
 msgid "configuration is saved"
 msgstr "конфигурация сохранена"
-
-msgid "Easy Edit CCcam.cfg"
-msgstr "простое редактирование CCcam.cfg"

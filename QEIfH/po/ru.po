@@ -6,12 +6,18 @@ msgstr ""
 "PO-Revision-Date: 2012-10-22 16:55+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
+"Language: ru_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: ru_UA\n"
 "X-Generator: Poedit 1.5.3\n"
+
+msgid "%s%s  Kernel: %s (%s)"
+msgstr "%s%s  Ядро: %s (%s)"
+
+msgid "%s, %s Mhz (%d %s) %s"
+msgstr "%s, %s Мгц (%d %s) %s"
 
 msgid "2boom's QuickEcmInfo for Hotkey"
 msgstr "QuickEcmInfo для Hotkey от 2boom"
@@ -22,14 +28,8 @@ msgstr "ядро"
 msgid "cores"
 msgstr "ядра"
 
-msgid "%s, %s Mhz (%d %s) %s"
-msgstr "%s, %s Мгц (%d %s) %s"
+msgid "quickecminfo for hotkey extentions"
+msgstr "quickecminfo для расширения hotkey"
 
 msgid "undefined"
 msgstr "не определено"
-
-msgid "%s%s  Kernel: %s (%s)"
-msgstr "%s%s  Ядро: %s (%s)"
-
-msgid "quickecminfo for hotkey extentions"
-msgstr "quickecminfo для расширения hotkey"

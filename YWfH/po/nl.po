@@ -6,11 +6,11 @@ msgstr ""
 "PO-Revision-Date: 2014-03-10 17:26+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: nl_NL\n"
 "X-Generator: Poedit 1.6.4\n"
 
 msgid "%3.02f m/s"
@@ -31,14 +31,21 @@ msgstr "%s%% Luchtvogtigheid"
 msgid "1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma"
 msgstr "1. Ga naar http://weather.yahoo.com/\\n2. Stad of Postcode ingeven en Enter...\\n3. ID Kopieren (alleen cijfers)\\nhttp://weather.yahoo.com/netherlands/north-holland/amsterdam-727232//\\n4. Opslaan en GUI rebooten"
 
-msgid "Yahoo! Weather"
-msgstr "Yahoo! Weer"
+#, fuzzy
+msgid "2boom's Yahoo! Weather"
+msgstr "2boom's Yahoo! Weer voor Sneltoets"
+
+msgid "2boom's Yahoo! Weather for Hotkey"
+msgstr "2boom's Yahoo! Weer voor Sneltoets"
 
 msgid "Blowing snow"
 msgstr "Sneeuwbuien"
 
 msgid "Blustery"
 msgstr "Stormachtig"
+
+msgid "Built-in"
+msgstr "Ingebouwd"
 
 msgid "City code"
 msgstr "Stad code"
@@ -163,6 +170,9 @@ msgstr "Overwegend bewolkt (Nacht)"
 msgid "Partly cloudy (night)"
 msgstr "ligt bewolkt (Nacht)"
 
+msgid "Rain"
+msgstr "Regen"
+
 msgid "Restart"
 msgstr "Restart"
 
@@ -217,6 +227,21 @@ msgstr "Schneetreiben"
 msgid "Snow showers"
 msgstr "Sneeuwbuien"
 
+msgid "Style 1"
+msgstr "Stijl 1"
+
+msgid "Style 2"
+msgstr "Stijl 2"
+
+msgid "Style 3"
+msgstr "Stijl 3"
+
+msgid "Style 4"
+msgstr "Stijl 4"
+
+msgid "Style 5"
+msgstr "Stijl 5"
+
 msgid "Sunday"
 msgstr "Zondag"
 
@@ -226,8 +251,9 @@ msgstr "Zonnig"
 msgid "Thundershowers"
 msgstr "Onweersbuien"
 
-msgid "Gewitter"
-msgstr "Onweer"
+#, fuzzy
+msgid "Thunderstorms"
+msgstr "Onweersbuien"
 
 msgid "Thursday"
 msgstr "Donderdag"
@@ -244,6 +270,12 @@ msgstr "Tropische storm"
 msgid "Tuesday"
 msgstr "Dinsdag"
 
+msgid "User skin"
+msgstr ""
+
+msgid "User-def"
+msgstr "User Stijl"
+
 msgid "W, %3.02f m/s"
 msgstr "W, %3.02f m/s"
 
@@ -252,6 +284,9 @@ msgstr "WNW, %3.02f m/s"
 
 msgid "WSW, %3.02f m/s"
 msgstr "WSW, %3.02f m/s"
+
+msgid "Weather icons style"
+msgstr "Wetter-Icons Stijl"
 
 msgid "Wednesday"
 msgstr "Woensdag"
@@ -262,41 +297,14 @@ msgstr "Winderig"
 msgid "configuration is saved"
 msgstr "Configuration is gesaved"
 
-msgid "yahoo! weather plugin config"
-msgstr "yahoo! Weer Plugin config"
+msgid "max: %s"
+msgstr ""
 
-msgid "Weather icons style"
-msgstr "Wetter-Icons Stijl"
-
-msgid "Skin type"
-msgstr "Skin Stijl"
-
-msgid "Built-in"
-msgstr "Ingebouwd"
-
-msgid "User-def"
-msgstr "User Stijl"
-
-msgid "Style 1"
-msgstr "Stijl 1"
-
-msgid "Style 2"
-msgstr "Stijl 2"
-
-msgid "Style 3"
-msgstr "Stijl 3"
-
-msgid "Style 4"
-msgstr "Stijl 4"
-
-msgid "Style 5"
-msgstr "Stijl 5"
-
-msgid "Rain"
-msgstr "Regen"
+msgid "min: %s"
+msgstr ""
 
 msgid "press menukey for config"
 msgstr "pers menukey voor config"
 
-msgid "2boom's Yahoo! Weather for Hotkey"
-msgstr "2boom's Yahoo! Weer voor Sneltoets"
+msgid "yahoo! weather plugin config"
+msgstr "yahoo! Weer Plugin config"
