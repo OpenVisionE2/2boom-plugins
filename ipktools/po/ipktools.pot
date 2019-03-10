@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+
+msgid "2boom's IPK tools"
+msgstr ""
+
+msgid "clear /tmp"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "ipk packets, bh.tgz, tar.gz, nab.tgz installer"
+msgstr ""
+
+msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
+msgstr ""
+
+msgid "install extensions"
+msgstr ""
+
+msgid "install extensions from feed"
+msgstr ""
+
+msgid "download extensions"
+msgstr ""
+
+msgid "dowmload extensions from feed"
+msgstr ""
+
+msgid "ipk packets remover"
+msgstr ""
+
+msgid "remove & advanced remove ipk packets"
+msgstr ""
+
+msgid "Removing files..."
+msgstr ""
+
+msgid "Insatall extensions from feed"
+msgstr ""
+
+msgid "Download extensions from feed"
+msgstr ""
+
+msgid "Download -deps"
+msgstr ""
+
+msgid "Download -nodeps"
+msgstr ""
+
+msgid "Multi files"
+msgstr ""
+
+msgid "Single file"
+msgstr ""
+
+msgid "MultiSelect Mode"
+msgstr ""
+
+msgid "SingleSelect Mode"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Forced Install"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Install packets"
+msgstr ""
+
+msgid "Install tar.gz, bh.tgz, nab.tgz"
+msgstr ""
+
+msgid "Ipk remove"
+msgstr ""
+
+msgid "Adv. UnInstall"
+msgstr ""
+
+msgid "UnInstall"
+msgstr ""
+
+msgid "IPK Tools Installer"
+msgstr ""

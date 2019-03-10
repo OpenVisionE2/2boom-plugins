@@ -1,0 +1,311 @@
+msgid ""
+msgstr ""
+
+msgid ""
+"1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give "
+"go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../"
+"kyiv-924938/\\n4. Save and restart the enigma"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "2boom's Yahoo! Weather"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "yahoo! weather plugin config"
+msgstr ""
+
+msgid "City code"
+msgstr ""
+
+msgid "City name"
+msgstr ""
+
+msgid "Select plugin key"
+msgstr ""
+
+msgid "Feels: %s"
+msgstr ""
+
+msgid "%3.02f m/s"
+msgstr ""
+
+msgid "N, %3.02f m/s"
+msgstr ""
+
+msgid "NNE, %3.02f m/s"
+msgstr ""
+
+msgid "NE, %3.02f m/s"
+msgstr ""
+
+msgid "ENE, %3.02f m/s"
+msgstr ""
+
+msgid "E, %3.02f m/s"
+msgstr ""
+
+msgid "ESE, %3.02f m/s"
+msgstr ""
+
+msgid "SE, %3.02f m/s"
+msgstr ""
+
+msgid "SSE, %3.02f m/s"
+msgstr ""
+
+msgid "S, %3.02f m/s"
+msgstr ""
+
+msgid "SSW, %3.02f m/s"
+msgstr ""
+
+msgid "SW, %3.02f m/s"
+msgstr ""
+
+msgid "WSW, %3.02f m/s"
+msgstr ""
+
+msgid "W, %3.02f m/s"
+msgstr ""
+
+msgid "WNW, %3.02f m/s"
+msgstr ""
+
+msgid "NW, %3.02f m/s"
+msgstr ""
+
+msgid "NNW, %3.02f m/s"
+msgstr ""
+
+msgid "%s km"
+msgstr ""
+
+msgid "%s mb"
+msgstr ""
+
+msgid "%d mmHg"
+msgstr ""
+
+msgid "Tornado"
+msgstr ""
+
+msgid "Tropical storm"
+msgstr ""
+
+msgid "Hurricane"
+msgstr ""
+
+msgid "Severe thunderstorms"
+msgstr ""
+
+msgid "Thunderstorms"
+msgstr ""
+
+msgid "Mixed rain and snow"
+msgstr ""
+
+msgid "Mixed rain and sleet"
+msgstr ""
+
+msgid "Mixed snow and sleet"
+msgstr ""
+
+msgid "Freezing drizzle"
+msgstr ""
+
+msgid "Drizzle"
+msgstr ""
+
+msgid "Freezing rain"
+msgstr ""
+
+msgid "Showers"
+msgstr ""
+
+msgid "Rain"
+msgstr ""
+
+msgid "Snow flurries"
+msgstr ""
+
+msgid "Light snow showers"
+msgstr ""
+
+msgid "Blowing snow"
+msgstr ""
+
+msgid "Snow"
+msgstr ""
+
+msgid "Hail"
+msgstr ""
+
+msgid "Sleet"
+msgstr ""
+
+msgid "Dust"
+msgstr ""
+
+msgid "Foggy"
+msgstr ""
+
+msgid "Haze"
+msgstr ""
+
+msgid "Smoky"
+msgstr ""
+
+msgid "Blustery"
+msgstr ""
+
+msgid "Windy"
+msgstr ""
+
+msgid "Cold"
+msgstr ""
+
+msgid "Cloudy"
+msgstr ""
+
+msgid "Mostly cloudy (night)"
+msgstr ""
+
+msgid "Mostly cloudy (day)"
+msgstr ""
+
+msgid "Partly cloudy (night)"
+msgstr ""
+
+msgid "Partly cloudy (day)"
+msgstr ""
+
+msgid "Clear (night)"
+msgstr ""
+
+msgid "Sunny"
+msgstr ""
+
+msgid "Fair (night)"
+msgstr ""
+
+msgid "Fair (day)"
+msgstr ""
+
+msgid "Mixed rain and hail"
+msgstr ""
+
+msgid "Hot"
+msgstr ""
+
+msgid "Isolated thunderstorms"
+msgstr ""
+
+msgid "Scattered thunderstorms"
+msgstr ""
+
+msgid "Scattered showers"
+msgstr ""
+
+msgid "Heavy snow"
+msgstr ""
+
+msgid "Scattered snow showers"
+msgstr ""
+
+msgid "Partly cloudy"
+msgstr ""
+
+msgid "Thundershowers"
+msgstr ""
+
+msgid "Snow showers"
+msgstr ""
+
+msgid "Isolated thundershowers"
+msgstr ""
+
+msgid "Not available"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "%s%% humidity"
+msgstr ""
+
+msgid "Tomorrow"
+msgstr ""
+
+msgid "Weather icons style"
+msgstr ""
+
+msgid "User skin"
+msgstr ""
+
+msgid "Built-in"
+msgstr ""
+
+msgid "User-def"
+msgstr ""
+
+msgid "Style 1"
+msgstr ""
+
+msgid "Style 2"
+msgstr ""
+
+msgid "Style 3"
+msgstr ""
+
+msgid "Style 4"
+msgstr ""
+
+msgid "Style 5"
+msgstr ""
+
+msgid "min: %s"
+msgstr ""
+
+msgid "max: %s"
+msgstr ""
+
+msgid "Weather info timeout"
+msgstr ""
+
+msgid "5 sec"
+msgstr ""
+
+msgid "8 sec"
+msgstr ""
+
+msgid "10 sec"
+msgstr ""
+
+msgid "12 sec"
+msgstr ""
+
+msgid "16 sec"
+msgstr ""

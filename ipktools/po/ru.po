@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 2boom's IPK Tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"PO-Revision-Date: 2012-08-12 15:08+0300\n"
+"Last-Translator: \n"
+"Language-Team:  <4bob@ua.fm>\n"
+"Language: ru_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "2boom's IPK tools"
+msgstr "IPK инструменты"
+
+msgid "Adv. UnInstall"
+msgstr "Продв. удаление"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Download -deps"
+msgstr "Загрузка -deps"
+
+msgid "Download -nodeps"
+msgstr "Загрузка -nodeps"
+
+msgid "Download extensions from feed"
+msgstr "Загрузка расширений"
+
+msgid "Forced Install"
+msgstr "Принудительная"
+
+msgid "IPK Tools Installer"
+msgstr "Установшик IPK"
+
+msgid "Insatall extensions from feed"
+msgstr "Установка расширений"
+
+msgid "Install"
+msgstr "Установка"
+
+msgid "Install packets"
+msgstr "Установка пакетов"
+
+msgid "Install tar.gz, bh.tgz, nab.tgz"
+msgstr "Установка tar.gz, bh.tgz, nab.tgz"
+
+msgid "Ipk remove"
+msgstr "Удаление .ipk пакетов"
+
+msgid "Multi files"
+msgstr "Многофайловый"
+
+msgid "MultiSelect Mode"
+msgstr "Многофайловый режим"
+
+msgid "Removing files..."
+msgstr "Удаление файлов..."
+
+msgid "Restart"
+msgstr "Перезапуск"
+
+msgid "Single file"
+msgstr "Одиночный"
+
+msgid "SingleSelect Mode"
+msgstr "Одиночный режим"
+
+msgid "UnInstall"
+msgstr "Удаление"
+
+msgid "clear /tmp"
+msgstr "Очистка /tmp"
+
+msgid "dowmload extensions from feed"
+msgstr "Загрузка расширений с сервера имиджа"
+
+msgid "download extensions"
+msgstr "Загрузка расширений"
+
+msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
+msgstr "Установка и принудительная установка ipk, bh.tgz, tar.gz, nab.tgz из /tmp"
+
+msgid "install extensions"
+msgstr "Установка расширений"
+
+msgid "install extensions from feed"
+msgstr "Установка расширений с сервера имиджа"
+
+msgid "ipk packets remover"
+msgstr "Удаление .ipk пакетов"
+
+msgid "ipk packets, bh.tgz, tar.gz, nab.tgz installer"
+msgstr "Установка ipk bh.tgz, tar.gz, nab.tgz"
+
+msgid "remove & advanced remove ipk packets"
+msgstr "Удаление и продвинутое удаление .ipk пакетов"

@@ -1,0 +1,1 @@
+SUBDIRS = po script src

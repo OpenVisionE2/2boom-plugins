@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-rpulite
+Version: 1.1-r0
+Description: Rostelecom (Sibtelecom) IPTV-updater plugin by 2boom
+Depends: curl, python-pycurl

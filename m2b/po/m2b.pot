@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "2boom's m3u/xml bouquet converter"
+msgstr ""
+
+msgid "Select m3u/xml file"
+msgstr ""
+
+msgid "Select type"
+msgstr ""
+
+msgid "Convert"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Converting %s"
+msgstr ""
+
+msgid "Not Found m3u/xml file"
+msgstr ""
+
+msgid "Reload servicelist"
+msgstr ""
+
+msgid "m3u/xml to bouquet converter"
+msgstr ""
+
+msgid "Input password (if needed)"
+msgstr ""
+
+msgid "Select path"
+msgstr ""

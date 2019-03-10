@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: QuickEmuRestart\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"PO-Revision-Date: 2012-10-22 16:55+0200\n"
+"Last-Translator: 2boom <4bob@ua.fm>\n"
+"Language-Team:  <4bob@ua.fm>\n"
+"Language: ru_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.3\n"
+
+msgid "%s  restarted..."
+msgstr "%s перезагружен..."
+
+msgid "2boom's QuickEmuRestart"
+msgstr "Конфигурация QuickEmuRestart"
+
+msgid "Restart Softcam with a single button"
+msgstr "перезагрузка активного эмулятора по кнопке"
+
+msgid "Select key to Softcam restart"
+msgstr "Выберите кнопку для запуска"
+
+msgid "Set time in sec message window is shown"
+msgstr "Установите время показа окна сообщений (сек)"
+
+msgid "configuration is saved"
+msgstr "конфигурация сохранена"

@@ -1,0 +1,7 @@
+http://epg.giclub.tv/epg/epg.datfull.gz
+http://epg.giclub.tv/epg/epg.datallru.gz
+http://epg.giclub.tv/epg/epg.datallua.gz
+http://epg.giclub.tv/epg/epg.datru.gz
+http://epg.giclub.tv/epg/epg.datua.gz
+http://epg.in.ua/epg/epg_ua.dat.gz
+http://epg.in.ua/epg/epg_ru.dat.gz

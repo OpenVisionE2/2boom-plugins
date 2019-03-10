@@ -1,0 +1,14 @@
+msgid ""
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "2boom's QuickEcmInfo setup"
+msgstr ""
+
+msgid "Select key to show QuickEcmInfo"
+msgstr ""
+
+msgid "Restart enigma"
+msgstr ""

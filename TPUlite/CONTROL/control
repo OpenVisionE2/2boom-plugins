@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-tpulite
+Version: 0.2-r2
+Description: Triolan (Ukraine) IPTV-updater pluign by 2boom
+Depends: curl

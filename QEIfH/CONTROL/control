@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-qeifh
+Version: 0.2-r7
+Description: QuickEcmInfo for Hotkey plugin by 2boom
+Depends: enigma2

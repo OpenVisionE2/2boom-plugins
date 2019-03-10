@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+
+msgid "Update preview: %s aviable"
+msgstr ""
+
+msgid ". Image may not be stable."
+msgstr ""
+
+msgid ". Image is stable."
+msgstr ""
+
+msgid "Updating..."
+msgstr ""
+
+msgid "Software update preview"
+msgstr ""
+
+msgid "No updates available"
+msgstr ""
+
+msgid "Latest Commits"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Error receive list-upgradable, try later"
+msgstr ""
+
+msgid "Updating list of available packages"
+msgstr ""
+
+msgid "Updating list installed and upgradable packages"
+msgstr ""
+
+msgid "Select files"
+msgstr ""
