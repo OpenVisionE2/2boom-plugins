@@ -206,17 +206,24 @@ class downfeed(Screen):
 	def image_is_pli5(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
-				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower():
+				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower() or 'openpli 7' in line.lower() or 'openpli tvfaq.net' in line.lower():
 					return True
 		return False
-		
+    
+   	def image_is_openvision(self):
+		if os.path.isfile('/etc/issue'):
+			for line in open('/etc/issue'):
+				if 'openvision develop' in line.lower():
+					return True
+		return False
+
 	def feedlist(self):
 		self.list = []
 		statuspath = list = ''
 		pkg_name = pkg_desc = ' '
 		png = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		list = os.listdir(self.path[:-7])
-		if fileExists(self.path + '.backup') or self.image_is_atv6() or self.image_is_pli5():
+		if fileExists(self.path + '.backup') or self.image_is_atv6() or self.image_is_pli5() or self.image_is_openvision():
 			list = os.listdir(self.path[:-7] + '/lists')
 			statuspath = self.path[:-6] + 'lists/'
 		elif self.image_is_hdmu():
@@ -310,7 +317,14 @@ class DownloadFeed(Screen):
 	def image_is_pli5(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
-				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower():
+				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower() or 'openpli 7' in line.lower() or 'openpli tvfaq.net' in line.lower():
+					return True
+		return False
+    
+        def image_is_openvision(self):
+		if os.path.isfile('/etc/issue'):
+			for line in open('/etc/issue'):
+				if 'openvision develop' in line.lower():
 					return True
 		return False
 
@@ -320,7 +334,7 @@ class DownloadFeed(Screen):
 		pkg_name = pkg_desc = ' '
 		png = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		list = os.listdir(self.path[:-7])
-		if fileExists(self.path + '.backup') or self.image_is_atv6() or self.image_is_pli5():
+		if fileExists(self.path + '.backup') or self.image_is_atv6() or self.image_is_pli5() or self.image_is_openvision():
 			list = os.listdir(self.path[:-7] + '/lists')
 			if not self.image_is_hdmu():
 				statuspath = self.path[:-6] + 'lists/'
