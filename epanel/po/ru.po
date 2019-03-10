@@ -1085,7 +1085,7 @@ msgid "Stoping %s service"
 msgstr "Остановка сервиса %s"
 
 msgid "Stoping..."
-msgstr "Останвливаем..."
+msgstr "Останавливаем..."
 
 msgid "Su"
 msgstr "Вс"
