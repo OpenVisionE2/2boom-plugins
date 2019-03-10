@@ -1,3 +1,3 @@
 Package: enigma2-plugin-extensions-reloadsl
 Version: 0.1-r1
-Description: Quick Ecm Info plugin by 2boom
+Description: ReloadSL plugin simply re-reads the channels and favorites lists without rebooting the enigma by 2boom
