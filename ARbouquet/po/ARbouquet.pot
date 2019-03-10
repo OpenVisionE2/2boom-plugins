@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "2boom's add/remove bouquet"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Reload servicelist"
+msgstr ""
+
+msgid "Add bouquetfile"
+msgstr ""
+
+msgid "%s added"
+msgstr ""
+
+msgid "2boom's add/remove bouquet config"
+msgstr ""
+
+msgid "Select bouquet type"
+msgstr ""
+
+msgid "Input password (if needed)"
+msgstr ""
+
+msgid "Add/remove bouquet in ExtensionMenu"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "2boom's ARbouquet"
+msgstr ""
+
+msgid "add/remove bouquet"
+msgstr ""
+
+msgid "%s removed"
+msgstr ""

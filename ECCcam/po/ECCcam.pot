@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "2boom's Easy CCcam"
+msgstr ""
+
+msgid "Server"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "UserName"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "Easy Edit CCcam.cfg"
+msgstr ""

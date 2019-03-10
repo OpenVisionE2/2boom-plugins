@@ -1,0 +1,1550 @@
+msgid ""
+msgstr ""
+
+msgid " newcamd.list"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "%s  %s  %s (%s free  %s used)"
+msgstr ""
+
+msgid "%s  %s  (%03d MB free)\n"
+msgstr ""
+
+msgid "%s  %s  (%d.%03d GB free)\n"
+msgstr ""
+
+msgid "%s downloaded Successfull"
+msgstr ""
+
+msgid "%s downloaded UnSuccessfull"
+msgstr ""
+
+msgid "%s hours"
+msgstr ""
+
+msgid "%s is UnInstalled"
+msgstr ""
+
+msgid "%s is downloaded"
+msgstr ""
+
+msgid "%s is installed"
+msgstr ""
+
+msgid "%s min"
+msgstr ""
+
+msgid "%s.gz created in /tmp"
+msgstr ""
+
+msgid "*.tar.gz & *.bh.tgz & *.ipk removed"
+msgstr ""
+
+msgid "120 min"
+msgstr ""
+
+msgid "180 min"
+msgstr ""
+
+msgid "240 min"
+msgstr ""
+
+msgid "30 min"
+msgstr ""
+
+msgid "15 min"
+msgstr ""
+
+msgid "45 min"
+msgstr ""
+
+msgid "60 min"
+msgstr ""
+
+msgid "Active Profile:"
+msgstr ""
+
+msgid "Active SoftCam:"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add own biss in keyfile"
+msgstr ""
+
+msgid "add tabs - %s"
+msgstr ""
+
+msgid "Adv. UnInstall"
+msgstr ""
+
+msgid "Allready running %s"
+msgstr ""
+
+msgid "Angola"
+msgstr ""
+
+msgid "Apply the new System time?"
+msgstr ""
+
+msgid "Applying"
+msgstr ""
+
+msgid "Apr."
+msgstr ""
+
+msgid "Argentina"
+msgstr ""
+
+msgid "Aug."
+msgstr ""
+
+msgid "Australia"
+msgstr ""
+
+msgid "Austria"
+msgstr ""
+
+msgid "AutoDownload epg.dat"
+msgstr ""
+
+msgid "AutoDownload time"
+msgstr ""
+
+msgid "AutoDownload weekday"
+msgstr ""
+
+msgid "Autobackup to ../epgtmp.gz"
+msgstr ""
+
+msgid "Automatic save/load EPG"
+msgstr ""
+
+msgid "BackUp"
+msgstr ""
+
+msgid "Bahamas"
+msgstr ""
+
+msgid "Bangladesh"
+msgstr ""
+
+msgid "Belarus"
+msgstr ""
+
+msgid "Belgium"
+msgstr ""
+
+msgid "Brazil"
+msgstr ""
+
+msgid "Bulgaria"
+msgstr ""
+
+msgid "Canada"
+msgstr ""
+
+msgid "Cardserver:"
+msgstr ""
+
+msgid "Change system time was canceled, because %s"
+msgstr ""
+
+msgid "Changelog"
+msgstr ""
+
+msgid "Check if epg.dat exists"
+msgstr ""
+
+msgid "Check your internet connection"
+msgstr ""
+
+msgid "Check your system and reboot"
+msgstr ""
+
+msgid "Chile"
+msgstr ""
+
+msgid "China"
+msgstr ""
+
+msgid "Clear /tmp"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Command"
+msgstr ""
+
+msgid "Config"
+msgstr ""
+
+msgid "Config script Executer"
+msgstr ""
+
+msgid "Crashlog viewer"
+msgstr ""
+
+msgid "Cron Manager"
+msgstr ""
+
+msgid "CtronTab Manager - %s"
+msgstr ""
+
+msgid "Czech Republic"
+msgstr ""
+
+msgid "Day of month"
+msgstr ""
+
+msgid "Day of week"
+msgstr ""
+
+msgid "Dec."
+msgstr ""
+
+msgid "Denmark"
+msgstr ""
+
+msgid "Detected NIMs:"
+msgstr ""
+
+msgid "Devices:"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Download -deps"
+msgstr ""
+
+msgid "Download -nodeps"
+msgstr ""
+
+msgid "Download EPG"
+msgstr ""
+
+msgid "Download extensions from feed"
+msgstr ""
+
+msgid "Driver Version:"
+msgstr ""
+
+msgid "E-Crashlog viewer"
+msgstr ""
+
+msgid "E-Installer"
+msgstr ""
+
+msgid "E-Ipk Installer"
+msgstr ""
+
+msgid "E-Newcamd.list switcher"
+msgstr ""
+
+msgid "E-Panel"
+msgstr ""
+
+msgid "E-Panel Config"
+msgstr ""
+
+msgid "E-Panel Menu/Extensionmenu config"
+msgstr ""
+
+msgid "E-Panel for OpenPli"
+msgstr ""
+
+msgid "E-Panel for OpenPli Ver:"
+msgstr ""
+
+msgid "E-Panel for Pli"
+msgstr ""
+
+msgid "E-Reload epg.dat"
+msgstr ""
+
+msgid "E-Script Executer"
+msgstr ""
+
+msgid "E-SoftCam manager"
+msgstr ""
+
+msgid "E-Tar.gz Installer"
+msgstr ""
+
+msgid "E-Unmount USB"
+msgstr ""
+
+msgid "E-Wicardd.conf switcher"
+msgstr ""
+
+msgid "EPG Downloader"
+msgstr ""
+
+msgid "EPG downloaded"
+msgstr ""
+
+msgid "Error dowload CardServer list"
+msgstr ""
+
+msgid "Error dowload SoftCam list"
+msgstr ""
+
+msgid "Error list ipk aviable"
+msgstr ""
+
+msgid "Estonia"
+msgstr ""
+
+msgid "Every"
+msgstr ""
+
+msgid "Failed remove"
+msgstr ""
+
+msgid "Feb."
+msgstr ""
+
+msgid "Filter by Name in download extentions"
+msgstr ""
+
+msgid "Finland"
+msgstr ""
+
+msgid "Flash:"
+msgstr ""
+
+msgid "Forced Install"
+msgstr ""
+
+msgid "Fr"
+msgstr ""
+
+msgid "France"
+msgstr ""
+
+msgid "Germany"
+msgstr ""
+
+msgid "Greece"
+msgstr ""
+
+msgid "Guatemala"
+msgstr ""
+
+msgid "HDD go sleep"
+msgstr ""
+
+msgid "HDD sleep"
+msgstr ""
+
+msgid "Hardware:"
+msgstr ""
+
+msgid "Hong Kong"
+msgstr ""
+
+msgid "Hour"
+msgstr ""
+
+msgid "Hungary"
+msgstr ""
+
+msgid "IPK Tools"
+msgstr ""
+
+msgid "Image:"
+msgstr ""
+
+msgid "India"
+msgstr ""
+
+msgid "Indonesia"
+msgstr ""
+
+msgid "Insatall extensions from feed"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Install & Remove Plugins, Addons, Softcams"
+msgstr ""
+
+msgid "Install All"
+msgstr ""
+
+msgid "Install packets"
+msgstr ""
+
+msgid "Install tar.gz, bh.tgz, nab.tgz"
+msgstr ""
+
+msgid "Ipk remove"
+msgstr ""
+
+msgid "Iran"
+msgstr ""
+
+msgid "Ireland"
+msgstr ""
+
+msgid "Is a time-based job scheduler"
+msgstr ""
+
+msgid "Italy"
+msgstr ""
+
+msgid "Jan."
+msgstr ""
+
+msgid "Japan"
+msgstr ""
+
+msgid "Jul."
+msgstr ""
+
+msgid "Jun."
+msgstr ""
+
+msgid "Kazakhstan"
+msgstr ""
+
+msgid "Kernel Modules Manager"
+msgstr ""
+
+msgid "Kernel Version:"
+msgstr ""
+
+msgid "Korea"
+msgstr ""
+
+msgid "Last Upgrade:"
+msgstr ""
+
+msgid "Latvia"
+msgstr ""
+
+msgid "Lithuania"
+msgstr ""
+
+msgid "Load/UnLoad"
+msgstr ""
+
+msgid "Loaded %s.ko"
+msgstr ""
+
+msgid "LsMod"
+msgstr ""
+
+msgid "Luxembourg"
+msgstr ""
+
+msgid "Macedonia"
+msgstr ""
+
+msgid "Madagascar"
+msgstr ""
+
+msgid "Make swap"
+msgstr ""
+
+msgid "Make swap on %s (128MB)"
+msgstr ""
+
+msgid "Make swap on %s (256MB)"
+msgstr ""
+
+msgid "Make swap on %s (512MB)"
+msgstr ""
+
+msgid "Malaysia"
+msgstr ""
+
+msgid "Manage BusyBox-Cron service"
+msgstr ""
+
+msgid "Manage Dropbear SSH service"
+msgstr ""
+
+msgid "Manage Ftp service"
+msgstr ""
+
+msgid "Manage Internet superserver (inetd)"
+msgstr ""
+
+msgid "Manage Networking service"
+msgstr ""
+
+msgid "Manage Samba service"
+msgstr ""
+
+msgid "Manage Swap"
+msgstr ""
+
+msgid "Manage Swap on %s"
+msgstr ""
+
+msgid "Manage Syslog/klogd service"
+msgstr ""
+
+msgid "Manage epg, ntp, unmount, script, info ..."
+msgstr ""
+
+msgid "Manual"
+msgstr ""
+
+msgid "Manual Installer/Uninstaller"
+msgstr ""
+
+msgid "Mar."
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Memory:"
+msgstr ""
+
+msgid "Mexico"
+msgstr ""
+
+msgid "MgCamd Restarted"
+msgstr ""
+
+msgid "Min"
+msgstr ""
+
+msgid "Mo"
+msgstr ""
+
+msgid "Moldova"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Name of keyfile"
+msgstr ""
+
+msgid "Netherlands"
+msgstr ""
+
+msgid "New Zealand"
+msgstr ""
+
+msgid "Norway"
+msgstr ""
+
+msgid "Not Active"
+msgstr ""
+
+msgid "Not Installed"
+msgstr ""
+
+msgid "Nov."
+msgstr ""
+
+msgid "NtpTime Updater"
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Pakistan"
+msgstr ""
+
+msgid "Panama"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Patch enigma2.sh (need restart enigma2)"
+msgstr ""
+
+msgid "Path to save keyfile"
+msgstr ""
+
+msgid "Philippines"
+msgstr ""
+
+msgid "Please wait, restarting %s"
+msgstr ""
+
+msgid "Please wait, starting %s"
+msgstr ""
+
+msgid "Please wait, stoping softcam or cardserver"
+msgstr ""
+
+msgid "Plugin Browser"
+msgstr ""
+
+msgid "Poland"
+msgstr ""
+
+msgid "Port(s) (single  xxxxx or range xxxxx:xxxxx)"
+msgstr ""
+
+msgid "Portugal"
+msgstr ""
+
+msgid "ReStart"
+msgstr ""
+
+msgid "ReStart Both"
+msgstr ""
+
+msgid "Reboot"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload epg.dat"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove All"
+msgstr ""
+
+msgid "Remove swap"
+msgstr ""
+
+msgid "Remove swap on %s (%s)"
+msgstr ""
+
+msgid "Remove tabs"
+msgstr ""
+
+msgid "Removed %s"
+msgstr ""
+
+msgid "Removed All Crashlog Files"
+msgstr ""
+
+msgid "Restart GUI"
+msgstr ""
+
+msgid "Restart MgCamd"
+msgstr ""
+
+msgid "Restart Softcam"
+msgstr ""
+
+msgid "Restarting %s service"
+msgstr ""
+
+msgid "Restarting ..."
+msgstr ""
+
+msgid "Restore epg.dat"
+msgstr ""
+
+msgid "Romania"
+msgstr ""
+
+msgid "Russian Federation"
+msgstr ""
+
+msgid "Sa"
+msgstr ""
+
+msgid "Save epg.dat"
+msgstr ""
+
+msgid "Saved"
+msgstr ""
+
+msgid "Script Executer"
+msgstr ""
+
+msgid "Scripts"
+msgstr ""
+
+msgid "Select SoftCam or CardServer: - %s"
+msgstr ""
+
+msgid "Select install files"
+msgstr ""
+
+msgid "Select path to save epg.dat"
+msgstr ""
+
+msgid "Sep."
+msgstr ""
+
+msgid "Server (ip or name)"
+msgstr ""
+
+msgid "Service Manager"
+msgstr ""
+
+msgid "Service Tools"
+msgstr ""
+
+msgid "Set Transponder time update"
+msgstr ""
+
+msgid "Set choice server mode"
+msgstr ""
+
+msgid "Set manual ntp server address"
+msgstr ""
+
+msgid "Set script path"
+msgstr ""
+
+msgid "Set time to update"
+msgstr ""
+
+msgid "Set your country"
+msgstr ""
+
+msgid "Show E-CrashLog viewr in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Installer in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-NewCamd.list switcher in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Panel in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Panel in MainMenu"
+msgstr ""
+
+msgid "Show E-Script Executter in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-SoftCam manager in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Usb Unmount in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Wicardd.conf switcher in ExtensionMenu"
+msgstr ""
+
+msgid "Show PluginBrowser in E-Panel MainMenu"
+msgstr ""
+
+msgid "Show reload epg.dat in ExtensionMenu"
+msgstr ""
+
+msgid "Simple Cardserver"
+msgstr ""
+
+msgid "Simple Softcam"
+msgstr ""
+
+msgid "Simple Softcam/Cardserver"
+msgstr ""
+
+msgid "Singapore"
+msgstr ""
+
+msgid "Slovakia"
+msgstr ""
+
+msgid "Slovenia"
+msgstr ""
+
+msgid "SoftCam.Key Updater"
+msgstr ""
+
+msgid "SoftCam/CardServer Panel"
+msgstr ""
+
+msgid "Softcam"
+msgstr ""
+
+msgid "Softcam Restarted"
+msgstr ""
+
+msgid "Softcam:"
+msgstr ""
+
+msgid "Sorry, the EPG download error"
+msgstr ""
+
+msgid "South Africa"
+msgstr ""
+
+msgid "Spain"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Start Samba"
+msgstr ""
+
+msgid "Start scripts from /usr/script"
+msgstr ""
+
+msgid "Start, Stop, Create, Remove Swap file"
+msgstr ""
+
+msgid "Start, Stop, Restart Cardserver"
+msgstr ""
+
+msgid "Start, Stop, Restart Sofcam"
+msgstr ""
+
+msgid "Start, Stop, Restart Sofcam/Cardserver"
+msgstr ""
+
+msgid "Start, Stop, Restart system services"
+msgstr ""
+
+msgid "StartUp synchronization"
+msgstr ""
+
+msgid "Starting %s service"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Stoping %s service"
+msgstr ""
+
+msgid "Su"
+msgstr ""
+
+msgid "Swap file created"
+msgstr ""
+
+msgid "Swap file removed"
+msgstr ""
+
+msgid "Swap file started"
+msgstr ""
+
+msgid "Swap file stoped"
+msgstr ""
+
+msgid "Swap off"
+msgstr ""
+
+msgid "Swap on"
+msgstr ""
+
+msgid "Swap on %s off (%s)"
+msgstr ""
+
+msgid "Swap on %s on (%s)"
+msgstr ""
+
+msgid "Swap on USB/HDD"
+msgstr ""
+
+msgid "Swap:"
+msgstr ""
+
+msgid "Sweden"
+msgstr ""
+
+msgid "Switch newcamd.list with remote conrol"
+msgstr ""
+
+msgid "Switch wicardd.conf with remote conrol"
+msgstr ""
+
+msgid "Switzerland"
+msgstr ""
+
+msgid "Azerbaidjan"
+msgstr ""
+
+msgid "Synchronization NTP"
+msgstr ""
+
+msgid "Synchronization NTP time"
+msgstr ""
+
+msgid "Synchronization Now"
+msgstr ""
+
+msgid "Synchronization activated"
+msgstr ""
+
+msgid "Synchronization ntp every 30 min,60 min,120 min, 240 min and Now"
+msgstr ""
+
+msgid "Synchronized"
+msgstr ""
+
+msgid "System Info"
+msgstr ""
+
+msgid "System Tools"
+msgstr ""
+
+msgid "System info"
+msgstr ""
+
+msgid "Taiwan"
+msgstr ""
+
+msgid "Tanzania"
+msgstr ""
+
+msgid "Th"
+msgstr ""
+
+msgid "Thailand"
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Total: %s Kb  Free: %s Kb"
+msgstr ""
+
+msgid "Tu"
+msgstr ""
+
+msgid "Turkey"
+msgstr ""
+
+msgid "Ukraine"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr ""
+
+msgid "UnInstall"
+msgstr ""
+
+msgid "UnInstall Ipk"
+msgstr ""
+
+msgid "UnLoaded %s.ko"
+msgstr ""
+
+msgid "UnMount"
+msgstr ""
+
+msgid "UnMount USB"
+msgstr ""
+
+msgid "UnSuccessfull"
+msgstr ""
+
+msgid "United Arab Emirates"
+msgstr ""
+
+msgid "United Kingdom"
+msgstr ""
+
+msgid "United States"
+msgstr ""
+
+msgid "Unmount manager"
+msgstr ""
+
+msgid "Unmount usb devices"
+msgstr ""
+
+msgid "Unmounted %s"
+msgstr ""
+
+msgid "Unmounted %s Unsucessfull"
+msgstr ""
+
+msgid "Update Now"
+msgstr ""
+
+msgid "User Scripts"
+msgstr ""
+
+msgid "Uzbekistan"
+msgstr ""
+
+msgid "Vietnam"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "View System Settings (/etc/enigma2/settings)"
+msgstr ""
+
+msgid "View or Remove Crashlog files"
+msgstr ""
+
+msgid "View settings"
+msgstr ""
+
+msgid "We"
+msgstr ""
+
+msgid "bad day %s"
+msgstr ""
+
+msgid "bad format"
+msgstr ""
+
+msgid "bad hour %s"
+msgstr ""
+
+msgid "bad minute %s"
+msgstr ""
+
+msgid "bad month %s"
+msgstr ""
+
+msgid "bad year %s"
+msgstr ""
+
+msgid "clear /tmp"
+msgstr ""
+
+msgid "config menu and extentionsmenu for E-Panel items"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "dowmload extensions from feed"
+msgstr ""
+
+msgid "download extensions"
+msgstr ""
+
+msgid "download from: %s"
+msgstr ""
+
+msgid "ecm.info Viewer"
+msgstr ""
+
+msgid "ecm.info file viewer"
+msgstr ""
+
+msgid "ecm.info viewer"
+msgstr ""
+
+msgid "epg.dat reloaded"
+msgstr ""
+
+msgid "epg.dat restored"
+msgstr ""
+
+msgid "epg.dat saved"
+msgstr ""
+
+msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
+msgstr ""
+
+msgid "install & remove ipk, tar.gz, bh.tgz packets"
+msgstr ""
+
+msgid "install extensions"
+msgstr ""
+
+msgid "install extensions from feed"
+msgstr ""
+
+msgid "install/uninstall local .ipk & .tar.gz files from /tmp"
+msgstr ""
+
+msgid "ipk packets remover"
+msgstr ""
+
+msgid "ipk packets, bh.tgz, tar.gz, nab.tgz installer"
+msgstr ""
+
+msgid "kernel modules manager, manage swap, ftp, samba, unmount USB"
+msgstr ""
+
+msgid "load & unload kernel modules"
+msgstr ""
+
+msgid "login"
+msgstr ""
+
+msgid "manual"
+msgstr ""
+
+msgid "new time not available"
+msgstr ""
+
+msgid "newcamd.list Editor"
+msgstr ""
+
+msgid "newcamd.list Switcher"
+msgstr ""
+
+msgid "newcamd.list Switcher: - %s"
+msgstr ""
+
+msgid "newcamd.list editor"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "not confirmed"
+msgstr ""
+
+msgid "press OK to enable/disable server"
+msgstr ""
+
+msgid "quick newcamd.list editor"
+msgstr ""
+
+msgid "reFresh"
+msgstr ""
+
+msgid "reload epg.dat failed"
+msgstr ""
+
+msgid "remove & advanced remove ipk packets"
+msgstr ""
+
+msgid "Removing files..."
+msgstr ""
+
+msgid "remove *.ipk & *.tar.gz & *.bh.tgz & *.nab.tgz from /tmp"
+msgstr ""
+
+msgid "remove *.ipk & *.tar.gz from /tmp"
+msgstr ""
+
+msgid "running"
+msgstr ""
+
+msgid "server: %s"
+msgstr ""
+
+msgid "simple tools for Pli image"
+msgstr ""
+
+msgid "size: %s  %s"
+msgstr ""
+
+msgid "stopping"
+msgstr ""
+
+msgid "system info (free, dh -f, hosts)"
+msgstr ""
+
+msgid "update Softcam.key from internet"
+msgstr ""
+
+msgid "update time from internet"
+msgstr ""
+
+msgid "view & remove crashlog files"
+msgstr ""
+
+msgid "view system settings"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "SoftCam.Key server"
+msgstr ""
+
+msgid "%s Switcher: - %s"
+msgstr ""
+
+msgid "Mgcamd config switcher"
+msgstr ""
+
+msgid "Mgcamd configpath"
+msgstr ""
+
+msgid "Mgcamd config filename"
+msgstr ""
+
+msgid "Mgcamd configfile extention"
+msgstr ""
+
+msgid "Wicardd config switcher"
+msgstr ""
+
+msgid "Wicardd configpath"
+msgstr ""
+
+msgid "Wicardd config filename"
+msgstr ""
+
+msgid "Wicardd configfile extention"
+msgstr ""
+
+msgid "Oscam config switcher"
+msgstr ""
+
+msgid "CCcam config switcher"
+msgstr ""
+
+msgid "CCcam configpath"
+msgstr ""
+
+msgid "CCcam config filename"
+msgstr ""
+
+msgid "CCcam configfile extention"
+msgstr ""
+
+msgid "Oscam configpath"
+msgstr ""
+
+msgid "Oscam config filename"
+msgstr ""
+
+msgid "Oscam configfile extention"
+msgstr ""
+
+msgid "E-Oscam.conf switcher"
+msgstr ""
+
+msgid "E-CCcam.Cfg switcher"
+msgstr ""
+
+msgid "Universal Switcher"
+msgstr ""
+
+msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
+msgstr ""
+
+msgid "Swap Manager"
+msgstr ""
+
+msgid "Switcher"
+msgstr ""
+
+msgid "E-EPG Downloader"
+msgstr ""
+
+msgid "Show E-EPG Downloader in ExtensionMenu"
+msgstr ""
+
+msgid "Zram swap is on"
+msgstr ""
+
+msgid "press Close for Exit"
+msgstr ""
+
+msgid "Update to plugin list"
+msgstr ""
+
+msgid "E-Installer: User directory on mount device"
+msgstr ""
+
+msgid "E-Installer: Selection mode"
+msgstr ""
+
+msgid "Multi files"
+msgstr ""
+
+msgid "Single file"
+msgstr ""
+
+msgid "MultiSelect Mode"
+msgstr ""
+
+msgid "SingleSelect Mode"
+msgstr ""
+
+msgid "Failure..."
+msgstr ""
+
+msgid "Please wait, downloading epg.dat"
+msgstr ""
+
+msgid "Select source epg.dat"
+msgstr ""
+
+msgid "Crashlog viewer path"
+msgstr ""
+
+msgid "Add tabs"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "E-script path"
+msgstr ""
+
+msgid "set of utilities for enigma2"
+msgstr ""
+
+msgid "unavailable"
+msgstr ""
+
+msgid "undefined"
+msgstr ""
+
+msgid "unknown"
+msgstr ""
+
+msgid "Donwloading epg.dat from %s"
+msgstr ""
+
+msgid "Stoping..."
+msgstr ""
+
+msgid "Removing startscript..."
+msgstr ""
+
+msgid "Removing ecm.info..."
+msgstr ""
+
+msgid "Adding startscript..."
+msgstr ""
+
+msgid "Starting..."
+msgstr ""
+
+msgid "Restarting..."
+msgstr ""
+
+msgid "Creating None script..."
+msgstr ""
+
+msgid "synchronizing..."
+msgstr ""
+
+msgid "Hosts editor"
+msgstr ""
+
+msgid "add/remove records in /etc/hosts"
+msgstr ""
+
+msgid "Add record"
+msgstr ""
+
+msgid "Remove record"
+msgstr ""
+
+msgid "ip address"
+msgstr ""
+
+msgid "host name"
+msgstr ""
+
+msgid "alias"
+msgstr ""
+
+msgid "add record"
+msgstr ""
+
+msgid "/etc/hosts editor"
+msgstr ""
+
+msgid "Success..."
+msgstr ""
+
+msgid "Restore EPG with enigma2 start"
+msgstr ""
+
+msgid "Manage Udpxy service"
+msgstr ""
+
+msgid "Manage Livestreamer service"
+msgstr ""
+
+msgid "Creating..."
+msgstr ""
+
+msgid "%s loaded in memory"
+msgstr ""
+
+msgid "not loaded modules"
+msgstr ""
+
+msgid "System Tools 2"
+msgstr ""
+
+msgid "Cache Flush"
+msgstr ""
+
+msgid "Flush Now"
+msgstr ""
+
+msgid "Autotime cache flush"
+msgstr ""
+
+msgid "Set cache flush mode"
+msgstr ""
+
+msgid "Buffers: %s Kb  Cached: %s Kb"
+msgstr ""
+
+msgid "Cache flushed"
+msgstr ""
+
+msgid "free pagecache, dentries and inodes"
+msgstr ""
+
+msgid "free pagecache"
+msgstr ""
+
+msgid "free dentries and inodes"
+msgstr ""
+
+msgid "Show E-Flash Cache in ExtensionMenu"
+msgstr ""
+
+msgid "E-Flush cache"
+msgstr ""
+
+msgid "drop system cache"
+msgstr ""
+
+msgid "Total: %s Kb  Free: %s Kb (%s %%)"
+msgstr ""
+
+msgid "%s, %s Mhz (%d %s)"
+msgstr ""
+
+msgid "Processor:"
+msgstr ""
+
+msgid "core"
+msgstr ""
+
+msgid "cores"
+msgstr ""
+
+msgid "Dynamic DNS"
+msgstr ""
+
+msgid "synchronization settings DDNS"
+msgstr ""
+
+msgid "Select DDNS server"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Hostname"
+msgstr ""
+
+msgid "Update Time"
+msgstr ""
+
+msgid "DNS updating..."
+msgstr ""
+
+msgid "cache flush, DDNS sync"
+msgstr ""
+
+msgid "E-Panel Universal Switcher"
+msgstr ""
+
+msgid "update script not found..."
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "ShadowRun"
+msgstr ""
+
+msgid "the script is running in the background..."
+msgstr ""
+
+msgid "IP address:"
+msgstr ""
+
+msgid "EPG from %s"
+msgstr ""
+
+msgid "Set EPG filename"
+msgstr ""
+
+msgid "Download url"
+msgstr ""
+
+msgid "Check epg.dat exists"
+msgstr ""
+
+msgid "Donwloading epg.dat.gz"
+msgstr ""
+
+msgid "Unzipping epg.dat.gz"
+msgstr ""
+
+msgid "Download epg.dat successful"
+msgstr ""
+
+msgid "Donwloading epg.dat.gz error"
+msgstr ""
+
+msgid "Periodicity checks"
+msgstr ""
+
+msgid "Show status message"
+msgstr ""
+
+msgid "last epg.dat updated - not yet"
+msgstr ""
+
+msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
+msgstr ""
+
+msgid "Set autoupdate epg.dat"
+msgstr ""
+
+msgid "Show E-Info in ExtensionMenu"
+msgstr ""
+
+msgid "E-Info"
+msgstr ""
+
+msgid "update error epg.dat - %02d:%02d:%d %02d:%02d:%02d"
+msgstr ""
+
+msgid "onid Man"
+msgstr ""
+
+msgid "blacklist.onid Manager - %s"
+msgstr ""
+
+msgid "Add onid"
+msgstr ""
+
+msgid "Remove onid"
+msgstr ""
+
+msgid "Enter a value in hexadecimal format"
+msgstr ""
+
+msgid "add onid - %s"
+msgstr ""
+
+msgid "value saved"
+msgstr ""
+
+msgid "value is not hex"
+msgstr ""
+
+msgid "configuration default"
+msgstr ""
+
+msgid "Choice epg.dat source"
+msgstr ""
+
+msgid "Choice"
+msgstr ""

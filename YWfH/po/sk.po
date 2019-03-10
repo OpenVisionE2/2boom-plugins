@@ -1,0 +1,417 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Yweather plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"PO-Revision-Date: 2016-01-26 09:55+0100\n"
+"Last-Translator: \n"
+"Language-Team: 4bob@ua.fm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: sk_SK\n"
+"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "Blowing snow"
+msgstr "sneh s vetrom"
+
+msgid "Blustery"
+msgstr "silný vietor"
+
+msgid "Clear (night)"
+msgstr "jasno"
+
+msgid "Cloudy"
+msgstr "zamračené"
+
+msgid "Cold"
+msgstr "chladno"
+
+msgid "Drizzle"
+msgstr "mrholenie"
+
+msgid "Dust"
+msgstr "prašno"
+
+msgid "Fair (day)"
+msgstr "takmer jasno"
+
+msgid "Fair (night)"
+msgstr "takmer jasno"
+
+msgid "Foggy"
+msgstr "hmlisto"
+
+msgid "Freezing drizzle"
+msgstr "mrznúce mrholenie"
+
+msgid "Freezing rain"
+msgstr "mrznúci dážď"
+
+msgid "Hail"
+msgstr "kurpobitie"
+
+msgid "Haze"
+msgstr "hmla"
+
+msgid "Heavy snow"
+msgstr "silné sneženie"
+
+msgid "Hot"
+msgstr "horúco"
+
+msgid "Hurricane"
+msgstr "hurikán"
+
+msgid "Isolated thundershowers"
+msgstr "ojedinelé prehánky alebo búrky"
+
+msgid "Isolated thunderstorms"
+msgstr "ojedinelé búrky"
+
+msgid "Light snow showers"
+msgstr "snehové prehánky"
+
+msgid "Mixed rain and hail"
+msgstr "dážď s krupobitím"
+
+msgid "Mixed rain and sleet"
+msgstr "dážď alebo mrznúci dážď"
+
+msgid "Mixed rain and snow"
+msgstr "dážď so snehom"
+
+msgid "Mixed snow and sleet"
+msgstr "sneh s dažďom"
+
+msgid "Mostly cloudy (day)"
+msgstr "prevažne zamračené"
+
+msgid "Mostly cloudy (night)"
+msgstr "prevažne zamračené"
+
+msgid "Partly cloudy"
+msgstr "polojasno"
+
+msgid "Partly cloudy (day)"
+msgstr "polojasno"
+
+msgid "Partly cloudy (night)"
+msgstr "polojasno"
+
+msgid "Rain"
+msgstr "dážď"
+
+msgid "Scattered showers"
+msgstr "občasný dážď"
+
+msgid "Scattered snow showers"
+msgstr "občasné sneženie"
+
+msgid "Scattered thunderstorms"
+msgstr "občasné búrky"
+
+msgid "Severe thunderstorms"
+msgstr "silné búrky"
+
+msgid "Showers"
+msgstr "prehánky"
+
+msgid "Sleet"
+msgstr "mrznúce sneženie"
+
+msgid "Smoky"
+msgstr "hmlisto"
+
+msgid "Snow"
+msgstr "sneženie"
+
+msgid "Snow flurries"
+msgstr "slabé snehové prehánky"
+
+msgid "Snow showers"
+msgstr "snehové prehánky"
+
+msgid "Sunny"
+msgstr "jasno"
+
+msgid "Thundershowers"
+msgstr "prehánky alebo búrky"
+
+msgid "Thunderstorms"
+msgstr "búrky"
+
+msgid "Tornado"
+msgstr "tornádo"
+
+msgid "Tropical storm"
+msgstr "tropická búrka"
+
+msgid "Windy"
+msgstr "veterno"
+
+msgid "Monday"
+msgstr "Pondelok"
+
+msgid "Tuesday"
+msgstr "Utorok"
+
+msgid "Wednesday"
+msgstr "Streda"
+
+msgid "Thursday"
+msgstr "Štvrtok"
+
+msgid "Friday"
+msgstr "Piatok"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Sunday"
+msgstr "Nedeľa"
+
+msgid "Tomorrow"
+msgstr "zajtra"
+
+msgid "Jan."
+msgstr "Jan"
+
+msgid "Feb."
+msgstr "Feb"
+
+msgid "Mar."
+msgstr "Mar"
+
+msgid "Apr."
+msgstr "Apr"
+
+msgid "May"
+msgstr "Máj"
+
+msgid "June"
+msgstr "Jún"
+
+msgid "July"
+msgstr "Júl"
+
+msgid "Aug."
+msgstr "Aug"
+
+msgid "Sept."
+msgstr "Sep"
+
+msgid "Oct."
+msgstr "Okt"
+
+msgid "Nov."
+msgstr "Nov"
+
+msgid "Dec."
+msgstr "Dec"
+
+msgid "Not available"
+msgstr "Nie je k dispozícii"
+
+msgid "N/A"
+msgstr "Nie je k dispozícii"
+
+msgid "no data"
+msgstr " "
+
+msgid "Off"
+msgstr "vypnuté"
+
+msgid "5 sec"
+msgstr "5 sekúnd"
+
+msgid "8 sec"
+msgstr "8 sekúnd"
+
+msgid "10 sec"
+msgstr "10 sekúnd"
+
+msgid "12 sec"
+msgstr "12 sekúnd"
+
+msgid "16 sec"
+msgstr "16 sekúnd"
+
+msgid "%s km"
+msgstr "%s km viditeľnosť"
+
+msgid "%s%% humidity"
+msgstr "%s%% vlhkosť"
+
+msgid "%s hPa(mbar)"
+msgstr "%s hPa"
+
+msgid "Feels: %s"
+msgstr "pocitová teplota: %s"
+
+msgid "%s S"
+msgstr "%s J"
+
+msgid "%s N"
+msgstr "%s S"
+
+msgid "%s W"
+msgstr "%s Z"
+
+msgid "%s E"
+msgstr "%s V"
+
+msgid "1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma"
+msgstr "1. Navštívte stránku http://woeid.rosselliot.co.nz\\n2. Zadajte mesto alebo PSČ\\n3. Skopírujte WOEID\\n4. Uložte a reštartujte enigmu"
+
+msgid "[YWeather] Download finished"
+msgstr "[YWeather] Sťahovanie dokončené"
+
+msgid "[YWeather] Download failed!"
+msgstr "[YWeather] Sťahovanie neúspešné!"
+
+msgid "City code (woeid)"
+msgstr "Kód mesta (WOEID)"
+
+msgid "City name (alias)"
+msgstr "Názov mesta"
+
+msgid "Weather info timeout"
+msgstr "Vypnúť info o počasí"
+
+msgid "Weather icons style"
+msgstr "Štýl ikon počasia"
+
+msgid "User skin"
+msgstr "Užívateľské zobrazenie"
+
+msgid "Close"
+msgstr "Zavrieť"
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Restart"
+msgstr "Reštartovať"
+
+msgid "Get WOEID"
+msgstr "Získať WOEID"
+
+msgid "Get"
+msgstr "Získať"
+
+msgid "configuration is saved"
+msgstr "Nastavenia boli uložené"
+
+msgid "The name of the location"
+msgstr "Názov miesta"
+
+msgid "no woeid code yet"
+msgstr "WOEID zatiaľ nezistené"
+
+msgid "error location name"
+msgstr "Chyba v zadaní miesta"
+
+msgid "weatherserver not respond"
+msgstr "Server s počasím neodpovedá"
+
+msgid "/tmp/woeid.xml not found"
+msgstr "/tmp/woeid.xml nenájdený"
+
+msgid "E, %3.02f m/s"
+msgstr "V vietor %3.02f m/s"
+
+msgid "ENE, %3.02f m/s"
+msgstr "VSV vietor %3.02f m/s"
+
+msgid "ESE, %3.02f m/s"
+msgstr "VJV vietor %3.02f m/s"
+
+msgid "N, %3.02f m/s"
+msgstr "S vietor %3.02f m/s"
+
+msgid "NE, %3.02f m/s"
+msgstr "SV vietor %3.02f m/s"
+
+msgid "NNE, %3.02f m/s"
+msgstr "SSV vietor %3.02f m/s"
+
+msgid "NNW, %3.02f m/s"
+msgstr "SSZ vietor %3.02f m/s"
+
+msgid "NW, %3.02f m/s"
+msgstr "SZ vietor %3.02f m/s"
+
+msgid "S, %3.02f m/s"
+msgstr "J vietor %3.02f m/s"
+
+msgid "SE, %3.02f m/s"
+msgstr "JV vietor %3.02f m/s"
+
+msgid "SSE, %3.02f m/s"
+msgstr "JJV vietor %3.02f m/s"
+
+msgid "SSW, %3.02f m/s"
+msgstr "JJZ vietor %3.02f m/s"
+
+msgid "SW, %3.02f m/s"
+msgstr "JZ vietor %3.02f m/s"
+
+msgid "W, %3.02f m/s"
+msgstr "Z vietor %3.02f m/s"
+
+msgid "WNW, %3.02f m/s"
+msgstr "ZSZ vietor %3.02f m/s"
+
+msgid "WSW, %3.02f m/s"
+msgstr "ZJZ vietor %3.02f m/s"
+
+msgid "E, %s km/h"
+msgstr "V vietor %s km/h"
+
+msgid "ENE, %s km/h"
+msgstr "VSV vietor %s km/h"
+
+msgid "ESE, %s km/h"
+msgstr "VJV vietor %s km/h"
+
+msgid "N, %s km/h"
+msgstr "S vietor %s km/h"
+
+msgid "NE, %s km/h"
+msgstr "SV vietor %s km/h"
+
+msgid "NNE, %s km/h"
+msgstr "SSV vietor %s km/h"
+
+msgid "NNW, %s km/h"
+msgstr "SSZ vietor %s km/h"
+
+msgid "NW, %s km/h"
+msgstr "SZ vietor %s km/h"
+
+msgid "S, %s km/h"
+msgstr "J vietor %s km/h"
+
+msgid "SE, %s km/h"
+msgstr "JV vietor %s km/h"
+
+msgid "SSE, %s km/h"
+msgstr "JJV vietor %s km/h"
+
+msgid "SSW, %s km/h"
+msgstr "JJZ vietor %s km/h"
+
+msgid "SW, %s km/h"
+msgstr "JZ vietor %s km/h"
+
+msgid "W, %s km/h"
+msgstr "Z vietor %s km/h"
+
+msgid "WNW, %s km/h"
+msgstr "ZSZ vietor %s km/h"
+
+msgid "WSW, %s km/h"
+msgstr "ZJZ vietor %s km/h"

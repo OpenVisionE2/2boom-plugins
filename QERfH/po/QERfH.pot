@@ -1,0 +1,14 @@
+msgid ""
+msgstr ""
+
+msgid "2boom's QuickEmuRestart for Hotkey"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Restarting %s"
+msgstr ""
+
+msgid "quick restart softcam & cardserver for hotkey extentions"
+msgstr ""

@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+
+msgid "%s  restarted..."
+msgstr ""
+
+msgid "2boom's QuickEmuRestart"
+msgstr ""
+
+msgid "Select key to Softcam restart"
+msgstr ""
+
+msgid "Set time in sec message window is shown"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "Restart Softcam with a single button"
+msgstr ""

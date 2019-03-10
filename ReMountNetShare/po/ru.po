@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RemountNetShare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"PO-Revision-Date: 2012-10-22 16:55+0200\n"
+"Last-Translator: 2boom <4bob@ua.fm>\n"
+"Language-Team:  <4bob@ua.fm>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: ru_UA\n"
+"X-Generator: Poedit 1.5.3\n"
+
+msgid "2boom's RemountNetShare"
+msgstr "Перемонтирование сетевых подключений"
+
+msgid "configuration is saved"
+msgstr "конфигурация сохранена"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Disabled"
+msgstr "Выключено"
+
+msgid "Remount now"
+msgstr "Перемонтировать"
+
+msgid "UnMount in deepstandby"
+msgstr "Размонтировать при выключении"
+
+msgid "ReMount on wakeup"
+msgstr "Перемонтировать при выходе из ожидания"
+
+msgid "Show Remount NetShare in ExtensionMenu"
+msgstr "Перемонтирование в расширенном меню"
+
+msgid "ReMount on restart enigma2"
+msgstr "Перемонтировать при рестарте энигма"
+
+msgid "remounting ..."
+msgstr "перемонтирование ..."
+
+msgid "manual or auto remount network share"
+msgstr "ручное и автоматическое перемонтирование сетевых подключений"
+
+msgid "active: %s %s %s\n"
+msgstr "активно: %s %s %s\n"
+
+msgid "Show Unmount NetShare in ExtensionMenu"
+msgstr "Размонтирование в расширенном меню"
+
+msgid "Remount NetShare"
+msgstr "Перемонтирование сетевых подключений"
+
+msgid "Unmount NetShare"
+msgstr "Размонтирование сетевых подключений"
+
+msgid "unmounting ..."
+msgstr "размонтирование ..."

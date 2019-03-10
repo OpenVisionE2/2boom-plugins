@@ -1,0 +1,29 @@
+language: python
+
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    packages:
+    - git
+    - build-essential
+    - automake
+    - libtool
+    - python-dev
+    - gettext
+    - swig
+
+python:
+  - "2.7"
+
+git:
+  depth: 1
+
+script:
+- echo compiling 2boom enigma2 plugins
+- autoreconf -i
+- ./configure --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-gstversion=1.0 --with-textlcd
+- make
+- python -m compileall .
+- echo done!

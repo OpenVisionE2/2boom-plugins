@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+
+msgid "2boom's QuickEcmInfo for Hotkey"
+msgstr ""
+
+msgid "core"
+msgstr ""
+
+msgid "cores"
+msgstr ""
+
+msgid "%s, %s Mhz (%d %s) %s"
+msgstr ""
+
+msgid "undefined"
+msgstr ""
+
+msgid "%s%s  Kernel: %s (%s)"
+msgstr ""
+
+msgid "quickecminfo for hotkey extentions"
+msgstr ""

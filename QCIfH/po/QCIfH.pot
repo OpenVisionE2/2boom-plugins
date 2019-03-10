@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+
+msgid "2boom's QuickChannelInfo for Hotkey"
+msgstr ""
+
+msgid "2boom's QuickChannelInfo setup"
+msgstr ""
+
+msgid "User skin"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "quickchannelinfo for hotkey extentions"
+msgstr ""

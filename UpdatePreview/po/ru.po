@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Update Preview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"PO-Revision-Date: 2014-03-18 15:17+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <4bob@ua.fm>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: ru_UA\n"
+"X-Generator: Poedit 1.6.4\n"
+
+msgid "Update preview: %s aviable"
+msgstr "Обновления: %s доступно"
+
+msgid ". Image may not be stable."
+msgstr ". Имидж может быть не стабилен."
+
+msgid ". Image is stable."
+msgstr ". Имидж стабилен."
+
+msgid "Updating..."
+msgstr "Обновление..."
+
+msgid "Software update preview"
+msgstr "Просмотр обновлений ПО"
+
+msgid "No updates available"
+msgstr "Hет доступных обновлений"
+
+msgid "Latest Commits"
+msgstr "Изменения"
+
+msgid "Please wait"
+msgstr "Пожалуйста, подождите"
+
+msgid "Error receive list-upgradable, try later"
+msgstr "Ошибка получения списка обновлений, попробуйте позже"
+
+msgid "Updating list of available packages"
+msgstr "Обновление списка доступных пакетов"
+
+msgid "Updating list installed and upgradable packages"
+msgstr "Обновление списка установленных и обновляемых пакетов"
+
+msgid "Select files"
+msgstr "Выберите файлы"

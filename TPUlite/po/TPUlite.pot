@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+
+msgid "Select service type in default bouquet"
+msgstr ""
+
+msgid "Input new proxy ip"
+msgstr ""
+
+msgid "Input password (if needed)"
+msgstr ""
+
+msgid "Input Name of default bouquet"
+msgstr ""
+
+msgid "Proxy updater in ExtensionMenu"
+msgstr ""
+
+msgid "IP & Ch.List Update"
+msgstr ""
+
+msgid "Donwloading ip & channel list"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "IP Update"
+msgstr ""
+
+msgid "TV"
+msgstr ""
+
+msgid "Stream TV"
+msgstr ""
+
+msgid "Select source"
+msgstr ""
+
+msgid "source 1"
+msgstr ""
+
+msgid "source 2"
+msgstr ""
+
+msgid "source 3"
+msgstr ""
+
+msgid "Reload servicelist"
+msgstr ""

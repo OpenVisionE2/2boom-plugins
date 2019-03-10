@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-epanel
+Version: 5.8-r2
+Description: enigma2-plugin-extensions-epanel by 2boom
+Depends: busybox-cron, ntpdate, python-requests

@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+
+msgid "2boom's RemountNetShare"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Remount now"
+msgstr ""
+
+msgid "UnMount in deepstandby"
+msgstr ""
+
+msgid "ReMount on wakeup"
+msgstr ""
+
+msgid "Show Remount NetShare in ExtensionMenu"
+msgstr ""
+
+msgid "ReMount on restart enigma2"
+msgstr ""
+
+msgid "remounting ..."
+msgstr ""
+
+msgid "manual or auto remount network share"
+msgstr ""
+
+msgid "active: %s %s %s\n"
+msgstr ""
+
+msgid "Show Unmount NetShare in ExtensionMenu"
+msgstr ""
+
+msgid "Remount NetShare"
+msgstr ""
+
+msgid "Unmount NetShare"
+msgstr ""
+
+msgid "unmounting ..."
+msgstr ""

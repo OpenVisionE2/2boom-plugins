@@ -1,0 +1,357 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Yweather plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"PO-Revision-Date: 2016-01-18 21:50+0100\n"
+"Last-Translator: \n"
+"Language-Team: 4bob@ua.fm\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: sk_SK\n"
+"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "%s km"
+msgstr "%s km viditeľnosť"
+
+msgid "%s%% humidity"
+msgstr "%s%% vlhkosť"
+
+msgid "1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma"
+msgstr "1. Navštívte stránku http://weather.yahoo.com/\\n2. Zadajte mesto alebo PSČ...\\n3. Skopírujte kód mesta (len číslice) z adresy\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Uložte a reštartuje enigmu."
+
+msgid "Blowing snow"
+msgstr "sneh s vetrom"
+
+msgid "Blustery"
+msgstr "búrlivý vietor"
+
+msgid "City code"
+msgstr "Kód mesta"
+
+msgid "City name"
+msgstr "Názov mesta"
+
+msgid "Clear (night)"
+msgstr "jasno"
+
+msgid "Cloudy"
+msgstr "zamračené"
+
+msgid "Cold"
+msgstr "chladno"
+
+msgid "Drizzle"
+msgstr "mrholenie"
+
+msgid "Dust"
+msgstr "prašno"
+
+msgid "Fair (day)"
+msgstr "takmer jasno"
+
+msgid "Fair (night)"
+msgstr "takmer jasno"
+
+msgid "Feels: %s"
+msgstr "pocitová teplota: %s"
+
+msgid "Foggy"
+msgstr "hmlisto"
+
+msgid "Freezing drizzle"
+msgstr "mrznúce mrholenie"
+
+msgid "Freezing rain"
+msgstr "mrznúci dážď"
+
+msgid "Friday"
+msgstr "Piatok"
+
+msgid "Hail"
+msgstr "kurpobitie"
+
+msgid "Haze"
+msgstr "hmla"
+
+msgid "Heavy snow"
+msgstr "silné sneženie"
+
+msgid "Hot"
+msgstr "horúco"
+
+msgid "Hurricane"
+msgstr "hurikán"
+
+msgid "Isolated thundershowers"
+msgstr "občasné prehánky"
+
+msgid "Isolated thunderstorms"
+msgstr "občasné búrky"
+
+msgid "Light snow showers"
+msgstr "snehové prehánky"
+
+msgid "Mixed rain and hail"
+msgstr "dážď s krúpami"
+
+msgid "Mixed rain and sleet"
+msgstr "dážď so snehom"
+
+msgid "Mixed rain and snow"
+msgstr "dážď so snehom"
+
+msgid "Mixed snow and sleet"
+msgstr "sneh s dažďom"
+
+msgid "Monday"
+msgstr "Pondelok"
+
+msgid "Mostly cloudy (day)"
+msgstr "prevažne zamračené"
+
+msgid "Mostly cloudy (night)"
+msgstr "prevažne zamračené"
+
+msgid "Not available"
+msgstr "Nie je k dispozícii"
+
+msgid "Partly cloudy"
+msgstr "polojasno"
+
+msgid "Partly cloudy (day)"
+msgstr "polojasno"
+
+msgid "Partly cloudy (night)"
+msgstr "polojasno"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Scattered showers"
+msgstr "ojedinelý dážď"
+
+msgid "Scattered snow showers"
+msgstr "ojedinelé sneženie"
+
+msgid "Scattered thunderstorms"
+msgstr "ojedinelé búrky"
+
+msgid "Select plugin key"
+msgstr "Vyberte tlačidlo spustenia pluginu"
+
+msgid "Severe thunderstorms"
+msgstr "silné búrky"
+
+msgid "Showers"
+msgstr "prehánky"
+
+msgid "Sleet"
+msgstr "sneh s dažďom"
+
+msgid "Smoky"
+msgstr "hmlisto"
+
+msgid "Snow"
+msgstr "sneženie"
+
+msgid "Snow flurries"
+msgstr "silné sneženie"
+
+msgid "Snow showers"
+msgstr "snehové prehánky"
+
+msgid "Sunday"
+msgstr "Nedeľa"
+
+msgid "Sunny"
+msgstr "jasno"
+
+msgid "Thundershowers"
+msgstr "búrky"
+
+msgid "Thursday"
+msgstr "Štvrtok"
+
+msgid "Tomorrow"
+msgstr "zajtra"
+
+msgid "Tornado"
+msgstr "tornádo"
+
+msgid "Tropical storm"
+msgstr "tropická búrka"
+
+msgid "Tuesday"
+msgstr "Utorok"
+
+msgid "Wednesday"
+msgstr "Streda"
+
+msgid "Windy"
+msgstr "veterno"
+
+msgid "configuration is saved"
+msgstr "Nastavenia boli uložené"
+
+msgid "yahoo! weather plugin config"
+msgstr "Konfigurácia pluginu 2boom´s Yahoo! Weather"
+
+msgid "Weather icons style"
+msgstr "Štýl ikon počasia"
+
+msgid "User skin"
+msgstr "Užívateľský skin"
+
+msgid "User-def"
+msgstr "Definované užívateľom"
+
+msgid "Style 1"
+msgstr "Štýl 1"
+
+msgid "Style 2"
+msgstr "Štýl 2"
+
+msgid "Style 3"
+msgstr "Štýl 3"
+
+msgid "Style 4"
+msgstr "Štýl 4"
+
+msgid "Style 5"
+msgstr "Štýl 5"
+
+msgid "Weather info timeout"
+msgstr "Doba zobrazenia info o počasí"
+
+msgid "Rain"
+msgstr "dážď"
+
+msgid "May"
+msgstr "Máj"
+
+msgid "Jun"
+msgstr "Jún"
+
+msgid "Jul"
+msgstr "Júl"
+
+msgid "Oct"
+msgstr "Okt"
+
+msgid "weatherserver not respond"
+msgstr "Server s počasím neodpovedá"
+
+msgid "[YWeather] Download finished"
+msgstr "[YWeather] Sťahovanie dokončené"
+
+msgid "[YWeather] Download failed!"
+msgstr "[YWeather] Sťahovanie neúspešné!"
+
+msgid "Close"
+msgstr "Zavrieť"
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Restart"
+msgstr "Reštartovať"
+
+msgid "E, %3.02f m/s"
+msgstr "V, %3.02f m/s"
+
+msgid "ENE, %3.02f m/s"
+msgstr "VSV, %3.02f m/s"
+
+msgid "ESE, %3.02f m/s"
+msgstr "VJV, %3.02f m/s"
+
+msgid "N, %3.02f m/s"
+msgstr "S, %3.02f m/s"
+
+msgid "NE, %3.02f m/s"
+msgstr "SV, %3.02f m/s"
+
+msgid "NNE, %3.02f m/s"
+msgstr "SSV, %3.02f m/s"
+
+msgid "NNW, %3.02f m/s"
+msgstr "SSZ, %3.02f m/s"
+
+msgid "NW, %3.02f m/s"
+msgstr "SZ, %3.02f m/s"
+
+msgid "S, %3.02f m/s"
+msgstr "J, %3.02f m/s"
+
+msgid "SE, %3.02f m/s"
+msgstr "JV, %3.02f m/s"
+
+msgid "SSE, %3.02f m/s"
+msgstr "JJV, %3.02f m/s"
+
+msgid "SSW, %3.02f m/s"
+msgstr "JJZ, %3.02f m/s"
+
+msgid "SW, %3.02f m/s"
+msgstr "JZ, %3.02f m/s"
+
+msgid "W, %3.02f m/s"
+msgstr "Z, %3.02f m/s"
+
+msgid "WNW, %3.02f m/s"
+msgstr "ZSZ, %3.02f m/s"
+
+msgid "WSW, %3.02f m/s"
+msgstr "ZJZ, %3.02f m/s"
+
+msgid "E, %s km/h"
+msgstr "V, %s km/h"
+
+msgid "ENE, %s km/h"
+msgstr "VSV, %s km/h"
+
+msgid "ESE, %s km/h"
+msgstr "VJV, %s km/h"
+
+msgid "N, %s km/h"
+msgstr "S, %s km/h"
+
+msgid "NE, %s km/h"
+msgstr "SV, %s km/h"
+
+msgid "NNE, %s km/h"
+msgstr "SSV, %s km/h"
+
+msgid "NNW, %s km/h"
+msgstr "SSZ, %s km/h"
+
+msgid "NW, %s km/h"
+msgstr "SZ, %s km/h"
+
+msgid "S, %s km/h"
+msgstr "J, %s km/h"
+
+msgid "SE, %s km/h"
+msgstr "JV, %s km/h"
+
+msgid "SSE, %s km/h"
+msgstr "JJV, %s km/h"
+
+msgid "SSW, %s km/h"
+msgstr "JJZ, %s km/h"
+
+msgid "SW, %s km/h"
+msgstr "JZ, %s km/h"
+
+msgid "W, %s km/h"
+msgstr "Z, %s km/h"
+
+msgid "WNW, %s km/h"
+msgstr "ZSZ, %s km/h"
+
+msgid "WSW, %s km/h"
+msgstr "ZJZ, %s km/h"
