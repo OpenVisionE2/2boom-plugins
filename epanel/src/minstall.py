@@ -211,10 +211,8 @@ class downfeed(Screen):
 		return False
     
    	def image_is_openvision(self):
-		if os.path.isfile('/etc/issue'):
-			for line in open('/etc/issue'):
-				if 'openvision develop' in line.lower():
-					return True
+		if os.path.isfile('/etc/model'):
+			return True
 		return False
 
 	def feedlist(self):
