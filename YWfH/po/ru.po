@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-04 19:34+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,23 +13,45 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
 
-msgid "%3.02f m/s"
-msgstr "%3.02f м/с"
-
+#, python-format
 msgid "%d mmHg"
 msgstr "%d мм рт.ст."
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
+msgid "%s hPa(mbar)"
+msgstr ""
+
+#, python-format
 msgid "%s km"
 msgstr "%s км"
 
-msgid "%s mb"
-msgstr "%s мб"
-
+#, python-format
 msgid "%s%% humidity"
 msgstr "%s%% влажность"
 
-msgid "1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma"
+msgid "/tmp/woeid.xml not found"
+msgstr ""
+
+#, fuzzy
+msgid "1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma"
 msgstr "1. Заходим на http://weather.yahoo.com/\\n2. Вводим название населенного пункта...\\n3. Копируем ID (только цифры)\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Вводим и перезагружаем enigma"
+
+msgid "10 sec"
+msgstr ""
+
+msgid "12 sec"
+msgstr ""
+
+msgid "16 sec"
+msgstr ""
+
+#, fuzzy
+msgid "2boom's Yahoo Weather"
+msgstr "Погода Yahoo!"
 
 msgid "2boom's Yahoo! Weather"
 msgstr "Погода Yahoo!"
@@ -37,23 +59,37 @@ msgstr "Погода Yahoo!"
 msgid "2boom's Yahoo! Weather for Hotkey"
 msgstr "Погода Yahoo для Hotkey"
 
+msgid "5 sec"
+msgstr ""
+
+msgid "8 sec"
+msgstr ""
+
+msgid "Apr."
+msgstr ""
+
+msgid "Aug."
+msgstr ""
+
 msgid "Blowing snow"
 msgstr "Низовая метель"
 
 msgid "Blustery"
 msgstr "Буйный ветер"
 
-msgid "Built-in"
-msgstr "Встроенный"
-
-msgid "City code"
+#, fuzzy
+msgid "City code (woeid)"
 msgstr "Код населенного пункта"
 
-msgid "City name"
+#, fuzzy
+msgid "City name (alias)"
 msgstr "Название населенного пункта"
 
 msgid "Clear (night)"
 msgstr "Безоблачно (ночью)"
+
+msgid "Close"
+msgstr ""
 
 msgid "Cloudy"
 msgstr "Облачность"
@@ -61,19 +97,37 @@ msgstr "Облачность"
 msgid "Cold"
 msgstr "Холод"
 
+msgid "Dec."
+msgstr ""
+
 msgid "Drizzle"
 msgstr "Морось"
 
 msgid "Dust"
 msgstr "Пыль"
 
+#, python-format
 msgid "E, %3.02f m/s"
 msgstr "В, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "E, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "ENE, %3.02f m/s"
 msgstr "ВСВ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "ENE, %s km/h"
+msgstr "ВСВ, %3.02f м/с"
+
+#, python-format
 msgid "ESE, %3.02f m/s"
+msgstr "ВЮВ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "ESE, %s km/h"
 msgstr "ВЮВ, %3.02f м/с"
 
 msgid "Fair (day)"
@@ -82,6 +136,10 @@ msgstr "Ясно (днем)"
 msgid "Fair (night)"
 msgstr "Ясно (ночью)"
 
+msgid "Feb."
+msgstr ""
+
+#, python-format
 msgid "Feels: %s"
 msgstr "ощущения: %s"
 
@@ -96,6 +154,12 @@ msgstr "Ледяной дождь"
 
 msgid "Friday"
 msgstr "Пятница"
+
+msgid "Get"
+msgstr ""
+
+msgid "Get WOEID"
+msgstr ""
 
 msgid "Hail"
 msgstr "Град"
@@ -118,8 +182,24 @@ msgstr "Изолированные грозы"
 msgid "Isolated thunderstorms"
 msgstr "Изолированные грозы"
 
+msgid "Jan."
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "Light snow showers"
 msgstr "Легкий снегопад"
+
+msgid "Mar."
+msgstr ""
+
+#, fuzzy
+msgid "May"
+msgstr "Понедельник"
 
 msgid "Mixed rain and hail"
 msgstr "Дождь с градом"
@@ -142,23 +222,60 @@ msgstr "Сильная облачность (день)"
 msgid "Mostly cloudy (night)"
 msgstr "Сильная облачность (ночь)"
 
+#, python-format
 msgid "N, %3.02f m/s"
 msgstr "С, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "N, %s km/h"
+msgstr "%s км"
+
+msgid "N/A"
+msgstr ""
+
+#, python-format
 msgid "NE, %3.02f m/s"
 msgstr "СВ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NE, %s km/h"
+msgstr "СВ, %3.02f м/с"
+
+#, python-format
 msgid "NNE, %3.02f m/s"
 msgstr "ССВ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NNE, %s km/h"
+msgstr "ССВ, %3.02f м/с"
+
+#, python-format
 msgid "NNW, %3.02f m/s"
 msgstr "ССЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NNW, %s km/h"
+msgstr "ССЗ, %3.02f м/с"
+
+#, python-format
 msgid "NW, %3.02f m/s"
+msgstr "СВ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "NW, %s km/h"
 msgstr "СВ, %3.02f м/с"
 
 msgid "Not available"
 msgstr "Не доступно"
+
+msgid "Nov."
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Off"
+msgstr ""
 
 msgid "Partly cloudy"
 msgstr "Частичная облачность"
@@ -175,23 +292,51 @@ msgstr "Дождь"
 msgid "Restart"
 msgstr "Перезагрузка"
 
+#, python-format
 msgid "S, %3.02f m/s"
 msgstr "Ю, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "S, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "SE, %3.02f m/s"
 msgstr "ЮВ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SE, %s km/h"
+msgstr "ЮВ, %3.02f м/с"
+
+#, python-format
 msgid "SSE, %3.02f m/s"
 msgstr "ЮЮВ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SSE, %s km/h"
+msgstr "ЮЮВ, %3.02f м/с"
+
+#, python-format
 msgid "SSW, %3.02f m/s"
 msgstr "ЮЮЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SSW, %s km/h"
+msgstr "ЮЮЗ, %3.02f м/с"
+
+#, python-format
 msgid "SW, %3.02f m/s"
+msgstr "ЮЗ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "SW, %s km/h"
 msgstr "ЮЗ, %3.02f м/с"
 
 msgid "Saturday"
 msgstr "Суббота"
+
+msgid "Save"
+msgstr ""
 
 msgid "Scattered showers"
 msgstr "Редкие дожди"
@@ -202,8 +347,8 @@ msgstr "Редкий ливневой снег"
 msgid "Scattered thunderstorms"
 msgstr "Редкие грозы"
 
-msgid "Select plugin key"
-msgstr "Выберите кнопку вызова плагина"
+msgid "Sept."
+msgstr ""
 
 msgid "Severe thunderstorms"
 msgstr "Сильная гроза"
@@ -226,26 +371,14 @@ msgstr "Снегопад"
 msgid "Snow showers"
 msgstr "Ливневой снег"
 
-msgid "Style 1"
-msgstr "Стиль 1"
-
-msgid "Style 2"
-msgstr "Стиль 2"
-
-msgid "Style 3"
-msgstr "Стиль 3"
-
-msgid "Style 4"
-msgstr "Стиль 4"
-
-msgid "Style 5"
-msgstr "Стиль 5"
-
 msgid "Sunday"
 msgstr "Воскресение"
 
 msgid "Sunny"
 msgstr "Солнечно"
+
+msgid "The name of the location"
+msgstr ""
 
 msgid "Thundershowers"
 msgstr "Грозы"
@@ -271,19 +404,35 @@ msgstr "Вторник"
 msgid "User skin"
 msgstr "Пользовательски скин"
 
-msgid "User-def"
-msgstr "Пользовательский"
-
+#, python-format
 msgid "W, %3.02f m/s"
 msgstr "З, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "W, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "WNW, %3.02f m/s"
 msgstr "ЗСЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "WNW, %s km/h"
+msgstr "ЗСЗ, %3.02f м/с"
+
+#, python-format
 msgid "WSW, %3.02f m/s"
 msgstr "ЗЮЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "WSW, %s km/h"
+msgstr "ЗЮЗ, %3.02f м/с"
+
 msgid "Weather icons style"
+msgstr "Стиль иконок погоды"
+
+#, fuzzy
+msgid "Weather info timeout"
 msgstr "Стиль иконок погоды"
 
 msgid "Wednesday"
@@ -295,14 +444,22 @@ msgstr "Ветер"
 msgid "configuration is saved"
 msgstr "конфигурация сохранена"
 
+msgid "error location name"
+msgstr ""
+
+#, python-format
 msgid "max: %s"
 msgstr "макс: %s"
 
+#, python-format
 msgid "min: %s"
 msgstr "мин: %s"
+
+msgid "no woeid code yet"
+msgstr ""
 
 msgid "press menukey for config"
 msgstr "для настроек нажмите Меню"
 
-msgid "yahoo! weather plugin config"
-msgstr "погода yahoo! конфигуратор"
+msgid "weatherserver not respond"
+msgstr ""

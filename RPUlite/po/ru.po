@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rostelecom lite proxy updater\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-14 13:28+0200\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-06-15 01:04+0200\n"
 "Last-Translator: Ednaz <edik_info@mail.ru>\n"
 "Language-Team: \n"
@@ -19,17 +19,29 @@ msgstr "1 час"
 msgid "2 hours"
 msgstr "2 часа"
 
+msgid "2boom's Rostelecom lite proxy updater"
+msgstr ""
+
 msgid "3 hours"
 msgstr "3 часа"
 
+msgid "Close"
+msgstr ""
+
+#, python-format
 msgid "Current proxy: %s  Not working"
 msgstr "Текущий ip: %s  не работает"
 
+#, python-format
 msgid "Current proxy: %s  Status: OK user(s): %s"
 msgstr "Текущий ip: %s  статус: OK клиент(ов): %s"
 
 msgid "Donwloading ip & channel list"
 msgstr "Загрузка IP и списка каналов"
+
+#, fuzzy
+msgid "GStreamer"
+msgstr "Потоковое ТВ"
 
 msgid "IP & Ch.List Update"
 msgstr "Обновить список"
@@ -46,6 +58,9 @@ msgstr "Ввод нового прокси IP"
 msgid "Input password (if needed)"
 msgstr "Введите пароль (при необходимости)"
 
+msgid "LiveStreamer"
+msgstr ""
+
 msgid "Please wait"
 msgstr "Пожалуйста подождите"
 
@@ -58,6 +73,12 @@ msgstr "Прописывать референсы каналов"
 msgid "Reload servicelist"
 msgstr "Перезагрузка списка каналов"
 
+msgid "Rostelecom proxy lite updater"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
 msgid "Select service type in default bouquet"
 msgstr "Выберите тип услуги в фаворите по умолчанию"
 
@@ -66,9 +87,6 @@ msgstr "Выберите источник"
 
 msgid "Set time to update ip (cron needed)"
 msgstr "Установите период обновления (cron)"
-
-msgid "Stream TV"
-msgstr "Потоковое ТВ"
 
 msgid "TV"
 msgstr "ТВ"
@@ -79,11 +97,20 @@ msgstr "Обновлять ip при старте"
 msgid "configuration is saved"
 msgstr "Конфигурация сохранена"
 
+msgid "error..."
+msgstr ""
+
+msgid "off"
+msgstr ""
+
 msgid "source 1"
 msgstr "источник 1"
 
 msgid "source 2"
 msgstr "источник 2"
 
-msgid "source 3"
-msgstr "источник 3"
+msgid "update Rostelecom iptv proxy"
+msgstr ""
+
+msgid "userbouquet.rostelecom_tmp.tv added or updated"
+msgstr ""

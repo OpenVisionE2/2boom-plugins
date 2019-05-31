@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Triolan lite proxy updater\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-12 07:20+0200\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-05-30 19:58+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team: \n"
@@ -13,14 +13,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.4\n"
 
+msgid "2boom's Triolan lite proxy updater"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
 msgid "Donwloading ip & channel list"
 msgstr "Завантаження IP та списку каналів"
 
+#, fuzzy
+msgid "GStreamer"
+msgstr "Потокове ТБ"
+
 msgid "IP & Ch.List Update"
 msgstr "Оновити IP в фав."
-
-msgid "IP Update"
-msgstr "Пошук IP"
 
 msgid "Input Name of default bouquet"
 msgstr "Оберіть им'я в букеті за замовчуванням"
@@ -31,6 +38,9 @@ msgstr "Введення нового проксі IP"
 msgid "Input password (if needed)"
 msgstr "Введіть пароль (при необхідності)"
 
+msgid "LiveStreamer"
+msgstr ""
+
 msgid "Please wait"
 msgstr "Будь ласка зачекайте"
 
@@ -40,26 +50,30 @@ msgstr "Показати TPUlite в меню додатків"
 msgid "Reload servicelist"
 msgstr "Перезавантаження списку каналів"
 
-msgid "Select service type in default bouquet"
-msgstr "Оберіть тип послуги в фавориті за замовчуванням"
-
-msgid "Select source"
+msgid "Save"
 msgstr ""
 
-msgid "Stream TV"
-msgstr "Потокове ТБ"
+msgid "Select service type in default bouquet"
+msgstr "Оберіть тип послуги в фавориті за замовчуванням"
 
 msgid "TV"
 msgstr "ТБ"
 
+msgid "Triolan proxy lite updater"
+msgstr ""
+
+#, fuzzy
+msgid "Update IP"
+msgstr "Пошук IP"
+
 msgid "configuration is saved"
 msgstr "Конфігурацію збережено"
 
-msgid "source 1"
+msgid "error..."
 msgstr ""
 
-msgid "source 2"
+msgid "update Triolan iptv proxy"
 msgstr ""
 
-msgid "source 3"
+msgid "userbouquet.triolan_tmp.tv added or updated"
 msgstr ""

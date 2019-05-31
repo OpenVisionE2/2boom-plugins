@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ARbouquet\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-09-01 13:40+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,9 +13,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.9\n"
 
+#, python-format
 msgid "%s added"
 msgstr "%s добавлено"
 
+#, python-format
 msgid "%s removed"
 msgstr "%s удален"
 
@@ -27,6 +29,9 @@ msgstr "Добавить/Удалить фаворит"
 
 msgid "2boom's add/remove bouquet config"
 msgstr "Настройки"
+
+msgid "Add"
+msgstr ""
 
 msgid "Add bouquetfile"
 msgstr "Добавить фаворит"
@@ -43,11 +48,24 @@ msgstr "Введите пароль (если нужно)"
 msgid "Please wait"
 msgstr "Пожалуйста подождите"
 
+msgid "Radio"
+msgstr ""
+
 msgid "Reload servicelist"
 msgstr "Перезагрука списка каналов"
 
+#, fuzzy
+msgid "Remove"
+msgstr "%s удален"
+
+msgid "Save"
+msgstr ""
+
 msgid "Select bouquet type"
 msgstr "Выберите тип фаворита"
+
+msgid "TV"
+msgstr ""
 
 msgid "add/remove bouquet"
 msgstr "добавить/удалить фаворит"

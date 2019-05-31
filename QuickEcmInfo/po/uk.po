@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: QuickEcmInfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2012-12-10 17:00+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,11 +13,31 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#, fuzzy
+msgid "2boom's QuickEcmInfo"
+msgstr "Налаштування QuickEcmInfo"
+
+#, fuzzy
+msgid "2boom's QuickEcmInfo SE"
+msgstr "Налаштування QuickEcmInfo"
+
 msgid "2boom's QuickEcmInfo setup"
 msgstr "Налаштування QuickEcmInfo"
 
+msgid "Close"
+msgstr ""
+
+msgid "Free-to-air"
+msgstr ""
+
+msgid "No parse cannot emu"
+msgstr ""
+
 msgid "Restart enigma"
 msgstr "Рестарт enigma"
+
+msgid "Save"
+msgstr ""
 
 msgid "Select key to show QuickEcmInfo"
 msgstr "Оберіть кнопку для визову QuickEcmInfo"

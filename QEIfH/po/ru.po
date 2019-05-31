@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: QuickEcmInfo for Hotkey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2012-10-22 16:55+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,14 +13,22 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.3\n"
 
+#, python-format
 msgid "%s%s  Kernel: %s (%s)"
 msgstr "%s%s  Ядро: %s (%s)"
 
+#, python-format
 msgid "%s, %s Mhz (%d %s) %s"
 msgstr "%s, %s Мгц (%d %s) %s"
 
 msgid "2boom's QuickEcmInfo for Hotkey"
 msgstr "QuickEcmInfo для Hotkey от 2boom"
+
+msgid "Free-to-air"
+msgstr ""
+
+msgid "No parse cannot emu"
+msgstr ""
 
 msgid "core"
 msgstr "ядро"

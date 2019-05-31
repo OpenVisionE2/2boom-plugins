@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-29 10:16+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,18 +13,23 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
 
-msgid "%3.02f m/s"
-msgstr "%3.02f m/s"
-
+#, python-format
 msgid "%d mmHg"
 msgstr "%d mmH"
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
+msgid "%s hPa(mbar)"
+msgstr ""
+
+#, python-format
 msgid "%s km"
 msgstr "%s km"
 
-msgid "%s mb"
-msgstr "%s mb"
-
+#, python-format
 msgid "%s%% humidity"
 msgstr "%s%% Hava nemi"
 
@@ -50,14 +55,17 @@ msgstr ""
 msgid "8 sec"
 msgstr ""
 
+msgid "Apr."
+msgstr ""
+
+msgid "Aug."
+msgstr ""
+
 msgid "Blowing snow"
 msgstr "Toz halinde Kar"
 
 msgid "Blustery"
 msgstr "Firtinali"
-
-msgid "Built-in"
-msgstr "bütünlestirme"
 
 msgid "City code"
 msgstr "Sehirkodu"
@@ -68,11 +76,17 @@ msgstr "Sehir adi"
 msgid "Clear (night)"
 msgstr "Acik (Gece)"
 
+msgid "Close"
+msgstr ""
+
 msgid "Cloudy"
 msgstr "Bulutlu"
 
 msgid "Cold"
 msgstr "Soguk"
+
+msgid "Dec."
+msgstr ""
 
 msgid "Drizzle"
 msgstr "Cise"
@@ -80,13 +94,28 @@ msgstr "Cise"
 msgid "Dust"
 msgstr "Tozlu"
 
+#, python-format
 msgid "E, %3.02f m/s"
 msgstr "E, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "E, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "ENE, %3.02f m/s"
 msgstr "ENE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "ENE, %s km/h"
+msgstr "ENE, %3.02f m/s"
+
+#, python-format
 msgid "ESE, %3.02f m/s"
+msgstr "ESE, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "ESE, %s km/h"
 msgstr "ESE, %3.02f m/s"
 
 msgid "Fair (day)"
@@ -95,6 +124,10 @@ msgstr "Bulutsuz (Gündüz)"
 msgid "Fair (night)"
 msgstr "Bulutsuz (Gece)"
 
+msgid "Feb."
+msgstr ""
+
+#, python-format
 msgid "Feels: %s"
 msgstr "His edilen: %s"
 
@@ -131,8 +164,24 @@ msgstr "Tek tük Firtina"
 msgid "Isolated thunderstorms"
 msgstr "Tek Tük Firtina"
 
+msgid "Jan."
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "Light snow showers"
 msgstr "Hafif Kar yagisi"
+
+msgid "Mar."
+msgstr ""
+
+#, fuzzy
+msgid "May"
+msgstr "Pazartesi"
 
 msgid "Mixed rain and hail"
 msgstr "Kar ve Dolu karisimi"
@@ -155,23 +204,60 @@ msgstr "Genellikle Bulutlu (Gündüz)"
 msgid "Mostly cloudy (night)"
 msgstr "Hafif Bulutlu (Gece)"
 
+#, python-format
 msgid "N, %3.02f m/s"
 msgstr "N, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "N, %s km/h"
+msgstr "%s km"
+
+msgid "N/A"
+msgstr ""
+
+#, python-format
 msgid "NE, %3.02f m/s"
 msgstr "NE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NE, %s km/h"
+msgstr "NE, %3.02f m/s"
+
+#, python-format
 msgid "NNE, %3.02f m/s"
 msgstr "NNE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNE, %s km/h"
+msgstr "NNE, %3.02f m/s"
+
+#, python-format
 msgid "NNW, %3.02f m/s"
 msgstr "NNW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNW, %s km/h"
+msgstr "NNW, %3.02f m/s"
+
+#, python-format
 msgid "NW, %3.02f m/s"
+msgstr "NW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "NW, %s km/h"
 msgstr "NW, %3.02f m/s"
 
 msgid "Not available"
 msgstr "Simdi Mevcut degil"
+
+msgid "Nov."
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Off"
+msgstr ""
 
 msgid "Partly cloudy"
 msgstr "Kismen Bulutlu"
@@ -188,23 +274,51 @@ msgstr "yağmur"
 msgid "Restart"
 msgstr "Restart"
 
+#, python-format
 msgid "S, %3.02f m/s"
 msgstr "S, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "S, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "SE, %3.02f m/s"
 msgstr "SE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SE, %s km/h"
+msgstr "SE, %3.02f m/s"
+
+#, python-format
 msgid "SSE, %3.02f m/s"
 msgstr "SSE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSE, %s km/h"
+msgstr "SSE, %3.02f m/s"
+
+#, python-format
 msgid "SSW, %3.02f m/s"
 msgstr "SSW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSW, %s km/h"
+msgstr "SSW, %3.02f m/s"
+
+#, python-format
 msgid "SW, %3.02f m/s"
+msgstr "SW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "SW, %s km/h"
 msgstr "SW, %3.02f m/s"
 
 msgid "Saturday"
 msgstr "Cumartesi"
+
+msgid "Save"
+msgstr ""
 
 msgid "Scattered showers"
 msgstr "Tek Tük Saganak"
@@ -217,6 +331,9 @@ msgstr "Tek Tük Firtina"
 
 msgid "Select plugin key"
 msgstr "Plugin button secmek"
+
+msgid "Sept."
+msgstr ""
 
 msgid "Severe thunderstorms"
 msgstr "Sidetli Firtina"
@@ -238,21 +355,6 @@ msgstr "Karcimlenmek"
 
 msgid "Snow showers"
 msgstr "Karsaganak"
-
-msgid "Style 1"
-msgstr ""
-
-msgid "Style 2"
-msgstr ""
-
-msgid "Style 3"
-msgstr ""
-
-msgid "Style 4"
-msgstr ""
-
-msgid "Style 5"
-msgstr ""
 
 msgid "Sunday"
 msgstr "Pazar"
@@ -285,16 +387,28 @@ msgstr "Sali"
 msgid "User skin"
 msgstr "User Skin"
 
-msgid "User-def"
-msgstr "Kullanici Stil"
-
+#, python-format
 msgid "W, %3.02f m/s"
 msgstr "W, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "W, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "WNW, %3.02f m/s"
 msgstr "WNW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "WNW, %s km/h"
+msgstr "WNW, %3.02f m/s"
+
+#, python-format
 msgid "WSW, %3.02f m/s"
+msgstr "WSW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "WSW, %s km/h"
 msgstr "WSW, %3.02f m/s"
 
 msgid "Weather icons style"
@@ -312,9 +426,11 @@ msgstr "Rüzgarli"
 msgid "configuration is saved"
 msgstr "Konfigürasyon kayid edildi"
 
+#, python-format
 msgid "max: %s"
 msgstr ""
 
+#, python-format
 msgid "min: %s"
 msgstr ""
 

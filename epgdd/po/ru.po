@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2boom' Auto EPG Loader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-12-11 16:06+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -12,6 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
+
+#, python-format
+msgid "%s not respond"
+msgstr ""
 
 msgid "120 min"
 msgstr "120 мин"
@@ -24,6 +28,10 @@ msgstr "240 мин"
 
 msgid "2boom's Auto EPG Downloader"
 msgstr "Авто загрузчик EPG (c) 2boom"
+
+#, fuzzy
+msgid "30 min"
+msgstr "60 мин"
 
 msgid "60 min"
 msgstr "60 мин"
@@ -40,12 +48,6 @@ msgstr "Выбор источника epg.dat"
 msgid "Close"
 msgstr "Закрыть"
 
-msgid "Donwloading epg.dat.gz"
-msgstr "Загрузка epg.dat.gz"
-
-msgid "Donwloading epg.dat.gz error"
-msgstr "ошибка загрузки epg.dat"
-
 msgid "Download EPG"
 msgstr "Загрузить EPG"
 
@@ -55,20 +57,22 @@ msgstr "epg.dat загружен"
 msgid "Download url"
 msgstr "Адрес загрузки"
 
+#, python-format
 msgid "EPG from %s"
 msgstr "Загрузка с %s"
 
 msgid "EPGFlush if support"
 msgstr "Включить EPGFlush (если поддерживается)"
 
+#, fuzzy
+msgid "Manual Donwloading epg.dat.gz error"
+msgstr "ошибка загрузки epg.dat"
+
 msgid "Periodicity checks"
 msgstr "Периодичность проверки"
 
 msgid "Please wait"
 msgstr "Пожалуйста подождите"
-
-msgid "Reset Settings"
-msgstr "Сбросить настройки"
 
 msgid "Save"
 msgstr "Сохранить"
@@ -85,21 +89,13 @@ msgstr "Включить автообновление epg.dat"
 msgid "Show Auto EPG Downloader in ExtensionMenu"
 msgstr "Показать Авто EPG в меню расширений"
 
-msgid "Show status message"
-msgstr "Показывать статус загрузки"
-
 msgid "Source"
 msgstr "Источник epg.dat"
-
-msgid "Unzipping epg.dat.gz"
-msgstr "Распаковка epg.dat.gz"
-
-msgid "configuration default"
-msgstr "конфигурация по умолчанию"
 
 msgid "configuration is saved"
 msgstr "конфигурация сохранена"
 
+#, python-format
 msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
 msgstr "epg.dat обновлен - %02d:%02d:%d %02d:%02d:%02d"
 

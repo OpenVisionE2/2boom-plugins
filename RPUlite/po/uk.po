@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rostelecom lite proxy updater\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-12 07:20+0200\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-05-30 19:58+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team: \n"
@@ -19,17 +19,29 @@ msgstr "1 година"
 msgid "2 hours"
 msgstr "2 години"
 
+msgid "2boom's Rostelecom lite proxy updater"
+msgstr ""
+
 msgid "3 hours"
 msgstr "3 години"
 
+msgid "Close"
+msgstr ""
+
+#, python-format
 msgid "Current proxy: %s  Not working"
 msgstr "Поточний ip: %s  не работает"
 
+#, python-format
 msgid "Current proxy: %s  Status: OK user(s): %s"
 msgstr "Поточний ip: %s  статус: OK клієнт (ів): %s"
 
 msgid "Donwloading ip & channel list"
 msgstr "Завантаження IP та списку каналів"
+
+#, fuzzy
+msgid "GStreamer"
+msgstr "Потокове ТБ"
 
 msgid "IP & Ch.List Update"
 msgstr "Оновити IP в фав."
@@ -46,6 +58,9 @@ msgstr "Введення нового проксі IP"
 msgid "Input password (if needed)"
 msgstr "Введіть пароль (при необхідності)"
 
+msgid "LiveStreamer"
+msgstr ""
+
 msgid "Please wait"
 msgstr "Будь ласка зачекайте"
 
@@ -58,6 +73,12 @@ msgstr "Вказати референси каналів"
 msgid "Reload servicelist"
 msgstr "Перезавантаження списку каналів"
 
+msgid "Rostelecom proxy lite updater"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
 msgid "Select service type in default bouquet"
 msgstr "Оберіть тип послуги в фавориті за замовчуванням"
 
@@ -66,9 +87,6 @@ msgstr "Оберіть джерело"
 
 msgid "Set time to update ip (cron needed)"
 msgstr "Встановити час оновлення (cron)"
-
-msgid "Stream TV"
-msgstr "Потокове ТБ"
 
 msgid "TV"
 msgstr "ТБ"
@@ -79,11 +97,20 @@ msgstr "Обновити ip при старті"
 msgid "configuration is saved"
 msgstr "Конфігурацію збережено"
 
+msgid "error..."
+msgstr ""
+
+msgid "off"
+msgstr ""
+
 msgid "source 1"
 msgstr "джерело 1"
 
 msgid "source 2"
 msgstr "джерело 2"
 
-msgid "source 3"
-msgstr "джерело 3"
+msgid "update Rostelecom iptv proxy"
+msgstr ""
+
+msgid "userbouquet.rostelecom_tmp.tv added or updated"
+msgstr ""

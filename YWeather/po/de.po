@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-10 17:26+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,18 +13,23 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
 
-msgid "%3.02f m/s"
-msgstr "%3.02f m/s"
-
+#, python-format
 msgid "%d mmHg"
 msgstr "%d mmH"
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
+msgid "%s hPa(mbar)"
+msgstr ""
+
+#, python-format
 msgid "%s km"
 msgstr "%s km"
 
-msgid "%s mb"
-msgstr "%s mb"
-
+#, python-format
 msgid "%s%% humidity"
 msgstr "%s%% Luftfeuchtigkeit"
 
@@ -50,14 +55,17 @@ msgstr ""
 msgid "8 sec"
 msgstr ""
 
+msgid "Apr."
+msgstr ""
+
+msgid "Aug."
+msgstr ""
+
 msgid "Blowing snow"
 msgstr "Schneetreiben"
 
 msgid "Blustery"
 msgstr "Stuermisch"
-
-msgid "Built-in"
-msgstr "Integriert"
 
 msgid "City code"
 msgstr "Stadtcode"
@@ -68,11 +76,17 @@ msgstr "Stadtname"
 msgid "Clear (night)"
 msgstr "Klar (Nacht)"
 
+msgid "Close"
+msgstr ""
+
 msgid "Cloudy"
 msgstr "Wolkig"
 
 msgid "Cold"
 msgstr "Kalt"
+
+msgid "Dec."
+msgstr ""
 
 msgid "Drizzle"
 msgstr "Nieselregen"
@@ -80,13 +94,28 @@ msgstr "Nieselregen"
 msgid "Dust"
 msgstr "Staub"
 
+#, python-format
 msgid "E, %3.02f m/s"
 msgstr "E, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "E, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "ENE, %3.02f m/s"
 msgstr "ENE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "ENE, %s km/h"
+msgstr "ENE, %3.02f m/s"
+
+#, python-format
 msgid "ESE, %3.02f m/s"
+msgstr "ESE, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "ESE, %s km/h"
 msgstr "ESE, %3.02f m/s"
 
 msgid "Fair (day)"
@@ -95,6 +124,10 @@ msgstr "Heiter (tag)"
 msgid "Fair (night)"
 msgstr "Heiter (Nacht)"
 
+msgid "Feb."
+msgstr ""
+
+#, python-format
 msgid "Feels: %s"
 msgstr "Gefuehlt: %s"
 
@@ -131,8 +164,24 @@ msgstr "Vereinzelt Gewitter"
 msgid "Isolated thunderstorms"
 msgstr "Vereinzelt Gewitter"
 
+msgid "Jan."
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "Light snow showers"
 msgstr "Leichte Schneeschauer"
+
+msgid "Mar."
+msgstr ""
+
+#, fuzzy
+msgid "May"
+msgstr "Montag"
 
 msgid "Mixed rain and hail"
 msgstr "Mixed regen und Hagel"
@@ -155,23 +204,60 @@ msgstr "Ueberwiegend bewoelkt (tag)"
 msgid "Mostly cloudy (night)"
 msgstr "Leicht bewoelkt (Nacht)"
 
+#, python-format
 msgid "N, %3.02f m/s"
 msgstr "N, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "N, %s km/h"
+msgstr "%s km"
+
+msgid "N/A"
+msgstr ""
+
+#, python-format
 msgid "NE, %3.02f m/s"
 msgstr "NE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NE, %s km/h"
+msgstr "NE, %3.02f m/s"
+
+#, python-format
 msgid "NNE, %3.02f m/s"
 msgstr "NNE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNE, %s km/h"
+msgstr "NNE, %3.02f m/s"
+
+#, python-format
 msgid "NNW, %3.02f m/s"
 msgstr "NNW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNW, %s km/h"
+msgstr "NNW, %3.02f m/s"
+
+#, python-format
 msgid "NW, %3.02f m/s"
+msgstr "NW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "NW, %s km/h"
 msgstr "NW, %3.02f m/s"
 
 msgid "Not available"
 msgstr "Nicht verfuegbar"
+
+msgid "Nov."
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Off"
+msgstr ""
 
 msgid "Partly cloudy"
 msgstr "Teilweise bewoelkt"
@@ -188,23 +274,51 @@ msgstr "Regen"
 msgid "Restart"
 msgstr "Restart"
 
+#, python-format
 msgid "S, %3.02f m/s"
 msgstr "S, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "S, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "SE, %3.02f m/s"
 msgstr "SE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SE, %s km/h"
+msgstr "SE, %3.02f m/s"
+
+#, python-format
 msgid "SSE, %3.02f m/s"
 msgstr "SSE, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSE, %s km/h"
+msgstr "SSE, %3.02f m/s"
+
+#, python-format
 msgid "SSW, %3.02f m/s"
 msgstr "SSW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSW, %s km/h"
+msgstr "SSW, %3.02f m/s"
+
+#, python-format
 msgid "SW, %3.02f m/s"
+msgstr "SW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "SW, %s km/h"
 msgstr "SW, %3.02f m/s"
 
 msgid "Saturday"
 msgstr "Samstag"
+
+msgid "Save"
+msgstr ""
 
 msgid "Scattered showers"
 msgstr "Vereinzelte Regenschauer"
@@ -217,6 +331,9 @@ msgstr "Vereinzelte Gewitter"
 
 msgid "Select plugin key"
 msgstr "Plugin button auswaehlen"
+
+msgid "Sept."
+msgstr ""
 
 msgid "Severe thunderstorms"
 msgstr "Schwere Gewitter"
@@ -238,21 +355,6 @@ msgstr "Schneetreiben"
 
 msgid "Snow showers"
 msgstr "Schneeschauer"
-
-msgid "Style 1"
-msgstr "1 Stil"
-
-msgid "Style 2"
-msgstr "2 Stil"
-
-msgid "Style 3"
-msgstr "3 Stil"
-
-msgid "Style 4"
-msgstr "4 Stil"
-
-msgid "Style 5"
-msgstr "5 Stil"
 
 msgid "Sunday"
 msgstr "Sonntag"
@@ -285,16 +387,28 @@ msgstr "Dienstag"
 msgid "User skin"
 msgstr "User Skin"
 
-msgid "User-def"
-msgstr "User Stil"
-
+#, python-format
 msgid "W, %3.02f m/s"
 msgstr "W, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "W, %s km/h"
+msgstr "%s km"
+
+#, python-format
 msgid "WNW, %3.02f m/s"
 msgstr "WNW, %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "WNW, %s km/h"
+msgstr "WNW, %3.02f m/s"
+
+#, python-format
 msgid "WSW, %3.02f m/s"
+msgstr "WSW, %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "WSW, %s km/h"
 msgstr "WSW, %3.02f m/s"
 
 msgid "Weather icons style"
@@ -312,9 +426,11 @@ msgstr "Windig"
 msgid "configuration is saved"
 msgstr "Konfiguration wird gespeichert"
 
+#, python-format
 msgid "max: %s"
 msgstr ""
 
+#, python-format
 msgid "min: %s"
 msgstr ""
 

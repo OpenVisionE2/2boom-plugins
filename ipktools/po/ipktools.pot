@@ -1,46 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, python-format
+msgid "%s"
 msgstr ""
 
 msgid "2boom's IPK tools"
 msgstr ""
 
-msgid "clear /tmp"
+msgid "Adv. UnInstall"
+msgstr ""
+
+msgid "Clear /tmp"
 msgstr ""
 
 msgid "Close"
-msgstr ""
-
-msgid "ipk packets, bh.tgz, tar.gz, nab.tgz installer"
-msgstr ""
-
-msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
-msgstr ""
-
-msgid "install extensions"
-msgstr ""
-
-msgid "install extensions from feed"
-msgstr ""
-
-msgid "download extensions"
-msgstr ""
-
-msgid "dowmload extensions from feed"
-msgstr ""
-
-msgid "ipk packets remover"
-msgstr ""
-
-msgid "remove & advanced remove ipk packets"
-msgstr ""
-
-msgid "Removing files..."
-msgstr ""
-
-msgid "Insatall extensions from feed"
-msgstr ""
-
-msgid "Download extensions from feed"
 msgstr ""
 
 msgid "Download -deps"
@@ -49,25 +39,19 @@ msgstr ""
 msgid "Download -nodeps"
 msgstr ""
 
-msgid "Multi files"
-msgstr ""
-
-msgid "Single file"
-msgstr ""
-
-msgid "MultiSelect Mode"
-msgstr ""
-
-msgid "SingleSelect Mode"
-msgstr ""
-
-msgid "Install"
+msgid "Download extensions from feed"
 msgstr ""
 
 msgid "Forced Install"
 msgstr ""
 
-msgid "Restart"
+msgid "IPK Tools Installer"
+msgstr ""
+
+msgid "Insatall extensions from feed"
+msgstr ""
+
+msgid "Install"
 msgstr ""
 
 msgid "Install packets"
@@ -79,11 +63,47 @@ msgstr ""
 msgid "Ipk remove"
 msgstr ""
 
-msgid "Adv. UnInstall"
+msgid "Multi files"
+msgstr ""
+
+msgid "MultiSelect Mode"
+msgstr ""
+
+msgid "Removing files..."
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Single file"
+msgstr ""
+
+msgid "SingleSelect Mode"
 msgstr ""
 
 msgid "UnInstall"
 msgstr ""
 
-msgid "IPK Tools Installer"
+msgid "dowmload extensions from feed"
+msgstr ""
+
+msgid "download extensions"
+msgstr ""
+
+msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
+msgstr ""
+
+msgid "install extensions"
+msgstr ""
+
+msgid "install extensions from feed"
+msgstr ""
+
+msgid "ipk packets remover"
+msgstr ""
+
+msgid "ipk packets, bh.tgz, tar.gz, nab.tgz installer"
+msgstr ""
+
+msgid "remove & advanced remove ipk packets"
 msgstr ""

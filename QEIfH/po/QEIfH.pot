@@ -1,7 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, python-format
+msgid "%s%s  Kernel: %s (%s)"
+msgstr ""
+
+#, python-format
+msgid "%s, %s Mhz (%d %s) %s"
 msgstr ""
 
 msgid "2boom's QuickEcmInfo for Hotkey"
+msgstr ""
+
+msgid "Free-to-air"
+msgstr ""
+
+msgid "No parse cannot emu"
 msgstr ""
 
 msgid "core"
@@ -10,14 +40,8 @@ msgstr ""
 msgid "cores"
 msgstr ""
 
-msgid "%s, %s Mhz (%d %s) %s"
+msgid "quickecminfo for hotkey extentions"
 msgstr ""
 
 msgid "undefined"
-msgstr ""
-
-msgid "%s%s  Kernel: %s (%s)"
-msgstr ""
-
-msgid "quickecminfo for hotkey extentions"
 msgstr ""

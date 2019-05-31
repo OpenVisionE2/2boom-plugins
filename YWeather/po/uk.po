@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-06 14:27+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,18 +13,23 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
 
-msgid "%3.02f m/s"
-msgstr "%3.02f м/с"
-
+#, python-format
 msgid "%d mmHg"
 msgstr "%d мм рт.ст."
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
+msgid "%s hPa(mbar)"
+msgstr ""
+
+#, python-format
 msgid "%s km"
 msgstr "%s км"
 
-msgid "%s mb"
-msgstr "%s мб"
-
+#, python-format
 msgid "%s%% humidity"
 msgstr "%s%% вологість"
 
@@ -49,14 +54,17 @@ msgstr "5 сек."
 msgid "8 sec"
 msgstr "8 сек."
 
+msgid "Apr."
+msgstr ""
+
+msgid "Aug."
+msgstr ""
+
 msgid "Blowing snow"
 msgstr "Низова хуртовина"
 
 msgid "Blustery"
 msgstr "Буйний вітер"
-
-msgid "Built-in"
-msgstr "Вбудованний"
 
 msgid "City code"
 msgstr "Код населеного пункту"
@@ -67,11 +75,17 @@ msgstr "Назва населеного пункту"
 msgid "Clear (night)"
 msgstr "Безхмарно (в ночі)"
 
+msgid "Close"
+msgstr ""
+
 msgid "Cloudy"
 msgstr "Хмарність"
 
 msgid "Cold"
 msgstr "Холод"
+
+msgid "Dec."
+msgstr ""
 
 msgid "Drizzle"
 msgstr "Мряка"
@@ -79,13 +93,28 @@ msgstr "Мряка"
 msgid "Dust"
 msgstr "Пил"
 
+#, python-format
 msgid "E, %3.02f m/s"
 msgstr "С, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "E, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "ENE, %3.02f m/s"
 msgstr "СПНС, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "ENE, %s km/h"
+msgstr "СПНС, %3.02f м/с"
+
+#, python-format
 msgid "ESE, %3.02f m/s"
+msgstr "СПДС, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "ESE, %s km/h"
 msgstr "СПДС, %3.02f м/с"
 
 msgid "Fair (day)"
@@ -94,6 +123,10 @@ msgstr "Ясно (в день)"
 msgid "Fair (night)"
 msgstr "Ясно (в ночі)"
 
+msgid "Feb."
+msgstr ""
+
+#, python-format
 msgid "Feels: %s"
 msgstr "По відчуттю: %s"
 
@@ -130,8 +163,24 @@ msgstr "Ізольовані грози"
 msgid "Isolated thunderstorms"
 msgstr "Ізольовані грози"
 
+msgid "Jan."
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "Light snow showers"
 msgstr "Легкий снігопад"
+
+msgid "Mar."
+msgstr ""
+
+#, fuzzy
+msgid "May"
+msgstr "Понеділок"
 
 msgid "Mixed rain and hail"
 msgstr "Дощ з градом"
@@ -154,23 +203,60 @@ msgstr "Сильна хмарність (в день)"
 msgid "Mostly cloudy (night)"
 msgstr "Сильна хмарність (в ночь)"
 
+#, python-format
 msgid "N, %3.02f m/s"
 msgstr "ПН, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "N, %s km/h"
+msgstr "%s км"
+
+msgid "N/A"
+msgstr ""
+
+#, python-format
 msgid "NE, %3.02f m/s"
 msgstr "ПНС, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NE, %s km/h"
+msgstr "ПНС, %3.02f м/с"
+
+#, python-format
 msgid "NNE, %3.02f m/s"
 msgstr "ПНПНС, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NNE, %s km/h"
+msgstr "ПНПНС, %3.02f м/с"
+
+#, python-format
 msgid "NNW, %3.02f m/s"
 msgstr "ПНПНЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "NNW, %s km/h"
+msgstr "ПНПНЗ, %3.02f м/с"
+
+#, python-format
 msgid "NW, %3.02f m/s"
+msgstr "ПНЗ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "NW, %s km/h"
 msgstr "ПНЗ, %3.02f м/с"
 
 msgid "Not available"
 msgstr "Не доступно"
+
+msgid "Nov."
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Off"
+msgstr ""
 
 msgid "Partly cloudy"
 msgstr "Часткова хмарність"
@@ -187,23 +273,51 @@ msgstr "Дощ"
 msgid "Restart"
 msgstr "Перезавантаження"
 
+#, python-format
 msgid "S, %3.02f m/s"
 msgstr "ПД, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "S, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "SE, %3.02f m/s"
 msgstr "ПДС, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SE, %s km/h"
+msgstr "ПДС, %3.02f м/с"
+
+#, python-format
 msgid "SSE, %3.02f m/s"
 msgstr "ПДПДС, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SSE, %s km/h"
+msgstr "ПДПДС, %3.02f м/с"
+
+#, python-format
 msgid "SSW, %3.02f m/s"
 msgstr "ПДПДЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "SSW, %s km/h"
+msgstr "ПДПДЗ, %3.02f м/с"
+
+#, python-format
 msgid "SW, %3.02f m/s"
+msgstr "ПДЗ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "SW, %s km/h"
 msgstr "ПДЗ, %3.02f м/с"
 
 msgid "Saturday"
 msgstr "Субота"
+
+msgid "Save"
+msgstr ""
 
 msgid "Scattered showers"
 msgstr "Рідкісні дощі"
@@ -216,6 +330,9 @@ msgstr "Рідкісні грози"
 
 msgid "Select plugin key"
 msgstr "Оберіть кнопку виклику плагіну"
+
+msgid "Sept."
+msgstr ""
 
 msgid "Severe thunderstorms"
 msgstr "Сильна гроза"
@@ -237,21 +354,6 @@ msgstr "Снігопад"
 
 msgid "Snow showers"
 msgstr "Зливовий сніг"
-
-msgid "Style 1"
-msgstr "Стиль 1"
-
-msgid "Style 2"
-msgstr "Стиль 2"
-
-msgid "Style 3"
-msgstr "Стиль 3"
-
-msgid "Style 4"
-msgstr "Стиль 4"
-
-msgid "Style 5"
-msgstr "Стиль 5"
 
 msgid "Sunday"
 msgstr "Неділя"
@@ -283,16 +385,28 @@ msgstr "Вівторок"
 msgid "User skin"
 msgstr "Скін користувача"
 
-msgid "User-def"
-msgstr "Користувальницький"
-
+#, python-format
 msgid "W, %3.02f m/s"
 msgstr "З, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "W, %s km/h"
+msgstr "%s км"
+
+#, python-format
 msgid "WNW, %3.02f m/s"
 msgstr "ЗПНЗ, %3.02f м/с"
 
+#, fuzzy, python-format
+msgid "WNW, %s km/h"
+msgstr "ЗПНЗ, %3.02f м/с"
+
+#, python-format
 msgid "WSW, %3.02f m/s"
+msgstr "ЗПДЗ, %3.02f м/с"
+
+#, fuzzy, python-format
+msgid "WSW, %s km/h"
 msgstr "ЗПДЗ, %3.02f м/с"
 
 msgid "Weather icons style"
@@ -310,9 +424,11 @@ msgstr "Вітер"
 msgid "configuration is saved"
 msgstr "конфігурація збережена"
 
+#, python-format
 msgid "max: %s"
 msgstr "макс: %s"
 
+#, python-format
 msgid "min: %s"
 msgstr "мін: %s"
 

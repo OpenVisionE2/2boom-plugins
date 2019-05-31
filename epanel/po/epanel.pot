@@ -1,49 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid " newcamd.list"
+msgid "%Y-%m-%d"
 msgstr ""
 
-msgid "Restart"
+msgid "%Y-%m-%d %H:%M"
 msgstr ""
 
-msgid "%s  %s  %s (%s free  %s used)"
+#, python-format
+msgid "%s"
 msgstr ""
 
+#, python-format
 msgid "%s  %s  (%03d MB free)\n"
 msgstr ""
 
+#, python-format
 msgid "%s  %s  (%d.%03d GB free)\n"
 msgstr ""
 
-msgid "%s downloaded Successfull"
+#, python-format
+msgid "%s %s"
 msgstr ""
 
-msgid "%s downloaded UnSuccessfull"
+#, python-format
+msgid "%s Switcher: - %s"
 msgstr ""
 
-msgid "%s hours"
+#, python-format
+msgid "%s downloading"
 msgstr ""
 
-msgid "%s is UnInstalled"
+#, python-format
+msgid "%s loaded in memory"
 msgstr ""
 
-msgid "%s is downloaded"
+#, python-format
+msgid "%s not respond"
 msgstr ""
 
-msgid "%s is installed"
+#, python-format
+msgid "%s, %s Mhz (%d %s) %s"
 msgstr ""
 
-msgid "%s min"
-msgstr ""
-
+#, python-format
 msgid "%s.gz created in /tmp"
 msgstr ""
 
-msgid "*.tar.gz & *.bh.tgz & *.ipk removed"
+msgid "/etc/hosts editor"
+msgstr ""
+
+msgid "/home/root"
+msgstr ""
+
+msgid "/home/root/logs"
+msgstr ""
+
+msgid "/media/hdd"
+msgstr ""
+
+msgid "/media/hdd/logs"
+msgstr ""
+
+msgid "/media/hdd/script/"
+msgstr ""
+
+msgid "/media/usb/script/"
+msgstr ""
+
+msgid "/tmp"
+msgstr ""
+
+msgid "/usr/script/"
 msgstr ""
 
 msgid "120 min"
+msgstr ""
+
+msgid "15 min"
 msgstr ""
 
 msgid "180 min"
@@ -55,43 +105,31 @@ msgstr ""
 msgid "30 min"
 msgstr ""
 
-msgid "15 min"
-msgstr ""
-
 msgid "45 min"
 msgstr ""
 
 msgid "60 min"
 msgstr ""
 
-msgid "Active Profile:"
-msgstr ""
-
-msgid "Active SoftCam:"
-msgstr ""
-
 msgid "Add"
 msgstr ""
 
-msgid "Add own biss in keyfile"
+msgid "Add onid"
 msgstr ""
 
-msgid "add tabs - %s"
+msgid "Add record"
+msgstr ""
+
+msgid "Add tabs"
+msgstr ""
+
+msgid "Adding startscript..."
 msgstr ""
 
 msgid "Adv. UnInstall"
 msgstr ""
 
-msgid "Allready running %s"
-msgstr ""
-
 msgid "Angola"
-msgstr ""
-
-msgid "Apply the new System time?"
-msgstr ""
-
-msgid "Applying"
 msgstr ""
 
 msgid "Apr."
@@ -109,22 +147,13 @@ msgstr ""
 msgid "Austria"
 msgstr ""
 
-msgid "AutoDownload epg.dat"
+msgid "Auto"
 msgstr ""
 
-msgid "AutoDownload time"
+msgid "Autotime cache flush"
 msgstr ""
 
-msgid "AutoDownload weekday"
-msgstr ""
-
-msgid "Autobackup to ../epgtmp.gz"
-msgstr ""
-
-msgid "Automatic save/load EPG"
-msgstr ""
-
-msgid "BackUp"
+msgid "Azerbaidjan"
 msgstr ""
 
 msgid "Bahamas"
@@ -142,7 +171,29 @@ msgstr ""
 msgid "Brazil"
 msgstr ""
 
+#, python-format
+msgid "Buffers: %s Kb  Cached: %s Kb"
+msgstr ""
+
 msgid "Bulgaria"
+msgstr ""
+
+msgid "CCcam config filename"
+msgstr ""
+
+msgid "CCcam config switcher"
+msgstr ""
+
+msgid "CCcam configfile extention"
+msgstr ""
+
+msgid "CCcam configpath"
+msgstr ""
+
+msgid "Cache Flush"
+msgstr ""
+
+msgid "Cache flushed"
 msgstr ""
 
 msgid "Canada"
@@ -151,25 +202,19 @@ msgstr ""
 msgid "Cardserver:"
 msgstr ""
 
-msgid "Change system time was canceled, because %s"
-msgstr ""
-
-msgid "Changelog"
-msgstr ""
-
-msgid "Check if epg.dat exists"
-msgstr ""
-
-msgid "Check your internet connection"
-msgstr ""
-
-msgid "Check your system and reboot"
+msgid "Check epg.dat exists"
 msgstr ""
 
 msgid "Chile"
 msgstr ""
 
 msgid "China"
+msgstr ""
+
+msgid "Choice"
+msgstr ""
+
+msgid "Choice epg.dat source"
 msgstr ""
 
 msgid "Clear /tmp"
@@ -181,22 +226,32 @@ msgstr ""
 msgid "Command"
 msgstr ""
 
-msgid "Config"
-msgstr ""
-
-msgid "Config script Executer"
-msgstr ""
-
 msgid "Crashlog viewer"
+msgstr ""
+
+msgid "Crashlog viewer path"
+msgstr ""
+
+msgid "Creating None script..."
+msgstr ""
+
+msgid "Creating..."
+msgstr ""
+
+msgid "Cron"
 msgstr ""
 
 msgid "Cron Manager"
 msgstr ""
 
+#, python-format
 msgid "CtronTab Manager - %s"
 msgstr ""
 
 msgid "Czech Republic"
+msgstr ""
+
+msgid "DNS updating..."
 msgstr ""
 
 msgid "Day of month"
@@ -211,12 +266,6 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-msgid "Detected NIMs:"
-msgstr ""
-
-msgid "Devices:"
-msgstr ""
-
 msgid "Download"
 msgstr ""
 
@@ -229,22 +278,49 @@ msgstr ""
 msgid "Download EPG"
 msgstr ""
 
+msgid "Download epg.dat successful"
+msgstr ""
+
 msgid "Download extensions from feed"
+msgstr ""
+
+msgid "Download url"
 msgstr ""
 
 msgid "Driver Version:"
 msgstr ""
 
+msgid "Dynamic DNS"
+msgstr ""
+
+msgid "E-CCcam.Cfg switcher"
+msgstr ""
+
 msgid "E-Crashlog viewer"
+msgstr ""
+
+msgid "E-EPG Downloader"
+msgstr ""
+
+msgid "E-Flush cache"
+msgstr ""
+
+msgid "E-Info"
 msgstr ""
 
 msgid "E-Installer"
 msgstr ""
 
-msgid "E-Ipk Installer"
+msgid "E-Installer: Selection mode"
+msgstr ""
+
+msgid "E-Installer: User directory on mount device"
 msgstr ""
 
 msgid "E-Newcamd.list switcher"
+msgstr ""
+
+msgid "E-Oscam.conf switcher"
 msgstr ""
 
 msgid "E-Panel"
@@ -256,16 +332,10 @@ msgstr ""
 msgid "E-Panel Menu/Extensionmenu config"
 msgstr ""
 
-msgid "E-Panel for OpenPli"
+msgid "E-Panel Universal Switcher"
 msgstr ""
 
-msgid "E-Panel for OpenPli Ver:"
-msgstr ""
-
-msgid "E-Panel for Pli"
-msgstr ""
-
-msgid "E-Reload epg.dat"
+msgid "E-Panel Ver:"
 msgstr ""
 
 msgid "E-Script Executer"
@@ -274,28 +344,23 @@ msgstr ""
 msgid "E-SoftCam manager"
 msgstr ""
 
-msgid "E-Tar.gz Installer"
-msgstr ""
-
 msgid "E-Unmount USB"
 msgstr ""
 
 msgid "E-Wicardd.conf switcher"
 msgstr ""
 
+msgid "E-script path"
+msgstr ""
+
 msgid "EPG Downloader"
 msgstr ""
 
-msgid "EPG downloaded"
+#, python-format
+msgid "EPG from %s"
 msgstr ""
 
-msgid "Error dowload CardServer list"
-msgstr ""
-
-msgid "Error dowload SoftCam list"
-msgstr ""
-
-msgid "Error list ipk aviable"
+msgid "Enter a value in hexadecimal format"
 msgstr ""
 
 msgid "Estonia"
@@ -304,7 +369,7 @@ msgstr ""
 msgid "Every"
 msgstr ""
 
-msgid "Failed remove"
+msgid "Failure..."
 msgstr ""
 
 msgid "Feb."
@@ -319,6 +384,9 @@ msgstr ""
 msgid "Flash:"
 msgstr ""
 
+msgid "Flush Now"
+msgstr ""
+
 msgid "Forced Install"
 msgstr ""
 
@@ -326,6 +394,9 @@ msgid "Fr"
 msgstr ""
 
 msgid "France"
+msgstr ""
+
+msgid "GStreamer:"
 msgstr ""
 
 msgid "Germany"
@@ -337,22 +408,25 @@ msgstr ""
 msgid "Guatemala"
 msgstr ""
 
-msgid "HDD go sleep"
-msgstr ""
-
-msgid "HDD sleep"
-msgstr ""
-
 msgid "Hardware:"
 msgstr ""
 
 msgid "Hong Kong"
 msgstr ""
 
+msgid "Hostname"
+msgstr ""
+
+msgid "Hosts editor"
+msgstr ""
+
 msgid "Hour"
 msgstr ""
 
 msgid "Hungary"
+msgstr ""
+
+msgid "IP address:"
 msgstr ""
 
 msgid "IPK Tools"
@@ -367,22 +441,22 @@ msgstr ""
 msgid "Indonesia"
 msgstr ""
 
-msgid "Insatall extensions from feed"
-msgstr ""
-
 msgid "Install"
 msgstr ""
 
 msgid "Install & Remove Plugins, Addons, Softcams"
 msgstr ""
 
-msgid "Install All"
+msgid "Install extensions from feed"
 msgstr ""
 
 msgid "Install packets"
 msgstr ""
 
 msgid "Install tar.gz, bh.tgz, nab.tgz"
+msgstr ""
+
+msgid "Installed Date:"
 msgstr ""
 
 msgid "Ipk remove"
@@ -406,13 +480,16 @@ msgstr ""
 msgid "Japan"
 msgstr ""
 
-msgid "Jul."
+msgid "Jul"
 msgstr ""
 
 msgid "Jun."
 msgstr ""
 
 msgid "Kazakhstan"
+msgstr ""
+
+msgid "Kernel Drivers in Memory"
 msgstr ""
 
 msgid "Kernel Modules Manager"
@@ -436,6 +513,7 @@ msgstr ""
 msgid "Load/UnLoad"
 msgstr ""
 
+#, python-format
 msgid "Loaded %s.ko"
 msgstr ""
 
@@ -443,6 +521,9 @@ msgid "LsMod"
 msgstr ""
 
 msgid "Luxembourg"
+msgstr ""
+
+msgid "MAC (lan/wlan):"
 msgstr ""
 
 msgid "Macedonia"
@@ -454,12 +535,15 @@ msgstr ""
 msgid "Make swap"
 msgstr ""
 
+#, python-format
 msgid "Make swap on %s (128MB)"
 msgstr ""
 
+#, python-format
 msgid "Make swap on %s (256MB)"
 msgstr ""
 
+#, python-format
 msgid "Make swap on %s (512MB)"
 msgstr ""
 
@@ -472,31 +556,32 @@ msgstr ""
 msgid "Manage Dropbear SSH service"
 msgstr ""
 
-msgid "Manage Ftp service"
+msgid "Manage Internet superserver (inetd)"
 msgstr ""
 
-msgid "Manage Internet superserver (inetd)"
+msgid "Manage Livestreamer service"
 msgstr ""
 
 msgid "Manage Networking service"
 msgstr ""
 
-msgid "Manage Samba service"
-msgstr ""
-
-msgid "Manage Swap"
-msgstr ""
-
+#, python-format
 msgid "Manage Swap on %s"
 msgstr ""
 
 msgid "Manage Syslog/klogd service"
 msgstr ""
 
+msgid "Manage Udpxy service"
+msgstr ""
+
 msgid "Manage epg, ntp, unmount, script, info ..."
 msgstr ""
 
 msgid "Manual"
+msgstr ""
+
+msgid "Manual Donwloading epg.dat.gz error"
 msgstr ""
 
 msgid "Manual Installer/Uninstaller"
@@ -514,7 +599,16 @@ msgstr ""
 msgid "Mexico"
 msgstr ""
 
-msgid "MgCamd Restarted"
+msgid "Mgcamd config filename"
+msgstr ""
+
+msgid "Mgcamd config switcher"
+msgstr ""
+
+msgid "Mgcamd configfile extention"
+msgstr ""
+
+msgid "Mgcamd configpath"
 msgstr ""
 
 msgid "Min"
@@ -529,6 +623,12 @@ msgstr ""
 msgid "Month"
 msgstr ""
 
+msgid "Multi files"
+msgstr ""
+
+msgid "MultiSelect Mode"
+msgstr ""
+
 msgid "Name of keyfile"
 msgstr ""
 
@@ -538,10 +638,10 @@ msgstr ""
 msgid "New Zealand"
 msgstr ""
 
-msgid "Norway"
+msgid "No"
 msgstr ""
 
-msgid "Not Active"
+msgid "Norway"
 msgstr ""
 
 msgid "Not Installed"
@@ -556,6 +656,24 @@ msgstr ""
 msgid "Oct."
 msgstr ""
 
+msgid "Off"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Oscam config filename"
+msgstr ""
+
+msgid "Oscam config switcher"
+msgstr ""
+
+msgid "Oscam configfile extention"
+msgstr ""
+
+msgid "Oscam configpath"
+msgstr ""
+
 msgid "Pakistan"
 msgstr ""
 
@@ -565,22 +683,16 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-msgid "Patch enigma2.sh (need restart enigma2)"
+msgid "Path to save keyfile"
 msgstr ""
 
-msgid "Path to save keyfile"
+msgid "Periodicity checks"
 msgstr ""
 
 msgid "Philippines"
 msgstr ""
 
-msgid "Please wait, restarting %s"
-msgstr ""
-
-msgid "Please wait, starting %s"
-msgstr ""
-
-msgid "Please wait, stoping softcam or cardserver"
+msgid "Please wait"
 msgstr ""
 
 msgid "Plugin Browser"
@@ -589,25 +701,19 @@ msgstr ""
 msgid "Poland"
 msgstr ""
 
-msgid "Port(s) (single  xxxxx or range xxxxx:xxxxx)"
+msgid "Portugal"
 msgstr ""
 
-msgid "Portugal"
+msgid "Processor:"
+msgstr ""
+
+msgid "Python:"
 msgstr ""
 
 msgid "ReStart"
 msgstr ""
 
-msgid "ReStart Both"
-msgstr ""
-
 msgid "Reboot"
-msgstr ""
-
-msgid "Reload"
-msgstr ""
-
-msgid "Reload epg.dat"
 msgstr ""
 
 msgid "Remove"
@@ -616,40 +722,58 @@ msgstr ""
 msgid "Remove All"
 msgstr ""
 
+msgid "Remove onid"
+msgstr ""
+
+msgid "Remove record"
+msgstr ""
+
 msgid "Remove swap"
 msgstr ""
 
+#, python-format
 msgid "Remove swap on %s (%s)"
 msgstr ""
 
 msgid "Remove tabs"
 msgstr ""
 
+#, python-format
 msgid "Removed %s"
 msgstr ""
 
 msgid "Removed All Crashlog Files"
 msgstr ""
 
-msgid "Restart GUI"
+msgid "Removing ecm.info..."
 msgstr ""
 
-msgid "Restart MgCamd"
+msgid "Removing files..."
+msgstr ""
+
+msgid "Removing startscript..."
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Restart GUI"
 msgstr ""
 
 msgid "Restart Softcam"
 msgstr ""
 
+#, python-format
 msgid "Restarting %s service"
 msgstr ""
 
-msgid "Restarting ..."
-msgstr ""
-
-msgid "Restore epg.dat"
+msgid "Restarting..."
 msgstr ""
 
 msgid "Romania"
+msgstr ""
+
+msgid "Run"
 msgstr ""
 
 msgid "Russian Federation"
@@ -658,22 +782,17 @@ msgstr ""
 msgid "Sa"
 msgstr ""
 
-msgid "Save epg.dat"
-msgstr ""
-
-msgid "Saved"
+msgid "Save"
 msgstr ""
 
 msgid "Script Executer"
 msgstr ""
 
-msgid "Scripts"
+msgid "Select DDNS server"
 msgstr ""
 
+#, python-format
 msgid "Select SoftCam or CardServer: - %s"
-msgstr ""
-
-msgid "Select install files"
 msgstr ""
 
 msgid "Select path to save epg.dat"
@@ -682,25 +801,34 @@ msgstr ""
 msgid "Sep."
 msgstr ""
 
-msgid "Server (ip or name)"
-msgstr ""
-
 msgid "Service Manager"
 msgstr ""
 
 msgid "Service Tools"
 msgstr ""
 
+msgid "Set EPG filename"
+msgstr ""
+
 msgid "Set Transponder time update"
+msgstr ""
+
+msgid "Set autoupdate epg.dat"
+msgstr ""
+
+msgid "Set cache flush mode"
 msgstr ""
 
 msgid "Set choice server mode"
 msgstr ""
 
+msgid "Set date"
+msgstr ""
+
 msgid "Set manual ntp server address"
 msgstr ""
 
-msgid "Set script path"
+msgid "Set time"
 msgstr ""
 
 msgid "Set time to update"
@@ -709,13 +837,22 @@ msgstr ""
 msgid "Set your country"
 msgstr ""
 
+msgid "ShadowRun"
+msgstr ""
+
 msgid "Show E-CrashLog viewr in ExtensionMenu"
 msgstr ""
 
-msgid "Show E-Installer in ExtensionMenu"
+msgid "Show E-EPG Downloader in ExtensionMenu"
 msgstr ""
 
-msgid "Show E-NewCamd.list switcher in ExtensionMenu"
+msgid "Show E-Flash Cache in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Info in ExtensionMenu"
+msgstr ""
+
+msgid "Show E-Installer in ExtensionMenu"
 msgstr ""
 
 msgid "Show E-Panel in ExtensionMenu"
@@ -733,25 +870,19 @@ msgstr ""
 msgid "Show E-Usb Unmount in ExtensionMenu"
 msgstr ""
 
-msgid "Show E-Wicardd.conf switcher in ExtensionMenu"
-msgstr ""
-
-msgid "Show PluginBrowser in E-Panel MainMenu"
-msgstr ""
-
-msgid "Show reload epg.dat in ExtensionMenu"
-msgstr ""
-
-msgid "Simple Cardserver"
-msgstr ""
-
-msgid "Simple Softcam"
+msgid "Show EIT now/next in infobar"
 msgstr ""
 
 msgid "Simple Softcam/Cardserver"
 msgstr ""
 
 msgid "Singapore"
+msgstr ""
+
+msgid "Single file"
+msgstr ""
+
+msgid "SingleSelect Mode"
 msgstr ""
 
 msgid "Slovakia"
@@ -761,6 +892,9 @@ msgid "Slovenia"
 msgstr ""
 
 msgid "SoftCam.Key Updater"
+msgstr ""
+
+msgid "SoftCam.Key server"
 msgstr ""
 
 msgid "SoftCam/CardServer Panel"
@@ -775,9 +909,6 @@ msgstr ""
 msgid "Softcam:"
 msgstr ""
 
-msgid "Sorry, the EPG download error"
-msgstr ""
-
 msgid "South Africa"
 msgstr ""
 
@@ -787,19 +918,10 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-msgid "Start Samba"
-msgstr ""
-
 msgid "Start scripts from /usr/script"
 msgstr ""
 
 msgid "Start, Stop, Create, Remove Swap file"
-msgstr ""
-
-msgid "Start, Stop, Restart Cardserver"
-msgstr ""
-
-msgid "Start, Stop, Restart Sofcam"
 msgstr ""
 
 msgid "Start, Stop, Restart Sofcam/Cardserver"
@@ -811,22 +933,30 @@ msgstr ""
 msgid "StartUp synchronization"
 msgstr ""
 
+#, python-format
 msgid "Starting %s service"
 msgstr ""
 
-msgid "Status:"
+msgid "Starting..."
 msgstr ""
 
 msgid "Stop"
 msgstr ""
 
+#, python-format
 msgid "Stoping %s service"
+msgstr ""
+
+msgid "Stoping..."
 msgstr ""
 
 msgid "Su"
 msgstr ""
 
-msgid "Swap file created"
+msgid "Success..."
+msgstr ""
+
+msgid "Swap Manager"
 msgstr ""
 
 msgid "Swap file removed"
@@ -844,9 +974,11 @@ msgstr ""
 msgid "Swap on"
 msgstr ""
 
+#, python-format
 msgid "Swap on %s off (%s)"
 msgstr ""
 
+#, python-format
 msgid "Swap on %s on (%s)"
 msgstr ""
 
@@ -859,40 +991,37 @@ msgstr ""
 msgid "Sweden"
 msgstr ""
 
+msgid "Switch cccam condig with remote control"
+msgstr ""
+
 msgid "Switch newcamd.list with remote conrol"
+msgstr ""
+
+msgid "Switch oscam condig with remote control"
 msgstr ""
 
 msgid "Switch wicardd.conf with remote conrol"
 msgstr ""
 
-msgid "Switzerland"
+msgid "Switcher"
 msgstr ""
 
-msgid "Azerbaidjan"
+msgid "Switzerland"
 msgstr ""
 
 msgid "Synchronization NTP"
 msgstr ""
 
-msgid "Synchronization NTP time"
-msgstr ""
-
-msgid "Synchronization Now"
-msgstr ""
-
-msgid "Synchronization activated"
-msgstr ""
-
 msgid "Synchronization ntp every 30 min,60 min,120 min, 240 min and Now"
-msgstr ""
-
-msgid "Synchronized"
 msgstr ""
 
 msgid "System Info"
 msgstr ""
 
 msgid "System Tools"
+msgstr ""
+
+msgid "System Tools 2"
 msgstr ""
 
 msgid "System info"
@@ -913,7 +1042,12 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
+#, python-format
 msgid "Total: %s Kb  Free: %s Kb"
+msgstr ""
+
+#, python-format
+msgid "Total: %s Kb  Free: %s Kb (%s %%)"
 msgstr ""
 
 msgid "Tu"
@@ -925,15 +1059,10 @@ msgstr ""
 msgid "Ukraine"
 msgstr ""
 
-msgid "Ukrainian"
-msgstr ""
-
 msgid "UnInstall"
 msgstr ""
 
-msgid "UnInstall Ipk"
-msgstr ""
-
+#, python-format
 msgid "UnLoaded %s.ko"
 msgstr ""
 
@@ -955,22 +1084,29 @@ msgstr ""
 msgid "United States"
 msgstr ""
 
+msgid "Universal Switcher"
+msgstr ""
+
 msgid "Unmount manager"
 msgstr ""
 
 msgid "Unmount usb devices"
 msgstr ""
 
+#, python-format
 msgid "Unmounted %s"
-msgstr ""
-
-msgid "Unmounted %s Unsucessfull"
 msgstr ""
 
 msgid "Update Now"
 msgstr ""
 
+msgid "Update Time"
+msgstr ""
+
 msgid "User Scripts"
+msgstr ""
+
+msgid "Username"
 msgstr ""
 
 msgid "Uzbekistan"
@@ -980,6 +1116,9 @@ msgid "Vietnam"
 msgstr ""
 
 msgid "View"
+msgstr ""
+
+msgid "View Crashlog file"
 msgstr ""
 
 msgid "View System Settings (/etc/enigma2/settings)"
@@ -994,25 +1133,49 @@ msgstr ""
 msgid "We"
 msgstr ""
 
-msgid "bad day %s"
+msgid "Wicardd config filename"
 msgstr ""
 
-msgid "bad format"
+msgid "Wicardd config switcher"
 msgstr ""
 
-msgid "bad hour %s"
+msgid "Wicardd configfile extention"
 msgstr ""
 
-msgid "bad minute %s"
+msgid "Wicardd configpath"
 msgstr ""
 
-msgid "bad month %s"
+msgid "Yes"
 msgstr ""
 
-msgid "bad year %s"
+msgid "Zram swap is on"
 msgstr ""
 
-msgid "clear /tmp"
+#, python-format
+msgid "add onid - %s"
+msgstr ""
+
+msgid "add record"
+msgstr ""
+
+#, python-format
+msgid "add tabs - %s"
+msgstr ""
+
+msgid "add/remove records in /etc/hosts"
+msgstr ""
+
+msgid "alias"
+msgstr ""
+
+#, python-format
+msgid "blacklist.onid Manager - %s"
+msgstr ""
+
+msgid "cache flush, DDNS sync"
+msgstr ""
+
+msgid "changeip.com"
 msgstr ""
 
 msgid "config menu and extentionsmenu for E-Panel items"
@@ -1021,37 +1184,40 @@ msgstr ""
 msgid "configuration is saved"
 msgstr ""
 
+msgid "core"
+msgstr ""
+
+msgid "cores"
+msgstr ""
+
 msgid "dowmload extensions from feed"
 msgstr ""
 
 msgid "download extensions"
 msgstr ""
 
-msgid "download from: %s"
+msgid "drop system cache"
 msgstr ""
 
-msgid "ecm.info Viewer"
+msgid "e-panel_"
 msgstr ""
 
-msgid "ecm.info file viewer"
+msgid "error..."
 msgstr ""
 
-msgid "ecm.info viewer"
+msgid "free dentries and inodes"
 msgstr ""
 
-msgid "epg.dat reloaded"
+msgid "free pagecache"
 msgstr ""
 
-msgid "epg.dat restored"
+msgid "free pagecache, dentries and inodes"
 msgstr ""
 
-msgid "epg.dat saved"
+msgid "host name"
 msgstr ""
 
 msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
-msgstr ""
-
-msgid "install & remove ipk, tar.gz, bh.tgz packets"
 msgstr ""
 
 msgid "install extensions"
@@ -1063,6 +1229,9 @@ msgstr ""
 msgid "install/uninstall local .ipk & .tar.gz files from /tmp"
 msgstr ""
 
+msgid "ip address"
+msgstr ""
+
 msgid "ipk packets remover"
 msgstr ""
 
@@ -1072,220 +1241,57 @@ msgstr ""
 msgid "kernel modules manager, manage swap, ftp, samba, unmount USB"
 msgstr ""
 
+#, python-format
+msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
+msgstr ""
+
+msgid "last epg.dat updated - not yet"
+msgstr ""
+
 msgid "load & unload kernel modules"
 msgstr ""
 
-msgid "login"
+msgid "no-ip.com"
 msgstr ""
 
-msgid "manual"
+msgid "none"
 msgstr ""
 
-msgid "new time not available"
+msgid "not loaded modules"
 msgstr ""
 
-msgid "newcamd.list Editor"
-msgstr ""
-
-msgid "newcamd.list Switcher"
-msgstr ""
-
-msgid "newcamd.list Switcher: - %s"
-msgstr ""
-
-msgid "newcamd.list editor"
-msgstr ""
-
-msgid "no"
-msgstr ""
-
-msgid "not confirmed"
-msgstr ""
-
-msgid "press OK to enable/disable server"
-msgstr ""
-
-msgid "quick newcamd.list editor"
-msgstr ""
-
-msgid "reFresh"
-msgstr ""
-
-msgid "reload epg.dat failed"
-msgstr ""
-
-msgid "remove & advanced remove ipk packets"
-msgstr ""
-
-msgid "Removing files..."
-msgstr ""
-
-msgid "remove *.ipk & *.tar.gz & *.bh.tgz & *.nab.tgz from /tmp"
-msgstr ""
-
-msgid "remove *.ipk & *.tar.gz from /tmp"
-msgstr ""
-
-msgid "running"
-msgstr ""
-
-msgid "server: %s"
-msgstr ""
-
-msgid "simple tools for Pli image"
-msgstr ""
-
-msgid "size: %s  %s"
-msgstr ""
-
-msgid "stopping"
-msgstr ""
-
-msgid "system info (free, dh -f, hosts)"
-msgstr ""
-
-msgid "update Softcam.key from internet"
-msgstr ""
-
-msgid "update time from internet"
-msgstr ""
-
-msgid "view & remove crashlog files"
-msgstr ""
-
-msgid "view system settings"
-msgstr ""
-
-msgid "yes"
-msgstr ""
-
-msgid "SoftCam.Key server"
-msgstr ""
-
-msgid "%s Switcher: - %s"
-msgstr ""
-
-msgid "Mgcamd config switcher"
-msgstr ""
-
-msgid "Mgcamd configpath"
-msgstr ""
-
-msgid "Mgcamd config filename"
-msgstr ""
-
-msgid "Mgcamd configfile extention"
-msgstr ""
-
-msgid "Wicardd config switcher"
-msgstr ""
-
-msgid "Wicardd configpath"
-msgstr ""
-
-msgid "Wicardd config filename"
-msgstr ""
-
-msgid "Wicardd configfile extention"
-msgstr ""
-
-msgid "Oscam config switcher"
-msgstr ""
-
-msgid "CCcam config switcher"
-msgstr ""
-
-msgid "CCcam configpath"
-msgstr ""
-
-msgid "CCcam config filename"
-msgstr ""
-
-msgid "CCcam configfile extention"
-msgstr ""
-
-msgid "Oscam configpath"
-msgstr ""
-
-msgid "Oscam config filename"
-msgstr ""
-
-msgid "Oscam configfile extention"
-msgstr ""
-
-msgid "E-Oscam.conf switcher"
-msgstr ""
-
-msgid "E-CCcam.Cfg switcher"
-msgstr ""
-
-msgid "Universal Switcher"
-msgstr ""
-
-msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
-msgstr ""
-
-msgid "Swap Manager"
-msgstr ""
-
-msgid "Switcher"
-msgstr ""
-
-msgid "E-EPG Downloader"
-msgstr ""
-
-msgid "Show E-EPG Downloader in ExtensionMenu"
-msgstr ""
-
-msgid "Zram swap is on"
+msgid "onid Man"
 msgstr ""
 
 msgid "press Close for Exit"
 msgstr ""
 
-msgid "Update to plugin list"
+msgid "reFresh"
 msgstr ""
 
-msgid "E-Installer: User directory on mount device"
-msgstr ""
-
-msgid "E-Installer: Selection mode"
-msgstr ""
-
-msgid "Multi files"
-msgstr ""
-
-msgid "Single file"
-msgstr ""
-
-msgid "MultiSelect Mode"
-msgstr ""
-
-msgid "SingleSelect Mode"
-msgstr ""
-
-msgid "Failure..."
-msgstr ""
-
-msgid "Please wait, downloading epg.dat"
-msgstr ""
-
-msgid "Select source epg.dat"
-msgstr ""
-
-msgid "Crashlog viewer path"
-msgstr ""
-
-msgid "Add tabs"
-msgstr ""
-
-msgid "Please wait"
-msgstr ""
-
-msgid "E-script path"
+msgid "remove & advanced remove ipk packets"
 msgstr ""
 
 msgid "set of utilities for enigma2"
+msgstr ""
+
+#, python-format
+msgid "size: %s  %s"
+msgstr ""
+
+msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
+msgstr ""
+
+msgid "synchronization settings DDNS"
+msgstr ""
+
+msgid "synchronizing..."
+msgstr ""
+
+msgid "system info (free, dh -f, hosts)"
+msgstr ""
+
+msgid "the script is running in the background..."
 msgstr ""
 
 msgid "unavailable"
@@ -1297,254 +1303,24 @@ msgstr ""
 msgid "unknown"
 msgstr ""
 
-msgid "Donwloading epg.dat from %s"
+msgid "update Softcam.key from internet"
 msgstr ""
 
-msgid "Stoping..."
-msgstr ""
-
-msgid "Removing startscript..."
-msgstr ""
-
-msgid "Removing ecm.info..."
-msgstr ""
-
-msgid "Adding startscript..."
-msgstr ""
-
-msgid "Starting..."
-msgstr ""
-
-msgid "Restarting..."
-msgstr ""
-
-msgid "Creating None script..."
-msgstr ""
-
-msgid "synchronizing..."
-msgstr ""
-
-msgid "Hosts editor"
-msgstr ""
-
-msgid "add/remove records in /etc/hosts"
-msgstr ""
-
-msgid "Add record"
-msgstr ""
-
-msgid "Remove record"
-msgstr ""
-
-msgid "ip address"
-msgstr ""
-
-msgid "host name"
-msgstr ""
-
-msgid "alias"
-msgstr ""
-
-msgid "add record"
-msgstr ""
-
-msgid "/etc/hosts editor"
-msgstr ""
-
-msgid "Success..."
-msgstr ""
-
-msgid "Restore EPG with enigma2 start"
-msgstr ""
-
-msgid "Manage Udpxy service"
-msgstr ""
-
-msgid "Manage Livestreamer service"
-msgstr ""
-
-msgid "Creating..."
-msgstr ""
-
-msgid "%s loaded in memory"
-msgstr ""
-
-msgid "not loaded modules"
-msgstr ""
-
-msgid "System Tools 2"
-msgstr ""
-
-msgid "Cache Flush"
-msgstr ""
-
-msgid "Flush Now"
-msgstr ""
-
-msgid "Autotime cache flush"
-msgstr ""
-
-msgid "Set cache flush mode"
-msgstr ""
-
-msgid "Buffers: %s Kb  Cached: %s Kb"
-msgstr ""
-
-msgid "Cache flushed"
-msgstr ""
-
-msgid "free pagecache, dentries and inodes"
-msgstr ""
-
-msgid "free pagecache"
-msgstr ""
-
-msgid "free dentries and inodes"
-msgstr ""
-
-msgid "Show E-Flash Cache in ExtensionMenu"
-msgstr ""
-
-msgid "E-Flush cache"
-msgstr ""
-
-msgid "drop system cache"
-msgstr ""
-
-msgid "Total: %s Kb  Free: %s Kb (%s %%)"
-msgstr ""
-
-msgid "%s, %s Mhz (%d %s)"
-msgstr ""
-
-msgid "Processor:"
-msgstr ""
-
-msgid "core"
-msgstr ""
-
-msgid "cores"
-msgstr ""
-
-msgid "Dynamic DNS"
-msgstr ""
-
-msgid "synchronization settings DDNS"
-msgstr ""
-
-msgid "Select DDNS server"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-msgid "Hostname"
-msgstr ""
-
-msgid "Update Time"
-msgstr ""
-
-msgid "DNS updating..."
-msgstr ""
-
-msgid "cache flush, DDNS sync"
-msgstr ""
-
-msgid "E-Panel Universal Switcher"
+#, python-format
+msgid "update error epg.dat - %02d:%02d:%d %02d:%02d:%02d"
 msgstr ""
 
 msgid "update script not found..."
 msgstr ""
 
-msgid "Run"
-msgstr ""
-
-msgid "ShadowRun"
-msgstr ""
-
-msgid "the script is running in the background..."
-msgstr ""
-
-msgid "IP address:"
-msgstr ""
-
-msgid "EPG from %s"
-msgstr ""
-
-msgid "Set EPG filename"
-msgstr ""
-
-msgid "Download url"
-msgstr ""
-
-msgid "Check epg.dat exists"
-msgstr ""
-
-msgid "Donwloading epg.dat.gz"
-msgstr ""
-
-msgid "Unzipping epg.dat.gz"
-msgstr ""
-
-msgid "Download epg.dat successful"
-msgstr ""
-
-msgid "Donwloading epg.dat.gz error"
-msgstr ""
-
-msgid "Periodicity checks"
-msgstr ""
-
-msgid "Show status message"
-msgstr ""
-
-msgid "last epg.dat updated - not yet"
-msgstr ""
-
-msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
-msgstr ""
-
-msgid "Set autoupdate epg.dat"
-msgstr ""
-
-msgid "Show E-Info in ExtensionMenu"
-msgstr ""
-
-msgid "E-Info"
-msgstr ""
-
-msgid "update error epg.dat - %02d:%02d:%d %02d:%02d:%02d"
-msgstr ""
-
-msgid "onid Man"
-msgstr ""
-
-msgid "blacklist.onid Manager - %s"
-msgstr ""
-
-msgid "Add onid"
-msgstr ""
-
-msgid "Remove onid"
-msgstr ""
-
-msgid "Enter a value in hexadecimal format"
-msgstr ""
-
-msgid "add onid - %s"
+msgid "value is not hex"
 msgstr ""
 
 msgid "value saved"
 msgstr ""
 
-msgid "value is not hex"
+msgid "view & remove crashlog files"
 msgstr ""
 
-msgid "configuration default"
-msgstr ""
-
-msgid "Choice epg.dat source"
-msgstr ""
-
-msgid "Choice"
+msgid "view system settings"
 msgstr ""

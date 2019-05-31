@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RemountNetShare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2012-10-22 16:55+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -16,11 +16,8 @@ msgstr ""
 msgid "2boom's RemountNetShare"
 msgstr "Перемонтирование сетевых подключений"
 
-msgid "Disabled"
-msgstr "Выключено"
-
-msgid "Enabled"
-msgstr "Включено"
+msgid "Close"
+msgstr ""
 
 msgid "ReMount on restart enigma2"
 msgstr "Перемонтировать при рестарте энигма"
@@ -34,6 +31,9 @@ msgstr "Перемонтирование сетевых подключений"
 msgid "Remount now"
 msgstr "Перемонтировать"
 
+msgid "Save"
+msgstr ""
+
 msgid "Show Remount NetShare in ExtensionMenu"
 msgstr "Перемонтирование в расширенном меню"
 
@@ -46,6 +46,7 @@ msgstr "Размонтировать при выключении"
 msgid "Unmount NetShare"
 msgstr "Размонтирование сетевых подключений"
 
+#, python-format
 msgid "active: %s %s %s\n"
 msgstr "активно: %s %s %s\n"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-06-12 17:50+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,56 +13,78 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.6.4\n"
 
-msgid " newcamd.list"
-msgstr " newcamd.list"
+msgid "%Y-%m-%d"
+msgstr ""
 
-msgid "%s  %s  %s (%s free  %s used)"
-msgstr "%s  %s  %s (%s свободно  %s занято)"
+msgid "%Y-%m-%d %H:%M"
+msgstr ""
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
 msgid "%s  %s  (%03d MB free)\n"
 msgstr "%s  %s  (%03d MB свободно)\n"
 
+#, python-format
 msgid "%s  %s  (%d.%03d GB free)\n"
 msgstr "%s  %s  (%d.%03d GB свободно)\n"
 
+#, python-format
+msgid "%s %s"
+msgstr ""
+
+#, python-format
 msgid "%s Switcher: - %s"
 msgstr "%s переключатель: - %s"
 
-msgid "%s downloaded Successfull"
+#, fuzzy, python-format
+msgid "%s downloading"
 msgstr "%s загружено"
 
-msgid "%s downloaded UnSuccessfull"
-msgstr "%s не загружено"
-
-msgid "%s hours"
-msgstr "%s час."
-
-msgid "%s is UnInstalled"
-msgstr "%s удалено"
-
-msgid "%s is downloaded"
-msgstr "%s загружено"
-
-msgid "%s is installed"
-msgstr "%s установлено"
-
+#, python-format
 msgid "%s loaded in memory"
 msgstr "%s загружен в память"
 
-msgid "%s min"
-msgstr "%s мин"
+#, python-format
+msgid "%s not respond"
+msgstr ""
 
-msgid "%s, %s Mhz (%d %s)"
+#, fuzzy, python-format
+msgid "%s, %s Mhz (%d %s) %s"
 msgstr "%s, %s МГц (%d %s)"
 
+#, python-format
 msgid "%s.gz created in /tmp"
 msgstr "%s.gz создан в /tmp"
 
-msgid "*.tar.gz & *.bh.tgz & *.ipk removed"
-msgstr "*.tar.gz, *.bh.tgz, *.ipk удалены"
-
 msgid "/etc/hosts editor"
 msgstr "/etc/hosts редактор"
+
+msgid "/home/root"
+msgstr ""
+
+msgid "/home/root/logs"
+msgstr ""
+
+msgid "/media/hdd"
+msgstr ""
+
+msgid "/media/hdd/logs"
+msgstr ""
+
+msgid "/media/hdd/script/"
+msgstr ""
+
+msgid "/media/usb/script/"
+msgstr ""
+
+msgid "/tmp"
+msgstr ""
+
+msgid "/usr/script/"
+msgstr ""
 
 msgid "120 min"
 msgstr "120 мин"
@@ -85,20 +107,11 @@ msgstr "45 мин"
 msgid "60 min"
 msgstr "60 мин"
 
-msgid "Active Profile:"
-msgstr "Активный Профиль:"
-
-msgid "Active SoftCam:"
-msgstr "Активный SoftCam:"
-
 msgid "Add"
 msgstr "Добавить"
 
 msgid "Add onid"
 msgstr "Добавить"
-
-msgid "Add own biss in keyfile"
-msgstr "Добавлять собственный файл ключей"
 
 msgid "Add record"
 msgstr "Добавить"
@@ -112,17 +125,8 @@ msgstr "Добавляем скрипт старта..."
 msgid "Adv. UnInstall"
 msgstr "Продв. удаление"
 
-msgid "Allready running %s"
-msgstr "Уже запущен %s"
-
 msgid "Angola"
 msgstr "Ангола"
-
-msgid "Apply the new System time?"
-msgstr "Применить новое системное время?"
-
-msgid "Applying"
-msgstr "Применяем"
 
 msgid "Apr."
 msgstr "Апр."
@@ -139,29 +143,14 @@ msgstr "Австралия"
 msgid "Austria"
 msgstr "Австрия"
 
-msgid "AutoDownload epg.dat"
-msgstr "Автозагрузка epg.dat"
-
-msgid "AutoDownload time"
-msgstr "Время автозагрузки"
-
-msgid "AutoDownload weekday"
-msgstr "День недели автозагрузки"
-
-msgid "Autobackup to ../epgtmp.gz"
-msgstr "Автоматическое сохранение в ../epgtmp.gz"
-
-msgid "Automatic save/load EPG"
-msgstr "Автоматическое сохранение и загрузка EPG"
+msgid "Auto"
+msgstr ""
 
 msgid "Autotime cache flush"
 msgstr "Периодичность очиски кеш"
 
 msgid "Azerbaidjan"
 msgstr "Азербайджан"
-
-msgid "BackUp"
-msgstr "Сохранить"
 
 msgid "Bahamas"
 msgstr "Багамы"
@@ -178,6 +167,7 @@ msgstr "Бельгия"
 msgid "Brazil"
 msgstr "Бразилия"
 
+#, python-format
 msgid "Buffers: %s Kb  Cached: %s Kb"
 msgstr "Буферы: %s Kb  Кеш: %s Kb"
 
@@ -208,23 +198,8 @@ msgstr "Канада"
 msgid "Cardserver:"
 msgstr "Кардсервер:"
 
-msgid "Change system time was canceled, because %s"
-msgstr "Системное время не изменено, так как %s"
-
-msgid "Changelog"
-msgstr "Изменения"
-
 msgid "Check epg.dat exists"
 msgstr "Проверять наличие "
-
-msgid "Check if epg.dat exists"
-msgstr "Проверять наличиче epg.dat"
-
-msgid "Check your internet connection"
-msgstr "Проверьте интернет-соединение"
-
-msgid "Check your system and reboot"
-msgstr "Перезагрузите систему"
 
 msgid "Chile"
 msgstr "Чили"
@@ -247,12 +222,6 @@ msgstr "Закрыть"
 msgid "Command"
 msgstr "Задание"
 
-msgid "Config"
-msgstr "Конфигурация"
-
-msgid "Config script Executer"
-msgstr "Конфигурация скрипт менеджера"
-
 msgid "Crashlog viewer"
 msgstr "Просмотрщик файлов крешлога"
 
@@ -265,9 +234,13 @@ msgstr "Создаем None-скрипт..."
 msgid "Creating..."
 msgstr "Создаем..."
 
+msgid "Cron"
+msgstr ""
+
 msgid "Cron Manager"
 msgstr "Управление Cron"
 
+#, python-format
 msgid "CtronTab Manager - %s"
 msgstr "Управление Cron - %s"
 
@@ -288,21 +261,6 @@ msgstr "Дек."
 
 msgid "Denmark"
 msgstr "Дания"
-
-msgid "Detected NIMs:"
-msgstr "Тюнеры:"
-
-msgid "Devices:"
-msgstr "Устройства:"
-
-msgid "Donwloading epg.dat from %s"
-msgstr "Загружается epg.dat с %s"
-
-msgid "Donwloading epg.dat.gz"
-msgstr "Загрузка epg.dat.gz"
-
-msgid "Donwloading epg.dat.gz error"
-msgstr "ошибка загрузки epg.dat"
 
 msgid "Download"
 msgstr "Загрузить"
@@ -355,9 +313,6 @@ msgstr "E-Установщик: Режим"
 msgid "E-Installer: User directory on mount device"
 msgstr "E-Установщик: Директория на монтируемых дисках"
 
-msgid "E-Ipk Installer"
-msgstr "E-Панель ipk установщик"
-
 msgid "E-Newcamd.list switcher"
 msgstr "E-Панель newcamd.list переключатель"
 
@@ -376,26 +331,15 @@ msgstr "Конфигурация меню/расширенное меню"
 msgid "E-Panel Universal Switcher"
 msgstr "Универсальный переключатель"
 
-msgid "E-Panel for OpenPli"
-msgstr "E-Панель"
-
-msgid "E-Panel for OpenPli Ver:"
-msgstr "Е-Панель для OpenPli Вер."
-
-msgid "E-Panel for Pli"
-msgstr "E-Пaнель"
-
-msgid "E-Reload epg.dat"
-msgstr "E-Панель перезагрузка epg.dat"
+#, fuzzy
+msgid "E-Panel Ver:"
+msgstr "E-Пaнeль"
 
 msgid "E-Script Executer"
 msgstr "E-Панель скрипт менеджер"
 
 msgid "E-SoftCam manager"
 msgstr "E-Панель эмуляторы"
-
-msgid "E-Tar.gz Installer"
-msgstr "E-Панель tar.gz установщик"
 
 msgid "E-Unmount USB"
 msgstr "E-Панель демонтирование USB"
@@ -409,32 +353,18 @@ msgstr "Выбор пути для скриптов"
 msgid "EPG Downloader"
 msgstr "Загрузчик EPG"
 
-msgid "EPG downloaded"
-msgstr "EPG загружен"
-
+#, python-format
 msgid "EPG from %s"
 msgstr "Загрузка с %s"
 
 msgid "Enter a value in hexadecimal format"
 msgstr "Введите onid в шестнадцатеричном формате"
 
-msgid "Error dowload CardServer list"
-msgstr "Ошибка загрузки списка кардсерверов"
-
-msgid "Error dowload SoftCam list"
-msgstr "Ошибка загрузки списка эмуляторов"
-
-msgid "Error list ipk aviable"
-msgstr "Ошибка создания списка .ipk пакетов"
-
 msgid "Estonia"
 msgstr "Эстония"
 
 msgid "Every"
 msgstr "Каждый период"
-
-msgid "Failed remove"
-msgstr "Ошибка удаления"
 
 msgid "Failure..."
 msgstr "Ошибка..."
@@ -463,6 +393,9 @@ msgstr "Пт"
 msgid "France"
 msgstr "Франция"
 
+msgid "GStreamer:"
+msgstr ""
+
 msgid "Germany"
 msgstr "Германия"
 
@@ -471,12 +404,6 @@ msgstr "Греция"
 
 msgid "Guatemala"
 msgstr "Гватемала"
-
-msgid "HDD go sleep"
-msgstr "HDD остановлен"
-
-msgid "HDD sleep"
-msgstr "Стоп HDD"
 
 msgid "Hardware:"
 msgstr "Устройство:"
@@ -511,23 +438,25 @@ msgstr "Индия"
 msgid "Indonesia"
 msgstr "Индонезия"
 
-msgid "Insatall extensions from feed"
-msgstr "Установка расширений"
-
 msgid "Install"
 msgstr "Установка"
 
 msgid "Install & Remove Plugins, Addons, Softcams"
 msgstr "Установка и удаление плагинов, дополнений, эмуляторов"
 
-msgid "Install All"
-msgstr "Установить все"
+#, fuzzy
+msgid "Install extensions from feed"
+msgstr "Установка расширений"
 
 msgid "Install packets"
 msgstr "Установка пакетов"
 
 msgid "Install tar.gz, bh.tgz, nab.tgz"
 msgstr "Установка tar.gz, bh.tgz, nab.tgz"
+
+#, fuzzy
+msgid "Installed Date:"
+msgstr "Установка пакетов"
 
 msgid "Ipk remove"
 msgstr "Удаление .ipk пакетов"
@@ -550,7 +479,8 @@ msgstr "Янв."
 msgid "Japan"
 msgstr "Япония"
 
-msgid "Jul."
+#, fuzzy
+msgid "Jul"
 msgstr "Июль"
 
 msgid "Jun."
@@ -558,6 +488,10 @@ msgstr "Июнь"
 
 msgid "Kazakhstan"
 msgstr "Казахстан"
+
+#, fuzzy
+msgid "Kernel Drivers in Memory"
+msgstr "Версия ядра:"
 
 msgid "Kernel Modules Manager"
 msgstr "Управление драйверами"
@@ -580,6 +514,7 @@ msgstr "Литва"
 msgid "Load/UnLoad"
 msgstr "Вкл./Откл."
 
+#, python-format
 msgid "Loaded %s.ko"
 msgstr "Загружен %s.ko"
 
@@ -588,6 +523,9 @@ msgstr "Драйверы"
 
 msgid "Luxembourg"
 msgstr "Люксембург"
+
+msgid "MAC (lan/wlan):"
+msgstr ""
 
 msgid "Macedonia"
 msgstr "Македония"
@@ -598,12 +536,15 @@ msgstr "Мадагаскар"
 msgid "Make swap"
 msgstr "Создать файл подкачки"
 
+#, python-format
 msgid "Make swap on %s (128MB)"
 msgstr "Создать файл подкачки на %s (128MB)"
 
+#, python-format
 msgid "Make swap on %s (256MB)"
 msgstr "Создать файл подкачки на %s (256MB)"
 
+#, python-format
 msgid "Make swap on %s (512MB)"
 msgstr "Создать файл подкачки на %s (512MB)"
 
@@ -616,9 +557,6 @@ msgstr "Управление сервисом BusyBox-Cron"
 msgid "Manage Dropbear SSH service"
 msgstr "Управление сервисом Dropbear SSH"
 
-msgid "Manage Ftp service"
-msgstr "Управление сервисом Ftp"
-
 msgid "Manage Internet superserver (inetd)"
 msgstr "Управление суперсервером Интернет (inetd)"
 
@@ -628,12 +566,7 @@ msgstr "Управление сервисом Livestreamer"
 msgid "Manage Networking service"
 msgstr "Управление сервисом Network"
 
-msgid "Manage Samba service"
-msgstr "Управление сервисом Samba"
-
-msgid "Manage Swap"
-msgstr "Управление файлом подкачки "
-
+#, python-format
 msgid "Manage Swap on %s"
 msgstr "Управление файлом подкачки на %s"
 
@@ -649,6 +582,10 @@ msgstr "Синхронизация времени, EPG, скрипты, инфо
 msgid "Manual"
 msgstr "Вручную"
 
+#, fuzzy
+msgid "Manual Donwloading epg.dat.gz error"
+msgstr "ошибка загрузки epg.dat"
+
 msgid "Manual Installer/Uninstaller"
 msgstr "Ручная установка и удаление пакетов"
 
@@ -663,9 +600,6 @@ msgstr "Память:"
 
 msgid "Mexico"
 msgstr "Мексика"
-
-msgid "MgCamd Restarted"
-msgstr "MgCamd перезапущен"
 
 msgid "Mgcamd config filename"
 msgstr "Mgcamd имя основного файла конфигурации"
@@ -706,11 +640,12 @@ msgstr "Голландия"
 msgid "New Zealand"
 msgstr "Новая Зеландия"
 
+#, fuzzy
+msgid "No"
+msgstr "Ноя."
+
 msgid "Norway"
 msgstr "Норвегия"
-
-msgid "Not Active"
-msgstr "Не активен"
 
 msgid "Not Installed"
 msgstr "Не установлен"
@@ -723,6 +658,12 @@ msgstr "Синхронизация времени"
 
 msgid "Oct."
 msgstr "Окт."
+
+msgid "Off"
+msgstr ""
+
+msgid "On"
+msgstr ""
 
 msgid "Oscam config filename"
 msgstr "Oscam имя основного файла конфигурации"
@@ -745,9 +686,6 @@ msgstr "Панама"
 msgid "Password"
 msgstr "Пароль"
 
-msgid "Patch enigma2.sh (need restart enigma2)"
-msgstr "Правка enigma2.sh (требуется перезагрузка enigma2)"
-
 msgid "Path to save keyfile"
 msgstr "Путь сохранения файла ключей"
 
@@ -760,26 +698,11 @@ msgstr "Филиппины"
 msgid "Please wait"
 msgstr "Ожидайте..."
 
-msgid "Please wait, downloading epg.dat"
-msgstr "Ожидайте, загружается epg.dat"
-
-msgid "Please wait, restarting %s"
-msgstr "Ожидайте, перезапускается %s"
-
-msgid "Please wait, starting %s"
-msgstr "Ожидайте, запускается %s"
-
-msgid "Please wait, stoping softcam or cardserver"
-msgstr "Ожидайте, останавливается эмулятор или кардсервер"
-
 msgid "Plugin Browser"
 msgstr "Обозреватель плагинов"
 
 msgid "Poland"
 msgstr "Польша"
-
-msgid "Port(s) (single  xxxxx or range xxxxx:xxxxx)"
-msgstr "Порт(ы) (одиночный  xxxxx или диапозон xxxxx:xxxxx)"
 
 msgid "Portugal"
 msgstr "Португалия"
@@ -787,20 +710,14 @@ msgstr "Португалия"
 msgid "Processor:"
 msgstr "Процессор:"
 
-msgid "ReStart"
-msgstr "Перезапуск"
+msgid "Python:"
+msgstr ""
 
-msgid "ReStart Both"
+msgid "ReStart"
 msgstr "Перезапуск"
 
 msgid "Reboot"
 msgstr "Перезапуск Enigma"
-
-msgid "Reload"
-msgstr "Перезагрузка"
-
-msgid "Reload epg.dat"
-msgstr "Перезаг. epg.dat"
 
 msgid "Remove"
 msgstr "Удалить"
@@ -817,12 +734,14 @@ msgstr "Удалить"
 msgid "Remove swap"
 msgstr "Удалить файл подкачки"
 
+#, python-format
 msgid "Remove swap on %s (%s)"
 msgstr "Удалить файл подкачки на %s (%s)"
 
 msgid "Remove tabs"
 msgstr "Удалить задание"
 
+#, python-format
 msgid "Removed %s"
 msgstr "Удален %s"
 
@@ -844,26 +763,15 @@ msgstr "Перезапуск"
 msgid "Restart GUI"
 msgstr "Перезапуск Enigma"
 
-msgid "Restart MgCamd"
-msgstr "Перезапуск MgCamd"
-
 msgid "Restart Softcam"
 msgstr "Перезапуск эмулятора"
 
+#, python-format
 msgid "Restarting %s service"
 msgstr "Перезапуск сервиса %s"
 
-msgid "Restarting ..."
-msgstr "Перезапуск ..."
-
 msgid "Restarting..."
 msgstr "Перезапускаем..."
-
-msgid "Restore EPG with enigma2 start"
-msgstr "Востанавить EPG при старте enigma2"
-
-msgid "Restore epg.dat"
-msgstr "Восстановить epg.dat"
 
 msgid "Romania"
 msgstr "Румыния"
@@ -877,38 +785,25 @@ msgstr "Российская Федерация"
 msgid "Sa"
 msgstr "Сб"
 
-msgid "Save epg.dat"
-msgstr "Сохранить epg.dat"
-
-msgid "Saved"
+#, fuzzy
+msgid "Save"
 msgstr "Сохранено"
 
 msgid "Script Executer"
 msgstr "Пользовательские скрипты"
 
-msgid "Scripts"
-msgstr "Скрипты"
-
 msgid "Select DDNS server"
 msgstr "Выберите DDNS сервер"
 
+#, python-format
 msgid "Select SoftCam or CardServer: - %s"
 msgstr "Выберите эмулятор: - %s"
-
-msgid "Select install files"
-msgstr "Выберите пакеты для установки"
 
 msgid "Select path to save epg.dat"
 msgstr "Выбор пути сохранения epg.dat"
 
-msgid "Select source epg.dat"
-msgstr "Выбор источника загрузки epg.dat"
-
 msgid "Sep."
 msgstr "Сен."
-
-msgid "Server (ip or name)"
-msgstr "Сервер (ip-адрес или имя)"
 
 msgid "Service Manager"
 msgstr "Управление сервисами"
@@ -931,11 +826,16 @@ msgstr "Режим очистки кеш"
 msgid "Set choice server mode"
 msgstr "Установите способ выбора сервера"
 
+#, fuzzy
+msgid "Set date"
+msgstr "Установить период обновления"
+
 msgid "Set manual ntp server address"
 msgstr "Введите адрес ntp сервера"
 
-msgid "Set script path"
-msgstr "Установите директорию"
+#, fuzzy
+msgid "Set time"
+msgstr "Установить период обновления"
 
 msgid "Set time to update"
 msgstr "Установить период обновления"
@@ -961,9 +861,6 @@ msgstr "Показать E-Инфо в расширенном меню"
 msgid "Show E-Installer in ExtensionMenu"
 msgstr "Показать E-установщик в расширенном меню"
 
-msgid "Show E-NewCamd.list switcher in ExtensionMenu"
-msgstr "Показать newcamd.list переключатель в расширенном меню"
-
 msgid "Show E-Panel in ExtensionMenu"
 msgstr "Показать E-Панель в расширенном меню"
 
@@ -979,23 +876,8 @@ msgstr "Показать эмуляторы в расширенном меню"
 msgid "Show E-Usb Unmount in ExtensionMenu"
 msgstr "Показать демонтирование USB в расширенном меню"
 
-msgid "Show E-Wicardd.conf switcher in ExtensionMenu"
-msgstr "Показать wicardd.conf переключатель в расширенном меню"
-
-msgid "Show PluginBrowser in E-Panel MainMenu"
-msgstr "Показать Плагины в меню Е-Панели"
-
-msgid "Show reload epg.dat in ExtensionMenu"
-msgstr "Показать перезагрузка epg.dat в расширенном меню"
-
-msgid "Show status message"
-msgstr "Показывать статус загрузки"
-
-msgid "Simple Cardserver"
-msgstr "Управление кардсерверами"
-
-msgid "Simple Softcam"
-msgstr "Управление эмуляторами"
+msgid "Show EIT now/next in infobar"
+msgstr ""
 
 msgid "Simple Softcam/Cardserver"
 msgstr "Управление эмуляторами и кардсерверами"
@@ -1033,9 +915,6 @@ msgstr "Эмулятор перезагружен"
 msgid "Softcam:"
 msgstr "Эмулятор:"
 
-msgid "Sorry, the EPG download error"
-msgstr "Извините, ошибка загрузки EPG"
-
 msgid "South Africa"
 msgstr "Южная Африка"
 
@@ -1045,20 +924,11 @@ msgstr "Испания"
 msgid "Start"
 msgstr "Старт"
 
-msgid "Start Samba"
-msgstr "Старт Samba"
-
 msgid "Start scripts from /usr/script"
 msgstr "Запуск скриптов из /usr/script"
 
 msgid "Start, Stop, Create, Remove Swap file"
 msgstr "Запуск, остановка, создание, удаление файла подкачки"
-
-msgid "Start, Stop, Restart Cardserver"
-msgstr "Запуск, остановка и перезапуск кардсервера"
-
-msgid "Start, Stop, Restart Sofcam"
-msgstr "Запуск, остановка и перезапуск эмулятора"
 
 msgid "Start, Stop, Restart Sofcam/Cardserver"
 msgstr "Запуск, остановка и перезапуск эмуляторов и кардсерверов"
@@ -1069,18 +939,17 @@ msgstr "Запуск, остановка, перезапуск системны�
 msgid "StartUp synchronization"
 msgstr "Синхронизировать время при старте системы"
 
+#, python-format
 msgid "Starting %s service"
 msgstr "Запуск сервиса %s"
 
 msgid "Starting..."
 msgstr "Запускаем...."
 
-msgid "Status:"
-msgstr "Статус:"
-
 msgid "Stop"
 msgstr "Стоп"
 
+#, python-format
 msgid "Stoping %s service"
 msgstr "Остановка сервиса %s"
 
@@ -1095,9 +964,6 @@ msgstr "Успешно..."
 
 msgid "Swap Manager"
 msgstr "Управление файлом подкачки"
-
-msgid "Swap file created"
-msgstr "Файл подкачки создан"
 
 msgid "Swap file removed"
 msgstr "Файл подкачки удален"
@@ -1114,9 +980,11 @@ msgstr "Отключить файл подкачки"
 msgid "Swap on"
 msgstr "Включить файл подкачки"
 
+#, python-format
 msgid "Swap on %s off (%s)"
 msgstr "Отключить файл подкачки на %s (%s)"
 
+#, python-format
 msgid "Swap on %s on (%s)"
 msgstr "Включить файл подкачки на %s (%s)"
 
@@ -1129,7 +997,15 @@ msgstr "Подкачка:"
 msgid "Sweden"
 msgstr "Швеция"
 
+#, fuzzy
+msgid "Switch cccam condig with remote control"
+msgstr "Ручное переключение newcamd.list"
+
 msgid "Switch newcamd.list with remote conrol"
+msgstr "Ручное переключение newcamd.list"
+
+#, fuzzy
+msgid "Switch oscam condig with remote control"
 msgstr "Ручное переключение newcamd.list"
 
 msgid "Switch wicardd.conf with remote conrol"
@@ -1144,20 +1020,8 @@ msgstr "Швейцария"
 msgid "Synchronization NTP"
 msgstr "Синхронизация времени"
 
-msgid "Synchronization NTP time"
-msgstr "Синхронизация времени через интернет"
-
-msgid "Synchronization Now"
-msgstr "Синхронизирую"
-
-msgid "Synchronization activated"
-msgstr "Синхронизация включена"
-
 msgid "Synchronization ntp every 30 min,60 min,120 min, 240 min and Now"
 msgstr "Синхронизация времени немедленно и каждые 30, 60, 120, 240 мин."
-
-msgid "Synchronized"
-msgstr "Синхронизировано"
 
 msgid "System Info"
 msgstr "Системная информация"
@@ -1186,9 +1050,11 @@ msgstr "Таиланд"
 msgid "Tools"
 msgstr "Утилиты"
 
+#, python-format
 msgid "Total: %s Kb  Free: %s Kb"
 msgstr "Всего: %s Kb  Свободно: %s Kb"
 
+#, python-format
 msgid "Total: %s Kb  Free: %s Kb (%s %%)"
 msgstr "Всего: %s Kb  Свободно: %s Kb (%s %%)"
 
@@ -1201,15 +1067,10 @@ msgstr "Турция"
 msgid "Ukraine"
 msgstr "Украина"
 
-msgid "Ukrainian"
-msgstr "Украинский"
-
 msgid "UnInstall"
 msgstr "Удаление"
 
-msgid "UnInstall Ipk"
-msgstr "Удаление .ipk пакетов"
-
+#, python-format
 msgid "UnLoaded %s.ko"
 msgstr "%s.ko не загружен"
 
@@ -1240,23 +1101,15 @@ msgstr "Демонтирование USB"
 msgid "Unmount usb devices"
 msgstr "Извлечение USB устройств"
 
+#, python-format
 msgid "Unmounted %s"
 msgstr "Демонтировано %s"
-
-msgid "Unmounted %s Unsucessfull"
-msgstr "Демонтирование USB не выполнено"
-
-msgid "Unzipping epg.dat.gz"
-msgstr "Распаковка epg.dat.gz"
 
 msgid "Update Now"
 msgstr "Синхронизировать "
 
 msgid "Update Time"
 msgstr "Переодичность обновления"
-
-msgid "Update to plugin list"
-msgstr "Обновление списка плагинов"
 
 msgid "User Scripts"
 msgstr "Пользовательские скрипты"
@@ -1272,6 +1125,10 @@ msgstr "Вьетнам"
 
 msgid "View"
 msgstr "Просмотреть"
+
+#, fuzzy
+msgid "View Crashlog file"
+msgstr "Просмотрщик файлов крешлога"
 
 msgid "View System Settings (/etc/enigma2/settings)"
 msgstr "Просмотр Установок системы (/etc/enigma2/settings)"
@@ -1297,15 +1154,21 @@ msgstr "Wicardd рассширение файла конфигурации"
 msgid "Wicardd configpath"
 msgstr "Wicardd путь к конфигурации"
 
+#, fuzzy
+msgid "Yes"
+msgstr "да"
+
 msgid "Zram swap is on"
 msgstr "Zram файл подкачки включен"
 
+#, python-format
 msgid "add onid - %s"
 msgstr "добавить в - %s"
 
 msgid "add record"
 msgstr "добавить"
 
+#, python-format
 msgid "add tabs - %s"
 msgstr "Добавить задание - %s"
 
@@ -1315,38 +1178,18 @@ msgstr "добавить/удалить запись в /etc/hosts"
 msgid "alias"
 msgstr "синоним"
 
-msgid "bad day %s"
-msgstr "некорректно введен день месяца %s"
-
-msgid "bad format"
-msgstr "некорректный формат"
-
-msgid "bad hour %s"
-msgstr "некорректно введены часы %s"
-
-msgid "bad minute %s"
-msgstr "некорректно введены минуты %s"
-
-msgid "bad month %s"
-msgstr "некорректно введен месяц %s"
-
-msgid "bad year %s"
-msgstr "некорректно введен год %s"
-
+#, python-format
 msgid "blacklist.onid Manager - %s"
 msgstr "blacklist.onid редактор - %s"
 
 msgid "cache flush, DDNS sync"
 msgstr "очистка кеш, синхронизация DDNS"
 
-msgid "clear /tmp"
-msgstr "Очистка /tmp"
+msgid "changeip.com"
+msgstr ""
 
 msgid "config menu and extentionsmenu for E-Panel items"
 msgstr "Конфигурация меню и расширенного меню E-Панели"
-
-msgid "configuration default"
-msgstr "конфигурация по умолчанию"
 
 msgid "configuration is saved"
 msgstr "Конфигурация сохранена"
@@ -1363,29 +1206,15 @@ msgstr "Загрузка расширений с сервера имиджа"
 msgid "download extensions"
 msgstr "Загрузка расширений"
 
-msgid "download from: %s"
-msgstr "Загрузить из: %s"
-
 msgid "drop system cache"
 msgstr "очистка системного кеш"
 
-msgid "ecm.info Viewer"
-msgstr "Просмотрщик ecm.info"
+#, fuzzy
+msgid "e-panel_"
+msgstr "E-Пaнeль"
 
-msgid "ecm.info file viewer"
-msgstr "Просмотр файла ecm.info"
-
-msgid "ecm.info viewer"
-msgstr "Просмотрщик ecm.info"
-
-msgid "epg.dat reloaded"
-msgstr "epg.dat перазагружен"
-
-msgid "epg.dat restored"
-msgstr "epg.dat восстановлен"
-
-msgid "epg.dat saved"
-msgstr "epg.dat сохранен"
+msgid "error..."
+msgstr ""
 
 msgid "free dentries and inodes"
 msgstr "очистка dentries и inodes"
@@ -1401,9 +1230,6 @@ msgstr "имя"
 
 msgid "install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"
 msgstr "Установка и принудительная установка ipk, bh.tgz, tar.gz, nab.tgz из /tmp"
-
-msgid "install & remove ipk, tar.gz, bh.tgz packets"
-msgstr "Установка и удаление .ipk, .tar.gz, .bh.tgz, .nab.tgz пакетов"
 
 msgid "install extensions"
 msgstr "Установка расширений"
@@ -1426,6 +1252,7 @@ msgstr "Установка ipk bh.tgz, tar.gz, nab.tgz"
 msgid "kernel modules manager, manage swap, ftp, samba, unmount USB"
 msgstr "Управление драйверами, Ftp, Samba, Cron, Swap, демонтирование USB"
 
+#, python-format
 msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
 msgstr "epg.dat обновлен - %02d:%02d:%d %02d:%02d:%02d"
 
@@ -1435,32 +1262,11 @@ msgstr "epg.dat еще не обновлен"
 msgid "load & unload kernel modules"
 msgstr "Загрузка и удаление драйверов"
 
-msgid "login"
-msgstr "Логин"
+msgid "no-ip.com"
+msgstr ""
 
-msgid "manual"
-msgstr "Вручную"
-
-msgid "new time not available"
-msgstr "новое время не введено"
-
-msgid "newcamd.list Editor"
-msgstr "Редактор newcamd.list "
-
-msgid "newcamd.list Switcher"
-msgstr "Переключатель newcamd.list "
-
-msgid "newcamd.list Switcher: - %s"
-msgstr "Переключатель newcamd.list: - %s"
-
-msgid "newcamd.list editor"
-msgstr "Редактор newcamd.list"
-
-msgid "no"
-msgstr "нет"
-
-msgid "not confirmed"
-msgstr "нет подтверждения"
+msgid "none"
+msgstr ""
 
 msgid "not loaded modules"
 msgstr "нет загруженных модулей"
@@ -1471,44 +1277,18 @@ msgstr "Редактор onid"
 msgid "press Close for Exit"
 msgstr "нажмите Закрыть для выхода"
 
-msgid "press OK to enable/disable server"
-msgstr "Нажмите OK для включения/отключения сервера"
-
-msgid "quick newcamd.list editor"
-msgstr "Быстрое редактирование newcamd.list"
-
 msgid "reFresh"
 msgstr "Обновить"
-
-msgid "reload epg.dat failed"
-msgstr "Ошибка перезагрузки epg.dat"
 
 msgid "remove & advanced remove ipk packets"
 msgstr "Удаление и продвинутое удаление .ipk пакетов"
 
-msgid "remove *.ipk & *.tar.gz & *.bh.tgz & *.nab.tgz from /tmp"
-msgstr "Очистка /tmp, удаление *.ipk, *.tar.gz, *.bh.tgz и *.nab.tgz"
-
-msgid "remove *.ipk & *.tar.gz from /tmp"
-msgstr "Удаление *.ipk и *.tar.gz пакетов из /tmp"
-
-msgid "running"
-msgstr "Работает"
-
-msgid "server: %s"
-msgstr "Сервер: %s"
-
 msgid "set of utilities for enigma2"
 msgstr "набор утилит для enigma2"
 
-msgid "simple tools for Pli image"
-msgstr "Панель управления, утилиты,инструменты"
-
+#, python-format
 msgid "size: %s  %s"
 msgstr "Размер: %s  %s"
-
-msgid "stopping"
-msgstr "Остановлен"
 
 msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
 msgstr "переключатель конфигураций mgcamd, oscam, wicardd, cccam"
@@ -1537,14 +1317,12 @@ msgstr "не известно"
 msgid "update Softcam.key from internet"
 msgstr "Загрузка SoftCam.Key из интернета"
 
+#, python-format
 msgid "update error epg.dat - %02d:%02d:%d %02d:%02d:%02d"
 msgstr "ошибка обноления epg.dat - %02d:%02d:%d %02d:%02d:%02d"
 
 msgid "update script not found..."
 msgstr "скрипт обновления не найден..."
-
-msgid "update time from internet"
-msgstr "Синхронизировать время через интернет"
 
 msgid "value is not hex"
 msgstr "ошибка, это не шестнацатеричное число"
@@ -1557,6 +1335,3 @@ msgstr "Просмотр и удаление файлов крешлога"
 
 msgid "view system settings"
 msgstr "просмотр установок системы"
-
-msgid "yes"
-msgstr "да"

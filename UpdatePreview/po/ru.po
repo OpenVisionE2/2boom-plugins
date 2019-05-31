@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Update Preview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-18 15:17+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -19,8 +19,20 @@ msgstr ". Имидж стабилен."
 msgid ". Image may not be stable."
 msgstr ". Имидж может быть не стабилен."
 
+msgid "Close"
+msgstr ""
+
+msgid "Currently the commit log cannot be retrieved - please try later again"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
 msgid "Error receive list-upgradable, try later"
 msgstr "Ошибка получения списка обновлений, попробуйте позже"
+
+msgid "Execution finished!!"
+msgstr ""
 
 msgid "Latest Commits"
 msgstr "Изменения"
@@ -31,12 +43,26 @@ msgstr "Hет доступных обновлений"
 msgid "Please wait"
 msgstr "Пожалуйста, подождите"
 
+msgid "Restart"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+#, fuzzy
+msgid "Select"
+msgstr "Выберите файлы"
+
 msgid "Select files"
 msgstr "Выберите файлы"
 
 msgid "Software update preview"
 msgstr "Просмотр обновлений ПО"
 
+msgid "Update"
+msgstr ""
+
+#, python-format
 msgid "Update preview: %s aviable"
 msgstr "Обновления: %s доступно"
 
@@ -48,3 +74,7 @@ msgstr "Обновление списка доступных пакетов"
 
 msgid "Updating..."
 msgstr "Обновление..."
+
+#, fuzzy
+msgid "update preview from feed"
+msgstr "Обновления: %s доступно"

@@ -1,7 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Select service type in default bouquet"
+msgid "1 hour"
+msgstr ""
+
+msgid "2 hours"
+msgstr ""
+
+msgid "2boom's Rostelecom lite proxy updater"
+msgstr ""
+
+msgid "3 hours"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+#, python-format
+msgid "Current proxy: %s  Not working"
+msgstr ""
+
+#, python-format
+msgid "Current proxy: %s  Status: OK user(s): %s"
+msgstr ""
+
+msgid "Donwloading ip & channel list"
+msgstr ""
+
+msgid "GStreamer"
+msgstr ""
+
+msgid "IP & Ch.List Update"
+msgstr ""
+
+msgid "IP Update"
+msgstr ""
+
+msgid "Input Name of default bouquet"
 msgstr ""
 
 msgid "Input new proxy ip"
@@ -10,34 +61,49 @@ msgstr ""
 msgid "Input password (if needed)"
 msgstr ""
 
-msgid "Input Name of default bouquet"
-msgstr ""
-
-msgid "Proxy updater in ExtensionMenu"
-msgstr ""
-
-msgid "IP & Ch.List Update"
-msgstr ""
-
-msgid "Donwloading ip & channel list"
+msgid "LiveStreamer"
 msgstr ""
 
 msgid "Please wait"
 msgstr ""
 
-msgid "configuration is saved"
+msgid "Proxy updater in ExtensionMenu"
 msgstr ""
 
-msgid "IP Update"
+msgid "Reference in default bouquet"
+msgstr ""
+
+msgid "Reload servicelist"
+msgstr ""
+
+msgid "Rostelecom proxy lite updater"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select service type in default bouquet"
+msgstr ""
+
+msgid "Select source"
+msgstr ""
+
+msgid "Set time to update ip (cron needed)"
 msgstr ""
 
 msgid "TV"
 msgstr ""
 
-msgid "Stream TV"
+msgid "Update ip on startup"
 msgstr ""
 
-msgid "Select source"
+msgid "configuration is saved"
+msgstr ""
+
+msgid "error..."
+msgstr ""
+
+msgid "off"
 msgstr ""
 
 msgid "source 1"
@@ -46,32 +112,8 @@ msgstr ""
 msgid "source 2"
 msgstr ""
 
-msgid "source 3"
+msgid "update Rostelecom iptv proxy"
 msgstr ""
 
-msgid "Reload servicelist"
-msgstr ""
-
-msgid "Reference in default bouquet"
-msgstr ""
-
-msgid "Set time to update ip (cron needed)"
-msgstr ""
-
-msgid "Update ip on startup"
-msgstr ""
-
-msgid "1 hour"
-msgstr ""
-
-msgid "2 hours"
-msgstr ""
-
-msgid "3 hours"
-msgstr ""
-
-msgid "Current proxy: %s  Status: OK user(s): %s"
-msgstr ""
-
-msgid "Current proxy: %s  Not working"
+msgid "userbouquet.rostelecom_tmp.tv added or updated"
 msgstr ""

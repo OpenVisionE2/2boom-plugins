@@ -1,38 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "2boom's m3u/xml bouquet converter"
 msgstr ""
 
 msgid "Close"
 msgstr ""
 
-msgid "2boom's m3u/xml bouquet converter"
-msgstr ""
-
-msgid "Select m3u/xml file"
-msgstr ""
-
-msgid "Select type"
-msgstr ""
-
 msgid "Convert"
 msgstr ""
 
-msgid "Please wait"
-msgstr ""
-
+#, python-format
 msgid "Converting %s"
 msgstr ""
 
-msgid "Not Found m3u/xml file"
-msgstr ""
-
-msgid "Reload servicelist"
-msgstr ""
-
-msgid "m3u/xml to bouquet converter"
+msgid "Gstreamer"
 msgstr ""
 
 msgid "Input password (if needed)"
 msgstr ""
 
+msgid "LiveStreamer/hls"
+msgstr ""
+
+msgid "LiveStreamer/hlsvariant"
+msgstr ""
+
+msgid "Multicast"
+msgstr ""
+
+msgid "Not Found m3u file"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Reload servicelist"
+msgstr ""
+
+msgid "Select m3u/xml file"
+msgstr ""
+
 msgid "Select path"
+msgstr ""
+
+msgid "Select type"
+msgstr ""
+
+msgid "m3u to bouquet converter"
 msgstr ""

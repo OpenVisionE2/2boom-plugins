@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-01-26 09:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: 4bob@ua.fm\n"
@@ -14,30 +14,61 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#, fuzzy
-msgid "%3.02f m/s"
-msgstr "V vietor %3.02f m/s"
-
+#, python-format
 msgid "%d mmHg"
 msgstr ""
 
+#, python-format
+msgid "%s"
+msgstr ""
+
+#, python-format
+msgid "%s hPa(mbar)"
+msgstr ""
+
+#, python-format
 msgid "%s km"
 msgstr "%s km viditeľnosť"
 
-msgid "%s mb"
-msgstr ""
-
+#, python-format
 msgid "%s%% humidity"
 msgstr "%s%% vlhkosť"
 
+msgid "/tmp/woeid.xml not found"
+msgstr ""
+
 #, fuzzy
-msgid "1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma"
+msgid "1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma"
 msgstr "1. Navštívte stránku http://woeid.rosselliot.co.nz\\n2. Zadajte mesto alebo PSČ\\n3. Skopírujte WOEID\\n4. Uložte a reštartujte enigmu"
+
+msgid "10 sec"
+msgstr ""
+
+msgid "12 sec"
+msgstr ""
+
+msgid "16 sec"
+msgstr ""
+
+msgid "2boom's Yahoo Weather"
+msgstr ""
 
 msgid "2boom's Yahoo! Weather"
 msgstr ""
 
 msgid "2boom's Yahoo! Weather for Hotkey"
+msgstr ""
+
+msgid "5 sec"
+msgstr ""
+
+msgid "8 sec"
+msgstr ""
+
+msgid "Apr."
+msgstr ""
+
+msgid "Aug."
 msgstr ""
 
 msgid "Blowing snow"
@@ -46,19 +77,19 @@ msgstr "sneh s vetrom"
 msgid "Blustery"
 msgstr "silný vietor"
 
-msgid "Built-in"
-msgstr ""
-
 #, fuzzy
-msgid "City code"
+msgid "City code (woeid)"
 msgstr "Kód mesta (WOEID)"
 
 #, fuzzy
-msgid "City name"
+msgid "City name (alias)"
 msgstr "Názov mesta"
 
 msgid "Clear (night)"
 msgstr "jasno"
+
+msgid "Close"
+msgstr ""
 
 msgid "Cloudy"
 msgstr "zamračené"
@@ -66,19 +97,37 @@ msgstr "zamračené"
 msgid "Cold"
 msgstr "chladno"
 
+msgid "Dec."
+msgstr ""
+
 msgid "Drizzle"
 msgstr "mrholenie"
 
 msgid "Dust"
 msgstr "prašno"
 
+#, python-format
 msgid "E, %3.02f m/s"
 msgstr "V vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "E, %s km/h"
+msgstr "%s km viditeľnosť"
+
+#, python-format
 msgid "ENE, %3.02f m/s"
 msgstr "VSV vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "ENE, %s km/h"
+msgstr "VSV vietor %3.02f m/s"
+
+#, python-format
 msgid "ESE, %3.02f m/s"
+msgstr "VJV vietor %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "ESE, %s km/h"
 msgstr "VJV vietor %3.02f m/s"
 
 msgid "Fair (day)"
@@ -87,6 +136,10 @@ msgstr "takmer jasno"
 msgid "Fair (night)"
 msgstr "takmer jasno"
 
+msgid "Feb."
+msgstr ""
+
+#, python-format
 msgid "Feels: %s"
 msgstr "pocitová teplota: %s"
 
@@ -101,6 +154,12 @@ msgstr "mrznúci dážď"
 
 msgid "Friday"
 msgstr "Piatok"
+
+msgid "Get"
+msgstr ""
+
+msgid "Get WOEID"
+msgstr ""
 
 msgid "Hail"
 msgstr "kurpobitie"
@@ -123,8 +182,24 @@ msgstr "ojedinelé prehánky alebo búrky"
 msgid "Isolated thunderstorms"
 msgstr "ojedinelé búrky"
 
+msgid "Jan."
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
 msgid "Light snow showers"
 msgstr "snehové prehánky"
+
+msgid "Mar."
+msgstr ""
+
+#, fuzzy
+msgid "May"
+msgstr "Pondelok"
 
 msgid "Mixed rain and hail"
 msgstr "dážď s krupobitím"
@@ -147,23 +222,60 @@ msgstr "prevažne zamračené"
 msgid "Mostly cloudy (night)"
 msgstr "prevažne zamračené"
 
+#, python-format
 msgid "N, %3.02f m/s"
 msgstr "S vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "N, %s km/h"
+msgstr "%s km viditeľnosť"
+
+msgid "N/A"
+msgstr ""
+
+#, python-format
 msgid "NE, %3.02f m/s"
 msgstr "SV vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NE, %s km/h"
+msgstr "SV vietor %3.02f m/s"
+
+#, python-format
 msgid "NNE, %3.02f m/s"
 msgstr "SSV vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNE, %s km/h"
+msgstr "SSV vietor %3.02f m/s"
+
+#, python-format
 msgid "NNW, %3.02f m/s"
 msgstr "SSZ vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "NNW, %s km/h"
+msgstr "SSZ vietor %3.02f m/s"
+
+#, python-format
 msgid "NW, %3.02f m/s"
+msgstr "SZ vietor %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "NW, %s km/h"
 msgstr "SZ vietor %3.02f m/s"
 
 msgid "Not available"
 msgstr "Nie je k dispozícii"
+
+msgid "Nov."
+msgstr ""
+
+msgid "Oct."
+msgstr ""
+
+msgid "Off"
+msgstr ""
 
 msgid "Partly cloudy"
 msgstr "polojasno"
@@ -180,23 +292,51 @@ msgstr "dážď"
 msgid "Restart"
 msgstr "Reštartovať"
 
+#, python-format
 msgid "S, %3.02f m/s"
 msgstr "J vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "S, %s km/h"
+msgstr "%s km viditeľnosť"
+
+#, python-format
 msgid "SE, %3.02f m/s"
 msgstr "JV vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SE, %s km/h"
+msgstr "JV vietor %3.02f m/s"
+
+#, python-format
 msgid "SSE, %3.02f m/s"
 msgstr "JJV vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSE, %s km/h"
+msgstr "JJV vietor %3.02f m/s"
+
+#, python-format
 msgid "SSW, %3.02f m/s"
 msgstr "JJZ vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "SSW, %s km/h"
+msgstr "JJZ vietor %3.02f m/s"
+
+#, python-format
 msgid "SW, %3.02f m/s"
+msgstr "JZ vietor %3.02f m/s"
+
+#, fuzzy, python-format
+msgid "SW, %s km/h"
 msgstr "JZ vietor %3.02f m/s"
 
 msgid "Saturday"
 msgstr "Sobota"
+
+msgid "Save"
+msgstr ""
 
 msgid "Scattered showers"
 msgstr "občasný dážď"
@@ -207,7 +347,7 @@ msgstr "občasné sneženie"
 msgid "Scattered thunderstorms"
 msgstr "občasné búrky"
 
-msgid "Select plugin key"
+msgid "Sept."
 msgstr ""
 
 msgid "Severe thunderstorms"
@@ -231,26 +371,14 @@ msgstr "slabé snehové prehánky"
 msgid "Snow showers"
 msgstr "snehové prehánky"
 
-msgid "Style 1"
-msgstr ""
-
-msgid "Style 2"
-msgstr ""
-
-msgid "Style 3"
-msgstr ""
-
-msgid "Style 4"
-msgstr ""
-
-msgid "Style 5"
-msgstr ""
-
 msgid "Sunday"
 msgstr "Nedeľa"
 
 msgid "Sunny"
 msgstr "jasno"
+
+msgid "The name of the location"
+msgstr ""
 
 msgid "Thundershowers"
 msgstr "prehánky alebo búrky"
@@ -276,19 +404,35 @@ msgstr "Utorok"
 msgid "User skin"
 msgstr "Užívateľské zobrazenie"
 
-msgid "User-def"
-msgstr ""
-
+#, python-format
 msgid "W, %3.02f m/s"
 msgstr "Z vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "W, %s km/h"
+msgstr "%s km viditeľnosť"
+
+#, python-format
 msgid "WNW, %3.02f m/s"
 msgstr "ZSZ vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "WNW, %s km/h"
+msgstr "ZSZ vietor %3.02f m/s"
+
+#, python-format
 msgid "WSW, %3.02f m/s"
 msgstr "ZJZ vietor %3.02f m/s"
 
+#, fuzzy, python-format
+msgid "WSW, %s km/h"
+msgstr "ZJZ vietor %3.02f m/s"
+
 msgid "Weather icons style"
+msgstr "Štýl ikon počasia"
+
+#, fuzzy
+msgid "Weather info timeout"
 msgstr "Štýl ikon počasia"
 
 msgid "Wednesday"
@@ -300,14 +444,22 @@ msgstr "veterno"
 msgid "configuration is saved"
 msgstr "Nastavenia boli uložené"
 
+msgid "error location name"
+msgstr ""
+
+#, python-format
 msgid "max: %s"
 msgstr ""
 
+#, python-format
 msgid "min: %s"
+msgstr ""
+
+msgid "no woeid code yet"
 msgstr ""
 
 msgid "press menukey for config"
 msgstr ""
 
-msgid "yahoo! weather plugin config"
+msgid "weatherserver not respond"
 msgstr ""

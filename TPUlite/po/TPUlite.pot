@@ -1,7 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Select service type in default bouquet"
+msgid "2boom's Triolan lite proxy updater"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Donwloading ip & channel list"
+msgstr ""
+
+msgid "GStreamer"
+msgstr ""
+
+msgid "IP & Ch.List Update"
+msgstr ""
+
+msgid "Input Name of default bouquet"
 msgstr ""
 
 msgid "Input new proxy ip"
@@ -10,44 +41,41 @@ msgstr ""
 msgid "Input password (if needed)"
 msgstr ""
 
-msgid "Input Name of default bouquet"
-msgstr ""
-
-msgid "Proxy updater in ExtensionMenu"
-msgstr ""
-
-msgid "IP & Ch.List Update"
-msgstr ""
-
-msgid "Donwloading ip & channel list"
+msgid "LiveStreamer"
 msgstr ""
 
 msgid "Please wait"
 msgstr ""
 
-msgid "configuration is saved"
+msgid "Proxy updater in ExtensionMenu"
 msgstr ""
 
-msgid "IP Update"
+msgid "Reload servicelist"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select service type in default bouquet"
 msgstr ""
 
 msgid "TV"
 msgstr ""
 
-msgid "Stream TV"
+msgid "Triolan proxy lite updater"
 msgstr ""
 
-msgid "Select source"
+msgid "Update IP"
 msgstr ""
 
-msgid "source 1"
+msgid "configuration is saved"
 msgstr ""
 
-msgid "source 2"
+msgid "error..."
 msgstr ""
 
-msgid "source 3"
+msgid "update Triolan iptv proxy"
 msgstr ""
 
-msgid "Reload servicelist"
+msgid "userbouquet.triolan_tmp.tv added or updated"
 msgstr ""

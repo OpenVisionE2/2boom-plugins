@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2boom' Auto EPG Loader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-12-11 16:08+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -12,6 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
+
+#, python-format
+msgid "%s not respond"
+msgstr ""
 
 msgid "120 min"
 msgstr "120 мін"
@@ -24,6 +28,10 @@ msgstr "240 мін"
 
 msgid "2boom's Auto EPG Downloader"
 msgstr "Авто завантажувач EPG (c) 2boom"
+
+#, fuzzy
+msgid "30 min"
+msgstr "60 мін"
 
 msgid "60 min"
 msgstr "60 мін"
@@ -40,12 +48,6 @@ msgstr "Вибір джерела epg.dat"
 msgid "Close"
 msgstr "Закрити"
 
-msgid "Donwloading epg.dat.gz"
-msgstr "Завантаження epg.dat.gz"
-
-msgid "Donwloading epg.dat.gz error"
-msgstr "помилка завантаження epg.dat"
-
 msgid "Download EPG"
 msgstr "Завантажити EPG"
 
@@ -55,20 +57,22 @@ msgstr "epg.dat завантажений"
 msgid "Download url"
 msgstr "Адреса завантаження"
 
+#, python-format
 msgid "EPG from %s"
 msgstr "Загрузка с %s"
 
 msgid "EPGFlush if support"
 msgstr "Увімкнути EPGFlush (як що підтримуєтся)"
 
+#, fuzzy
+msgid "Manual Donwloading epg.dat.gz error"
+msgstr "помилка завантаження epg.dat"
+
 msgid "Periodicity checks"
 msgstr "Періодичність перевірки"
 
 msgid "Please wait"
 msgstr "Будь ласка зачекайте"
-
-msgid "Reset Settings"
-msgstr "Скинути налаштування"
 
 msgid "Save"
 msgstr "Зберегти"
@@ -85,21 +89,13 @@ msgstr "Включити автооновлення epg.dat"
 msgid "Show Auto EPG Downloader in ExtensionMenu"
 msgstr "Показати Авто EPG в меню розширень"
 
-msgid "Show status message"
-msgstr "Показувати статус завантаження"
-
 msgid "Source"
 msgstr "Джерело epg.dat"
-
-msgid "Unzipping epg.dat.gz"
-msgstr "Розпакування epg.dat.gz"
-
-msgid "configuration default"
-msgstr "конфігурация за замовчуванням"
 
 msgid "configuration is saved"
 msgstr "конфігурація збережена"
 
+#, python-format
 msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
 msgstr "epg.dat оновлен - %02d:%02d:%d %02d:%02d:%02d"
 

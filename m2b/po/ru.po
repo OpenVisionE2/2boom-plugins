@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2boom m3u/bouquet converter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-08-07 18:33+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -22,13 +22,27 @@ msgstr "Закрыть"
 msgid "Convert"
 msgstr "Конвертировать"
 
+#, python-format
 msgid "Converting %s"
 msgstr "Конвертируем %s"
+
+msgid "Gstreamer"
+msgstr ""
 
 msgid "Input password (if needed)"
 msgstr "Введите пароль (при необходимости)"
 
-msgid "Not Found m3u/xml file"
+msgid "LiveStreamer/hls"
+msgstr ""
+
+msgid "LiveStreamer/hlsvariant"
+msgstr ""
+
+msgid "Multicast"
+msgstr ""
+
+#, fuzzy
+msgid "Not Found m3u file"
 msgstr "m3u/xml не найден"
 
 msgid "Please wait"
@@ -46,5 +60,6 @@ msgstr "Виберите путь"
 msgid "Select type"
 msgstr "Выберите тип"
 
-msgid "m3u/xml to bouquet converter"
+#, fuzzy
+msgid "m3u to bouquet converter"
 msgstr "конвертирование m3u/xml в enigma2 bouquet"

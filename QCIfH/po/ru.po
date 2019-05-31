@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: QuickChannelInfo for Hotkey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2015-11-29 18:21+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -19,11 +19,41 @@ msgstr "QuickChannelInfo для Hotkey от 2boom"
 msgid "2boom's QuickChannelInfo setup"
 msgstr "QuickChannelInfo настройка"
 
+msgid "AGC:"
+msgstr ""
+
+msgid "Audio:"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Fps:"
+msgstr ""
+
+msgid "Nims:"
+msgstr ""
+
+msgid "SNR:"
+msgstr ""
+
+msgid "SNRdB:"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
 msgid "User skin"
 msgstr "Пользовательское оформление"
+
+msgid "Video:"
+msgstr ""
 
 msgid "configuration is saved"
 msgstr "конфигурация сохранена"
 
 msgid "quickchannelinfo for hotkey extentions"
 msgstr "quickchannelinfo для расширения hotkey"
+
+msgid "x"
+msgstr ""

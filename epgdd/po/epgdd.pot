@@ -1,61 +1,24 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "EPG from %s"
-msgstr ""
-
-msgid "Select path to save epg.dat"
-msgstr ""
-
-msgid "Set EPG filename"
-msgstr ""
-
-msgid "Download url"
-msgstr ""
-
-msgid "Check epg.dat exists"
-msgstr ""
-
-msgid "Show Auto EPG Downloader in ExtensionMenu"
-msgstr ""
-
-msgid "Close"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "Download EPG"
-msgstr ""
-
-msgid "configuration is saved"
-msgstr ""
-
-msgid "Please wait"
-msgstr ""
-
-msgid "Donwloading epg.dat.gz"
-msgstr ""
-
-msgid "Unzipping epg.dat.gz"
-msgstr ""
-
-msgid "Download epg.dat successful"
-msgstr ""
-
-msgid "Donwloading epg.dat.gz error"
-msgstr ""
-
-msgid "2boom's Auto EPG Downloader"
-msgstr ""
-
-msgid "Periodicity checks"
-msgstr ""
-
-msgid "Show status message"
-msgstr ""
-
-msgid "60 min"
+#, python-format
+msgid "%s not respond"
 msgstr ""
 
 msgid "120 min"
@@ -67,29 +30,76 @@ msgstr ""
 msgid "240 min"
 msgstr ""
 
-msgid "last epg.dat updated - not yet"
+msgid "2boom's Auto EPG Downloader"
 msgstr ""
 
-msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
+msgid "30 min"
 msgstr ""
 
-msgid "EPGFlush if support"
+msgid "60 min"
 msgstr ""
 
-msgid "Reset Settings"
-msgstr ""
-
-msgid "configuration default"
-msgstr ""
-
-msgid "Choice epg.dat source"
+msgid "Check epg.dat exists"
 msgstr ""
 
 msgid "Choice"
 msgstr ""
 
-msgid "Source"
+msgid "Choice epg.dat source"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Download EPG"
+msgstr ""
+
+msgid "Download epg.dat successful"
+msgstr ""
+
+msgid "Download url"
+msgstr ""
+
+#, python-format
+msgid "EPG from %s"
+msgstr ""
+
+msgid "EPGFlush if support"
+msgstr ""
+
+msgid "Manual Donwloading epg.dat.gz error"
+msgstr ""
+
+msgid "Periodicity checks"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select path to save epg.dat"
+msgstr ""
+
+msgid "Set EPG filename"
 msgstr ""
 
 msgid "Set autoupdate epg.dat"
+msgstr ""
+
+msgid "Show Auto EPG Downloader in ExtensionMenu"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "configuration is saved"
+msgstr ""
+
+#, python-format
+msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
+msgstr ""
+
+msgid "last epg.dat updated - not yet"
 msgstr ""

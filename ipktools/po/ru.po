@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2boom's IPK Tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-20 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2012-08-12 15:08+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -12,11 +12,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#, python-format
+msgid "%s"
+msgstr ""
+
 msgid "2boom's IPK tools"
 msgstr "IPK инструменты"
 
 msgid "Adv. UnInstall"
 msgstr "Продв. удаление"
+
+#, fuzzy
+msgid "Clear /tmp"
+msgstr "Очистка /tmp"
 
 msgid "Close"
 msgstr "Закрыть"
@@ -71,9 +79,6 @@ msgstr "Одиночный режим"
 
 msgid "UnInstall"
 msgstr "Удаление"
-
-msgid "clear /tmp"
-msgstr "Очистка /tmp"
 
 msgid "dowmload extensions from feed"
 msgstr "Загрузка расширений с сервера имиджа"

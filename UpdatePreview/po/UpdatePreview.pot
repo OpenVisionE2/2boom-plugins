@@ -1,38 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Update preview: %s aviable"
+msgid ". Image is stable."
 msgstr ""
 
 msgid ". Image may not be stable."
 msgstr ""
 
-msgid ". Image is stable."
+msgid "Close"
 msgstr ""
 
-msgid "Updating..."
+msgid "Currently the commit log cannot be retrieved - please try later again"
 msgstr ""
 
-msgid "Software update preview"
-msgstr ""
-
-msgid "No updates available"
-msgstr ""
-
-msgid "Latest Commits"
-msgstr ""
-
-msgid "Please wait"
+msgid "Deselect"
 msgstr ""
 
 msgid "Error receive list-upgradable, try later"
 msgstr ""
 
-msgid "Updating list of available packages"
+msgid "Execution finished!!"
+msgstr ""
+
+msgid "Latest Commits"
+msgstr ""
+
+msgid "No updates available"
+msgstr ""
+
+msgid "Please wait"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Select files"
+msgstr ""
+
+msgid "Software update preview"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+#, python-format
+msgid "Update preview: %s aviable"
 msgstr ""
 
 msgid "Updating list installed and upgradable packages"
 msgstr ""
 
-msgid "Select files"
+msgid "Updating list of available packages"
+msgstr ""
+
+msgid "Updating..."
+msgstr ""
+
+msgid "update preview from feed"
 msgstr ""

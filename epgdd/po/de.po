@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2boom' Auto EPG Loader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2016-12-11 15:58+0200\n"
 "Last-Translator: 2boom <4bob@ua.fm>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid "%s not respond"
+msgstr ""
 
 msgid "120 min"
 msgstr "120 Min"
@@ -25,6 +29,10 @@ msgstr "240 Min"
 
 msgid "2boom's Auto EPG Downloader"
 msgstr "Auto EPG-Downloader (c) 2boom"
+
+#, fuzzy
+msgid "30 min"
+msgstr "60 Min"
 
 msgid "60 min"
 msgstr "60 Min"
@@ -41,12 +49,6 @@ msgstr "Auswahl epg.data Quelle"
 msgid "Close"
 msgstr "Schließen"
 
-msgid "Donwloading epg.dat.gz"
-msgstr "epg.dat.gz herunterladen"
-
-msgid "Donwloading epg.dat.gz error"
-msgstr "epg.dat heruntergeladen fehler"
-
 msgid "Download EPG"
 msgstr "EPG herunterladen"
 
@@ -56,20 +58,22 @@ msgstr "epg.dat heruntergeladen erfolgreich"
 msgid "Download url"
 msgstr "Download-Adresse"
 
+#, python-format
 msgid "EPG from %s"
 msgstr "EPG-Download %s"
 
 msgid "EPGFlush if support"
 msgstr "Wird EPGFlush unterstützt"
 
+#, fuzzy
+msgid "Manual Donwloading epg.dat.gz error"
+msgstr "epg.dat heruntergeladen fehler"
+
 msgid "Periodicity checks"
 msgstr "Periodizität der Überprüfungen"
 
 msgid "Please wait"
 msgstr "Bitte wärten"
-
-msgid "Reset Settings"
-msgstr ""
 
 msgid "Save"
 msgstr "Speichern"
@@ -86,22 +90,13 @@ msgstr "Auto-Update epg.dat aktivieren"
 msgid "Show Auto EPG Downloader in ExtensionMenu"
 msgstr "Zeigen Auto EPG-Downloader in ExtensionMenu"
 
-msgid "Show status message"
-msgstr "Statusmeldung anzeigen"
-
 msgid "Source"
 msgstr ""
-
-msgid "Unzipping epg.dat.gz"
-msgstr "epg.dat.gz entpacken"
-
-#, fuzzy
-msgid "configuration default"
-msgstr "Konfiguration ist gespeichert"
 
 msgid "configuration is saved"
 msgstr "Konfiguration ist gespeichert"
 
+#, python-format
 msgid "last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d"
 msgstr "letzte epg.dat Aktualisierung - %02d:%02d:%d %02d:%02d:%02d"
 
