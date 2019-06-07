@@ -17,15 +17,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "2boom's QuickEmuRestart for Hotkey"
+#, python-format
+msgid "%s updater"
+msgstr ""
+
+msgid "Building bouquet"
+msgstr ""
+
+msgid "Donwloading channel list"
+msgstr ""
+
+msgid "Error loading m3u"
+msgstr ""
+
+msgid "No link file found"
 msgstr ""
 
 msgid "Please wait"
 msgstr ""
 
-#, python-format
-msgid "Restarting %s"
+msgid "Reload servicelist"
 msgstr ""
 
-msgid "quick restart softcam & cardserver for hotkey extentions"
+#, python-format
+msgid "update %s bouquet"
 msgstr ""

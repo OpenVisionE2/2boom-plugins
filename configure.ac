@@ -72,6 +72,7 @@ ipktools/src/Makefile
 ipktools/src/images/Makefile
 
 LTV/Makefile
+LTV/po/Makefile
 LTV/src/Makefile
 
 m2b/Makefile
