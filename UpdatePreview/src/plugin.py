@@ -28,7 +28,7 @@ from Screens.Console2 import Console2
 from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-from enigma import eTimer, getBoxType
+from enigma import eTimer
 from urllib2 import urlopen
 import os
 import gettext
@@ -139,10 +139,7 @@ class updateprv2(Screen):
 				title_msg = _("Update preview: %s aviable") % self.count
 				try:
 					status = urlopen("http://openpli.org/status").read().split('!', 1)
-					if getBoxType().replace('vu', 'vuplus') in status[0].split(','):
-						title_msg += _(". Image may not be stable.")
-					else:
-						title_msg += _(". Image is stable.")
+					title_msg += _(". Image is stable.")
 				except:
 					pass
 		self.setTitle(title_msg)

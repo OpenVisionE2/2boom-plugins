@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Update Preview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"POT-Creation-Date: 2019-09-06 22:31+0430\n"
 "PO-Revision-Date: 2014-07-12 18:03+0200\n"
 "Last-Translator: Irkoff <irkoff@gmail.com>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -16,9 +16,6 @@ msgstr ""
 
 msgid ". Image is stable."
 msgstr ". Імідж стабільний."
-
-msgid ". Image may not be stable."
-msgstr ". Імідж може бути не стабільний."
 
 msgid "Close"
 msgstr ""
