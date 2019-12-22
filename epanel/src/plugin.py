@@ -489,12 +489,8 @@ class epanelinfo(Screen):
 		self["device"].text = list
 		
 	def HardWareType(self):
-		if os.path.isfile("/proc/stb/info/boxtype"):
-			return open("/proc/stb/info/boxtype").read().strip().upper()
-		if os.path.isfile("/proc/stb/info/vumodel"):
-			return "VU+" + open("/proc/stb/info/vumodel").read().strip().upper()
-		if os.path.isfile("/proc/stb/info/model"):
-			return open("/proc/stb/info/model").read().strip().upper()
+		if os.path.isfile("/etc/model"):
+			return open("/etc/model").read().strip().upper()
 		return _("unavailable")
 		
 	def getImageTypeString(self):

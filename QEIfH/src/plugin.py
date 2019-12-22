@@ -291,29 +291,7 @@ class QEIfH(Screen):
 			if config.plugins.AltSoftcam.actcam.value != "none": 
 				return config.plugins.AltSoftcam.actcam.value 
 			else: 
-				return None
-		#egami
-		elif os.path.isfile("/tmp/egami.inf"):
-			for line in open("/tmp/egami.inf"):
-				if 'Current emulator:' in line:
-					return line.split(':')[-1].lstrip().strip('\n')
-		elif os.path.isfile("/etc/image-version") and not os.path.isfile("/etc/.emustart") and not os.path.isfile("/etc/init.d/softcam") and not os.path.isfile("/etc/init.d/cardserver"):
-			if os.path.isfile('/etc/issue'):
-				for line in open('/etc/issue'):
-					if 'openatv' in line.lower():
-						if config.softcam.actCam.value: 
-							if not config.softcam.actCam.value.startswith('CAM'):
-								camdlist = config.softcam.actCam.value
-						if config.softcam.actCam2.value: 
-							if not config.softcam.actCam2.value.startswith('CAM'):
-								serlist = config.softcam.actCam2.value
-			if serlist is not None and camdlist is not None:
-				return ("%s %s" % (serlist, camdlist))
-			elif camdlist is not None:
-				return "%s" % camdlist
-			elif serlist is not None:
-				return "%s" % serlist
-			return ""	
+				return None	
 		#Pli
 		elif os.path.isfile("/etc/init.d/softcam") or os.path.isfile("/etc/init.d/cardserver"):
 			if os.path.isfile("/etc/init.d/softcam"):
@@ -362,10 +340,6 @@ class QEIfH(Screen):
 						package = 1
 					elif "kernel-module-player2" in line and "Package:" in line:
 						package = 1
-					elif "formuler-dvb-modules" in line and "Package:" in line:
-						package = 1
-					elif "vuplus-dvb-proxy-vusolo4k" in line and "Package:" in line:
-						package = 1
 					if "Version:" in line and package == 1:
 						package = 0
 						if line.count('.') is 3:
@@ -376,12 +350,8 @@ class QEIfH(Screen):
 						break
 			if os.path.isfile("/proc/version"):
 				enigma = open("/proc/version").read().split()[2]
-			if os.path.isfile("/proc/stb/info/boxtype"):
-				box = open("/proc/stb/info/boxtype").read().strip().upper()
-			elif os.path.isfile("/proc/stb/info/vumodel"):
-				box = "Vu+ " + open("/proc/stb/info/vumodel").read().strip().capitalize()
-			elif os.path.isfile("/proc/stb/info/model"):
-				box = open("/proc/stb/info/model").read().strip().upper()
+			if os.path.isfile("/etc/model"):
+				box = open("/etc/model").read().strip().upper()
 			if os.path.isfile("/etc/issue"):
 				if os.path.isfile("/etc/issue"):
 					for line in open("/etc/issue"):
@@ -389,11 +359,6 @@ class QEIfH(Screen):
 							software += line.capitalize().replace('\n', '').replace('\l', '').replace('\\', '').strip()[:-1]
 				else:
 					software = _("undefined")
-				software = ' (%s)' % software.strip()
-			if os.path.isfile("/etc/vtiversion.info"):
-				software = ''
-				for line in open("/etc/vtiversion.info"):
-					software += line.split()[0].split('-')[0] + ' ' + line.split()[-1].replace('\n', '')
 				software = ' (%s)' % software.strip()
 			return _('%s%s  Kernel: %s (%s)') % (box, software, enigma, driver)
 		except:

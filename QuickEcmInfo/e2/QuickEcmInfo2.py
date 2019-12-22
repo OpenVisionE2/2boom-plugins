@@ -144,20 +144,11 @@ class QuickEcmInfo2(Poll, Converter, object):
 						break
 			if os.path.isfile("/proc/version"):
 				enigma = open("/proc/version").read().split()[2]
-			if os.path.isfile("/proc/stb/info/boxtype"):
-				box = open("/proc/stb/info/boxtype").read().strip().upper()
-			elif os.path.isfile("/proc/stb/info/vumodel"):
-				box = "Vu+ " + open("/proc/stb/info/vumodel").read().strip().capitalize()
-			elif os.path.isfile("/proc/stb/info/model"):
-				box = open("/proc/stb/info/model").read().strip().upper()
+			if os.path.isfile("/etc/model"):
+				box = open("/etc/model").read().strip().upper()
 			if os.path.isfile("/etc/issue"):
 				for line in open("/etc/issue"):
 					software += line.capitalize().replace('\n', '').replace('\l', '').replace('\\', '').strip()[:-1]
-				software = self.maincolor + ' (%s)' % software.strip() + self.basecolor
-			if os.path.isfile("/etc/vtiversion.info"):
-				software = ''
-				for line in open("/etc/vtiversion.info"):
-					software += line.split()[0].split('-')[0] + ' ' + line.split()[-1].replace('\n', '')
 				software = self.maincolor + ' (%s)' % software.strip() + self.basecolor
 			return '%s%s  Kernel: %s %s' % (box, software, enigma, driver)
 		else:
@@ -218,59 +209,6 @@ class QuickEcmInfo2(Poll, Converter, object):
 				elif serlist is not None:
 					return "%s" % serlist
 				return ""
-			#TS-Panel
-			elif os.path.isfile("/etc/startcam.sh"):
-				for line in open("/etc/startcam.sh"):
-					if "script" in line:
-						return "%s" % line.split("/")[-1].split()[0][:-3]
-			#domica 8120
-			elif os.path.isfile("/etc/init.d/cam"):
-				if config.plugins.emuman.cam.value: 
-					return config.plugins.emuman.cam.value
-			#PKT
-			elif os.path.isfile("//usr/lib/enigma2/python/Plugins/Extensions/PKT/plugin.pyo"):
-				if config.plugins.emuman.cam.value: 
-					return config.plugins.emuman.cam.value
-			#HDMU
-			elif os.path.isfile("/etc/.emustart") and os.path.isfile("/etc/image-version"):
-				for line in open("/etc/.emustart"):
-					return line.split()[0].split('/')[-1]
-			#AAF & ATV & VTI 
-			elif os.path.isfile("/etc/image-version") and not os.path.isfile("/etc/.emustart"):
-				emu = server = ""
-				for line in open("/etc/image-version"):
-					if "=AAF" in line or "=openATV" in line:
-						if config.softcam.actCam.value: 
-							emu = config.softcam.actCam.value
-						if config.softcam.actCam2.value: 
-							server = config.softcam.actCam2.value
-							if config.softcam.actCam2.value == "no CAM 2 active":
-								server = ""
-					elif "=vuplus" in line:
-						if os.path.isfile("/tmp/.emu.info"):
-							for line in open("/tmp/.emu.info"):
-								emu = line.strip('\n')
-					# BlackHole
-					elif "version=" in line and os.path.isfile("/etc/CurrentBhCamName"):
-						emu = open("/etc/CurrentBhCamName").read()
-				return "%s %s" % (emu, server)
-			#Domica	
-			elif os.path.isfile("/etc/active_emu.list"):
-				return open("/etc/active_emu.list").read().strip('\n')
-			#OoZooN
-			elif os.path.isfile("/tmp/cam.info"):
-				return open("/tmp/cam.info").read().strip('\n')
-			#Merlin2	
-			elif os.path.isfile("/etc/clist.list"):
-				return open("/etc/clist.list").read().strip('\n')
-			#GP3
-			elif os.path.isfile("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
-				from Plugins.Bp.geminimain.plugin import GETCAMDLIST
-				from Plugins.Bp.geminimain.lib import libgeminimain
-				camdl = libgeminimain.getPyList(GETCAMDLIST)
-				for x in camdl:
-					if x[1] is 1:
-						return x[2]
 			else:
 				return 'N/A'
 		else:
@@ -442,5 +380,3 @@ class QuickEcmInfo2(Poll, Converter, object):
 			Converter.changed(self, what)
 		elif what[0] is self.CHANGED_POLL:
 			self.downstream_elements.changed(what)
-
-
