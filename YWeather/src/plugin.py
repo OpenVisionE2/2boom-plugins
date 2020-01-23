@@ -500,7 +500,7 @@ class yweather_main():
 	def gotSession(self, session):
 		self.dialog = session.instantiateDialog(WeatherInfo)
 		self.Timer = eTimer()
-		keymap = "/usr/lib/enigma2/python/Plugins/Extensions/YWeather/keymap.xml"
+		keymap = resolveFilename(SCOPE_PLUGINS, "Extensions/YWeather/keymap.xml")
 		global globalActionMap
 		readKeymap(keymap)
 		globalActionMap.actions['showWeather'] = self.autohide
@@ -601,7 +601,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		with open('/usr/lib/enigma2/python/Plugins/Extensions/YWeather/keymap.xml', 'w') as keyfile:
+		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/YWeather/keymap.xml'), 'w') as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showWeather" flags="l" />\n\t</map>\n</keymap>' % config.plugins.yweather.keyname.value)
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )

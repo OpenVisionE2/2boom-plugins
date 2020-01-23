@@ -340,8 +340,8 @@ class get_source(Screen):
 		
 	def CfgMenu(self):
 		self.list = []
-		if os.path.isfile("/usr/lib/enigma2/python/Plugins/Extensions/epgdd/epghosts.txt"):
-			for line in open("/usr/lib/enigma2/python/Plugins/Extensions/epgdd/epghosts.txt"):
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd/epghosts.txt")):
+			for line in open(resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd/epghosts.txt")):
 				if line.startswith('http://'):
 					self.list.append((line.strip().rstrip('\r').rstrip('\n'), line.strip().rstrip('\r').rstrip('\n')))
 		self["menu"].setList(self.list)

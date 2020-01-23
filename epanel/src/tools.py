@@ -19,7 +19,7 @@ from Components.ActionMap import ActionMap, NumberActionMap
 from Plugins.Plugin import PluginDescriptor
 from Components.Language import language
 from Components.ScrollLabel import ScrollLabel
-from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE, SCOPE_LIBDIR
 from time import *
 from enigma import eEPGCache
 from types import *
@@ -944,7 +944,7 @@ class ScriptScreen3(Screen):
 		list = []
 		if pathExists(config.plugins.epanel.scriptpath.value):
 			list = os.listdir("%s" % config.plugins.epanel.scriptpath.value[:-1])
-			list = [x for x in list if x.endswith('.sh') or x.endswith('.py')]
+			list = [x for x in list if x.endswith('.sh') or x.endswith('.pyo')]
 		else:
 			list = []
 		list.sort()
@@ -1653,8 +1653,8 @@ class get_source(Screen):
 		
 	def CfgMenu(self):
 		self.list = []
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/epanel/epghosts.txt"):
-			for line in open("/usr/lib/enigma2/python/Plugins/Extensions/epanel/epghosts.txt"):
+		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/epghosts.txt")):
+			for line in open(resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/epghosts.txt")):
 				if line.startswith('http://'):
 					self.list.append((line.strip().rstrip('\r').rstrip('\n'), line.strip().rstrip('\r').rstrip('\n')))
 		self["menu"].setList(self.list)
@@ -2478,7 +2478,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 			i[1].save()
 		configfile.save()
 		if fileExists(self.path):
-			remove_line(self.path, 'no-ip.py')
+			remove_line(self.path, 'no-ip.pyo')
 		if config.plugins.epanel.dnstime.value is not '0':
 			self.cron_setup()
 			self.create_script()
@@ -2490,7 +2490,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 			updatestr = "http://%s:%s@dynupdate.no-ip.com/nic/update?hostname=%s" % (config.plugins.epanel.dnsuser.value, config.plugins.epanel.dnspass.value, config.plugins.epanel.dnshost.value)
 		else:
 			updatestr = "https://%s:%s@nic.changeip.com/nic/update?cmd=update&set=$CIPSET&hostname=%s" % (config.plugins.epanel.dnsuser.value, config.plugins.epanel.dnspass.value, config.plugins.epanel.dnshost.value)
-		with open('/usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py', 'w') as update_script:
+		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo'), 'w') as update_script:
 			update_script.write('#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n# Copyright (c) 2boom 2014\n\n')
 			update_script.write('import requests\n\n')
 			update_script.write('res = requests.get("%s")\n' % updatestr)
@@ -2501,19 +2501,19 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if config.plugins.epanel.dnstime.value is not '0':
 			with open(self.path, 'a') as cron_root:
 				if config.plugins.epanel.dnstime.value not in ('1', '2', '3'):
-					cron_root.write('*/%s * * * * python /usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py\n' % config.plugins.epanel.dnstime.value)
+					cron_root.write('*/%s * * * * python %s\n' % (config.plugins.epanel.dnstime.value, resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")))
 				else:
-					cron_root.write('1 */%s * * * python /usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py\n' % config.plugins.epanel.dnstime.value)
+					cron_root.write('1 */%s * * * python %s\n' % (config.plugins.epanel.dnstime.value, resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")))
 				cron_root.close()
 			with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 				cron_update.write('root')
 				cron_update.close()
 
 	def UpdateNow(self):
-		if not fileExists('/usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py'):
+		if not fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
 			self.create_script()
-		if fileExists('/usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py'):
-			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python /usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.py"], closeOnSuccess = False)
+		if fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
+			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python /usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.pyo"], closeOnSuccess = False)
 		else:
 			self.mbox = self.session.open(MessageBox,(_("update script not found...")), MessageBox.TYPE_INFO, timeout = 4 )
 

@@ -20,9 +20,9 @@ from enigma import eTimer, iPlayableService, iServiceInformation, eServiceRefere
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigClock, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile
 from Components.Element import cached
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LIBDIR
 import os, time
-if os.path.isfile('/usr/lib/bitratecalc.so'):
+if os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'bitratecalc.so')):
 	from bitratecalc import eBitrateCalculator
 	binaryfound = True
 else:
@@ -120,10 +120,10 @@ class QuickEcmInfo2(Poll, Converter, object):
 
 	def status(self):
 		status = ''
-		if os.path.isfile("/usr/lib/opkg/status"):
-			status = "/usr/lib/opkg/status"
-		elif os.path.isfile("/usr/lib/ipkg/status"):
-			status = "/usr/lib/ipkg/status"
+		if os.path.isfile(resolveFilename(SCOPE_LIBDIR, "opkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "opkg/status")
+		elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 		elif os.path.isfile("/var/lib/opkg/status"):
 			status = "/var/lib/opkg/status"
 		elif os.path.isfile("/var/opkg/status"):
@@ -180,7 +180,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 			nameemu = nameser = []
 			camdlist = serlist = None
 			#Alternative SoftCam Manager 
-			if os.path.isfile("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/plugin.py"): 
+			if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
 				if config.plugins.AltSoftcam.actcam.value != "none": 
 					return config.plugins.AltSoftcam.actcam.value 
 				else: 

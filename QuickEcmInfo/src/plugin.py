@@ -174,7 +174,7 @@ class qei_setup(ConfigListScreen, Screen):
 	def save(self):
 		config.plugins.QuickEcm.keyname.save()
 		configfile.save()
-		with open("/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/keymap.xml", "w") as keyfile:
+		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEcmInfo/keymap.xml"), "w") as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showEcmInfo" flags="m" />\n\t</map>\n</keymap>' % config.plugins.QuickEcm.keyname.value)
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
