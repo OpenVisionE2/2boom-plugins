@@ -15,7 +15,7 @@ from Components.MenuList import MenuList
 from Plugins.Plugin import PluginDescriptor
 from Components.Language import language
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE, SCOPE_LIBDIR
 from os import environ
 import os
 import glob
@@ -23,9 +23,9 @@ import gettext
 import time
 
 def status_path():
-	status = '/usr/lib/opkg/status'
-	if fileExists("/usr/lib/ipkg/status"):
-		status = "/usr/lib/ipkg/status"
+	status = 'resolveFilename(SCOPE_LIBDIR, 'opkg/status')
+	if fileExists(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
+		status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 	elif fileExists("/var/lib/opkg/status"):
 		status = "/var/lib/opkg/status"
 	elif fileExists("/var/opkg/status"):

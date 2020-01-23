@@ -177,15 +177,15 @@ class rpulite(Screen, ConfigListScreen):
 			i[1].save()
 		configfile.save()
 		if config.plugins.rpulite.startup.value or not config.plugins.rpulite.timeup.value is '0':
-			if not os.path.isfile('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh'):
+			if not os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
 				self.create_script()
 		
 		if config.plugins.rpulite.startup.value: #/etc/rc.d/rcS.d/
 			if not os.path.isfile('/etc/rcS.d/get_ip_rtc'):
-				if os.path.isfile('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh') and os.path.isdir('/etc/rcS.d'):
+				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rcS.d'):
 					os.link('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', '/etc/rcS.d/get_ip_rtc')
 			if not os.path.isfile('/etc/rc.d/rcS.d/S98get_ip_rtc'):
-				if os.path.isfile('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh') and os.path.isdir('/etc/rc.d/rcS.d/'):
+				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rc.d/rcS.d/'):
 					os.link('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', '/etc/rc.d/rcS.d/S98get_ip_rtc')
 		else:
 			if os.path.isfile('/etc/rcS.d/get_ip_rtc'):
@@ -195,7 +195,7 @@ class rpulite(Screen, ConfigListScreen):
 		if not config.plugins.rpulite.timeup.value is '0':
 			if os.path.isfile(self.path):
 				remove_line(self.path, 'get_ip_rtc')
-				add_line(self.path, '15 */%s * * * %s\n' % (config.plugins.rpulite.timeup.value, '/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh'))
+				add_line(self.path, '15 */%s * * * %s\n' % (config.plugins.rpulite.timeup.value, resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')))
 				self.cron_update()
 		else:
 			if os.path.isfile(self.path):
@@ -216,7 +216,7 @@ class rpulite(Screen, ConfigListScreen):
 					config.plugins.rpulite.ip.value = line.split('\t')[0]
 
 	def create_script(self):
-		with open('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', 'w') as out_script:
+		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), 'w') as out_script:
 			out_script.write("#!/bin/sh\n")
 			out_script.write("# (c) 2boom 2014\n")
 			out_script.write("SERVER_1='http://iptv.lamp.ufa-it.ru/generate_m3u.php?num_list=001&shift=2&type=m3u'\n")
@@ -251,7 +251,7 @@ class rpulite(Screen, ConfigListScreen):
 			out_script.write("\techo \"The '$M3U_FILE' does not loaded\"\n")
 			out_script.write("fi\n")
 			out_script.close()
-		if os.path.isfile('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh'):
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
 			os.chmod('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', 0755)
 
 	def cancel(self):

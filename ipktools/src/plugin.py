@@ -31,7 +31,7 @@ from Components.MenuList import MenuList
 from Plugins.Plugin import PluginDescriptor
 from Components.Language import language
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE, SCOPE_LIBDIR
 from Components.config import config, getConfigListEntry, ConfigText, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile
 from Components.ConfigList import ConfigListScreen
 from os import environ
@@ -42,10 +42,10 @@ import enigma
 
 def status_path():
 	status = ''
-	if fileExists("/usr/lib/opkg/status"):
-		status = "/usr/lib/opkg/status"
-	elif fileExists("/usr/lib/ipkg/status"):
-		status = "/usr/lib/ipkg/status"
+	if fileExists(resolveFilename(SCOPE_LIBDIR, "opkg/status")):
+		status = resolveFilename(SCOPE_LIBDIR, "opkg/status")
+	elif fileExists(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
+		status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 	elif fileExists("/var/lib/opkg/status"):
 		status = "/var/lib/opkg/status"
 	elif fileExists("/var/opkg/status"):

@@ -16,16 +16,14 @@
 
 from Components.ActionMap import ActionMap
 from Components.ScrollLabel import ScrollLabel
-from Components.Pixmap import Pixmap
 from Components.Language import language
 from Components.Sources.StaticText import StaticText
 from Components.Sources.CurrentService import CurrentService
 from Components.config import config
 from Screens.Screen import Screen
 from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
-from enigma import ePoint, eTimer, getDesktop, iServiceInformation
-from cStringIO import StringIO
+from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_LIBDIR
+from enigma import eTimer, iServiceInformation
 from os import environ
 import gettext
 import os, sys
@@ -42,7 +40,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-if os.path.isfile('/usr/lib/bitratecalc.so'):
+if os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'bitratecalc.so')):
 	from bitratecalc import eBitrateCalculator
 	binary_file = True
 else:
@@ -287,7 +285,7 @@ class QEIfH(Screen):
 		nameemu = nameser = []
 		ecminfo = ''
 		# Alternative SoftCam Manager 
-		if os.path.isfile("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/plugin.py"): 
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
 			if config.plugins.AltSoftcam.actcam.value != "none": 
 				return config.plugins.AltSoftcam.actcam.value 
 			else: 
@@ -320,10 +318,10 @@ class QEIfH(Screen):
 
 	def status(self):
 		status = ''
-		if os.path.isfile("/usr/lib/opkg/status"):
-			status = "/usr/lib/opkg/status"
-		elif os.path.isfile("/usr/lib/ipkg/status"):
-			status = "/usr/lib/ipkg/status"
+		if os.path.isfile(resolveFilename(SCOPE_LIBDIR, "opkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "opkg/status")
+		elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 		elif os.path.isfile("/var/lib/opkg/status"):
 			status = "/var/lib/opkg/status"
 		elif os.path.isfile("/var/opkg/status"):

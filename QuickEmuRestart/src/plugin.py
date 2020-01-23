@@ -31,7 +31,7 @@ import os
 import gettext
 from os import environ
 
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/Softcam.py"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 	from Plugins.Extensions.AlternativeSoftCamManager.Softcam import getcamcmd
 	
 lang = language.getLanguage()
@@ -70,11 +70,8 @@ class QuickEmu():
 		
 	def restartCam(self):
 		camname = emunam = estart = estop = ""
-# VTI 
-		if fileExists("/etc/init.d/current_cam.sh"):
-			self.Console.ePopen("/etc/init.d/current_cam.sh stop && /etc/init.d/current_cam.sh start")
 # Alternative SoftCam Manager
-		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/Softcam.py"):
+		elif fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
 			emunam = config.plugins.AltSoftcam.actcam.value
 			if emunam != "none":
@@ -84,18 +81,6 @@ class QuickEmu():
 				self.Console.ePopen(getcamcmd(emunam))
 				if service:
 					self.session.nav.playService(service)
-# BH
-		elif fileExists("/usr/bin/StartBhCam"):
-			self.Console.ePopen("/usr/bin/StartBhCam stop && /usr/bin/StartBhCam start")
-# Dream-Elit
-		elif fileExists("/usr/bin/StartDelCam"):
-			self.Console.ePopen("/usr/bin/StartDelCam stop && /usr/bin/StartDelCam start")
-# Dream-Elite-2
-		elif fileExists("/etc/init.d/restartEmu.sh"):
-			self.Console.ePopen("/etc/init.d/restartEmu.sh start")
-# Domica 9
-		elif fileExists("/etc/rcS.d/S50emu"):
-			self.Console.ePopen("/etc/rcS.d/S50emu restart")
 # PLI
 		elif fileExists("/etc/init.d/softcam") or fileExists("/etc/init.d/cardserver"):
 			if fileExists("/etc/init.d/cardserver"):
@@ -109,27 +94,6 @@ class QuickEmu():
 					currentemu = line.split()[0]
 			if fileExists("%s " % currentemu):
 				self.Console.ePopen("%s cam_down & && %s cam_up &" % (currentemu, currentemu))
-# AAF
-		elif fileExists("/etc/image-version"):
-			for line in open("/etc/enigma2/settings"):
-				if "config.softcam.actCam=" in line:
-					camname = line.split("=")[-1].strip('\n').strip()
-			camdlist = os.listdir("/etc/")
-			for line in camdlist:
-				if ".emu" in line:
-					for line2 in open("/etc/%s" % line):
-						if "emuname" in line2:
-							emunam = line2.split("=")[-1].strip('\n').strip()
-						elif "startcam" in line2:
-							estart = line2.split("=")[-1].strip('\n').strip()
-						elif "stopcam" in line2:
-							estop = line2.split("=")[-1].strip('\n').strip()
-						if emunam == camname:
-							self.Console.ePopen("%s && %s" % (estop,estart))
-							break
-# PKT
-		elif fileExists("/etc/init.d/cam"):
-			self.Console.ePopen("/etc/init.d/cam restart")
 		try:
 			if not config.plugins.qer.time.value is 0:
 				self.mbox = self.session.open(MessageBox,(_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout = config.plugins.qer.time.value )
@@ -140,7 +104,7 @@ class QuickEmu():
 		nameemu = nameser = []
 		camdlist = serlist = None
 		#Alternative SoftCam Manager 
-		if os.path.isfile("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/plugin.py"): 
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
 			if config.plugins.AltSoftcam.actcam.value != "none": 
 				return config.plugins.AltSoftcam.actcam.value 
 			else: 
@@ -174,54 +138,6 @@ class QuickEmu():
 			for line in open("/etc/startcam.sh"):
 				if "script" in line:
 					return "%s" % line.split("/")[-1].split()[0][:-3]
-		#domica 8120
-		elif os.path.isfile("/etc/init.d/cam"):
-			if config.plugins.emuman.cam.value: 
-				return config.plugins.emuman.cam.value
-		#PKT
-		elif os.path.isfile("//usr/lib/enigma2/python/Plugins/Extensions/PKT/plugin.pyo"):
-			if config.plugins.emuman.cam.value: 
-				return config.plugins.emuman.cam.value
-		#HDMU
-		elif os.path.isfile("/etc/.emustart") and os.path.isfile("/etc/image-version"):
-			for line in open("/etc/.emustart"):
-				return line.split()[0].split('/')[-1]
-		#AAF & ATV & VTI 
-		elif os.path.isfile("/etc/image-version") and not os.path.isfile("/etc/.emustart"):
-			emu = server = ""
-			for line in open("/etc/image-version"):
-				if "=AAF" in line or "=openATV" in line:
-					if config.softcam.actCam.value: 
-						emu = config.softcam.actCam.value
-					if config.softcam.actCam2.value: 
-						server = config.softcam.actCam2.value
-						if config.softcam.actCam2.value == "no CAM 2 active":
-							server = ""
-				elif "=vuplus" in line:
-					if os.path.isfile("/tmp/.emu.info"):
-						for line in open("/tmp/.emu.info"):
-							emu = line.strip('\n')
-				# BlackHole
-				elif "version=" in line and os.path.isfile("/etc/CurrentBhCamName"):
-					emu = open("/etc/CurrentBhCamName").read()
-			return "%s %s" % (emu, server)
-		#Domica	
-		elif os.path.isfile("/etc/active_emu.list"):
-			return open("/etc/active_emu.list").read().strip('\n')
-		#OoZooN
-		elif os.path.isfile("/tmp/cam.info"):
-			return open("/tmp/cam.info").read().strip('\n')
-		#Merlin2	
-		elif os.path.isfile("/etc/clist.list"):
-			return open("/etc/clist.list").read().strip('\n')
-		#GP3
-		elif os.path.isfile("/usr/lib/enigma2/python/Plugins/Bp/geminimain/lib/libgeminimain.so"):
-			from Plugins.Bp.geminimain.plugin import GETCAMDLIST
-			from Plugins.Bp.geminimain.lib import libgeminimain
-			camdl = libgeminimain.getPyList(GETCAMDLIST)
-			for x in camdl:
-				if x[1] is 1:
-					return x[2]
 		else:
 			return ''
 #####################################################
@@ -270,7 +186,7 @@ class qer_setup(ConfigListScreen, Screen):
 		config.plugins.qer.keyname.save()
 		config.plugins.qer.time.save()
 		configfile.save()
-		with open("/usr/lib/enigma2/python/Plugins/Extensions/QuickEmuRestart/keymap.xml", "w") as keyfile:
+		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEmuRestart/keymap.xml"), "w") as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showEmuRestart" flags="m" />\n\t</map>\n</keymap>' % config.plugins.qer.keyname.value)
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
