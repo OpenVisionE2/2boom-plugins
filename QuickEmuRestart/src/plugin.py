@@ -71,7 +71,7 @@ class QuickEmu():
 	def restartCam(self):
 		camname = emunam = estart = estop = ""
 # Alternative SoftCam Manager
-		elif fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
+		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
 			emunam = config.plugins.AltSoftcam.actcam.value
 			if emunam != "none":

@@ -2513,7 +2513,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if not fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
 			self.create_script()
 		if fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
-			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")], closeOnSuccess = False)
+			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python /usr/lib/enigma2/python/Plugins/Extensions/epanel/no-ip.pyo"], closeOnSuccess = False)
 		else:
 			self.mbox = self.session.open(MessageBox,(_("update script not found...")), MessageBox.TYPE_INFO, timeout = 4 )
 

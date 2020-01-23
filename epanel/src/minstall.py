@@ -23,7 +23,7 @@ import gettext
 import time
 
 def status_path():
-	status = 'resolveFilename(SCOPE_LIBDIR, 'opkg/status')
+	status = resolveFilename(SCOPE_LIBDIR, 'opkg/status')
 	if fileExists(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
 		status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 	elif fileExists("/var/lib/opkg/status"):
