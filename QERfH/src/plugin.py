@@ -26,7 +26,7 @@ from os import environ
 import gettext
 import os, sys
 
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/Softcam.py"):
+if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 	from Plugins.Extensions.AlternativeSoftCamManager.Softcam import getcamcmd
 
 lang = language.getLanguage()
@@ -55,7 +55,7 @@ class QERfH(Screen):
 		self.setTitle(_("Please wait"))
 		self["status"] = StaticText()
 		self.service = None
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/Softcam.py"):
+		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 			self.service = self.session.nav.getCurrentlyPlayingServiceReference()
 			emunam = config.plugins.AltSoftcam.actcam.value
 			if emunam != "none":
@@ -92,7 +92,7 @@ class QERfH(Screen):
 		nameemu = nameser = []
 		ecminfo = ''
 		#Alternative SoftCam Manager 
-		if os.path.isfile("/usr/lib/enigma2/python/Plugins/Extensions/AlternativeSoftCamManager/plugin.py"): 
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
 			if config.plugins.AltSoftcam.actcam.value != "none": 
 				return config.plugins.AltSoftcam.actcam.value 
 			else: 

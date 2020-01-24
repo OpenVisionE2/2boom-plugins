@@ -14,7 +14,7 @@ from Components.Label import Label
 from Components.MenuList import MenuList
 from Plugins.Plugin import PluginDescriptor
 from Components.Language import language
-from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
+from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE, SCOPE_LIBDIR
 from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigClock, ConfigInteger, ConfigDateTime, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile, NoSave
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
@@ -344,8 +344,8 @@ class epanelinfo(Screen):
 		self.network_info()
 		
 	def getLivestreamerVersion(self):
-		if fileExists("/usr/lib/python2.7/site-packages/livestreamer/__init__.py"):
-			for line in open("/usr/lib/python2.7/site-packages/livestreamer/__init__.py"):
+		if fileExists(resolveFilename(SCOPE_LIBDIR, "python2.7/site-packages/livestreamer/__init__.py")):
+			for line in open(resolveFilename(SCOPE_LIBDIR, "python2.7/site-packages/livestreamer/__init__.py")):
 				if '__version__' in line:
 					self["livestreamer"].text = line.split('"')[1]
 		else:
@@ -439,10 +439,10 @@ class epanelinfo(Screen):
 
 	def status(self):
 		status = ''
-		if fileExists("/usr/lib/opkg/status"):
-			status = "/usr/lib/opkg/status"
-		elif fileExists("/usr/lib/ipkg/status"):
-			status = "/usr/lib/ipkg/status"
+		if fileExists(resolveFilename(SCOPE_LIBDIR, "opkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "opkg/status")
+		elif fileExists(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
+			status = resolveFilename(SCOPE_LIBDIR, "ipkg/status")
 		elif fileExists("/var/lib/opkg/status"):
 			status = "/var/lib/opkg/status"
 		elif fileExists("/var/opkg/status"):
@@ -513,10 +513,10 @@ class epanelinfo(Screen):
 		try:
 			if os.path.isfile('/var/lib/opkg/status'):
 				st = os.stat('/var/lib/opkg/status')
-			elif os.path.isfile('/usr/lib/ipkg/status'):
-				st = os.stat('/usr/lib/ipkg/status')
-			elif os.path.isfile('/usr/lib/opkg/status'):
-				st = os.stat('/usr/lib/opkg/status')
+			elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'ipkg/status')):
+				st = os.stat(resolveFilename(SCOPE_LIBDIR, 'ipkg/status'))
+			elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'opkg/status')):
+				st = os.stat(resolveFilename(SCOPE_LIBDIR, 'opkg/status'))
 			elif os.path.isfile('/var/opkg/status'):
 				st = os.stat('/var/opkg/status')
 			tm = time.localtime(st.st_mtime)
