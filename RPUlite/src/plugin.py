@@ -183,10 +183,10 @@ class rpulite(Screen, ConfigListScreen):
 		if config.plugins.rpulite.startup.value: #/etc/rc.d/rcS.d/
 			if not os.path.isfile('/etc/rcS.d/get_ip_rtc'):
 				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rcS.d'):
-					os.link('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', '/etc/rcS.d/get_ip_rtc')
+					os.link(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), '/etc/rcS.d/get_ip_rtc')
 			if not os.path.isfile('/etc/rc.d/rcS.d/S98get_ip_rtc'):
 				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rc.d/rcS.d/'):
-					os.link('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', '/etc/rc.d/rcS.d/S98get_ip_rtc')
+					os.link(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), '/etc/rc.d/rcS.d/S98get_ip_rtc')
 		else:
 			if os.path.isfile('/etc/rcS.d/get_ip_rtc'):
 				os.unlink('/etc/rcS.d/get_ip_rtc')
@@ -252,7 +252,7 @@ class rpulite(Screen, ConfigListScreen):
 			out_script.write("fi\n")
 			out_script.close()
 		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
-			os.chmod('/usr/lib/enigma2/python/Plugins/Extensions/RPUlite/get_ip_rtc.sh', 0755)
+			os.chmod(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), 0755)
 
 	def cancel(self):
 		for i in self["config"].list:
