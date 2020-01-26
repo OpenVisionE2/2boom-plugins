@@ -46,21 +46,21 @@ def _(txt):
 	
 class IPKToolsScreen2(Screen):
 	skin = """
-<screen name="IPKToolsScreen2" position="center,160" size="750,370" title="IPK Tools">
-	<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-	<ePixmap position="190,358" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-	<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget source="key_green" render="Label" position="190,328" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget source="menu" render="Listbox" position="15,10" size="710,300">
-	<convert type="TemplatedMultiContent">
-	{"template": [
-		MultiContentEntryText(pos = (120, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-		MultiContentEntryText(pos = (130, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
-		MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
-			],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
+	<screen name="IPKToolsScreen2" position="center,160" size="750,370" title="IPK Tools">
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap position="190,358" zPosition="1" size="200,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="menu" render="Listbox" position="15,10" size="710,300">
+		<convert type="TemplatedMultiContent">
+			{"template": [
+				MultiContentEntryText(pos = (120, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+				MultiContentEntryText(pos = (130, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
+				MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
+				],
+				"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+				"itemHeight": 50
+			}
 			</convert>
 		</widget>
 	</screen>"""
@@ -68,6 +68,7 @@ class IPKToolsScreen2(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("IPK Tools"))
 		self.iConsole = iConsole()
 		self.indexpos = None
@@ -152,27 +153,28 @@ class IPKToolsScreen2(Screen):
 ###############################################
 class downfeed(Screen):
 	skin = """
-<screen name="downfeed" position="center,110" size="850,520" title="Install extensions from feed">
-<widget source="menu" render="Listbox" position="15,10" size="820,455" scrollbarMode="showOnDemand">
-	<convert type="TemplatedMultiContent">
-		{"template": [
-			MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-			MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-			MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-				],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
-	</widget>
-	<ePixmap position="20,512" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-	<ePixmap position="190,512" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-	<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-</screen>"""
+	<screen name="downfeed" position="center,110" size="850,520" title="Install extensions from feed">
+		<widget source="menu" render="Listbox" position="15,10" size="820,455" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+		<ePixmap position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap position="190,512" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+		<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+	</screen>"""
 	  
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("Install extensions from feed"))
 		self.session = session
 		self.path = status_path()
@@ -254,29 +256,30 @@ class downfeed(Screen):
 ##############################################################################
 class DownloadFeed(Screen):
 	skin = """
-<screen name="DownloadFeed" position="center,110" size="850,520" title="Download extensions from feed">
-<widget source="menu" render="Listbox" position="15,10" size="820,455" scrollbarMode="showOnDemand">
-	<convert type="TemplatedMultiContent">
-		{"template": [
-			MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-			MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-			MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-				],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
-	</widget>
-	<ePixmap name="red" position="20,512" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-	<ePixmap name="green" position="190,512" zPosition="1" size="220,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-	<ePixmap name="yellow" position="410,512" zPosition="1" size="220,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" transparent="1" alphatest="on" />
-	<widget name="key_red" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget name="key_green" position="190,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-</screen>"""
+	<screen name="DownloadFeed" position="center,110" size="850,520" title="Download extensions from feed">
+		<widget source="menu" render="Listbox" position="15,10" size="820,455" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+		<ePixmap name="red" position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap name="green" position="190,512" zPosition="1" size="220,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+		<ePixmap name="yellow" position="410,512" zPosition="1" size="220,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+		<widget name="key_red" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="key_green" position="190,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+	</screen>"""
 	  
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("Download extensions from feed"))
 		self.session = session
 		self.path = status_path()
@@ -373,31 +376,32 @@ class DownloadFeed(Screen):
 ####################################################################
 class InstallAll4(Screen):
 	skin = """
-<screen name="InstallAll4" position="center,160" size="750,405" title="Press -Info- to update plugin list">
-  <widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
-    <convert type="TemplatedMultiContent">
-       {"template": [
-          MultiContentEntryText(pos = (70, 2), size = (650, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-          MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-          MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-          ],
-       "fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-       "itemHeight": 50
-      }
-    </convert>
-  </widget>
-  <ePixmap position="20,393" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-  <ePixmap position="185,393" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-  <ePixmap position="350,393" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" transparent="1" alphatest="on" />
-  <ePixmap position="550,393" zPosition="1" size="190,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/blue.png" transparent="1" alphatest="on" />
-  <widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-</screen>"""
+	<screen name="InstallAll4" position="center,160" size="750,405" title="Press -Info- to update plugin list">
+  		<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
+    			<convert type="TemplatedMultiContent">
+       				{"template": [
+          				MultiContentEntryText(pos = (70, 2), size = (650, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+          				MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+          				MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+          				],
+       					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+       					"itemHeight": 50
+      				}
+    			</convert>
+  		</widget>
+  		<ePixmap position="20,393" zPosition="1" size="165,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+  		<ePixmap position="185,393" zPosition="1" size="165,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+  		<ePixmap position="350,393" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+ 		 <ePixmap position="550,393" zPosition="1" size="190,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+  		<widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+	</screen>"""
 	  
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		if config.plugins.epanel.multifilemode.value is 'Multi':
 			self.setTitle(_('MultiSelect Mode'))
 		else:
@@ -521,29 +525,30 @@ class InstallAll4(Screen):
 ########################################################################################################
 class RemoveIPK(Screen):
 	skin = """
-<screen name="RemoveIPK" position="center,100" size="750,570" title="Ipk remove">
-<widget source="menu" position="15,10" render="Listbox" size="720,500">
-	<convert type="TemplatedMultiContent">
-		{"template": [
-			MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-			MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-			MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-				],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
-	</widget>
-	<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-	<ePixmap position="190,558" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-	<ePixmap position="360,558" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" transparent="1" alphatest="on" />
-	<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-	<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-</screen>"""
+	<screen name="RemoveIPK" position="center,100" size="750,570" title="Ipk remove">
+		<widget source="menu" position="15,10" render="Listbox" size="720,500">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap position="190,558" zPosition="1" size="170,2" pixmap="/~/images/green.png" transparent="1" alphatest="on" />
+		<ePixmap position="360,558" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+	</screen>"""
 	  
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("Ipk remove"))
 		self.session = session
 		self.path = status_path()
