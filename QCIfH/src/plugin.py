@@ -54,34 +54,35 @@ config.plugins.qcifh.skin = ConfigYesNo(default=False)
 
 SKIN_HD = """
 <screen name="QCIfH" position="50,165" size="1180,335" title="2boom's QuickChannelInfo for Hotkey" zPosition="1">
-  <widget source="session.FrontendStatus" render="Label" position="420,5" zPosition="2" size="360,35" font="Regular; 33" foregroundColor="#00aaaaaa" halign="center" valign="center" transparent="1">
-    <convert type="FrontendInfo">SNRdB</convert>
-  </widget>
-  <eLabel name="snr" text="SNR:" position="5,85" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
-  <widget source="session.FrontendStatus" render="Progress" position="135,50" size="910,100" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QCIfH/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
-    <convert type="FrontendInfo">SNR</convert>
-  </widget>
-  <widget source="session.FrontendStatus" render="Label" position="1080,85" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
-    <convert type="FrontendInfo">SNR</convert>
-  </widget>
-  <eLabel name="agc" text="AGC:" position="5,190" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
-  <widget source="session.FrontendStatus" render="Progress" position="135,160" size="910,100" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QCIfH/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
-    <convert type="FrontendInfo">AGC</convert>
-  </widget>
-  <widget source="session.FrontendStatus" render="Label" position="1080,190" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
-    <convert type="FrontendInfo">AGC</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="133,270" size="575,30" font="Regular; 27" foregroundColor="#00aaaaaa" transparent="1" halign="left" zPosition="5" valign="center">
-    <convert type="ServiceName">Name</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="131,304" zPosition="3" size="350,25" valign="top" halign="left" font="Regular; 22" transparent="1" foregroundColor="#00aaaaaa">
-    <convert type="ServiceName">Provider</convert>
-  </widget>
+  	<widget source="session.FrontendStatus" render="Label" position="420,5" zPosition="2" size="360,35" font="Regular; 33" foregroundColor="#00aaaaaa" halign="center" valign="center" transparent="1">
+   		<convert type="FrontendInfo">SNRdB</convert>
+  	</widget>
+  	<eLabel name="snr" text="SNR:" position="5,85" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
+  	<widget source="session.FrontendStatus" render="Progress" position="135,50" size="910,100" pixmap="~/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
+    		<convert type="FrontendInfo">SNR</convert>
+  	</widget>
+  	<widget source="session.FrontendStatus" render="Label" position="1080,85" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
+    		<convert type="FrontendInfo">SNR</convert>
+  	</widget>
+  	<eLabel name="agc" text="AGC:" position="5,190" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
+  	<widget source="session.FrontendStatus" render="Progress" position="135,160" size="910,100" pixmap="~/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
+    		<convert type="FrontendInfo">AGC</convert>
+  	</widget>
+  	<widget source="session.FrontendStatus" render="Label" position="1080,190" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
+    		<convert type="FrontendInfo">AGC</convert>
+  	</widget>
+  	<widget source="session.CurrentService" render="Label" position="133,270" size="575,30" font="Regular; 27" foregroundColor="#00aaaaaa" transparent="1" halign="left" zPosition="5" valign="center">
+    		<convert type="ServiceName">Name</convert>
+  	</widget>
+  	<widget source="session.CurrentService" render="Label" position="131,304" zPosition="3" size="350,25" valign="top" halign="left" font="Regular; 22" transparent="1" foregroundColor="#00aaaaaa">
+    		<convert type="ServiceName">Provider</convert>
+  	</widget>
 </screen>"""
 
 class QCIfH(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/QCIfH")
 		self.session = session
 		if config.plugins.qcifh.skin.value:
 			if os.path.isfile('%sExtensions/QCIfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS)):
@@ -194,17 +195,18 @@ class QCIfH(Screen):
 	
 SKIN_CONFIG_HD = """
 <screen name="qcifh_setup" position="265,160" size="750,75" title="2boom's QuickChannelInfo setup">
-  <widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QCIfH/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,70" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QCIfH/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  	<widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
+ 	 <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  	<widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
 </screen>"""
 
 class qcifh_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/QCIfH")
 		self.skin = SKIN_CONFIG_HD
 		self.setTitle(_("2boom's QuickChannelInfo setup"))
 		self.list = []
