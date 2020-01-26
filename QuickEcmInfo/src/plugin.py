@@ -121,28 +121,29 @@ pEcm = QuickEcm()
 ##############################################################################
 skin_hdsetup = """
 <screen name="qei_setup" position="center,160" size="750,370" title="2boom's QuickEcmInfo setup">
-  <widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
-   <ePixmap position="10,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="340,358" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/yellow.png" alphatest="blend" />
-  <widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
+   	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
+  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 </screen>"""
 skin_sdsetup = """
 <screen name="qei_setup" position="center,160" size="635,370" title="2boom's QuickEcmInfo setup">
-  <widget position="10,10" size="615,200" name="config" scrollbarMode="showOnDemand" />
-   <ePixmap position="10,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="340,358" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/QuickEcmInfo/images/yellow.png" alphatest="blend" />
-  <widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<widget position="10,10" size="615,200" name="config" scrollbarMode="showOnDemand" />
+  	 <ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+ 	 <widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
+  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 </screen>"""
 class qei_setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEcmInfo")
 		if getDesktop(0).size().width() == 1280:
 			self.skin = skin_hdsetup
 		else:
