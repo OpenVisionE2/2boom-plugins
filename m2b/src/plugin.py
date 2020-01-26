@@ -84,17 +84,18 @@ config.plugins.m2b.passw = ConfigPassword(default='', visible_width = 50, fixed_
 ##############################################################################
 class m2b_setup(ConfigListScreen, Screen):
 	skin = """
-<screen name="m2b_setup" position="center,160" size="750,147" title="2boom's m3u/xml bouquet converter">
-  <widget position="15,5" size="720,100" name="config" scrollbarMode="showOnDemand" />
-   <ePixmap position="10,140" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/m2b/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,140" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/m2b/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  </screen>"""
+	<screen name="m2b_setup" position="center,160" size="750,147" title="2boom's m3u/xml bouquet converter">
+  		<widget position="15,5" size="720,100" name="config" scrollbarMode="showOnDemand" />
+   		<ePixmap position="10,140" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,140" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/m2b")
 		self.setTitle(_("2boom's m3u/xml bouquet converter"))
 		config.plugins.m2b.m3ufile = ConfigSelection(choices = get_m3u_name())
 		self.list = []
