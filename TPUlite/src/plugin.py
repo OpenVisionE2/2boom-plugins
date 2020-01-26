@@ -74,23 +74,24 @@ def add_line(filename, what):
 
 class rpulite(Screen, ConfigListScreen):
 	skin = """
-<screen name="rpulite" position="265,160" size="750,360" title="2boom's Triolan lite proxy updater">
-  <widget position="15,10" size="720,125" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="635,260" zPosition="2" size="100,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TPUlite/images/TRIOLAN.png" alphatest="blend" />
-  <eLabel position="30,140" size="690,2" backgroundColor="grey" zPosition="5" />
-  <ePixmap position="10,355" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TPUlite/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,355" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TPUlite/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="340,355" zPosition="1" size="230,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TPUlite/images/yellow.png" alphatest="blend" />
-  <widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="570,355" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/TPUlite/images/blue.png" alphatest="blend" />
-  <widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <widget name="text" position="15,255" size="610,48" font="Regular;22" halign="left" />
-</screen>"""
+	<screen name="rpulite" position="265,160" size="750,360" title="2boom's Triolan lite proxy updater">
+  		<widget position="15,10" size="720,125" name="config" scrollbarMode="showOnDemand" />
+  		<ePixmap position="635,260" zPosition="2" size="100,60" pixmap="~/images/TRIOLAN.png" alphatest="blend" />
+  		<eLabel position="30,140" size="690,2" backgroundColor="grey" zPosition="5" />
+  		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="175,355" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="340,355" zPosition="1" size="230,2" pixmap="~/images/yellow.png" alphatest="blend" />
+  		<widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="570,355" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
+  		<widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<widget name="text" position="15,255" size="610,48" font="Regular;22" halign="left" />
+	</screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/TPUlite")
 		self.iConsole = iConsole()
 		self.keyext = config.plugins.tpulite.menuext.value
 		self.newproxy = ''

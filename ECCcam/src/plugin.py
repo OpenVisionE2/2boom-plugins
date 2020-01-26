@@ -51,17 +51,18 @@ config.plugins.ecccam.port = ConfigInteger(default = 0, limits = (1, 99999))
 ##############################################################################
 class ecccam_setup(ConfigListScreen, Screen):
 	skin = """
-<screen name="ecccam_setup" position="center,160" size="750,147" title="2boom's Easy CCcam">
-  <widget position="15,5" size="720,100" name="config" scrollbarMode="showOnDemand" />
-   <ePixmap position="10,140" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ECCcam/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,140" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ECCcam/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-</screen>"""
+	<screen name="ecccam_setup" position="center,160" size="750,147" title="2boom's Easy CCcam">
+  		<widget position="15,5" size="720,100" name="config" scrollbarMode="showOnDemand" />
+   		<ePixmap position="10,140" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,140" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ECCcam")
 		self.setTitle(_("2boom's Easy CCcam"))
 		self.config_path = self.get_config_path()
 		if os.path.isfile('%sCCcam.cfg' % self.config_path):

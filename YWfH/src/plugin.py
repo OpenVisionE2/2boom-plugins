@@ -530,13 +530,13 @@ SKIN_CONFIG_HD = """
 <screen name="yweather_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
   <widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
   <eLabel position="30,165" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
-  <ePixmap position="10,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/red.png" alphatest="blend" />
+  <ePixmap position="10,498" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
   <widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/green.png" alphatest="blend" />
+  <ePixmap position="175,498" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
   <widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="340,498" zPosition="1" size="195,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/yellow.png" alphatest="blend" />
+  <ePixmap position="340,498" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
   <widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="535,498" zPosition="1" size="195,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/blue.png" alphatest="blend" />
+  <ePixmap position="535,498" zPosition="1" size="195,2" pixmap="~/images/blue.png" alphatest="blend" />
   <widget source="key_blue" render="Label" position="535,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   <widget name="text" position="50,175" size="650,150" font="Regular;22" halign="left" noWrap="1" />
   <widget name="icon1" position="100,336" size="96,96" zPosition="2" alphatest="blend" />
@@ -549,11 +549,11 @@ SKIN_SEARCH_HD = """
 <screen name="search_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
   <widget position="15,10" size="720,50" name="config" scrollbarMode="showOnDemand" />
   <eLabel position="30,65" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
-  <ePixmap position="10,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/red.png" alphatest="blend" />
+  <ePixmap position="10,498" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
   <widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/green.png" alphatest="blend" />
+  <ePixmap position="175,498" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
   <widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="340,498" zPosition="1" size="195,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWfH/images/yellow.png" alphatest="blend" />
+  <ePixmap position="340,498" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
   <widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   <widget name="text" position="50,75" size="650,150" font="Regular;22" halign="left" noWrap="1" />
 </screen>"""
@@ -562,6 +562,7 @@ class yweather_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/YWfH")
 		self.skin = SKIN_CONFIG_HD
 		config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
 		self.setTitle(_("2boom's Yahoo! Weather"))
