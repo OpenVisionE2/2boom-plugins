@@ -30,6 +30,7 @@ from enigma import ePoint, eTimer, getDesktop, iServiceInformation, iPlayableSer
 from os import environ
 import gettext
 import os, sys
+from skin import *
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
@@ -49,35 +50,16 @@ if os.path.isfile('/usr/lib/bitratecalc.so'):
 else:
 	binary_file = False
 
-config.plugins.qcifh = ConfigSubsection()	
-config.plugins.qcifh.skin = ConfigYesNo(default=False)
+def getDesktopSize():
+	s = getDesktop(0).size()
+	return (s.width(), s.height())
 
-SKIN_HD = """
-<screen name="QCIfH" position="50,165" size="1180,335" title="2boom's QuickChannelInfo for Hotkey" zPosition="1">
-  	<widget source="session.FrontendStatus" render="Label" position="420,5" zPosition="2" size="360,35" font="Regular; 33" foregroundColor="#00aaaaaa" halign="center" valign="center" transparent="1">
-   		<convert type="FrontendInfo">SNRdB</convert>
-  	</widget>
-  	<eLabel name="snr" text="SNR:" position="5,85" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
-  	<widget source="session.FrontendStatus" render="Progress" position="135,50" size="910,100" pixmap="~/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
-    		<convert type="FrontendInfo">SNR</convert>
-  	</widget>
-  	<widget source="session.FrontendStatus" render="Label" position="1080,85" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
-    		<convert type="FrontendInfo">SNR</convert>
-  	</widget>
-  	<eLabel name="agc" text="AGC:" position="5,190" size="100,35" font="Regular;33" halign="right" foregroundColor="#00aaaaaa" transparent="1" />
-  	<widget source="session.FrontendStatus" render="Progress" position="135,160" size="910,100" pixmap="~/images/bar.png" zPosition="2" borderWidth="4" borderColor="un656565">
-    		<convert type="FrontendInfo">AGC</convert>
-  	</widget>
-  	<widget source="session.FrontendStatus" render="Label" position="1080,190" size="100,35" font="Regular;33" foregroundColor="#00aaaaaa" transparent="1">
-    		<convert type="FrontendInfo">AGC</convert>
-  	</widget>
-  	<widget source="session.CurrentService" render="Label" position="133,270" size="575,30" font="Regular; 27" foregroundColor="#00aaaaaa" transparent="1" halign="left" zPosition="5" valign="center">
-    		<convert type="ServiceName">Name</convert>
-  	</widget>
-  	<widget source="session.CurrentService" render="Label" position="131,304" zPosition="3" size="350,25" valign="top" halign="left" font="Regular; 22" transparent="1" foregroundColor="#00aaaaaa">
-    		<convert type="ServiceName">Provider</convert>
-  	</widget>
-</screen>"""
+def isHD():
+	desktopSize = getDesktopSize()
+	return desktopSize[0] == 1280
+
+config.plugins.qcifh = ConfigSubsection()	
+config.plugins.qcifh.skin = ConfigYesNo(default=True)
 
 class QCIfH(Screen):
 	def __init__(self, session):
@@ -85,14 +67,10 @@ class QCIfH(Screen):
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/QCIfH")
 		self.session = session
 		if config.plugins.qcifh.skin.value:
-			if os.path.isfile('%sExtensions/QCIfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS)):
-				with open('%sExtensions/QCIfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS),'r') as user_skin:
-					self.skin = user_skin.read()
-				user_skin.close()
-			else:
+			if isHD():
 				self.skin = SKIN_HD
-		else:
-			self.skin = SKIN_HD
+			else:
+				self.skin = SKIN_FHD
 		self["vbit"] = StaticText()
 		self["abit"] = StaticText()
 		self["resx"] = StaticText()
