@@ -527,24 +527,25 @@ pWeather = yweather_main()
 
 class yweather_setup(Screen, ConfigListScreen):
 	skin = """
-<screen name="yweather_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
-  <widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
-  <eLabel position="30,165" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
-  <ePixmap position="10,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWeather/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,498" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWeather/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="340,498" zPosition="1" size="195,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YWeather/images/yellow.png" alphatest="blend" />
-  <widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <widget name="text" position="50,175" size="650,150" font="Regular;22" halign="left" noWrap="1" />
-  <widget name="icon1" position="100,336" size="96,96" zPosition="2" alphatest="blend" />
-  <widget name="icon2" position="245,336" size="96,96" zPosition="2" alphatest="blend" />
-  <widget name="icon3" position="390,336" size="96,96" zPosition="2" alphatest="blend" />
-  <widget name="icon4" position="535,336" size="96,96" zPosition="2" alphatest="blend" />
-</screen>"""
+	<screen name="yweather_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
+  		<widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
+  		<eLabel position="30,165" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
+  		<ePixmap position="10,498" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="175,498" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="340,498" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
+  		<widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<widget name="text" position="50,175" size="650,150" font="Regular;22" halign="left" noWrap="1" />
+  		<widget name="icon1" position="100,336" size="96,96" zPosition="2" alphatest="blend" />
+  		<widget name="icon2" position="245,336" size="96,96" zPosition="2" alphatest="blend" />
+  		<widget name="icon3" position="390,336" size="96,96" zPosition="2" alphatest="blend" />
+  		<widget name="icon4" position="535,336" size="96,96" zPosition="2" alphatest="blend" />
+	</screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/YWeather")
 		config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
 		self.setTitle(_("2boom's Yahoo! Weather"))
 		self.list = []

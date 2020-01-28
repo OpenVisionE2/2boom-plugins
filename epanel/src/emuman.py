@@ -1,4 +1,4 @@
-# by 2boom 2011-2015 4bob@ua.fm 
+# by 2boom 2011-2015 4bob@ua.fm
 from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigSubsection, ConfigYesNo,   config, configfile
 from Components.ConfigList import ConfigListScreen
 from Components.ScrollLabel import ScrollLabel
@@ -128,35 +128,36 @@ def ecm_view():
 ######################################################################################
 class emuSel5(Screen):
 	skin = """
-<screen name="emuSel5" position="265,125" size="750,490" title="Select SoftCam or CardServer">
-  <widget source="menu" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
-    <convert type="TemplatedMultiContent">
-		{"template": [
-			MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-			MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-			MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-				],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
-  </widget>
-  <ePixmap position="20,488" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" transparent="1" alphatest="on" />
-  <ePixmap position="190,488" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" transparent="1" alphatest="on" />
-  <ePixmap position="360,488" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" transparent="1" alphatest="on" />
-  <ePixmap position="530,488" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/blue.png" transparent="1" alphatest="on" />
-  <widget name="key_red" position="20,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget name="key_green" position="190,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget name="key_yellow" position="360,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget name="key_blue" position="530,458" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  <widget name="text" position="25,310" size="700,205" font="Regular;22" halign="center" noWrap="1" />
-<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"  halign="center" noWrap="1" />
-<eLabel position="25,268" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
-<eLabel position="25,298" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
-</screen>"""
+	<screen name="emuSel5" position="265,125" size="750,490" title="Select SoftCam or CardServer">
+  		<widget source="menu" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
+   			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
+  		</widget>
+  		<ePixmap position="20,488" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+  		<ePixmap position="190,488" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+  		<ePixmap position="360,488" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+  		<ePixmap position="530,488" zPosition="1" size="200,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+  		<widget name="key_red" position="20,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget name="key_green" position="190,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget name="key_yellow" position="360,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget name="key_blue" position="530,458" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<widget name="text" position="25,310" size="700,205" font="Regular;22" halign="center" noWrap="1" />
+		<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"  halign="center" noWrap="1" />
+		<eLabel position="25,268" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
+		<eLabel position="25,298" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
+	</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("Select SoftCam or CardServer: - %s") % config.plugins.epanel.activeemu.value)
 		self.session = session
 		self.iConsole = iConsole()
@@ -470,26 +471,27 @@ class stop_cam(Screen):
 ####################################################################################################
 class SoftcamPanel2(Screen):
 	skin = """
-<screen name="SoftcamPanel2" position="center,160" size="750,370" title="SoftCam/CardServer Panel">
-<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
-<convert type="TemplatedMultiContent">
-	{"template": [
-		MultiContentEntryText(pos = (120, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-		MultiContentEntryText(pos = (130, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
-		MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
-			],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
+	<screen name="SoftcamPanel2" position="center,160" size="750,370" title="SoftCam/CardServer Panel">
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (120, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (130, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
 		</widget>
-</screen>"""
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.indexpos = None
 		self.setTitle(_("SoftCam/CardServer Panel"))
 		#self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
@@ -552,19 +554,20 @@ class SoftcamPanel2(Screen):
 ###############################################################################################
 class SoftcamUpd2(ConfigListScreen, Screen):
 	skin = """
-<screen name="SoftcamUpd2" position="center,160" size="750,370" title="SoftCam.Key Updater">
-	<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" alphatest="blend" />
-	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<ePixmap position="340,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" alphatest="blend" />
-	<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-</screen>"""
+	<screen name="SoftcamUpd2" position="center,160" size="750,370" title="SoftCam.Key Updater">
+		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,358" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("SoftCam.Key Updater"))
 		self.iConsole = iConsole()
 		self.list = []
@@ -620,29 +623,30 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 ###############################################################################
 class uniswitcher(Screen):
 	skin = """
-<screen name="uniswitcher" position="center,140" size="750,460" title="...">
-  <ePixmap position="20,455" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-  <ePixmap position="190,455" zPosition="1" size="250,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-  <widget source="list" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
-   <convert type="TemplatedMultiContent">
-   {"template": [
-    MultiContentEntryText(pos = (70, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-    MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-    MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (51, 40), png = 2), # index 4 is the pixmap
-    ],
-   "fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-   "itemHeight": 50
-  }
-    </convert>
-      </widget>
-   <widget name="text" position="20,280" size="710,205" font="Regular;22" halign="center" noWrap="1" />
-  <eLabel position="20,268" size="710,2" backgroundColor="grey" zPosition="3" />
-</screen>"""
+	<screen name="uniswitcher" position="center,140" size="750,460" title="...">
+  		<ePixmap position="20,455" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+  		<ePixmap position="190,455" zPosition="1" size="250,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+  		<widget source="list" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
+  			 <convert type="TemplatedMultiContent">
+   				{"template": [
+    					MultiContentEntryText(pos = (70, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+    					MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+    					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (51, 40), png = 2), # index 4 is the pixmap
+   					],
+   					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+   					"itemHeight": 50
+  				}
+    			</convert>
+      		</widget>
+   		<widget name="text" position="20,280" size="710,205" font="Regular;22" halign="center" noWrap="1" />
+  		<eLabel position="20,268" size="710,2" backgroundColor="grey" zPosition="3" />
+	</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.iConsole = iConsole()
 		self.skin = uniswitcher.skin
 		self.setTitle(_("%s Switcher: - %s") % (config.plugins.usw.emu.value, config.plugins.usw.activeconf.value))
@@ -777,16 +781,17 @@ class uniswitcher(Screen):
 ####################################################################################
 class UniConfigScreen(ConfigListScreen, Screen):
 	skin = """
-<screen name="UniConfigScreen" position="center,140" size="750,460" title="E-Panel Universal Switcher">
-  <widget position="15,10" size="720,400" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="10,455" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,455" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-</screen>"""
+	<screen name="UniConfigScreen" position="center,140" size="750,460" title="E-Panel Universal Switcher">
+  		<widget position="15,10" size="720,400" name="config" scrollbarMode="showOnDemand" />
+  		<ePixmap position="10,455" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	</screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("E-Panel Universal Switcher"))
 		self.list = []
 		self.list.append(getConfigListEntry(_("Mgcamd config switcher"), config.plugins.uswmgcamd.active))

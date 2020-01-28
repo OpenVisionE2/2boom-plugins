@@ -93,13 +93,13 @@ class epgdd(ConfigListScreen, Screen):
 	skin = """
 <screen name="epgdd" position="center,160" size="850,280" title="">
   <widget position="15,5" size="820,200" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="10,275" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/red.png" alphatest="blend" />
+  <ePixmap position="10,275" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
   <widget source="key_red" render="Label" position="10,245" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,275" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/green.png" alphatest="blend" />
+  <ePixmap position="175,275" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
   <widget source="key_green" render="Label" position="175,245" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="340,275" zPosition="1" size="200,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/yellow.png" alphatest="blend" />
+  <ePixmap position="340,275" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
   <widget source="key_yellow" render="Label" position="340,245" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="540,275" zPosition="1" size="250,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/blue.png" alphatest="blend" />
+  <ePixmap position="540,275" zPosition="1" size="250,2" pixmap="~/images/blue.png" alphatest="blend" />
   <widget source="key_blue" render="Label" position="540,245" zPosition="2" size="250,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
   <widget source="lastupdate" render="Label" position="20,212" zPosition="2" size="810,24" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
   <eLabel position="30,208" size="790,2" backgroundColor="grey" />
@@ -108,6 +108,7 @@ class epgdd(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd")
 		config.plugins.epgdd.direct = ConfigSelection(choices = mountp())
 		self.setTitle(_('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2])
 		self.list = []
@@ -303,19 +304,19 @@ class Check_EPG():
 
 class get_source(Screen):
 	skin = """
-<screen name="ChoiceSource" position="center,160" size="850,255" title="Choice epg.dat source">
-	<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />	
-	<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/red.png" alphatest="blend" />
-	<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epgdd/images/green.png" alphatest="blend" />
-	<widget source="menu" render="Listbox" position="15,10" size="820,250" itemHeight="25" scrollbarMode="showOnDemand">
-	<convert type="TemplatedMultiContent">
-	{"template": [
-		MultiContentEntryText(pos = (10, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-			],
-	"fonts": [gFont("Regular", 20),gFont("Regular", 20)],
-	"itemHeight": 25
-	}
+	<screen name="ChoiceSource" position="center,160" size="850,255" title="Choice epg.dat source">
+		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />	
+		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
+		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="menu" render="Listbox" position="15,10" size="820,250" itemHeight="25" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (10, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					],
+					"fonts": [gFont("Regular", 20),gFont("Regular", 20)],
+					"itemHeight": 25
+				}
 			</convert>
 		</widget>
 	</screen>"""
@@ -323,6 +324,7 @@ class get_source(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd")
 		self.setTitle(_("Choice epg.dat source"))
 		self["shortcuts"] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
 		{

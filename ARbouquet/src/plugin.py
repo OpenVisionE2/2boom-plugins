@@ -67,29 +67,30 @@ def remove_line(filename, what):
 
 class ARbouquet(Screen):
 	skin = """
-<screen name="ARbouquet" position="265,140" size="750,445" title="2boom's add/remove bouquet">
-  <ePixmap position="10,440" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/red.png" alphatest="blend" />
-  <ePixmap position="175,440" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/green.png" alphatest="blend" />
-  <ePixmap position="340,440" zPosition="3" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/yellow.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <widget source="key_green" render="Label" position="175,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <widget source="key_yellow" render="Label" position="340,410" zPosition="3" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    <widget source="menu" render="Listbox" position="15,5" size="720,400" scrollbarMode="showOnDemand">
-    <convert type="TemplatedMultiContent">
-     {"template": [
-		MultiContentEntryText(pos = (70, 2), size = (675, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-		MultiContentEntryText(pos = (80, 29), size = (665, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-		MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-			],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-   </convert>
-  </widget>
-</screen>"""
+	<screen name="ARbouquet" position="265,140" size="750,445" title="2boom's add/remove bouquet">
+  		<ePixmap position="10,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<ePixmap position="175,440" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+  		<ePixmap position="340,440" zPosition="3" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<widget source="key_green" render="Label" position="175,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<widget source="key_yellow" render="Label" position="340,410" zPosition="3" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+    		<widget source="menu" render="Listbox" position="15,5" size="720,400" scrollbarMode="showOnDemand">
+    			<convert type="TemplatedMultiContent">
+     				{"template": [
+					MultiContentEntryText(pos = (70, 2), size = (675, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (80, 29), size = (665, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+   			</convert>
+  		</widget>
+	</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ARbouquet")
 		self.iConsole = iConsole()
 		self.session = session
 		self.list = []
@@ -148,7 +149,7 @@ class ARbouquet(Screen):
 
 SKIN_DWN = """
 <screen name="reloadsl" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
 
 class reloadsl(Screen):
@@ -168,14 +169,15 @@ class reloadsl(Screen):
 
 class AddScreen(Screen):
 	skin = """
-<screen name="AddScreen" position="center,140" size="750,445" title="Add bouquetfile">
-  <widget name="list" position="20,5" size="710,400" scrollbarMode="showOnDemand" />
-  <ePixmap position="20,440" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="20,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-</screen>"""
+	<screen name="AddScreen" position="center,140" size="750,445" title="Add bouquetfile">
+  		<widget name="list" position="20,5" size="710,400" scrollbarMode="showOnDemand" />
+ 		 <ePixmap position="20,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="20,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ARbouquet")
 		self.session = session
 		self.file_name = ''
 		self.setTitle(_("Add bouquetfile"))
@@ -215,16 +217,17 @@ class AddScreen(Screen):
 
 class ARconfig(Screen, ConfigListScreen):
 	skin = """
-<screen name="ARconfig" position="265,160" size="750,360" title="2boom's add/remove bouquet config">
-  <widget position="15,10" size="720,100" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="10,355" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,355" zPosition="1" size="180,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/ARbouquet/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  </screen>"""
+	<screen name="ARconfig" position="265,160" size="750,360" title="2boom's add/remove bouquet config">
+  		<widget position="15,10" size="720,100" name="config" scrollbarMode="showOnDemand" />
+  		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+  		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
+ 	 	<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+  	</screen>"""
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ARbouquet")
 		self.list = []
 		self.list.append(getConfigListEntry(_("Select bouquet type"), config.plugins.arbouquet.bouquettype))
 		self.list.append(getConfigListEntry(_("Input password (if needed)"), config.plugins.arbouquet.passw))
@@ -277,4 +280,3 @@ def Plugins(**kwargs):
 		),
 	]
 	return result
-

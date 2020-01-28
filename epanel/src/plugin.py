@@ -105,33 +105,34 @@ def IsImageName():
 ######################################################################################
 class easyPanel2(Screen):
 	skin = """
-<screen name="easyPanel2" position="center,160" size="750,420" title="E-Panel">
-<ePixmap position="10,408" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-<widget source="key_red" render="Label" position="10,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-<ePixmap position="175,408" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" alphatest="blend" />
-<widget source="key_green" render="Label" position="175,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-<ePixmap position="340,408" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/yellow.png" alphatest="blend" />
-<widget source="key_yellow" render="Label" position="340,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-<ePixmap position="505,408" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/blue.png" alphatest="blend" />
-<widget source="key_blue" render="Label" position="505,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-<widget source="menu" render="Listbox" position="15,10" size="720,350" scrollbarMode="showOnDemand">
-<convert type="TemplatedMultiContent">
-	{"template": [
-		MultiContentEntryText(pos = (120, 2), size = (600, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-		MultiContentEntryText(pos = (130, 29), size = (600, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
-		MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
-			],
-	"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-	"itemHeight": 50
-	}
-	</convert>
+	<screen name="easyPanel2" position="center,160" size="750,420" title="E-Panel">
+		<ePixmap position="10,408" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,408" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,408" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_yellow" render="Label" position="340,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="505,408" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
+		<widget source="key_blue" render="Label" position="505,378" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="menu" render="Listbox" position="15,10" size="720,350" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (120, 2), size = (600, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+					MultiContentEntryText(pos = (130, 29), size = (600, 18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 3 is the Description
+					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (100, 40), png = 3), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+			</convert>
 		</widget>
-<ePixmap position="675,381" size="70,30" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/info.png" zPosition="2" alphatest="blend" />
-</screen>"""
+		<ePixmap position="675,381" size="70,30" pixmap="~/images/info.png" zPosition="2" alphatest="blend" />
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("E-Panel"))
 		self.iConsole = iConsole()
 		self.indexpos = None
@@ -232,56 +233,57 @@ class easyPanel2(Screen):
 ######################################################################################
 class epanelinfo(Screen):
 	skin = """
-<screen name="epanelinfo" position="340,74" size="620,617" title="E-Panel">
-	<ePixmap position="20,612" zPosition="1" size="180,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
-	<widget source="CPULabel" render="Label" position="20,29" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="CPU" render="Label" position="210,29" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="key_red" render="Label" position="20,582" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="MemoryLabel" render="Label" position="20,449" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
-	<widget source="SwapLabel" render="Label" position="20,473" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
-	<widget source="FlashLabel" render="Label" position="20,497" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
-	<widget source="memTotal" render="Label" position="180,449" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="swapTotal" render="Label" position="180,473" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="flashTotal" render="Label" position="180,497" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="installedLabel" render="Label" position="20,125" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="installed" render="Label" position="210,125" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="device" render="Label" position="20,374" zPosition="2" size="580,66" font="Regular;20" halign="left" valign="top" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="Hardware" render="Label" position="210,5" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="ipLabel" render="Label" position="20,53" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="ipInfo" render="Label" position="210,53" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="macLabel" render="Label" position="20,77" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="macInfo" render="Label" position="210,77" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="Image" render="Label" position="210,101" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="Kernel" render="Label" position="210,149" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="EnigmaVersion" render="Label" position="210,197" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="HardwareLabel" render="Label" position="20,5" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="ImageLabel" render="Label" position="20,101" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="KernelLabel" render="Label" position="20,149" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="EnigmaVersionLabel" render="Label" position="20,197" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="gstreamerLabel" render="Label" position="20,221" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="gstreamer" render="Label" position="210,221" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="pythonLabel" render="Label" position="20,245" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="python" render="Label" position="210,245" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="nim" render="Label" position="20,277" zPosition="2" size="580,88" font="Regular;20" halign="left" valign="top" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="driver" render="Label" position="210,173" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="driverLabel" render="Label" position="20,173" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<eLabel position="30,271" size="560,2" backgroundColor="#aaaaaa" />
-	<eLabel position="30,369" size="560,2" backgroundColor="#aaaaaa" />
-	<eLabel position="30,443" size="560,2" backgroundColor="#aaaaaa" />
-	<eLabel position="30,523" size="560,2" backgroundColor="#aaaaaa" />
-	<eLabel position="230,558" size="320,2" backgroundColor="#aaaaaa" />
-	<ePixmap position="20,531" size="180,47" zPosition="1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/2boom.png" alphatest="blend" />
-	<widget source="panelver" render="Label" position="490,531" zPosition="2" size="100,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="plipanel" render="Label" position="235,531" zPosition="2" size="250,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="cardserver" render="Label" position="370,590" zPosition="2" size="225,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="cardserverLabel" render="Label" position="235,590" zPosition="2" size="130,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-	<widget source="softcam" render="Label" position="370,566" zPosition="2" size="225,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<widget source="softcamLabel" render="Label" position="235,566" zPosition="2" size="130,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
-</screen>"""
+	<screen name="epanelinfo" position="340,74" size="620,617" title="E-Panel">
+		<ePixmap position="20,612" zPosition="1" size="180,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="CPULabel" render="Label" position="20,29" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="CPU" render="Label" position="210,29" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_red" render="Label" position="20,582" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="MemoryLabel" render="Label" position="20,449" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
+		<widget source="SwapLabel" render="Label" position="20,473" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
+		<widget source="FlashLabel" render="Label" position="20,497" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
+		<widget source="memTotal" render="Label" position="180,449" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="swapTotal" render="Label" position="180,473" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="flashTotal" render="Label" position="180,497" zPosition="2" size="420,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="installedLabel" render="Label" position="20,125" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="installed" render="Label" position="210,125" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="device" render="Label" position="20,374" zPosition="2" size="580,66" font="Regular;20" halign="left" valign="top" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="Hardware" render="Label" position="210,5" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="ipLabel" render="Label" position="20,53" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="ipInfo" render="Label" position="210,53" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="macLabel" render="Label" position="20,77" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="macInfo" render="Label" position="210,77" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="Image" render="Label" position="210,101" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="Kernel" render="Label" position="210,149" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="EnigmaVersion" render="Label" position="210,197" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="HardwareLabel" render="Label" position="20,5" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="ImageLabel" render="Label" position="20,101" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="KernelLabel" render="Label" position="20,149" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="EnigmaVersionLabel" render="Label" position="20,197" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="gstreamerLabel" render="Label" position="20,221" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="gstreamer" render="Label" position="210,221" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="pythonLabel" render="Label" position="20,245" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="python" render="Label" position="210,245" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="nim" render="Label" position="20,277" zPosition="2" size="580,88" font="Regular;20" halign="left" valign="top" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="driver" render="Label" position="210,173" zPosition="2" size="390,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="driverLabel" render="Label" position="20,173" zPosition="2" size="180,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<eLabel position="30,271" size="560,2" backgroundColor="#aaaaaa" />
+		<eLabel position="30,369" size="560,2" backgroundColor="#aaaaaa" />
+		<eLabel position="30,443" size="560,2" backgroundColor="#aaaaaa" />
+		<eLabel position="30,523" size="560,2" backgroundColor="#aaaaaa" />
+		<eLabel position="230,558" size="320,2" backgroundColor="#aaaaaa" />
+		<ePixmap position="20,531" size="180,47" zPosition="1" pixmap="~/images/2boom.png" alphatest="blend" />
+		<widget source="panelver" render="Label" position="490,531" zPosition="2" size="100,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="plipanel" render="Label" position="235,531" zPosition="2" size="250,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="cardserver" render="Label" position="370,590" zPosition="2" size="225,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="cardserverLabel" render="Label" position="235,590" zPosition="2" size="130,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+		<widget source="softcam" render="Label" position="370,566" zPosition="2" size="225,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="softcamLabel" render="Label" position="235,566" zPosition="2" size="130,22" font="Regular;20" halign="right" valign="center" backgroundColor="background" foregroundColor="#aaaaaa" transparent="1" />
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("E-Panel"))
 		self.iConsole = iConsole()
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
@@ -622,17 +624,18 @@ class epanelinfo(Screen):
 ######################################################################################
 class ConfigExtentions2(ConfigListScreen, Screen):
 	skin = """
-<screen name="ConfigExtentions2" position="center,160" size="750,370" title="E-Panel Menu/Extensionmenu config">
+	<screen name="ConfigExtentions2" position="center,160" size="750,370" title="E-Panel Menu/Extensionmenu config">
 		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/red.png" alphatest="blend" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
 		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/epanel/images/green.png" alphatest="blend" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
 		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-</screen>"""
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("E-Panel Menu/Extensionmenu config"))
 		self.list = []
 		self.list.append(getConfigListEntry(_("Show E-Panel in MainMenu"), config.plugins.epanel.showmain))
