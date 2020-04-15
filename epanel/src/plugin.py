@@ -37,6 +37,7 @@ import socket
 import gzip
 import urllib
 import stat
+import boxbranding
 
 global min, first_start
 min = first_start = 0
@@ -489,22 +490,7 @@ class epanelinfo(Screen):
 		else:
 			hddinfo = _("none")
 		self["device"].text = list
-		
-	def HardWareType(self):
-		if os.path.isfile("/etc/model"):
-			return open("/etc/model").read().strip().upper()
-		return _("unavailable")
-		
-	def getImageTypeString(self):
-		try:
-			if os.path.isfile("/etc/issue"):
-				for line in open("/etc/issue"):
-					if not line.startswith('Welcom') and '\l' in line:
-						return line.capitalize().replace('\n', ' ').replace('\l', ' ').strip()
-		except:
-			pass
-		return _("undefined")
-		
+
 	def getKernelVersionString(self):
 		try:
 			return open("/proc/version").read().split()[2]
@@ -568,8 +554,8 @@ class epanelinfo(Screen):
 			
 	def mainInfo(self):
 		package = 0
-		self["Hardware"].text = self.HardWareType()
-		self["Image"].text = self.getImageTypeString()
+		self["Hardware"].text = getBoxType()
+		self["Image"].text = boxbranding.getImageDistro()
 		self["Kernel"].text = self.getKernelVersionString()
 		self["EnigmaVersion"].text = self.getImageVersionString()
 		self["nim"].text = self.listnims()
