@@ -2521,7 +2521,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo'), 'w') as update_script:
 			update_script.write('import requests\n\n')
 			update_script.write('res = requests.get("%s")\n' % updatestr)
-			update_script.write('print(res.text\n'))
+			update_script.write('print res.text\n')
 			update_script.close()
 
 	def cron_setup(self):
