@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # UpdatePreview plugin
 # Copyright (c) 2boom 2013-15

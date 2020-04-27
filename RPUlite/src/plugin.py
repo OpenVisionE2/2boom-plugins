@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Rostelecom lite proxy updater
 # Copyright (c) 2boom 2014

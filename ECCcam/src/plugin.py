@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Easy Cccam config plugin
 # Copyright (c) 2boom 2015

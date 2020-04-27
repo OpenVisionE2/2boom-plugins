@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #QuickChannelInfo for Hotkey
 #Copyright (c) 2boom 2015

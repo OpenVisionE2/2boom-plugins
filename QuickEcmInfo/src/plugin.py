@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #QuickEcmInfo
 #Copyright (c) 2boom 2012-14

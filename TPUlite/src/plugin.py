@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Triolan lite proxy updater
 # Copyright (c) 2boom 2014

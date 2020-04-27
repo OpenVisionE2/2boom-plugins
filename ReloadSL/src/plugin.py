@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Reload Servicelist (ReloadSL)
 # Copyright (c) 2boom 2016-17

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Auto EPG downloader
 # Copyright (c) 2boom 2015-17

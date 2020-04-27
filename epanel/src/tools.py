@@ -1,4 +1,6 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 # by 2boom 4bob@ua.fm 2011-17
 # swap on hdd idea bigroma
 from Screens.Screen import Screen

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #by 2boom 4bob@ua.fm 2011-16
 from Screens.Screen import Screen
