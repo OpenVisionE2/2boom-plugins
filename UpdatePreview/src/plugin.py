@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # UpdatePreview plugin
 # Copyright (c) 2boom 2013-15
 # v.0.7-r0

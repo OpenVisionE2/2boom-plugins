@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
 # Yahoo! weather 
 # Copyright (c) 2boom 2014
 # v.0.7-r1
@@ -390,7 +392,7 @@ class WeatherInfo(Screen):
 		downloadPage(xmlfile, "/tmp/yweather.xml").addCallback(self.downloadFinished).addErrback(self.downloadFailed)
 		
 	def time_convert(self, time):
-		print "[YWeather] Time convert"
+		print("[YWeather] Time convert")
 		tmp_time = ''
 		if time.endswith('pm'):
 			tmp_time = '%s:%s' % (int(time.split()[0].split(':')[0]) + 12, time.split()[0].split(':')[-1])
@@ -402,13 +404,13 @@ class WeatherInfo(Screen):
 			return tmp_time
 		
 	def downloadFinished(self, result):
-		print "[YWeather] Download finished"
+		print("[YWeather] Download finished")
 		self.notdata = False
 		self.parse_weather_data()
 
 	def downloadFailed(self, result):
 		self.notdata = True
-		print "[YWeather] Download failed!"
+		print("[YWeather] Download failed!")
 
 	def get_data(self, line, what):
 		return line.split(what)[-1].split('"')[1]

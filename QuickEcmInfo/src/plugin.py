@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #QuickEcmInfo
 #Copyright (c) 2boom 2012-14
 # v.3.0-r0 26.05.2014

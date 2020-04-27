@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # QuickEmuRestart plugin
 # Copyright (c) 2boom 2012-14
 # This program is free software: you can redistribute it and/or modify

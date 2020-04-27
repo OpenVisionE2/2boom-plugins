@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Easy Cccam config plugin
 # Copyright (c) 2boom 2015
 # This program is free software: you can redistribute it and/or modify

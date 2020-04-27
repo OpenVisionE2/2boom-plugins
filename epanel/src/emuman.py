@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # by 2boom 2011-2015 4bob@ua.fm
 from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigSubsection, ConfigYesNo,   config, configfile
 from Components.ConfigList import ConfigListScreen

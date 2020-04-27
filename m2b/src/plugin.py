@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # m2u converter config plugin
 # Copyright (c) 2boom 2015-16
 # This program is free software: you can redistribute it and/or modify
@@ -141,7 +142,7 @@ class create_bouquet(Screen):
 		desk_tmp = hls_opt = ''
 		in_bouquets = 0
 		if os.path.isfile('/tmp/%s' % config.plugins.m2b.m3ufile.value):
-			print config.plugins.m2b.type.value
+			print(config.plugins.m2b.type.value)
 			if os.path.isfile('/etc/enigma2/%s' % BFNAME):
 				os.remove('/etc/enigma2/%s' % BFNAME)
 			if config.plugins.m2b.type.value is 'LiveStreamerhls':

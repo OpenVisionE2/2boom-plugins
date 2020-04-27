@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # usage: genmetaindex.py <xml-files>  > index.xml
 import sys, os
 from xml.etree.ElementTree import ElementTree, Element

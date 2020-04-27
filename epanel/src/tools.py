@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # by 2boom 4bob@ua.fm 2011-17
 # swap on hdd idea bigroma
 from Screens.Screen import Screen
@@ -2136,7 +2137,7 @@ class CrontabManAdd(ConfigListScreen, Screen):
 		elif config.plugins.epanel.dayofweek.value is not '*' and config.plugins.epanel.every.value is '5':
 			everydayofweek = '*/'
 		if config.plugins.epanel.min.value is '*' and config.plugins.epanel.hour.value is '*' and config.plugins.epanel.dayofmonth.value is '*' and config.plugins.epanel.month.value is '*' and  config.plugins.epanel.dayofweek.value is '*':
-			print ("error")
+			print(("error"))
 		else:
 			with open(self.path, 'a') as cron_root:
 				cron_root.write('%s%s %s%s %s%s %s%s %s%s    %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,\
@@ -2516,10 +2517,9 @@ class DDNSScreen(ConfigListScreen, Screen):
 		else:
 			updatestr = "https://%s:%s@nic.changeip.com/nic/update?cmd=update&set=$CIPSET&hostname=%s" % (config.plugins.epanel.dnsuser.value, config.plugins.epanel.dnspass.value, config.plugins.epanel.dnshost.value)
 		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo'), 'w') as update_script:
-			update_script.write('#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n# Copyright (c) 2boom 2014\n\n')
 			update_script.write('import requests\n\n')
 			update_script.write('res = requests.get("%s")\n' % updatestr)
-			update_script.write('print res.text\n')
+			update_script.write('print(res.text\n'))
 			update_script.close()
 
 	def cron_setup(self):

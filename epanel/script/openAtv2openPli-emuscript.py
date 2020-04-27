@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 # openATV -> openPli emuscript converter
 # Copyright (c) 2boom 2015
 # v.0.1-r0
@@ -16,7 +17,7 @@
 import os
 script = '#!/bin/sh\n\ncase "$1" in\nstart)\n\tulimit -s 512\n\tnohup %s >/dev/null &\n\t;;\nstop)\n\tkillall -9 %s\n\tsleep 2\n\t;;\nrestart|reload)\n\t$0 stop\n\tsleep 1\n\t$0 start\n\t;;\nversion)\n\techo "---"\n\t;;\ninfo)\n\techo "%s"\n\t;;\n*)\n\techo "Usage: $0 start|stop|restart"\n\texit 1\n\t;;\nesac\nexit 0\n'
 emus = os.listdir("/etc")
-print 'Run...'
+print('Run...')
 for name in emus:
 	if name.endswith(".emu"):
 		emuname = binname = startcam = ''
@@ -32,5 +33,5 @@ for name in emus:
 		script_file.close()
 		if os.path.isfile('/etc/init.d/softcam.%s' % name[:-4]):
 			os.chmod('/etc/init.d/softcam.%s' % name[:-4], 0777)
-		print '/etc/init.d/softcam.%s - Done.' % name[:-4]
-print 'End...'
+		print('/etc/init.d/softcam.%s - Done.' % name[:-4])
+print('End...')

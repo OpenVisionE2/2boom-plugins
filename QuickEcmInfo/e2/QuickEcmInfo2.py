@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # QuickEcmInfo2 Converter
 # Copyright (c) 2boom 2012-14
 # v.1.3-r0 29.06.2014

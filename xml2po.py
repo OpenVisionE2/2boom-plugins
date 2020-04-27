@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
 #!/usr/bin/python
 import sys
 import os
@@ -56,12 +58,12 @@ for arg in sys.argv[1:]:
 
 	for (k,c) in attrlist:
 		print
-		print '#: ' + arg
+		print('#: ' + arg)
 		string.replace(k, "\\n", "\"\n\"")
 		if c:
 			for l in c.split('\n'):
-				print "#. ", l
-		print 'msgid "' + str(k) + '"'
-		print 'msgstr ""'
+				print("#. ", l)
+		print('msgid "' + str(k) + '"')
+		print('msgstr ""')
 
 	attrlist = set()

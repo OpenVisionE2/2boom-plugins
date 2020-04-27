@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Edit By RAED 2020
 
 from Screens.Screen import Screen

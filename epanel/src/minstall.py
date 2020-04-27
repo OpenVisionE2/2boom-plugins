@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #by 2boom 2011-17 IPK Tools 4bob@ua.fm 
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox

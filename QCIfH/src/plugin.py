@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #QuickChannelInfo for Hotkey
 #Copyright (c) 2boom 2015
 # v.0.1-r0
