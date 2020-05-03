@@ -2139,7 +2139,7 @@ class CrontabManAdd(ConfigListScreen, Screen):
 		elif config.plugins.epanel.dayofweek.value is not '*' and config.plugins.epanel.every.value is '5':
 			everydayofweek = '*/'
 		if config.plugins.epanel.min.value is '*' and config.plugins.epanel.hour.value is '*' and config.plugins.epanel.dayofmonth.value is '*' and config.plugins.epanel.month.value is '*' and  config.plugins.epanel.dayofweek.value is '*':
-			print(("error"))
+			print("error")
 		else:
 			with open(self.path, 'a') as cron_root:
 				cron_root.write('%s%s %s%s %s%s %s%s %s%s    %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,\
