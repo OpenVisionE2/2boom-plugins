@@ -727,7 +727,7 @@ class loadEPG():
 					inFile = gzip.GzipFile('/tmp/epg.dat.gz', 'rb')
 					s = inFile.read()
 					inFile.close()
-					outFile = file('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 'wb')
+					outFile = open('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 'wb')
 					outFile.write(s)
 					outFile.close()
 					if os.path.isfile('/tmp/epg.dat.gz'):
