@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from __future__ import division
 # 2boom's IPK Tools
 # Copyright (c) 2boom 2011-15
 # v.2.0-r6
@@ -437,12 +438,12 @@ class InstallAll4(Screen):
 				for line in ipklist:
 					if line.endswith('tar.gz') or line.endswith('bh.tgz') or line.endswith('nab.tgz'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) // 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 					elif line.endswith('.ipk'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i],(os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i],(os.path.getsize(self.workdir[i] + line.strip("\n")) // 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 		self.list.sort()

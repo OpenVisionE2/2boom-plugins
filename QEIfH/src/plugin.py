@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from __future__ import division
 #QuickEcmInfo for Hotkey
 #Copyright (c) 2boom 2014-16
 # v.0.2-r7
@@ -209,7 +210,7 @@ class QEIfH(Screen):
 			return ''
 		yres = serviceInfo.getInfo(iServiceInformation.sVideoHeight)
 		mode = ('i', 'p', ' ')[serviceInfo.getInfo(iServiceInformation.sProgressive)]
-		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
+		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) // 1000)
 		return str(xres) + 'x' + str(yres) + mode + '(%s)' % fps
 
 	def getServiceInfoString(self, info, what):
@@ -388,7 +389,7 @@ class QEIfH(Screen):
 					cpu_count += 1
 			if not cpu_speed:
 				try:
-					cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) / 1000
+					cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) // 1000
 				except:
 					cpu_speed = '-'
 			if os.path.isfile("/proc/stb/sensors/temp0/value") and os.path.isfile("/proc/stb/sensors/temp0/unit"):
