@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import division
 #by 2boom 4bob@ua.fm 2011-16
 from Screens.Screen import Screen
 from Screens.PluginBrowser import PluginBrowser
@@ -425,11 +424,11 @@ class epanelinfo(Screen):
 					cpu_count += 1
 			if not cpu_speed:
 				try:
-					cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) // 1000
+					cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) / 1000
 				except:
 					try:
 						import binascii
-						cpu_speed = int(int(binascii.hexlify(open('/sys/firmware/devicetree/base/cpus/cpu@0/clock-frequency', 'rb').read()), 16) // 100000000) * 100
+						cpu_speed = int(int(binascii.hexlify(open('/sys/firmware/devicetree/base/cpus/cpu@0/clock-frequency', 'rb').read()), 16) / 100000000) * 100
 					except:
 						cpu_speed = '-'
 			if fileExists("/proc/stb/sensors/temp0/value") and fileExists("/proc/stb/sensors/temp0/unit"):
@@ -532,8 +531,8 @@ class epanelinfo(Screen):
 					nimlist += '%s' % line.split(':')[1].replace('\n', '').strip() + '\n'					
 			allnims = []
 			fbc_count = nimlist.count('FBC')
-			if fbc_count // 4 > 0:
-				fbc = fbc_count // 4
+			if fbc_count / 4 > 0:
+				fbc = fbc_count / 4
 				for line in nimlist.split('\n'):
 					allnims.append(line)  
 				for count in range(0, len(allnims)):
@@ -593,8 +592,8 @@ class epanelinfo(Screen):
 	def FlashMem(self):
 		size = avail = 0
 		st = os.statvfs("/")
-		avail = st.f_bsize * st.f_bavail // 1024
-		size = st.f_bsize * st.f_blocks // 1024
+		avail = st.f_bsize * st.f_bavail / 1024
+		size = st.f_bsize * st.f_blocks / 1024
 		self["flashTotal"].text = _("Total: %s Kb  Free: %s Kb") % (size , avail)
 		
 	def verinfo(self):

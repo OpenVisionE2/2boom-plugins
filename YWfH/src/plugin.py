@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import division, print_function
+from __future__ import print_function
  # Yahoo! weather for Hotkey
 # Copyright (c) 2boom 2015-16
 # v.0.3-r2
@@ -230,7 +230,7 @@ class WeatherInfo(Screen):
 				self["temp_now_max"].text = _('N/A')
 				self.notdata = True
 			if self.forecastdata['low' + daynumber] is not '' and self.forecastdata['high' + daynumber] is not '':
-				self["temp_" + day].text = '%s // %s' % (self.tempsing_nu(self.forecastdata['low' + daynumber]), self.tempsing_nu(self.forecastdata['high' + daynumber]))
+				self["temp_" + day].text = '%s / %s' % (self.tempsing_nu(self.forecastdata['low' + daynumber]), self.tempsing_nu(self.forecastdata['high' + daynumber]))
 			else:
 				self["temp_" + day].text = _('N/A')
 				self.notdata = True

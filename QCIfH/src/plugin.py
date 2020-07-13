@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import division
 #QuickChannelInfo for Hotkey
 #Copyright (c) 2boom 2015
 # v.0.1-r0
@@ -156,7 +155,7 @@ class QCIfH(Screen):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
 		if xres == -1:
 			return ''
-		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) // 1000)
+		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 		return fps
 
 	def getVideoBitrateData(self,value, status): 

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import division
 # QuickEcmInfo2 Converter
 # Copyright (c) 2boom 2012-14
 # v.1.3-r0 29.06.2014
@@ -224,7 +223,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 				return ''
 			yres = info.getInfo(iServiceInformation.sVideoHeight)
 			mode = ('i', 'p', ' ')[info.getInfo(iServiceInformation.sProgressive)]
-			fps  = str((info.getInfo(iServiceInformation.sFrameRate) + 500) // 1000)
+			fps  = str((info.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 			if '0' is fps:
 				fps = ''
 			else:

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import division, print_function
+from __future__ import print_function
 # by 2boom 4bob@ua.fm 2011-17
 # swap on hdd idea bigroma
 from Screens.Screen import Screen
@@ -715,7 +715,7 @@ class SwapScreen(Screen):
 			
 	def isSwapSize(self):
 		if fileExists(self.swapfile):
-			swapsize = os.path.getsize(self.swapfile) // 1048576
+			swapsize = os.path.getsize(self.swapfile) / 1048576
 			return ("%sMb" % swapsize)
 		else:
 			return ("N/A Mb")
@@ -2610,7 +2610,7 @@ class DropScreen(ConfigListScreen, Screen):
 				elif 'Cached:' in line:
 					cached = line.split()[1]
 			if '' is not memtotal and '' is not memfree:
-				persent = int(memfree) // (int(memtotal) // 100)
+				persent = int(memfree) / (int(memtotal) / 100)
 			self["memTotal"].text = _("Total: %s Kb  Free: %s Kb (%s %%)") % (memtotal, memfree, persent)
 			self["bufCache"].text = _("Buffers: %s Kb  Cached: %s Kb") % (buffers, cached)
 
