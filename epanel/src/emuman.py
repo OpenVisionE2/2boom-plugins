@@ -699,9 +699,6 @@ class uniswitcher(Screen):
 					# card name change
 					elif "internal" in line and "#" not in line:
 						cardline += "card: %s " % line.split()[2].strip("]")
-					if ("newcamd" in line and "[newcamd]" not in line) and iscard < 1 and "#" not in line:
-						cardline += "serv: %s" % line.split()[2]
-						iscard = iscard + 1
 				return cardline
 		return ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 11:16+0430\n"
+"POT-Creation-Date: 2020-07-30 11:53+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -279,9 +279,6 @@ msgid "Driver Version:"
 msgstr ""
 
 msgid "Dynamic DNS"
-msgstr ""
-
-msgid "E-Crashlog viewer"
 msgstr ""
 
 msgid "E-EPG Downloader"
@@ -956,9 +953,6 @@ msgid "Swap:"
 msgstr ""
 
 msgid "Sweden"
-msgstr ""
-
-msgid "Switch newcamd.list with remote conrol"
 msgstr ""
 
 msgid "Switch oscam condig with remote control"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 11:16+0430\n"
+"POT-Creation-Date: 2020-07-30 11:53+0430\n"
 "PO-Revision-Date: 2016-06-12 17:50+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -276,9 +276,6 @@ msgstr "Версия драйвера:"
 
 msgid "Dynamic DNS"
 msgstr "Динамический DNS"
-
-msgid "E-Crashlog viewer"
-msgstr "E-Панель просмотр крешлога"
 
 msgid "E-EPG Downloader"
 msgstr "E-EPG Загрузчик"
@@ -963,9 +960,6 @@ msgstr "Подкачка:"
 
 msgid "Sweden"
 msgstr "Швеция"
-
-msgid "Switch newcamd.list with remote conrol"
-msgstr "Ручное переключение newcamd.list"
 
 #, fuzzy
 msgid "Switch oscam condig with remote control"
