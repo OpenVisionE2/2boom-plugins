@@ -799,23 +799,7 @@ def extdrop(session, **kwargs):
 	
 def setupipk(session, **kwargs):
 	session.open(minstall.InstallAll4)
-	
-def mgcamd_sw(session, **kwargs):
-	config.plugins.usw.activeconf.value = config.plugins.uswmgcamd.activeconf.value
-	config.plugins.usw.configpath.value = config.plugins.uswmgcamd.configpath.value
-	config.plugins.usw.emu.value = "Mgcamd"
-	config.plugins.usw.configfile.value = config.plugins.uswmgcamd.configfile.value
-	config.plugins.usw.configext.value = config.plugins.uswmgcamd.configext.value
-	session.open(emuman.uniswitcher)
-	
-def wicardd_sw(session, **kwargs):
-	config.plugins.usw.activeconf.value = config.plugins.uswwicardd.activeconf.value
-	config.plugins.usw.configpath.value = config.plugins.uswwicardd.configpath.value
-	config.plugins.usw.emu.value = "Wicardd"
-	config.plugins.usw.configfile.value = config.plugins.uswwicardd.configfile.value
-	config.plugins.usw.configext.value = config.plugins.uswwicardd.configext.value
-	session.open(emuman.uniswitcher)
-	
+
 def oscam_sw(session, **kwargs):
 	config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
 	config.plugins.usw.configpath.value = config.plugins.uswoscam.configpath.value
@@ -823,15 +807,7 @@ def oscam_sw(session, **kwargs):
 	config.plugins.usw.configfile.value = config.plugins.uswoscam.configfile.value
 	config.plugins.usw.configext.value = config.plugins.uswoscam.configext.value
 	session.open(emuman.uniswitcher)
-	
-def cccam_sw(session, **kwargs):
-	config.plugins.usw.activeconf.value = config.plugins.uswcccam.activeconf.value
-	config.plugins.usw.configpath.value = config.plugins.uswcccam.configpath.value
-	config.plugins.usw.emu.value = "CCcam"
-	config.plugins.usw.configfile.value = config.plugins.uswcccam.configfile.value
-	config.plugins.usw.configext.value = config.plugins.uswcccam.configext.value
-	session.open(emuman.uniswitcher)
-	
+
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="epp.png", fnc=main)]
 	if config.plugins.epanel.showepanelmenu.value:
@@ -840,12 +816,6 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name=_("E-SoftCam manager"), description=_("Start, Stop, Restart Sofcam/Cardserver"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extsoft))
 	if config.plugins.epanel.showdrop.value:
 		list.append(PluginDescriptor(name=_("E-Flush cache"), description=_("drop system cache"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extdrop))
-	if config.plugins.uswmgcamd.active.value:
-		list.append(PluginDescriptor(name=_("E-Newcamd.list switcher"), description=_("Switch newcamd.list with remote conrol"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=mgcamd_sw))
-	if config.plugins.uswwicardd.active.value:
-		list.append(PluginDescriptor(name=_("E-Wicardd.conf switcher"), description=_("Switch wicardd.conf with remote conrol"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=wicardd_sw))
-	if config.plugins.epanel.showclviewer.value:
-		list.append(PluginDescriptor(name=_("E-Crashlog viewer"), description=_("Switch newcamd.list with remote conrol"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=clviewer))
 	if config.plugins.epanel.showscriptex.value:
 		list.append(PluginDescriptor(name=_("E-Script Executer"), description=_("Start scripts from /usr/script"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=scriptex))
 	if config.plugins.epanel.showepgdwnload.value:
@@ -860,8 +830,6 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_MENU], fnc=menu))
 	if config.plugins.uswoscam.active.value:
 		list.append(PluginDescriptor(name= _("E-Oscam.conf switcher"), description= _("Switch oscam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=oscam_sw))
-	if config.plugins.uswcccam.active.value:
-		list.append(PluginDescriptor(name= _("E-CCcam.Cfg switcher"), description= _("Switch cccam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=cccam_sw))
 	list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc = sessionstart))
 	return list
 

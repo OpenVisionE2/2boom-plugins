@@ -67,33 +67,12 @@ config.plugins.usw.emu = ConfigText(default = "")
 config.plugins.usw.configfile = ConfigText(default = "")
 config.plugins.usw.configext = ConfigText(default = "")
 
-config.plugins.uswmgcamd = ConfigSubsection()
-config.plugins.uswmgcamd.active = ConfigYesNo(default = False)
-config.plugins.uswmgcamd.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswmgcamd.configpath = ConfigText(default="/usr/keys", visible_width = 200, fixed_size = False)
-config.plugins.uswmgcamd.configfile = ConfigText(default="newcamd.list", visible_width = 200, fixed_size = False)
-config.plugins.uswmgcamd.configext = ConfigText(default="nl", visible_width = 100, fixed_size = False)
-
-config.plugins.uswwicardd = ConfigSubsection()
-config.plugins.uswwicardd.active = ConfigYesNo(default = False)
-config.plugins.uswwicardd.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswwicardd.configpath = ConfigText(default="/etc/tuxbox/config/wicardd", visible_width = 200, fixed_size = False)
-config.plugins.uswwicardd.configfile = ConfigText(default="wicardd.conf", visible_width = 200, fixed_size = False)
-config.plugins.uswwicardd.configext = ConfigText(default="wc", visible_width = 100, fixed_size = False)
-
 config.plugins.uswoscam = ConfigSubsection()
 config.plugins.uswoscam.active = ConfigYesNo(default = False)
 config.plugins.uswoscam.activeconf = ConfigText(default = "NotSelected")
 config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configfile = ConfigText(default="oscam.conf", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
-
-config.plugins.uswcccam = ConfigSubsection()
-config.plugins.uswcccam.active = ConfigYesNo(default = False)
-config.plugins.uswcccam.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswcccam.configpath = ConfigText(default="/etc/", visible_width = 200, fixed_size = False)
-config.plugins.uswcccam.configfile = ConfigText(default="CCcam.cfg", visible_width = 200, fixed_size = False)
-config.plugins.uswcccam.configext = ConfigText(default="cc", visible_width = 100, fixed_size = False)
 ######################################################################################
 def ecm_view():
 	list = ''
@@ -321,30 +300,12 @@ class emuSel5(Screen):
 		status = True
 		if fileExists('/etc/init.d/softcam'):
 			for line in open('/etc/init.d/softcam'):
-				if 'mgcamd' in line.lower():
-					config.plugins.usw.activeconf.value = config.plugins.uswmgcamd.activeconf.value
-					config.plugins.usw.configpath.value = config.plugins.uswmgcamd.configpath.value
-					config.plugins.usw.emu.value = "Mgcamd"
-					config.plugins.usw.configfile.value = config.plugins.uswmgcamd.configfile.value
-					config.plugins.usw.configext.value = config.plugins.uswmgcamd.configext.value
-				elif 'oscam' in line.lower():
+				if 'oscam' in line.lower():
 					config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
 					config.plugins.usw.configpath.value = config.plugins.uswoscam.configpath.value
 					config.plugins.usw.emu.value = "Oscam"
 					config.plugins.usw.configfile.value = config.plugins.uswoscam.configfile.value
 					config.plugins.usw.configext.value = config.plugins.uswoscam.configext.value
-				elif 'cccam' in line.lower():
-					config.plugins.usw.activeconf.value = config.plugins.uswcccam.activeconf.value
-					config.plugins.usw.configpath.value = config.plugins.uswcccam.configpath.value
-					config.plugins.usw.emu.value = "CCcam"
-					config.plugins.usw.configfile.value = config.plugins.uswcccam.configfile.value
-					config.plugins.usw.configext.value = config.plugins.uswcccam.configext.value
-				elif 'wicardd' in line.lower():
-					config.plugins.usw.activeconf.value = config.plugins.uswwicardd.activeconf.value
-					config.plugins.usw.configpath.value = config.plugins.uswwicardd.configpath.value
-					config.plugins.usw.emu.value = "Wicardd"
-					config.plugins.usw.configfile.value = config.plugins.uswwicardd.configfile.value
-					config.plugins.usw.configext.value = config.plugins.uswwicardd.configext.value
 				elif 'placeholder' in line.lower():
 					status = False
 			if status:
@@ -518,7 +479,7 @@ class SoftcamPanel2(Screen):
 		twopng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/unisw.png"))
 		treepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/soft.png"))
 		self.list.append((_("Simple Softcam/Cardserver"), 1, _("Start, Stop, Restart Sofcam/Cardserver"), onepng))
-		self.list.append((_("Universal Switcher"), 2, _("switch config files mgcamd, oscam, wicardd, cccam with remote conrol"), twopng))
+		self.list.append((_("Universal Switcher"), 2, _("switch config files oscam with remote conrol"), twopng))
 		self.list.append((_("SoftCam.Key Updater"), 3, _("update Softcam.key from internet"), treepng))
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
@@ -679,14 +640,8 @@ class uniswitcher(Screen):
 		self["text"].setText(ecm_view())
 		
 	def mList(self):
-		if config.plugins.usw.emu.value == "Mgcamd":
-			config.plugins.usw.activeconf.value = config.plugins.uswmgcamd.activeconf.value
-		elif config.plugins.usw.emu.value == "Wicardd":
-			config.plugins.usw.activeconf.value = config.plugins.uswwicardd.activeconf.value
-		elif config.plugins.usw.emu.value == "Oscam":
+		if config.plugins.usw.emu.value == "Oscam":
 			config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
-		elif config.plugins.usw.emu.value == "CCcam":
-			config.plugins.usw.activeconf.value = config.plugins.uswcccam.activeconf.value
 		self.list = []
 		if os.path.exists(config.plugins.usw.configpath.value):
 			list = os.listdir('%s' % config.plugins.usw.configpath.value)
@@ -704,18 +659,9 @@ class uniswitcher(Screen):
 	def run(self):
 		if self["list"].getCurrent() is not None:
 			config.plugins.usw.activeconf.value = self["list"].getCurrent()[0]
-			if config.plugins.usw.emu.value == "Mgcamd":
-				config.plugins.uswmgcamd.activeconf.value = config.plugins.usw.activeconf.value
-				config.plugins.uswmgcamd.activeconf.save()
-			elif config.plugins.usw.emu.value == "Wicardd":
-				config.plugins.uswwicardd.activeconf.value = config.plugins.usw.activeconf.value
-				config.plugins.uswwicardd.activeconf.save()
-			elif config.plugins.usw.emu.value == "Oscam":
+			if config.plugins.usw.emu.value == "Oscam":
 				config.plugins.uswoscam.activeconf.value = config.plugins.usw.activeconf.value
 				config.plugins.uswoscam.activeconf.save()
-			elif config.plugins.usw.emu.value == "CCcam":
-				config.plugins.uswcccam.activeconf.value = config.plugins.usw.activeconf.value
-				config.plugins.uswcccam.activeconf.save()
 			self.setTitle(_("%s Switcher: - %s") % (config.plugins.usw.emu.value, config.plugins.usw.activeconf.value))
 			if  fileExists("%s/%s" % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value)):
 				file_cfg = open('%s/%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value), 'r').read()
@@ -745,22 +691,7 @@ class uniswitcher(Screen):
 	def Adress (self, nameserv):
 		cardline = ""
 		iscard = 0
-		if config.plugins.usw.emu.value == "Mgcamd":
-			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-				for line in open("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-					if ("CWS =" in line or "CWS_MULTIPLE = " in line) and "CWS = 127.0.0.1" not in line:
-						cardline = "serv: %s" % line.split()[2]
-				return cardline 
-		elif config.plugins.usw.emu.value == "Wicardd":
-			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-				for line in open("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-					if "device" in line:
-						cardline += "card: %s " % line.split()[-1]
-					if "account" in line and not "[account]" in line and iscard < 1:
-						cardline += "account: %s" % line.split()[-1].split("@")[-1].split(":")[0]
-						iscard = iscard + 1
-				return cardline
-		elif config.plugins.usw.emu.value == "Oscam":
+		if config.plugins.usw.emu.value == "Oscam":
 			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
 				for line in open("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
 					if "device" in line and "#" not in line:
@@ -768,15 +699,6 @@ class uniswitcher(Screen):
 					# card name change
 					elif "internal" in line and "#" not in line:
 						cardline += "card: %s " % line.split()[2].strip("]")
-					if ("newcamd" in line and "[newcamd]" not in line) and iscard < 1 and "#" not in line:
-						cardline += "serv: %s" % line.split()[2]
-						iscard = iscard + 1
-				return cardline
-		elif config.plugins.usw.emu.value == "CCcam":
-			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-				for line in open("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
-					if "C:" in line and "#" not in line:
-						cardline = line.split()[1]
 				return cardline
 		return ""
 
@@ -796,22 +718,10 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("E-Panel Universal Switcher"))
 		self.list = []
-		self.list.append(getConfigListEntry(_("Mgcamd config switcher"), config.plugins.uswmgcamd.active))
-		self.list.append(getConfigListEntry(_("Mgcamd configpath"), config.plugins.uswmgcamd.configpath))
-		self.list.append(getConfigListEntry(_("Mgcamd config filename"), config.plugins.uswmgcamd.configfile))
-		self.list.append(getConfigListEntry(_("Mgcamd configfile extention"), config.plugins.uswmgcamd.configext))
-		self.list.append(getConfigListEntry(_("Wicardd config switcher"), config.plugins.uswwicardd.active))
-		self.list.append(getConfigListEntry(_("Wicardd configpath"), config.plugins.uswwicardd.configpath))
-		self.list.append(getConfigListEntry(_("Wicardd config filename"), config.plugins.uswwicardd.configfile))
-		self.list.append(getConfigListEntry(_("Wicardd configfile extention"), config.plugins.uswwicardd.configext))
 		self.list.append(getConfigListEntry(_("Oscam config switcher"), config.plugins.uswoscam.active))
 		self.list.append(getConfigListEntry(_("Oscam configpath"), config.plugins.uswoscam.configpath))
 		self.list.append(getConfigListEntry(_("Oscam config filename"), config.plugins.uswoscam.configfile))
 		self.list.append(getConfigListEntry(_("Oscam configfile extention"), config.plugins.uswoscam.configext))
-		self.list.append(getConfigListEntry(_("CCcam config switcher"), config.plugins.uswcccam.active))
-		self.list.append(getConfigListEntry(_("CCcam configpath"), config.plugins.uswcccam.configpath))
-		self.list.append(getConfigListEntry(_("CCcam config filename"), config.plugins.uswcccam.configfile))
-		self.list.append(getConfigListEntry(_("CCcam configfile extention"), config.plugins.uswcccam.configext))
 		ConfigListScreen.__init__(self, self.list)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))

@@ -56,11 +56,6 @@ ARbouquet/po/Makefile
 ARbouquet/src/Makefile
 ARbouquet/src/images/Makefile
 
-ECCcam/Makefile
-ECCcam/po/Makefile
-ECCcam/src/Makefile
-ECCcam/src/images/Makefile
-
 epanel/Makefile
 epanel/po/Makefile
 epanel/script/Makefile
