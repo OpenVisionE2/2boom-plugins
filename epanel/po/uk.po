@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-31 14:35+0430\n"
+"POT-Creation-Date: 2020-07-30 11:16+0430\n"
 "PO-Revision-Date: 2016-06-12 17:51+0200\n"
 "Last-Translator: Irkoff <Irkoff@gmail.com>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -174,18 +174,6 @@ msgstr "Буфери: %s Kb  Кеш: %s Kb"
 msgid "Bulgaria"
 msgstr "Болгарія"
 
-msgid "CCcam config filename"
-msgstr "CCсam ім'я основного файлу конфігурації"
-
-msgid "CCcam config switcher"
-msgstr "CCсam перемикач"
-
-msgid "CCcam configfile extention"
-msgstr "CCсam розширення файлу конфігурації"
-
-msgid "CCcam configpath"
-msgstr "CCсam шлях до конфігурації"
-
 msgid "Cache Flush"
 msgstr "Звільненя Кеш"
 
@@ -290,9 +278,6 @@ msgstr "Версія драйвера:"
 msgid "Dynamic DNS"
 msgstr "Динамічний DNS"
 
-msgid "E-CCcam.Cfg switcher"
-msgstr "E-Панель CCcam.Cfg перемикач"
-
 msgid "E-Crashlog viewer"
 msgstr "E-Панель перегляд крешлога"
 
@@ -313,9 +298,6 @@ msgstr "E-Інсталятор: Режим"
 
 msgid "E-Installer: User directory on mount device"
 msgstr "E-Інсталятор: Директорія на монтованих дисках"
-
-msgid "E-Newcamd.list switcher"
-msgstr "E-Панель newcamd.list перемикач"
 
 msgid "E-Oscam.conf switcher"
 msgstr "E-Панель oscam.conf перемикач"
@@ -344,9 +326,6 @@ msgstr "E-Панель Емулятори"
 
 msgid "E-Unmount USB"
 msgstr "E-Панель демонтування USB"
-
-msgid "E-Wicardd.conf switcher"
-msgstr "E-Панель wicardd.conf перемикач"
 
 msgid "E-script path"
 msgstr "Вибір шляху для скриптів"
@@ -602,18 +581,6 @@ msgstr "Пам'ять:"
 
 msgid "Mexico"
 msgstr "Мексика"
-
-msgid "Mgcamd config filename"
-msgstr "Mgcamd ім'я основного файлу конфігурації"
-
-msgid "Mgcamd config switcher"
-msgstr "Mgcamd перемикач"
-
-msgid "Mgcamd configfile extention"
-msgstr "Mgcamd розширення файлу конфігурації"
-
-msgid "Mgcamd configpath"
-msgstr "Mgcamd шлях до конфігурації"
 
 msgid "Min"
 msgstr "Хвилини"
@@ -1002,19 +969,12 @@ msgstr "Підкачка:"
 msgid "Sweden"
 msgstr "Швеція"
 
-#, fuzzy
-msgid "Switch cccam condig with remote control"
-msgstr "Ручне перемикання newcamd.list"
-
 msgid "Switch newcamd.list with remote conrol"
 msgstr "Ручне перемикання newcamd.list"
 
 #, fuzzy
 msgid "Switch oscam condig with remote control"
 msgstr "Ручне перемикання newcamd.list"
-
-msgid "Switch wicardd.conf with remote conrol"
-msgstr "Ручне перемикання wiccard.conf"
 
 msgid "Switcher"
 msgstr "Перемикач"
@@ -1146,18 +1106,6 @@ msgstr "Перегляд установок"
 
 msgid "We"
 msgstr "Середа"
-
-msgid "Wicardd config filename"
-msgstr "Wicardd ім'я основного файлу конфігурації"
-
-msgid "Wicardd config switcher"
-msgstr "Wicardd перемикач"
-
-msgid "Wicardd configfile extention"
-msgstr "Wicardd розширення файлу конфігурації"
-
-msgid "Wicardd configpath"
-msgstr "Wicardd щлях до конфігурації"
 
 #, fuzzy
 msgid "Yes"
@@ -1295,7 +1243,8 @@ msgstr "набір утиліт для enigma2"
 msgid "size: %s  %s"
 msgstr "Розмір: %s  %s"
 
-msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
+#, fuzzy
+msgid "switch config files oscam with remote conrol"
 msgstr "Перемикач конфігурацій mgcamd, oscam, wicardd, cccam"
 
 msgid "synchronization settings DDNS"

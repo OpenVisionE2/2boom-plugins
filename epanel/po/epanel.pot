@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-06 22:31+0430\n"
+"POT-Creation-Date: 2020-07-30 11:16+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -178,18 +178,6 @@ msgstr ""
 msgid "Bulgaria"
 msgstr ""
 
-msgid "CCcam config filename"
-msgstr ""
-
-msgid "CCcam config switcher"
-msgstr ""
-
-msgid "CCcam configfile extention"
-msgstr ""
-
-msgid "CCcam configpath"
-msgstr ""
-
 msgid "Cache Flush"
 msgstr ""
 
@@ -293,9 +281,6 @@ msgstr ""
 msgid "Dynamic DNS"
 msgstr ""
 
-msgid "E-CCcam.Cfg switcher"
-msgstr ""
-
 msgid "E-Crashlog viewer"
 msgstr ""
 
@@ -315,9 +300,6 @@ msgid "E-Installer: Selection mode"
 msgstr ""
 
 msgid "E-Installer: User directory on mount device"
-msgstr ""
-
-msgid "E-Newcamd.list switcher"
 msgstr ""
 
 msgid "E-Oscam.conf switcher"
@@ -345,9 +327,6 @@ msgid "E-SoftCam manager"
 msgstr ""
 
 msgid "E-Unmount USB"
-msgstr ""
-
-msgid "E-Wicardd.conf switcher"
 msgstr ""
 
 msgid "E-script path"
@@ -597,18 +576,6 @@ msgid "Memory:"
 msgstr ""
 
 msgid "Mexico"
-msgstr ""
-
-msgid "Mgcamd config filename"
-msgstr ""
-
-msgid "Mgcamd config switcher"
-msgstr ""
-
-msgid "Mgcamd configfile extention"
-msgstr ""
-
-msgid "Mgcamd configpath"
 msgstr ""
 
 msgid "Min"
@@ -991,16 +958,10 @@ msgstr ""
 msgid "Sweden"
 msgstr ""
 
-msgid "Switch cccam condig with remote control"
-msgstr ""
-
 msgid "Switch newcamd.list with remote conrol"
 msgstr ""
 
 msgid "Switch oscam condig with remote control"
-msgstr ""
-
-msgid "Switch wicardd.conf with remote conrol"
 msgstr ""
 
 msgid "Switcher"
@@ -1131,18 +1092,6 @@ msgid "View settings"
 msgstr ""
 
 msgid "We"
-msgstr ""
-
-msgid "Wicardd config filename"
-msgstr ""
-
-msgid "Wicardd config switcher"
-msgstr ""
-
-msgid "Wicardd configfile extention"
-msgstr ""
-
-msgid "Wicardd configpath"
 msgstr ""
 
 msgid "Yes"
@@ -1279,7 +1228,7 @@ msgstr ""
 msgid "size: %s  %s"
 msgstr ""
 
-msgid "switch config files mgcamd, oscam, wicardd, cccam with remote conrol"
+msgid "switch config files oscam with remote conrol"
 msgstr ""
 
 msgid "synchronization settings DDNS"
