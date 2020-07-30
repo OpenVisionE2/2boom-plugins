@@ -808,6 +808,14 @@ def oscam_sw(session, **kwargs):
 	config.plugins.usw.configext.value = config.plugins.uswoscam.configext.value
 	session.open(emuman.uniswitcher)
 
+def ncam_sw(session, **kwargs):
+	config.plugins.usw.activeconf.value = config.plugins.uswncam.activeconf.value
+	config.plugins.usw.configpath.value = config.plugins.uswncam.configpath.value
+	config.plugins.usw.emu.value = "Ncam"
+	config.plugins.usw.configfile.value = config.plugins.uswncam.configfile.value
+	config.plugins.usw.configext.value = config.plugins.uswncam.configext.value
+	session.open(emuman.uniswitcher)
+
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="epp.png", fnc=main)]
 	if config.plugins.epanel.showepanelmenu.value:
@@ -830,6 +838,8 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_MENU], fnc=menu))
 	if config.plugins.uswoscam.active.value:
 		list.append(PluginDescriptor(name= _("E-Oscam.conf switcher"), description= _("Switch oscam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=oscam_sw))
+	if config.plugins.uswncam.active.value:
+		list.append(PluginDescriptor(name= _("E-Ncam.conf switcher"), description= _("Switch ncam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=ncam_sw))
 	list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc = sessionstart))
 	return list
 

@@ -53,11 +53,14 @@ config.plugins.epanel.path = ConfigSelection(default = "/usr/keys/", choices = [
 		("/etc/keys/", "/etc/keys/"),
 		("/etc/tuxbox/config/", "/etc/tuxbox/config/"),
 		("/etc/tuxbox/config/oscam/", "/etc/tuxbox/config/oscam/"),
+		("/etc/tuxbox/config/ncam/", "/etc/tuxbox/config/ncam/"),
 		])
 config.plugins.epanel.keyname = ConfigSelection(default = "SoftCam.Key", choices = [
 		("SoftCam.Key", "SoftCam.Key"),
 		("oscam.keys", "oscam.keys"),
 		("oscam.biss", "oscam.biss"),
+		("ncam.keys", "ncam.keys"),
+		("ncam.biss", "ncam.biss"),
 		])
 config.plugins.epanel.softcamserver = ConfigText(default="http://softcam.esy.es/softcam/SoftCam.Key", visible_width = 200, fixed_size = False)
 config.plugins.usw = ConfigSubsection()
@@ -73,6 +76,13 @@ config.plugins.uswoscam.activeconf = ConfigText(default = "NotSelected")
 config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configfile = ConfigText(default="oscam.conf", visible_width = 200, fixed_size = False)
 config.plugins.uswoscam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
+
+config.plugins.uswncam = ConfigSubsection()
+config.plugins.uswncam.active = ConfigYesNo(default = False)
+config.plugins.uswncam.activeconf = ConfigText(default = "NotSelected")
+config.plugins.uswncam.configpath = ConfigText(default="/etc/tuxbox/config/ncam", visible_width = 200, fixed_size = False)
+config.plugins.uswncam.configfile = ConfigText(default="ncam.conf", visible_width = 200, fixed_size = False)
+config.plugins.uswncam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
 ######################################################################################
 def ecm_view():
 	list = ''
@@ -306,6 +316,12 @@ class emuSel5(Screen):
 					config.plugins.usw.emu.value = "Oscam"
 					config.plugins.usw.configfile.value = config.plugins.uswoscam.configfile.value
 					config.plugins.usw.configext.value = config.plugins.uswoscam.configext.value
+				elif 'ncam' in line.lower():
+					config.plugins.usw.activeconf.value = config.plugins.uswncam.activeconf.value
+					config.plugins.usw.configpath.value = config.plugins.uswncam.configpath.value
+					config.plugins.usw.emu.value = "Ncam"
+					config.plugins.usw.configfile.value = config.plugins.uswncam.configfile.value
+					config.plugins.usw.configext.value = config.plugins.uswncam.configext.value
 				elif 'placeholder' in line.lower():
 					status = False
 			if status:
@@ -479,7 +495,7 @@ class SoftcamPanel2(Screen):
 		twopng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/unisw.png"))
 		treepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/soft.png"))
 		self.list.append((_("Simple Softcam/Cardserver"), 1, _("Start, Stop, Restart Sofcam/Cardserver"), onepng))
-		self.list.append((_("Universal Switcher"), 2, _("switch config files oscam with remote conrol"), twopng))
+		self.list.append((_("Universal Switcher"), 2, _("switch config files oscam and ncam with remote conrol"), twopng))
 		self.list.append((_("SoftCam.Key Updater"), 3, _("update Softcam.key from internet"), treepng))
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
@@ -642,6 +658,8 @@ class uniswitcher(Screen):
 	def mList(self):
 		if config.plugins.usw.emu.value == "Oscam":
 			config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
+		elif config.plugins.usw.emu.value == "Ncam":
+			config.plugins.usw.activeconf.value = config.plugins.uswncam.activeconf.value
 		self.list = []
 		if os.path.exists(config.plugins.usw.configpath.value):
 			list = os.listdir('%s' % config.plugins.usw.configpath.value)
@@ -662,6 +680,9 @@ class uniswitcher(Screen):
 			if config.plugins.usw.emu.value == "Oscam":
 				config.plugins.uswoscam.activeconf.value = config.plugins.usw.activeconf.value
 				config.plugins.uswoscam.activeconf.save()
+			elif config.plugins.usw.emu.value == "Ncam":
+				config.plugins.uswncam.activeconf.value = config.plugins.usw.activeconf.value
+				config.plugins.uswncam.activeconf.save()
 			self.setTitle(_("%s Switcher: - %s") % (config.plugins.usw.emu.value, config.plugins.usw.activeconf.value))
 			if  fileExists("%s/%s" % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value)):
 				file_cfg = open('%s/%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value), 'r').read()
@@ -700,6 +721,15 @@ class uniswitcher(Screen):
 					elif "internal" in line and "#" not in line:
 						cardline += "card: %s " % line.split()[2].strip("]")
 				return cardline
+		elif config.plugins.usw.emu.value == "Ncam":
+			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
+				for line in open("%s/%s" % (config.plugins.usw.configpath.value, nameserv)):
+					if "device" in line and "#" not in line:
+						cardline += "card: %s " % line.split()[2]
+					# card name change
+					elif "internal" in line and "#" not in line:
+						cardline += "card: %s " % line.split()[2].strip("]")
+				return cardline
 		return ""
 
 ####################################################################################
@@ -722,6 +752,10 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Oscam configpath"), config.plugins.uswoscam.configpath))
 		self.list.append(getConfigListEntry(_("Oscam config filename"), config.plugins.uswoscam.configfile))
 		self.list.append(getConfigListEntry(_("Oscam configfile extention"), config.plugins.uswoscam.configext))
+		self.list.append(getConfigListEntry(_("Ncam config switcher"), config.plugins.uswncam.active))
+		self.list.append(getConfigListEntry(_("Ncam configpath"), config.plugins.uswncam.configpath))
+		self.list.append(getConfigListEntry(_("Ncam config filename"), config.plugins.uswncam.configfile))
+		self.list.append(getConfigListEntry(_("Ncam configfile extention"), config.plugins.uswncam.configext))
 		ConfigListScreen.__init__(self, self.list)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
