@@ -492,12 +492,6 @@ class epanelinfo(Screen):
 		else:
 			hddinfo = _("none")
 		self["device"].text = list
-
-	def getKernelVersionString(self):
-		try:
-			return open("/proc/version").read().split()[2]
-		except:
-			return _("unknown")
 			
 	def getImageVersionString(self):
 		try:
@@ -558,7 +552,7 @@ class epanelinfo(Screen):
 		package = 0
 		self["Hardware"].text = getBoxType()
 		self["Image"].text = boxbranding.getImageDistro()
-		self["Kernel"].text = self.getKernelVersionString()
+		self["Kernel"].text = boxbranding.getKernelVersion()
 		self["EnigmaVersion"].text = self.getImageVersionString()
 		self["nim"].text = self.listnims()
 		if fileExists(self.status()):
