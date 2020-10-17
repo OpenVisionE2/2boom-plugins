@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 11:53+0430\n"
+"POT-Creation-Date: 2020-10-17 17:31+0330\n"
 "PO-Revision-Date: 2016-06-12 17:51+0200\n"
 "Last-Translator: Irkoff <Irkoff@gmail.com>\n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -295,6 +295,10 @@ msgstr "E-Інсталятор: Режим"
 
 msgid "E-Installer: User directory on mount device"
 msgstr "E-Інсталятор: Директорія на монтованих дисках"
+
+#, fuzzy
+msgid "E-Ncam.conf switcher"
+msgstr "E-Панель oscam.conf перемикач"
 
 msgid "E-Oscam.conf switcher"
 msgstr "E-Панель oscam.conf перемикач"
@@ -599,6 +603,22 @@ msgstr "Багатофайловий режим"
 
 msgid "Name of keyfile"
 msgstr "Назва файлу ключів"
+
+#, fuzzy
+msgid "Ncam config filename"
+msgstr "Oscam ім'я основного файлу конфігурації"
+
+#, fuzzy
+msgid "Ncam config switcher"
+msgstr "Oscam перемикач"
+
+#, fuzzy
+msgid "Ncam configfile extention"
+msgstr "Oscam розширення файлу конфігурації"
+
+#, fuzzy
+msgid "Ncam configpath"
+msgstr "Oscam шлях до конфігурації"
 
 msgid "Netherlands"
 msgstr "Голландія"
@@ -967,6 +987,10 @@ msgid "Sweden"
 msgstr "Швеція"
 
 #, fuzzy
+msgid "Switch ncam condig with remote control"
+msgstr "Ручне перемикання newcamd.list"
+
+#, fuzzy
 msgid "Switch oscam condig with remote control"
 msgstr "Ручне перемикання newcamd.list"
 
@@ -1238,7 +1262,7 @@ msgid "size: %s  %s"
 msgstr "Розмір: %s  %s"
 
 #, fuzzy
-msgid "switch config files oscam with remote conrol"
+msgid "switch config files oscam and ncam with remote conrol"
 msgstr "Перемикач конфігурацій mgcamd, oscam, wicardd, cccam"
 
 msgid "synchronization settings DDNS"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 11:53+0430\n"
+"POT-Creation-Date: 2020-10-17 17:31+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,6 +297,9 @@ msgid "E-Installer: Selection mode"
 msgstr ""
 
 msgid "E-Installer: User directory on mount device"
+msgstr ""
+
+msgid "E-Ncam.conf switcher"
 msgstr ""
 
 msgid "E-Oscam.conf switcher"
@@ -594,6 +597,18 @@ msgid "MultiSelect Mode"
 msgstr ""
 
 msgid "Name of keyfile"
+msgstr ""
+
+msgid "Ncam config filename"
+msgstr ""
+
+msgid "Ncam config switcher"
+msgstr ""
+
+msgid "Ncam configfile extention"
+msgstr ""
+
+msgid "Ncam configpath"
 msgstr ""
 
 msgid "Netherlands"
@@ -955,6 +970,9 @@ msgstr ""
 msgid "Sweden"
 msgstr ""
 
+msgid "Switch ncam condig with remote control"
+msgstr ""
+
 msgid "Switch oscam condig with remote control"
 msgstr ""
 
@@ -1222,7 +1240,7 @@ msgstr ""
 msgid "size: %s  %s"
 msgstr ""
 
-msgid "switch config files oscam with remote conrol"
+msgid "switch config files oscam and ncam with remote conrol"
 msgstr ""
 
 msgid "synchronization settings DDNS"
