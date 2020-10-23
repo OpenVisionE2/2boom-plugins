@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yweather plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-17 17:31+0330\n"
+"POT-Creation-Date: 2019-05-31 14:35+0430\n"
 "PO-Revision-Date: 2014-03-10 17:26+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <4bob@ua.fm>\n"
@@ -48,6 +48,10 @@ msgstr ""
 
 msgid "16 sec"
 msgstr ""
+
+#, fuzzy
+msgid "2boom's Yahoo Weather"
+msgstr "Yahoo! Wetter auf Hotkey"
 
 #, fuzzy
 msgid "2boom's Yahoo! Weather"
