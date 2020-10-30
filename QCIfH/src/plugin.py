@@ -107,7 +107,7 @@ class QCIfH(Screen):
 			audio = service.audioTracks()
 			if audio:
 				if audio.getCurrentTrack() > -1:
-					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",","")
+					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "")
 			self.videocodec = ("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)]
 		if apid and binary_file:
 			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64*1024)
@@ -158,13 +158,13 @@ class QCIfH(Screen):
 		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 		return fps
 
-	def getVideoBitrateData(self,value, status): 
+	def getVideoBitrateData(self, value, status): 
 		if status:
 			self["vbit"].text = '%d Kb/s' % value
 		else:
 			self.videoBitrate = None		
 
-	def getAudioBitrateData(self,value, status): 
+	def getAudioBitrateData(self, value, status): 
 		if status:
 			self["abit"].text = '%s Kb/s' % value
 		else:
@@ -212,7 +212,7 @@ class qcifh_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 		
 def main(session, **kwargs):
 	session.open(QCIfH)

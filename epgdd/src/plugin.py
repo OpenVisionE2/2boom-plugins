@@ -117,8 +117,8 @@ class epgdd(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_('Select path to save epg.dat'), config.plugins.epgdd.direct))
 		self.list.append(getConfigListEntry(_('Set EPG filename'), config.plugins.epgdd.epgname))
 		self.list.append(getConfigListEntry(_('Download url'), config.plugins.epgdd.url))
-		self.list.append(getConfigListEntry(_('Periodicity checks'),config.plugins.epgdd.checkp))
-		self.list.append(getConfigListEntry(_('EPGFlush if support'),config.plugins.epgdd.flush))
+		self.list.append(getConfigListEntry(_('Periodicity checks'), config.plugins.epgdd.checkp))
+		self.list.append(getConfigListEntry(_('EPGFlush if support'), config.plugins.epgdd.flush))
 		self.list.append(getConfigListEntry(_('Check epg.dat exists'), config.plugins.epgdd.checkepgfile))
 		self.list.append(getConfigListEntry(_('Show Auto EPG Downloader in ExtensionMenu'), config.plugins.epgdd.menuext))
 		ConfigListScreen.__init__(self, self.list, session=session)
@@ -175,7 +175,7 @@ class epgdd(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox,(_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
 
 	def cancel(self):
 		self.close()
@@ -236,7 +236,7 @@ class Check_EPG():
 		if config.plugins.epgdd.first.value and config.plugins.epgdd.nocheck.value:
 			config.plugins.epgdd.first.value = False
 			if os.path.isfile('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value)):
-				epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 				logging('%02d:%02d:%d %02d:%02d:%02d - reload epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
 				
@@ -287,7 +287,7 @@ class Check_EPG():
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s - image not suuport flushEPG\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 			try:	
-				epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
@@ -419,7 +419,7 @@ class get_epgdat(Screen):
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s - image not suuport flushEPG\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 			try:	
-				epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))

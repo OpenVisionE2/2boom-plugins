@@ -94,7 +94,7 @@ def ecm_view():
 				if 'port:' in line: 
 					port_flag  = 1
 				if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
-					line = line.replace(' ','').replace(':',': ')
+					line = line.replace(' ', '').replace(':', ': ')
 				if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
 					line = line.strip('\n') + '  '
 				if 'Signature' in line:
@@ -165,7 +165,7 @@ class emuSel5(Screen):
 				"red": self.emuStopOperation,
 				"yellow": self.emuRestartOperation,
 				"blue": self.switcher,
-			},-1)
+			}, -1)
 		self.list = [ ]
 		self["key_red"] = Label(_("Stop"))
 		self["key_green"] = Label(_("Start"))
@@ -576,10 +576,10 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 
 	def CreateOldKeyFile(self):
-		self.mbox = self.session.open(MessageBox,(_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
+		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
 		self.iConsole.ePopen('mv %s%s %s%s' % \
 			(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.DownloadKeyFile)
 		
@@ -666,9 +666,9 @@ class uniswitcher(Screen):
 			for line in list:
 				if '.%s' % config.plugins.usw.configext.value in line:
 					if line[:-3] == config.plugins.usw.activeconf.value:
-						self.list.append((line[:-3],self.Adress(line), self.servactpng))
+						self.list.append((line[:-3], self.Adress(line), self.servactpng))
 					else:
-						self.list.append((line[:-3],self.Adress(line), self.servinactpng))
+						self.list.append((line[:-3], self.Adress(line), self.servinactpng))
 			self.list.sort()
 			self["list"].setList(self.list)
 			if self.indexpos != None:
@@ -778,5 +778,5 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		configfile.save()
 		from Components.PluginComponent import plugins
 		plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 ####################################################################################

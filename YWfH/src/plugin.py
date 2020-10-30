@@ -84,7 +84,7 @@ class WeatherInfo(Screen):
 		
 		if config.plugins.yweather.skin.value:
 			if fileExists('%sExtensions/YWfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS)):
-				with open('%sExtensions/YWfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS),'r') as user_skin:
+				with open('%sExtensions/YWfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS), 'r') as user_skin:
 					self.skin = user_skin.read()
 				user_skin.close()
 		self.setTitle(_("2boom's Yahoo! Weather"))
@@ -627,7 +627,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 		
 class search_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
@@ -698,7 +698,7 @@ class search_setup(Screen, ConfigListScreen):
 			os.remove("/tmp/woeid.xml")
 		if os.path.exists("/tmp/yweather.xml"):
 			os.remove("/tmp/yweather.xml")
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 		
 	def get_woeid(self):
 		if self.isServerOnline():

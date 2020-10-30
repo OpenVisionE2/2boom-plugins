@@ -98,7 +98,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 			if filedata:
 				for line in filedata.readlines():
 					if "caid:" in line or "provider:" in line or "provid:" in line or "pid:" in line or "hops:" in line  or "system:" in line or "address:" in line or "using:" in line or "ecm time:" in line:
-						line = line.replace(' ',"").replace(":",": ")
+						line = line.replace(' ', "").replace(":", ": ")
 					if "caid:" in line or "pid:" in line or "reader:" in line or "from:" in line or "hops:" in line  or "system:" in line or "Service:" in line or "CAID:" in line or "Provider:" in line:
 						line = line.strip('\n') + "  "
 					if "Signature" in line:
@@ -361,7 +361,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 			if audio:
 				if audio.getCurrentTrack() > -1:
 					if self.audio is not 0:
-						audiocodec = '  AUDIO %s: %s%s%s Kbit/s' % (str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",","").upper(), self.basecolor, self.audio, self.maincolor)
+						audiocodec = '  AUDIO %s: %s%s%s Kbit/s' % (str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "").upper(), self.basecolor, self.audio, self.maincolor)
 					else:
 						audiocodec = ''
 			if self.video is not 0:

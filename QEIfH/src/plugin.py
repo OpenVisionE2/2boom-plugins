@@ -119,7 +119,7 @@ class QEIfH(Screen):
 			audio = service.audioTracks()
 			if audio:
 				if audio.getCurrentTrack() > -1:
-					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",","")
+					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "")
 			self.videocodec = ("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)]
 		if apid and binary_file:
 			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64*1024)
@@ -132,14 +132,14 @@ class QEIfH(Screen):
 		self.Timer.start(1000*2, False)
 		self.onShow.append(self.staticinfo)
 
-	def getVideoBitrateData(self,value, status): 
+	def getVideoBitrateData(self, value, status): 
 		if status:
 			self["vbit"].text = 'VIDEO %s: %d Kb/s' % (self.videocodec, value)
 			self["res"].text = self.resolution
 		else:
 			self.videoBitrate = None
 
-	def getAudioBitrateData(self,value, status): 
+	def getAudioBitrateData(self, value, status): 
 		if status:
 			self["abit"].text = 'AUDIO %s: %s Kb/s' % (self.audiocodec, value)
 		else:
@@ -254,7 +254,7 @@ class QEIfH(Screen):
 						if 'port:' in line: 
 							port_flag  = 1
 						if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
-							line = line.replace(' ','').replace(':',': ')
+							line = line.replace(' ', '').replace(':', ': ')
 						if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
 							line = line.strip('\n') + '  '
 						if 'Signature' in line:

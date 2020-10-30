@@ -86,7 +86,7 @@ class WeatherInfo(Screen):
 		self.skin = SKIN_STYLE1
 		if config.plugins.yweather.skin.value:
 			if fileExists('%sExtensions/YWeather/skin_user.xml' % resolveFilename(SCOPE_PLUGINS)):
-				with open('%sExtensions/YWeather/skin_user.xml' % resolveFilename(SCOPE_PLUGINS),'r') as user_skin:
+				with open('%sExtensions/YWeather/skin_user.xml' % resolveFilename(SCOPE_PLUGINS), 'r') as user_skin:
 					self.skin = user_skin.read()
 				user_skin.close()
 		self.setTitle(_("2boom's Yahoo! Weather"))
@@ -608,7 +608,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/YWeather/keymap.xml'), 'w') as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showWeather" flags="l" />\n\t</map>\n</keymap>' % config.plugins.yweather.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 
 def main(session, **kwargs):
 	session.open(yweather_setup)

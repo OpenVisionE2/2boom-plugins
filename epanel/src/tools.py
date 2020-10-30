@@ -253,73 +253,73 @@ config.plugins.epanel.manual = ConfigSelection(default = '0', choices = [
 		])
 config.plugins.epanel.manualserver = ConfigText(default="ntp.ubuntu.com", visible_width = 70, fixed_size = False)
 config.plugins.epanel.server = ConfigSelection(default = "ua.pool.ntp.org", choices = [
-		("ao.pool.ntp.org",_("Angola")),
-		("az.pool.ntp.org",_("Azerbaidjan")),
-		("mg.pool.ntp.org",_("Madagascar")),
-		("za.pool.ntp.org",_("South Africa")),
-		("tz.pool.ntp.org",_("Tanzania")),
-		("bd.pool.ntp.org",_("Bangladesh")),
-		("cn.pool.ntp.org",_("China")),
-		("hk.pool.ntp.org",_("Hong Kong")),
-		("in.pool.ntp.org",_("India")),
-		("id.pool.ntp.org",_("Indonesia")),
-		("ir.pool.ntp.org",_("Iran")),
-		("jp.pool.ntp.org",_("Japan")),
-		("kz.pool.ntp.org",_("Kazakhstan")),
-		("kr.pool.ntp.org",_("Korea")),
-		("my.pool.ntp.org",_("Malaysia")),
-		("pk.pool.ntp.org",_("Pakistan")),
-		("ph.pool.ntp.org",_("Philippines")),
-		("sg.pool.ntp.org",_("Singapore")),
-		("tw.pool.ntp.org",_("Taiwan")),
-		("th.pool.ntp.org",_("Thailand")),
-		("tr.pool.ntp.org",_("Turkey")),
-		("ae.pool.ntp.org",_("United Arab Emirates")),
-		("uz.pool.ntp.org",_("Uzbekistan")),
-		("vn.pool.ntp.org",_("Vietnam")),
-		("at.pool.ntp.org",_("Austria")),
-		("by.pool.ntp.org",_("Belarus")),
-		("be.pool.ntp.org",_("Belgium")),
-		("bg.pool.ntp.org",_("Bulgaria")),
-		("cz.pool.ntp.org",_("Czech Republic")),
-		("dk.pool.ntp.org",_("Denmark")),
-		("ee.pool.ntp.org",_("Estonia")),
-		("fi.pool.ntp.org",_("Finland")),
-		("fr.pool.ntp.org",_("France")),
-		("de.pool.ntp.org",_("Germany")),
-		("gr.pool.ntp.org",_("Greece")),
-		("hu.pool.ntp.org",_("Hungary")),
-		("ie.pool.ntp.org",_("Ireland")),
-		("it.pool.ntp.org",_("Italy")),
-		("lv.pool.ntp.org",_("Latvia")),
-		("lt.pool.ntp.org",_("Lithuania")),
-		("lu.pool.ntp.org",_("Luxembourg")),
-		("mk.pool.ntp.org",_("Macedonia")),
-		("md.pool.ntp.org",_("Moldova")),
-		("nl.pool.ntp.org",_("Netherlands")),
-		("no.pool.ntp.org",_("Norway")),
-		("pl.pool.ntp.org",_("Poland")),
-		("pt.pool.ntp.org",_("Portugal")),
-		("ro.pool.ntp.org",_("Romania")),
-		("ru.pool.ntp.org",_("Russian Federation")),
-		("sk.pool.ntp.org",_("Slovakia")),
-		("si.pool.ntp.org",_("Slovenia")),
-		("es.pool.ntp.org",_("Spain")),
-		("se.pool.ntp.org",_("Sweden")),
-		("ch.pool.ntp.org",_("Switzerland")),
-		("ua.pool.ntp.org",_("Ukraine")),
-		("uk.pool.ntp.org",_("United Kingdom")),
-		("bs.pool.ntp.org",_("Bahamas")),
-		("ca.pool.ntp.org",_("Canada")),
-		("gt.pool.ntp.org",_("Guatemala")),
-		("mx.pool.ntp.org",_("Mexico")),
-		("pa.pool.ntp.org",_("Panama")),
-		("us.pool.ntp.org",_("United States")),
-		("au.pool.ntp.org",_("Australia")),
-		("nz.pool.ntp.org",_("New Zealand")),
-		("ar.pool.ntp.org",_("Argentina")),
-		("br.pool.ntp.org",_("Brazil")),
-		("cl.pool.ntp.org",_("Chile")),
+		("ao.pool.ntp.org", _("Angola")),
+		("az.pool.ntp.org", _("Azerbaidjan")),
+		("mg.pool.ntp.org", _("Madagascar")),
+		("za.pool.ntp.org", _("South Africa")),
+		("tz.pool.ntp.org", _("Tanzania")),
+		("bd.pool.ntp.org", _("Bangladesh")),
+		("cn.pool.ntp.org", _("China")),
+		("hk.pool.ntp.org", _("Hong Kong")),
+		("in.pool.ntp.org", _("India")),
+		("id.pool.ntp.org", _("Indonesia")),
+		("ir.pool.ntp.org", _("Iran")),
+		("jp.pool.ntp.org", _("Japan")),
+		("kz.pool.ntp.org", _("Kazakhstan")),
+		("kr.pool.ntp.org", _("Korea")),
+		("my.pool.ntp.org", _("Malaysia")),
+		("pk.pool.ntp.org", _("Pakistan")),
+		("ph.pool.ntp.org", _("Philippines")),
+		("sg.pool.ntp.org", _("Singapore")),
+		("tw.pool.ntp.org", _("Taiwan")),
+		("th.pool.ntp.org", _("Thailand")),
+		("tr.pool.ntp.org", _("Turkey")),
+		("ae.pool.ntp.org", _("United Arab Emirates")),
+		("uz.pool.ntp.org", _("Uzbekistan")),
+		("vn.pool.ntp.org", _("Vietnam")),
+		("at.pool.ntp.org", _("Austria")),
+		("by.pool.ntp.org", _("Belarus")),
+		("be.pool.ntp.org", _("Belgium")),
+		("bg.pool.ntp.org", _("Bulgaria")),
+		("cz.pool.ntp.org", _("Czech Republic")),
+		("dk.pool.ntp.org", _("Denmark")),
+		("ee.pool.ntp.org", _("Estonia")),
+		("fi.pool.ntp.org", _("Finland")),
+		("fr.pool.ntp.org", _("France")),
+		("de.pool.ntp.org", _("Germany")),
+		("gr.pool.ntp.org", _("Greece")),
+		("hu.pool.ntp.org", _("Hungary")),
+		("ie.pool.ntp.org", _("Ireland")),
+		("it.pool.ntp.org", _("Italy")),
+		("lv.pool.ntp.org", _("Latvia")),
+		("lt.pool.ntp.org", _("Lithuania")),
+		("lu.pool.ntp.org", _("Luxembourg")),
+		("mk.pool.ntp.org", _("Macedonia")),
+		("md.pool.ntp.org", _("Moldova")),
+		("nl.pool.ntp.org", _("Netherlands")),
+		("no.pool.ntp.org", _("Norway")),
+		("pl.pool.ntp.org", _("Poland")),
+		("pt.pool.ntp.org", _("Portugal")),
+		("ro.pool.ntp.org", _("Romania")),
+		("ru.pool.ntp.org", _("Russian Federation")),
+		("sk.pool.ntp.org", _("Slovakia")),
+		("si.pool.ntp.org", _("Slovenia")),
+		("es.pool.ntp.org", _("Spain")),
+		("se.pool.ntp.org", _("Sweden")),
+		("ch.pool.ntp.org", _("Switzerland")),
+		("ua.pool.ntp.org", _("Ukraine")),
+		("uk.pool.ntp.org", _("United Kingdom")),
+		("bs.pool.ntp.org", _("Bahamas")),
+		("ca.pool.ntp.org", _("Canada")),
+		("gt.pool.ntp.org", _("Guatemala")),
+		("mx.pool.ntp.org", _("Mexico")),
+		("pa.pool.ntp.org", _("Panama")),
+		("us.pool.ntp.org", _("United States")),
+		("au.pool.ntp.org", _("Australia")),
+		("nz.pool.ntp.org", _("New Zealand")),
+		("ar.pool.ntp.org", _("Argentina")),
+		("br.pool.ntp.org", _("Brazil")),
+		("cl.pool.ntp.org", _("Chile")),
 		])
 config.plugins.epanel.onoff = ConfigSelection(default = '0', choices = [
 		('0', _("No")),
@@ -370,7 +370,7 @@ config.plugins.epanel.dnstime = ConfigSelection(default = '0', choices = [
 		('2', _("120 min")),
 		('3', _("180 min")),
 		])
-config.plugins.epanel.ipadr = NoSave(ConfigIP(default = [0,0,0,0]))
+config.plugins.epanel.ipadr = NoSave(ConfigIP(default = [0, 0, 0, 0]))
 config.plugins.epanel.hostname = NoSave(ConfigText(default='', visible_width = 150, fixed_size = False))
 config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width = 150, fixed_size = False))
 ######################################################################################
@@ -537,7 +537,7 @@ class ServiceMan(Screen):
 		if retval is 0:
 			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type = MessageBox.TYPE_INFO, timeout = 4 )
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull") , type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type = MessageBox.TYPE_INFO, timeout = 4 )
 			
 	def startservice(self):
 		menu_item = self["menu"].getCurrent()[1]
@@ -650,7 +650,7 @@ class SwapScreen2(Screen):
 			swppath = self["menu"].getCurrent()[3] + "swapfile"
 		except:
 			return
-		self.session.openWithCallback(self.Menu,SwapScreen, swppath)
+		self.session.openWithCallback(self.Menu, SwapScreen, swppath)
 	
 	def exit(self):
 		self.close()
@@ -729,9 +729,9 @@ class SwapScreen(Screen):
 	def info_mess(self, result, retval, extra_args):
 		self.setTitle(_("Swap on USB/HDD"))
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox,extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout = 4 )
 		else:
-			self.mbox = self.session.open(MessageBox,_("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
 		self.CfgMenu()
 
 	def offSwapFile_step1(self):
@@ -746,7 +746,7 @@ class SwapScreen(Screen):
 		with open('/etc/fstab', 'a') as fsatb_file:
 			fsatb_file.write('%s/swapfile swap swap defaults 0 0\n' % self.swapfile[:10])
 			fsatb_file.close()
-		self.iConsole.ePopen("swapon %s" % self.swapfile, self.info_mess,_("Swap file started"))
+		self.iConsole.ePopen("swapon %s" % self.swapfile, self.info_mess, _("Swap file started"))
 
 	def CfgMenu(self):
 		self.list = []
@@ -755,14 +755,14 @@ class SwapScreen(Screen):
 		if self.isSwapPossible():
 			if os.path.exists(self.swapfile):
 				if self.isSwapRun():
-					self.list.append((_("Swap off"),"5", (_("Swap on %s off (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minisonpng))
+					self.list.append((_("Swap off"), "5", (_("Swap on %s off (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minisonpng))
 				else:
-					self.list.append((_("Swap on"),"4", (_("Swap on %s on (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
-					self.list.append((_("Remove swap"),"7",( _("Remove swap on %s (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
+					self.list.append((_("Swap on"), "4", (_("Swap on %s on (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
+					self.list.append((_("Remove swap"), "7", ( _("Remove swap on %s (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
 			else:
-				self.list.append((_("Make swap"),"11", _("Make swap on %s (128MB)") % self.swapfile[7:10].upper(), minispng))
-				self.list.append((_("Make swap"),"12", _("Make swap on %s (256MB)") % self.swapfile[7:10].upper(), minispng))
-				self.list.append((_("Make swap"),"13", _("Make swap on %s (512MB)") % self.swapfile[7:10].upper(), minispng))
+				self.list.append((_("Make swap"), "11", _("Make swap on %s (128MB)") % self.swapfile[7:10].upper(), minispng))
+				self.list.append((_("Make swap"), "12", _("Make swap on %s (256MB)") % self.swapfile[7:10].upper(), minispng))
+				self.list.append((_("Make swap"), "13", _("Make swap on %s (512MB)") % self.swapfile[7:10].upper(), minispng))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.CfgMenuDo, "cancel": self.close}, -1)
 			
@@ -881,9 +881,9 @@ class UsbScreen(Screen):
 					if hdd.mountDevice() != '/media/hdd':
 						if devpnt is not None:
 							if int(hdd.free()) > 1024:
-								self.list.append(("%s" % hdd.model(),"%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()),hdd.capacity(), hdd.free()/1024 , hdd.free()%1024 ), minipng, devpnt))
+								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()/1024, hdd.free()%1024 ), minipng, devpnt))
 							else:
-								self.list.append(("%s" % hdd.model(),"%s  %s  %s (%03d MB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(),hdd.free()), minipng, devpnt))
+								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%03d MB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()), minipng, devpnt))
 			except Exception as e:
 				now = time.localtime(time.time())
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
@@ -904,7 +904,7 @@ class UsbScreen(Screen):
 
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox,_("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout = 4 )
 		self.CfgMenu()
 		
 	def filesystem(self, mountpoint):
@@ -947,7 +947,7 @@ class ScriptScreen3(Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Run"))
 		self["key_yellow"] = StaticText(_("ShadowRun"))
-		self["actions"] = ActionMap(["OkCancelActions","ColorActions"], {"ok": self.run, "green": self.run, "yellow": self.shadowrun, "red": self.exit, "cancel": self.close}, -1)
+		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"ok": self.run, "green": self.run, "yellow": self.shadowrun, "red": self.exit, "cancel": self.close}, -1)
 		
 	def scrpit_menu(self):
 		list = []
@@ -968,7 +968,7 @@ class ScriptScreen3(Screen):
 			else:
 				self.name = 'python %s' % self.name
 			self.iConsole.ePopen("nohup %s >/dev/null &" %  self.name)
-			self.mbox = self.session.open(MessageBox,(_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout = 4 )
 
 	def run(self):
 		self.script = self["list"].getCurrent()
@@ -1097,7 +1097,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		else:
 			if fileExists(self.path):
 				remove_line(self.path, 'ntpdate')
-			self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+			self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
 
 	def cron_ntpsetup(self):
 		with open(self.path, 'a') as cron_root:
@@ -1109,7 +1109,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 			cron_update.write('root')
 			cron_update.close()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
 
 	def UpdateNow(self):
 		self.session.open(update_current_time)
@@ -1187,9 +1187,9 @@ class ManualSetTime(ConfigListScreen, Screen):
 		
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox,("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout = 6 )
+			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout = 6 )
 		else:
-			self.mbox = self.session.open(MessageBox,_("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
 		self.setTitle(_("NtpTime Updater"))
 			
 	def cancel(self):
@@ -1361,7 +1361,7 @@ class KernelScreen(Screen):
 		self.runmodule = ''
 		if retval is 0:
 			for line in result.splitlines():
-				self.runmodule += line.split()[0].replace('-','_') + ' '
+				self.runmodule += line.split()[0].replace('-', '_') + ' '
 		self.CfgMenu(extra_args)
 					
 	def CfgMenu(self, result):
@@ -1370,7 +1370,7 @@ class KernelScreen(Screen):
 		minipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/kernelmini.png"))
 		if result:
 			for line in result.splitlines():
-				if line.split('/')[-1][:-3].replace('-','_') in self.runmodule.replace('-','_'):
+				if line.split('/')[-1][:-3].replace('-', '_') in self.runmodule.replace('-', '_'):
 					self.list.append((line.split('/')[-1], line.split('kernel')[-1], minipngmem, line, True))
 				else:
 					self.list.append((line.split('/')[-1], line.split('kernel')[-1], minipng, line, False))
@@ -1394,7 +1394,7 @@ class KernelScreen(Screen):
 		self.iConsole.ePopen('rm -f /etc/modules-load.d/%s.conf' % extra_args, self.info_mess, extra_args)
 		
 	def info_mess(self, result, retval, extra_args):
-		self.mbox = self.session.open(MessageBox,_("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
 		self.module_list()
 		
 	def load_module(self, module_name):
@@ -1405,7 +1405,7 @@ class KernelScreen(Screen):
 			with open('/etc/modules-load.d/%s.conf' % extra_args, 'w') as autoload_file:
 				autoload_file.write('%s' % extra_args)
 				autoload_file.close()
-			self.mbox = self.session.open(MessageBox,_("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
 			self.module_list()
 		
 	def exit(self):
@@ -1461,7 +1461,7 @@ class lsmodScreen(Screen):
 				else: 
 					aliasname = ' '
 				if 'Module' not in line:
-					self.list.append((line.split()[0],( _("size: %s  %s") % (line.split()[1], aliasname)), minipng))
+					self.list.append((line.split()[0], ( _("size: %s  %s") % (line.split()[1], aliasname)), minipng))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], { "cancel": self.close}, -1)
 
@@ -1526,7 +1526,7 @@ class CrashLogScreen(Screen):
 			for line in crashfiles:
 				if "enigma2_crash" in line:
 					try:
-						self.list.append((line,"%s" % time.ctime(os.path.getctime(self.path + line)), minipng))
+						self.list.append((line, "%s" % time.ctime(os.path.getctime(self.path + line)), minipng))
 					except Exception as e:
 						now = time.localtime(time.time())
 						logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
@@ -1538,7 +1538,7 @@ class CrashLogScreen(Screen):
 		try:
 			if self["menu"].getCurrent()[0] is not None:
 				item = self.path + self["menu"].getCurrent()[0]
-				self.session.openWithCallback(self.CfgMenu,LogScreen, item)
+				self.session.openWithCallback(self.CfgMenu, LogScreen, item)
 		except Exception as e:
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
@@ -1548,7 +1548,7 @@ class CrashLogScreen(Screen):
 			item = self.path + self["menu"].getCurrent()[0]
 			if fileExists(item):
 				os.remove(item)
-			self.mbox = self.session.open(MessageBox,(_("Removed %s") % item), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout = 4 )
 		self.CfgMenu()
 		
 	def BlueKey(self):
@@ -1563,7 +1563,7 @@ class CrashLogScreen(Screen):
 		except Exception as e:
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-		self.mbox = self.session.open(MessageBox,(_("Removed All Crashlog Files") ), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files") ), MessageBox.TYPE_INFO, timeout = 4 )
 		self.CfgMenu()
 		
 	def exit(self):
@@ -1613,9 +1613,9 @@ class LogScreen(Screen):
 		
 	def info_create(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox,_("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout = 4)
+			self.mbox = self.session.open(MessageBox, _("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout = 4)
 		else:
-			self.mbox = self.session.open(MessageBox,_("Failure..."), MessageBox.TYPE_INFO, timeout = 4)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 4)
 		
 	def listcrah(self):
 		list = ""
@@ -1717,9 +1717,9 @@ class epgdna(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_('Select path to save epg.dat'), config.plugins.epanel.direct))
 		self.list.append(getConfigListEntry(_('Set EPG filename'), config.plugins.epanel.epgname))
 		self.list.append(getConfigListEntry(_('Download url'), config.plugins.epanel.url))
-		self.list.append(getConfigListEntry(_('Periodicity checks'),config.plugins.epanel.checkp))
+		self.list.append(getConfigListEntry(_('Periodicity checks'), config.plugins.epanel.checkp))
 		self.list.append(getConfigListEntry(_('Check epg.dat exists'), config.plugins.epanel.checkepgfile))
-		self.list.append(getConfigListEntry(_('Show EIT now/next in infobar'),config.usage.show_eit_nownext))
+		self.list.append(getConfigListEntry(_('Show EIT now/next in infobar'), config.usage.show_eit_nownext))
 		ConfigListScreen.__init__(self, self.list, session=session)
 		self['key_red'] = StaticText(_('Close'))
 		self['key_green'] = StaticText(_('Save'))
@@ -1778,7 +1778,7 @@ class epgdna(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox,(_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
 
 	def cancel(self):
 		self.close()
@@ -1845,7 +1845,7 @@ class get_epg_dat(Screen):
 						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0755)
 					epgcache = eEPGCache.getInstance()
 					epgcache.flushEPG()
-					epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+					epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 					epgcache = eEPGCache.getInstance().load()
 					self['status'].text = _('Download epg.dat successful')
 					logging('%02d:%02d:%d %02d:%02d:%02d - Manual Donwload & Unzip epg.dat.gz successful\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
@@ -1934,7 +1934,7 @@ class onidMan(Screen):
 		self.close()
 		
 	def GreenKey(self):
-		self.session.openWithCallback(self.cMenu,onidManAdd)
+		self.session.openWithCallback(self.cMenu, onidManAdd)
 		#self.close()
 	
 	def YellowKey(self):
@@ -1999,9 +1999,9 @@ class onidManAdd(ConfigListScreen, Screen):
 				out_file.write(in_file.replace('\r\n\r\n', '\r\n') + '%s\r\n' % config.plugins.epanel.onid.value.upper())
 				out_file.close()
 				logging('%02d:%02d:%d %02d:%02d:%02d - onid added - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.onid.value.upper()))
-				self.mbox = self.session.open(MessageBox,(_('value saved')), MessageBox.TYPE_INFO, timeout = 4 )
+				self.mbox = self.session.open(MessageBox, (_('value saved')), MessageBox.TYPE_INFO, timeout = 4 )
 		else:
-			self.mbox = self.session.open(MessageBox,(_('value is not hex')), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_('value is not hex')), MessageBox.TYPE_INFO, timeout = 4 )
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
@@ -2071,7 +2071,7 @@ class CrontabMan(Screen):
 		self.close()
 		
 	def GreenKey(self):
-		self.session.openWithCallback(self.cMenu,CrontabManAdd)
+		self.session.openWithCallback(self.cMenu, CrontabManAdd)
 	
 	def YellowKey(self):
 		remove_line(self.path, self["menu"].getCurrent()[0])
@@ -2317,7 +2317,7 @@ class HostsScreen(Screen):
 		self.close()
 		
 	def GreenKey(self):
-		self.session.openWithCallback(self.cMenu,AddRecord)
+		self.session.openWithCallback(self.cMenu, AddRecord)
 	
 	def YellowKey(self):
 		remove_line(self.path, self["menu"].getCurrent()[0])
@@ -2510,7 +2510,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if config.plugins.epanel.dnstime.value is not '0':
 			self.cron_setup()
 			self.create_script()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 		
 	def create_script(self):
 		updatestr = ''
@@ -2542,7 +2542,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
 			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")], closeOnSuccess = False)
 		else:
-			self.mbox = self.session.open(MessageBox,(_("update script not found...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout = 4 )
 
 ######################################################################################
 class DropScreen(ConfigListScreen, Screen):
@@ -2624,7 +2624,7 @@ class DropScreen(ConfigListScreen, Screen):
 			remove_line(self.path, 'drop_caches')
 		if config.plugins.epanel.droptime.value is not '0':
 			self.cron_setup()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 
 	def cron_setup(self):
 		if config.plugins.epanel.droptime.value is not '0':
@@ -2643,8 +2643,8 @@ class DropScreen(ConfigListScreen, Screen):
 		
 	def Finish(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox,(_("Cache flushed")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout = 4 )
 		else:
-			self.mbox = self.session.open(MessageBox,(_("error...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout = 4 )
 		self.infomem()
 ##################################################################################################

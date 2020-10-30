@@ -126,7 +126,7 @@ class rpulite(Screen, ConfigListScreen):
 		self.path = cronpath()
 		self.update_system()
 		self.list = []
-		self.list.append(getConfigListEntry(_("Select source"),config.plugins.rpulite.source))
+		self.list.append(getConfigListEntry(_("Select source"), config.plugins.rpulite.source))
 		self.list.append(getConfigListEntry(_("Input new proxy ip"), config.plugins.rpulite.ip))
 		self.list.append(getConfigListEntry(_("Select service type in default bouquet"), config.plugins.rpulite.servicetype))
 		self.list.append(getConfigListEntry(_("Input Name of default bouquet"), config.plugins.rpulite.bname))
@@ -203,7 +203,7 @@ class rpulite(Screen, ConfigListScreen):
 			if os.path.isfile(self.path):
 				remove_line(self.path, 'get_ip_rtc')
 				self.cron_update()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
 
 	def cron_update(self):
 		if os.path.isfile(self.path):

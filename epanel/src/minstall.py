@@ -124,7 +124,7 @@ class IPKToolsScreen2(Screen):
 				files = glob.glob(ext)
 				for filename in files:
 					os.remove(filename)
-		self.mbox = self.session.open(MessageBox,_("Removing files..."), MessageBox.TYPE_INFO, timeout = 4  )
+		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout = 4  )
 
 	def go(self, num = None):
 		if num is not None:
@@ -188,7 +188,7 @@ class downfeed(Screen):
 				"ok": self.setup,
 				"green": self.setup,
 				"red": self.cancel,
-			},-1)
+			}, -1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
 		self.feedlist()
@@ -297,7 +297,7 @@ class DownloadFeed(Screen):
 				"green": self.download,
 				"yellow": self.download_wdeps,
 				"red": self.cancel,
-			},-1)
+			}, -1)
 		self["key_red"] = Label(_("Close"))
 		self["key_green"] = Label("")
 		self["key_yellow"] = Label("")
@@ -427,7 +427,7 @@ class InstallAll4(Screen):
 				"red": self.cancel,
 				"yellow": self.install_force,
 				"blue": self.restart_enigma,
-			},-1)
+			}, -1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Install"))
 		self["key_yellow"] = StaticText(_("Forced Install"))
@@ -497,7 +497,7 @@ class InstallAll4(Screen):
 			elif len(self.commamd_line_ipk) >= 1:
 				self.session.open(Console, title = _("Install packets"), cmdlist = ["opkg install %s %s" % (force_string, ' '.join(self.commamd_line_ipk))])
 			elif len(self.commamd_line_tar) >= 1:
-				self.session.open(Console,title = _("Install tar.gz, bh.tgz, nab.tgz"), cmdlist = ["%s" % ' && '.join(self.commamd_line_tar)])
+				self.session.open(Console, title = _("Install tar.gz, bh.tgz, nab.tgz"), cmdlist = ["%s" % ' && '.join(self.commamd_line_tar)])
 			self.force_install = False
 		
 	def nList(self):
@@ -508,12 +508,12 @@ class InstallAll4(Screen):
 				for line in ipklist:
 					if line.endswith('tar.gz') or line.endswith('bh.tgz') or line.endswith('nab.tgz'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 					elif line.endswith('.ipk'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i],(os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024),time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 		self.list.sort()
@@ -569,14 +569,14 @@ class RemoveIPK(Screen):
 				"green": self.remove_ipk,
 				"red": self.cancel,
 				"yellow": self.adv_remove,
-			},-1)
+			}, -1)
 		
 	def nList(self):
 		self.list = []
 		ipkminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		for line in open(status_path()):
 			if "Package:" in line:
-				name1 = line.replace("\n","").split()[-1]
+				name1 = line.replace("\n", "").split()[-1]
 			elif "Version:" in line:
 				name2 = line.split()[-1] + "\n"
 			elif "Status:" in line and not "not-installed" in line:

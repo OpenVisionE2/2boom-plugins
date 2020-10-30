@@ -142,7 +142,7 @@ class rpulite(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
 
 	def update_system(self):
 		if os.path.isfile('/etc/hosts'):

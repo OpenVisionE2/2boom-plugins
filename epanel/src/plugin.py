@@ -486,9 +486,9 @@ class epanelinfo(Screen):
 			for count in range(len(hddlist)):
 				hdd = hddlist[count][1]
 				if int(hdd.free()) > 1024:
-					list += ((_("%s  %s  (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free()/1024 , hdd.free()%1024)))
+					list += ((_("%s  %s  (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free()/1024, hdd.free()%1024)))
 				else:
-					list += ((_("%s  %s  (%03d MB free)\n") % (hdd.model(), hdd.capacity(),hdd.free())))
+					list += ((_("%s  %s  (%03d MB free)\n") % (hdd.model(), hdd.capacity(), hdd.free())))
 		else:
 			hddinfo = _("none")
 		self["device"].text = list
@@ -588,7 +588,7 @@ class epanelinfo(Screen):
 		st = os.statvfs("/")
 		avail = st.f_bsize * st.f_bavail / 1024
 		size = st.f_bsize * st.f_blocks / 1024
-		self["flashTotal"].text = _("Total: %s Kb  Free: %s Kb") % (size , avail)
+		self["flashTotal"].text = _("Total: %s Kb  Free: %s Kb") % (size, avail)
 		
 	def verinfo(self):
 		package = 0
@@ -654,7 +654,7 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox,(_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
 		if not IsImageName():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -694,7 +694,7 @@ class loadEPG():
 		if config.plugins.epanel.first.value and config.plugins.epanel.epgupdate.value:
 			config.plugins.epanel.first.value = False
 			if os.path.isfile('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)):
-				epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 				logging('%02d:%02d:%d %02d:%02d:%02d - reload epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
 				
@@ -730,7 +730,7 @@ class loadEPG():
 						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0755)
 					epgcache = eEPGCache.getInstance()
 					epgcache.flushEPG()
-					epgcache = new.instancemethod(_enigma.eEPGCache_load,None,eEPGCache)
+					epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 					epgcache = eEPGCache.getInstance().load()
 					logging('%02d:%02d:%d %02d:%02d:%02d - Auto Donwload & Unzip epg.dat.gz successful\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
 					config.plugins.epanel.lastupdate.value = _('last epg.dat updated - %02d:%02d:%d %02d:%02d:%02d' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
