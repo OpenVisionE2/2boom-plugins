@@ -124,9 +124,9 @@ class IPKToolsScreen2(Screen):
 				files = glob.glob(ext)
 				for filename in files:
 					os.remove(filename)
-		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout = 4  )
+		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4  )
 
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -254,7 +254,7 @@ class downfeed(Screen):
 
 	def setup(self):
 		if self["menu"].getCurrent() is not None:
-			self.session.open(Console, title = _("Install extensions from feed"), cmdlist = ["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess = False)
+			self.session.open(Console, title=_("Install extensions from feed"), cmdlist=["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 ##############################################################################
 class DownloadFeed(Screen):
 	skin = """
@@ -365,11 +365,11 @@ class DownloadFeed(Screen):
 		
 	def download(self):
 		if self["menu"].getCurrent() is not None:
-			self.session.open(Console, title = _("Download extensions from feed"), cmdlist = ["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess = False)
+			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 		
 	def download_wdeps(self):
 		if self["menu"].getCurrent() is not None:
-			self.session.open(Console, title = _("Download extensions from feed"), cmdlist = ["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess = False)
+			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def cancel(self):
 		if fileExists(self.path[:-6] + 'status.tmp'):
@@ -493,11 +493,11 @@ class InstallAll4(Screen):
 			if self.force_install:
 				force_string = "-force-overwrite -force-downgrade"
 			if len(self.commamd_line_ipk) >= 1 and len(self.commamd_line_tar) >= 1:
-				self.session.open(Console, title = _("Install packets"), cmdlist = ["opkg install %s %s && %s" % (force_string, ' '.join(self.commamd_line_ipk), ' && '.join(self.commamd_line_tar))])
+				self.session.open(Console, title=_("Install packets"), cmdlist=["opkg install %s %s && %s" % (force_string, ' '.join(self.commamd_line_ipk), ' && '.join(self.commamd_line_tar))])
 			elif len(self.commamd_line_ipk) >= 1:
-				self.session.open(Console, title = _("Install packets"), cmdlist = ["opkg install %s %s" % (force_string, ' '.join(self.commamd_line_ipk))])
+				self.session.open(Console, title=_("Install packets"), cmdlist=["opkg install %s %s" % (force_string, ' '.join(self.commamd_line_ipk))])
 			elif len(self.commamd_line_tar) >= 1:
-				self.session.open(Console, title = _("Install tar.gz, bh.tgz, nab.tgz"), cmdlist = ["%s" % ' && '.join(self.commamd_line_tar)])
+				self.session.open(Console, title=_("Install tar.gz, bh.tgz, nab.tgz"), cmdlist=["%s" % ' && '.join(self.commamd_line_tar)])
 			self.force_install = False
 		
 	def nList(self):
@@ -600,7 +600,7 @@ class RemoveIPK(Screen):
 						ipk_dir = line[:-11]
 					elif 'skin.xml' in line:
 						ipk_dir = line[:-10]
-		self.session.open(Console, title = _("%s" % ipk_dir), cmdlist = ["opkg remove %s %s" % (local_status, pkg_name)], closeOnSuccess = False)
+		self.session.open(Console, title=_("%s" % ipk_dir), cmdlist=["opkg remove %s %s" % (local_status, pkg_name)], closeOnSuccess=False)
 		if pathExists(ipk_dir):
 			self.iConsole.ePopen("rm -rf %s" % ipk_dir, self.finish)
 		else:

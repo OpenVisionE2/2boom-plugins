@@ -50,7 +50,7 @@ def _(txt):
 ##############################################################################
 config.plugins.QuickEcm = ConfigSubsection()
 config.plugins.QuickEcm.enabled = ConfigYesNo(default=True)
-config.plugins.QuickEcm.keyname = ConfigSelection(default = "KEY_HELP", choices = [
+config.plugins.QuickEcm.keyname = ConfigSelection(default="KEY_HELP", choices=[
 		("KEY_TEXT", "TEXT"),
 		("KEY_SUBTITLE", "SUBTITLE"),
 		("KEY_HELP", "HELP"),
@@ -180,7 +180,7 @@ class qei_setup(ConfigListScreen, Screen):
 		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEcmInfo/keymap.xml"), "w") as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showEcmInfo" flags="m" />\n\t</map>\n</keymap>' % config.plugins.QuickEcm.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 ##############################################################################
 def sessionstart(reason,session=None, **kwargs):
 	if reason == 0:
@@ -192,15 +192,15 @@ def main(session, **kwargs):
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
-			where = [PluginDescriptor.WHERE_SESSIONSTART],
-			fnc = sessionstart
+			where=[PluginDescriptor.WHERE_SESSIONSTART],
+			fnc=sessionstart
 		),
 		PluginDescriptor(
 			name=_("2boom's QuickEcmInfo"),
-			description = _("2boom's QuickEcmInfo setup"),
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			icon = 'qei.png',
-			fnc = main
+			description=_("2boom's QuickEcmInfo setup"),
+			where=PluginDescriptor.WHERE_PLUGINMENU,
+			icon='qei.png',
+			fnc=main
 		),
 	]
 	return result

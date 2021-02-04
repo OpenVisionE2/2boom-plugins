@@ -116,16 +116,16 @@ now = time.localtime(time.time())
 config.plugins.epanel = ConfigSubsection()
 	
 config.plugins.epgdd = ConfigSubsection()
-config.plugins.epanel.direct = ConfigSelection(choices = mountp())
-config.plugins.epanel.epgname = ConfigText(default='epg.dat', visible_width = 50, fixed_size = False)
-config.plugins.epanel.onid = ConfigText(default='', visible_width = 30, fixed_size = False)
-config.plugins.epanel.url = ConfigText(default='http://epg.giclub.tv/epg/epg.datru.gz', visible_width = 80, fixed_size = False)
-config.plugins.epanel.leghtfile = ConfigInteger(default = 0)
-config.plugins.epanel.checkepgfile = ConfigYesNo(default = False)
-config.plugins.epanel.nocheck = ConfigYesNo(default = True)
-config.plugins.epanel.first = ConfigYesNo(default = True)
-config.plugins.epanel.epgupdate = ConfigYesNo(default = False)
-config.plugins.epanel.checkp = ConfigSelection(default = '60', choices = [
+config.plugins.epanel.direct = ConfigSelection(choices=mountp())
+config.plugins.epanel.epgname = ConfigText(default='epg.dat', visible_width=50, fixed_size=False)
+config.plugins.epanel.onid = ConfigText(default='', visible_width=30, fixed_size=False)
+config.plugins.epanel.url = ConfigText(default='http://epg.giclub.tv/epg/epg.datru.gz', visible_width=80, fixed_size=False)
+config.plugins.epanel.leghtfile = ConfigInteger(default=0)
+config.plugins.epanel.checkepgfile = ConfigYesNo(default=False)
+config.plugins.epanel.nocheck = ConfigYesNo(default=True)
+config.plugins.epanel.first = ConfigYesNo(default=True)
+config.plugins.epanel.epgupdate = ConfigYesNo(default=False)
+config.plugins.epanel.checkp = ConfigSelection(default='60', choices=[
 		('30', _("30 min")),
 		('60', _("60 min")),
 		('120', _("120 min")),
@@ -133,12 +133,12 @@ config.plugins.epanel.checkp = ConfigSelection(default = '60', choices = [
 		('240', _("240 min")),
 		])
 config.plugins.epanel.lastupdate = ConfigText(default=_('last epg.dat updated - not yet'))
-config.plugins.epanel.scriptpath = ConfigSelection(default = "/usr/script/", choices = [
+config.plugins.epanel.scriptpath = ConfigSelection(default="/usr/script/", choices=[
 		("/usr/script/", _("/usr/script/")),
 		("/media/hdd/script/", _("/media/hdd/script/")),
 		("/media/usb/script/", _("/media/usb/script/")),
 ])
-config.plugins.epanel.min = ConfigSelection(default = "*", choices = [
+config.plugins.epanel.min = ConfigSelection(default="*", choices=[
 		("*", "*"),
 		("5", "5"),
 		("10", "10"),
@@ -152,7 +152,7 @@ config.plugins.epanel.min = ConfigSelection(default = "*", choices = [
 		("50", "50"),
 		("55", "55"),
 		])
-config.plugins.epanel.hour = ConfigSelection(default = "*", choices = [
+config.plugins.epanel.hour = ConfigSelection(default="*", choices=[
 		("*", "*"),
 		("0", "0"),
 		("1", "1"),
@@ -179,7 +179,7 @@ config.plugins.epanel.hour = ConfigSelection(default = "*", choices = [
 		("22", "22"),
 		("23", "23"),
 		])
-config.plugins.epanel.dayofmonth = ConfigSelection(default = "*", choices = [
+config.plugins.epanel.dayofmonth = ConfigSelection(default="*", choices=[
 		("*", "*"),
 		("1", "1"),
 		("2", "2"),
@@ -213,7 +213,7 @@ config.plugins.epanel.dayofmonth = ConfigSelection(default = "*", choices = [
 		("30", "30"),
 		("31", "31"),
 		])
-config.plugins.epanel.month = ConfigSelection(default = "*", choices = [
+config.plugins.epanel.month = ConfigSelection(default="*", choices=[
 		("*", "*"),
 		("1", _("Jan.")),
 		("2", _("Feb.")),
@@ -228,7 +228,7 @@ config.plugins.epanel.month = ConfigSelection(default = "*", choices = [
 		("11", _("Nov.")),
 		("12", _("Dec.")),
 		])
-config.plugins.epanel.dayofweek = ConfigSelection(default = "*", choices = [
+config.plugins.epanel.dayofweek = ConfigSelection(default="*", choices=[
 		("*", "*"),
 		("0", _("Su")),
 		("1", _("Mo")),
@@ -238,8 +238,8 @@ config.plugins.epanel.dayofweek = ConfigSelection(default = "*", choices = [
 		("5", _("Fr")),
 		("6", _("Sa")),
 		])
-config.plugins.epanel.command = ConfigText(default="/usr/bin/", visible_width = 70, fixed_size = False)
-config.plugins.epanel.every = ConfigSelection(default = "0", choices = [
+config.plugins.epanel.command = ConfigText(default="/usr/bin/", visible_width=70, fixed_size=False)
+config.plugins.epanel.every = ConfigSelection(default="0", choices=[
 		("0", _("No")),
 		("1", _("Min")),
 		("2", _("Hour")),
@@ -247,12 +247,12 @@ config.plugins.epanel.every = ConfigSelection(default = "0", choices = [
 		("4", _("Month")),
 		("5", _("Day of week")),
 		])
-config.plugins.epanel.manual = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.manual = ConfigSelection(default='0', choices=[
 		('0', _("Auto")),
 		('1', _("Manual")),
 		])
-config.plugins.epanel.manualserver = ConfigText(default="ntp.ubuntu.com", visible_width = 70, fixed_size = False)
-config.plugins.epanel.server = ConfigSelection(default = "ua.pool.ntp.org", choices = [
+config.plugins.epanel.manualserver = ConfigText(default="ntp.ubuntu.com", visible_width=70, fixed_size=False)
+config.plugins.epanel.server = ConfigSelection(default="ua.pool.ntp.org", choices=[
 		("ao.pool.ntp.org", _("Angola")),
 		("az.pool.ntp.org", _("Azerbaidjan")),
 		("mg.pool.ntp.org", _("Madagascar")),
@@ -321,26 +321,26 @@ config.plugins.epanel.server = ConfigSelection(default = "ua.pool.ntp.org", choi
 		("br.pool.ntp.org", _("Brazil")),
 		("cl.pool.ntp.org", _("Chile")),
 		])
-config.plugins.epanel.onoff = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.onoff = ConfigSelection(default='0', choices=[
 		('0', _("No")),
 		('2', _("Cron")),
 		])
-config.plugins.epanel.time = ConfigSelection(default = "30", choices = [
+config.plugins.epanel.time = ConfigSelection(default="30", choices=[
 		("30", _("30 min")),
 		("1", _("60 min")),
 		("2", _("120 min")),
 		("3", _("180 min")),
 		("4", _("240 min")),
 		])
-config.plugins.epanel.TransponderTime = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.TransponderTime = ConfigSelection(default='0', choices=[
 		('0', _("Off")),
 		('1', _("On")),
 		])
-config.plugins.epanel.cold = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.cold = ConfigSelection(default='0', choices=[
 		('0', _("No")),
 		('1', _("Yes")),
 		])
-config.plugins.epanel.droptime = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.droptime = ConfigSelection(default='0', choices=[
 		('0', _("Off")),
 		('15', _("15 min")),
 		('30', _("30 min")),
@@ -349,19 +349,19 @@ config.plugins.epanel.droptime = ConfigSelection(default = '0', choices = [
 		('2', _("120 min")),
 		('3', _("180 min")),
 		])
-config.plugins.epanel.dropmode = ConfigSelection(default = '1', choices = [
+config.plugins.epanel.dropmode = ConfigSelection(default='1', choices=[
 		('1', _("free pagecache")),
 		('2', _("free dentries and inodes")),
 		('3', _("free pagecache, dentries and inodes")),
 		])
-config.plugins.epanel.dnsserver = ConfigSelection(default = '1', choices = [
+config.plugins.epanel.dnsserver = ConfigSelection(default='1', choices=[
 		('1', _("no-ip.com")),
 		('2', _("changeip.com")),
 		])
-config.plugins.epanel.dnsuser = ConfigText(default="xxxxx", visible_width = 70, fixed_size = False)
-config.plugins.epanel.dnspass = ConfigText(default="*****", visible_width = 70, fixed_size = False)
-config.plugins.epanel.dnshost = ConfigText(default="xxx.xxx.xxx", visible_width = 70, fixed_size = False)
-config.plugins.epanel.dnstime = ConfigSelection(default = '0', choices = [
+config.plugins.epanel.dnsuser = ConfigText(default="xxxxx", visible_width=70, fixed_size=False)
+config.plugins.epanel.dnspass = ConfigText(default="*****", visible_width=70, fixed_size=False)
+config.plugins.epanel.dnshost = ConfigText(default="xxx.xxx.xxx", visible_width=70, fixed_size=False)
+config.plugins.epanel.dnstime = ConfigSelection(default='0', choices=[
 		('0', _("Off")),
 		('15', _("15 min")),
 		('30', _("30 min")),
@@ -370,9 +370,9 @@ config.plugins.epanel.dnstime = ConfigSelection(default = '0', choices = [
 		('2', _("120 min")),
 		('3', _("180 min")),
 		])
-config.plugins.epanel.ipadr = NoSave(ConfigIP(default = [0, 0, 0, 0]))
-config.plugins.epanel.hostname = NoSave(ConfigText(default='', visible_width = 150, fixed_size = False))
-config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width = 150, fixed_size = False))
+config.plugins.epanel.ipadr = NoSave(ConfigIP(default=[0, 0, 0, 0]))
+config.plugins.epanel.hostname = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
+config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
 ######################################################################################
 class ToolsScreen2(Screen):
 	skin = """
@@ -439,7 +439,7 @@ class ToolsScreen2(Screen):
 	def exit(self):
 		self.close()
 		
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -448,7 +448,7 @@ class ToolsScreen2(Screen):
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
 
-	def keyOK(self, item = None):
+	def keyOK(self, item=None):
 		self.indexpos = self["menu"].getIndex()
 		if item == None:
 			item = self["menu"].getCurrent()[1]
@@ -535,9 +535,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_1(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
 			
 	def startservice(self):
 		menu_item = self["menu"].getCurrent()[1]
@@ -546,9 +546,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_2(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Starting %s service") % extra_args, type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("Starting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
 			
 	def stopservice(self):
 		menu_item = self["menu"].getCurrent()[1]
@@ -557,9 +557,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_3(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type = MessageBox.TYPE_INFO, timeout = 4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
 			
 	def cancel(self):
 		self.close()
@@ -729,9 +729,9 @@ class SwapScreen(Screen):
 	def info_mess(self, result, retval, extra_args):
 		self.setTitle(_("Swap on USB/HDD"))
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
 		self.CfgMenu()
 
 	def offSwapFile_step1(self):
@@ -904,7 +904,7 @@ class UsbScreen(Screen):
 
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4 )
 		self.CfgMenu()
 		
 	def filesystem(self, mountpoint):
@@ -968,7 +968,7 @@ class ScriptScreen3(Screen):
 			else:
 				self.name = 'python %s' % self.name
 			self.iConsole.ePopen("nohup %s >/dev/null &" %  self.name)
-			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout=4 )
 
 	def run(self):
 		self.script = self["list"].getCurrent()
@@ -1097,7 +1097,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		else:
 			if fileExists(self.path):
 				remove_line(self.path, 'ntpdate')
-			self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+			self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
 
 	def cron_ntpsetup(self):
 		with open(self.path, 'a') as cron_root:
@@ -1109,7 +1109,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 			cron_update.write('root')
 			cron_update.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
 
 	def UpdateNow(self):
 		self.session.open(update_current_time)
@@ -1154,8 +1154,8 @@ class ManualSetTime(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("NtpTime Updater"))
-		self.timeinput_date = ConfigDateTime(default = time.time(), formatstring = _("%Y-%m-%d"), increment = 86400)
-		self.timeinput_time = ConfigClock(default = time.time())
+		self.timeinput_date = ConfigDateTime(default=time.time(), formatstring=_("%Y-%m-%d"), increment=86400)
+		self.timeinput_time = ConfigClock(default=time.time())
 		self.newtime = self.getTimestamp(self.timeinput_date.value, self.timeinput_time.value)
 		self.iConsole = iConsole()
 		self.cfgMenu()
@@ -1187,9 +1187,9 @@ class ManualSetTime(ConfigListScreen, Screen):
 		
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout = 6 )
+			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout=6 )
 		else:
-			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 6)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
 		self.setTitle(_("NtpTime Updater"))
 			
 	def cancel(self):
@@ -1261,7 +1261,7 @@ class SystemScreen(Screen):
 	def exit(self):
 		self.close()
 		
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -1270,7 +1270,7 @@ class SystemScreen(Screen):
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
 
-	def keyOK(self, item = None):
+	def keyOK(self, item=None):
 		if item is None:
 			item = self["menu"].getCurrent()[1]
 			self.indexpos = self["menu"].getIndex()
@@ -1394,7 +1394,7 @@ class KernelScreen(Screen):
 		self.iConsole.ePopen('rm -f /etc/modules-load.d/%s.conf' % extra_args, self.info_mess, extra_args)
 		
 	def info_mess(self, result, retval, extra_args):
-		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4 )
 		self.module_list()
 		
 	def load_module(self, module_name):
@@ -1405,7 +1405,7 @@ class KernelScreen(Screen):
 			with open('/etc/modules-load.d/%s.conf' % extra_args, 'w') as autoload_file:
 				autoload_file.write('%s' % extra_args)
 				autoload_file.close()
-			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4 )
 			self.module_list()
 		
 	def exit(self):
@@ -1548,7 +1548,7 @@ class CrashLogScreen(Screen):
 			item = self.path + self["menu"].getCurrent()[0]
 			if fileExists(item):
 				os.remove(item)
-			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout=4 )
 		self.CfgMenu()
 		
 	def BlueKey(self):
@@ -1563,7 +1563,7 @@ class CrashLogScreen(Screen):
 		except Exception as e:
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files") ), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files") ), MessageBox.TYPE_INFO, timeout=4 )
 		self.CfgMenu()
 		
 	def exit(self):
@@ -1613,9 +1613,9 @@ class LogScreen(Screen):
 		
 	def info_create(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, _("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout = 4)
+			self.mbox = self.session.open(MessageBox, _("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout = 4)
+			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=4)
 		
 	def listcrah(self):
 		list = ""
@@ -1711,7 +1711,7 @@ class epgdna(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_('EPG from %s') % config.plugins.epanel.url.value.split('/')[2])
-		config.plugins.epanel.direct = ConfigSelection(choices = mountp())
+		config.plugins.epanel.direct = ConfigSelection(choices=mountp())
 		self.list = []
 		self.list.append(getConfigListEntry(_('Set autoupdate epg.dat'), config.plugins.epanel.epgupdate))
 		self.list.append(getConfigListEntry(_('Select path to save epg.dat'), config.plugins.epanel.direct))
@@ -1778,7 +1778,7 @@ class epgdna(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4 )
 
 	def cancel(self):
 		self.close()
@@ -1999,9 +1999,9 @@ class onidManAdd(ConfigListScreen, Screen):
 				out_file.write(in_file.replace('\r\n\r\n', '\r\n') + '%s\r\n' % config.plugins.epanel.onid.value.upper())
 				out_file.close()
 				logging('%02d:%02d:%d %02d:%02d:%02d - onid added - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.onid.value.upper()))
-				self.mbox = self.session.open(MessageBox, (_('value saved')), MessageBox.TYPE_INFO, timeout = 4 )
+				self.mbox = self.session.open(MessageBox, (_('value saved')), MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.mbox = self.session.open(MessageBox, (_('value is not hex')), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_('value is not hex')), MessageBox.TYPE_INFO, timeout=4 )
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
@@ -2429,7 +2429,7 @@ class System2Screen(Screen):
 	def exit(self):
 		self.close()
 		
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -2438,7 +2438,7 @@ class System2Screen(Screen):
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
 
-	def keyOK(self, item = None):
+	def keyOK(self, item=None):
 		if item is None:
 			item = self["menu"].getCurrent()[1]
 			self.indexpos = self["menu"].getIndex()
@@ -2510,7 +2510,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if config.plugins.epanel.dnstime.value is not '0':
 			self.cron_setup()
 			self.create_script()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		
 	def create_script(self):
 		updatestr = ''
@@ -2540,9 +2540,9 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if not fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
 			self.create_script()
 		if fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
-			self.session.open(Console, title = _("DNS updating..."), cmdlist = ["python %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")], closeOnSuccess = False)
+			self.session.open(Console, title=_("DNS updating..."), cmdlist=["python %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")], closeOnSuccess=False)
 		else:
-			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout=4 )
 
 ######################################################################################
 class DropScreen(ConfigListScreen, Screen):
@@ -2624,7 +2624,7 @@ class DropScreen(ConfigListScreen, Screen):
 			remove_line(self.path, 'drop_caches')
 		if config.plugins.epanel.droptime.value is not '0':
 			self.cron_setup()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 
 	def cron_setup(self):
 		if config.plugins.epanel.droptime.value is not '0':
@@ -2643,8 +2643,8 @@ class DropScreen(ConfigListScreen, Screen):
 		
 	def Finish(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout=4 )
 		else:
-			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout=4 )
 		self.infomem()
 ##################################################################################################

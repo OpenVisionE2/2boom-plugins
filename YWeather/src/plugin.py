@@ -58,16 +58,16 @@ def iconsdirs():
 	return iconset
 
 config.plugins.yweather = ConfigSubsection()
-config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width = 70, fixed_size = False)
-config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width = 170, fixed_size = False)
+config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width=70, fixed_size=False)
+config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width=170, fixed_size=False)
 config.plugins.yweather.enabled = ConfigYesNo(default=True)
-config.plugins.yweather.keyname = ConfigSelection(default = "KEY_EXIT", choices = [
+config.plugins.yweather.keyname = ConfigSelection(default="KEY_EXIT", choices=[
 		("KEY_EXIT", "LONG_EXIT"),
 		("KEY_RED", "LONG_RED"),
 		("KEY_GREEN", "LONG_GREEN")
 		])
 config.plugins.yweather.skin = ConfigYesNo(default=False)
-config.plugins.yweather.timeout = ConfigSelection(default = '0', choices = [
+config.plugins.yweather.timeout = ConfigSelection(default='0', choices=[
 		('0', _("Off")),
 		('5', _("5 sec")),
 		('8', _("8 sec")),
@@ -76,7 +76,7 @@ config.plugins.yweather.timeout = ConfigSelection(default = '0', choices = [
 		('16', _("16 sec")),
 		])
 config.plugins.yweather.enabled.value = False
-config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
+config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 
 help_txt = _("1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma")
 
@@ -549,7 +549,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/YWeather")
-		config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
+		config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 		self.setTitle(_("2boom's Yahoo! Weather"))
 		self.list = []
 		self.list.append(getConfigListEntry(_("City code"), config.plugins.yweather.weather_city))
@@ -608,7 +608,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/YWeather/keymap.xml'), 'w') as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showWeather" flags="l" />\n\t</map>\n</keymap>' % config.plugins.yweather.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 
 def main(session, **kwargs):
 	session.open(yweather_setup)
@@ -620,15 +620,15 @@ def sessionstart(reason,session=None, **kwargs):
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
-			where = [PluginDescriptor.WHERE_SESSIONSTART],
-			fnc = sessionstart
+			where=[PluginDescriptor.WHERE_SESSIONSTART],
+			fnc=sessionstart
 		),
 		PluginDescriptor(
 			name=_("2boom's Yahoo! Weather"),
-			description = _("yahoo! weather plugin config"),
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			icon = 'yw.png',
-			fnc = main
+			description=_("yahoo! weather plugin config"),
+			where=PluginDescriptor.WHERE_PLUGINMENU,
+			icon='yw.png',
+			fnc=main
 		),
 	]
 	return result

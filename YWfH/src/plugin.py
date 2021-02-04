@@ -60,12 +60,12 @@ def iconsdirs():
 	return iconset
 
 config.plugins.yweather = ConfigSubsection()
-config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width = 70, fixed_size = False)
-config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width = 170, fixed_size = False)
-config.plugins.yweather.weather_city_locale_search = ConfigText(default="", visible_width = 170, fixed_size = False)
+config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width=70, fixed_size=False)
+config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width=170, fixed_size=False)
+config.plugins.yweather.weather_city_locale_search = ConfigText(default="", visible_width=170, fixed_size=False)
 config.plugins.yweather.enabled = ConfigYesNo(default=True)
 config.plugins.yweather.skin = ConfigYesNo(default=False)
-config.plugins.yweather.timeout = ConfigSelection(default = '0', choices = [
+config.plugins.yweather.timeout = ConfigSelection(default='0', choices=[
 		('0', _("Off")),
 		('5', _("5 sec")),
 		('8', _("8 sec")),
@@ -73,7 +73,7 @@ config.plugins.yweather.timeout = ConfigSelection(default = '0', choices = [
 		('12', _("12 sec")),
 		('16', _("16 sec")),
 		])
-config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
+config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 
 help_txt = _("1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma")
 
@@ -567,7 +567,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/YWfH")
 		self.skin = SKIN_CONFIG_HD
-		config.plugins.yweather.istyle = ConfigSelection(choices = iconsdirs())
+		config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 		self.setTitle(_("2boom's Yahoo! Weather"))
 		self.list = []
 		self.list.append(getConfigListEntry(_("City code (woeid)"), config.plugins.yweather.weather_city))
@@ -627,7 +627,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		
 class search_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
@@ -698,7 +698,7 @@ class search_setup(Screen, ConfigListScreen):
 			os.remove("/tmp/woeid.xml")
 		if os.path.exists("/tmp/yweather.xml"):
 			os.remove("/tmp/yweather.xml")
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		
 	def get_woeid(self):
 		if self.isServerOnline():
@@ -719,5 +719,5 @@ def main(session, **kwargs):
 	session.open(WeatherInfo)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's Yahoo! Weather for Hotkey"), description=_("press menukey for config"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="yw.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's Yahoo! Weather for Hotkey"), description=_("press menukey for config"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="yw.png", fnc=main)]
 	return list

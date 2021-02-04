@@ -12,7 +12,7 @@ class Console2(Screen):
 			<widget name="text" position="10,10" size="1080,470" font="Console;22" />
 		</screen>"""
 		
-	def __init__(self, session, title = "Console", cmdlist = None, finishedCallback = None, closeOnSuccess = False):
+	def __init__(self, session, title="Console", cmdlist=None, finishedCallback=None, closeOnSuccess=False):
 		Screen.__init__(self, session)
 
 		self.finishedCallback = finishedCallback
