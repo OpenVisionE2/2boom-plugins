@@ -197,7 +197,7 @@ class downfeed(Screen):
 		pkg_name = pkg_desc = ' '
 		png = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		list = os.listdir(self.path[:-7])
-		if  fileExists(self.path + '.backup'):
+		if fileExists(self.path + '.backup'):
 			list = os.listdir(self.path[:-7] + '/lists')
 			statuspath = self.path[:-6] + 'lists/'
 		else:
@@ -252,7 +252,7 @@ class DownloadFeed(Screen):
 		self.path = status_path()
 		self.iConsole = iConsole()
 		if fileExists(self.path[:-6] + 'status'):
-			self.iConsole.ePopen("mv %s %s.tmp" %(self.path[:-6] + 'status', self.path[:-6] + 'status'))
+			self.iConsole.ePopen("mv %s %s.tmp" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.list = []
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
@@ -274,7 +274,7 @@ class DownloadFeed(Screen):
 		statuspath = ''
 		png = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		list = os.listdir(self.path[:-7])
-		if  fileExists(self.path + '.backup'):
+		if fileExists(self.path + '.backup'):
 			list = os.listdir(self.path[:-7] + '/lists')
 			statuspath = self.path[:-6] + 'lists/'
 		else:
@@ -297,11 +297,11 @@ class DownloadFeed(Screen):
 		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 		
 	def download_wdeps(self):
-		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess=False)
+		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def cancel(self):
 		if fileExists(self.path[:-6] + 'status.tmp'):
-			self.iConsole.ePopen("mv %s.tmp %s" %(self.path[:-6] + 'status', self.path[:-6] + 'status'))
+			self.iConsole.ePopen("mv %s.tmp %s" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.close()
 ####################################################################
 class InstallAll4(Screen):

@@ -70,7 +70,7 @@ def main_func():
 			elif "/options" in line:
 				mount_options = get_xml_data(line)
 			elif "/sharedir" in line:
-				mount_sharedir =  get_xml_data(line)
+				mount_sharedir = get_xml_data(line)
 			elif "</username" in line:
 				if "<username></username>" not in line:
 					mount_user = "%s" % get_xml_data(line)
@@ -84,7 +84,7 @@ def main_func():
 			elif "</mount>" in line:
 				if mount_status == "True":
 					if mount_type == "cifs":
-						all_options = mount_options + ',noatime,noserverino,iocharset=utf8,username='+ mount_user + ',password='+ mount_password
+						all_options = mount_options + ',noatime,noserverino,iocharset=utf8,username=' + mount_user + ',password=' + mount_password
 						command_mount.append("mount -t cifs -o %s '//%s/%s' '/media/net/%s'" % (all_options, mount_ip, mount_sharedir, mount_sharename))
 					elif mount_type == "nfs":
 						command_mount.append("mount -t nfs -o %s '%s' '/media/net/%s'" % (mount_options, mount_ip + ':/' + mount_sharedir, mount_sharename))
@@ -197,7 +197,7 @@ class remount_setup(ConfigListScreen, Screen):
 		line = main_func()[28:].replace("'", '').split('&&')
 		if fileExists("/etc/enigma2/automounts.xml"):
 			for i in range(len(line)):
-				if  '/media/net/' in line[i]:
+				if '/media/net/' in line[i]:
 					mount_list += _('active: %s %s %s\n') % (line[i].split()[2], line[i].split()[-2], line[i].split()[-1])
 			self["text"].setText(mount_list)
 		else:
