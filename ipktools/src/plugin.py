@@ -53,6 +53,7 @@ def status_path():
 		status = "/var/opkg/status"
 	return status
 
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
@@ -65,6 +66,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 	
+
 config.plugins.ipktools = ConfigSubsection()
 config.plugins.ipktools.showsetupipk = ConfigYesNo(default=True)
 config.plugins.ipktools.filtername = ConfigYesNo(default=False)
@@ -567,6 +569,7 @@ def setupipk(session, **kwargs):
 def main(session, **kwargs):
 	session.open(IPKTools2)
 	
+
 ######################################################################################
 pTools = opkgUpdate()
 ######################################################################################

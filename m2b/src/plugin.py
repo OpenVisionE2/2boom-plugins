@@ -74,6 +74,7 @@ def mountp():
 	pathmp.append('/tmp/')
 	return pathmp
 
+
 config.plugins.m2b = ConfigSubsection()
 config.plugins.m2b.path = ConfigSelection(choices=mountp())
 config.plugins.m2b.m3ufile = ConfigSelection(choices=get_m3u_name())
@@ -125,6 +126,7 @@ class m2b_setup(ConfigListScreen, Screen):
 
 	def convert(self):
 		self.session.open(create_bouquet)
+
 
 SKIN_DWN = """
 <screen name="get_chlist" position="center,140" size="625,35" title="Please wait">

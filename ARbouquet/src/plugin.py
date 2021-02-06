@@ -49,6 +49,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 config.plugins.arbouquet = ConfigSubsection()
 config.plugins.arbouquet.menuext = ConfigYesNo(default=True)
 config.plugins.arbouquet.passw = ConfigText(default='', visible_width=150, fixed_size=False)
@@ -147,6 +148,7 @@ class ARbouquet(Screen):
 				os.rename('/etc/enigma2/%s' % self.item_name, '/etc/enigma2/%s.del' % self.item_name)
 			self.mbox = self.session.open(MessageBox, (_("%s removed" % self.item_name)), MessageBox.TYPE_INFO, timeout=4)
 		self.bq_list()
+
 
 SKIN_DWN = """
 <screen name="reloadsl" position="center,140" size="625,35" title="Please wait">

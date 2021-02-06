@@ -71,6 +71,7 @@ def logging(line):
 	log_file.write(line)
 	log_file.close()
 
+
 #now = time.localtime(time.time())
 ######################################################################################
 config.plugins.epanel.showmain = ConfigYesNo(default=True)
@@ -752,6 +753,7 @@ class loadEPG():
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 			return False
 		return True
+
 
 pEmu = loadEPG()
 ######################################################################################

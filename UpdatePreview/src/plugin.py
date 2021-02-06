@@ -46,6 +46,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 	
+
 config.plugins.upw = ConfigSubsection()
 config.plugins.upw.userfiles = ConfigLocations(default=[])
 
@@ -84,6 +85,7 @@ class get_opkg_data(Screen):
 		else:
 			self["status"].text = _("Error receive list-upgradable, try later")
 			self.iConsole.ePopen("sleep 5", self.cancel)
+
 
 SKIN_VIEW = """
 <screen name="updateprv2" position="center,140" size="1100,520" title="Update Preview">

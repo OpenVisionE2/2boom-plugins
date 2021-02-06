@@ -59,6 +59,7 @@ def iconsdirs():
 			iconset.append(istyledir)
 	return iconset
 
+
 config.plugins.yweather = ConfigSubsection()
 config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width=70, fixed_size=False)
 config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width=170, fixed_size=False)
@@ -464,6 +465,8 @@ class WeatherInfo(Screen):
 			return '+' + what + '%s' % unichr(176).encode("latin-1")
 		else:
 			return what + '%s' % unichr(176).encode("latin-1")
+
+
 ##############################################################################
 SKIN_STYLE1_HD = """
 <screen name="WeatherInfo" position="365,90" size="550,590" title="2boom's Yahoo Weather" zPosition="1" flags="wfBorder">

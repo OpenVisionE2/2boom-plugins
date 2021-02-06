@@ -42,6 +42,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 if os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'bitratecalc.so')):
 	from bitratecalc import eBitrateCalculator
 	binary_file = True

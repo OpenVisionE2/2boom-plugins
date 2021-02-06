@@ -34,6 +34,7 @@ def status_path():
 		status = "/var/opkg/status"
 	return status
 
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))

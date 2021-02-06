@@ -50,6 +50,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 config.plugins.rpulite = ConfigSubsection()
 config.plugins.rpulite.menuext = ConfigYesNo(default=True)
 config.plugins.rpulite.ip = ConfigText(default='000.000.000.000', visible_width=150, fixed_size=False)
@@ -328,6 +329,7 @@ class reloadsl(Screen):
 		
 	def cancel(self, result, retval, extra_args):
 		self.close()
+
 
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">

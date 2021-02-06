@@ -40,6 +40,8 @@ def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
 	log_file.write(line)
 	log_file.close()
+
+
 ####################################################################
 config.plugins.epanel.activeserver = ConfigText(default="NotSelected")
 config.plugins.epanel.activeconf = ConfigText(default="NotSelected")
@@ -330,6 +332,8 @@ class emuSel5(Screen):
 				self.session.open(UniConfigScreen)
 		else:
 			self.session.open(UniConfigScreen)
+
+
 #####################################################################################################
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">

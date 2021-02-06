@@ -48,6 +48,7 @@ def indent(elem, level=0):
 		if level and (not elem.tail or not elem.tail.strip()):
 			elem.tail = i
 
+
 indent(root)
 
 ElementTree(root).write(sys.stdout, encoding=encoding)

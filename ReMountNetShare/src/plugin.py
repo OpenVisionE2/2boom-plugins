@@ -232,6 +232,7 @@ def func2(session, **kwargs):
 	Console().ePopen("umount -a -f -t nfs,cifs")
 	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout=4)
 
+
 pRemount = ReMountNetShare()
 
 def sessionstart(reason, session=None, **kwargs):

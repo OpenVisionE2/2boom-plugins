@@ -47,6 +47,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 ##############################################################################
 config.plugins.QuickEcm = ConfigSubsection()
 config.plugins.QuickEcm.enabled = ConfigYesNo(default=True)
@@ -118,6 +119,8 @@ class QuickEcm():
 		else:
 			config.plugins.QuickEcm.enabled.value = True
 			pEcm.dialog.show()
+
+
 ##############################################################################
 pEcm = QuickEcm()
 ##############################################################################

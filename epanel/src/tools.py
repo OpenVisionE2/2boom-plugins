@@ -111,6 +111,7 @@ def cronpath():
 		return "/var/spool/cron/crontabs/root"
 	return path
 
+
 now = time.localtime(time.time())
 ######################################################################################
 config.plugins.epanel = ConfigSubsection()
@@ -786,6 +787,8 @@ class SwapScreen(Screen):
 			
 	def exit(self):
 		self.close()
+
+
 ######################################################################################
 SKIN_CSW = """
 <screen name="create_swap" position="center,140" size="625,30" title="Please wait">
@@ -1113,6 +1116,7 @@ class NTPScreen(ConfigListScreen, Screen):
 
 	def UpdateNow(self):
 		self.session.open(update_current_time)
+
 
 SKIN_UCT = """
 <screen name="update_current_time" position="center,140" size="625,30" title="Please wait">
@@ -1810,6 +1814,7 @@ class epgdna(ConfigListScreen, Screen):
 					return True
 		return False
 		
+
 SKIN_DWN = """
 <screen name="get_epg_dat" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />

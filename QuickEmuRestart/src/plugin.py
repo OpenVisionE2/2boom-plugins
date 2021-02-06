@@ -48,6 +48,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 	
+
 config.plugins.qer = ConfigSubsection()
 config.plugins.qer.keyname = ConfigSelection(default="KEY_TEXT", choices=[
 		("KEY_TEXT", "TEXT"),
@@ -199,6 +200,8 @@ class qer_setup(ConfigListScreen, Screen):
 #####################################################
 def main(session, **kwargs):
 	session.open(qer_setup)
+
+
 ##############################################################################
 pEmu = QuickEmu()
 ##############################################################################

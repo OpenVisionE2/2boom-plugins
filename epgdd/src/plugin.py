@@ -70,6 +70,7 @@ def logging(line):
 	log_file.write(line)
 	log_file.close()
 
+
 config.plugins.epgdd = ConfigSubsection()
 config.plugins.epgdd.direct = ConfigSelection(choices=mountp())
 config.plugins.epgdd.epgname = ConfigText(default='epg.dat', visible_width=50, fixed_size=False)
@@ -362,6 +363,7 @@ class get_source(Screen):
 	def cancel(self):
 		self.close()
 
+
 SKIN_EPG = """
 <screen name="get_epgdat" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
@@ -441,6 +443,7 @@ class get_epgdat(Screen):
 
 def main(session, **kwargs):
 	session.open(epgdd)
+
 
 pEpg = Check_EPG()
 
