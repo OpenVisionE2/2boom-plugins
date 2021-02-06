@@ -175,7 +175,7 @@ class epgdd(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4)
 
 	def cancel(self):
 		self.close()
@@ -256,7 +256,7 @@ class Check_EPG():
 				configfile.save()
 				if os.path.isfile('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value)):
 					os.chmod('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value), stat.S_IWRITE)
-				urllib.urlretrieve (config.plugins.epgdd.url.value, '/tmp/epg.dat.gz')
+				urllib.urlretrieve(config.plugins.epgdd.url.value, '/tmp/epg.dat.gz')
 				if os.path.isfile('/tmp/epg.dat.gz'):
 					inFile = gzip.GzipFile('/tmp/epg.dat.gz', 'rb')
 					s = inFile.read()
@@ -381,7 +381,7 @@ class get_epgdat(Screen):
 				config.plugins.epgdd.leghtfile.value = int(urllib.urlopen(config.plugins.epgdd.url.value).info()['content-length'])
 				config.plugins.epgdd.leghtfile.save()
 				configfile.save()
-				urllib.urlretrieve (config.plugins.epgdd.url.value, '/tmp/epg.dat.gz')
+				urllib.urlretrieve(config.plugins.epgdd.url.value, '/tmp/epg.dat.gz')
 				if os.path.isfile('/tmp/epg.dat.gz'):
 					inFile = gzip.GzipFile('/tmp/epg.dat.gz', 'rb')
 					s = inFile.read()

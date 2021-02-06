@@ -98,7 +98,7 @@ class QuickEmu():
 				self.Console.ePopen("%s cam_down & && %s cam_up &" % (currentemu, currentemu))
 		try:
 			if not config.plugins.qer.time.value is 0:
-				self.mbox = self.session.open(MessageBox, (_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout=config.plugins.qer.time.value )
+				self.mbox = self.session.open(MessageBox, (_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout=config.plugins.qer.time.value)
 		except:
 			pass
 #########################################################################################################
@@ -192,7 +192,7 @@ class qer_setup(ConfigListScreen, Screen):
 		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEmuRestart/keymap.xml"), "w") as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showEmuRestart" flags="m" />\n\t</map>\n</keymap>' % config.plugins.qer.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		if self.TrueImage():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()

@@ -166,7 +166,7 @@ class emuSel5(Screen):
 				"yellow": self.emuRestartOperation,
 				"blue": self.switcher,
 			}, -1)
-		self.list = [ ]
+		self.list = []
 		self["key_red"] = Label(_("Stop"))
 		self["key_green"] = Label(_("Start"))
 		self["key_yellow"] = Label(_("ReStart"))
@@ -576,7 +576,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
 	def CreateOldKeyFile(self):
 		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
@@ -695,7 +695,7 @@ class uniswitcher(Screen):
 			file_prv.write(file_cfg)
 			file_prv.close()
 			os.chmod('%s/%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value), 664)
-			self.session.open(MessageBox, _("%s %s" % (self["list"].getCurrent()[0], config.plugins.usw.configfile.value)), type=MessageBox.TYPE_INFO, timeout=6 )
+			self.session.open(MessageBox, _("%s %s" % (self["list"].getCurrent()[0], config.plugins.usw.configfile.value)), type=MessageBox.TYPE_INFO, timeout=6)
 			self.indexpos = self["list"].getIndex()
 			self.mList()
 
@@ -707,9 +707,9 @@ class uniswitcher(Screen):
 		if fileExists("/etc/init.d/cardserver"):
 			self["text"].setText(clearlist)
 			self.iConsole.ePopen("/etc/init.d/cardserver restart")
-		self.session.open(MessageBox, _("Softcam Restarted"), type=MessageBox.TYPE_INFO, timeout=7 )
+		self.session.open(MessageBox, _("Softcam Restarted"), type=MessageBox.TYPE_INFO, timeout=7)
 
-	def Adress (self, nameserv):
+	def Adress(self, nameserv):
 		cardline = ""
 		iscard = 0
 		if config.plugins.usw.emu.value == "Oscam":
@@ -778,5 +778,5 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		configfile.save()
 		from Components.PluginComponent import plugins
 		plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 ####################################################################################

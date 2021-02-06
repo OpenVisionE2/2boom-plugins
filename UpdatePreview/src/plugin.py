@@ -232,7 +232,7 @@ class FilesSelection(Screen):
 		self["key_yellow"] = StaticText()
 		self.selectedFiles = config.plugins.upw.userfiles.value
 		defaultDir = '/'
-		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir, showDirectories=True, matchingPattern="^.*" )
+		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir, showDirectories=True, matchingPattern="^.*")
 		self["checkList"] = self.filelist
 		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions"],
 		{
