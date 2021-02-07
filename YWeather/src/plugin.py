@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-# Yahoo! weather 
+# Yahoo! weather
 # Copyright (c) 2boom 2014
 # v.0.7-r1
 # This program is free software: you can redistribute it and/or modify
@@ -146,7 +146,7 @@ class WeatherInfo(Screen):
 			self["text_" + day] = StaticText()
 		self.notdata = False
 		self.onShow.append(self.get_weather_data)
-		
+
 	def get_weather_data(self):
 		if not os.path.exists("/tmp/yweather.xml") or int((time.time() - os.stat("/tmp/yweather.xml").st_mtime) / 60) >= self.time_update or self.notdata:
 			self.get_xmlfile()
@@ -200,14 +200,14 @@ class WeatherInfo(Screen):
 			else:
 				self["forecast_" + day].text = _('N/A')
 				self.notdata = True
-				
+
 			if self.forecastdata['date' + daynumber] is not '':
 				tmp_date = self.forecastdata['date' + daynumber]
-				self["forecastdate_" + day].text = '%s %s' % (tmp_date.split()[0], self.month[tmp_date.split()[1]]) 
+				self["forecastdate_" + day].text = '%s %s' % (tmp_date.split()[0], self.month[tmp_date.split()[1]])
 			else:
 				self["forecastdate_" + day].text = _('N/A')
 				self.notdata = True
-				
+
 			if self.forecastdata['low0'] is not '' and self.forecastdata['high0'] is not '':
 				self["temp_now_min"].text = _('min: %s') % self.tempsing(self.forecastdata['low0'])
 				self["temp_now_max"].text = _('max: %s') % self.tempsing(self.forecastdata['high0'])
@@ -239,13 +239,13 @@ class WeatherInfo(Screen):
 			self["temp_now"].text = _('N/A')
 			self["temp_now_nounits"].text = _('N/A')
 			self.notdata = True
-			
+
 		if self.condition['date'] is not '':
 			self["date"].text = self.tempsing(self.condition['date'])
 		else:
 			self["date"].text = _('N/A')
-			self.notdata = True	
-		
+			self.notdata = True
+
 		if self.wind['chill'] is not '':
 			self["feels_like"].text = _('Feels: %s') % self.tempsing(self.wind['chill'])
 		else:
@@ -353,37 +353,37 @@ class WeatherInfo(Screen):
 		else:
 			self["humidity"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.atmosphere['visibility'] is '':
 			self["visibility"].text = _('%s km') % self.atmosphere['visibility']
 		else:
 			self["visibility"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.geo['lat'] is '':
 			self["lat"].text = self.geo['lat']
 		else:
 			self["lat"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.geo['long'] is '':
 			self["long"].text = self.geo['long']
 		else:
 			self["long"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.astronomy['sunrise'] is '':
 			self["sunrise"].text = _('%s') % self.time_convert(self.astronomy['sunrise'])
 		else:
 			self["sunrise"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.astronomy['sunset'] is '':
 			self["sunset"].text = _('%s') % self.time_convert(self.astronomy['sunset'])
 		else:
 			self["sunset"].text = _('N/A')
 			self.notdata = True
-			
+
 		self["picon_now"].instance.setScale(1)
 		if not self.condition['code'] is '':
 			self["picon_now"].instance.setPixmapFromFile("%sExtensions/YWeather/istyle/%s/%s.png" % (resolveFilename(SCOPE_PLUGINS), config.plugins.yweather.istyle.value, self.condition['code']))
@@ -394,7 +394,7 @@ class WeatherInfo(Screen):
 	def get_xmlfile(self):
 		xmlfile = "http://weather.yahooapis.com/forecastrss?w=%s&d=10&u=c" % config.plugins.yweather.weather_city.value
 		downloadPage(xmlfile, "/tmp/yweather.xml").addCallback(self.downloadFinished).addErrback(self.downloadFailed)
-		
+
 	def time_convert(self, time):
 		print("[YWeather] Time convert")
 		tmp_time = ''
@@ -406,7 +406,7 @@ class WeatherInfo(Screen):
 			return '0%s' % tmp_time
 		else:
 			return tmp_time
-		
+
 	def downloadFinished(self, result):
 		print("[YWeather] Download finished")
 		self.notdata = False
@@ -420,7 +420,7 @@ class WeatherInfo(Screen):
 		return line.split(what)[-1].split('"')[1]
 
 	def get_data_xml(self, line):
-		return line.split('</')[0].split('>')[1] 
+		return line.split('</')[0].split('>')[1]
 
 	def tempsing(self, what):
 		if not what[0] is '-' and not what[0] is '0':
@@ -499,7 +499,7 @@ SKIN_STYLE1 = """
     <widget source="text_day5" render="Label" position="6,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
     <widget source="visibility" render="Label" position="379,123" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
 </screen>
-""" 
+"""
 
 
 class yweather_main():
@@ -513,13 +513,13 @@ class yweather_main():
 		global globalActionMap
 		readKeymap(keymap)
 		globalActionMap.actions['showWeather'] = self.autohide
-		
+
 	def autohide(self):
 		self.ShowHide()
 		if not config.plugins.yweather.timeout.value is '0':
 			self.Timer.callback.append(self.onetime)
 			self.Timer.start(1000 * int(config.plugins.yweather.timeout.value), False)
-		
+
 	def onetime(self):
 		if config.plugins.yweather.enabled.value and not config.plugins.yweather.timeout.value is '0':
 			self.ShowHide()

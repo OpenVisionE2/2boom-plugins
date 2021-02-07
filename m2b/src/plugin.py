@@ -46,7 +46,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 def get_m3u_name():
 	m3u_name = []
@@ -67,7 +67,7 @@ def remove_line(filename, what):
 			if what not in line:
 				file_write.write(line)
 		file_write.close()
-		
+
 
 def mountp():
 	pathmp = []
@@ -186,7 +186,7 @@ class create_bouquet(Screen):
 							desk_tmp = '%s\r\n' % line.split('[')[-1].split(']')[0]
 						else:
 							desk_tmp = '%s\r\n' % line.split('<')[1].split('>')[1]
-				outfile.write('\r\n')			
+				outfile.write('\r\n')
 				outfile.close()
 			if os.path.isfile('/etc/enigma2/bouquets.tv'):
 				for line in open('/etc/enigma2/bouquets.tv'):
@@ -220,7 +220,7 @@ class get_chlist(Screen):
 		if config.plugins.m2b.passw.value is not '':
 			config.plugins.m2b.passw.value = ':' + config.plugins.m2b.passw.value
 		self.iConsole.ePopen('wget -q -O - http://root%s@127.0.0.1/web/servicelistreload?mode=0 && sleep 2' % config.plugins.m2b.passw.value, self.quit)
-	
+
 	def quit(self, result, retval, extra_args):
 		config.plugins.m2b.passw.value = config.plugins.m2b.passw.value.lstrip(':')
 		self.close(False)

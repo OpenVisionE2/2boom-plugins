@@ -94,7 +94,7 @@ def main_func():
 	for count_mounts in command_mount:
 		command_remount += " && %s" % count_mounts
 	return command_remount
-	
+
 
 def get_xml_data(what):
 	return what.split("<")[1].split(">")[1]
@@ -106,7 +106,7 @@ def IsImageName():
 			if "BlackHole" in line or "vuplus" in line:
 				return True
 	return False
-	
+
 
 def IsImageATV():
 	if fileExists("/etc/issue"):
@@ -126,7 +126,7 @@ class ReMountNetShare():
 		config.misc.standbyCounter.addNotifier(self.onEnterStandby, initial_call=False)
 		if IsImageName():
 			config.misc.DeepStandbyOn.addNotifier(self.onEnterDeepStandby, initial_call=False)
-			
+
 			#config.misc.DeepStandby.addNotifier(self.onEnterDeepStandby, initial_call = False)
 		else:
 			config.misc.DeepStandby.addNotifier(self.onEnterDeepStandby, initial_call=False)
@@ -236,7 +236,7 @@ def main(session, **kwargs):
 def func(session, **kwargs):
 	Console().ePopen(main_func())
 	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4)
-	
+
 
 def func2(session, **kwargs):
 	Console().ePopen("umount -a -f -t nfs,cifs")
@@ -259,5 +259,3 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name=_("Unmount NetShare"), description=_("manual or auto remount network share"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=func2))
 	list.append(PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart))
 	return list
-
-     

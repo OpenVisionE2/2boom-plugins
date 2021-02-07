@@ -47,7 +47,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 config.plugins.upw = ConfigSubsection()
 config.plugins.upw.userfiles = ConfigLocations(default=[])
@@ -68,7 +68,7 @@ class get_opkg_data(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Updating list of available packages")
 		self.iConsole.ePopen("opkg update", self.preview_list)
-		
+
 	def preview_list(self, result, retval, extra_args):
 		if retval is 0:
 			self["status"].text = _("Updating list installed and upgradable packages")
@@ -76,13 +76,13 @@ class get_opkg_data(Screen):
 		else:
 			self["status"].text = _("Error receive list-upgradable, try later")
 			self.iConsole.ePopen("sleep 5", self.cancel2)
-			
+
 	def cancel2(self, result, retval, extra_args):
 		self.close()
 
 	def cancel(self):
 		self.close()
-		
+
 	def preview(self, result, retval, extra_args):
 		if retval is 0:
 			self.session.openWithCallback(self.cancel, updateprv2, result)
@@ -122,7 +122,7 @@ class updateprv2(Screen):
 		self["blue_key"] = StaticText(_("Latest Commits"))
 		self["text"] = ScrollLabel("")
 		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions", "ColorActions", "MenuActions"],
-		{ 
+		{
 		"cancel": self.close,
 		"red": self.close,
 		"green": self.update,
@@ -158,16 +158,16 @@ class updateprv2(Screen):
 
 	def cancel(self):
 		self.close()
-	
+
 	def sysreboot(self):
 		self.session.open(TryQuitMainloop, 2)
-	
+
 	def selectfiles(self):
 		self.session.open(FilesSelection)
-		
+
 	def showCommits(self):
 		self.session.open(commitinfo)
-		
+
 	def update(self):
 		if self.count is not 0:
 			if len(config.plugins.upw.userfiles.value) is 0:
@@ -199,7 +199,7 @@ class commitinfo(Screen):
 		self.Timer = eTimer()
 		self.Timer.callback.append(self.readCommitLogs)
 		self.Timer.start(50, True)
-	
+
 	def readCommitLogs(self):
 		url = 'https://api.github.com/repos/openpli/enigma2/commits'
 		commitlog = ""
@@ -221,7 +221,7 @@ class commitinfo(Screen):
 			commitlog += _("Currently the commit log cannot be retrieved - please try later again")
 		self.setTitle(_("Latest Commits"))
 		self["AboutLatestCommits"].setText(commitlog)
-		
+
 
 class FilesSelection(Screen):
 	skin = """
@@ -277,7 +277,7 @@ class FilesSelection(Screen):
 				self["key_yellow"].setText(_("Deselect"))
 			else:
 				self["key_yellow"].setText(_("Select"))
-		
+
 	def up(self):
 		self["checkList"].up()
 
@@ -312,7 +312,7 @@ class FilesSelection(Screen):
 
 def main(session, **kwargs):
 	session.open(get_opkg_data)
-	
+
 
 def menu(menuid, **kwargs):
 	if menuid == "setup":

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#by 2boom 2011-17 IPK Tools 4bob@ua.fm 
+#by 2boom 2011-17 IPK Tools 4bob@ua.fm
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
@@ -48,7 +48,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 class IPKToolsScreen2(Screen):
 	skin = """
@@ -119,7 +119,7 @@ class IPKToolsScreen2(Screen):
 		if fileExists("/proc/mounts"):
 			for line in open("/proc/mounts"):
 				if "/dev/sd" in line or '/dev/disk/by-uuid/' in line or '/dev/mmc' in line or '/dev/mtdblock' in line:
-					if pathExists(line.split()[1].replace('\\040', ' ') + config.plugins.epanel.userdir.value): 
+					if pathExists(line.split()[1].replace('\\040', ' ') + config.plugins.epanel.userdir.value):
 						pathmp.append(line.split()[1].replace('\\040', ' ') + config.plugins.epanel.userdir.value)
 		pathmp.append("/tmp/")
 		for pathtmp in pathmp:
@@ -179,7 +179,7 @@ class downfeed(Screen):
 		<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
@@ -198,28 +198,28 @@ class downfeed(Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
 		self.feedlist()
-	
+
 	def image_is_hdmu(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'hdmu' in line.lower() or 'openspa' in line.lower():
 					return True
 		return False
-		
+
 	def image_is_atv6(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openatv 6' in line.lower():
 					return True
 		return False
-		
+
 	def image_is_pli5(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower() or 'openpli 7' in line.lower() or 'openpli tvfaq.net' in line.lower():
 					return True
 		return False
-    
+
    	def image_is_openvision(self):
 		if os.path.isfile('/etc/model'):
 			return True
@@ -286,7 +286,7 @@ class DownloadFeed(Screen):
 		<widget name="key_green" position="190,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
@@ -310,28 +310,28 @@ class DownloadFeed(Screen):
 		self["key_green"] = Label("")
 		self["key_yellow"] = Label("")
 		self.feedlist()
-		
+
 	def image_is_hdmu(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'hdmu' in line.lower() or 'openspa' in line.lower():
 					return True
 		return False
-		
+
 	def image_is_atv6(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openatv 6' in line.lower():
 					return True
 		return False
-		
+
 	def image_is_pli5(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openpli 5' in line.lower() or 'openpli 6' in line.lower() or 'openpli 7' in line.lower() or 'openpli tvfaq.net' in line.lower():
 					return True
 		return False
-    
+
         def image_is_openvision(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
@@ -370,11 +370,11 @@ class DownloadFeed(Screen):
 		self["menu"].setList(self.list)
 		self["key_green"].setText(_("Download -nodeps"))
 		self["key_yellow"].setText(_("Download -deps"))
-		
+
 	def download(self):
 		if self["menu"].getCurrent() is not None:
 			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
-		
+
 	def download_wdeps(self):
 		if self["menu"].getCurrent() is not None:
 			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
@@ -410,7 +410,7 @@ class InstallAll4(Screen):
   		<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
   		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
@@ -424,7 +424,7 @@ class InstallAll4(Screen):
 		self.commamd_line_ipk = []
 		self.commamd_line_tar = []
 		self.force_install = False
-		self.status = False 
+		self.status = False
 		self.ipkminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
 		self.tarminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/tarmini.png"))
 		self["menu"] = List(self.list)
@@ -442,7 +442,7 @@ class InstallAll4(Screen):
 		self["key_green"] = StaticText(_("Install"))
 		self["key_yellow"] = StaticText(_("Forced Install"))
 		self["key_blue"] = StaticText(_("Restart"))
-		
+
 	def mount_point(self):
 		searchPaths = []
 		if fileExists("/proc/mounts"):
@@ -452,17 +452,17 @@ class InstallAll4(Screen):
 					searchPaths.append(line.split()[1].replace('\\040', ' ') + config.plugins.epanel.userdir.value)
 		searchPaths.append('/tmp/')
 		return searchPaths
-		
+
 	def press_ok(self):
 		if config.plugins.epanel.multifilemode.value is 'Multi':
 			self.mark_list()
 		else:
 			self.all_install()
-			
+
 	def install_force(self):
 		self.force_install = True
 		self.all_install()
-			
+
 	def mark_list(self):
 		line_old = self["menu"].getCurrent()
 		if line_old is not None:
@@ -509,7 +509,7 @@ class InstallAll4(Screen):
 			elif len(self.commamd_line_tar) >= 1:
 				self.session.open(Console, title=_("Install tar.gz, bh.tgz, nab.tgz"), cmdlist=["%s" % ' && '.join(self.commamd_line_tar)])
 			self.force_install = False
-		
+
 	def nList(self):
 		self.workdir = self.mount_point()
 		for i in range(len(self.workdir)):
@@ -528,10 +528,10 @@ class InstallAll4(Screen):
 							pass
 		self.list.sort()
 		self["menu"].setList(self.list)
-		
+
 	def restart_enigma(self):
 		self.session.open(TryQuitMainloop, 3)
-	
+
 	def cancel(self):
 		self.close()
 ########################################################################################################
@@ -559,7 +559,7 @@ class RemoveIPK(Screen):
 		<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
@@ -582,7 +582,7 @@ class RemoveIPK(Screen):
 				"red": self.cancel,
 				"yellow": self.adv_remove,
 			}, -1)
-		
+
 	def nList(self):
 		self.list = []
 		ipkminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkmini.png"))
@@ -598,7 +598,7 @@ class RemoveIPK(Screen):
 
 	def cancel(self):
 		self.close()
-		
+
 	def remove_ipk(self):
 		local_status = ipk_dir = ''
 		pkg_name = self["menu"].getCurrent()[0]

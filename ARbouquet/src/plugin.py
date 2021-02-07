@@ -58,7 +58,7 @@ config.plugins.arbouquet.bouquettype = ConfigSelection(default='.tv', choices=[
 		('.tv', _("TV")),
 		('.radio', _("Radio")),
 		])
-	
+
 
 def remove_line(filename, what):
 	if os.path.isfile(filename):
@@ -114,7 +114,7 @@ class ARbouquet(Screen):
 		self["key_yellow"] = StaticText(_("Remove"))
 		self.bq_list()
 		self.onLayoutFinish.append(self.make_title)
-		
+
 	def bq_list(self):
 		self.list = []
 		file_name = boquet_name = ''
@@ -133,16 +133,16 @@ class ARbouquet(Screen):
 		self["menu"].setList(self.list)
 		if self.indexpos is not None:
 			self["menu"].setIndex(self.indexpos)
-		
+
 	def make_title(self):
 		self.setTitle(_("2boom's add/remove bouquet"))
-		
+
 	def reload_bq(self):
 		self.session.openWithCallback(self.close, reloadsl)
 
 	def make_bq(self):
 		self.session.openWithCallback(self.bq_list, AddScreen)
-		
+
 	def remove_bq(self):
 		self.item_name = self["menu"].getCurrent()[1]
 		if self.item_name:
@@ -170,7 +170,7 @@ class reloadsl(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Reload servicelist")
 		self.iConsole.ePopen('wget -q -O - http://root:%s@127.0.0.1/web/servicelistreload?mode=0 && sleep 2' % config.plugins.arbouquet.passw.value, self.cancel)
-		
+
 	def cancel(self, result, retval, extra_args):
 		self.close()
 
@@ -255,7 +255,7 @@ class ARconfig(Screen, ConfigListScreen):
 
 	def listuserbouquet(self):
 		self.setTitle(_("2boom's add/remove bouquet config"))
-		
+
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()

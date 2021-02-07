@@ -67,7 +67,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 config.plugins.ipktools = ConfigSubsection()
 config.plugins.ipktools.showsetupipk = ConfigYesNo(default=True)
@@ -77,7 +77,7 @@ config.plugins.ipktools.multifilemode = ConfigSelection(default="Multi", choices
 		("Multi", _("Multi files")),
 		("Single", _("Single file")),
 ])
-	
+
 
 class IPKTools2(Screen):
 	skin = """
@@ -137,10 +137,10 @@ class IPKTools2(Screen):
 
 	def exit(self):
 		self.close()
-		
+
 	def clear(self):
 		self.iConsole.ePopen("rm /tmp/*.tar.gz /tmp/*.bh.tgz /tmp/*.ipk /tmp/*.nab.tgz", self.info_message)
-		
+
 	def info_message(self, result, retval, extra_args):
 		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4)
 
@@ -178,7 +178,7 @@ class downfeed(Screen):
 		<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools")
@@ -197,7 +197,7 @@ class downfeed(Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
 		self.feedlist()
-	
+
 	def feedlist(self):
 		self.list = []
 		statuspath = ''
@@ -252,7 +252,7 @@ class DownloadFeed(Screen):
 		<widget name="key_green" position="190,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setTitle(_("Download extensions from feed"))
@@ -301,10 +301,10 @@ class DownloadFeed(Screen):
 		self["menu"].setList(self.list)
 		self["key_green"].setText(_("Download -nodeps"))
 		self["key_yellow"].setText(_("Download -deps"))
-		
+
 	def download(self):
 		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
-		
+
 	def download_wdeps(self):
 		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
@@ -339,7 +339,7 @@ class InstallAll4(Screen):
  	 	<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
   		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools")
@@ -347,14 +347,14 @@ class InstallAll4(Screen):
 			self.setTitle(_('MultiSelect Mode'))
 		else:
 			self.setTitle(_('SingleSelect Mode'))
-		
+
 		self.session = session
 		self.workdir = []
 		self.list = []
 		self.commamd_line_ipk = []
 		self.commamd_line_tar = []
 		self.force_install = False
-		self.status = False 
+		self.status = False
 		self.ipkminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools/images/ipkmini.png"))
 		self.tarminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools/images/tarmini.png"))
 		self["menu"] = List(self.list)
@@ -372,7 +372,7 @@ class InstallAll4(Screen):
 		self["key_green"] = StaticText(_("Install"))
 		self["key_yellow"] = StaticText(_("Forced Install"))
 		self["key_blue"] = StaticText(_("Restart"))
-		
+
 	def mount_point(self):
 		searchPaths = []
 		if fileExists("/proc/mounts"):
@@ -382,17 +382,17 @@ class InstallAll4(Screen):
 					searchPaths.append(line.split()[1].replace('\\040', ' ') + config.plugins.ipktools.userdir.value)
 		searchPaths.append('/tmp/')
 		return searchPaths
-		
+
 	def press_ok(self):
 		if config.plugins.ipktools.multifilemode.value is 'Multi':
 			self.mark_list()
 		else:
 			self.all_install()
-			
+
 	def install_force(self):
 		self.force_install = True
 		self.all_install()
-			
+
 	def mark_list(self):
 		line_old = self["menu"].getCurrent()
 		if line_old is not None:
@@ -439,7 +439,7 @@ class InstallAll4(Screen):
 			elif len(self.commamd_line_tar) >= 1:
 				self.session.open(Console, title=_("Install tar.gz, bh.tgz, nab.tgz"), cmdlist=["%s" % ' && '.join(self.commamd_line_tar)])
 			self.force_install = False
-		
+
 	def nList(self):
 		self.workdir = self.mount_point()
 		for i in range(len(self.workdir)):
@@ -458,10 +458,10 @@ class InstallAll4(Screen):
 							pass
 		self.list.sort()
 		self["menu"].setList(self.list)
-		
+
 	def restart_enigma(self):
 		self.session.open(TryQuitMainloop, 3)
-	
+
 	def cancel(self):
 		self.close()
 ########################################################################################################
@@ -489,7 +489,7 @@ class RemoveIPK(Screen):
 		<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 		<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
-	  
+
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools")
@@ -512,7 +512,7 @@ class RemoveIPK(Screen):
 				"red": self.cancel,
 				"yellow": self.adv_remove,
 			}, -1)
-		
+
 	def nList(self):
 		self.list = []
 		ipkminipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools/images/ipkmini.png"))
@@ -528,7 +528,7 @@ class RemoveIPK(Screen):
 
 	def cancel(self):
 		self.close()
-		
+
 	def remove_ipk(self):
 		local_status = ipk_dir = ''
 		pkg_name = self["menu"].getCurrent()[0]
@@ -563,18 +563,18 @@ class opkgUpdate():
 	def gotSession(self, session):
 		self.session = session
 		self.iConsole = iConsole()
-		self.timer = enigma.eTimer() 
+		self.timer = enigma.eTimer()
 		self.timer.callback.append(self.update)
 		self.timer.start(60000, True)
-	
+
 	def update(self):
 		self.timer.stop()
 		now = time.localtime(time.time())
 		if (now.tm_hour == 1 or now.tm_hour == 5 or now.tm_hour == 9 or now.tm_hour == 13 or now.tm_hour == 17 or now.tm_hour == 21) and now.tm_min == 1:
 			self.iConsole.ePopen("opkg update")
-			
+
 		self.timer.start(60000, True)
-		
+
 
 def setupipk(session, **kwargs):
 	session.open(InstallAll4)
@@ -582,7 +582,7 @@ def setupipk(session, **kwargs):
 
 def main(session, **kwargs):
 	session.open(IPKTools2)
-	
+
 
 ######################################################################################
 pTools = opkgUpdate()
