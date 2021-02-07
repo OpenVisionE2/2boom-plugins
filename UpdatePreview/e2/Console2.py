@@ -6,6 +6,7 @@ from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.ScrollLabel import ScrollLabel
 
+
 class Console2(Screen):
 	skin = """
 		<screen position="center,140" size="1100,520" title="Upgrade execution..." >

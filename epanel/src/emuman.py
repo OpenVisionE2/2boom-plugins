@@ -30,11 +30,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("epanel", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/epanel/locale"))
 
+
 def _(txt):
 	t = gettext.dgettext("epanel", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
@@ -86,6 +88,8 @@ config.plugins.uswncam.configpath = ConfigText(default="/etc/tuxbox/config/ncam"
 config.plugins.uswncam.configfile = ConfigText(default="ncam.conf", visible_width=200, fixed_size=False)
 config.plugins.uswncam.configext = ConfigText(default="os", visible_width=100, fixed_size=False)
 ######################################################################################
+
+
 def ecm_view():
 	list = ''
 	port_flag = 0
@@ -119,6 +123,8 @@ def ecm_view():
 			return ''
 	return ''
 ######################################################################################
+
+
 class emuSel5(Screen):
 	skin = """
 	<screen name="emuSel5" position="265,125" size="750,490" title="Select SoftCam or CardServer">
@@ -270,6 +276,7 @@ class emuSel5(Screen):
 	def listecm(self):
 		self["text"].setText(ecm_view())
 ##################################################################################
+
 	def ok(self):
 		try:
 			self.setTitle(_("Please wait"))
@@ -282,6 +289,7 @@ class emuSel5(Screen):
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 ##################################################################################
+
 	def emuStopOperation(self):
 		try:
 			self.setTitle(_("Please wait"))
@@ -294,6 +302,7 @@ class emuSel5(Screen):
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 ##################################################################################
+
 	def emuRestartOperation(self):
 		try:
 			self.setTitle(_("Please wait"))
@@ -339,6 +348,8 @@ SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
+
 class start_cam(Screen):
 	def __init__(self, session, emutype, current_item):
 		Screen.__init__(self, session)
@@ -393,6 +404,7 @@ class start_cam(Screen):
 				emuname = ' '
 		return emuname
 
+
 class restart_cam(Screen):
 	def __init__(self, session, emutype):
 		Screen.__init__(self, session)
@@ -412,6 +424,8 @@ class restart_cam(Screen):
 		self["status"].setText(' ')
 		self.close()
 ####################################################################################################
+
+
 class stop_cam(Screen):
 	def __init__(self, session, emutype):
 		Screen.__init__(self, session)
@@ -452,6 +466,8 @@ class stop_cam(Screen):
 		self["status"].setText(' ')
 		self.close()
 ####################################################################################################
+
+
 class SoftcamPanel2(Screen):
 	skin = """
 	<screen name="SoftcamPanel2" position="center,160" size="750,370" title="SoftCam/CardServer Panel">
@@ -535,6 +551,8 @@ class SoftcamPanel2(Screen):
 				self.close(None)
 
 ###############################################################################################
+
+
 class SoftcamUpd2(ConfigListScreen, Screen):
 	skin = """
 	<screen name="SoftcamUpd2" position="center,160" size="750,370" title="SoftCam.Key Updater">
@@ -604,6 +622,8 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		if self.mbox:
 			self.mbox.close()
 ###############################################################################
+
+
 class uniswitcher(Screen):
 	skin = """
 	<screen name="uniswitcher" position="center,140" size="750,460" title="...">
@@ -737,6 +757,8 @@ class uniswitcher(Screen):
 		return ""
 
 ####################################################################################
+
+
 class UniConfigScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="UniConfigScreen" position="center,140" size="750,460" title="E-Panel Universal Switcher">
@@ -746,6 +768,7 @@ class UniConfigScreen(ConfigListScreen, Screen):
   		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
   		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)

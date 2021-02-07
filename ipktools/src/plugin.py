@@ -41,6 +41,7 @@ import gettext
 import time
 import enigma
 
+
 def status_path():
 	status = ''
 	if fileExists(resolveFilename(SCOPE_LIBDIR, "opkg/status")):
@@ -60,6 +61,7 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("ipktools", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/ipktools/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("ipktools", txt)
 	if t == txt:
@@ -76,6 +78,7 @@ config.plugins.ipktools.multifilemode = ConfigSelection(default="Multi", choices
 		("Single", _("Single file")),
 ])
 	
+
 class IPKTools2(Screen):
 	skin = """
 	<screen name="IPKTools2" position="center,160" size="750,370" title="2boom's IPK tools">
@@ -153,6 +156,8 @@ class IPKTools2(Screen):
 		elif item is 4:
 			self.session.open(RemoveIPK)
 ###############################################
+
+
 class downfeed(Screen):
 	skin = """
 	<screen name="downfeed" position="center,110" size="850,520" title="Insatall extensions from feed">
@@ -223,6 +228,8 @@ class downfeed(Screen):
 	def setup(self):
 		self.session.open(Console, title=_("Insatall extensions from feed"), cmdlist=["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 ##############################################################################
+
+
 class DownloadFeed(Screen):
 	skin = """
 	<screen name="DownloadFeed" position="center,110" size="850,520" title="Download extensions from feed">
@@ -306,6 +313,8 @@ class DownloadFeed(Screen):
 			self.iConsole.ePopen("mv %s.tmp %s" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.close()
 ####################################################################
+
+
 class InstallAll4(Screen):
 	skin = """
 	<screen name="InstallAll4" position="center,160" size="750,405" title="Press -Info- to update plugin list">
@@ -456,6 +465,8 @@ class InstallAll4(Screen):
 	def cancel(self):
 		self.close()
 ########################################################################################################
+
+
 class RemoveIPK(Screen):
 	skin = """
 	<screen name="RemoveIPK" position="center,100" size="750,570" title="Ipk remove">
@@ -544,6 +555,7 @@ class RemoveIPK(Screen):
 		self.staus = True
 		self.remove_ipk()
 
+
 class opkgUpdate():
 	def __init__(self):
 		self.dialog = None
@@ -563,8 +575,10 @@ class opkgUpdate():
 			
 		self.timer.start(60000, True)
 		
+
 def setupipk(session, **kwargs):
 	session.open(InstallAll4)
+
 
 def main(session, **kwargs):
 	session.open(IPKTools2)
@@ -573,10 +587,13 @@ def main(session, **kwargs):
 ######################################################################################
 pTools = opkgUpdate()
 ######################################################################################
+
+
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pTools.gotSession(session)
 ######################################################################################
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's IPK tools"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="ipktools.png", fnc=main)]

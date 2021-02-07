@@ -30,6 +30,7 @@ if os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'bitratecalc.so')):
 else:
 	binaryfound = False
 
+
 class QuickEcmInfo2(Poll, Converter, object):
 	caidbar = 0
 	txtcaid = 1

@@ -36,6 +36,7 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("qeifh", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/QEIfH/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("qeifh", txt)
 	if t == txt:
@@ -67,6 +68,7 @@ SKIN_HD = """
 <widget source="abit" render="Label" position="485,395" size="230,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="left" />
 <widget source="vbit" render="Label" position="180,395" size="320,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="center" />
 </screen>"""
+
 
 class QEIfH(Screen):
 	def __init__(self, session):
@@ -403,8 +405,10 @@ class QEIfH(Screen):
 		else:
 			return _("undefined")
 
+
 def main(session, **kwargs):
 	session.open(QEIfH)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's QuickEcmInfo for Hotkey"), description=_("quickecminfo for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qeifh.png", fnc=main)]

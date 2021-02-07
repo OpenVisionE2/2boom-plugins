@@ -50,12 +50,14 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("epanel", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/epanel/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("epanel", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 def mountp():
 	pathmp = []
 	if os.path.isfile('/proc/mounts'):
@@ -66,6 +68,7 @@ def mountp():
 	pathmp.append('/tmp/')
 	return pathmp
 	
+
 def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
 	log_file.write(line)
@@ -100,6 +103,8 @@ config.plugins.epanel.crashpath = ConfigSelection(default='/media/hdd/', choices
 ])
 config.plugins.epanel.userdir = ConfigText(default="/ipk/", visible_width=70, fixed_size=False)
 ######################################################################################
+
+
 def IsImageName():
 	if fileExists("/etc/issue"):
 		for line in open("/etc/issue"):
@@ -107,6 +112,8 @@ def IsImageName():
 				return True
 	return False
 ######################################################################################
+
+
 class easyPanel2(Screen):
 	skin = """
 	<screen name="easyPanel2" position="center,160" size="750,420" title="E-Panel">
@@ -235,6 +242,8 @@ class easyPanel2(Screen):
 	def infoKey(self):
 		self.session.open(epanelinfo)
 ######################################################################################
+
+
 class epanelinfo(Screen):
 	skin = """
 	<screen name="epanelinfo" position="340,74" size="620,617" title="E-Panel">
@@ -605,6 +614,8 @@ class epanelinfo(Screen):
 	def cancel(self):
 		self.close()
 ######################################################################################
+
+
 class ConfigExtentions2(ConfigListScreen, Screen):
 	skin = """
 	<screen name="ConfigExtentions2" position="center,160" size="750,370" title="E-Panel Menu/Extensionmenu config">
@@ -650,7 +661,6 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 	def cancel(self):
 		self.close(False)
 
-	
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()
@@ -660,6 +670,8 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
 ######################################################################################
+
+
 class loadEPG():
 	def __init__(self):
 		self.dialog = None
@@ -757,44 +769,59 @@ class loadEPG():
 
 pEmu = loadEPG()
 ######################################################################################
+
+
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEmu.gotSession(session)
 ######################################################################################
+
+
 def main(session, **kwargs):
 	session.open(easyPanel2)
+
 
 def menu(menuid, **kwargs):
 	if menuid == "mainmenu":
 		return [(_("E-Panel"), main, _("e-panel_"), 48)]
 	return []
 
+
 def extsoft(session, **kwargs):
 	session.open(emuman.emuSel5)
 	
+
 def einfo(session, **kwargs):
 	session.open(epanelinfo)
 	
+
 def clviewer(session, **kwargs):
 	session.open(tools.CrashLogScreen)
 	
+
 def scriptex(session, **kwargs):
 	session.open(tools.ScriptScreen3)
 	
+
 def epgreload(session, **kwargs):
 	session.open(tools.epgdmanual)
 	
+
 def epgdwnload(session, **kwargs):
 	session.open(tools.epgdna)
+
 
 def usbunmt(session, **kwargs):
 	session.open(tools.UsbScreen)
 	
+
 def extdrop(session, **kwargs):
 	session.open(tools.DropScreen)
 	
+
 def setupipk(session, **kwargs):
 	session.open(minstall.InstallAll4)
+
 
 def oscam_sw(session, **kwargs):
 	config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
@@ -804,6 +831,7 @@ def oscam_sw(session, **kwargs):
 	config.plugins.usw.configext.value = config.plugins.uswoscam.configext.value
 	session.open(emuman.uniswitcher)
 
+
 def ncam_sw(session, **kwargs):
 	config.plugins.usw.activeconf.value = config.plugins.uswncam.activeconf.value
 	config.plugins.usw.configpath.value = config.plugins.uswncam.configpath.value
@@ -811,6 +839,7 @@ def ncam_sw(session, **kwargs):
 	config.plugins.usw.configfile.value = config.plugins.uswncam.configfile.value
 	config.plugins.usw.configext.value = config.plugins.uswncam.configext.value
 	session.open(emuman.uniswitcher)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="epp.png", fnc=main)]

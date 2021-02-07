@@ -34,6 +34,7 @@ PASSW = ''
 if PASSW is not '':
 	PASSW = ':%s' % PASSW
 
+
 def remove_line(filename, what):
 	if os.path.isfile(filename):
 		file_read = open(filename).readlines()
@@ -48,6 +49,7 @@ SKIN_DWN = """
 <screen name="get_chlist" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class get_chlist(Screen):
 	def __init__(self, session, args=None):
@@ -125,8 +127,10 @@ class get_chlist(Screen):
 					return line.strip('\r').strip('\r').strip()
 		return 'None'
 	
+
 def main(session, **kwargs):
 	session.open(get_chlist)
+
 
 def Plugins(**kwargs):
 	list = PluginDescriptor(name=_("%s updater" % BNAME), description=_("update %s bouquet" % BNAME), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)

@@ -33,6 +33,7 @@ for file in sys.argv[1:]:
 
 	root.append(package)
 
+
 def indent(elem, level=0):
 	i = "\n" + level * "\t"
 	if len(elem):

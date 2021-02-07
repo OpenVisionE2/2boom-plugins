@@ -43,6 +43,7 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("ARbouquet", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/ARbouquet/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("ARbouquet", txt)
 	if t == txt:
@@ -58,6 +59,7 @@ config.plugins.arbouquet.bouquettype = ConfigSelection(default='.tv', choices=[
 		('.radio', _("Radio")),
 		])
 	
+
 def remove_line(filename, what):
 	if os.path.isfile(filename):
 		file_read = open(filename).readlines()
@@ -66,6 +68,7 @@ def remove_line(filename, what):
 			if what not in line:
 				file_write.write(line)
 		file_write.close()
+
 
 class ARbouquet(Screen):
 	skin = """
@@ -155,6 +158,7 @@ SKIN_DWN = """
 	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
 
+
 class reloadsl(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -169,6 +173,7 @@ class reloadsl(Screen):
 		
 	def cancel(self, result, retval, extra_args):
 		self.close()
+
 
 class AddScreen(Screen):
 	skin = """
@@ -218,6 +223,7 @@ class AddScreen(Screen):
 	def cancel(self):
 		self.close()
 
+
 class ARconfig(Screen, ConfigListScreen):
 	skin = """
 	<screen name="ARconfig" position="265,160" size="750,360" title="2boom's add/remove bouquet config">
@@ -227,6 +233,7 @@ class ARconfig(Screen, ConfigListScreen):
   		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
  	 	<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -260,11 +267,14 @@ class ARconfig(Screen, ConfigListScreen):
 			i[1].cancel()
 		self.close(False)
 
+
 def main(session, **kwargs):
 	session.open(ARconfig)
 
+
 def extmain(session, **kwargs):
 	session.open(ARbouquet)
+
 
 def Plugins(**kwargs):
 	result = [

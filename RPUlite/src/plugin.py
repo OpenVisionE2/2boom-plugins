@@ -44,6 +44,7 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("RPUlite", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/RPUlite/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("RPUlite", txt)
 	if t == txt:
@@ -74,6 +75,7 @@ config.plugins.rpulite.timeup = ConfigSelection(default='0', choices=[
 		('3', _("3 hours")),
 		])
 
+
 def remove_line(filename, what):
 	if os.path.isfile(filename):
 		file_read = open(filename).readlines()
@@ -83,11 +85,13 @@ def remove_line(filename, what):
 				file_write.write(line)
 		file_write.close()
 
+
 def add_line(filename, what):
 	if os.path.isfile(filename):
 		with open(filename, 'a') as file_out:
 			file_out.write(what)
 			file_out.close()
+
 
 def cronpath():
 	path = "/etc/cron/crontabs/root"
@@ -100,6 +104,7 @@ def cronpath():
 	elif os.path.isfile("/var/spool/cron/crontabs"):
 		return "/var/spool/cron/crontabs/root"
 	return path
+
 
 class rpulite(Screen, ConfigListScreen):
 	skin = """
@@ -117,6 +122,7 @@ class rpulite(Screen, ConfigListScreen):
   <widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   <widget name="text" position="20,255" size="720,48" font="Regular;22" halign="left" />
 </screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -315,6 +321,7 @@ class rpulite(Screen, ConfigListScreen):
 		self.iConsole.ePopen('wget -q -O - http://root:%s@127.0.0.1/web/servicelistreload?mode=0' % config.plugins.rpulite.rpassw.value)
 		self["text"].setText(_('userbouquet.rostelecom_tmp.tv added or updated'))
 
+
 class reloadsl(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -335,6 +342,7 @@ SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class get_ip(Screen):
 	def __init__(self, session, args=None):
@@ -368,8 +376,10 @@ class get_ip(Screen):
 		config.save()
 		self.close()
 
+
 def main(session, **kwargs):
 	session.open(rpulite)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's Rostelecom lite proxy updater"), description=_("update Rostelecom iptv proxy"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="rpu.png", fnc=main)]

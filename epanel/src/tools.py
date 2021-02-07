@@ -50,11 +50,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("epanel", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/epanel/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("epanel", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 def mountp():
 	pathmp = []
@@ -67,11 +69,13 @@ def mountp():
 	pathmp.append('/tmp/')
 	return pathmp
 	
+
 def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
 	log_file.write(line)
 	log_file.close()
 	
+
 def remove_line(filename, what):
 	if fileExists(filename):
 		file_read = open(filename).readlines()
@@ -80,6 +84,7 @@ def remove_line(filename, what):
 			if what not in line:
 				file_write.write(line)
 		file_write.close()
+
 
 def insert_line(filename, what, numberline):
     if fileExists(filename):
@@ -93,11 +98,13 @@ def insert_line(filename, what, numberline):
             count_line += 1
         file_out.close()
 
+
 def add_line(filename, what):
 	if os.path.isfile(filename):
 		with open(filename, 'a') as file_out:
 			file_out.write(what)
 			file_out.close()
+
 
 def cronpath():
 	path = "/etc/cron/crontabs/root"
@@ -375,6 +382,8 @@ config.plugins.epanel.ipadr = NoSave(ConfigIP(default=[0, 0, 0, 0]))
 config.plugins.epanel.hostname = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
 config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
 ######################################################################################
+
+
 class ToolsScreen2(Screen):
 	skin = """
 	<screen name="ToolsScreen2" position="center,160" size="750,370" title="Service Tools">
@@ -472,6 +481,8 @@ class ToolsScreen2(Screen):
 			else:
 				self.close(None)
 ######################################################################################
+
+
 class ServiceMan(Screen):
 	skin = """
 	<screen name="ServiceMan" position="center,160" size="750,370" title="Service Manager">
@@ -565,6 +576,8 @@ class ServiceMan(Screen):
 	def cancel(self):
 		self.close()
 ######################################################################################
+
+
 class SwapScreen2(Screen):
 	skin = """
 	<screen name="SwapScreen2" position="center,160" size="750,370" title="Swap on USB/HDD">
@@ -656,6 +669,8 @@ class SwapScreen2(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class SwapScreen(Screen):
 	skin = """
 	<screen name="SwapScreen" position="center,160" size="750,370" title="Swap on USB/HDD">
@@ -693,7 +708,6 @@ class SwapScreen(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-
 
 	def isSwapPossible(self):
 		for line in open("/proc/mounts"):
@@ -795,6 +809,7 @@ SKIN_CSW = """
   	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
 
+
 class create_swap(Screen):
 	def __init__(self, session, swapfile, size):
 		Screen.__init__(self, session)
@@ -826,6 +841,8 @@ class create_swap(Screen):
 	def end_func(self, result, retval, extra_args):
 		self.close()
 ######################################################################################
+
+
 class UsbScreen(Screen):
 	skin = """
 	<screen name="UsbScreen" position="center,160" size="750,370" title="Unmount manager">
@@ -904,7 +921,6 @@ class UsbScreen(Screen):
 				now = time.localtime(time.time())
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 			
-
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
 			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4)
@@ -927,6 +943,8 @@ class UsbScreen(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class ScriptScreen3(Screen):
 	skin = """
 	<screen name="ScriptScreen3" position="center,160" size="750,370" title="Script Executer">
@@ -986,6 +1004,8 @@ class ScriptScreen3(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class NTPScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="NTPScreen" position="center,160" size="750,370" title="NtpTime Updater">
@@ -1122,6 +1142,8 @@ SKIN_UCT = """
 <screen name="update_current_time" position="center,140" size="625,30" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
+
 class update_current_time(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -1144,6 +1166,8 @@ class update_current_time(Screen):
 	def end_func(self, result, retval, extra_args):
 		self.close()
 #######################################################################################
+
+
 class ManualSetTime(ConfigListScreen, Screen):
 	skin = """
 	<screen name="ManualSetTime" position="center,160" size="750,370" title="NtpTime Updater">
@@ -1153,6 +1177,7 @@ class ManualSetTime(ConfigListScreen, Screen):
 		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
 		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -1201,6 +1226,8 @@ class ManualSetTime(ConfigListScreen, Screen):
 			i[1].cancel()
 		self.close()
 ######################################################################################
+
+
 class SystemScreen(Screen):
 	skin = """
 	<screen name="SystemScreen" position="center,160" size="750,370" title="System Tools">
@@ -1298,6 +1325,8 @@ class SystemScreen(Screen):
 				self.close(None)
 
 ######################################################################################
+
+
 class KernelScreen(Screen):
 	skin = """
 	<screen name="KernelScreen" position="center,100" size="750,570" title="Kernel Modules Manager">
@@ -1415,6 +1444,8 @@ class KernelScreen(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class lsmodScreen(Screen):
 	skin = """
 	<screen name="lsmodScreen" position="center,100" size="750,570" title="Kernel Drivers in Memory">
@@ -1472,6 +1503,8 @@ class lsmodScreen(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class CrashLogScreen(Screen):
 	skin = """
 	<screen name="CrashLogScreen" position="center,160" size="750,370" title="View or Remove Crashlog files">
@@ -1573,6 +1606,8 @@ class CrashLogScreen(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class LogScreen(Screen):
 	skin = """
 	<screen name="LogScreen" position="center,80" size="1170,600" title="View Crashlog file">
@@ -1633,6 +1668,8 @@ class LogScreen(Screen):
 		self["text"].setText(list)
 		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"], {"cancel": self.close, "up": self["text"].pageUp, "left": self["text"].pageUp, "down": self["text"].pageDown, "right": self["text"].pageDown, }, -1)
 ######################################################################################
+
+
 class get_source(Screen):
 	skin = """
 	<screen name="get_source" position="center,160" size="850,255" title="Choice epg.dat source">
@@ -1693,6 +1730,8 @@ class get_source(Screen):
 	def cancel(self):
 		self.close()
 ######################################################################################
+
+
 class epgdna(ConfigListScreen, Screen):
 	skin = """
 	<screen name="epgdna" position="center,160" size="850,255" title="">
@@ -1820,6 +1859,7 @@ SKIN_DWN = """
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
 
+
 class get_epg_dat(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -1882,6 +1922,8 @@ class get_epg_dat(Screen):
 			return False
 		return True
 ######################################################################################
+
+
 class onidMan(Screen):
 	skin = """
 	<screen name="onidMan" position="center,160" size="750,255" title="blacklist.onid Manager - %s">
@@ -1949,11 +1991,11 @@ class onidMan(Screen):
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.cMenu()
 		
-		
 	def exit(self):
 		self.close()
 ######################################################################################
 		
+
 class onidManAdd(ConfigListScreen, Screen):
 	skin = """
 	<screen name="onidManAdd" position="center,160" size="750,255" title="add onid - %s" >
@@ -2020,6 +2062,8 @@ class onidManAdd(ConfigListScreen, Screen):
 			return False
 		return True
 ######################################################################################
+
+
 class CrontabMan(Screen):
 	skin = """
 	<screen name="CrontabMan" position="center,160" size="750,370" title="CtronTab Manager - %s">
@@ -2088,6 +2132,8 @@ class CrontabMan(Screen):
 	def exit(self):
 		self.close()
 ######################################################################################
+
+
 class CrontabManAdd(ConfigListScreen, Screen):
 	skin = """
 	<screen name="CrontabManAdd" position="center,160" size="750,370" title="add tabs - %s" >
@@ -2158,6 +2204,8 @@ class CrontabManAdd(ConfigListScreen, Screen):
 			i[1].cancel()
 		self.close()
 ######################################################################################
+
+
 class Info2Screen(Screen):
 	skin = """
 	<screen name="Info2Screen" position="center,100" size="890,560" title="System Info">
@@ -2224,6 +2272,8 @@ class Info2Screen(Screen):
 		except Exception as e:
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 ######################################################################################
+
+
 class ViewSet(Screen):
 	skin = """
 	<screen name="ViewSet" position="center,80" size="1170,600" title="View System Settings (/etc/enigma2/settings)">
@@ -2266,6 +2316,8 @@ class ViewSet(Screen):
 			},
 			-1)
 ######################################################################################
+
+
 class HostsScreen(Screen):
 	skin = """
 	<screen name="HostsScreen" position="center,160" size="750,370" title="/etc/hosts editor">
@@ -2331,6 +2383,7 @@ class HostsScreen(Screen):
 	def exit(self):
 		self.close()
 
+
 class AddRecord(ConfigListScreen, Screen):
 	skin = """
 	<screen name="AddRecord" position="center,160" size="750,370" title="add record" >
@@ -2378,6 +2431,8 @@ class AddRecord(ConfigListScreen, Screen):
 			i[1].cancel()
 		self.close()
 ######################################################################################
+
+
 class System2Screen(Screen):
 	skin = """
 	<screen name="System2Screen" position="center,160" size="750,370" title="System Tools 2">
@@ -2458,6 +2513,8 @@ class System2Screen(Screen):
 			else:
 				self.close(None)
 ######################################################################################
+
+
 class DDNSScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="DDNSScreen" position="center,160" size="750,370" title="Dynamic DNS">
@@ -2550,6 +2607,8 @@ class DDNSScreen(ConfigListScreen, Screen):
 			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout=4)
 
 ######################################################################################
+
+
 class DropScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="DropScreen" position="center,160" size="750,370" title="Cache Flush">
