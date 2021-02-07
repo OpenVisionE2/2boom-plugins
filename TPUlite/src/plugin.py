@@ -55,10 +55,10 @@ config.plugins.tpulite.ip = ConfigText(default='000.000.000.000', visible_width=
 config.plugins.tpulite.bname = ConfigText(default='Triolan', visible_width=250, fixed_size=False)
 config.plugins.tpulite.rpassw = ConfigText(default='', visible_width=150, fixed_size=False)
 config.plugins.tpulite.servicetype = ConfigSelection(default='1', choices=[
-		('1', _("TV")),
-		('2', _("LiveStreamer")),
-		('4097', _("GStreamer")),
-		])
+	('1', _("TV")),
+	('2', _("LiveStreamer")),
+	('4097', _("GStreamer")),
+])
 
 
 def remove_line(filename, what):
@@ -81,18 +81,18 @@ def add_line(filename, what):
 class rpulite(Screen, ConfigListScreen):
 	skin = """
 	<screen name="rpulite" position="265,160" size="750,360" title="2boom's Triolan lite proxy updater">
-  		<widget position="15,10" size="720,125" name="config" scrollbarMode="showOnDemand" />
-  		<ePixmap position="635,260" zPosition="2" size="100,60" pixmap="~/images/TRIOLAN.png" alphatest="blend" />
-  		<eLabel position="30,140" size="690,2" backgroundColor="grey" zPosition="5" />
-  		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="175,355" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="340,355" zPosition="1" size="230,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="570,355" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
-  		<widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<widget name="text" position="15,255" size="610,48" font="Regular;22" halign="left" />
+		<widget position="15,10" size="720,125" name="config" scrollbarMode="showOnDemand" />
+		<ePixmap position="635,260" zPosition="2" size="100,60" pixmap="~/images/TRIOLAN.png" alphatest="blend" />
+		<eLabel position="30,140" size="690,2" backgroundColor="grey" zPosition="5" />
+		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="175,355" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="340,355" zPosition="1" size="230,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="570,355" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
+		<widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<widget name="text" position="15,255" size="610,48" font="Regular;22" halign="left" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -116,7 +116,7 @@ class rpulite(Screen, ConfigListScreen):
 		self["key_yellow"] = StaticText(_("IP & Ch.List Update"))
 		self["key_blue"] = StaticText(_("Update IP"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,
@@ -134,7 +134,7 @@ class rpulite(Screen, ConfigListScreen):
 		if os.path.isfile('/usr/bin/curl'):
 			self.iConsole.ePopen("curl -I -m1 '%s:8888'" % config.plugins.tpulite.ip.value, self.Ondisplay, status)
 		else:
-			self["text"].setText('Current userbouquet proxy: %s  Status: %s' % (config.plugins.tpulite.ip.value, status))
+			self["text"].setText('Current userbouquet proxy: %s	 Status: %s' % (config.plugins.tpulite.ip.value, status))
 
 	def Ondisplay(self, result, retval, extra_args):
 		status = extra_args
@@ -142,7 +142,7 @@ class rpulite(Screen, ConfigListScreen):
 			if 'HTTP/' in result and '200' in result:
 				status = 'OK'
 				break
-		self["text"].setText('Current proxy: %s  Status: %s' % (config.plugins.tpulite.ip.value, status))
+		self["text"].setText('Current proxy: %s	 Status: %s' % (config.plugins.tpulite.ip.value, status))
 
 	def save(self):
 		for i in self["config"].list:

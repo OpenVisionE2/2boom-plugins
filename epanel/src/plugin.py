@@ -91,15 +91,15 @@ config.plugins.epanel.showepgdwnload = ConfigYesNo(default=False)
 config.plugins.epanel.showsinfo = ConfigYesNo(default=False)
 config.plugins.epanel.currentclock = ConfigClock(default=0)
 config.plugins.epanel.multifilemode = ConfigSelection(default="Multi", choices=[
-		("Multi", _("Multi files")),
-		("Single", _("Single file")),
+	("Multi", _("Multi files")),
+	("Single", _("Single file")),
 ])
 config.plugins.epanel.crashpath = ConfigSelection(default='/media/hdd/', choices=[
-		('/media/hdd/', _('/media/hdd')),
-		('/home/root/', _('/home/root')),
-		('/home/root/logs/', _('/home/root/logs')),
-		('/media/hdd/logs/', _('/media/hdd/logs')),
-		('/tmp/', _('/tmp')),
+	('/media/hdd/', _('/media/hdd')),
+	('/home/root/', _('/home/root')),
+	('/home/root/logs/', _('/home/root/logs')),
+	('/media/hdd/logs/', _('/media/hdd/logs')),
+	('/tmp/', _('/tmp')),
 ])
 config.plugins.epanel.userdir = ConfigText(default="/ipk/", visible_width=70, fixed_size=False)
 ######################################################################################
@@ -148,7 +148,7 @@ class easyPanel2(Screen):
 		self.iConsole = iConsole()
 		self.indexpos = None
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "EPGSelectActions", "NumberActions"],
-		{
+											{
 			"ok": self.keyOK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -300,12 +300,12 @@ class epanelinfo(Screen):
 		self.setTitle(_("E-Panel"))
 		self.iConsole = iConsole()
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"cancel": self.cancel,
 			"back": self.cancel,
 			"red": self.cancel,
 			"ok": self.cancel,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self["MemoryLabel"] = StaticText(_("Memory:"))
 		self["SwapLabel"] = StaticText(_("Swap:"))
@@ -496,9 +496,9 @@ class epanelinfo(Screen):
 			for count in range(len(hddlist)):
 				hdd = hddlist[count][1]
 				if int(hdd.free()) > 1024:
-					list += ((_("%s  %s  (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free() / 1024, hdd.free() % 1024)))
+					list += ((_("%s	 %s	 (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free() / 1024, hdd.free() % 1024)))
 				else:
-					list += ((_("%s  %s  (%03d MB free)\n") % (hdd.model(), hdd.capacity(), hdd.free())))
+					list += ((_("%s	 %s	 (%03d MB free)\n") % (hdd.model(), hdd.capacity(), hdd.free())))
 		else:
 			hddinfo = _("none")
 		self["device"].text = list
@@ -590,7 +590,7 @@ class epanelinfo(Screen):
 				swaptotal = line.split()[1]
 			elif "SwapFree:" in line:
 				swapfree = line.split()[1]
-		self["memTotal"].text = _("Total: %s Kb  Free: %s Kb") % (memtotal, memfree)
+		self["memTotal"].text = _("Total: %s Kb	 Free: %s Kb") % (memtotal, memfree)
 		self["swapTotal"].text = _("Total: %s Kb  Free: %s Kb") % (swaptotal, swapfree)
 
 	def FlashMem(self):
@@ -651,7 +651,7 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

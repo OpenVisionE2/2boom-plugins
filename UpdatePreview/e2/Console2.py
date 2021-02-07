@@ -22,7 +22,7 @@ class Console2(Screen):
 
 		self["text"] = ScrollLabel("")
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions"],
-		{
+									{
 			"ok": self.cancel,
 			"back": self.cancel,
 			"up": self["text"].pageUp,

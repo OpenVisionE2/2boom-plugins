@@ -87,7 +87,7 @@ class QCIfH(Screen):
 		self["codec"] = StaticText()
 		self["sids"] = StaticText()
 		self["actions"] = ActionMap(["WizardActions", "MenuActions"],
-		{
+									{
 			"back": self.close,
 			"ok": self.close,
 			"right": self.close,
@@ -142,7 +142,7 @@ class QCIfH(Screen):
 			tsid = info.getInfo(iServiceInformation.sTSID)
 			onid = info.getInfo(iServiceInformation.sONID)
 			prcpid = info.getInfo(iServiceInformation.sPCRPID)
-		return 'Sid: %0.4X  Vpid: %0.4X  Apid: %0.4X  Tsid: %0.4X  Prcpid: %0.4X  Onid: %0.4X' % (sid, vpid, apid, tsid, prcpid, onid)
+		return 'Sid: %0.4X	Vpid: %0.4X	 Apid: %0.4X  Tsid: %0.4X  Prcpid: %0.4X  Onid: %0.4X' % (sid, vpid, apid, tsid, prcpid, onid)
 
 	def resolutionx(self, serviceInfo):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
@@ -182,11 +182,11 @@ class QCIfH(Screen):
 
 SKIN_CONFIG_HD = """
 <screen name="qcifh_setup" position="265,160" size="750,75" title="2boom's QuickChannelInfo setup">
-  	<widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
- 	 <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+	<widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
+	 <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+	<widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
 </screen>"""
 
 
@@ -204,7 +204,7 @@ class qcifh_setup(Screen, ConfigListScreen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

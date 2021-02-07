@@ -99,7 +99,7 @@ class QEIfH(Screen):
 			"56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"}
 		self["ecmfile"].setText(self.ecm_view())
 		self["actions"] = ActionMap(["WizardActions"],
-		{
+									{
 			"back": self.close,
 			"ok": self.close,
 			"right": self.close,
@@ -160,7 +160,7 @@ class QEIfH(Screen):
 
 	def convert_color(self, color_in):
 		hex_color = {'0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',\
-			'a': ':', 'b': ';', 'c': '<', 'd': '=', 'e': '>', 'f': '?', 'A': ':', 'B': ';', 'C': '<', 'D': '=', 'E': '>', 'F': '?'}
+					 'a': ':', 'b': ';', 'c': '<', 'd': '=', 'e': '>', 'f': '?', 'A': ':', 'B': ';', 'C': '<', 'D': '=', 'E': '>', 'F': '?'}
 		color_out = '\c'
 		for i in range(1, len(color_in)):
 			color_out += hex_color.get(color_in[i])
@@ -204,7 +204,7 @@ class QEIfH(Screen):
 			apid = info.getInfo(iServiceInformation.sAudioPID)
 			tsid = info.getInfo(iServiceInformation.sTSID)
 			onid = info.getInfo(iServiceInformation.sONID)
-		return 'SID: %0.4X  VPID: %0.4X  APID: %0.4X  TSID: %0.4X ONID: %0.4X' % (sid, vpid, apid, tsid, onid)
+		return 'SID: %0.4X	VPID: %0.4X	 APID: %0.4X  TSID: %0.4X ONID: %0.4X' % (sid, vpid, apid, tsid, onid)
 
 	def resolutioninfo(self, serviceInfo):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
@@ -259,7 +259,7 @@ class QEIfH(Screen):
 						if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 							line = line.replace(' ', '').replace(':', ': ')
 						if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
-							line = line.strip('\n') + '  '
+							line = line.strip('\n') + '	 '
 						if 'Signature' in line:
 							line = ""
 						if '=' in line:
@@ -363,7 +363,7 @@ class QEIfH(Screen):
 				else:
 					software = _("undefined")
 				software = ' (%s)' % software.strip()
-			return _('%s%s  Kernel: %s (%s)') % (box, software, enigma, driver)
+			return _('%s%s	Kernel: %s (%s)') % (box, software, enigma, driver)
 		except:
 			pass
 		return ''

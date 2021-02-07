@@ -55,9 +55,9 @@ config.plugins.arbouquet = ConfigSubsection()
 config.plugins.arbouquet.menuext = ConfigYesNo(default=True)
 config.plugins.arbouquet.passw = ConfigText(default='', visible_width=150, fixed_size=False)
 config.plugins.arbouquet.bouquettype = ConfigSelection(default='.tv', choices=[
-		('.tv', _("TV")),
-		('.radio', _("Radio")),
-		])
+	('.tv', _("TV")),
+	('.radio', _("Radio")),
+])
 
 
 def remove_line(filename, what):
@@ -73,15 +73,15 @@ def remove_line(filename, what):
 class ARbouquet(Screen):
 	skin = """
 	<screen name="ARbouquet" position="265,140" size="750,445" title="2boom's add/remove bouquet">
-  		<ePixmap position="10,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<ePixmap position="175,440" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<ePixmap position="340,440" zPosition="3" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<widget source="key_green" render="Label" position="175,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<widget source="key_yellow" render="Label" position="340,410" zPosition="3" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    		<widget source="menu" render="Listbox" position="15,5" size="720,400" scrollbarMode="showOnDemand">
-    			<convert type="TemplatedMultiContent">
-     				{"template": [
+		<ePixmap position="10,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<ePixmap position="175,440" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<ePixmap position="340,440" zPosition="3" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<widget source="key_green" render="Label" position="175,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<widget source="key_yellow" render="Label" position="340,410" zPosition="3" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="menu" render="Listbox" position="15,5" size="720,400" scrollbarMode="showOnDemand">
+				<convert type="TemplatedMultiContent">
+					{"template": [
 					MultiContentEntryText(pos = (70, 2), size = (675, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
 					MultiContentEntryText(pos = (80, 29), size = (665, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
 					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
@@ -89,8 +89,8 @@ class ARbouquet(Screen):
 					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
 					"itemHeight": 50
 				}
-   			</convert>
-  		</widget>
+			</convert>
+		</widget>
 	</screen>"""
 
 	def __init__(self, session):
@@ -103,12 +103,12 @@ class ARbouquet(Screen):
 		self.item_name = ''
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.reload_bq,
-				"red": self.reload_bq,
-				"green": self.make_bq,
-				"yellow": self.remove_bq,
-			}, -1)
+									{
+			"cancel": self.reload_bq,
+			"red": self.reload_bq,
+			"green": self.make_bq,
+			"yellow": self.remove_bq,
+		}, -1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Add"))
 		self["key_yellow"] = StaticText(_("Remove"))
@@ -178,9 +178,9 @@ class reloadsl(Screen):
 class AddScreen(Screen):
 	skin = """
 	<screen name="AddScreen" position="center,140" size="750,445" title="Add bouquetfile">
-  		<widget name="list" position="20,5" size="710,400" scrollbarMode="showOnDemand" />
- 		 <ePixmap position="20,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="20,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget name="list" position="20,5" size="710,400" scrollbarMode="showOnDemand" />
+		 <ePixmap position="20,440" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,410" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -227,12 +227,12 @@ class AddScreen(Screen):
 class ARconfig(Screen, ConfigListScreen):
 	skin = """
 	<screen name="ARconfig" position="265,160" size="750,360" title="2boom's add/remove bouquet config">
-  		<widget position="15,10" size="720,100" name="config" scrollbarMode="showOnDemand" />
-  		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
- 	 	<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	</screen>"""
+		<widget position="15,10" size="720,100" name="config" scrollbarMode="showOnDemand" />
+		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+	</screen>"""
 
 	def __init__(self, session):
 		self.session = session
@@ -246,7 +246,7 @@ class ARconfig(Screen, ConfigListScreen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "OkCancelActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

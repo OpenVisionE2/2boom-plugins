@@ -58,22 +58,22 @@ config.plugins.rpulite.ip = ConfigText(default='000.000.000.000', visible_width=
 config.plugins.rpulite.bname = ConfigText(default='Rostelecom', visible_width=250, fixed_size=False)
 config.plugins.rpulite.rpassw = ConfigText(default='', visible_width=150, fixed_size=False)
 config.plugins.rpulite.servicetype = ConfigSelection(default='1', choices=[
-		('1', _("TV")),
-		('2', _("LiveStreamer")),
-		('4097', _("GStreamer")),
-		])
+	('1', _("TV")),
+	('2', _("LiveStreamer")),
+	('4097', _("GStreamer")),
+])
 config.plugins.rpulite.source = ConfigSelection(default='0', choices=[
-		('0', _("source 1")),
-		('1', _("source 2")),
-		])
+	('0', _("source 1")),
+	('1', _("source 2")),
+])
 config.plugins.rpulite.ref = ConfigYesNo(default=True)
 config.plugins.rpulite.startup = ConfigYesNo(default=False)
 config.plugins.rpulite.timeup = ConfigSelection(default='0', choices=[
-		('0', _("off")),
-		('1', _("1 hour")),
-		('2', _("2 hours")),
-		('3', _("3 hours")),
-		])
+	('0', _("off")),
+	('1', _("1 hour")),
+	('2', _("2 hours")),
+	('3', _("3 hours")),
+])
 
 
 def remove_line(filename, what):
@@ -151,7 +151,7 @@ class rpulite(Screen, ConfigListScreen):
 		self["key_yellow"] = StaticText(_("IP & Ch.List Update"))
 		self["key_blue"] = StaticText(_("IP Update"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

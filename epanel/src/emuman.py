@@ -49,23 +49,23 @@ config.plugins.epanel.activeserver = ConfigText(default="NotSelected")
 config.plugins.epanel.activeconf = ConfigText(default="NotSelected")
 config.plugins.epanel.activeemu = ConfigText(default="NotSelected")
 config.plugins.epanel.addbiss = ConfigSelection(default="0", choices=[
-		("0", _("No")),
-		("1", _("Yes")),
-		])
+	("0", _("No")),
+	("1", _("Yes")),
+])
 config.plugins.epanel.path = ConfigSelection(default="/usr/keys/", choices=[
-		("/usr/keys/", "/usr/keys/"),
-		("/etc/keys/", "/etc/keys/"),
-		("/etc/tuxbox/config/", "/etc/tuxbox/config/"),
-		("/etc/tuxbox/config/oscam/", "/etc/tuxbox/config/oscam/"),
-		("/etc/tuxbox/config/ncam/", "/etc/tuxbox/config/ncam/"),
-		])
+	("/usr/keys/", "/usr/keys/"),
+	("/etc/keys/", "/etc/keys/"),
+	("/etc/tuxbox/config/", "/etc/tuxbox/config/"),
+	("/etc/tuxbox/config/oscam/", "/etc/tuxbox/config/oscam/"),
+	("/etc/tuxbox/config/ncam/", "/etc/tuxbox/config/ncam/"),
+])
 config.plugins.epanel.keyname = ConfigSelection(default="SoftCam.Key", choices=[
-		("SoftCam.Key", "SoftCam.Key"),
-		("oscam.keys", "oscam.keys"),
-		("oscam.biss", "oscam.biss"),
-		("ncam.keys", "ncam.keys"),
-		("ncam.biss", "ncam.biss"),
-		])
+	("SoftCam.Key", "SoftCam.Key"),
+	("oscam.keys", "oscam.keys"),
+	("oscam.biss", "oscam.biss"),
+	("ncam.keys", "ncam.keys"),
+	("ncam.biss", "ncam.biss"),
+])
 config.plugins.epanel.softcamserver = ConfigText(default="http://softcam.esy.es/softcam/SoftCam.Key", visible_width=200, fixed_size=False)
 config.plugins.usw = ConfigSubsection()
 config.plugins.usw.activeconf = ConfigText(default="")
@@ -102,7 +102,7 @@ def ecm_view():
 				if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 					line = line.replace(' ', '').replace(':', ': ')
 				if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
-					line = line.strip('\n') + '  '
+					line = line.strip('\n') + '	 '
 				if 'Signature' in line:
 					line = ""
 				if '=' in line:
@@ -128,8 +128,8 @@ def ecm_view():
 class emuSel5(Screen):
 	skin = """
 	<screen name="emuSel5" position="265,125" size="750,490" title="Select SoftCam or CardServer">
-  		<widget source="menu" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
-   			<convert type="TemplatedMultiContent">
+		<widget source="menu" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
 				{"template": [
 					MultiContentEntryText(pos = (70, 2), size = (630, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
 					MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
@@ -139,17 +139,17 @@ class emuSel5(Screen):
 					"itemHeight": 50
 				}
 			</convert>
-  		</widget>
-  		<ePixmap position="20,488" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-  		<ePixmap position="190,488" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-  		<ePixmap position="360,488" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-  		<ePixmap position="530,488" zPosition="1" size="200,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
-  		<widget name="key_red" position="20,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_green" position="190,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_yellow" position="360,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_blue" position="530,458" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="text" position="25,310" size="700,205" font="Regular;22" halign="center" noWrap="1" />
-		<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"  halign="center" noWrap="1" />
+		</widget>
+		<ePixmap position="20,488" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap position="190,488" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+		<ePixmap position="360,488" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+		<ePixmap position="530,488" zPosition="1" size="200,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+		<widget name="key_red" position="20,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="key_green" position="190,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="key_yellow" position="360,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="key_blue" position="530,458" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget name="text" position="25,310" size="700,205" font="Regular;22" halign="center" noWrap="1" />
+		<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"	 halign="center" noWrap="1" />
 		<eLabel position="25,268" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
 		<eLabel position="25,298" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
 	</screen>"""
@@ -166,14 +166,14 @@ class emuSel5(Screen):
 		self.indexpos = None
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.cancel,
-				"ok": self.ok,
-				"green": self.ok,
-				"red": self.emuStopOperation,
-				"yellow": self.emuRestartOperation,
-				"blue": self.switcher,
-			}, -1)
+									{
+			"cancel": self.cancel,
+			"ok": self.ok,
+			"green": self.ok,
+			"red": self.emuStopOperation,
+			"yellow": self.emuRestartOperation,
+			"blue": self.switcher,
+		}, -1)
 		self.list = []
 		self["key_red"] = Label(_("Stop"))
 		self["key_green"] = Label(_("Start"))
@@ -454,7 +454,7 @@ class stop_cam(Screen):
 			self.iConsole.ePopen("ln -s /etc/init.d/%s.none /etc/init.d/%s" % (self.emutype, self.emutype), self.emuChmodStopScript)
 		else:
 			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/%s.None && ln -s /etc/init.d/%s.None /etc/init.d/%s" % \
-				(self.emutype, self.emutype, self.emutype), self.emuChmodStopScript)
+								 (self.emutype, self.emutype, self.emutype), self.emuChmodStopScript)
 
 	def emuChmodStopScript(self, result, retval, extra_args):
 		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" % self.emutype, self.sleep_time)
@@ -495,7 +495,7 @@ class SoftcamPanel2(Screen):
 		self.setTitle(_("SoftCam/CardServer Panel"))
 		#self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
-		{
+											{
 			"ok": self.keyOK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -581,7 +581,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		self["key_green"] = StaticText(_("Save"))
 		self["key_yellow"] = StaticText(_("Download"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,
@@ -603,11 +603,11 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 	def CreateOldKeyFile(self):
 		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
 		self.iConsole.ePopen('mv %s%s %s%s' % \
-			(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.DownloadKeyFile)
+							 (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.DownloadKeyFile)
 
 	def DownloadKeyFile(self, result, retval, extra_args):
 		self.iConsole.ePopen("wget -q %s -O %s%s" % \
-			(config.plugins.epanel.softcamserver.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.CheckNewKeyFile)
+							 (config.plugins.epanel.softcamserver.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.CheckNewKeyFile)
 
 	def CheckNewKeyFile(self, result, retval, extra_args):
 		if retval is 0:
@@ -615,7 +615,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 				self.iConsole.ePopen('rm -f %s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.ChmodKeyFile)
 			else:
 				self.iConsole.ePopen('mv %s%s %s%s' % \
-					(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old', config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.ChmodKeyFile)
+									 (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old', config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.ChmodKeyFile)
 
 	def ChmodKeyFile(self, result, retval, extra_args):
 		self.iConsole.ePopen("chmod 644 %s%s" % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value))
@@ -627,24 +627,24 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 class uniswitcher(Screen):
 	skin = """
 	<screen name="uniswitcher" position="center,140" size="750,460" title="...">
-  		<ePixmap position="20,455" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-  		<ePixmap position="190,455" zPosition="1" size="250,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-  		<widget source="list" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
-  			 <convert type="TemplatedMultiContent">
-   				{"template": [
-    					MultiContentEntryText(pos = (70, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-    					MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-    					MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (51, 40), png = 2), # index 4 is the pixmap
-   					],
-   					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-   					"itemHeight": 50
-  				}
-    			</convert>
-      		</widget>
-   		<widget name="text" position="20,280" size="710,205" font="Regular;22" halign="center" noWrap="1" />
-  		<eLabel position="20,268" size="710,2" backgroundColor="grey" zPosition="3" />
+		<ePixmap position="20,455" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+		<ePixmap position="190,455" zPosition="1" size="250,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+		<widget source="list" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
+			 <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (70, 2), size = (580, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+						MultiContentEntryText(pos = (80, 29), size = (580, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+						MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (51, 40), png = 2), # index 4 is the pixmap
+					],
+					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+					"itemHeight": 50
+				}
+				</convert>
+			</widget>
+		<widget name="text" position="20,280" size="710,205" font="Regular;22" halign="center" noWrap="1" />
+		<eLabel position="20,268" size="710,2" backgroundColor="grey" zPosition="3" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -660,7 +660,7 @@ class uniswitcher(Screen):
 		self.servactpng = LoadPixmap(path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/servact.png"))
 		self["list"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ShortcutActions"],
-		{
+									{
 			"ok": self.run,
 			"red": self.close,
 			"green": self.restartsoft,
@@ -762,11 +762,11 @@ class uniswitcher(Screen):
 class UniConfigScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="UniConfigScreen" position="center,140" size="750,460" title="E-Panel Universal Switcher">
-  		<widget position="15,10" size="720,400" name="config" scrollbarMode="showOnDemand" />
-  		<ePixmap position="10,455" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget position="15,10" size="720,400" name="config" scrollbarMode="showOnDemand" />
+		<ePixmap position="10,455" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -787,7 +787,7 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

@@ -86,12 +86,12 @@ config.plugins.epgdd.checkepgfile = ConfigYesNo(default=False)
 config.plugins.epgdd.nocheck = ConfigYesNo(default=True)
 config.plugins.epgdd.first = ConfigYesNo(default=True)
 config.plugins.epgdd.checkp = ConfigSelection(default='60', choices=[
-		('30', _("30 min")),
-		('60', _("60 min")),
-		('120', _("120 min")),
-		('180', _("180 min")),
-		('240', _("240 min")),
-		])
+	('30', _("30 min")),
+	('60', _("60 min")),
+	('120', _("120 min")),
+	('180', _("180 min")),
+	('240', _("240 min")),
+])
 config.plugins.epgdd.lastupdate = ConfigText(default=_('last epg.dat updated - not yet'))
 
 
@@ -137,7 +137,7 @@ class epgdd(ConfigListScreen, Screen):
 		self.timer.callback.append(self.updatestatus)
 		self.timer.start(3000, True)
 		self['setupActions'] = ActionMap(['SetupActions', 'ColorActions'],
-		{
+										 {
 			'red': self.cancel,
 			'cancel': self.cancel,
 			'green': self.save,
@@ -169,13 +169,13 @@ class epgdd(ConfigListScreen, Screen):
 				config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
 				config.misc.epgcache_filename.save()
 			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % \
-				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
+					(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
 		else:
 			config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value)
 			config.misc.epgcache_filename.save()
 			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcache_filename.value))
 		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s min check period\r\n' % \
-			(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.checkp.value))
+				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.checkp.value))
 		configfile.save()
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
@@ -335,7 +335,7 @@ class get_source(Screen):
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd")
 		self.setTitle(_("Choice epg.dat source"))
 		self["shortcuts"] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
-		{
+									  {
 			"cancel": self.cancel,
 			"back": self.cancel,
 			"red": self.cancel,
@@ -481,5 +481,5 @@ def Plugins(**kwargs):
 			description=_('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2],
 			where=PluginDescriptor.WHERE_EXTENSIONSMENU,
 			fnc=main
-			))
+		))
 	return result

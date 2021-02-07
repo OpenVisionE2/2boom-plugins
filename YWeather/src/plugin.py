@@ -65,19 +65,19 @@ config.plugins.yweather.weather_city = ConfigText(default="924938", visible_widt
 config.plugins.yweather.weather_city_locale = ConfigText(default="Kyiv", visible_width=170, fixed_size=False)
 config.plugins.yweather.enabled = ConfigYesNo(default=True)
 config.plugins.yweather.keyname = ConfigSelection(default="KEY_EXIT", choices=[
-		("KEY_EXIT", "LONG_EXIT"),
-		("KEY_RED", "LONG_RED"),
-		("KEY_GREEN", "LONG_GREEN")
-		])
+	("KEY_EXIT", "LONG_EXIT"),
+	("KEY_RED", "LONG_RED"),
+	("KEY_GREEN", "LONG_GREEN")
+])
 config.plugins.yweather.skin = ConfigYesNo(default=False)
 config.plugins.yweather.timeout = ConfigSelection(default='0', choices=[
-		('0', _("Off")),
-		('5', _("5 sec")),
-		('8', _("8 sec")),
-		('10', _("10 sec")),
-		('12', _("12 sec")),
-		('16', _("16 sec")),
-		])
+	('0', _("Off")),
+	('5', _("5 sec")),
+	('8', _("8 sec")),
+	('10', _("10 sec")),
+	('12', _("12 sec")),
+	('16', _("16 sec")),
+])
 config.plugins.yweather.enabled.value = False
 config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 
@@ -96,17 +96,17 @@ class WeatherInfo(Screen):
 		self.setTitle(_("2boom's Yahoo! Weather"))
 		self.time_update = 20
 		self.text = {'0': (_('Tornado')), '1': (_('Tropical storm')), '2': (_('Hurricane')), '3': (_('Severe thunderstorms')), '4': (_('Thunderstorms')),\
-			'5': (_('Mixed rain and snow')), '6': (_('Mixed rain and sleet')), '7': (_('Mixed snow and sleet')), '8': (_('Freezing drizzle')), '9': (_('Drizzle')),\
-			'10': (_('Freezing rain')), '11': (_('Showers')), '12': (_('Rain')), '13': (_('Snow flurries')), '14': (_('Light snow showers')), '15': (_('Blowing snow')),\
-			'16': (_('Snow')), '17': (_('Hail')), '18': (_('Sleet')), '19': (_('Dust')), '20': (_('Foggy')), '21': (_('Haze')), '22': (_('Smoky')), '23': (_('Blustery')),\
-			'24': (_('Windy')), '25': (_('Cold')), '26': (_('Cloudy')), '27': (_('Mostly cloudy (night)')), '28': (_('Mostly cloudy (day)')), '29': (_('Partly cloudy (night)')),\
-			'30': (_('Partly cloudy (day)')), '31': (_('Clear (night)')), '32': (_('Sunny')), '33': (_('Fair (night)')), '34': (_('Fair (day)')), '35': (_('Mixed rain and hail')),\
-			'36': (_('Hot')), '37': (_('Isolated thunderstorms')), '38': (_('Scattered thunderstorms')), '39': (_('Scattered thunderstorms')), '40': (_('Scattered showers')),\
-			'41': (_('Heavy snow')), '42': (_('Scattered snow showers')), '43': (_('Heavy snow')), '44': (_('Partly cloudy')), '45': (_('Thundershowers')), '46': (_('Snow showers')),\
-			'47': (_('Isolated thundershowers')), '3200': (_('Not available'))}
+					 '5': (_('Mixed rain and snow')), '6': (_('Mixed rain and sleet')), '7': (_('Mixed snow and sleet')), '8': (_('Freezing drizzle')), '9': (_('Drizzle')),\
+					 '10': (_('Freezing rain')), '11': (_('Showers')), '12': (_('Rain')), '13': (_('Snow flurries')), '14': (_('Light snow showers')), '15': (_('Blowing snow')),\
+					 '16': (_('Snow')), '17': (_('Hail')), '18': (_('Sleet')), '19': (_('Dust')), '20': (_('Foggy')), '21': (_('Haze')), '22': (_('Smoky')), '23': (_('Blustery')),\
+					 '24': (_('Windy')), '25': (_('Cold')), '26': (_('Cloudy')), '27': (_('Mostly cloudy (night)')), '28': (_('Mostly cloudy (day)')), '29': (_('Partly cloudy (night)')),\
+					 '30': (_('Partly cloudy (day)')), '31': (_('Clear (night)')), '32': (_('Sunny')), '33': (_('Fair (night)')), '34': (_('Fair (day)')), '35': (_('Mixed rain and hail')),\
+					 '36': (_('Hot')), '37': (_('Isolated thunderstorms')), '38': (_('Scattered thunderstorms')), '39': (_('Scattered thunderstorms')), '40': (_('Scattered showers')),\
+					 '41': (_('Heavy snow')), '42': (_('Scattered snow showers')), '43': (_('Heavy snow')), '44': (_('Partly cloudy')), '45': (_('Thundershowers')), '46': (_('Snow showers')),\
+					 '47': (_('Isolated thundershowers')), '3200': (_('Not available'))}
 		self.weekday = {'Mon': (_('Monday')), 'Tue': (_('Tuesday')), 'Wed': (_('Wednesday')), 'Thu': (_('Thursday')), 'Fri': (_('Friday')), 'Sat': (_('Saturday')), 'Sun': (_('Sunday'))}
 		self.month = {'Jan': (_('Jan.')), 'Feb': (_('Feb.')), 'Mar': (_('Mar.')), 'Apr': (_('Apr.')), 'May': (_('May')), 'June': (_('June')), 'July': (_('July')),\
-			'Aug': (_('Aug.')), 'Sept': (_('Sept.')), 'Oct': (_('Oct.')), 'Nov': (_('Nov.')), 'Dec': (_('Dec.'))}
+					  'Aug': (_('Aug.')), 'Sept': (_('Sept.')), 'Oct': (_('Oct.')), 'Nov': (_('Nov.')), 'Dec': (_('Dec.'))}
 		self.location = {'city': '', 'country': ''}
 		self.geo = {'lat': '', 'long': ''}
 		self.units = {'temperature': '', 'distance': '', 'pressure': '', 'speed': ''}
@@ -438,66 +438,66 @@ class WeatherInfo(Screen):
 ##############################################################################
 SKIN_STYLE1 = """
 <screen name="WeatherInfo" position="365,90" size="550,590" title="2boom's Yahoo Weather" zPosition="1" flags="wfBorder">
-    <widget source="city_locale" render="Label" position="150,2" size="250,30" zPosition="3" font="Regular; 27" halign="center" transparent="1" valign="center" />
-    <eLabel position="20,181" size="512,2" backgroundColor="#00aaaaaa" zPosition="5" />
-    <eLabel position="20,385" size="512,2" backgroundColor="#00aaaaaa" zPosition="5" />
-    <eLabel position="145,35" size="260,2" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget name="picon_now" position="206,40" size="112,112" zPosition="2" alphatest="blend" />
-    <widget source="temp_now_min" render="Label" position="0,102" size="170,20" zPosition="3" font="Regular; 17" halign="right" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="temp_now_max" render="Label" position="0,123" size="170,20" zPosition="3" font="Regular; 17" halign="right" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="temp_now" render="Label" position="0,66" size="170,35" zPosition="2" font="Regular; 35" halign="right" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="feels_like" render="Label" position="0,46" size="170,20" zPosition="2" font="Regular; 17" halign="right" transparent="2" />
-    <widget source="text_now" render="Label" position="146,152" size="250,22" zPosition="3" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="pressure" render="Label" position="379,80" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="humidity" render="Label" position="379,102" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="wind" render="Label" position="379,46" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget name="picon_day1" position="20,231" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="forecast_day1" render="Label" position="4,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="temp_day1" render="Label" position="7,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day1" render="Label" position="7,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <eLabel position="135,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget name="picon_day2" position="160,230" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="forecast_day2" render="Label" position="143,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="temp_day2" render="Label" position="147,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day2" render="Label" position="147,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <eLabel position="275,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget name="picon_day3" position="295,230" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="forecast_day3" render="Label" position="284,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" valign="center" />
-    <widget source="temp_day3" render="Label" position="286,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day3" render="Label" position="286,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <eLabel position="415,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget name="picon_day4" position="435,230" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="forecast_day4" render="Label" position="424,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="temp_day4" render="Label" position="426,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day4" render="Label" position="426,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="forecastdate_day1" render="Label" position="7,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="forecastdate_day2" render="Label" position="147,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="forecastdate_day3" render="Label" position="286,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="forecastdate_day4" render="Label" position="426,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <eLabel position="415,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget source="forecast_day8" render="Label" position="424,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="forecastdate_day8" render="Label" position="426,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget name="picon_day8" position="435,434" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="temp_day8" render="Label" position="426,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day8" render="Label" position="426,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <eLabel position="275,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget source="forecast_day7" render="Label" position="284,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="forecastdate_day7" render="Label" position="286,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget name="picon_day7" position="295,434" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="temp_day7" render="Label" position="286,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day7" render="Label" position="286,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <eLabel position="135,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
-    <widget source="forecast_day6" render="Label" position="144,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="forecastdate_day6" render="Label" position="146,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget name="picon_day6" position="155,434" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="temp_day6" render="Label" position="146,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day6" render="Label" position="146,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="forecast_day5" render="Label" position="4,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
-    <widget source="forecastdate_day5" render="Label" position="6,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget name="picon_day5" position="15,434" size="96,96" zPosition="2" alphatest="blend" />
-    <widget source="temp_day5" render="Label" position="6,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
-    <widget source="text_day5" render="Label" position="6,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
-    <widget source="visibility" render="Label" position="379,123" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="city_locale" render="Label" position="150,2" size="250,30" zPosition="3" font="Regular; 27" halign="center" transparent="1" valign="center" />
+	<eLabel position="20,181" size="512,2" backgroundColor="#00aaaaaa" zPosition="5" />
+	<eLabel position="20,385" size="512,2" backgroundColor="#00aaaaaa" zPosition="5" />
+	<eLabel position="145,35" size="260,2" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget name="picon_now" position="206,40" size="112,112" zPosition="2" alphatest="blend" />
+	<widget source="temp_now_min" render="Label" position="0,102" size="170,20" zPosition="3" font="Regular; 17" halign="right" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="temp_now_max" render="Label" position="0,123" size="170,20" zPosition="3" font="Regular; 17" halign="right" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="temp_now" render="Label" position="0,66" size="170,35" zPosition="2" font="Regular; 35" halign="right" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="feels_like" render="Label" position="0,46" size="170,20" zPosition="2" font="Regular; 17" halign="right" transparent="2" />
+	<widget source="text_now" render="Label" position="146,152" size="250,22" zPosition="3" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="pressure" render="Label" position="379,80" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="humidity" render="Label" position="379,102" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="wind" render="Label" position="379,46" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget name="picon_day1" position="20,231" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="forecast_day1" render="Label" position="4,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="temp_day1" render="Label" position="7,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day1" render="Label" position="7,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<eLabel position="135,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget name="picon_day2" position="160,230" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="forecast_day2" render="Label" position="143,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="temp_day2" render="Label" position="147,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day2" render="Label" position="147,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<eLabel position="275,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget name="picon_day3" position="295,230" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="forecast_day3" render="Label" position="284,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" valign="center" />
+	<widget source="temp_day3" render="Label" position="286,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day3" render="Label" position="286,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<eLabel position="415,198" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget name="picon_day4" position="435,230" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="forecast_day4" render="Label" position="424,187" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="temp_day4" render="Label" position="426,325" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day4" render="Label" position="426,345" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="forecastdate_day1" render="Label" position="7,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="forecastdate_day2" render="Label" position="147,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="forecastdate_day3" render="Label" position="286,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="forecastdate_day4" render="Label" position="426,210" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<eLabel position="415,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget source="forecast_day8" render="Label" position="424,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="forecastdate_day8" render="Label" position="426,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget name="picon_day8" position="435,434" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="temp_day8" render="Label" position="426,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day8" render="Label" position="426,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<eLabel position="275,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget source="forecast_day7" render="Label" position="284,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="forecastdate_day7" render="Label" position="286,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget name="picon_day7" position="295,434" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="temp_day7" render="Label" position="286,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day7" render="Label" position="286,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<eLabel position="135,407" size="2,170" backgroundColor="#00aaaaaa" zPosition="5" />
+	<widget source="forecast_day6" render="Label" position="144,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="forecastdate_day6" render="Label" position="146,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget name="picon_day6" position="155,434" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="temp_day6" render="Label" position="146,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day6" render="Label" position="146,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="forecast_day5" render="Label" position="4,391" size="125,22" zPosition="2" font="Regular; 19" halign="center" transparent="1" />
+	<widget source="forecastdate_day5" render="Label" position="6,414" size="120,19" zPosition="2" font="Regular; 17" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget name="picon_day5" position="15,434" size="96,96" zPosition="2" alphatest="blend" />
+	<widget source="temp_day5" render="Label" position="6,529" size="120,21" zPosition="2" font="Regular; 19" halign="center" transparent="1" foregroundColor="#00f0bf4f" />
+	<widget source="text_day5" render="Label" position="6,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
+	<widget source="visibility" render="Label" position="379,123" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
 </screen>
 """
 
@@ -539,19 +539,19 @@ pWeather = yweather_main()
 class yweather_setup(Screen, ConfigListScreen):
 	skin = """
 	<screen name="yweather_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
-  		<widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
-  		<eLabel position="30,165" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
-  		<ePixmap position="10,498" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="175,498" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<ePixmap position="340,498" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  		<widget name="text" position="50,175" size="650,150" font="Regular;22" halign="left" noWrap="1" />
-  		<widget name="icon1" position="100,336" size="96,96" zPosition="2" alphatest="blend" />
-  		<widget name="icon2" position="245,336" size="96,96" zPosition="2" alphatest="blend" />
-  		<widget name="icon3" position="390,336" size="96,96" zPosition="2" alphatest="blend" />
-  		<widget name="icon4" position="535,336" size="96,96" zPosition="2" alphatest="blend" />
+		<widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
+		<eLabel position="30,165" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
+		<ePixmap position="10,498" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="175,498" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,468" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<ePixmap position="340,498" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_yellow" render="Label" position="340,468" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+		<widget name="text" position="50,175" size="650,150" font="Regular;22" halign="left" noWrap="1" />
+		<widget name="icon1" position="100,336" size="96,96" zPosition="2" alphatest="blend" />
+		<widget name="icon2" position="245,336" size="96,96" zPosition="2" alphatest="blend" />
+		<widget name="icon3" position="390,336" size="96,96" zPosition="2" alphatest="blend" />
+		<widget name="icon4" position="535,336" size="96,96" zPosition="2" alphatest="blend" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -576,7 +576,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		for item in ('1', '2', '3', '4'):
 			self["icon" + item] = Pixmap()
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save,

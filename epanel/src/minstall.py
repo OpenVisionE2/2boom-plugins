@@ -79,7 +79,7 @@ class IPKToolsScreen2(Screen):
 		self.iConsole = iConsole()
 		self.indexpos = None
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
-		{
+											{
 			"ok": self.OK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -189,12 +189,12 @@ class downfeed(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.cancel,
-				"ok": self.setup,
-				"green": self.setup,
-				"red": self.cancel,
-			}, -1)
+									{
+			"cancel": self.cancel,
+			"ok": self.setup,
+			"green": self.setup,
+			"red": self.cancel,
+		}, -1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
 		self.feedlist()
@@ -220,7 +220,7 @@ class downfeed(Screen):
 					return True
 		return False
 
-   	def image_is_openvision(self):
+	def image_is_openvision(self):
 		if os.path.isfile('/etc/model'):
 			return True
 		return False
@@ -299,13 +299,13 @@ class DownloadFeed(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.cancel,
-				"ok": self.download,
-				"green": self.download,
-				"yellow": self.download_wdeps,
-				"red": self.cancel,
-			}, -1)
+									{
+			"cancel": self.cancel,
+			"ok": self.download,
+			"green": self.download,
+			"yellow": self.download_wdeps,
+			"red": self.cancel,
+		}, -1)
 		self["key_red"] = Label(_("Close"))
 		self["key_green"] = Label("")
 		self["key_yellow"] = Label("")
@@ -332,7 +332,7 @@ class DownloadFeed(Screen):
 					return True
 		return False
 
-        def image_is_openvision(self):
+	def image_is_openvision(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openvision develop' in line.lower():
@@ -389,26 +389,26 @@ class DownloadFeed(Screen):
 class InstallAll4(Screen):
 	skin = """
 	<screen name="InstallAll4" position="center,160" size="750,405" title="Press -Info- to update plugin list">
-  		<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
-    			<convert type="TemplatedMultiContent">
-       				{"template": [
-          				MultiContentEntryText(pos = (70, 2), size = (650, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-          				MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-          				MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
-          				],
-       					"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
-       					"itemHeight": 50
-      				}
-    			</convert>
-  		</widget>
-  		<ePixmap position="20,393" zPosition="1" size="165,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-  		<ePixmap position="185,393" zPosition="1" size="165,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-  		<ePixmap position="350,393" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
- 		 <ePixmap position="550,393" zPosition="1" size="190,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
-  		<widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
+				<convert type="TemplatedMultiContent">
+					{"template": [
+						MultiContentEntryText(pos = (70, 2), size = (650, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+						MultiContentEntryText(pos = (80, 29), size = (630, 18), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+						MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (50, 40), png = 2), # index 4 is the pixmap
+						],
+						"fonts": [gFont("Regular", 23),gFont("Regular", 16)],
+						"itemHeight": 50
+					}
+				</convert>
+		</widget>
+		<ePixmap position="20,393" zPosition="1" size="165,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
+		<ePixmap position="185,393" zPosition="1" size="165,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
+		<ePixmap position="350,393" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
+		 <ePixmap position="550,393" zPosition="1" size="190,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+		<widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session, args=None):
@@ -430,14 +430,14 @@ class InstallAll4(Screen):
 		self["menu"] = List(self.list)
 		self.nList()
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.cancel,
-				"ok": self.press_ok,
-				"green": self.all_install,
-				"red": self.cancel,
-				"yellow": self.install_force,
-				"blue": self.restart_enigma,
-			}, -1)
+									{
+			"cancel": self.cancel,
+			"ok": self.press_ok,
+			"green": self.all_install,
+			"red": self.cancel,
+			"yellow": self.install_force,
+			"blue": self.restart_enigma,
+		}, -1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Install"))
 		self["key_yellow"] = StaticText(_("Forced Install"))
@@ -518,12 +518,12 @@ class InstallAll4(Screen):
 				for line in ipklist:
 					if line.endswith('tar.gz') or line.endswith('bh.tgz') or line.endswith('nab.tgz'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,	 %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.tarminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 					elif line.endswith('.ipk'):
 						try:
-							self.list.append((line.strip("\n"), "%s, %s Kb,  %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
+							self.list.append((line.strip("\n"), "%s, %s Kb,	 %s" % (self.workdir[i], (os.path.getsize(self.workdir[i] + line.strip("\n")) / 1024), time.ctime(os.path.getctime(self.workdir[i] + line.strip("\n")))), self.ipkminipng, self.status, self.workdir[i] + line.strip("\n")))
 						except:
 							pass
 		self.list.sort()
@@ -575,13 +575,13 @@ class RemoveIPK(Screen):
 		self["menu"] = List(self.list)
 		self.nList()
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-			{
-				"cancel": self.cancel,
-				"ok": self.remove_ipk,
-				"green": self.remove_ipk,
-				"red": self.cancel,
-				"yellow": self.adv_remove,
-			}, -1)
+									{
+			"cancel": self.cancel,
+			"ok": self.remove_ipk,
+			"green": self.remove_ipk,
+			"red": self.cancel,
+			"yellow": self.adv_remove,
+		}, -1)
 
 	def nList(self):
 		self.list = []

@@ -101,7 +101,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 					if "caid:" in line or "provider:" in line or "provid:" in line or "pid:" in line or "hops:" in line or "system:" in line or "address:" in line or "using:" in line or "ecm time:" in line:
 						line = line.replace(' ', "").replace(":", ": ")
 					if "caid:" in line or "pid:" in line or "reader:" in line or "from:" in line or "hops:" in line or "system:" in line or "Service:" in line or "CAID:" in line or "Provider:" in line:
-						line = line.strip('\n') + "  "
+						line = line.strip('\n') + "	 "
 					if "Signature" in line:
 						line = ""
 					if "=" in line:
@@ -159,7 +159,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 
 	def convert_color(self, color_in):
 		hex_color = {'0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',\
-			'a': ':', 'b': ';', 'c': '<', 'd': '=', 'e': '>', 'f': '?', 'A': ':', 'B': ';', 'C': '<', 'D': '=', 'E': '>', 'F': '?'}
+					 'a': ':', 'b': ';', 'c': '<', 'd': '=', 'e': '>', 'f': '?', 'A': ':', 'B': ';', 'C': '<', 'D': '=', 'E': '>', 'F': '?'}
 		color_out = '\c'
 		for i in range(1, len(color_in)):
 			color_out += hex_color.get(color_in[i])
@@ -305,8 +305,8 @@ class QuickEcmInfo2(Poll, Converter, object):
 			return bar_caids.strip()
 		elif self.type is self.txtcaid:
 			TxtCaids = {"26": "BiSS", "01": "Seca Mediaguard", "06": "Irdeto", "17": "BetaCrypt", "05": "Viaccess", "18": "Nagravision",\
-				"09": "NDS-Videoguard", "0B": "Conax", "0D": "Cryptoworks", "4A": "DRE-Crypt", "27": "ExSet", "0E": "PowerVu", "22": "Codicrypt",\
-				"07": "DigiCipher", "56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"}
+						"09": "NDS-Videoguard", "0B": "Conax", "0D": "Cryptoworks", "4A": "DRE-Crypt", "27": "ExSet", "0E": "PowerVu", "22": "Codicrypt",\
+						"07": "DigiCipher", "56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"}
 			iscrypt = self.getServiceInfoString(info, iServiceInformation.sCAIDs)
 			if not iscrypt:
 				return _('Free-to-air')
@@ -347,10 +347,10 @@ class QuickEcmInfo2(Poll, Converter, object):
 			tsid = info.getInfo(iServiceInformation.sTSID)
 			prcpid = info.getInfo(iServiceInformation.sPCRPID)
 			onid = info.getInfo(iServiceInformation.sONID)
-			bar_pids = '%sSID: %s%0.4X%s  VPID: %s%0.4X%s  APID: %s%0.4X%s  PRCPID: %s%0.4X%s  TSID: %s%0.4X%s  ONID: %s%0.4X%s' %\
+			bar_pids = '%sSID: %s%0.4X%s  VPID: %s%0.4X%s  APID: %s%0.4X%s	PRCPID: %s%0.4X%s  TSID: %s%0.4X%s	ONID: %s%0.4X%s' %\
 				(self.maincolor, self.basecolor, sid, self.maincolor, self.basecolor, vpid, self.maincolor,\
-				self.basecolor, apid, self.maincolor, self.basecolor, prcpid, self.maincolor,\
-				self.basecolor, tsid, self.maincolor, self.basecolor, onid, self.maincolor)
+				 self.basecolor, apid, self.maincolor, self.basecolor, prcpid, self.maincolor,\
+				 self.basecolor, tsid, self.maincolor, self.basecolor, onid, self.maincolor)
 			return bar_pids.replace('-0001', 'N/A')
 		elif self.type is self.bitrate:
 			if config.plugins.QuickEcm.enabled.value:
@@ -362,11 +362,11 @@ class QuickEcmInfo2(Poll, Converter, object):
 			if audio:
 				if audio.getCurrentTrack() > -1:
 					if self.audio is not 0:
-						audiocodec = '  AUDIO %s: %s%s%s Kbit/s' % (str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "").upper(), self.basecolor, self.audio, self.maincolor)
+						audiocodec = '	AUDIO %s: %s%s%s Kbit/s' % (str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "").upper(), self.basecolor, self.audio, self.maincolor)
 					else:
 						audiocodec = ''
 			if self.video is not 0:
-				videocodec = '  VIDEO %s: %s%s%s Kbit/s' % (("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)], self.basecolor, self.video, self.maincolor)
+				videocodec = '	VIDEO %s: %s%s%s Kbit/s' % (("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)], self.basecolor, self.video, self.maincolor)
 			else:
 				videocodec = ''
 			bar_bitrate = self.resolutioninfo(info) + videocodec + audiocodec

@@ -93,15 +93,15 @@ class get_opkg_data(Screen):
 
 SKIN_VIEW = """
 <screen name="updateprv2" position="center,140" size="1100,520" title="Update Preview">
-  	<widget name="text" position="10,10" size="1080,470" font="Console;22" noWrap="1" />
-  	<ePixmap position="10,518" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="red_key" render="Label" position="10,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="175,518" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="green_key" render="Label" position="176,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="340,518" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  	<widget source="yellow_key" render="Label" position="340,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="508,518" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
-  	<widget source="blue_key" render="Label" position="508,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	<widget name="text" position="10,10" size="1080,470" font="Console;22" noWrap="1" />
+	<ePixmap position="10,518" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+	<widget source="red_key" render="Label" position="10,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	<ePixmap position="175,518" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+	<widget source="green_key" render="Label" position="176,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	<ePixmap position="340,518" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
+	<widget source="yellow_key" render="Label" position="340,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	<ePixmap position="508,518" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
+	<widget source="blue_key" render="Label" position="508,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	<ePixmap pixmap="~/images/menu.png" position="1020,488" size="70,30" alphatest="blend" zPosition="3" />
 </screen>"""
 
@@ -122,19 +122,19 @@ class updateprv2(Screen):
 		self["blue_key"] = StaticText(_("Latest Commits"))
 		self["text"] = ScrollLabel("")
 		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions", "ColorActions", "MenuActions"],
-		{
-		"cancel": self.close,
-		"red": self.close,
-		"green": self.update,
-		"yellow": self.sysreboot,
-		"blue": self.showCommits,
-		"menu": self.selectfiles,
-		"up": self["text"].pageUp,
-		"left": self["text"].pageUp,
-		"down": self["text"].pageDown,
-		"right": self["text"].pageDown,
+									{
+			"cancel": self.close,
+			"red": self.close,
+			"green": self.update,
+			"yellow": self.sysreboot,
+			"blue": self.showCommits,
+			"menu": self.selectfiles,
+			"up": self["text"].pageUp,
+			"left": self["text"].pageUp,
+			"down": self["text"].pageDown,
+			"right": self["text"].pageDown,
 		},
-		-1)
+			-1)
 		self.onShow.append(self.preview)
 
 	def preview(self):
@@ -181,7 +181,7 @@ class updateprv2(Screen):
 class commitinfo(Screen):
 	skin = """
   <screen name="commitinfo" position="center,140" size="1100,520" title="Latest Commits">
-    <widget name="AboutLatestCommits" position="10,10" size="1080,470" font="Console;22" noWrap="1"/>
+	<widget name="AboutLatestCommits" position="10,10" size="1080,470" font="Console;22" noWrap="1"/>
   </screen>"""
 
 	def __init__(self, session):
@@ -189,12 +189,12 @@ class commitinfo(Screen):
 		self.setTitle(_("Please wait"))
 		self["AboutLatestCommits"] = ScrollLabel("")
 		self["actions"] = ActionMap(["SetupActions", "DirectionActions"],
-			{
-				"cancel": self.close,
-				"ok": self.close,
-				"up": self["AboutLatestCommits"].pageUp,
-				"down": self["AboutLatestCommits"].pageDown
-			})
+									{
+			"cancel": self.close,
+			"ok": self.close,
+			"up": self["AboutLatestCommits"].pageUp,
+			"down": self["AboutLatestCommits"].pageDown
+		})
 
 		self.Timer = eTimer()
 		self.Timer.callback.append(self.readCommitLogs)
@@ -226,14 +226,14 @@ class commitinfo(Screen):
 class FilesSelection(Screen):
 	skin = """
 	<screen name="FilesSelection" position="265,160" size="750,360" title="Select files">
-    		<widget name="checkList" position="15,10" size="720,300" transparent="1" scrollbarMode="showOnDemand" />
-    		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-    		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
-    		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    		<ePixmap position="355,355" zPosition="1" size="180,2" pixmap="~/images/yellow.png" alphatest="blend" />
-    		<widget source="key_yellow" render="Label" position="355,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
- 	 </screen>"""
+			<widget name="checkList" position="15,10" size="720,300" transparent="1" scrollbarMode="showOnDemand" />
+			<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+			<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+			<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
+			<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+			<ePixmap position="355,355" zPosition="1" size="180,2" pixmap="~/images/yellow.png" alphatest="blend" />
+			<widget source="key_yellow" render="Label" position="355,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+	 </screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -246,7 +246,7 @@ class FilesSelection(Screen):
 		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir, showDirectories=True, matchingPattern="^.*")
 		self["checkList"] = self.filelist
 		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions"],
-		{
+									{
 			"cancel": self.exit,
 			"red": self.exit,
 			"yellow": self.changeSelectionState,

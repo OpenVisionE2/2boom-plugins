@@ -87,16 +87,16 @@ def remove_line(filename, what):
 
 
 def insert_line(filename, what, numberline):
-    if fileExists(filename):
-        count_line = 1
-        file_in = open(filename).readlines()
-        file_out = open(filename, 'w')
-        for line in file_in:
-            if count_line is numberline:
-                file_out.write(what)
-            file_out.write(line)
-            count_line += 1
-        file_out.close()
+	if fileExists(filename):
+		count_line = 1
+		file_in = open(filename).readlines()
+		file_out = open(filename, 'w')
+		for line in file_in:
+			if count_line is numberline:
+				file_out.write(what)
+			file_out.write(line)
+			count_line += 1
+		file_out.close()
 
 
 def add_line(filename, what):
@@ -134,250 +134,250 @@ config.plugins.epanel.nocheck = ConfigYesNo(default=True)
 config.plugins.epanel.first = ConfigYesNo(default=True)
 config.plugins.epanel.epgupdate = ConfigYesNo(default=False)
 config.plugins.epanel.checkp = ConfigSelection(default='60', choices=[
-		('30', _("30 min")),
-		('60', _("60 min")),
-		('120', _("120 min")),
-		('180', _("180 min")),
-		('240', _("240 min")),
-		])
+	('30', _("30 min")),
+	('60', _("60 min")),
+	('120', _("120 min")),
+	('180', _("180 min")),
+	('240', _("240 min")),
+])
 config.plugins.epanel.lastupdate = ConfigText(default=_('last epg.dat updated - not yet'))
 config.plugins.epanel.scriptpath = ConfigSelection(default="/usr/script/", choices=[
-		("/usr/script/", _("/usr/script/")),
-		("/media/hdd/script/", _("/media/hdd/script/")),
-		("/media/usb/script/", _("/media/usb/script/")),
+	("/usr/script/", _("/usr/script/")),
+	("/media/hdd/script/", _("/media/hdd/script/")),
+	("/media/usb/script/", _("/media/usb/script/")),
 ])
 config.plugins.epanel.min = ConfigSelection(default="*", choices=[
-		("*", "*"),
-		("5", "5"),
-		("10", "10"),
-		("15", "15"),
-		("20", "20"),
-		("25", "25"),
-		("30", "30"),
-		("35", "35"),
-		("40", "40"),
-		("45", "45"),
-		("50", "50"),
-		("55", "55"),
-		])
+	("*", "*"),
+	("5", "5"),
+	("10", "10"),
+	("15", "15"),
+	("20", "20"),
+	("25", "25"),
+	("30", "30"),
+	("35", "35"),
+	("40", "40"),
+	("45", "45"),
+	("50", "50"),
+	("55", "55"),
+])
 config.plugins.epanel.hour = ConfigSelection(default="*", choices=[
-		("*", "*"),
-		("0", "0"),
-		("1", "1"),
-		("2", "2"),
-		("3", "3"),
-		("4", "4"),
-		("5", "5"),
-		("6", "6"),
-		("7", "7"),
-		("8", "8"),
-		("9", "9"),
-		("10", "10"),
-		("11", "11"),
-		("12", "12"),
-		("13", "13"),
-		("14", "14"),
-		("15", "15"),
-		("16", "16"),
-		("17", "17"),
-		("18", "18"),
-		("19", "19"),
-		("20", "20"),
-		("21", "21"),
-		("22", "22"),
-		("23", "23"),
-		])
+	("*", "*"),
+	("0", "0"),
+	("1", "1"),
+	("2", "2"),
+	("3", "3"),
+	("4", "4"),
+	("5", "5"),
+	("6", "6"),
+	("7", "7"),
+	("8", "8"),
+	("9", "9"),
+	("10", "10"),
+	("11", "11"),
+	("12", "12"),
+	("13", "13"),
+	("14", "14"),
+	("15", "15"),
+	("16", "16"),
+	("17", "17"),
+	("18", "18"),
+	("19", "19"),
+	("20", "20"),
+	("21", "21"),
+	("22", "22"),
+	("23", "23"),
+])
 config.plugins.epanel.dayofmonth = ConfigSelection(default="*", choices=[
-		("*", "*"),
-		("1", "1"),
-		("2", "2"),
-		("3", "3"),
-		("4", "4"),
-		("5", "5"),
-		("6", "6"),
-		("7", "7"),
-		("8", "8"),
-		("9", "9"),
-		("10", "10"),
-		("11", "11"),
-		("12", "12"),
-		("13", "13"),
-		("14", "14"),
-		("15", "15"),
-		("16", "16"),
-		("17", "17"),
-		("18", "18"),
-		("19", "19"),
-		("20", "20"),
-		("21", "21"),
-		("22", "22"),
-		("23", "23"),
-		("24", "24"),
-		("25", "25"),
-		("26", "26"),
-		("27", "27"),
-		("28", "28"),
-		("29", "29"),
-		("30", "30"),
-		("31", "31"),
-		])
+	("*", "*"),
+	("1", "1"),
+	("2", "2"),
+	("3", "3"),
+	("4", "4"),
+	("5", "5"),
+	("6", "6"),
+	("7", "7"),
+	("8", "8"),
+	("9", "9"),
+	("10", "10"),
+	("11", "11"),
+	("12", "12"),
+	("13", "13"),
+	("14", "14"),
+	("15", "15"),
+	("16", "16"),
+	("17", "17"),
+	("18", "18"),
+	("19", "19"),
+	("20", "20"),
+	("21", "21"),
+	("22", "22"),
+	("23", "23"),
+	("24", "24"),
+	("25", "25"),
+	("26", "26"),
+	("27", "27"),
+	("28", "28"),
+	("29", "29"),
+	("30", "30"),
+	("31", "31"),
+])
 config.plugins.epanel.month = ConfigSelection(default="*", choices=[
-		("*", "*"),
-		("1", _("Jan.")),
-		("2", _("Feb.")),
-		("3", _("Mar.")),
-		("4", _("Apr.")),
-		("5", _("May")),
-		("6", _("Jun.")),
-		("7", _("Jul")),
-		("8", _("Aug.")),
-		("9", _("Sep.")),
-		("10", _("Oct.")),
-		("11", _("Nov.")),
-		("12", _("Dec.")),
-		])
+	("*", "*"),
+	("1", _("Jan.")),
+	("2", _("Feb.")),
+	("3", _("Mar.")),
+	("4", _("Apr.")),
+	("5", _("May")),
+	("6", _("Jun.")),
+	("7", _("Jul")),
+	("8", _("Aug.")),
+	("9", _("Sep.")),
+	("10", _("Oct.")),
+	("11", _("Nov.")),
+	("12", _("Dec.")),
+])
 config.plugins.epanel.dayofweek = ConfigSelection(default="*", choices=[
-		("*", "*"),
-		("0", _("Su")),
-		("1", _("Mo")),
-		("2", _("Tu")),
-		("3", _("We")),
-		("4", _("Th")),
-		("5", _("Fr")),
-		("6", _("Sa")),
-		])
+	("*", "*"),
+	("0", _("Su")),
+	("1", _("Mo")),
+	("2", _("Tu")),
+	("3", _("We")),
+	("4", _("Th")),
+	("5", _("Fr")),
+	("6", _("Sa")),
+])
 config.plugins.epanel.command = ConfigText(default="/usr/bin/", visible_width=70, fixed_size=False)
 config.plugins.epanel.every = ConfigSelection(default="0", choices=[
-		("0", _("No")),
-		("1", _("Min")),
-		("2", _("Hour")),
-		("3", _("Day of month")),
-		("4", _("Month")),
-		("5", _("Day of week")),
-		])
+	("0", _("No")),
+	("1", _("Min")),
+	("2", _("Hour")),
+	("3", _("Day of month")),
+	("4", _("Month")),
+	("5", _("Day of week")),
+])
 config.plugins.epanel.manual = ConfigSelection(default='0', choices=[
-		('0', _("Auto")),
-		('1', _("Manual")),
-		])
+	('0', _("Auto")),
+	('1', _("Manual")),
+])
 config.plugins.epanel.manualserver = ConfigText(default="ntp.ubuntu.com", visible_width=70, fixed_size=False)
 config.plugins.epanel.server = ConfigSelection(default="ua.pool.ntp.org", choices=[
-		("ao.pool.ntp.org", _("Angola")),
-		("az.pool.ntp.org", _("Azerbaidjan")),
-		("mg.pool.ntp.org", _("Madagascar")),
-		("za.pool.ntp.org", _("South Africa")),
-		("tz.pool.ntp.org", _("Tanzania")),
-		("bd.pool.ntp.org", _("Bangladesh")),
-		("cn.pool.ntp.org", _("China")),
-		("hk.pool.ntp.org", _("Hong Kong")),
-		("in.pool.ntp.org", _("India")),
-		("id.pool.ntp.org", _("Indonesia")),
-		("ir.pool.ntp.org", _("Iran")),
-		("jp.pool.ntp.org", _("Japan")),
-		("kz.pool.ntp.org", _("Kazakhstan")),
-		("kr.pool.ntp.org", _("Korea")),
-		("my.pool.ntp.org", _("Malaysia")),
-		("pk.pool.ntp.org", _("Pakistan")),
-		("ph.pool.ntp.org", _("Philippines")),
-		("sg.pool.ntp.org", _("Singapore")),
-		("tw.pool.ntp.org", _("Taiwan")),
-		("th.pool.ntp.org", _("Thailand")),
-		("tr.pool.ntp.org", _("Turkey")),
-		("ae.pool.ntp.org", _("United Arab Emirates")),
-		("uz.pool.ntp.org", _("Uzbekistan")),
-		("vn.pool.ntp.org", _("Vietnam")),
-		("at.pool.ntp.org", _("Austria")),
-		("by.pool.ntp.org", _("Belarus")),
-		("be.pool.ntp.org", _("Belgium")),
-		("bg.pool.ntp.org", _("Bulgaria")),
-		("cz.pool.ntp.org", _("Czech Republic")),
-		("dk.pool.ntp.org", _("Denmark")),
-		("ee.pool.ntp.org", _("Estonia")),
-		("fi.pool.ntp.org", _("Finland")),
-		("fr.pool.ntp.org", _("France")),
-		("de.pool.ntp.org", _("Germany")),
-		("gr.pool.ntp.org", _("Greece")),
-		("hu.pool.ntp.org", _("Hungary")),
-		("ie.pool.ntp.org", _("Ireland")),
-		("it.pool.ntp.org", _("Italy")),
-		("lv.pool.ntp.org", _("Latvia")),
-		("lt.pool.ntp.org", _("Lithuania")),
-		("lu.pool.ntp.org", _("Luxembourg")),
-		("mk.pool.ntp.org", _("Macedonia")),
-		("md.pool.ntp.org", _("Moldova")),
-		("nl.pool.ntp.org", _("Netherlands")),
-		("no.pool.ntp.org", _("Norway")),
-		("pl.pool.ntp.org", _("Poland")),
-		("pt.pool.ntp.org", _("Portugal")),
-		("ro.pool.ntp.org", _("Romania")),
-		("ru.pool.ntp.org", _("Russian Federation")),
-		("sk.pool.ntp.org", _("Slovakia")),
-		("si.pool.ntp.org", _("Slovenia")),
-		("es.pool.ntp.org", _("Spain")),
-		("se.pool.ntp.org", _("Sweden")),
-		("ch.pool.ntp.org", _("Switzerland")),
-		("ua.pool.ntp.org", _("Ukraine")),
-		("uk.pool.ntp.org", _("United Kingdom")),
-		("bs.pool.ntp.org", _("Bahamas")),
-		("ca.pool.ntp.org", _("Canada")),
-		("gt.pool.ntp.org", _("Guatemala")),
-		("mx.pool.ntp.org", _("Mexico")),
-		("pa.pool.ntp.org", _("Panama")),
-		("us.pool.ntp.org", _("United States")),
-		("au.pool.ntp.org", _("Australia")),
-		("nz.pool.ntp.org", _("New Zealand")),
-		("ar.pool.ntp.org", _("Argentina")),
-		("br.pool.ntp.org", _("Brazil")),
-		("cl.pool.ntp.org", _("Chile")),
-		])
+	("ao.pool.ntp.org", _("Angola")),
+	("az.pool.ntp.org", _("Azerbaidjan")),
+	("mg.pool.ntp.org", _("Madagascar")),
+	("za.pool.ntp.org", _("South Africa")),
+	("tz.pool.ntp.org", _("Tanzania")),
+	("bd.pool.ntp.org", _("Bangladesh")),
+	("cn.pool.ntp.org", _("China")),
+	("hk.pool.ntp.org", _("Hong Kong")),
+	("in.pool.ntp.org", _("India")),
+	("id.pool.ntp.org", _("Indonesia")),
+	("ir.pool.ntp.org", _("Iran")),
+	("jp.pool.ntp.org", _("Japan")),
+	("kz.pool.ntp.org", _("Kazakhstan")),
+	("kr.pool.ntp.org", _("Korea")),
+	("my.pool.ntp.org", _("Malaysia")),
+	("pk.pool.ntp.org", _("Pakistan")),
+	("ph.pool.ntp.org", _("Philippines")),
+	("sg.pool.ntp.org", _("Singapore")),
+	("tw.pool.ntp.org", _("Taiwan")),
+	("th.pool.ntp.org", _("Thailand")),
+	("tr.pool.ntp.org", _("Turkey")),
+	("ae.pool.ntp.org", _("United Arab Emirates")),
+	("uz.pool.ntp.org", _("Uzbekistan")),
+	("vn.pool.ntp.org", _("Vietnam")),
+	("at.pool.ntp.org", _("Austria")),
+	("by.pool.ntp.org", _("Belarus")),
+	("be.pool.ntp.org", _("Belgium")),
+	("bg.pool.ntp.org", _("Bulgaria")),
+	("cz.pool.ntp.org", _("Czech Republic")),
+	("dk.pool.ntp.org", _("Denmark")),
+	("ee.pool.ntp.org", _("Estonia")),
+	("fi.pool.ntp.org", _("Finland")),
+	("fr.pool.ntp.org", _("France")),
+	("de.pool.ntp.org", _("Germany")),
+	("gr.pool.ntp.org", _("Greece")),
+	("hu.pool.ntp.org", _("Hungary")),
+	("ie.pool.ntp.org", _("Ireland")),
+	("it.pool.ntp.org", _("Italy")),
+	("lv.pool.ntp.org", _("Latvia")),
+	("lt.pool.ntp.org", _("Lithuania")),
+	("lu.pool.ntp.org", _("Luxembourg")),
+	("mk.pool.ntp.org", _("Macedonia")),
+	("md.pool.ntp.org", _("Moldova")),
+	("nl.pool.ntp.org", _("Netherlands")),
+	("no.pool.ntp.org", _("Norway")),
+	("pl.pool.ntp.org", _("Poland")),
+	("pt.pool.ntp.org", _("Portugal")),
+	("ro.pool.ntp.org", _("Romania")),
+	("ru.pool.ntp.org", _("Russian Federation")),
+	("sk.pool.ntp.org", _("Slovakia")),
+	("si.pool.ntp.org", _("Slovenia")),
+	("es.pool.ntp.org", _("Spain")),
+	("se.pool.ntp.org", _("Sweden")),
+	("ch.pool.ntp.org", _("Switzerland")),
+	("ua.pool.ntp.org", _("Ukraine")),
+	("uk.pool.ntp.org", _("United Kingdom")),
+	("bs.pool.ntp.org", _("Bahamas")),
+	("ca.pool.ntp.org", _("Canada")),
+	("gt.pool.ntp.org", _("Guatemala")),
+	("mx.pool.ntp.org", _("Mexico")),
+	("pa.pool.ntp.org", _("Panama")),
+	("us.pool.ntp.org", _("United States")),
+	("au.pool.ntp.org", _("Australia")),
+	("nz.pool.ntp.org", _("New Zealand")),
+	("ar.pool.ntp.org", _("Argentina")),
+	("br.pool.ntp.org", _("Brazil")),
+	("cl.pool.ntp.org", _("Chile")),
+])
 config.plugins.epanel.onoff = ConfigSelection(default='0', choices=[
-		('0', _("No")),
-		('2', _("Cron")),
-		])
+	('0', _("No")),
+	('2', _("Cron")),
+])
 config.plugins.epanel.time = ConfigSelection(default="30", choices=[
-		("30", _("30 min")),
-		("1", _("60 min")),
-		("2", _("120 min")),
-		("3", _("180 min")),
-		("4", _("240 min")),
-		])
+	("30", _("30 min")),
+	("1", _("60 min")),
+	("2", _("120 min")),
+	("3", _("180 min")),
+	("4", _("240 min")),
+])
 config.plugins.epanel.TransponderTime = ConfigSelection(default='0', choices=[
-		('0', _("Off")),
-		('1', _("On")),
-		])
+	('0', _("Off")),
+	('1', _("On")),
+])
 config.plugins.epanel.cold = ConfigSelection(default='0', choices=[
-		('0', _("No")),
-		('1', _("Yes")),
-		])
+	('0', _("No")),
+	('1', _("Yes")),
+])
 config.plugins.epanel.droptime = ConfigSelection(default='0', choices=[
-		('0', _("Off")),
-		('15', _("15 min")),
-		('30', _("30 min")),
-		('45', _("45 min")),
-		('1', _("60 min")),
-		('2', _("120 min")),
-		('3', _("180 min")),
-		])
+	('0', _("Off")),
+	('15', _("15 min")),
+	('30', _("30 min")),
+	('45', _("45 min")),
+	('1', _("60 min")),
+	('2', _("120 min")),
+	('3', _("180 min")),
+])
 config.plugins.epanel.dropmode = ConfigSelection(default='1', choices=[
-		('1', _("free pagecache")),
-		('2', _("free dentries and inodes")),
-		('3', _("free pagecache, dentries and inodes")),
-		])
+	('1', _("free pagecache")),
+	('2', _("free dentries and inodes")),
+	('3', _("free pagecache, dentries and inodes")),
+])
 config.plugins.epanel.dnsserver = ConfigSelection(default='1', choices=[
-		('1', _("no-ip.com")),
-		('2', _("changeip.com")),
-		])
+	('1', _("no-ip.com")),
+	('2', _("changeip.com")),
+])
 config.plugins.epanel.dnsuser = ConfigText(default="xxxxx", visible_width=70, fixed_size=False)
 config.plugins.epanel.dnspass = ConfigText(default="*****", visible_width=70, fixed_size=False)
 config.plugins.epanel.dnshost = ConfigText(default="xxx.xxx.xxx", visible_width=70, fixed_size=False)
 config.plugins.epanel.dnstime = ConfigSelection(default='0', choices=[
-		('0', _("Off")),
-		('15', _("15 min")),
-		('30', _("30 min")),
-		('45', _("45 min")),
-		('1', _("60 min")),
-		('2', _("120 min")),
-		('3', _("180 min")),
-		])
+	('0', _("Off")),
+	('15', _("15 min")),
+	('30', _("30 min")),
+	('45', _("45 min")),
+	('1', _("60 min")),
+	('2', _("120 min")),
+	('3', _("180 min")),
+])
 config.plugins.epanel.ipadr = NoSave(ConfigIP(default=[0, 0, 0, 0]))
 config.plugins.epanel.hostname = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
 config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width=150, fixed_size=False))
@@ -411,7 +411,7 @@ class ToolsScreen2(Screen):
 		self.setTitle(_("Service Tools"))
 		self.indexpos = None
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
-		{
+											{
 			"ok": self.keyOK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -512,7 +512,7 @@ class ServiceMan(Screen):
 		self.setTitle(_("Service Manager"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "DirectionActions"],
 
-		{
+									  {
 			"cancel": self.cancel,
 			"back": self.cancel,
 			"red": self.stopservice,
@@ -604,7 +604,7 @@ class SwapScreen2(Screen):
 		self.setTitle(_("Swap on USB/HDD"))
 		self.iConsole = iConsole()
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"ok": self.Menu,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -698,7 +698,7 @@ class SwapScreen(Screen):
 		self.setTitle(_("Swap on USB/HDD"))
 		self.iConsole = iConsole()
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"ok": self.CfgMenuDo,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -806,7 +806,7 @@ class SwapScreen(Screen):
 ######################################################################################
 SKIN_CSW = """
 <screen name="create_swap" position="center,140" size="625,30" title="Please wait">
-  	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
 
 
@@ -873,14 +873,14 @@ class UsbScreen(Screen):
 		self.setTitle(_("Unmount manager"))
 		self.iConsole = iConsole()
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
 			"red": self.exit,
 			"green": self.Ok,
 			"yellow": self.CfgMenu,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("UnMount"))
 		self["key_yellow"] = StaticText(_("reFresh"))
@@ -930,7 +930,7 @@ class UsbScreen(Screen):
 		if fileExists("/proc/mounts"):
 			for line in open("/proc/mounts"):
 				if mountpoint in line:
-					return "%s  %s" % (line.split()[2], line.split()[3].split(',')[0])
+					return "%s	%s" % (line.split()[2], line.split()[3].split(',')[0])
 		return ''
 
 	def devpoint(self, mountpoint):
@@ -948,13 +948,13 @@ class UsbScreen(Screen):
 class ScriptScreen3(Screen):
 	skin = """
 	<screen name="ScriptScreen3" position="center,160" size="750,370" title="Script Executer">
-  		<widget name="list" position="20,10" size="710,305" scrollbarMode="showOnDemand" />
-  		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget name="list" position="20,10" size="710,305" scrollbarMode="showOnDemand" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -1032,7 +1032,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		self["key_yellow"] = StaticText(_("Update Now"))
 		self["key_blue"] = StaticText(_("Manual"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save_values,
@@ -1191,7 +1191,7 @@ class ManualSetTime(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save_timevalues,
@@ -1254,7 +1254,7 @@ class SystemScreen(Screen):
 		self.indexpos = None
 		self.setTitle(_("System Tools"))
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
-		{
+											{
 			"ok": self.keyOK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -1362,7 +1362,7 @@ class KernelScreen(Screen):
 		self.module_list()
 		self.setTitle(_("Kernel Modules Manager"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -1472,11 +1472,11 @@ class lsmodScreen(Screen):
 		self.iConsole = iConsole()
 		self.setTitle(_("Kernel Drivers in Memory"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"cancel": self.exit,
 			"back": self.exit,
 			"red": self.exit,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self.list = []
 		self["menu"] = List(self.list)
@@ -1496,7 +1496,7 @@ class lsmodScreen(Screen):
 				else:
 					aliasname = ' '
 				if 'Module' not in line:
-					self.list.append((line.split()[0], (_("size: %s  %s") % (line.split()[1], aliasname)), minipng))
+					self.list.append((line.split()[0], (_("size: %s	 %s") % (line.split()[1], aliasname)), minipng))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
 
@@ -1538,7 +1538,7 @@ class CrashLogScreen(Screen):
 		self.path = config.plugins.epanel.crashpath.value
 		self.setTitle(_("View or Remove Crashlog files"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -1546,7 +1546,7 @@ class CrashLogScreen(Screen):
 			"green": self.Ok,
 			"yellow": self.YellowKey,
 			"blue": self.BlueKey,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("View"))
 		self["key_yellow"] = StaticText(_("Remove"))
@@ -1628,13 +1628,13 @@ class LogScreen(Screen):
 		self.crashfile = what
 		self.setTitle(_("View Crashlog file"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"cancel": self.exit,
 			"back": self.exit,
 			"red": self.exit,
 			"green": self.GreenKey,
 			"yellow": self.YellowKey,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Restart GUI"))
 		self["key_yellow"] = StaticText(_("Save"))
@@ -1696,7 +1696,7 @@ class get_source(Screen):
 		self.iConsole = iConsole()
 		self.setTitle(_("Choice epg.dat source"))
 		self["shortcuts"] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
-		{
+									  {
 			"cancel": self.cancel,
 			"back": self.cancel,
 			"red": self.cancel,
@@ -1735,16 +1735,16 @@ class get_source(Screen):
 class epgdna(ConfigListScreen, Screen):
 	skin = """
 	<screen name="epgdna" position="center,160" size="850,255" title="">
-  		<widget position="15,10" size="820,175" name="config" scrollbarMode="showOnDemand" />
- 		 <ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="340,250" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="340,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-   		<ePixmap position="505,250" zPosition="1" size="200,2" pixmap="~/images/blue.png" alphatest="blend" />
-  		<widget source="key_blue" render="Label" position="505,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<widget source="lastupdate" render="Label" position="20,193" zPosition="2" size="810,24" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
+		<widget position="15,10" size="820,175" name="config" scrollbarMode="showOnDemand" />
+		 <ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,250" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_yellow" render="Label" position="340,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="505,250" zPosition="1" size="200,2" pixmap="~/images/blue.png" alphatest="blend" />
+		<widget source="key_blue" render="Label" position="505,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="lastupdate" render="Label" position="20,193" zPosition="2" size="810,24" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
 		<eLabel position="30,187" size="790,2" backgroundColor="grey" />
 		<ePixmap position="763,220" size="70,30" pixmap="~/images/menu.png" zPosition="2" alphatest="blend" />
 	</screen>"""
@@ -1774,7 +1774,7 @@ class epgdna(ConfigListScreen, Screen):
 		self.timer.callback.append(self.updatestatus)
 		self.timer.start(3000, True)
 		self['setupActions'] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
-		{
+										 {
 			'red': self.cancel,
 			'cancel': self.cancel,
 			'green': self.save,
@@ -1808,13 +1808,13 @@ class epgdna(ConfigListScreen, Screen):
 				config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
 				config.misc.epgcache_filename.save()
 			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % \
-				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
+					(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
 		else:
 			config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
 			config.misc.epgcache_filename.save()
 			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcache_filename.value))
 		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s min check period\r\n' % \
-			(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.checkp.value))
+				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.checkp.value))
 		configfile.save()
 		if not config.plugins.epanel.epgupdate.value:
 			logging('%02d:%02d:%d %02d:%02d:%02d - set autoupdate epg.dat - off\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
@@ -1953,7 +1953,7 @@ class onidMan(Screen):
 		self.setTitle(_("blacklist.onid Manager - %s") % self.path)
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 
-		{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -2020,7 +2020,7 @@ class onidManAdd(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Add"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.ok,
@@ -2093,7 +2093,7 @@ class CrontabMan(Screen):
 		self.setTitle(_("CtronTab Manager - %s") % self.path)
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 
-		{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -2163,7 +2163,7 @@ class CrontabManAdd(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Add"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.ok,
@@ -2193,9 +2193,9 @@ class CrontabManAdd(ConfigListScreen, Screen):
 			print("error")
 		else:
 			with open(self.path, 'a') as cron_root:
-				cron_root.write('%s%s %s%s %s%s %s%s %s%s    %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,\
-					everydayofmonth, config.plugins.epanel.dayofmonth.value, everymonth, config.plugins.epanel.month.value,\
-					everydayofweek, config.plugins.epanel.dayofweek.value, config.plugins.epanel.command.value))
+				cron_root.write('%s%s %s%s %s%s %s%s %s%s	 %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,\
+																	everydayofmonth, config.plugins.epanel.dayofmonth.value, everymonth, config.plugins.epanel.month.value,\
+																	everydayofweek, config.plugins.epanel.dayofweek.value, config.plugins.epanel.command.value))
 				cron_root.close()
 			with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 				cron_update.write('root')
@@ -2222,7 +2222,7 @@ class Info2Screen(Screen):
 		self.setTitle(_("System Info"))
 		self["text"] = ScrollLabel("")
 		self["actions"] = ActionMap(["ShortcutActions", "WizardActions", "DirectionActions", "OkCancelActions"],
-		{
+									{
 			"cancel": self.exit,
 			"back": self.exit,
 			"red": self.exit,
@@ -2230,7 +2230,7 @@ class Info2Screen(Screen):
 			"left": self["text"].pageUp,
 			"down": self["text"].pageDown,
 			"right": self["text"].pageDown,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self.infoall()
 
@@ -2256,7 +2256,7 @@ class Info2Screen(Screen):
 					list += 'SwapTotal: %s Kb' % line.split()[-2]
 					int_Swaptotal = int(line.split()[-2])
 				elif 'SwapFree:' in line:
-					list += '  SwapFree: %s Kb  Used: %s Kb\n\n' % (line.split()[-2], int_Swaptotal - int(line.split()[-2]))
+					list += '  SwapFree: %s Kb	Used: %s Kb\n\n' % (line.split()[-2], int_Swaptotal - int(line.split()[-2]))
 		if retval is 0:
 			for line in result.splitlines(True):
 				list += line
@@ -2288,11 +2288,11 @@ class ViewSet(Screen):
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.setTitle(_("View System Settings (/etc/enigma2/settings)"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-		{
+									  {
 			"cancel": self.exit,
 			"back": self.exit,
 			"red": self.exit,
-			})
+		})
 		self["key_red"] = StaticText(_("Close"))
 		self["text"] = ScrollLabel("")
 		self.viewsettings()
@@ -2307,13 +2307,13 @@ class ViewSet(Screen):
 				list += line
 		self["text"].setText(list)
 		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"],
-			{
+									{
 			"cancel": self.close,
 			"up": self["text"].pageUp,
 			"left": self["text"].pageUp,
 			"down": self["text"].pageDown,
 			"right": self["text"].pageDown,
-			},
+		},
 			-1)
 ######################################################################################
 
@@ -2346,7 +2346,7 @@ class HostsScreen(Screen):
 		self.path = '/etc/hosts'
 		self.setTitle(_("/etc/hosts editor"))
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
-			{
+									  {
 			"ok": self.Ok,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -2354,7 +2354,7 @@ class HostsScreen(Screen):
 			"green": self.GreenKey,
 			"yellow": self.YellowKey,
 		},
-		-1)
+			-1)
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Add record"))
 		self["key_yellow"] = StaticText(_("Remove record"))
@@ -2409,7 +2409,7 @@ class AddRecord(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText(_("Add"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.ok,
@@ -2459,7 +2459,7 @@ class System2Screen(Screen):
 		self.indexpos = None
 		self.setTitle(_("System Tools 2"))
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
-		{
+											{
 			"ok": self.keyOK,
 			"cancel": self.exit,
 			"back": self.exit,
@@ -2538,7 +2538,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		self["key_green"] = StaticText(_("Save"))
 		self["key_yellow"] = StaticText(_("Update Now"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save_values,
@@ -2639,7 +2639,7 @@ class DropScreen(ConfigListScreen, Screen):
 		self["bufCache"] = StaticText()
 		self["MemoryLabel"] = StaticText(_("Memory:"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions"],
-		{
+										 {
 			"red": self.cancel,
 			"cancel": self.cancel,
 			"green": self.save_values,
@@ -2675,7 +2675,7 @@ class DropScreen(ConfigListScreen, Screen):
 					cached = line.split()[1]
 			if '' is not memtotal and '' is not memfree:
 				persent = int(memfree) / (int(memtotal) / 100)
-			self["memTotal"].text = _("Total: %s Kb  Free: %s Kb (%s %%)") % (memtotal, memfree, persent)
+			self["memTotal"].text = _("Total: %s Kb	 Free: %s Kb (%s %%)") % (memtotal, memfree, persent)
 			self["bufCache"].text = _("Buffers: %s Kb  Cached: %s Kb") % (buffers, cached)
 
 	def save_values(self):
