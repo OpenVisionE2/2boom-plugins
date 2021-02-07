@@ -250,7 +250,7 @@ class emuSel5(Screen):
 		self.iConsole.ePopen("ps", self.stdout_find)
 
 	def stdout_find(self, result, retval, extra_args):
-		#if retval is 0:
+		# if retval is 0:
 		status = ''
 		name_emu = self.cut_name(self.emuversion('softcam'))
 		name_card = self.cut_name(self.emuversion('cardserver'))
@@ -493,7 +493,7 @@ class SoftcamPanel2(Screen):
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epanel")
 		self.indexpos = None
 		self.setTitle(_("SoftCam/CardServer Panel"))
-		#self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
+		# self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
 		self["shortcuts"] = NumberActionMap(["ShortcutActions", "WizardActions", "NumberActions"],
 											{
 			"ok": self.keyOK,

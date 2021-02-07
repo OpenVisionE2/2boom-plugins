@@ -140,7 +140,7 @@ class rpulite(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Input password (if needed)"), config.plugins.rpulite.rpassw))
 		self.list.append(getConfigListEntry(_("Reference in default bouquet"), config.plugins.rpulite.ref))
 		self.list.append(getConfigListEntry(_("Set time to update ip (cron needed)"), config.plugins.rpulite.timeup))
-		if os.path.isdir('/etc/rcS.d') or os.path.isdir('/etc/rc.d/rcS.d'): #/etc/rc.d/rcS.d/
+		if os.path.isdir('/etc/rcS.d') or os.path.isdir('/etc/rc.d/rcS.d'):  # /etc/rc.d/rcS.d/
 			self.list.append(getConfigListEntry(_("Update ip on startup"), config.plugins.rpulite.startup))
 		self.list.append(getConfigListEntry(_("Proxy updater in ExtensionMenu"), config.plugins.rpulite.menuext))
 		ConfigListScreen.__init__(self, self.list)
@@ -189,7 +189,7 @@ class rpulite(Screen, ConfigListScreen):
 			if not os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
 				self.create_script()
 
-		if config.plugins.rpulite.startup.value: #/etc/rc.d/rcS.d/
+		if config.plugins.rpulite.startup.value:  # /etc/rc.d/rcS.d/
 			if not os.path.isfile('/etc/rcS.d/get_ip_rtc'):
 				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rcS.d'):
 					os.link(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), '/etc/rcS.d/get_ip_rtc')

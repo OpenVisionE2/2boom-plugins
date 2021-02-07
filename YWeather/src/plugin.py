@@ -127,7 +127,7 @@ class WeatherInfo(Screen):
 		self["humidity"] = StaticText()
 		self["city_locale"] = StaticText()
 		self["picon_now"] = Pixmap()
-		#new
+		# new
 		self["pressure_hpa"] = StaticText()
 		self["wind_kmh"] = StaticText()
 		self["sunrise"] = StaticText()

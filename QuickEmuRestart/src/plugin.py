@@ -110,16 +110,16 @@ class QuickEmu():
 	def showcamname(self):
 		nameemu = nameser = []
 		camdlist = serlist = None
-		#Alternative SoftCam Manager
+		# Alternative SoftCam Manager
 		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
 			if config.plugins.AltSoftcam.actcam.value != "none":
 				return config.plugins.AltSoftcam.actcam.value
 			else:
 				return None
-		#GlassSysUtil
+		# GlassSysUtil
 		elif os.path.isfile("/tmp/ucm_cam.info"):
 			return open("/tmp/ucm_cam.info").read()
-		#Pli
+		# Pli
 		elif os.path.isfile("/etc/init.d/softcam") or os.path.isfile("/etc/init.d/cardserver"):
 			if os.path.isfile("/etc/init.d/softcam"):
 				for line in open("/etc/init.d/softcam"):
@@ -140,7 +140,7 @@ class QuickEmu():
 			elif serlist is not None:
 				return "%s" % serlist
 			return ""
-		#TS-Panel
+		# TS-Panel
 		elif os.path.isfile("/etc/startcam.sh"):
 			for line in open("/etc/startcam.sh"):
 				if "script" in line:

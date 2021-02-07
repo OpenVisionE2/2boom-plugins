@@ -182,16 +182,16 @@ class QuickEcmInfo2(Poll, Converter, object):
 		if config.plugins.QuickEcm.enabled.value:
 			nameemu = nameser = []
 			camdlist = serlist = None
-			#Alternative SoftCam Manager
+			# Alternative SoftCam Manager
 			if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
 				if config.plugins.AltSoftcam.actcam.value != "none":
 					return config.plugins.AltSoftcam.actcam.value
 				else:
 					return None
-			#GlassSysUtil
+			# GlassSysUtil
 			elif os.path.isfile("/tmp/ucm_cam.info"):
 				return open("/tmp/ucm_cam.info").read()
-			#Pli
+			# Pli
 			elif os.path.isfile("/etc/init.d/softcam") or os.path.isfile("/etc/init.d/cardserver"):
 				if os.path.isfile("/etc/init.d/softcam"):
 					for line in open("/etc/init.d/softcam"):

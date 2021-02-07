@@ -171,7 +171,7 @@ class rpulite(Screen, ConfigListScreen):
 		self.session.open(get_ip)
 
 	def update_all(self):
-		#self.session.open(get_ip)
+		# self.session.open(get_ip)
 		self.session.open(get_chlist)
 		self.session.open(get_ip)
 		self["text"].setText('')

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#QuickEcmInfo
-#Copyright (c) 2boom 2012-14
+# QuickEcmInfo
+# Copyright (c) 2boom 2012-14
 # v.3.0-r0 26.05.2014
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

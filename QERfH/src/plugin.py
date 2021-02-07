@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#QuickEmuRestart for Hotkey
-#Copyright (c) 2boom 2017
+# QuickEmuRestart for Hotkey
+# Copyright (c) 2boom 2017
 # v.0.1-r4
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -96,13 +96,13 @@ class QERfH(Screen):
 		serlist = camdlist = None
 		nameemu = nameser = []
 		ecminfo = ''
-		#Alternative SoftCam Manager
+		# Alternative SoftCam Manager
 		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
 			if config.plugins.AltSoftcam.actcam.value != "none":
 				return config.plugins.AltSoftcam.actcam.value
 			else:
 				return None
-		#Pli
+		# Pli
 		elif fileExists("/etc/init.d/softcam") or fileExists("/etc/init.d/cardserver"):
 			if fileExists("/etc/init.d/softcam") and not self.isCamNone('softcam'):
 				for line in open("/etc/init.d/softcam"):

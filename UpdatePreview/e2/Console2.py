@@ -47,15 +47,15 @@ class Console2(Screen):
 		self["text"].setText("")
 		print("Console: executing in run", self.run, " the command:", self.cmdlist[self.run])
 		if self.container.execute(self.cmdlist[self.run]):
-			self.runFinished(-1) # so we must call runFinished manual
+			self.runFinished(-1)  # so we must call runFinished manual
 
 	def runFinished(self, retval):
 		if retval:
 			self.errorOcurred = True
 		self.run += 1
 		if self.run != len(self.cmdlist):
-			if self.container.execute(self.cmdlist[self.run]): #start of container application failed...
-				self.runFinished(-1) # so we must call runFinished manual
+			if self.container.execute(self.cmdlist[self.run]):  # start of container application failed...
+				self.runFinished(-1)  # so we must call runFinished manual
 		else:
 			lastpage = self["text"].isAtLastPage()
 			str = self["text"].getText()

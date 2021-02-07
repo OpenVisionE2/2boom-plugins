@@ -1982,7 +1982,7 @@ class onidMan(Screen):
 
 	def GreenKey(self):
 		self.session.openWithCallback(self.cMenu, onidManAdd)
-		#self.close()
+		# self.close()
 
 	def YellowKey(self):
 		try:

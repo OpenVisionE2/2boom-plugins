@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#by 2boom 4bob@ua.fm 2011-16
+# by 2boom 4bob@ua.fm 2011-16
 from Screens.Screen import Screen
 from Screens.PluginBrowser import PluginBrowser
 from Components.PluginComponent import plugins
@@ -354,7 +354,7 @@ class epanelinfo(Screen):
 		self.cpuinfo()
 		self.getFlashDateString()
 		self.getPythonVersionString()
-		#self.getLivestreamerVersion()
+		# self.getLivestreamerVersion()
 		self.getGStreamerVersionString()
 		self.network_info()
 

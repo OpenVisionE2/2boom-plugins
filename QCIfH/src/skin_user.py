@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#Edit By RAED 2020
+# Edit By RAED 2020
 
 from Screens.Screen import Screen
 from Components.Pixmap import Pixmap

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#QuickEcmInfo for Hotkey
-#Copyright (c) 2boom 2014-16
+# QuickEcmInfo for Hotkey
+# Copyright (c) 2boom 2014-16
 # v.0.2-r7
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -295,7 +295,7 @@ class QEIfH(Screen):
 				return config.plugins.AltSoftcam.actcam.value
 			else:
 				return None
-		#Pli
+		# Pli
 		elif os.path.isfile("/etc/init.d/softcam") or os.path.isfile("/etc/init.d/cardserver"):
 			if os.path.isfile("/etc/init.d/softcam"):
 				for line in open("/etc/init.d/softcam"):
