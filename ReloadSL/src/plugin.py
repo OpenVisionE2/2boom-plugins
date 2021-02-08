@@ -22,7 +22,9 @@ from Components.Console import Console as iConsole
 from Components.Sources.StaticText import StaticText
 from Screens.Screen import Screen
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-import os, sys, os.path
+import os
+import sys
+import os.path
 import gettext
 
 lang = language.getLanguage()

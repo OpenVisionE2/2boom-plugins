@@ -28,7 +28,8 @@ from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SC
 from enigma import eTimer, iServiceInformation
 from os import environ
 import gettext
-import os, sys
+import os
+import sys
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]

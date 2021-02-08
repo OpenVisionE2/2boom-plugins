@@ -33,7 +33,8 @@ import gettext
 from enigma import eEPGCache
 from types import *
 from enigma import *
-import sys, traceback
+import sys
+import traceback
 import time
 import new
 import _enigma

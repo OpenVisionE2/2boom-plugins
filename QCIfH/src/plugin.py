@@ -31,7 +31,8 @@ from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from enigma import ePoint, eTimer, getDesktop, iServiceInformation, iPlayableService, iPlayableServicePtr
 from os import environ
 import gettext
-import os, sys
+import os
+import sys
 from skin import *
 
 lang = language.getLanguage()
