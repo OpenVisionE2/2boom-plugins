@@ -394,7 +394,10 @@ class epanelinfo(Screen):
 			
 	def getPythonVersionString(self):
 		try:
-			import commands
+			try:
+				import commands
+			except:
+				import subprocess as commands
 			status, output = commands.getstatusoutput("python -V")
 			self["python"].text =  output.split(' ')[1]
 		except:
