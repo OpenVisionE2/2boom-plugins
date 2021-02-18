@@ -23,7 +23,8 @@ from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigClock, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile
 from Components.Element import cached
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_LIBDIR
-import os, time
+import os
+import time
 if os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'bitratecalc.so')):
 	from bitratecalc import eBitrateCalculator
 	binaryfound = True

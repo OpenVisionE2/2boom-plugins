@@ -26,7 +26,8 @@ from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE
 from enigma import ePoint, getDesktop, iServiceInformation
 from os import environ
 import gettext
-import os, sys
+import os
+import sys
 
 if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 	from Plugins.Extensions.AlternativeSoftCamManager.Softcam import getcamcmd

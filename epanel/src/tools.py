@@ -27,7 +27,8 @@ from time import *
 from enigma import eEPGCache
 from types import *
 from enigma import *
-import sys, traceback
+import sys
+import traceback
 import re
 import new
 import _enigma
