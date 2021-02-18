@@ -43,11 +43,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("YWeather", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/YWeather/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("YWeather", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 def iconsdirs():
 	iconset = []
@@ -56,6 +58,7 @@ def iconsdirs():
 		if os.path.isdir("%sExtensions/YWeather/istyle/%s" % (resolveFilename(SCOPE_PLUGINS), istyledir)):
 			iconset.append(istyledir)
 	return iconset
+
 
 config.plugins.yweather = ConfigSubsection()
 config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width=70, fixed_size=False)
@@ -79,6 +82,7 @@ config.plugins.yweather.enabled.value = False
 config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 
 help_txt = _("1. Visit http://weather.yahoo.com/\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only) from\\nhttp://weather.yahoo.com/ukraine/.../kyiv-924938/\\n4. Save and restart the enigma")
+
 
 class WeatherInfo(Screen):
 	def __init__(self, session):
@@ -380,7 +384,6 @@ class WeatherInfo(Screen):
 			self["sunset"].text = _('N/A')
 			self.notdata = True
 			
-			
 		self["picon_now"].instance.setScale(1)
 		if not self.condition['code'] is '':
 			self["picon_now"].instance.setPixmapFromFile("%sExtensions/YWeather/istyle/%s/%s.png" % (resolveFilename(SCOPE_PLUGINS), config.plugins.yweather.istyle.value, self.condition['code']))
@@ -430,6 +433,8 @@ class WeatherInfo(Screen):
 			return '+' + what + '%s' % unichr(176).encode("latin-1")
 		else:
 			return what + '%s' % unichr(176).encode("latin-1")
+
+
 ##############################################################################
 SKIN_STYLE1 = """
 <screen name="WeatherInfo" position="365,90" size="550,590" title="2boom's Yahoo Weather" zPosition="1" flags="wfBorder">
@@ -496,6 +501,7 @@ SKIN_STYLE1 = """
 </screen>
 """ 
 
+
 class yweather_main():
 	def __init__(self):
 		self.dialog = None
@@ -526,7 +532,9 @@ class yweather_main():
 			config.plugins.yweather.enabled.value = True
 			pWeather.dialog.show()
 
+
 pWeather = yweather_main()
+
 
 class yweather_setup(Screen, ConfigListScreen):
 	skin = """
@@ -545,6 +553,7 @@ class yweather_setup(Screen, ConfigListScreen):
   		<widget name="icon3" position="390,336" size="96,96" zPosition="2" alphatest="blend" />
   		<widget name="icon4" position="535,336" size="96,96" zPosition="2" alphatest="blend" />
 	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -610,12 +619,15 @@ class yweather_setup(Screen, ConfigListScreen):
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
+
 def main(session, **kwargs):
 	session.open(yweather_setup)
+
 
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pWeather.gotSession(session)
+
 
 def Plugins(**kwargs):
 	result = [

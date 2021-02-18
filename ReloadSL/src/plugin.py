@@ -33,16 +33,19 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("reloadsl", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/ReloadSL/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("reloadsl", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 SKIN_DWN = """
 <screen name="reloadsl" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class reloadsl(Screen):
 	def __init__(self, session, args=None):
@@ -61,8 +64,10 @@ class reloadsl(Screen):
 	def cancel(self, result, retval, extra_args):
 		self.close()
 
+
 def main(session, **kwargs):
 	session.open(reloadsl)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name=_("Reload ServiceList"), description=_("Reload ServiceList"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)

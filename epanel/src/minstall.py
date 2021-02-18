@@ -24,6 +24,7 @@ import glob
 import gettext
 import time
 
+
 def status_path():
 	status = resolveFilename(SCOPE_LIBDIR, 'opkg/status')
 	if fileExists(resolveFilename(SCOPE_LIBDIR, "ipkg/status")):
@@ -34,11 +35,13 @@ def status_path():
 		status = "/var/opkg/status"
 	return status
 
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("epanel", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/epanel/locale/"))
+
 
 def _(txt):
 	t = gettext.dgettext("epanel", txt)
@@ -46,6 +49,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 	
+
 class IPKToolsScreen2(Screen):
 	skin = """
 	<screen name="IPKToolsScreen2" position="center,160" size="750,370" title="IPK Tools">
@@ -153,6 +157,8 @@ class IPKToolsScreen2(Screen):
 			else:
 				self.close(None)
 ###############################################
+
+
 class downfeed(Screen):
 	skin = """
 	<screen name="downfeed" position="center,110" size="850,520" title="Install extensions from feed">
@@ -256,6 +262,8 @@ class downfeed(Screen):
 		if self["menu"].getCurrent() is not None:
 			self.session.open(Console, title=_("Install extensions from feed"), cmdlist=["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 ##############################################################################
+
+
 class DownloadFeed(Screen):
 	skin = """
 	<screen name="DownloadFeed" position="center,110" size="850,520" title="Download extensions from feed">
@@ -376,6 +384,8 @@ class DownloadFeed(Screen):
 			self.iConsole.ePopen("mv %s.tmp %s" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.close()
 ####################################################################
+
+
 class InstallAll4(Screen):
 	skin = """
 	<screen name="InstallAll4" position="center,160" size="750,405" title="Press -Info- to update plugin list">
@@ -525,6 +535,8 @@ class InstallAll4(Screen):
 	def cancel(self):
 		self.close()
 ########################################################################################################
+
+
 class RemoveIPK(Screen):
 	skin = """
 	<screen name="RemoveIPK" position="center,100" size="750,570" title="Ipk remove">

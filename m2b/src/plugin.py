@@ -40,12 +40,14 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("m2b", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/m2b/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("m2b", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 def get_m3u_name():
 	m3u_name = []
 	#dirs = os.listdir("/tmp/")
@@ -56,6 +58,7 @@ def get_m3u_name():
 				m3u_name.append(m3u_file)
 	return m3u_name
 
+
 def remove_line(filename, what):
 	if os.path.isfile(filename):
 		file_read = open(filename).readlines()
@@ -65,6 +68,7 @@ def remove_line(filename, what):
 				file_write.write(line)
 		file_write.close()
 		
+
 def mountp():
 	pathmp = []
 	if os.path.isfile('/proc/mounts'):
@@ -73,6 +77,7 @@ def mountp():
 				pathmp.append(line.split()[1].replace('\\040', ' ') + '/')
 	pathmp.append('/tmp/')
 	return pathmp
+
 
 config.plugins.m2b = ConfigSubsection()
 config.plugins.m2b.path = ConfigSelection(choices=mountp())
@@ -85,6 +90,8 @@ config.plugins.m2b.type = ConfigSelection(default="LiveStreamerhls", choices=[
 ])
 config.plugins.m2b.passw = ConfigPassword(default='', visible_width=50, fixed_size=False)
 ##############################################################################
+
+
 class m2b_setup(ConfigListScreen, Screen):
 	skin = """
 	<screen name="m2b_setup" position="center,160" size="750,147" title="2boom's m3u/xml bouquet converter">
@@ -126,10 +133,12 @@ class m2b_setup(ConfigListScreen, Screen):
 	def convert(self):
 		self.session.open(create_bouquet)
 
+
 SKIN_DWN = """
 <screen name="get_chlist" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class create_bouquet(Screen):
 	def __init__(self, session, args=None):
@@ -198,6 +207,7 @@ class create_bouquet(Screen):
 	def cancel(self, result, retval, extra_args):
 		self.close()
 
+
 class get_chlist(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -215,8 +225,10 @@ class get_chlist(Screen):
 		config.plugins.m2b.passw.value = config.plugins.m2b.passw.value.lstrip(':')
 		self.close(False)
 
+
 def main(session, **kwargs):
 	session.open(m2b_setup)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's m3u/xml bouquet converter"), description=_("m3u to bouquet converter"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="m2b.png", fnc=main)]

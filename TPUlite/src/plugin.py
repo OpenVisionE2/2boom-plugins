@@ -43,11 +43,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("TPUlite", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/TPUlite/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("TPUlite", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 config.plugins.tpulite = ConfigSubsection()
 config.plugins.tpulite.menuext = ConfigYesNo(default=True)
@@ -60,6 +62,7 @@ config.plugins.tpulite.servicetype = ConfigSelection(default='1', choices=[
 		('4097', _("GStreamer")),
 		])
 
+
 def remove_line(filename, what):
 	if os.path.isfile(filename):
 		file_read = open(filename).readlines()
@@ -69,11 +72,13 @@ def remove_line(filename, what):
 				file_write.write(line)
 		file_write.close()
 
+
 def add_line(filename, what):
 	if os.path.isfile(filename):
 		with open(filename, 'a') as file_out:
 			file_out.write(what)
 			file_out.close()
+
 
 class rpulite(Screen, ConfigListScreen):
 	skin = """
@@ -91,6 +96,7 @@ class rpulite(Screen, ConfigListScreen):
   		<widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   		<widget name="text" position="15,255" size="610,48" font="Regular;22" halign="left" />
 	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -173,6 +179,7 @@ class rpulite(Screen, ConfigListScreen):
 		self["text"].setText('')
 		self["text"].setText(_('userbouquet.triolan_tmp.tv added or updated'))
 
+
 class reloadsl(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -188,10 +195,12 @@ class reloadsl(Screen):
 	def cancel(self, result, retval, extra_args):
 		self.close()
 
+
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class get_chlist(Screen):
 	def __init__(self, session, args=None):
@@ -241,6 +250,7 @@ class get_chlist(Screen):
 					outfile.close()
 		self.close()
 
+
 class get_ip(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -270,8 +280,10 @@ class get_ip(Screen):
 		config.save()
 		self.close()
 
+
 def main(session, **kwargs):
 	session.open(rpulite)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's Triolan lite proxy updater"), description=_("update Triolan iptv proxy"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="rpu.png", fnc=main)]

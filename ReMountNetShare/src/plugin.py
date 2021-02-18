@@ -45,11 +45,14 @@ os.environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("RemountNetshare", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/ReMountNetShare/locale"))
+
+
 def _(txt):
 	t = gettext.dgettext("RemountNetshare", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 def main_func():
 	mount_type = mount_status = mount_ip = mount_sharename = mount_sharedir = mount_user = mount_password = mount_options = all_options = ""
@@ -93,9 +96,9 @@ def main_func():
 	return command_remount
 	
 
-
 def get_xml_data(what):
 	return what.split("<")[1].split(">")[1]
+
 
 def IsImageName():
 	if fileExists("/etc/issue"):
@@ -104,12 +107,14 @@ def IsImageName():
 				return True
 	return False
 	
+
 def IsImageATV():
 	if fileExists("/etc/issue"):
 		for line in open("/etc/issue"):
 			if "openATV" in line:
 				return True
 	return False
+
 
 class ReMountNetShare():
 	def __init__(self):
@@ -151,6 +156,7 @@ class ReMountNetShare():
 			if config.plugins.remount.inwakeup:
 				self.Console.ePopen(main_func())
 
+
 class remount_setup(ConfigListScreen, Screen):
 	skin = """
 	<screen name="remount_setup" position="center,160" size="750,370" title="2boom's RemountNetShare">
@@ -164,6 +170,7 @@ class remount_setup(ConfigListScreen, Screen):
   	<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
   	<widget name="text" position="20,160" size="710,160" font="Regular; 20" halign="left" noWrap="1" />
 	</screen>"""
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -221,22 +228,28 @@ class remount_setup(ConfigListScreen, Screen):
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
 
+
 def main(session, **kwargs):
 	session.open(remount_setup)
+
 
 def func(session, **kwargs):
 	Console().ePopen(main_func())
 	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4)
 	
+
 def func2(session, **kwargs):
 	Console().ePopen("umount -a -f -t nfs,cifs")
 	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout=4)
 
+
 pRemount = ReMountNetShare()
+
 
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pRemount.gotSession(session)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's RemountNetShare"), description=_("manual or auto remount network share"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="remnet.png", fnc=main)]

@@ -41,11 +41,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("qei", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/QuickEcmInfo/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("qei", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 ##############################################################################
 config.plugins.QuickEcm = ConfigSubsection()
@@ -90,15 +92,20 @@ SKIN_HD = """
 </screen>""" 
 
 ##############################################################################
+
+
 class QuickEcmInfo(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.skin = SKIN_HD
 		self.setTitle(_("2boom's QuickEcmInfo SE"))
 ##############################################################################
+
+
 class QuickEcm():
 	def __init__(self):
 		self.dialog = None
+
 	def gotSession(self, session):
 		self.session = session
 		keymap = '%sExtensions/QuickEcmInfo/keymap.xml' % resolveFilename(SCOPE_PLUGINS)
@@ -111,6 +118,7 @@ class QuickEcm():
 			del globalActionMap.actions['showSherlock']
 		globalActionMap.actions['showEcmInfo'] = self.ShowHide
 ##############################################################################
+
 	def ShowHide(self):
 		if config.plugins.QuickEcm.enabled.value:
 			config.plugins.QuickEcm.enabled.value = False
@@ -118,6 +126,8 @@ class QuickEcm():
 		else:
 			config.plugins.QuickEcm.enabled.value = True
 			pEcm.dialog.show()
+
+
 ##############################################################################
 pEcm = QuickEcm()
 ##############################################################################
@@ -141,6 +151,8 @@ skin_sdsetup = """
   	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
   	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 </screen>"""
+
+
 class qei_setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
@@ -182,13 +194,19 @@ class qei_setup(ConfigListScreen, Screen):
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 ##############################################################################
+
+
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEcm.gotSession(session)
 ##############################################################################
+
+
 def main(session, **kwargs):
 	session.open(qei_setup)
 ##############################################################################
+
+
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(

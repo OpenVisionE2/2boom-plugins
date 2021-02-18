@@ -50,12 +50,14 @@ gettext.bindtextdomain('enigma2', resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain('enigma2')
 gettext.bindtextdomain('epgdd', '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/epgdd/locale/'))
 
+
 def _(txt):
 	t = gettext.dgettext('epgdd', txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 def mountp():
 	pathmp = []
 	if os.path.isfile('/proc/mounts'):
@@ -66,10 +68,12 @@ def mountp():
 	pathmp.append('/tmp/')
 	return pathmp
 	
+
 def logging(line):
 	log_file = open('/tmp/epgdd.log', 'a')
 	log_file.write(line)
 	log_file.close()
+
 
 config.plugins.epgdd = ConfigSubsection()
 config.plugins.epgdd.direct = ConfigSelection(choices=mountp())
@@ -90,6 +94,7 @@ config.plugins.epgdd.checkp = ConfigSelection(default='60', choices=[
 		('240', _("240 min")),
 		])
 config.plugins.epgdd.lastupdate = ConfigText(default=_('last epg.dat updated - not yet'))
+
 
 class epgdd(ConfigListScreen, Screen):
 	skin = """
@@ -205,6 +210,7 @@ class epgdd(ConfigListScreen, Screen):
 					return True
 		return False
 
+
 class Check_EPG():
 	def __init__(self):
 		self.dialog = None
@@ -304,6 +310,7 @@ class Check_EPG():
 			return False
 		return True
 
+
 class get_source(Screen):
 	skin = """
 	<screen name="ChoiceSource" position="center,160" size="850,255" title="Choice epg.dat source">
@@ -363,10 +370,12 @@ class get_source(Screen):
 	def cancel(self):
 		self.close()
 
+
 SKIN_EPG = """
 <screen name="get_epgdat" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class get_epgdat(Screen):
 	def __init__(self, session, args=None):
@@ -440,14 +449,18 @@ class get_epgdat(Screen):
 			return False
 		return True
 
+
 def main(session, **kwargs):
 	session.open(epgdd)
 
+
 pEpg = Check_EPG()
+
 
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEpg.gotSession(session)
+
 
 def Plugins(**kwargs):
 	result = [

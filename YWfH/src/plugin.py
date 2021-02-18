@@ -45,11 +45,13 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("YWeather", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/YWfH/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("YWeather", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 def iconsdirs():
 	iconset = []
@@ -58,6 +60,7 @@ def iconsdirs():
 		if os.path.isdir("%sExtensions/YWfH/istyle/%s" % (resolveFilename(SCOPE_PLUGINS), istyledir)):
 			iconset.append(istyledir)
 	return iconset
+
 
 config.plugins.yweather = ConfigSubsection()
 config.plugins.yweather.weather_city = ConfigText(default="924938", visible_width=70, fixed_size=False)
@@ -76,6 +79,7 @@ config.plugins.yweather.timeout = ConfigSelection(default='0', choices=[
 config.plugins.yweather.istyle = ConfigSelection(choices=iconsdirs())
 
 help_txt = _("1. Visit http://woeid.rosselliot.co.nz\\n2. Enter your city or zip code and give go...\\n3. Copy ID (digit only)\\n4. Save and restart the enigma")
+
 
 class WeatherInfo(Screen):
 	def __init__(self, session):
@@ -167,7 +171,6 @@ class WeatherInfo(Screen):
 			self.get_xmlfile()
 		else:
 			self.parse_weather_data()
-
 
 	def parse_weather_data(self):
 		self.forecast = []
@@ -464,6 +467,8 @@ class WeatherInfo(Screen):
 			return '+' + what + '%s' % unichr(176).encode("latin-1")
 		else:
 			return what + '%s' % unichr(176).encode("latin-1")
+
+
 ##############################################################################
 SKIN_STYLE1_HD = """
 <screen name="WeatherInfo" position="365,90" size="550,590" title="2boom's Yahoo Weather" zPosition="1" flags="wfBorder">
@@ -561,6 +566,7 @@ SKIN_SEARCH_HD = """
   <widget name="text" position="50,75" size="650,150" font="Regular;22" halign="left" noWrap="1" />
 </screen>"""
 
+
 class yweather_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
 		self.session = session
@@ -629,6 +635,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		configfile.save()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		
+
 class search_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
 		self.session = session
@@ -717,6 +724,7 @@ class search_setup(Screen, ConfigListScreen):
 
 def main(session, **kwargs):
 	session.open(WeatherInfo)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's Yahoo! Weather for Hotkey"), description=_("press menukey for config"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="yw.png", fnc=main)]

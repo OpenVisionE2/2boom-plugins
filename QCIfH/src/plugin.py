@@ -41,28 +41,34 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("qcifh", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/QCIfH/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("qcifh", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 if os.path.isfile('/usr/lib/bitratecalc.so'):
 	from bitratecalc import eBitrateCalculator
 	binary_file = True
 else:
 	binary_file = False
 
+
 def getDesktopSize():
 	s = getDesktop(0).size()
 	return (s.width(), s.height())
+
 
 def isHD():
 	desktopSize = getDesktopSize()
 	return desktopSize[0] == 1280
 
+
 config.plugins.qcifh = ConfigSubsection()	
 config.plugins.qcifh.skin = ConfigYesNo(default=True)
+
 
 class QCIfH(Screen):
 	def __init__(self, session):
@@ -174,6 +180,7 @@ class QCIfH(Screen):
 	def conf(self):
 		self.session.open(qcifh_setup)
 	
+
 SKIN_CONFIG_HD = """
 <screen name="qcifh_setup" position="265,160" size="750,75" title="2boom's QuickChannelInfo setup">
   	<widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
@@ -182,6 +189,7 @@ SKIN_CONFIG_HD = """
   	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
   	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
 </screen>"""
+
 
 class qcifh_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
@@ -215,8 +223,10 @@ class qcifh_setup(Screen, ConfigListScreen):
 		configfile.save()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		
+
 def main(session, **kwargs):
 	session.open(QCIfH)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's QuickChannelInfo for Hotkey"), description=_("quickchannelinfo for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qcifh.png", fnc=main)]

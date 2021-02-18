@@ -38,16 +38,19 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("qerfh", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/QERfH/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("qerfh", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 
+
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
 
 class QERfH(Screen):
 	def __init__(self, session):
@@ -126,8 +129,10 @@ class QERfH(Screen):
 			ecminfo = "%s %s" % (cardserver.split('\n')[0], emu.split('\n')[0])
 		return ecminfo
 
+
 def main(session, **kwargs):
 	session.open(QERfH)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("2boom's QuickEmuRestart for Hotkey"), description=_("quick restart softcam & cardserver for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qerfh.png", fnc=main)]

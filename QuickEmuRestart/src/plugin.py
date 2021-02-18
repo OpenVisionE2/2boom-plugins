@@ -42,12 +42,14 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("qemurestart", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/QuickEmuRestart/locale/"))
 
+
 def _(txt):
 	t = gettext.dgettext("qemurestart", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 config.plugins.qer = ConfigSubsection()
 config.plugins.qer.keyname = ConfigSelection(default="KEY_TEXT", choices=[
 		("KEY_TEXT", "TEXT"),
@@ -58,6 +60,8 @@ config.plugins.qer.keyname = ConfigSelection(default="KEY_TEXT", choices=[
 		])
 config.plugins.qer.time = ConfigInteger(default=6, limits=(1, 99))
 ##############################################################################
+
+
 class QuickEmu():
 	def __init__(self):
 		self.dialog = None
@@ -102,6 +106,7 @@ class QuickEmu():
 		except:
 			pass
 #########################################################################################################
+
 	def showcamname(self):
 		nameemu = nameser = []
 		camdlist = serlist = None
@@ -143,6 +148,8 @@ class QuickEmu():
 		else:
 			return ''
 #####################################################
+
+
 class qer_setup(ConfigListScreen, Screen):
 	skin = """
 	<screen name="qer_setup" position="center,160" size="750,370" title="2boom's QuickEmuRestart">
@@ -172,7 +179,6 @@ class qer_setup(ConfigListScreen, Screen):
 			"ok": self.save
 		}, -2)
 	
-
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
@@ -197,15 +203,23 @@ class qer_setup(ConfigListScreen, Screen):
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
 #####################################################
+
+
 def main(session, **kwargs):
 	session.open(qer_setup)
+
+
 ##############################################################################
 pEmu = QuickEmu()
 ##############################################################################
+
+
 def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEmu.gotSession(session)
 ##############################################################################
+
+
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(

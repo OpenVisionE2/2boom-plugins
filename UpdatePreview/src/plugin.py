@@ -40,12 +40,15 @@ os.environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("UpdatePreview", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/UpdatePreview/locale"))
+
+
 def _(txt):
 	t = gettext.dgettext("UpdatePreview", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
 	
+
 config.plugins.upw = ConfigSubsection()
 config.plugins.upw.userfiles = ConfigLocations(default=[])
 
@@ -53,6 +56,8 @@ SKIN_INFO = """
 <screen name="get_opkg_data" position="center,140" size="625,35" title="Please wait">
   <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
 </screen>"""
+
+
 class get_opkg_data(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
@@ -85,6 +90,7 @@ class get_opkg_data(Screen):
 			self["status"].text = _("Error receive list-upgradable, try later")
 			self.iConsole.ePopen("sleep 5", self.cancel)
 
+
 SKIN_VIEW = """
 <screen name="updateprv2" position="center,140" size="1100,520" title="Update Preview">
   	<widget name="text" position="10,10" size="1080,470" font="Console;22" noWrap="1" />
@@ -98,6 +104,8 @@ SKIN_VIEW = """
   	<widget source="blue_key" render="Label" position="508,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	<ePixmap pixmap="~/images/menu.png" position="1020,488" size="70,30" alphatest="blend" zPosition="3" />
 </screen>"""
+
+
 class updateprv2(Screen):
 	def __init__(self, session, result):
 		Screen.__init__(self, session)
@@ -169,11 +177,13 @@ class updateprv2(Screen):
 					config.plugins.upw.userfiles.value[i] = config.plugins.upw.userfiles.value[i].lstrip('/')
 				self.session.open(Console2, title=_("Updating..."), cmdlist=["tar czvf /tmp/noupdate.tar.gz %s && opkg upgrade ; tar -C/ -xzpvf /tmp/noupdate.tar.gz" % ' '.join(config.plugins.upw.userfiles.value)])
 
+
 class commitinfo(Screen):
 	skin = """
   <screen name="commitinfo" position="center,140" size="1100,520" title="Latest Commits">
     <widget name="AboutLatestCommits" position="10,10" size="1080,470" font="Console;22" noWrap="1"/>
   </screen>"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setTitle(_("Please wait"))
@@ -212,6 +222,7 @@ class commitinfo(Screen):
 		self.setTitle(_("Latest Commits"))
 		self["AboutLatestCommits"].setText(commitlog)
 		
+
 class FilesSelection(Screen):
 	skin = """
 	<screen name="FilesSelection" position="265,160" size="750,360" title="Select files">
@@ -302,10 +313,12 @@ class FilesSelection(Screen):
 def main(session, **kwargs):
 	session.open(get_opkg_data)
 	
+
 def menu(menuid, **kwargs):
 	if menuid == "setup":
 		return [(_("Software update preview"), main, _("update preview from feed"), None)]
 	return []
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("Software update preview"), description=_("update preview from feed"), where=[PluginDescriptor.WHERE_MENU], fnc=menu)]
