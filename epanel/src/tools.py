@@ -1628,7 +1628,7 @@ class LogScreen(Screen):
 						if "]]>" in line:
 							break
 		self["text"].setText(list)
-		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"], {"cancel": self.close, "up": self["text"].pageUp, "left": self["text"].pageUp, "down": self["text"].pageDown, "right": self["text"].pageDown,}, -1)
+		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"], {"cancel": self.close, "up": self["text"].pageUp, "left": self["text"].pageUp, "down": self["text"].pageDown, "right": self["text"].pageDown, }, -1)
 ######################################################################################
 class get_source(Screen):
 	skin = """

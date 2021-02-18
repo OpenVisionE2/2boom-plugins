@@ -182,7 +182,7 @@ class qei_setup(ConfigListScreen, Screen):
 			keyfile.close()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 ##############################################################################
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEcm.gotSession(session)
 ##############################################################################

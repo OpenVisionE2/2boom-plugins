@@ -234,7 +234,7 @@ def func2(session, **kwargs):
 
 pRemount = ReMountNetShare()
 
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pRemount.gotSession(session)
 

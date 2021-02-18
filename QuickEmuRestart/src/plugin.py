@@ -202,7 +202,7 @@ def main(session, **kwargs):
 ##############################################################################
 pEmu = QuickEmu()
 ##############################################################################
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEmu.gotSession(session)
 ##############################################################################

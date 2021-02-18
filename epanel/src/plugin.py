@@ -515,7 +515,7 @@ class epanelinfo(Screen):
 		return _("unavailable")
 		
 	def listnims(self):
-		tuner_name = {'0':'Tuner A:', '1':'Tuner B:', '2':'Tuner C:', '3':'Tuner D:', '4':'Tuner E:', '5':'Tuner F:', '6':'Tuner G:', '7':'Tuner H:', '8':'Tuner I:', '9':'Tuner J:'}
+		tuner_name = {'0': 'Tuner A:', '1': 'Tuner B:', '2': 'Tuner C:', '3': 'Tuner D:', '4': 'Tuner E:', '5': 'Tuner F:', '6': 'Tuner G:', '7': 'Tuner H:', '8': 'Tuner I:', '9': 'Tuner J:'}
 		nimlist = nims = ''
 		allnims = []
 		fbc_count = 0
@@ -759,7 +759,7 @@ class loadEPG():
 
 pEmu = loadEPG()
 ######################################################################################
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEmu.gotSession(session)
 ######################################################################################

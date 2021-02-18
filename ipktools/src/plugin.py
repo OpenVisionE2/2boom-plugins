@@ -570,7 +570,7 @@ def main(session, **kwargs):
 ######################################################################################
 pTools = opkgUpdate()
 ######################################################################################
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pTools.gotSession(session)
 ######################################################################################

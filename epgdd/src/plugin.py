@@ -445,7 +445,7 @@ def main(session, **kwargs):
 
 pEpg = Check_EPG()
 
-def sessionstart(reason,session=None, **kwargs):
+def sessionstart(reason, session=None, **kwargs):
 	if reason == 0:
 		pEpg.gotSession(session)
 
