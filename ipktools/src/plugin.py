@@ -66,10 +66,10 @@ def _(txt):
 	return t
 	
 config.plugins.ipktools = ConfigSubsection()
-config.plugins.ipktools.showsetupipk = ConfigYesNo(default = True)
-config.plugins.ipktools.filtername = ConfigYesNo(default = False)
-config.plugins.ipktools.userdir = ConfigText(default="/", visible_width = 70, fixed_size = False)
-config.plugins.ipktools.multifilemode = ConfigSelection(default = "Multi", choices = [
+config.plugins.ipktools.showsetupipk = ConfigYesNo(default=True)
+config.plugins.ipktools.filtername = ConfigYesNo(default=False)
+config.plugins.ipktools.userdir = ConfigText(default="/", visible_width=70, fixed_size=False)
+config.plugins.ipktools.multifilemode = ConfigSelection(default="Multi", choices=[
 		("Multi", _("Multi files")),
 		("Single", _("Single file")),
 ])
@@ -137,7 +137,7 @@ class IPKTools2(Screen):
 		self.iConsole.ePopen("rm /tmp/*.tar.gz /tmp/*.bh.tgz /tmp/*.ipk /tmp/*.nab.tgz", self.info_message)
 		
 	def info_message(self, result, retval, extra_args):
-		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout = 4  )
+		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4  )
 
 	def OK(self):
 		item = self["menu"].getCurrent()[1]
@@ -219,7 +219,7 @@ class downfeed(Screen):
 		self.close()
 
 	def setup(self):
-		self.session.open(Console, title = _("Insatall extensions from feed"), cmdlist = ["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess = False)
+		self.session.open(Console, title=_("Insatall extensions from feed"), cmdlist=["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 ##############################################################################
 class DownloadFeed(Screen):
 	skin = """
@@ -294,10 +294,10 @@ class DownloadFeed(Screen):
 		self["key_yellow"].setText(_("Download -deps"))
 		
 	def download(self):
-		self.session.open(Console, title = _("Download extensions from feed"), cmdlist = ["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess = False)
+		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 		
 	def download_wdeps(self):
-		self.session.open(Console, title = _("Download extensions from feed"), cmdlist = ["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess = False)
+		self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def cancel(self):
 		if fileExists(self.path[:-6] + 'status.tmp'):
@@ -422,11 +422,11 @@ class InstallAll4(Screen):
 			if self.force_install:
 				force_string = "-force-overwrite -force-downgrade"
 			if len(self.commamd_line_ipk) >= 1 and len(self.commamd_line_tar) >= 1:
-				self.session.open(Console, title = _("Install packets"), cmdlist = ["opkg install %s %s && %s" % (force_string, ' '.join(self.commamd_line_ipk), ' && '.join(self.commamd_line_tar))])
+				self.session.open(Console, title=_("Install packets"), cmdlist=["opkg install %s %s && %s" % (force_string, ' '.join(self.commamd_line_ipk), ' && '.join(self.commamd_line_tar))])
 			elif len(self.commamd_line_ipk) >= 1:
-				self.session.open(Console, title = _("Install packets"), cmdlist = ["opkg install %s %s" % (force_string, ' '.join(self.commamd_line_ipk))])
+				self.session.open(Console, title=_("Install packets"), cmdlist=["opkg install %s %s" % (force_string, ' '.join(self.commamd_line_ipk))])
 			elif len(self.commamd_line_tar) >= 1:
-				self.session.open(Console, title = _("Install tar.gz, bh.tgz, nab.tgz"), cmdlist = ["%s" % ' && '.join(self.commamd_line_tar)])
+				self.session.open(Console, title=_("Install tar.gz, bh.tgz, nab.tgz"), cmdlist=["%s" % ' && '.join(self.commamd_line_tar)])
 			self.force_install = False
 		
 	def nList(self):
@@ -529,7 +529,7 @@ class RemoveIPK(Screen):
 						ipk_dir = line[:-11]
 					elif 'skin.xml' in line:
 						ipk_dir = line[:-10]
-		self.session.open(Console, title = _("%s" % ipk_dir), cmdlist = ["opkg remove %s %s" % (local_status, pkg_name)], closeOnSuccess = False)
+		self.session.open(Console, title=_("%s" % ipk_dir), cmdlist=["opkg remove %s %s" % (local_status, pkg_name)], closeOnSuccess=False)
 		if pathExists(ipk_dir):
 			self.iConsole.ePopen("rm -rf %s" % ipk_dir, self.finish)
 		else:
@@ -576,8 +576,8 @@ def sessionstart(reason,session=None, **kwargs):
 ######################################################################################
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's IPK tools"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="ipktools.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's IPK tools"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="ipktools.png", fnc=main)]
 	if config.plugins.ipktools.showsetupipk.value:
-		list.append(PluginDescriptor(name=_("IPK Tools Installer"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=setupipk))
-	list.append(PluginDescriptor(name=_("2boom's IPK tools"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc = sessionstart))
+		list.append(PluginDescriptor(name=_("IPK Tools Installer"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=setupipk))
+	list.append(PluginDescriptor(name=_("2boom's IPK tools"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart))
 	return list

@@ -74,31 +74,31 @@ def logging(line):
 
 #now = time.localtime(time.time())
 ######################################################################################
-config.plugins.epanel.showmain = ConfigYesNo(default = True)
-config.plugins.epanel.showepanelmenu = ConfigYesNo(default = True)
-config.plugins.epanel.showextsoft = ConfigYesNo(default = True)
-config.plugins.epanel.showclviewer = ConfigYesNo(default = False)
-config.plugins.epanel.showscriptex = ConfigYesNo(default = False)
-config.plugins.epanel.showusbunmt = ConfigYesNo(default = False)
-config.plugins.epanel.showsetupipk = ConfigYesNo(default = True)
-config.plugins.epanel.showdrop = ConfigYesNo(default = False)
-config.plugins.epanel.filtername = ConfigYesNo(default = False)
-config.plugins.epanel.showepgdwnload = ConfigYesNo(default = False)
+config.plugins.epanel.showmain = ConfigYesNo(default=True)
+config.plugins.epanel.showepanelmenu = ConfigYesNo(default=True)
+config.plugins.epanel.showextsoft = ConfigYesNo(default=True)
+config.plugins.epanel.showclviewer = ConfigYesNo(default=False)
+config.plugins.epanel.showscriptex = ConfigYesNo(default=False)
+config.plugins.epanel.showusbunmt = ConfigYesNo(default=False)
+config.plugins.epanel.showsetupipk = ConfigYesNo(default=True)
+config.plugins.epanel.showdrop = ConfigYesNo(default=False)
+config.plugins.epanel.filtername = ConfigYesNo(default=False)
+config.plugins.epanel.showepgdwnload = ConfigYesNo(default=False)
 #config.plugins.epanel.coldstartepgrstore = ConfigYesNo(default = False)
-config.plugins.epanel.showsinfo = ConfigYesNo(default = False)
-config.plugins.epanel.currentclock = ConfigClock(default = 0)
-config.plugins.epanel.multifilemode = ConfigSelection(default = "Multi", choices = [
+config.plugins.epanel.showsinfo = ConfigYesNo(default=False)
+config.plugins.epanel.currentclock = ConfigClock(default=0)
+config.plugins.epanel.multifilemode = ConfigSelection(default="Multi", choices=[
 		("Multi", _("Multi files")),
 		("Single", _("Single file")),
 ])
-config.plugins.epanel.crashpath = ConfigSelection(default = '/media/hdd/', choices = [
+config.plugins.epanel.crashpath = ConfigSelection(default='/media/hdd/', choices=[
 		('/media/hdd/', _('/media/hdd')),
 		('/home/root/', _('/home/root')),
 		('/home/root/logs/', _('/home/root/logs')),
 		('/media/hdd/logs/', _('/media/hdd/logs')),
 		('/tmp/', _('/tmp')),
 ])
-config.plugins.epanel.userdir = ConfigText(default="/ipk/", visible_width = 70, fixed_size = False)
+config.plugins.epanel.userdir = ConfigText(default="/ipk/", visible_width=70, fixed_size=False)
 ######################################################################################
 def IsImageName():
 	if fileExists("/etc/issue"):
@@ -186,7 +186,7 @@ class easyPanel2(Screen):
 			self["menu"].setIndex(self.indexpos)
 		self["menu"].setList(self.list)
 		
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -195,7 +195,7 @@ class easyPanel2(Screen):
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
 		
-	def keyOK(self, item = None):
+	def keyOK(self, item=None):
 		self.indexpos = self["menu"].getIndex()
 		if item == None:
 			item = self["menu"].getCurrent()[1]
@@ -658,7 +658,7 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		if not IsImageName():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -815,30 +815,30 @@ def ncam_sw(session, **kwargs):
 	session.open(emuman.uniswitcher)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="epp.png", fnc=main)]
+	list = [PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="epp.png", fnc=main)]
 	if config.plugins.epanel.showepanelmenu.value:
-		list.append(PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
+		list.append(PluginDescriptor(name=_("E-Panel"), description=_("set of utilities for enigma2"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	if config.plugins.epanel.showextsoft.value:
-		list.append(PluginDescriptor(name=_("E-SoftCam manager"), description=_("Start, Stop, Restart Sofcam/Cardserver"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extsoft))
+		list.append(PluginDescriptor(name=_("E-SoftCam manager"), description=_("Start, Stop, Restart Sofcam/Cardserver"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extsoft))
 	if config.plugins.epanel.showdrop.value:
-		list.append(PluginDescriptor(name=_("E-Flush cache"), description=_("drop system cache"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extdrop))
+		list.append(PluginDescriptor(name=_("E-Flush cache"), description=_("drop system cache"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=extdrop))
 	if config.plugins.epanel.showscriptex.value:
-		list.append(PluginDescriptor(name=_("E-Script Executer"), description=_("Start scripts from /usr/script"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=scriptex))
+		list.append(PluginDescriptor(name=_("E-Script Executer"), description=_("Start scripts from /usr/script"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=scriptex))
 	if config.plugins.epanel.showepgdwnload.value:
-		list.append(PluginDescriptor(name=_("E-EPG Downloader"), description=_("EPG Downloader"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=epgdwnload))
+		list.append(PluginDescriptor(name=_("E-EPG Downloader"), description=_("EPG Downloader"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=epgdwnload))
 	if config.plugins.epanel.showsinfo.value:
-		list.append(PluginDescriptor(name=_("E-Info"), description=_("E-Info"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=einfo))
+		list.append(PluginDescriptor(name=_("E-Info"), description=_("E-Info"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=einfo))
 	if config.plugins.epanel.showusbunmt.value:
-		list.append(PluginDescriptor(name=_("E-Unmount USB"), description=_("Unmount usb devices"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=usbunmt))
+		list.append(PluginDescriptor(name=_("E-Unmount USB"), description=_("Unmount usb devices"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=usbunmt))
 	if config.plugins.epanel.showsetupipk.value:
-		list.append(PluginDescriptor(name=_("E-Installer"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=setupipk))
+		list.append(PluginDescriptor(name=_("E-Installer"), description=_("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=setupipk))
 	if config.plugins.epanel.showmain.value:
-		list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_MENU], fnc=menu))
+		list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where=[PluginDescriptor.WHERE_MENU], fnc=menu))
 	if config.plugins.uswoscam.active.value:
-		list.append(PluginDescriptor(name= _("E-Oscam.conf switcher"), description= _("Switch oscam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=oscam_sw))
+		list.append(PluginDescriptor(name=_("E-Oscam.conf switcher"), description=_("Switch oscam condig with remote control"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=oscam_sw))
 	if config.plugins.uswncam.active.value:
-		list.append(PluginDescriptor(name= _("E-Ncam.conf switcher"), description= _("Switch ncam condig with remote control"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=ncam_sw))
-	list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc = sessionstart))
+		list.append(PluginDescriptor(name=_("E-Ncam.conf switcher"), description=_("Switch ncam condig with remote control"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=ncam_sw))
+	list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart))
 	return list
 
 

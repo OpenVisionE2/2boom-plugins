@@ -53,22 +53,22 @@ def _(txt):
 	return t
 
 config.plugins.rpulite = ConfigSubsection()
-config.plugins.rpulite.menuext = ConfigYesNo(default = True)
-config.plugins.rpulite.ip = ConfigText(default='000.000.000.000', visible_width = 150, fixed_size = False)
-config.plugins.rpulite.bname = ConfigText(default='Rostelecom', visible_width = 250, fixed_size = False)
-config.plugins.rpulite.rpassw = ConfigText(default='', visible_width = 150, fixed_size = False)
-config.plugins.rpulite.servicetype = ConfigSelection(default = '1', choices = [
+config.plugins.rpulite.menuext = ConfigYesNo(default=True)
+config.plugins.rpulite.ip = ConfigText(default='000.000.000.000', visible_width=150, fixed_size=False)
+config.plugins.rpulite.bname = ConfigText(default='Rostelecom', visible_width=250, fixed_size=False)
+config.plugins.rpulite.rpassw = ConfigText(default='', visible_width=150, fixed_size=False)
+config.plugins.rpulite.servicetype = ConfigSelection(default='1', choices=[
 		('1', _("TV")),
 		('2', _("LiveStreamer")),
 		('4097', _("GStreamer")),
 		])
-config.plugins.rpulite.source = ConfigSelection(default = '0', choices = [
+config.plugins.rpulite.source = ConfigSelection(default='0', choices=[
 		('0', _("source 1")),
 		('1', _("source 2")),
 		])
-config.plugins.rpulite.ref = ConfigYesNo(default = True)
-config.plugins.rpulite.startup = ConfigYesNo(default = False)
-config.plugins.rpulite.timeup = ConfigSelection(default = '0', choices = [
+config.plugins.rpulite.ref = ConfigYesNo(default=True)
+config.plugins.rpulite.startup = ConfigYesNo(default=False)
+config.plugins.rpulite.timeup = ConfigSelection(default='0', choices=[
 		('0', _("off")),
 		('1', _("1 hour")),
 		('2', _("2 hours")),
@@ -205,7 +205,7 @@ class rpulite(Screen, ConfigListScreen):
 			if os.path.isfile(self.path):
 				remove_line(self.path, 'get_ip_rtc')
 				self.cron_update()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
 
 	def cron_update(self):
 		if os.path.isfile(self.path):
@@ -372,8 +372,8 @@ def main(session, **kwargs):
 	session.open(rpulite)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's Rostelecom lite proxy updater"), description=_("update Rostelecom iptv proxy"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="rpu.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's Rostelecom lite proxy updater"), description=_("update Rostelecom iptv proxy"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="rpu.png", fnc=main)]
 	if config.plugins.rpulite.menuext.value:
-		list.append(PluginDescriptor(name=_("Rostelecom proxy lite updater"), description=_("update Rostelecom iptv proxy"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
+		list.append(PluginDescriptor(name=_("Rostelecom proxy lite updater"), description=_("update Rostelecom iptv proxy"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	return list
 

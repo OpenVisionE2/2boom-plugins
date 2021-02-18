@@ -130,5 +130,5 @@ def main(session, **kwargs):
 	session.open(QERfH)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's QuickEmuRestart for Hotkey"), description=_("quick restart softcam & cardserver for hotkey extentions"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="qerfh.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's QuickEmuRestart for Hotkey"), description=_("quick restart softcam & cardserver for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qerfh.png", fnc=main)]
 	return list

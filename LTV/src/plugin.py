@@ -130,6 +130,6 @@ def main(session, **kwargs):
 	session.open(get_chlist)
 
 def Plugins(**kwargs):
-	list = PluginDescriptor(name=_("%s updater" % BNAME), description=_("update %s bouquet" % BNAME), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)
+	list = PluginDescriptor(name=_("%s updater" % BNAME), description=_("update %s bouquet" % BNAME), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)
 	return list
 

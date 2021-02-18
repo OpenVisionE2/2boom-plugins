@@ -163,11 +163,11 @@ class updateprv2(Screen):
 	def update(self):
 		if self.count is not 0:
 			if len(config.plugins.upw.userfiles.value) is 0:
-				self.session.open(Console2, title = _("Updating..."), cmdlist = ["opkg upgrade"])
+				self.session.open(Console2, title=_("Updating..."), cmdlist=["opkg upgrade"])
 			else:
 				for i in range(len(config.plugins.upw.userfiles.value)):
 					config.plugins.upw.userfiles.value[i] = config.plugins.upw.userfiles.value[i].lstrip('/')
-				self.session.open(Console2, title = _("Updating..."), cmdlist = ["tar czvf /tmp/noupdate.tar.gz %s && opkg upgrade ; tar -C/ -xzpvf /tmp/noupdate.tar.gz" % ' '.join(config.plugins.upw.userfiles.value)])
+				self.session.open(Console2, title=_("Updating..."), cmdlist=["tar czvf /tmp/noupdate.tar.gz %s && opkg upgrade ; tar -C/ -xzpvf /tmp/noupdate.tar.gz" % ' '.join(config.plugins.upw.userfiles.value)])
 
 class commitinfo(Screen):
 	skin = """
@@ -232,7 +232,7 @@ class FilesSelection(Screen):
 		self["key_yellow"] = StaticText()
 		self.selectedFiles = config.plugins.upw.userfiles.value
 		defaultDir = '/'
-		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir, showDirectories = True, matchingPattern = "^.*" )
+		self.filelist = MultiFileSelectList(self.selectedFiles, defaultDir, showDirectories=True, matchingPattern="^.*" )
 		self["checkList"] = self.filelist
 		self["actions"] = ActionMap(["DirectionActions", "OkCancelActions", "ShortcutActions"],
 		{
@@ -308,5 +308,5 @@ def menu(menuid, **kwargs):
 	return []
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("Software update preview"), description=_("update preview from feed"), where = [PluginDescriptor.WHERE_MENU], fnc=menu)]
+	list = [PluginDescriptor(name=_("Software update preview"), description=_("update preview from feed"), where=[PluginDescriptor.WHERE_MENU], fnc=menu)]
 	return list

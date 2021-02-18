@@ -75,15 +75,15 @@ def mountp():
 	return pathmp
 
 config.plugins.m2b = ConfigSubsection()
-config.plugins.m2b.path = ConfigSelection(choices = mountp())
-config.plugins.m2b.m3ufile = ConfigSelection(choices = get_m3u_name())
-config.plugins.m2b.type = ConfigSelection(default = "LiveStreamerhls", choices = [
+config.plugins.m2b.path = ConfigSelection(choices=mountp())
+config.plugins.m2b.m3ufile = ConfigSelection(choices=get_m3u_name())
+config.plugins.m2b.type = ConfigSelection(default="LiveStreamerhls", choices=[
 		("LiveStreamerhls", _("LiveStreamer/hls")),
 		("LiveStreamerhlsvariant", _("LiveStreamer/hlsvariant")),
 		("Gstreamer", _("Gstreamer")),
 		("Multicast", _("Multicast")),
 ])
-config.plugins.m2b.passw = ConfigPassword(default='', visible_width = 50, fixed_size = False)
+config.plugins.m2b.passw = ConfigPassword(default='', visible_width=50, fixed_size=False)
 ##############################################################################
 class m2b_setup(ConfigListScreen, Screen):
 	skin = """
@@ -100,7 +100,7 @@ class m2b_setup(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/m2b")
 		self.setTitle(_("2boom's m3u/xml bouquet converter"))
-		config.plugins.m2b.m3ufile = ConfigSelection(choices = get_m3u_name())
+		config.plugins.m2b.m3ufile = ConfigSelection(choices=get_m3u_name())
 		self.list = []
 		self.list.append(getConfigListEntry(_("Select path"), config.plugins.m2b.path))
 		self.list.append(getConfigListEntry(_("Select m3u/xml file"), config.plugins.m2b.m3ufile))
@@ -219,6 +219,6 @@ def main(session, **kwargs):
 	session.open(m2b_setup)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's m3u/xml bouquet converter"), description=_("m3u to bouquet converter"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="m2b.png", fnc=main)]
-	list.append(PluginDescriptor(name=_("2boom's m3u/xml bouquet converter"), description=_("m3u to bouquet converter"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
+	list = [PluginDescriptor(name=_("2boom's m3u/xml bouquet converter"), description=_("m3u to bouquet converter"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="m2b.png", fnc=main)]
+	list.append(PluginDescriptor(name=_("2boom's m3u/xml bouquet converter"), description=_("m3u to bouquet converter"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	return list

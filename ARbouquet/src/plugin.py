@@ -52,9 +52,9 @@ def _(txt):
 	return t
 
 config.plugins.arbouquet = ConfigSubsection()
-config.plugins.arbouquet.menuext = ConfigYesNo(default = True)
-config.plugins.arbouquet.passw = ConfigText(default='', visible_width = 150, fixed_size = False)
-config.plugins.arbouquet.bouquettype = ConfigSelection(default = '.tv', choices = [
+config.plugins.arbouquet.menuext = ConfigYesNo(default=True)
+config.plugins.arbouquet.passw = ConfigText(default='', visible_width=150, fixed_size=False)
+config.plugins.arbouquet.bouquettype = ConfigSelection(default='.tv', choices=[
 		('.tv', _("TV")),
 		('.radio', _("Radio")),
 		])
@@ -116,7 +116,7 @@ class ARbouquet(Screen):
 	def bq_list(self):
 		self.list = []
 		file_name = boquet_name = ''
-		png_name = LoadPixmap(cached=True, path = resolveFilename(SCOPE_PLUGINS, "Extensions/ARbouquet/images/folder.png"))
+		png_name = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/ARbouquet/images/folder.png"))
 		if os.path.isfile('/etc/enigma2/bouquets%s' % config.plugins.arbouquet.bouquettype.value):
 			for line in open('/etc/enigma2/bouquets%s' % config.plugins.arbouquet.bouquettype.value):
 				if line.startswith('#SERVICE'):
@@ -147,7 +147,7 @@ class ARbouquet(Screen):
 			remove_line('/etc/enigma2/bouquets%s' % config.plugins.arbouquet.bouquettype.value, self.item_name)
 			if fileExists('/etc/enigma2/%s' % self.item_name):
 				os.rename('/etc/enigma2/%s' % self.item_name, '/etc/enigma2/%s.del' % self.item_name)
-			self.mbox = self.session.open(MessageBox, (_("%s removed" % self.item_name)), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("%s removed" % self.item_name)), MessageBox.TYPE_INFO, timeout=4 )
 		self.bq_list()
 
 SKIN_DWN = """
@@ -208,7 +208,7 @@ class AddScreen(Screen):
 				else:
 					out_file.write('#SERVICE 1:7:2:0:0:0:0:0:0:0:FROM BOUQUET "%s" ORDER BY bouquet\r\n' % self.file_name)
 				out_file.close()
-			self.mbox = self.session.open(MessageBox, (_("%s added" % self.file_name)), MessageBox.TYPE_INFO, timeout = 4 )
+			self.mbox = self.session.open(MessageBox, (_("%s added" % self.file_name)), MessageBox.TYPE_INFO, timeout=4 )
 		if not fileExists('/etc/enigma2/userbouquet.LastScanned.tv'):
 			with open('/etc/enigma2/userbouquet.LastScanned.tv', 'a') as last:
 				last.write('#NAME Last Scanned\r\n')
@@ -253,7 +253,7 @@ class ARconfig(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 
 	def cancel(self):
 		for i in self["config"].list:
@@ -271,14 +271,14 @@ def Plugins(**kwargs):
 		PluginDescriptor(
 			name=_("2boom's ARbouquet"),
 			description=_("add/remove bouquet"),
-			where = [PluginDescriptor.WHERE_PLUGINMENU],
+			where=[PluginDescriptor.WHERE_PLUGINMENU],
 			icon="arb.png",
 			fnc=main
 		),
 		PluginDescriptor(
 			name=_("add/remove bouquet"),
 			description=_("add/remove bouquet"),
-			where = [PluginDescriptor.WHERE_EXTENSIONSMENU],
+			where=[PluginDescriptor.WHERE_EXTENSIONSMENU],
 			fnc=extmain
 		),
 	]

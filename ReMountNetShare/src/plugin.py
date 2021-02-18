@@ -33,12 +33,12 @@ import enigma
 import gettext
 
 config.plugins.remount = ConfigSubsection()
-config.plugins.remount.status = ConfigBoolean(default = True)
-config.plugins.remount.menuext = ConfigYesNo(default = False)
-config.plugins.remount.menuextum = ConfigYesNo(default = False)
-config.plugins.remount.inwakeup = ConfigYesNo(default = False)
-config.plugins.remount.inrestartui = ConfigYesNo(default = False)
-config.plugins.remount.indeepstanby = ConfigYesNo(default = False)
+config.plugins.remount.status = ConfigBoolean(default=True)
+config.plugins.remount.menuext = ConfigYesNo(default=False)
+config.plugins.remount.menuextum = ConfigYesNo(default=False)
+config.plugins.remount.inwakeup = ConfigYesNo(default=False)
+config.plugins.remount.inrestartui = ConfigYesNo(default=False)
+config.plugins.remount.indeepstanby = ConfigYesNo(default=False)
 
 lang = language.getLanguage()
 os.environ["LANGUAGE"] = lang[:2]
@@ -118,17 +118,17 @@ class ReMountNetShare():
 
 	def gotSession(self, session):
 		self.session = session
-		config.misc.standbyCounter.addNotifier(self.onEnterStandby, initial_call = False)
+		config.misc.standbyCounter.addNotifier(self.onEnterStandby, initial_call=False)
 		if IsImageName():
-			config.misc.DeepStandbyOn.addNotifier(self.onEnterDeepStandby, initial_call = False)
+			config.misc.DeepStandbyOn.addNotifier(self.onEnterDeepStandby, initial_call=False)
 			
 			#config.misc.DeepStandby.addNotifier(self.onEnterDeepStandby, initial_call = False)
 		else:
-			config.misc.DeepStandby.addNotifier(self.onEnterDeepStandby, initial_call = False)
+			config.misc.DeepStandby.addNotifier(self.onEnterDeepStandby, initial_call=False)
 			if not IsImageATV():
 				if config.plugins.remount.inrestartui.value:
 					if not config.misc.RestartUI.value:
-						config.misc.RestartUI.addNotifier(self.onRestartUI, initial_call = False)
+						config.misc.RestartUI.addNotifier(self.onRestartUI, initial_call=False)
 
 	def onRestartUI(self, configElement):
 		if config.misc.RestartUI.value:
@@ -210,13 +210,13 @@ class remount_setup(ConfigListScreen, Screen):
 
 	def remount(self):
 		self.Console.ePopen(main_func())
-		self.mbox = self.session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4 )
 
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		if not IsImageName():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -226,11 +226,11 @@ def main(session, **kwargs):
 
 def func(session, **kwargs):
 	Console().ePopen(main_func())
-	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout = 4 )
+	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4 )
 	
 def func2(session, **kwargs):
 	Console().ePopen("umount -a -f -t nfs,cifs")
-	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout = 4 )
+	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout=4 )
 
 pRemount = ReMountNetShare()
 
@@ -239,12 +239,12 @@ def sessionstart(reason,session=None, **kwargs):
 		pRemount.gotSession(session)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's RemountNetShare"), description=_("manual or auto remount network share"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="remnet.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's RemountNetShare"), description=_("manual or auto remount network share"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="remnet.png", fnc=main)]
 	if config.plugins.remount.menuext.value:
-		list.append(PluginDescriptor(name=_("Remount NetShare"), description=_("manual or auto remount network share"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=func))
+		list.append(PluginDescriptor(name=_("Remount NetShare"), description=_("manual or auto remount network share"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=func))
 	if config.plugins.remount.menuextum.value:
-		list.append(PluginDescriptor(name=_("Unmount NetShare"), description=_("manual or auto remount network share"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=func2))
-	list.append(PluginDescriptor(where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc = sessionstart))
+		list.append(PluginDescriptor(name=_("Unmount NetShare"), description=_("manual or auto remount network share"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=func2))
+	list.append(PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart))
 	return list
 
      

@@ -49,14 +49,14 @@ def _(txt):
 	return t
 	
 config.plugins.qer = ConfigSubsection()
-config.plugins.qer.keyname = ConfigSelection(default = "KEY_TEXT", choices = [
+config.plugins.qer.keyname = ConfigSelection(default="KEY_TEXT", choices=[
 		("KEY_TEXT", "TEXT"),
 		("KEY_SUBTITLE", "SUBTITLE"),
 		("KEY_HELP", "HELP"),
 		("KEY_PORTAL", "PORTAL (8120/Amico)"),
 		("KEY_TEEN", "<P (Fortis)"),
 		])
-config.plugins.qer.time = ConfigInteger(default = 6, limits = (1, 99))
+config.plugins.qer.time = ConfigInteger(default=6, limits=(1, 99))
 ##############################################################################
 class QuickEmu():
 	def __init__(self):
@@ -98,7 +98,7 @@ class QuickEmu():
 				self.Console.ePopen("%s cam_down & && %s cam_up &" % (currentemu, currentemu))
 		try:
 			if not config.plugins.qer.time.value is 0:
-				self.mbox = self.session.open(MessageBox, (_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout = config.plugins.qer.time.value )
+				self.mbox = self.session.open(MessageBox, (_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout=config.plugins.qer.time.value )
 		except:
 			pass
 #########################################################################################################
@@ -192,7 +192,7 @@ class qer_setup(ConfigListScreen, Screen):
 		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/QuickEmuRestart/keymap.xml"), "w") as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showEmuRestart" flags="m" />\n\t</map>\n</keymap>' % config.plugins.qer.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		if self.TrueImage():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -209,15 +209,15 @@ def sessionstart(reason,session=None, **kwargs):
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
-			where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART],
-			fnc = sessionstart
+			where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART],
+			fnc=sessionstart
 		),
 		PluginDescriptor(
 			name=_("2boom's QuickEmuRestart"),
-			description = _("Restart Softcam with a single button"),
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			icon = 'qer.png',
-			fnc = main
+			description=_("Restart Softcam with a single button"),
+			where=PluginDescriptor.WHERE_PLUGINMENU,
+			icon='qer.png',
+			fnc=main
 		),
 	]
 	return result

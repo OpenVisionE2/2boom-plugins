@@ -72,17 +72,17 @@ def logging(line):
 	log_file.close()
 
 config.plugins.epgdd = ConfigSubsection()
-config.plugins.epgdd.direct = ConfigSelection(choices = mountp())
-config.plugins.epgdd.epgname = ConfigText(default='epg.dat', visible_width = 50, fixed_size = False)
-config.plugins.epgdd.url = ConfigText(default='http://epg.giclub.tv/epg/epg.datru.gz', visible_width = 80, fixed_size = False)
-config.plugins.epgdd.leghtfile = ConfigInteger(default = 0)
-config.plugins.epgdd.menuext = ConfigYesNo(default = False)
-config.plugins.epgdd.flush = ConfigYesNo(default = False)
-config.plugins.epgdd.epgupdate = ConfigYesNo(default = False)
-config.plugins.epgdd.checkepgfile = ConfigYesNo(default = False)
-config.plugins.epgdd.nocheck = ConfigYesNo(default = True)
-config.plugins.epgdd.first = ConfigYesNo(default = True)
-config.plugins.epgdd.checkp = ConfigSelection(default = '60', choices = [
+config.plugins.epgdd.direct = ConfigSelection(choices=mountp())
+config.plugins.epgdd.epgname = ConfigText(default='epg.dat', visible_width=50, fixed_size=False)
+config.plugins.epgdd.url = ConfigText(default='http://epg.giclub.tv/epg/epg.datru.gz', visible_width=80, fixed_size=False)
+config.plugins.epgdd.leghtfile = ConfigInteger(default=0)
+config.plugins.epgdd.menuext = ConfigYesNo(default=False)
+config.plugins.epgdd.flush = ConfigYesNo(default=False)
+config.plugins.epgdd.epgupdate = ConfigYesNo(default=False)
+config.plugins.epgdd.checkepgfile = ConfigYesNo(default=False)
+config.plugins.epgdd.nocheck = ConfigYesNo(default=True)
+config.plugins.epgdd.first = ConfigYesNo(default=True)
+config.plugins.epgdd.checkp = ConfigSelection(default='60', choices=[
 		('30', _("30 min")),
 		('60', _("60 min")),
 		('120', _("120 min")),
@@ -111,7 +111,7 @@ class epgdd(ConfigListScreen, Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd")
-		config.plugins.epgdd.direct = ConfigSelection(choices = mountp())
+		config.plugins.epgdd.direct = ConfigSelection(choices=mountp())
 		self.setTitle(_('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2])
 		self.list = []
 		self.list.append(getConfigListEntry(_('Set autoupdate epg.dat'), config.plugins.epgdd.epgupdate))
@@ -176,7 +176,7 @@ class epgdd(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4 )
 
 	def cancel(self):
 		self.close()
@@ -452,22 +452,22 @@ def sessionstart(reason,session=None, **kwargs):
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
-			where = [PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART],
-			fnc = sessionstart
+			where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART],
+			fnc=sessionstart
 		),
 		PluginDescriptor(
 			name=_("2boom's Auto EPG Downloader"),
-			description = _('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2],
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			icon = 'epgdd.png',
-			fnc = main
+			description=_('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2],
+			where=PluginDescriptor.WHERE_PLUGINMENU,
+			icon='epgdd.png',
+			fnc=main
 		),
 	]
 	if config.plugins.epgdd.menuext.value:
 		result.append(PluginDescriptor(
 			name=_("2boom's Auto EPG Downloader"),
-			description = _('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2],
-			where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-			fnc = main
+			description=_('EPG from %s') % config.plugins.epgdd.url.value.split('/')[2],
+			where=PluginDescriptor.WHERE_EXTENSIONSMENU,
+			fnc=main
 			))
 	return result

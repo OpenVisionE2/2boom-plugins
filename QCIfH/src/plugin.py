@@ -213,11 +213,11 @@ class qcifh_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 		
 def main(session, **kwargs):
 	session.open(QCIfH)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's QuickChannelInfo for Hotkey"), description=_("quickchannelinfo for hotkey extentions"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="qcifh.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's QuickChannelInfo for Hotkey"), description=_("quickchannelinfo for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qcifh.png", fnc=main)]
 	return list

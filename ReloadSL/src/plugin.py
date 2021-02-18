@@ -65,5 +65,5 @@ def main(session, **kwargs):
 	session.open(reloadsl)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(name=_("Reload ServiceList"), description=_("Reload ServiceList"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)
+	return PluginDescriptor(name=_("Reload ServiceList"), description=_("Reload ServiceList"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)
 	#return result

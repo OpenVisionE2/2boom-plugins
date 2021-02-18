@@ -41,48 +41,48 @@ def logging(line):
 	log_file.write(line)
 	log_file.close()
 ####################################################################
-config.plugins.epanel.activeserver = ConfigText(default = "NotSelected")
-config.plugins.epanel.activeconf = ConfigText(default = "NotSelected")
-config.plugins.epanel.activeemu = ConfigText(default = "NotSelected")
-config.plugins.epanel.addbiss = ConfigSelection(default = "0", choices = [
+config.plugins.epanel.activeserver = ConfigText(default="NotSelected")
+config.plugins.epanel.activeconf = ConfigText(default="NotSelected")
+config.plugins.epanel.activeemu = ConfigText(default="NotSelected")
+config.plugins.epanel.addbiss = ConfigSelection(default="0", choices=[
 		("0", _("No")),
 		("1", _("Yes")),
 		])
-config.plugins.epanel.path = ConfigSelection(default = "/usr/keys/", choices = [
+config.plugins.epanel.path = ConfigSelection(default="/usr/keys/", choices=[
 		("/usr/keys/", "/usr/keys/"),
 		("/etc/keys/", "/etc/keys/"),
 		("/etc/tuxbox/config/", "/etc/tuxbox/config/"),
 		("/etc/tuxbox/config/oscam/", "/etc/tuxbox/config/oscam/"),
 		("/etc/tuxbox/config/ncam/", "/etc/tuxbox/config/ncam/"),
 		])
-config.plugins.epanel.keyname = ConfigSelection(default = "SoftCam.Key", choices = [
+config.plugins.epanel.keyname = ConfigSelection(default="SoftCam.Key", choices=[
 		("SoftCam.Key", "SoftCam.Key"),
 		("oscam.keys", "oscam.keys"),
 		("oscam.biss", "oscam.biss"),
 		("ncam.keys", "ncam.keys"),
 		("ncam.biss", "ncam.biss"),
 		])
-config.plugins.epanel.softcamserver = ConfigText(default="http://softcam.esy.es/softcam/SoftCam.Key", visible_width = 200, fixed_size = False)
+config.plugins.epanel.softcamserver = ConfigText(default="http://softcam.esy.es/softcam/SoftCam.Key", visible_width=200, fixed_size=False)
 config.plugins.usw = ConfigSubsection()
-config.plugins.usw.activeconf = ConfigText(default = "")
-config.plugins.usw.configpath = ConfigText(default = "")
-config.plugins.usw.emu = ConfigText(default = "")
-config.plugins.usw.configfile = ConfigText(default = "")
-config.plugins.usw.configext = ConfigText(default = "")
+config.plugins.usw.activeconf = ConfigText(default="")
+config.plugins.usw.configpath = ConfigText(default="")
+config.plugins.usw.emu = ConfigText(default="")
+config.plugins.usw.configfile = ConfigText(default="")
+config.plugins.usw.configext = ConfigText(default="")
 
 config.plugins.uswoscam = ConfigSubsection()
-config.plugins.uswoscam.active = ConfigYesNo(default = False)
-config.plugins.uswoscam.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam", visible_width = 200, fixed_size = False)
-config.plugins.uswoscam.configfile = ConfigText(default="oscam.conf", visible_width = 200, fixed_size = False)
-config.plugins.uswoscam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
+config.plugins.uswoscam.active = ConfigYesNo(default=False)
+config.plugins.uswoscam.activeconf = ConfigText(default="NotSelected")
+config.plugins.uswoscam.configpath = ConfigText(default="/etc/tuxbox/config/oscam", visible_width=200, fixed_size=False)
+config.plugins.uswoscam.configfile = ConfigText(default="oscam.conf", visible_width=200, fixed_size=False)
+config.plugins.uswoscam.configext = ConfigText(default="os", visible_width=100, fixed_size=False)
 
 config.plugins.uswncam = ConfigSubsection()
-config.plugins.uswncam.active = ConfigYesNo(default = False)
-config.plugins.uswncam.activeconf = ConfigText(default = "NotSelected")
-config.plugins.uswncam.configpath = ConfigText(default="/etc/tuxbox/config/ncam", visible_width = 200, fixed_size = False)
-config.plugins.uswncam.configfile = ConfigText(default="ncam.conf", visible_width = 200, fixed_size = False)
-config.plugins.uswncam.configext = ConfigText(default="os", visible_width = 100, fixed_size = False)
+config.plugins.uswncam.active = ConfigYesNo(default=False)
+config.plugins.uswncam.activeconf = ConfigText(default="NotSelected")
+config.plugins.uswncam.configpath = ConfigText(default="/etc/tuxbox/config/ncam", visible_width=200, fixed_size=False)
+config.plugins.uswncam.configfile = ConfigText(default="ncam.conf", visible_width=200, fixed_size=False)
+config.plugins.uswncam.configext = ConfigText(default="os", visible_width=100, fixed_size=False)
 ######################################################################################
 def ecm_view():
 	list = ''
@@ -504,7 +504,7 @@ class SoftcamPanel2(Screen):
 	def exit(self):
 		self.close()
 		
-	def go(self, num = None):
+	def go(self, num=None):
 		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
@@ -513,7 +513,7 @@ class SoftcamPanel2(Screen):
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
 
-	def keyOK(self, item = None):
+	def keyOK(self, item=None):
 		if item == None:
 			self.indexpos = self["menu"].getIndex()
 			item = self["menu"].getCurrent()[1]
@@ -576,7 +576,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 
 	def CreateOldKeyFile(self):
 		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
@@ -695,7 +695,7 @@ class uniswitcher(Screen):
 			file_prv.write(file_cfg)
 			file_prv.close()
 			os.chmod('%s/%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value), 664)
-			self.session.open(MessageBox, _("%s %s" % (self["list"].getCurrent()[0], config.plugins.usw.configfile.value)), type = MessageBox.TYPE_INFO, timeout = 6 )
+			self.session.open(MessageBox, _("%s %s" % (self["list"].getCurrent()[0], config.plugins.usw.configfile.value)), type=MessageBox.TYPE_INFO, timeout=6 )
 			self.indexpos = self["list"].getIndex()
 			self.mList()
 
@@ -707,7 +707,7 @@ class uniswitcher(Screen):
 		if fileExists("/etc/init.d/cardserver"):
 			self["text"].setText(clearlist)
 			self.iConsole.ePopen("/etc/init.d/cardserver restart")
-		self.session.open(MessageBox, _("Softcam Restarted"), type = MessageBox.TYPE_INFO, timeout = 7 )
+		self.session.open(MessageBox, _("Softcam Restarted"), type=MessageBox.TYPE_INFO, timeout=7 )
 
 	def Adress (self, nameserv):
 		cardline = ""
@@ -778,5 +778,5 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		configfile.save()
 		from Components.PluginComponent import plugins
 		plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout = 4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
 ####################################################################################

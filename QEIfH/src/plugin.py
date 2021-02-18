@@ -407,5 +407,5 @@ def main(session, **kwargs):
 	session.open(QEIfH)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("2boom's QuickEcmInfo for Hotkey"), description=_("quickecminfo for hotkey extentions"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="qeifh.png", fnc=main)]
+	list = [PluginDescriptor(name=_("2boom's QuickEcmInfo for Hotkey"), description=_("quickecminfo for hotkey extentions"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="qeifh.png", fnc=main)]
 	return list
