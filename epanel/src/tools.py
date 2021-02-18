@@ -697,7 +697,7 @@ class SwapScreen(Screen):
 
 	def isSwapPossible(self):
 		for line in open("/proc/mounts"):
-			fields= line.rstrip('\n').split()
+			fields = line.rstrip('\n').split()
 			if fields[1] == "%s" % self.swapfile[:-9]:
 				if fields[2] == 'ext2' or fields[2] == 'ext3' or fields[2] == 'ext4' or fields[2] == 'vfat':
 					return True
@@ -882,7 +882,7 @@ class UsbScreen(Screen):
 					if hdd.mountDevice() != '/media/hdd':
 						if devpnt is not None:
 							if int(hdd.free()) > 1024:
-								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()/1024, hdd.free()%1024), minipng, devpnt))
+								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free() / 1024, hdd.free() % 1024), minipng, devpnt))
 							else:
 								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%03d MB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()), minipng, devpnt))
 			except Exception as e:
@@ -965,10 +965,10 @@ class ScriptScreen3(Screen):
 		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
-				os.chmod('%s' %  self.name, 0755)
+				os.chmod('%s' % self.name, 0755)
 			else:
 				self.name = 'python %s' % self.name
-			self.iConsole.ePopen("nohup %s >/dev/null &" %  self.name)
+			self.iConsole.ePopen("nohup %s >/dev/null &" % self.name)
 			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout=4)
 
 	def run(self):
@@ -976,7 +976,7 @@ class ScriptScreen3(Screen):
 		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
-				os.chmod('%s' %  self.name, 0755)
+				os.chmod('%s' % self.name, 0755)
 			else:
 				self.name = 'python %s' % self.name
 			self.session.open(Console, self.script.replace("_", " "), cmdlist=[self.name])
@@ -1381,7 +1381,7 @@ class KernelScreen(Screen):
 
 	def Ok(self):
 		module_name = ''
-		module_name =  self["menu"].getCurrent()[-2].split('/')[-1][:-3]
+		module_name = self["menu"].getCurrent()[-2].split('/')[-1][:-3]
 		if not self["menu"].getCurrent()[-1]:
 			self.load_module(module_name)
 		else:
@@ -1996,7 +1996,7 @@ class onidManAdd(ConfigListScreen, Screen):
 		if self.is_hex(config.plugins.epanel.onid.value):
 			if fileExists(self.path):
 				in_file = open(self.path).read()
-			with  open(self.path, 'w') as out_file:
+			with open(self.path, 'w') as out_file:
 				out_file.write(in_file.replace('\r\n\r\n', '\r\n') + '%s\r\n' % config.plugins.epanel.onid.value.upper())
 				out_file.close()
 				logging('%02d:%02d:%d %02d:%02d:%02d - onid added - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.onid.value.upper()))
@@ -2139,7 +2139,7 @@ class CrontabManAdd(ConfigListScreen, Screen):
 			everymonth = '*/'
 		elif config.plugins.epanel.dayofweek.value is not '*' and config.plugins.epanel.every.value is '5':
 			everydayofweek = '*/'
-		if config.plugins.epanel.min.value is '*' and config.plugins.epanel.hour.value is '*' and config.plugins.epanel.dayofmonth.value is '*' and config.plugins.epanel.month.value is '*' and  config.plugins.epanel.dayofweek.value is '*':
+		if config.plugins.epanel.min.value is '*' and config.plugins.epanel.hour.value is '*' and config.plugins.epanel.dayofmonth.value is '*' and config.plugins.epanel.month.value is '*' and config.plugins.epanel.dayofweek.value is '*':
 			print("error")
 		else:
 			with open(self.path, 'a') as cron_root:

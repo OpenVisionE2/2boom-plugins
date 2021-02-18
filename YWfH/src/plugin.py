@@ -140,7 +140,7 @@ class WeatherInfo(Screen):
 			self["picon_" + day] = Pixmap()
 			self["text_" + day] = StaticText()
 		self.notdata = False
-		self["actions"] = ActionMap(["WizardActions",  "MenuActions"], 
+		self["actions"] = ActionMap(["WizardActions", "MenuActions"], 
 		{
 			"back": self.close,
 			"ok": self.close,
@@ -163,7 +163,7 @@ class WeatherInfo(Screen):
 		return True
 
 	def get_weather_data(self):
-		if not os.path.exists("/tmp/yweather.xml") or int((time.time() - os.stat("/tmp/yweather.xml").st_mtime)/60) >= self.time_update or self.notdata:
+		if not os.path.exists("/tmp/yweather.xml") or int((time.time() - os.stat("/tmp/yweather.xml").st_mtime) / 60) >= self.time_update or self.notdata:
 			self.get_xmlfile()
 		else:
 			self.parse_weather_data()
@@ -267,7 +267,7 @@ class WeatherInfo(Screen):
 			self.notdata = True
 		if not self.condition['code'] is '' and not self.wind['speed'] is '':
 			direct = int(self.condition['code'])
-			tmp_wind = (float(self.wind['speed']) * 1000)/3600
+			tmp_wind = (float(self.wind['speed']) * 1000) / 3600
 			if direct >= 0 and direct <= 20:
 				self["wind"].text = _('N, %3.02f m/s') % tmp_wind
 			elif direct >= 21 and direct <= 35:

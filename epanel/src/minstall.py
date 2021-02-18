@@ -287,7 +287,7 @@ class DownloadFeed(Screen):
 		self.path = status_path()
 		self.iConsole = iConsole()
 		if fileExists(self.path[:-6] + 'status'):
-			self.iConsole.ePopen("mv %s %s.tmp" %(self.path[:-6] + 'status', self.path[:-6] + 'status'))
+			self.iConsole.ePopen("mv %s %s.tmp" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.list = []
 		self["menu"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
@@ -369,11 +369,11 @@ class DownloadFeed(Screen):
 		
 	def download_wdeps(self):
 		if self["menu"].getCurrent() is not None:
-			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" %  self["menu"].getCurrent()[0]], closeOnSuccess=False)
+			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def cancel(self):
 		if fileExists(self.path[:-6] + 'status.tmp'):
-			self.iConsole.ePopen("mv %s.tmp %s" %(self.path[:-6] + 'status', self.path[:-6] + 'status'))
+			self.iConsole.ePopen("mv %s.tmp %s" % (self.path[:-6] + 'status', self.path[:-6] + 'status'))
 		self.close()
 ####################################################################
 class InstallAll4(Screen):

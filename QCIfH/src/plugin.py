@@ -81,7 +81,7 @@ class QCIfH(Screen):
 		self["fps"] = StaticText()
 		self["codec"] = StaticText()
 		self["sids"] = StaticText()
-		self["actions"] = ActionMap(["WizardActions",  "MenuActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions"],
 		{
 			"back": self.close,
 			"ok": self.close,
@@ -111,10 +111,10 @@ class QCIfH(Screen):
 					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "")
 			self.videocodec = ("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)]
 		if apid and binary_file:
-			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64*1024)
+			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64 * 1024)
 			self.audioBitrate.callback.append(self.getAudioBitrateData)
 		if vpid and binary_file:
-			self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024*1024)
+			self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024)
 			self.videoBitrate.callback.append(self.getVideoBitrateData)
 		self.onShow.append(self.staticinfo)
 		
@@ -156,7 +156,7 @@ class QCIfH(Screen):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
 		if xres == -1:
 			return ''
-		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
+		fps = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 		return fps
 
 	def getVideoBitrateData(self, value, status): 

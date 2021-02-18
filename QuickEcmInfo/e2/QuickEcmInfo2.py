@@ -98,9 +98,9 @@ class QuickEcmInfo2(Poll, Converter, object):
 				filedata = False
 			if filedata:
 				for line in filedata.readlines():
-					if "caid:" in line or "provider:" in line or "provid:" in line or "pid:" in line or "hops:" in line  or "system:" in line or "address:" in line or "using:" in line or "ecm time:" in line:
+					if "caid:" in line or "provider:" in line or "provid:" in line or "pid:" in line or "hops:" in line or "system:" in line or "address:" in line or "using:" in line or "ecm time:" in line:
 						line = line.replace(' ', "").replace(":", ": ")
-					if "caid:" in line or "pid:" in line or "reader:" in line or "from:" in line or "hops:" in line  or "system:" in line or "Service:" in line or "CAID:" in line or "Provider:" in line:
+					if "caid:" in line or "pid:" in line or "reader:" in line or "from:" in line or "hops:" in line or "system:" in line or "Service:" in line or "CAID:" in line or "Provider:" in line:
 						line = line.strip('\n') + "  "
 					if "Signature" in line:
 						line = ""
@@ -224,7 +224,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 				return ''
 			yres = info.getInfo(iServiceInformation.sVideoHeight)
 			mode = ('i', 'p', ' ')[info.getInfo(iServiceInformation.sProgressive)]
-			fps  = str((info.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
+			fps = str((info.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 			if '0' is fps:
 				fps = ''
 			else:
@@ -251,10 +251,10 @@ class QuickEcmInfo2(Poll, Converter, object):
 					onid = serviceInfo.getInfo(iServiceInformation.sONID)
 					dvbnamespace = serviceInfo.getInfo(iServiceInformation.sNamespace)
 				if vpid:
-					self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024*1024) 
+					self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024) 
 					self.videoBitrate.callback.append(self.getVideoBitrateData)
 				if apid:
-					self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64*1024)
+					self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64 * 1024)
 					self.audioBitrate.callback.append(self.getAudioBitrateData)
 		else:
 			self.clearData()

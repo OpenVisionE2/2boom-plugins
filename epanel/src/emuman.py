@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # by 2boom 2011-2015 4bob@ua.fm
-from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigSubsection, ConfigYesNo,   config, configfile
+from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigSubsection, ConfigYesNo, config, configfile
 from Components.ConfigList import ConfigListScreen
 from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
@@ -92,7 +92,7 @@ def ecm_view():
 			ecmfiles = open('/tmp/ecm.info', 'r')
 			for line in ecmfiles:
 				if 'port:' in line: 
-					port_flag  = 1
+					port_flag = 1
 				if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 					line = line.replace(' ', '').replace(':', ': ')
 				if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
@@ -177,7 +177,7 @@ class emuSel5(Screen):
 		self.listecm()
 		self.Timer = eTimer()
 		self.Timer.callback.append(self.listecm)
-		self.Timer.start(1000*4, False)
+		self.Timer.start(1000 * 4, False)
 		self.selemulist()
 		
 	def update_rc(self):
@@ -224,7 +224,7 @@ class emuSel5(Screen):
 				for line in open('/etc/init.d/%s' % what.split("\n")[0]):
 					if 'echo' in line:
 						nameemu.append(line)
-				emuname =  '%s' % nameemu[1].split('"')[1]
+				emuname = '%s' % nameemu[1].split('"')[1]
 			except:
 				emuname = ' '
 		return emuname
@@ -358,10 +358,10 @@ class start_cam(Screen):
 
 	def emuAddStartScript(self, result, retval, extra_args):
 		self["status"].text = _("Adding startscript...")
-		self.iConsole.ePopen("ln -s /etc/init.d/%s /etc/init.d/%s" % (self.current_item, self.emutype),  self.emuChmodStartScript)
+		self.iConsole.ePopen("ln -s /etc/init.d/%s /etc/init.d/%s" % (self.current_item, self.emutype), self.emuChmodStartScript)
 
 	def emuChmodStartScript(self, result, retval, extra_args):
-		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" %  self.emutype, self.emuScriptStart)
+		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" % self.emutype, self.emuScriptStart)
 
 	def emuScriptStart(self, result, retval, extra_args):
 		self["status"].text = _("Starting...")
@@ -384,7 +384,7 @@ class start_cam(Screen):
 				for line in open('/etc/init.d/%s' % what.split("\n")[0]):
 					if 'echo' in line:
 						nameemu.append(line)
-				emuname =  '%s' % nameemu[1].split('"')[1]
+				emuname = '%s' % nameemu[1].split('"')[1]
 			except:
 				emuname = ' '
 		return emuname
@@ -431,15 +431,15 @@ class stop_cam(Screen):
 	def emuCreateNone(self, result, retval, extra_args):
 		self["status"].text = _("Creating None script...")
 		if fileExists("/etc/init.d/%s.None" % self.emutype):
-			self.iConsole.ePopen("ln -s /etc/init.d/%s.None /etc/init.d/%s" % (self.emutype, self.emutype),  self.emuChmodStopScript)
+			self.iConsole.ePopen("ln -s /etc/init.d/%s.None /etc/init.d/%s" % (self.emutype, self.emutype), self.emuChmodStopScript)
 		elif fileExists("/etc/init.d/%s.none" % self.emutype):
-			self.iConsole.ePopen("ln -s /etc/init.d/%s.none /etc/init.d/%s" % (self.emutype, self.emutype),  self.emuChmodStopScript)
+			self.iConsole.ePopen("ln -s /etc/init.d/%s.none /etc/init.d/%s" % (self.emutype, self.emutype), self.emuChmodStopScript)
 		else:
 			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/%s.None && ln -s /etc/init.d/%s.None /etc/init.d/%s" %
 				(self.emutype, self.emutype, self.emutype), self.emuChmodStopScript)
 				
 	def emuChmodStopScript(self, result, retval, extra_args):
-		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" %  self.emutype, self.sleep_time)
+		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" % self.emutype, self.sleep_time)
 		
 	def sleep_time(self, result, retval, extra_args):
 		self.iConsole.ePopen("sleep 4", self.emuStopEndOperation)
@@ -649,7 +649,7 @@ class uniswitcher(Screen):
 		self.listecm()
 		self.Timer = eTimer()
 		self.Timer.callback.append(self.listecm)
-		self.Timer.start(1000*4, False)
+		self.Timer.start(1000 * 4, False)
 		self.mList()
 		
 	def listecm(self):
@@ -684,7 +684,7 @@ class uniswitcher(Screen):
 				config.plugins.uswncam.activeconf.value = config.plugins.usw.activeconf.value
 				config.plugins.uswncam.activeconf.save()
 			self.setTitle(_("%s Switcher: - %s") % (config.plugins.usw.emu.value, config.plugins.usw.activeconf.value))
-			if  fileExists("%s/%s" % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value)):
+			if fileExists("%s/%s" % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value)):
 				file_cfg = open('%s/%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configfile.value), 'r').read()
 				file_prv = open('%s/previous.%s' % (config.plugins.usw.configpath.value, config.plugins.usw.configext.value), 'w')
 				file_prv.write(file_cfg)

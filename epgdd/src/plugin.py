@@ -228,7 +228,7 @@ class Check_EPG():
 			if config.plugins.epgdd.leghtfile.value != lenght_epgfile:
 				self.loadepgdat()
 		except Exception as e:
-			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec,  str(e)))
+			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.timer.startLongTimer(int(config.plugins.epgdd.checkp.value) * 60)
 
 	def check_change_min(self):

@@ -297,7 +297,7 @@ class rpulite(Screen, ConfigListScreen):
 						channel_ref = ref_base.ref.get(line.split('udp/')[-1].split(':')[0].strip('\r\n'))
 						if not channel_ref or not config.plugins.rpulite.ref.value:
 							channel_ref = ':0:1:0:0:0:0:0:0:0'
-						line = line.replace(self.newproxy,  'rostelecom').replace(',ru', '')
+						line = line.replace(self.newproxy, 'rostelecom').replace(',ru', '')
 						if config.plugins.rpulite.servicetype.value is '4097':
 							outfile.write('#SERVICE %s%s:%s:%s\r\n' % (config.plugins.rpulite.servicetype.value, channel_ref, line.replace(':', '%3a', 3)[:-2], desk_tmp))
 						else:

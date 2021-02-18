@@ -123,14 +123,14 @@ class QEIfH(Screen):
 					self.audiocodec = str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "")
 			self.videocodec = ("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)]
 		if apid and binary_file:
-			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64*1024)
+			self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64 * 1024)
 			self.audioBitrate.callback.append(self.getAudioBitrateData)
 		if vpid and binary_file:
-			self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024*1024)
+			self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024)
 			self.videoBitrate.callback.append(self.getVideoBitrateData)
 		self.Timer = eTimer()
 		self.Timer.callback.append(self.ecmfileinfo)
-		self.Timer.start(1000*2, False)
+		self.Timer.start(1000 * 2, False)
 		self.onShow.append(self.staticinfo)
 
 	def getVideoBitrateData(self, value, status): 
@@ -210,7 +210,7 @@ class QEIfH(Screen):
 			return ''
 		yres = serviceInfo.getInfo(iServiceInformation.sVideoHeight)
 		mode = ('i', 'p', ' ')[serviceInfo.getInfo(iServiceInformation.sProgressive)]
-		fps  = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
+		fps = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 		return str(xres) + 'x' + str(yres) + mode + '(%s)' % fps
 
 	def getServiceInfoString(self, info, what):
@@ -253,7 +253,7 @@ class QEIfH(Screen):
 				if ecmfiles:
 					for line in ecmfiles:
 						if 'port:' in line: 
-							port_flag  = 1
+							port_flag = 1
 						if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 							line = line.replace(' ', '').replace(':', ': ')
 						if 'from:' in line or 'protocol:' in line or 'caid:' in line or 'pid:' in line or 'reader:' in line or 'hops:' in line or 'system:' in line or 'Service:' in line or 'CAID:' in line or 'Provider:' in line:
@@ -347,7 +347,7 @@ class QEIfH(Screen):
 							tmp_line = line.split()[-1].split('+')[-1].split('-')[0]
 						else:
 							tmp_line = line.split()[-1].split('-')[-1].split('.')[0]
-						driver = '%s.%s.%s' %(tmp_line[6:], tmp_line[4:-2], tmp_line[:4])
+						driver = '%s.%s.%s' % (tmp_line[6:], tmp_line[4:-2], tmp_line[:4])
 						break
 			if os.path.isfile("/proc/version"):
 				enigma = open("/proc/version").read().split()[2]
@@ -376,7 +376,7 @@ class QEIfH(Screen):
 				if "system type" in line:
 					processor = line.split(':')[-1].split()[0].strip().strip('\n')
 				elif "cpu MHz" in line:
-					cpu_speed =  line.split(':')[-1].strip().strip('\n')
+					cpu_speed = line.split(':')[-1].strip().strip('\n')
 				elif "cpu type" in line:
 					processor = line.split(':')[-1].strip().strip('\n')
 				elif "model name" in line:

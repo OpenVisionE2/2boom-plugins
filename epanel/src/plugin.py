@@ -372,9 +372,9 @@ class epanelinfo(Screen):
 						ip = line.split()[1].split(':')[-1]
 				self["macInfo"].text = '/'.join(mac)
 			else:
-				self["macInfo"].text =  _("unknown")
+				self["macInfo"].text = _("unknown")
 		else:
-			self["macInfo"].text =  _("unknown")
+			self["macInfo"].text = _("unknown")
 		if ip is not '':
 			self["ipInfo"].text = ip
 		else:
@@ -383,15 +383,15 @@ class epanelinfo(Screen):
 	def getGStreamerVersionString(self):
 		import enigma
 		try:
-			self["gstreamer"].text =  enigma.getGStreamerVersionString().strip('GStreamer ')
+			self["gstreamer"].text = enigma.getGStreamerVersionString().strip('GStreamer ')
 		except:
-			self["gstreamer"].text =  _("unknown")
+			self["gstreamer"].text = _("unknown")
 		
 	def getFlashDateString(self):
 		try:
 			self["installed"].text = time.strftime(_("%Y-%m-%d %H:%M"), time.localtime(os.stat("/boot").st_ctime))
 		except:
-			self["installed"].text =  _("unknown")
+			self["installed"].text = _("unknown")
 			
 	def getPythonVersionString(self):
 		try:
@@ -400,9 +400,9 @@ class epanelinfo(Screen):
 			except:
 				import subprocess as commands
 			status, output = commands.getstatusoutput("python -V")
-			self["python"].text =  output.split(' ')[1]
+			self["python"].text = output.split(' ')[1]
 		except:
-			self["python"].text =  _("unknown")
+			self["python"].text = _("unknown")
 		
 	def cpuinfo(self):
 		if fileExists("/proc/cpuinfo"):
@@ -414,7 +414,7 @@ class epanelinfo(Screen):
 				if "system type" in line:
 					processor = line.split(':')[-1].split()[0].strip().strip('\n')
 				elif "cpu MHz" in line:
-					cpu_speed =  line.split(':')[-1].strip().strip('\n')
+					cpu_speed = line.split(':')[-1].strip().strip('\n')
 					#cpu_count += 1
 				elif "cpu type" in line:
 					processor = line.split(':')[-1].strip().strip('\n')
@@ -466,9 +466,9 @@ class epanelinfo(Screen):
 				if "echo" in line:
 					nameemu.append(line)
 			try:
-				self["softcam"].text =  "%s" % nameemu[1].split('"')[1]
+				self["softcam"].text = "%s" % nameemu[1].split('"')[1]
 			except:
-				self["softcam"].text =  "Not Active"
+				self["softcam"].text = "Not Active"
 		else:
 			self["softcam"].text = _("Not Installed")
 		if fileExists("/etc/init.d/cardserver"):
@@ -478,7 +478,7 @@ class epanelinfo(Screen):
 			try:
 				self["cardserver"].text = "%s" % namecard[1].split('"')[1]
 			except:
-				self["cardserver"].text =  "Not Active"
+				self["cardserver"].text = "Not Active"
 		else:
 			self["cardserver"].text = _("Not Installed")
 		
@@ -490,7 +490,7 @@ class epanelinfo(Screen):
 			for count in range(len(hddlist)):
 				hdd = hddlist[count][1]
 				if int(hdd.free()) > 1024:
-					list += ((_("%s  %s  (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free()/1024, hdd.free()%1024)))
+					list += ((_("%s  %s  (%d.%03d GB free)\n") % (hdd.model(), hdd.capacity(), hdd.free() / 1024, hdd.free() % 1024)))
 				else:
 					list += ((_("%s  %s  (%03d MB free)\n") % (hdd.model(), hdd.capacity(), hdd.free())))
 		else:
@@ -581,7 +581,7 @@ class epanelinfo(Screen):
 			elif "MemFree:" in line:
 				memfree = line.split()[1]
 			elif "SwapTotal:" in line:
-				swaptotal =  line.split()[1]
+				swaptotal = line.split()[1]
 			elif "SwapFree:" in line:
 				swapfree = line.split()[1]
 		self["memTotal"].text = _("Total: %s Kb  Free: %s Kb") % (memtotal, memfree)
@@ -687,7 +687,7 @@ class loadEPG():
 			if config.plugins.epanel.leghtfile.value != lenght_epgfile:
 				self.loadepgdat()
 		except Exception as e:
-			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec,  str(e)))
+			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.timer.startLongTimer(int(config.plugins.epanel.checkp.value) * 60)
 
 	def check_change_min(self):
