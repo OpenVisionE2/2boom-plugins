@@ -583,7 +583,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		self["key_blue"] = StaticText(_("Get WOEID"))
 		self["text"].setText(help_txt)
 		for item in ('1', '2', '3', '4'):
-			self["icon" + item ] = Pixmap()
+			self["icon" + item] = Pixmap()
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"red": self.cancel,
@@ -627,7 +627,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		
 class search_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
@@ -698,11 +698,11 @@ class search_setup(Screen, ConfigListScreen):
 			os.remove("/tmp/woeid.xml")
 		if os.path.exists("/tmp/yweather.xml"):
 			os.remove("/tmp/yweather.xml")
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		
 	def get_woeid(self):
 		if self.isServerOnline():
-			urllib.urlretrieve ("http://where.yahooapis.com/v1/places.q('%s')?appid=dj0yJmk9QmFoVGxPMzBiV282JmQ9WVdrOU5XbE5hVWxrTnpRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0xMw--" % config.plugins.yweather.weather_city_locale_search.value, "/tmp/woeid.xml")
+			urllib.urlretrieve("http://where.yahooapis.com/v1/places.q('%s')?appid=dj0yJmk9QmFoVGxPMzBiV282JmQ9WVdrOU5XbE5hVWxrTnpRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0xMw--" % config.plugins.yweather.weather_city_locale_search.value, "/tmp/woeid.xml")
 			self.parse_woeid_data()
 		else:
 			self["text"].setText('/tmp/woeid.xml not found')

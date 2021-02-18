@@ -565,7 +565,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		self["key_yellow"] = StaticText(_("Restart"))
 		self["text"].setText(help_txt)
 		for item in ('1', '2', '3', '4'):
-			self["icon" + item ] = Pixmap()
+			self["icon" + item] = Pixmap()
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"red": self.cancel,
@@ -608,7 +608,7 @@ class yweather_setup(Screen, ConfigListScreen):
 		with open(resolveFilename(SCOPE_PLUGINS, 'Extensions/YWeather/keymap.xml'), 'w') as keyfile:
 			keyfile.write('<keymap>\n\t<map context="GlobalActions">\n\t\t<key id="%s" mapto="showWeather" flags="l" />\n\t</map>\n</keymap>' % config.plugins.yweather.keyname.value)
 			keyfile.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
 def main(session, **kwargs):
 	session.open(yweather_setup)

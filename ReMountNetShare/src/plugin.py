@@ -210,13 +210,13 @@ class remount_setup(ConfigListScreen, Screen):
 
 	def remount(self):
 		self.Console.ePopen(main_func())
-		self.mbox = self.session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4)
 
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		if not IsImageName():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -226,11 +226,11 @@ def main(session, **kwargs):
 
 def func(session, **kwargs):
 	Console().ePopen(main_func())
-	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4 )
+	session.open(MessageBox, (_("remounting ...")), MessageBox.TYPE_INFO, timeout=4)
 	
 def func2(session, **kwargs):
 	Console().ePopen("umount -a -f -t nfs,cifs")
-	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout=4 )
+	session.open(MessageBox, (_("unmounting ...")), MessageBox.TYPE_INFO, timeout=4)
 
 pRemount = ReMountNetShare()
 

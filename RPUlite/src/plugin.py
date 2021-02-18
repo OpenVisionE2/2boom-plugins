@@ -205,7 +205,7 @@ class rpulite(Screen, ConfigListScreen):
 			if os.path.isfile(self.path):
 				remove_line(self.path, 'get_ip_rtc')
 				self.cron_update()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6)
 
 	def cron_update(self):
 		if os.path.isfile(self.path):

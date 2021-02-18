@@ -176,9 +176,9 @@ class easyPanel2(Screen):
 		sevenpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/addon.png"))
 		eightpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/system2.png"))
 		self.list.append((_("Simple Softcam/Cardserver"), 1, _("Start, Stop, Restart Sofcam/Cardserver"), onepng))
-		self.list.append((_("Service Tools"), 2, _("Manage epg, ntp, unmount, script, info ..."), twopng ))
-		self.list.append((_("System Tools"), 3, _("kernel modules manager, manage swap, ftp, samba, unmount USB"), sixpng ))
-		self.list.append((_("System Tools 2"), 4, _("cache flush, DDNS sync"), eightpng ))
+		self.list.append((_("Service Tools"), 2, _("Manage epg, ntp, unmount, script, info ..."), twopng))
+		self.list.append((_("System Tools"), 3, _("kernel modules manager, manage swap, ftp, samba, unmount USB"), sixpng))
+		self.list.append((_("System Tools 2"), 4, _("cache flush, DDNS sync"), eightpng))
 		self.list.append((_("Manual Installer/Uninstaller"), 5, _("install/uninstall local .ipk & .tar.gz files from /tmp"), treepng))
 		self.list.append((_("Plugin Browser"), 6, _("Install & Remove Plugins, Addons, Softcams"), sevenpng))
 		self.list.append((_("E-Panel Config"), 7, _("config menu and extentionsmenu for E-Panel items"), fourpng))
@@ -223,16 +223,16 @@ class easyPanel2(Screen):
 	def exit(self):
 		self.close()
 
-	def keyBlue (self):
+	def keyBlue(self):
 		self.session.open(minstall.IPKToolsScreen2)
 				
-	def keyYellow (self):
+	def keyYellow(self):
 		self.session.open(tools.ToolsScreen2)
 		
-	def keyGreen (self):
+	def keyGreen(self):
 		self.session.open(emuman.emuSel5)
 	
-	def infoKey (self):
+	def infoKey(self):
 		self.session.open(epanelinfo)
 ######################################################################################
 class epanelinfo(Screen):
@@ -658,7 +658,7 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		if not IsImageName():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
@@ -720,7 +720,7 @@ class loadEPG():
 				config.plugins.epanel.leghtfile.value = int(urllib.urlopen(config.plugins.epanel.url.value).info()['content-length'])
 				config.plugins.epanel.leghtfile.save()
 				configfile.save()
-				urllib.urlretrieve (config.plugins.epanel.url.value, '/tmp/epg.dat.gz')
+				urllib.urlretrieve(config.plugins.epanel.url.value, '/tmp/epg.dat.gz')
 				if os.path.isfile('/tmp/epg.dat.gz'):
 					inFile = gzip.GzipFile('/tmp/epg.dat.gz', 'rb')
 					s = inFile.read()

@@ -98,10 +98,10 @@ class IPKToolsScreen2(Screen):
 		treepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipk.png"))
 		sixpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipk3.png"))
 		fivepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipk4.png"))
-		self.list.append((_("ipk packets, bh.tgz, tar.gz, nab.tgz installer"), 1, _("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), onepng ))
-		self.list.append((_("install extensions"), 2, _("install extensions from feed"), sixpng ))
+		self.list.append((_("ipk packets, bh.tgz, tar.gz, nab.tgz installer"), 1, _("install & forced install ipk, bh.tgz, tar.gz, nab.tgz from /tmp"), onepng))
+		self.list.append((_("install extensions"), 2, _("install extensions from feed"), sixpng))
 		self.list.append((_("download extensions"), 3, _("dowmload extensions from feed"), fivepng))
-		self.list.append((_("ipk packets remover"), 4, _("remove & advanced remove ipk packets"), treepng ))
+		self.list.append((_("ipk packets remover"), 4, _("remove & advanced remove ipk packets"), treepng))
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
 		self["menu"].setList(self.list)
@@ -124,7 +124,7 @@ class IPKToolsScreen2(Screen):
 				files = glob.glob(ext)
 				for filename in files:
 					os.remove(filename)
-		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4  )
+		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4)
 
 	def go(self, num=None):
 		if num is not None:

@@ -427,12 +427,12 @@ class ToolsScreen2(Screen):
 		fourpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/vset.png"))
 		fivepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/script.png"))
 		sixpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ntp.png"))
-		self.list.append((_("Crashlog viewer"), 1, _("view & remove crashlog files"), onepng ))
-		self.list.append((_("View settings"), 2, _("view system settings"), fourpng ))
-		self.list.append((_("System info"), 3, _("system info (free, dh -f, hosts)"), twopng ))
-		self.list.append((_("EPG Downloader"), 4, _("EPG from %s" % config.plugins.epanel.url.value.split('/')[2]), treepng ))
-		self.list.append((_("Synchronization NTP"), 5, _("Synchronization ntp every 30 min,60 min,120 min, 240 min and Now"), sixpng ))
-		self.list.append((_("User Scripts"), 6, _("Start scripts from /usr/script"), fivepng ))
+		self.list.append((_("Crashlog viewer"), 1, _("view & remove crashlog files"), onepng))
+		self.list.append((_("View settings"), 2, _("view system settings"), fourpng))
+		self.list.append((_("System info"), 3, _("system info (free, dh -f, hosts)"), twopng))
+		self.list.append((_("EPG Downloader"), 4, _("EPG from %s" % config.plugins.epanel.url.value.split('/')[2]), treepng))
+		self.list.append((_("Synchronization NTP"), 5, _("Synchronization ntp every 30 min,60 min,120 min, 240 min and Now"), sixpng))
+		self.list.append((_("User Scripts"), 6, _("Start scripts from /usr/script"), fivepng))
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
 		self["menu"].setList(self.list)
@@ -536,9 +536,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_1(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
 			
 	def startservice(self):
 		menu_item = self["menu"].getCurrent()[1]
@@ -547,9 +547,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_2(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Starting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("Starting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
 			
 	def stopservice(self):
 		menu_item = self["menu"].getCurrent()[1]
@@ -558,9 +558,9 @@ class ServiceMan(Screen):
 			
 	def info_mess_3(self, result, retval, extra_args):
 		if retval is 0:
-			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4 )
+			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
 			
 	def cancel(self):
 		self.close()
@@ -730,7 +730,7 @@ class SwapScreen(Screen):
 	def info_mess(self, result, retval, extra_args):
 		self.setTitle(_("Swap on USB/HDD"))
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
 		self.CfgMenu()
@@ -759,7 +759,7 @@ class SwapScreen(Screen):
 					self.list.append((_("Swap off"), "5", (_("Swap on %s off (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minisonpng))
 				else:
 					self.list.append((_("Swap on"), "4", (_("Swap on %s on (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
-					self.list.append((_("Remove swap"), "7", ( _("Remove swap on %s (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
+					self.list.append((_("Remove swap"), "7", (_("Remove swap on %s (%s)") % (self.swapfile[7:10].upper(), self.isSwapSize())), minispng))
 			else:
 				self.list.append((_("Make swap"), "11", _("Make swap on %s (128MB)") % self.swapfile[7:10].upper(), minispng))
 				self.list.append((_("Make swap"), "12", _("Make swap on %s (256MB)") % self.swapfile[7:10].upper(), minispng))
@@ -882,7 +882,7 @@ class UsbScreen(Screen):
 					if hdd.mountDevice() != '/media/hdd':
 						if devpnt is not None:
 							if int(hdd.free()) > 1024:
-								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()/1024, hdd.free()%1024 ), minipng, devpnt))
+								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()/1024, hdd.free()%1024), minipng, devpnt))
 							else:
 								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%03d MB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free()), minipng, devpnt))
 			except Exception as e:
@@ -891,7 +891,7 @@ class UsbScreen(Screen):
 		else:
 			hddinfo = _("none")
 		self["menu"].setList(self.list)
-		self["actions"] = ActionMap(["OkCancelActions"], { "cancel": self.close}, -1)
+		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
 
 	def Ok(self):
 		item = self["menu"].getCurrent()[-1]
@@ -905,7 +905,7 @@ class UsbScreen(Screen):
 
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
 		
 	def filesystem(self, mountpoint):
@@ -969,7 +969,7 @@ class ScriptScreen3(Screen):
 			else:
 				self.name = 'python %s' % self.name
 			self.iConsole.ePopen("nohup %s >/dev/null &" %  self.name)
-			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_("the script is running in the background...")), MessageBox.TYPE_INFO, timeout=4)
 
 	def run(self):
 		self.script = self["list"].getCurrent()
@@ -1098,7 +1098,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		else:
 			if fileExists(self.path):
 				remove_line(self.path, 'ntpdate')
-			self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
+			self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6)
 
 	def cron_ntpsetup(self):
 		with open(self.path, 'a') as cron_root:
@@ -1110,7 +1110,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 			cron_update.write('root')
 			cron_update.close()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=6)
 
 	def UpdateNow(self):
 		self.session.open(update_current_time)
@@ -1188,7 +1188,7 @@ class ManualSetTime(ConfigListScreen, Screen):
 		
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout=6 )
+			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout=6)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
 		self.setTitle(_("NtpTime Updater"))
@@ -1252,9 +1252,9 @@ class SystemScreen(Screen):
 		self.list.append((_("Kernel Modules Manager"), 1, _("load & unload kernel modules"), onepng))
 		self.list.append((_("Service Manager"), 2, _("Start, Stop, Restart system services"), twopng))
 		self.list.append((_("Cron Manager"), 3, _("Is a time-based job scheduler"), fivepng))
-		self.list.append((_("Swap Manager"), 4, _("Start, Stop, Create, Remove Swap file"), fourpng ))
-		self.list.append((_("UnMount USB"), 5, _("Unmount usb devices"), treepng ))
-		self.list.append((_("Hosts editor"), 6, _("add/remove records in /etc/hosts"), sixpng ))
+		self.list.append((_("Swap Manager"), 4, _("Start, Stop, Create, Remove Swap file"), fourpng))
+		self.list.append((_("UnMount USB"), 5, _("Unmount usb devices"), treepng))
+		self.list.append((_("Hosts editor"), 6, _("add/remove records in /etc/hosts"), sixpng))
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
 		self["menu"].setList(self.list)
@@ -1395,7 +1395,7 @@ class KernelScreen(Screen):
 		self.iConsole.ePopen('rm -f /etc/modules-load.d/%s.conf' % extra_args, self.info_mess, extra_args)
 		
 	def info_mess(self, result, retval, extra_args):
-		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4)
 		self.module_list()
 		
 	def load_module(self, module_name):
@@ -1406,7 +1406,7 @@ class KernelScreen(Screen):
 			with open('/etc/modules-load.d/%s.conf' % extra_args, 'w') as autoload_file:
 				autoload_file.write('%s' % extra_args)
 				autoload_file.close()
-			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4)
 			self.module_list()
 		
 	def exit(self):
@@ -1462,9 +1462,9 @@ class lsmodScreen(Screen):
 				else: 
 					aliasname = ' '
 				if 'Module' not in line:
-					self.list.append((line.split()[0], ( _("size: %s  %s") % (line.split()[1], aliasname)), minipng))
+					self.list.append((line.split()[0], (_("size: %s  %s") % (line.split()[1], aliasname)), minipng))
 		self["menu"].setList(self.list)
-		self["actions"] = ActionMap(["OkCancelActions"], { "cancel": self.close}, -1)
+		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
 
 	def exit(self):
 		self.close()
@@ -1533,7 +1533,7 @@ class CrashLogScreen(Screen):
 						logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.list.sort()
 		self["menu"].setList(self.list)
-		self["actions"] = ActionMap(["OkCancelActions"], { "cancel": self.close}, -1)
+		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
 		
 	def Ok(self):
 		try:
@@ -1549,7 +1549,7 @@ class CrashLogScreen(Screen):
 			item = self.path + self["menu"].getCurrent()[0]
 			if fileExists(item):
 				os.remove(item)
-			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
 		
 	def BlueKey(self):
@@ -1564,7 +1564,7 @@ class CrashLogScreen(Screen):
 		except Exception as e:
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files") ), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files")), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
 		
 	def exit(self):
@@ -1628,7 +1628,7 @@ class LogScreen(Screen):
 						if "]]>" in line:
 							break
 		self["text"].setText(list)
-		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"], { "cancel": self.close, "up": self["text"].pageUp, "left": self["text"].pageUp, "down": self["text"].pageDown, "right": self["text"].pageDown,}, -1)
+		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions"], {"cancel": self.close, "up": self["text"].pageUp, "left": self["text"].pageUp, "down": self["text"].pageDown, "right": self["text"].pageDown,}, -1)
 ######################################################################################
 class get_source(Screen):
 	skin = """
@@ -1779,7 +1779,7 @@ class epgdna(ConfigListScreen, Screen):
 		if self.image_is_pli():
 			from Components.PluginComponent import plugins
 			plugins.reloadPlugins()
-		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4)
 
 	def cancel(self):
 		self.close()
@@ -1832,7 +1832,7 @@ class get_epg_dat(Screen):
 				configfile.save()
 				if os.path.isfile('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)):
 					os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), stat.S_IWRITE)
-				urllib.urlretrieve (config.plugins.epanel.url.value, '/tmp/epg.dat.gz')
+				urllib.urlretrieve(config.plugins.epanel.url.value, '/tmp/epg.dat.gz')
 				if os.path.isfile('/tmp/epg.dat.gz'):
 					inFile = gzip.GzipFile('/tmp/epg.dat.gz', 'rb')
 					s = inFile.read()
@@ -2000,9 +2000,9 @@ class onidManAdd(ConfigListScreen, Screen):
 				out_file.write(in_file.replace('\r\n\r\n', '\r\n') + '%s\r\n' % config.plugins.epanel.onid.value.upper())
 				out_file.close()
 				logging('%02d:%02d:%d %02d:%02d:%02d - onid added - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.onid.value.upper()))
-				self.mbox = self.session.open(MessageBox, (_('value saved')), MessageBox.TYPE_INFO, timeout=4 )
+				self.mbox = self.session.open(MessageBox, (_('value saved')), MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.mbox = self.session.open(MessageBox, (_('value is not hex')), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_('value is not hex')), MessageBox.TYPE_INFO, timeout=4)
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
@@ -2511,7 +2511,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if config.plugins.epanel.dnstime.value is not '0':
 			self.cron_setup()
 			self.create_script()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 		
 	def create_script(self):
 		updatestr = ''
@@ -2543,7 +2543,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		if fileExists(resolveFilename(SCOPE_PLUGINS, 'Extensions/epanel/no-ip.pyo')):
 			self.session.open(Console, title=_("DNS updating..."), cmdlist=["python %s" % resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")], closeOnSuccess=False)
 		else:
-			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_("update script not found...")), MessageBox.TYPE_INFO, timeout=4)
 
 ######################################################################################
 class DropScreen(ConfigListScreen, Screen):
@@ -2625,7 +2625,7 @@ class DropScreen(ConfigListScreen, Screen):
 			remove_line(self.path, 'drop_caches')
 		if config.plugins.epanel.droptime.value is not '0':
 			self.cron_setup()
-		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4 )
+		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
 	def cron_setup(self):
 		if config.plugins.epanel.droptime.value is not '0':
@@ -2644,8 +2644,8 @@ class DropScreen(ConfigListScreen, Screen):
 		
 	def Finish(self, result, retval, extra_args):
 		if retval is 0:
-			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout=4)
 		else:
-			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout=4 )
+			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout=4)
 		self.infomem()
 ##################################################################################################

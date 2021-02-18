@@ -92,9 +92,9 @@ class QEIfH(Screen):
 		self["vbit"] = StaticText()
 		self["abit"] = StaticText()
 		self.TxtCaids = {
-			"26" : "BiSS", "01" : "Seca Mediaguard", "06" : "Irdeto", "17" : "BetaCrypt", "05" : "Viacces", "18" : "Nagravision", "09" : "NDS-Videoguard",
-			"0B" : "Conax", "0D" : "Cryptoworks", "4A" : "DRE-Crypt", "27" : "ExSet", "0E" : "PowerVu", "22" : "Codicrypt", "07" : "DigiCipher",
-			"56" : "Verimatrix", "7B" : "DRE-Crypt", "A1" : "Rosscrypt"}
+			"26": "BiSS", "01": "Seca Mediaguard", "06": "Irdeto", "17": "BetaCrypt", "05": "Viacces", "18": "Nagravision", "09": "NDS-Videoguard",
+			"0B": "Conax", "0D": "Cryptoworks", "4A": "DRE-Crypt", "27": "ExSet", "0E": "PowerVu", "22": "Codicrypt", "07": "DigiCipher",
+			"56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"}
 		self["ecmfile"].setText(self.ecm_view())
 		self["actions"] = ActionMap(["WizardActions"],
 		{
