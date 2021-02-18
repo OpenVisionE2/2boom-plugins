@@ -58,7 +58,7 @@ class Console2(Screen):
 		else:
 			lastpage = self["text"].isAtLastPage()
 			str = self["text"].getText()
-			str += _("Execution finished!!");
+			str += _("Execution finished!!")
 			self["text"].setText(str)
 			self.setTitle(_("Execution finished!!"))
 			if lastpage:

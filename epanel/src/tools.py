@@ -1765,13 +1765,13 @@ class epgdna(ConfigListScreen, Screen):
 			if self.image_is_atv6():
 				config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
 				config.misc.epgcache_filename.save()
-			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % \
+			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' %
 				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
 		else:
 			config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
 			config.misc.epgcache_filename.save()
 			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcache_filename.value))
-		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s min check period\r\n' % \
+		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s min check period\r\n' %
 			(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.checkp.value))
 		configfile.save()
 		if not config.plugins.epanel.epgupdate.value:
@@ -2143,8 +2143,8 @@ class CrontabManAdd(ConfigListScreen, Screen):
 			print("error")
 		else:
 			with open(self.path, 'a') as cron_root:
-				cron_root.write('%s%s %s%s %s%s %s%s %s%s    %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,\
-					everydayofmonth, config.plugins.epanel.dayofmonth.value, everymonth, config.plugins.epanel.month.value,\
+				cron_root.write('%s%s %s%s %s%s %s%s %s%s    %s' % (everymin, config.plugins.epanel.min.value, everyhour, config.plugins.epanel.hour.value,
+					everydayofmonth, config.plugins.epanel.dayofmonth.value, everymonth, config.plugins.epanel.month.value,
 					everydayofweek, config.plugins.epanel.dayofweek.value, config.plugins.epanel.command.value))
 				cron_root.close()
 			with open('%scron.update' % self.path[:-4], 'w') as cron_update:

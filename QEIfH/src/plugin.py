@@ -92,8 +92,8 @@ class QEIfH(Screen):
 		self["vbit"] = StaticText()
 		self["abit"] = StaticText()
 		self.TxtCaids = {
-			"26" : "BiSS", "01" : "Seca Mediaguard", "06" : "Irdeto", "17" : "BetaCrypt", "05" : "Viacces", "18" : "Nagravision", "09" : "NDS-Videoguard",\
-			"0B" : "Conax", "0D" : "Cryptoworks", "4A" : "DRE-Crypt", "27" : "ExSet", "0E" : "PowerVu", "22" : "Codicrypt", "07" : "DigiCipher",\
+			"26" : "BiSS", "01" : "Seca Mediaguard", "06" : "Irdeto", "17" : "BetaCrypt", "05" : "Viacces", "18" : "Nagravision", "09" : "NDS-Videoguard",
+			"0B" : "Conax", "0D" : "Cryptoworks", "4A" : "DRE-Crypt", "27" : "ExSet", "0E" : "PowerVu", "22" : "Codicrypt", "07" : "DigiCipher",
 			"56" : "Verimatrix", "7B" : "DRE-Crypt", "A1" : "Rosscrypt"}
 		self["ecmfile"].setText(self.ecm_view())
 		self["actions"] = ActionMap(["WizardActions"],
@@ -157,7 +157,7 @@ class QEIfH(Screen):
 		self["caids"].text = self.caidline()
 		
 	def convert_color(self, color_in):
-		hex_color = {'0':'0', '1':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', '8':'8', '9':'9',\
+		hex_color = {'0':'0', '1':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', '8':'8', '9':'9',
 			'a':':', 'b':';', 'c':'<', 'd':'=', 'e':'>', 'f':'?', 'A':':', 'B':';', 'C':'<', 'D':'=', 'E':'>', 'F':'?'}
 		color_out = '\c'
 		for i in range(1, len(color_in)):

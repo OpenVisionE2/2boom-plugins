@@ -435,7 +435,7 @@ class stop_cam(Screen):
 		elif fileExists("/etc/init.d/%s.none" % self.emutype):
 			self.iConsole.ePopen("ln -s /etc/init.d/%s.none /etc/init.d/%s" % (self.emutype, self.emutype),  self.emuChmodStopScript)
 		else:
-			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/%s.None && ln -s /etc/init.d/%s.None /etc/init.d/%s" % \
+			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/%s.None && ln -s /etc/init.d/%s.None /etc/init.d/%s" %
 				(self.emutype, self.emutype, self.emutype), self.emuChmodStopScript)
 				
 	def emuChmodStopScript(self, result, retval, extra_args):
@@ -580,11 +580,11 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 
 	def CreateOldKeyFile(self):
 		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
-		self.iConsole.ePopen('mv %s%s %s%s' % \
+		self.iConsole.ePopen('mv %s%s %s%s' %
 			(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.DownloadKeyFile)
 		
 	def DownloadKeyFile(self, result, retval, extra_args):
-		self.iConsole.ePopen("wget -q %s -O %s%s" % \
+		self.iConsole.ePopen("wget -q %s -O %s%s" %
 			(config.plugins.epanel.softcamserver.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.CheckNewKeyFile)
 			
 	def CheckNewKeyFile(self, result, retval, extra_args):
@@ -592,7 +592,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 			if fileExists('%s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value)):
 				self.iConsole.ePopen('rm -f %s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.ChmodKeyFile)
 			else:
-				self.iConsole.ePopen('mv %s%s %s%s' % \
+				self.iConsole.ePopen('mv %s%s %s%s' %
 					(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old', config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.ChmodKeyFile)
 	
 	def ChmodKeyFile(self, result, retval, extra_args):

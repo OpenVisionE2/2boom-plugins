@@ -158,7 +158,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 			return ''
 
 	def convert_color(self, color_in):
-		hex_color = {'0':'0', '1':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', '8':'8', '9':'9',\
+		hex_color = {'0':'0', '1':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', '8':'8', '9':'9',
 			'a':':', 'b':';', 'c':'<', 'd':'=', 'e':'>', 'f':'?', 'A':':', 'B':';', 'C':'<', 'D':'=', 'E':'>', 'F':'?'}
 		color_out = '\c'
 		for i in range(1, len(color_in)):
@@ -304,8 +304,8 @@ class QuickEcmInfo2(Poll, Converter, object):
 					bar_caids += self.maincolor + caid_default[i] + '  '
 			return bar_caids.strip()
 		elif self.type is self.txtcaid:
-			TxtCaids = {"26" : "BiSS", "01" : "Seca Mediaguard", "06" : "Irdeto", "17" : "BetaCrypt", "05" : "Viaccess", "18" : "Nagravision",\
-				"09" : "NDS-Videoguard", "0B" : "Conax", "0D" : "Cryptoworks", "4A" : "DRE-Crypt", "27" : "ExSet", "0E" : "PowerVu", "22" : "Codicrypt",\
+			TxtCaids = {"26" : "BiSS", "01" : "Seca Mediaguard", "06" : "Irdeto", "17" : "BetaCrypt", "05" : "Viaccess", "18" : "Nagravision",
+				"09" : "NDS-Videoguard", "0B" : "Conax", "0D" : "Cryptoworks", "4A" : "DRE-Crypt", "27" : "ExSet", "0E" : "PowerVu", "22" : "Codicrypt",
 				"07" : "DigiCipher", "56" : "Verimatrix", "7B" : "DRE-Crypt", "A1" : "Rosscrypt"} 
 			iscrypt = self.getServiceInfoString(info, iServiceInformation.sCAIDs)
 			if not iscrypt:
@@ -348,8 +348,8 @@ class QuickEcmInfo2(Poll, Converter, object):
 			prcpid = info.getInfo(iServiceInformation.sPCRPID)
 			onid = info.getInfo(iServiceInformation.sONID)
 			bar_pids = '%sSID: %s%0.4X%s  VPID: %s%0.4X%s  APID: %s%0.4X%s  PRCPID: %s%0.4X%s  TSID: %s%0.4X%s  ONID: %s%0.4X%s' %\
-				(self.maincolor, self.basecolor, sid, self.maincolor, self.basecolor, vpid, self.maincolor,\
-				self.basecolor, apid, self.maincolor, self.basecolor, prcpid, self.maincolor,\
+				(self.maincolor, self.basecolor, sid, self.maincolor, self.basecolor, vpid, self.maincolor,
+				self.basecolor, apid, self.maincolor, self.basecolor, prcpid, self.maincolor,
 				self.basecolor, tsid, self.maincolor, self.basecolor, onid, self.maincolor)
 			return bar_pids.replace('-0001', 'N/A')
 		elif self.type is self.bitrate:
