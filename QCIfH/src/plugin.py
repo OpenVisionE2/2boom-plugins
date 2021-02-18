@@ -47,7 +47,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 if os.path.isfile('/usr/lib/bitratecalc.so'):
 	from bitratecalc import eBitrateCalculator
@@ -66,7 +66,7 @@ def isHD():
 	return desktopSize[0] == 1280
 
 
-config.plugins.qcifh = ConfigSubsection()	
+config.plugins.qcifh = ConfigSubsection()
 config.plugins.qcifh.skin = ConfigYesNo(default=True)
 
 
@@ -123,7 +123,7 @@ class QCIfH(Screen):
 			self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024)
 			self.videoBitrate.callback.append(self.getVideoBitrateData)
 		self.onShow.append(self.staticinfo)
-		
+
 	def staticinfo(self):
 		self.setTitle(_("2boom's QuickChannelInfo for Hotkey"))
 		self["resx"].text = self.resolutionx
@@ -131,7 +131,7 @@ class QCIfH(Screen):
 		self["fps"].text = self.fps
 		self["codec"].text = '%s/%s' % (self.videocodec, self.audiocodec)
 		self["sids"].text = self.pidsline()
-		
+
 	def pidsline(self):
 		vpid = apid = tsid = onid = sid = -1
 		service = self.session.nav.getCurrentService()
@@ -143,21 +143,21 @@ class QCIfH(Screen):
 			tsid = info.getInfo(iServiceInformation.sTSID)
 			onid = info.getInfo(iServiceInformation.sONID)
 			prcpid = info.getInfo(iServiceInformation.sPCRPID)
-		return 'Sid: %0.4X  Vpid: %0.4X  Apid: %0.4X  Tsid: %0.4X  Prcpid: %0.4X  Onid: %0.4X' % (sid, vpid, apid, tsid, prcpid, onid)	
+		return 'Sid: %0.4X  Vpid: %0.4X  Apid: %0.4X  Tsid: %0.4X  Prcpid: %0.4X  Onid: %0.4X' % (sid, vpid, apid, tsid, prcpid, onid)
 
 	def resolutionx(self, serviceInfo):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
 		if xres == -1:
 			return ''
 		return str(xres)
-	
+
 	def resolutiony(self, serviceInfo):
 		yres = serviceInfo.getInfo(iServiceInformation.sVideoHeight)
 		if yres == -1:
 			return ''
 		mode = ('i', 'p', ' ')[serviceInfo.getInfo(iServiceInformation.sProgressive)]
 		return str(yres) + mode
-		
+
 	def fps(self, serviceInfo):
 		xres = serviceInfo.getInfo(iServiceInformation.sVideoWidth)
 		if xres == -1:
@@ -165,13 +165,13 @@ class QCIfH(Screen):
 		fps = str((serviceInfo.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
 		return fps
 
-	def getVideoBitrateData(self, value, status): 
+	def getVideoBitrateData(self, value, status):
 		if status:
 			self["vbit"].text = '%d Kb/s' % value
 		else:
-			self.videoBitrate = None		
+			self.videoBitrate = None
 
-	def getAudioBitrateData(self, value, status): 
+	def getAudioBitrateData(self, value, status):
 		if status:
 			self["abit"].text = '%s Kb/s' % value
 		else:
@@ -179,7 +179,7 @@ class QCIfH(Screen):
 
 	def conf(self):
 		self.session.open(qcifh_setup)
-	
+
 
 SKIN_CONFIG_HD = """
 <screen name="qcifh_setup" position="265,160" size="750,75" title="2boom's QuickChannelInfo setup">
@@ -222,7 +222,7 @@ class qcifh_setup(Screen, ConfigListScreen):
 			i[1].save()
 		configfile.save()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
-		
+
 
 def main(session, **kwargs):
 	session.open(QCIfH)

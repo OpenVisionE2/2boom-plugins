@@ -183,13 +183,13 @@ class QuickEcmInfo2(Poll, Converter, object):
 		if config.plugins.QuickEcm.enabled.value:
 			nameemu = nameser = []
 			camdlist = serlist = None
-			#Alternative SoftCam Manager 
-			if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
-				if config.plugins.AltSoftcam.actcam.value != "none": 
-					return config.plugins.AltSoftcam.actcam.value 
-				else: 
+			#Alternative SoftCam Manager
+			if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
+				if config.plugins.AltSoftcam.actcam.value != "none":
+					return config.plugins.AltSoftcam.actcam.value
+				else:
 					return None
-			#GlassSysUtil 
+			#GlassSysUtil
 			elif os.path.isfile("/tmp/ucm_cam.info"):
 				return open("/tmp/ucm_cam.info").read()
 			#Pli
@@ -252,7 +252,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 					onid = serviceInfo.getInfo(iServiceInformation.sONID)
 					dvbnamespace = serviceInfo.getInfo(iServiceInformation.sNamespace)
 				if vpid:
-					self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024) 
+					self.videoBitrate = eBitrateCalculator(vpid, dvbnamespace, tsid, onid, 1000, 1024 * 1024)
 					self.videoBitrate.callback.append(self.getVideoBitrateData)
 				if apid:
 					self.audioBitrate = eBitrateCalculator(apid, dvbnamespace, tsid, onid, 1000, 64 * 1024)
@@ -273,7 +273,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 		else:
 			self.audioBitrate = None
 		Converter.changed(self, (self.CHANGED_POLL,))
-		
+
 	@cached
 	def getText(self):
 		array_caid = []
@@ -307,7 +307,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 		elif self.type is self.txtcaid:
 			TxtCaids = {"26": "BiSS", "01": "Seca Mediaguard", "06": "Irdeto", "17": "BetaCrypt", "05": "Viaccess", "18": "Nagravision",
 				"09": "NDS-Videoguard", "0B": "Conax", "0D": "Cryptoworks", "4A": "DRE-Crypt", "27": "ExSet", "0E": "PowerVu", "22": "Codicrypt",
-				"07": "DigiCipher", "56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"} 
+				"07": "DigiCipher", "56": "Verimatrix", "7B": "DRE-Crypt", "A1": "Rosscrypt"}
 			iscrypt = self.getServiceInfoString(info, iServiceInformation.sCAIDs)
 			if not iscrypt:
 				return _('Free-to-air')

@@ -136,14 +136,14 @@ class QEIfH(Screen):
 		self.Timer.start(1000 * 2, False)
 		self.onShow.append(self.staticinfo)
 
-	def getVideoBitrateData(self, value, status): 
+	def getVideoBitrateData(self, value, status):
 		if status:
 			self["vbit"].text = 'VIDEO %s: %d Kb/s' % (self.videocodec, value)
 			self["res"].text = self.resolution
 		else:
 			self.videoBitrate = None
 
-	def getAudioBitrateData(self, value, status): 
+	def getAudioBitrateData(self, value, status):
 		if status:
 			self["abit"].text = 'AUDIO %s: %s Kb/s' % (self.audiocodec, value)
 		else:
@@ -158,7 +158,7 @@ class QEIfH(Screen):
 		self["hardinfo"].text = self.hardinfo()
 		self["pids"].text = self.pidsline()
 		self["caids"].text = self.caidline()
-		
+
 	def convert_color(self, color_in):
 		hex_color = {'0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
 			'a': ':', 'b': ';', 'c': '<', 'd': '=', 'e': '>', 'f': '?', 'A': ':', 'B': ';', 'C': '<', 'D': '=', 'E': '>', 'F': '?'}
@@ -255,7 +255,7 @@ class QEIfH(Screen):
 					pass
 				if ecmfiles:
 					for line in ecmfiles:
-						if 'port:' in line: 
+						if 'port:' in line:
 							port_flag = 1
 						if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 							line = line.replace(' ', '').replace(':', ': ')
@@ -269,7 +269,7 @@ class QEIfH(Screen):
 							line = line.replace('ecmtime:', 'ecm time:')
 						if 'response time:' in line:
 							line = line.replace('response time:', 'ecm time:').replace('decoded by', 'by')
-						if not line.startswith('\n'): 
+						if not line.startswith('\n'):
 							if 'protocol:' in line and port_flag == 0:
 								line = '\n' + line
 							if 'pkey:' in line:
@@ -285,17 +285,17 @@ class QEIfH(Screen):
 					self.active_caid = caidvalue.upper()
 					return list
 		return ''
-		
+
 	def emuname(self):
 		serlist = camdlist = None
 		nameemu = nameser = []
 		ecminfo = ''
-		# Alternative SoftCam Manager 
-		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
-			if config.plugins.AltSoftcam.actcam.value != "none": 
-				return config.plugins.AltSoftcam.actcam.value 
-			else: 
-				return None	
+		# Alternative SoftCam Manager
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
+			if config.plugins.AltSoftcam.actcam.value != "none":
+				return config.plugins.AltSoftcam.actcam.value
+			else:
+				return None
 		#Pli
 		elif os.path.isfile("/etc/init.d/softcam") or os.path.isfile("/etc/init.d/cardserver"):
 			if os.path.isfile("/etc/init.d/softcam"):

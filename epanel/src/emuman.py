@@ -97,7 +97,7 @@ def ecm_view():
 		try:
 			ecmfiles = open('/tmp/ecm.info', 'r')
 			for line in ecmfiles:
-				if 'port:' in line: 
+				if 'port:' in line:
 					port_flag = 1
 				if 'caid:' in line or 'provider:' in line or 'provid:' in line or 'pid:' in line or 'hops:' in line or 'system:' in line or 'address:' in line or 'using:' in line or 'ecm time:' in line:
 					line = line.replace(' ', '').replace(':', ': ')
@@ -111,7 +111,7 @@ def ecm_view():
 					line = line.replace('ecmtime:', 'ecm time:')
 				if 'response time:' in line:
 					line = line.replace('response time:', 'ecm time:').replace('decoded by', 'by')
-				if not line.startswith('\n'): 
+				if not line.startswith('\n'):
 					if 'protocol:' in line and port_flag == 0:
 						line = '\n' + line
 					if 'pkey:' in line:
@@ -187,13 +187,13 @@ class emuSel5(Screen):
 		self.Timer.callback.append(self.listecm)
 		self.Timer.start(1000 * 4, False)
 		self.selemulist()
-		
+
 	def update_rc(self):
 		if not fileExists('/etc/init.d/softcam'):
 			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/softcam.None && ln -s /etc/init.d/softcam.None /etc/init.d/softcam")
 		if not fileExists('/etc/rc3.d/S50softcam'):
 			self.iConsole.ePopen('echo /etc/init.d/softcam restart > /etc/rc3.d/S50softcam | chmod 777 /etc/rc3.d/S50softcam')
-		
+
 	def selemulist(self):
 		self.list = []
 		typeemu = ' '
@@ -223,7 +223,7 @@ class emuSel5(Screen):
 		if self.indexpos is not None:
 			self["menu"].setIndex(self.indexpos)
 		self.name_in_memory()
-	
+
 	def emuversion(self, what):
 		emuname = ' '
 		nameemu = []
@@ -236,7 +236,7 @@ class emuSel5(Screen):
 			except:
 				emuname = ' '
 		return emuname
-		
+
 	def cut_name(self, what):
 		count = 0
 		what = what.replace('_', ' ').replace('-', ' ')
@@ -381,7 +381,7 @@ class start_cam(Screen):
 	def emuScriptStart(self, result, retval, extra_args):
 		self["status"].text = _("Starting...")
 		self.iConsole.ePopen("/etc/init.d/%s start" % self.emutype, self.sleep_time)
-	
+
 	def sleep_time(self, result, retval, extra_args):
 		self.iConsole.ePopen("sleep 6", self.emuStartEndOperation)
 
@@ -416,10 +416,10 @@ class restart_cam(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Restarting...")
 		self.iConsole.ePopen("/etc/init.d/%s restart" % self.emutype, self.sleep_time)
-		
+
 	def sleep_time(self, result, retval, extra_args):
 		self.iConsole.ePopen("sleep 6", self.emuRestartOperationEnd)
-		
+
 	def emuRestartOperationEnd(self, result, retval, extra_args):
 		self["status"].setText(' ')
 		self.close()
@@ -437,15 +437,15 @@ class stop_cam(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Stoping...")
 		self.iConsole.ePopen("/etc/init.d/%s stop" % self.emutype, self.emuRemoveScriptStop)
-			
+
 	def emuRemoveScriptStop(self, result, retval, extra_args):
 		self["status"].text = _("Removing startscript...")
 		self.iConsole.ePopen("rm -f /etc/init.d/%s" % self.emutype, self.emuRemoveEcmInfoStop)
-			
+
 	def emuRemoveEcmInfoStop(self, result, retval, extra_args):
 		self["status"].text = _("Removing ecm.info...")
 		self.iConsole.ePopen("rm -f /tmp/ecm.info", self.emuCreateNone)
-			
+
 	def emuCreateNone(self, result, retval, extra_args):
 		self["status"].text = _("Creating None script...")
 		if fileExists("/etc/init.d/%s.None" % self.emutype):
@@ -455,13 +455,13 @@ class stop_cam(Screen):
 		else:
 			self.iConsole.ePopen("echo -e '# Placeholder for no cam' >> /etc/init.d/%s.None && ln -s /etc/init.d/%s.None /etc/init.d/%s" %
 				(self.emutype, self.emutype, self.emutype), self.emuChmodStopScript)
-				
+
 	def emuChmodStopScript(self, result, retval, extra_args):
 		self.iConsole.ePopen("chmod 777 /etc/init.d/%s" % self.emutype, self.sleep_time)
-		
+
 	def sleep_time(self, result, retval, extra_args):
 		self.iConsole.ePopen("sleep 4", self.emuStopEndOperation)
-		
+
 	def emuStopEndOperation(self, result, retval, extra_args):
 		self["status"].setText(' ')
 		self.close()
@@ -508,7 +508,7 @@ class SoftcamPanel2(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.mList()
-		
+
 	def mList(self):
 		self.list = []
 		onepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/softcam.png"))
@@ -523,7 +523,7 @@ class SoftcamPanel2(Screen):
 
 	def exit(self):
 		self.close()
-		
+
 	def go(self, num=None):
 		if num is not None:
 			num -= 1
@@ -588,12 +588,12 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 			"yellow": self.CreateOldKeyFile,
 			"ok": self.save
 		}, -2)
-		
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close(False)
-	
+
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()
@@ -604,11 +604,11 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 		self.mbox = self.session.open(MessageBox, (_("%s downloading" % config.plugins.epanel.keyname.value)), MessageBox.TYPE_INFO)
 		self.iConsole.ePopen('mv %s%s %s%s' %
 			(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.DownloadKeyFile)
-		
+
 	def DownloadKeyFile(self, result, retval, extra_args):
 		self.iConsole.ePopen("wget -q %s -O %s%s" %
 			(config.plugins.epanel.softcamserver.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.CheckNewKeyFile)
-			
+
 	def CheckNewKeyFile(self, result, retval, extra_args):
 		if retval is 0:
 			if fileExists('%s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value)):
@@ -616,7 +616,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 			else:
 				self.iConsole.ePopen('mv %s%s %s%s' %
 					(config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old', config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.ChmodKeyFile)
-	
+
 	def ChmodKeyFile(self, result, retval, extra_args):
 		self.iConsole.ePopen("chmod 644 %s%s" % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value))
 		if self.mbox:
@@ -660,7 +660,7 @@ class uniswitcher(Screen):
 		self.servactpng = LoadPixmap(path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/servact.png"))
 		self["list"] = List(self.list)
 		self["actions"] = ActionMap(["OkCancelActions", "ShortcutActions"],
-		{	
+		{
 			"ok": self.run,
 			"red": self.close,
 			"green": self.restartsoft,
@@ -675,10 +675,10 @@ class uniswitcher(Screen):
 		self.Timer.callback.append(self.listecm)
 		self.Timer.start(1000 * 4, False)
 		self.mList()
-		
+
 	def listecm(self):
 		self["text"].setText(ecm_view())
-		
+
 	def mList(self):
 		if config.plugins.usw.emu.value == "Oscam":
 			config.plugins.usw.activeconf.value = config.plugins.uswoscam.activeconf.value
@@ -697,7 +697,7 @@ class uniswitcher(Screen):
 			self["list"].setList(self.list)
 			if self.indexpos != None:
 				self["list"].setIndex(self.indexpos)
-		
+
 	def run(self):
 		if self["list"].getCurrent() is not None:
 			config.plugins.usw.activeconf.value = self["list"].getCurrent()[0]
@@ -798,7 +798,7 @@ class UniConfigScreen(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close(False)
-		
+
 	def save(self):
 		for i in self["config"].list:
 			i[1].save()

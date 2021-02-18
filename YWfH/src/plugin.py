@@ -85,7 +85,7 @@ class WeatherInfo(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.skin = SKIN_STYLE1_HD
-		
+
 		if config.plugins.yweather.skin.value:
 			if fileExists('%sExtensions/YWfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS)):
 				with open('%sExtensions/YWfH/skin_user.xml' % resolveFilename(SCOPE_PLUGINS), 'r') as user_skin:
@@ -144,7 +144,7 @@ class WeatherInfo(Screen):
 			self["picon_" + day] = Pixmap()
 			self["text_" + day] = StaticText()
 		self.notdata = False
-		self["actions"] = ActionMap(["WizardActions", "MenuActions"], 
+		self["actions"] = ActionMap(["WizardActions", "MenuActions"],
 		{
 			"back": self.close,
 			"ok": self.close,
@@ -155,7 +155,7 @@ class WeatherInfo(Screen):
 			"menu": self.conf,
 		}, -2)
 		self.onShow.append(self.get_weather_data)
-		
+
 	def conf(self):
 		self.session.open(yweather_setup)
 
@@ -217,14 +217,14 @@ class WeatherInfo(Screen):
 			else:
 				self["forecast_" + day].text = _('N/A')
 				self.notdata = True
-				
+
 			if self.forecastdata['date' + daynumber] is not '':
 				tmp_date = self.forecastdata['date' + daynumber]
-				self["forecastdate_" + day].text = '%s %s' % (tmp_date.split()[0], self.month[tmp_date.split()[1]]) 
+				self["forecastdate_" + day].text = '%s %s' % (tmp_date.split()[0], self.month[tmp_date.split()[1]])
 			else:
 				self["forecastdate_" + day].text = _('N/A')
 				self.notdata = True
-			
+
 			if self.forecastdata['low0'] is not '' and self.forecastdata['high0'] is not '':
 				self["temp_now_min"].text = _('min: %s') % self.tempsing(self.forecastdata['low0'])
 				self["temp_now_max"].text = _('max: %s') % self.tempsing(self.forecastdata['high0'])
@@ -256,13 +256,13 @@ class WeatherInfo(Screen):
 			self["temp_now"].text = _('N/A')
 			self["temp_now_nounits"].text = _('N/A')
 			self.notdata = True
-			
+
 		if self.condition['date'] is not '':
 			self["date"].text = self.tempsing(self.condition['date']).replace('+', '')
 		else:
 			self["date"].text = _('N/A')
 			self.notdata = True
-			
+
 		if self.wind['chill'] is not '':
 			self["feels_like"].text = _('Feels: %s') % self.tempsing(self.wind['chill'])
 		else:
@@ -375,7 +375,7 @@ class WeatherInfo(Screen):
 		else:
 			self["visibility"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.geo['lat'] is '':
 			if self.geo['lat'].startswith('-'):
 				self["lat"].text = '%s S' % self.geo['lat']
@@ -384,7 +384,7 @@ class WeatherInfo(Screen):
 		else:
 			self["lat"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.geo['long'] is '':
 			if self.geo['long'].startswith('-'):
 				self["long"].text = '%s W' % self.geo['long']
@@ -393,19 +393,19 @@ class WeatherInfo(Screen):
 		else:
 			self["long"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.astronomy['sunrise'] is '':
 			self["sunrise"].text = _('%s') % self.time_convert(self.astronomy['sunrise'])
 		else:
 			self["sunrise"].text = _('N/A')
 			self.notdata = True
-			
+
 		if not self.astronomy['sunset'] is '':
 			self["sunset"].text = _('%s') % self.time_convert(self.astronomy['sunset'])
 		else:
 			self["sunset"].text = _('N/A')
 			self.notdata = True
-			
+
 		self["picon_now"].instance.setScale(1)
 		if not self.condition['code'] is '':
 			self["picon_now"].instance.setPixmapFromFile("%sExtensions/YWfH/istyle/%s/%s.png" % (resolveFilename(SCOPE_PLUGINS), config.plugins.yweather.istyle.value, self.condition['code']))
@@ -415,7 +415,7 @@ class WeatherInfo(Screen):
 		if not config.plugins.yweather.timeout.value is '0':
 			self.Timer.callback.append(self.endshow)
 			self.Timer.startLongTimer(int(config.plugins.yweather.timeout.value))
-			
+
 	def endshow(self):
 		if not config.plugins.yweather.timeout.value is '0':
 			self.Timer.stop()
@@ -428,7 +428,7 @@ class WeatherInfo(Screen):
 		else:
 			self["text_now"].text = _('weatherserver not respond')
 			self.notdata = True
-			
+
 	def time_convert(self, time):
 		print("[YWeather] Time convert")
 		tmp_time = ''
@@ -454,7 +454,7 @@ class WeatherInfo(Screen):
 		return line.split(what)[-1].split('"')[1]
 
 	def get_data_xml(self, line):
-		return line.split('</')[0].split('>')[1] 
+		return line.split('</')[0].split('>')[1]
 
 	def tempsing(self, what):
 		if not what[0] is '-' and not what[0] is '0':
@@ -533,7 +533,7 @@ SKIN_STYLE1_HD = """
     <widget source="text_day5" render="Label" position="6,549" size="120,36" zPosition="2" font="Regular; 16" halign="center" transparent="1" foregroundColor="#00aaaaaa" />
     <widget source="visibility" render="Label" position="379,123" size="140,20" zPosition="3" font="Regular; 17" halign="left" transparent="1" foregroundColor="#00aaaaaa" />
 </screen>
-""" 
+"""
 SKIN_CONFIG_HD = """
 <screen name="yweather_setup" position="center,140" size="750,505" title="2boom's Yahoo Weather">
   <widget position="15,10" size="720,150" name="config" scrollbarMode="showOnDemand" />
@@ -600,10 +600,10 @@ class yweather_setup(Screen, ConfigListScreen):
 			"ok": self.save
 		}, -2)
 		self.onLayoutFinish.append(self.showicon)
-		
+
 	def get_woeid(self):
 		self.session.open(search_setup)
-		
+
 	def showicon(self):
 		count = 1
 		for number in ('8', '18', '22', '32'):
@@ -634,7 +634,7 @@ class yweather_setup(Screen, ConfigListScreen):
 			i[1].save()
 		configfile.save()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
-		
+
 
 class search_setup(Screen, ConfigListScreen):
 	def __init__(self, session):
@@ -662,10 +662,10 @@ class search_setup(Screen, ConfigListScreen):
 			"ok": self.save
 		}, -2)
 		self.onLayoutFinish.append(self.show_woeid)
-		
+
 	def show_woeid(self):
 		self["text"].setText(_('no woeid code yet'))
-		
+
 	def parse_woeid_data(self):
 		if os.path.exists("/tmp/woeid.xml"):
 			woeid_line = open('/tmp/woeid.xml').read()
@@ -678,13 +678,13 @@ class search_setup(Screen, ConfigListScreen):
 				self["text"].setText(_('error location name'))
 		else:
 			self["text"].setText(_('/tmp/woeid.xml not found'))
-	
+
 	def get_data_inline(self, line, what):
 		return line.split('</' + what + '>')[0].split('<' + what + '>')[-1]
-	
+
 	def get_lastdata_inline(self, line, what):
 		return line.split('</' + what + '>')[0].split('>')[-1]
-		
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
@@ -706,14 +706,14 @@ class search_setup(Screen, ConfigListScreen):
 		if os.path.exists("/tmp/yweather.xml"):
 			os.remove("/tmp/yweather.xml")
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
-		
+
 	def get_woeid(self):
 		if self.isServerOnline():
 			urllib.urlretrieve("http://where.yahooapis.com/v1/places.q('%s')?appid=dj0yJmk9QmFoVGxPMzBiV282JmQ9WVdrOU5XbE5hVWxrTnpRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0xMw--" % config.plugins.yweather.weather_city_locale_search.value, "/tmp/woeid.xml")
 			self.parse_woeid_data()
 		else:
 			self["text"].setText('/tmp/woeid.xml not found')
-			
+
 	def isServerOnline(self):
 		try:
 			socket.gethostbyaddr('where.yahooapis.com')

@@ -39,7 +39,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 SKIN_DWN = """
 <screen name="reloadsl" position="center,140" size="625,35" title="Please wait">
@@ -60,7 +60,7 @@ class reloadsl(Screen):
 		if os.path.isfile('%sExtensions/ReloadSL/password' % resolveFilename(SCOPE_PLUGINS)):
 			password = open('%sExtensions/ReloadSL/password' % resolveFilename(SCOPE_PLUGINS)).read().strip().rstrip('\r').rstrip('\n')
 		self.iConsole.ePopen('wget -q -O - http://root:%s@127.0.0.1/web/servicelistreload?mode=0 && sleep 2' % password, self.cancel)
-		
+
 	def cancel(self, result, retval, extra_args):
 		self.close()
 

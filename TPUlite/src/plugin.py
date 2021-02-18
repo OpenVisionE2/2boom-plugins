@@ -262,7 +262,7 @@ class get_ip(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Donwloading ip & channel list")
 		self.iConsole.ePopen("wget -q 'http://www.satorbita.com/iptv/free/1triolan.php?list.m3u' -O /tmp/triolan.m3u", self.get_ip2)
-		
+
 	def get_ip2(self, result, retval, extra_args):
 		self.newproxy = ''
 		if retval is 0:
@@ -290,4 +290,3 @@ def Plugins(**kwargs):
 	if config.plugins.tpulite.menuext.value:
 		list.append(PluginDescriptor(name=_("Triolan proxy lite updater"), description=_("update Triolan iptv proxy"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	return list
-

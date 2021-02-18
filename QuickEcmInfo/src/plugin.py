@@ -89,7 +89,7 @@ SKIN_HD = """
   <widget source="session.CurrentService" render="Label" position="5,375" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" valign="top" halign="center">
     <convert type="QuickEcmInfo2">bitrate</convert>
   </widget>
-</screen>""" 
+</screen>"""
 
 ##############################################################################
 
@@ -177,12 +177,12 @@ class qei_setup(ConfigListScreen, Screen):
 			"yellow": self.restart,
 			"ok": self.save
 		}, -2)
-	
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close(False)
-		
+
 	def restart(self):
 		self.session.open(TryQuitMainloop, 3)
 

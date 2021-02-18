@@ -190,7 +190,7 @@ class rpulite(Screen, ConfigListScreen):
 		if config.plugins.rpulite.startup.value or not config.plugins.rpulite.timeup.value is '0':
 			if not os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
 				self.create_script()
-		
+
 		if config.plugins.rpulite.startup.value: #/etc/rc.d/rcS.d/
 			if not os.path.isfile('/etc/rcS.d/get_ip_rtc'):
 				if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')) and os.path.isdir('/etc/rcS.d'):
@@ -219,7 +219,7 @@ class rpulite(Screen, ConfigListScreen):
 			with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 				cron_update.write('root')
 				cron_update.close()
-			
+
 	def update_system(self):
 		if os.path.isfile('/etc/hosts'):
 			for line in open('/etc/hosts'):
@@ -335,7 +335,7 @@ class reloadsl(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Reload servicelist")
 		self.iConsole.ePopen('wget -q -O - http://root:%s@127.0.0.1/web/servicelistreload?mode=0 && sleep 2' % config.plugins.rpulite.rpassw.value, self.cancel)
-		
+
 	def cancel(self, result, retval, extra_args):
 		self.close()
 
@@ -360,7 +360,7 @@ class get_ip(Screen):
 			self.iConsole.ePopen("wget -q 'http://plstonline.org/iptv/IPTV_29_V.m3u?' -O /tmp/rostelecom.m3u && sleep 4", self.get_ip2)
 		else:
 			self.iConsole.ePopen("wget -q 'http://iptv.lamp.ufa-it.ru/generate_m3u.php?num_list=001&shift=2&type=m3u' -O /tmp/rostelecom.m3u && sleep 4", self.get_ip2)
-		
+
 	def get_ip2(self, result, retval, extra_args):
 		self.newproxy = ''
 		if retval is 0:
@@ -388,4 +388,3 @@ def Plugins(**kwargs):
 	if config.plugins.rpulite.menuext.value:
 		list.append(PluginDescriptor(name=_("Rostelecom proxy lite updater"), description=_("update Rostelecom iptv proxy"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	return list
-

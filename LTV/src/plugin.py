@@ -128,7 +128,7 @@ class get_chlist(Screen):
 				if line.startswith('http://'):
 					return line.strip('\r').strip('\r').strip()
 		return 'None'
-	
+
 
 def main(session, **kwargs):
 	session.open(get_chlist)
@@ -137,4 +137,3 @@ def main(session, **kwargs):
 def Plugins(**kwargs):
 	list = PluginDescriptor(name=_("%s updater" % BNAME), description=_("update %s bouquet" % BNAME), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)
 	return list
-

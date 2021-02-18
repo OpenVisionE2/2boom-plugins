@@ -78,15 +78,15 @@ class QERfH(Screen):
 			if fileExists("/etc/init.d/cardserver") and not self.isCamNone('cardserver'):
 				self.Console.ePopen("/etc/init.d/cardserver restart && sleep 4", self.finish)
 			self["status"].text = _("Restarting %s") % self.emuname()
-			
+
 	def notFoundActiveCam(self):
 		self.close()
-			
+
 	def finish(self, result, retval, extra_args):
 		if self.service is not None:
 			self.session.nav.playService(self.service)
 		self.close()
-		
+
 	def isCamNone(self, camlink):
 		if fileExists("/etc/init.d/%s" % camlink):
 			if '# Placeholder for no cam' in open("/etc/init.d/%s" % camlink).read():
@@ -97,11 +97,11 @@ class QERfH(Screen):
 		serlist = camdlist = None
 		nameemu = nameser = []
 		ecminfo = ''
-		#Alternative SoftCam Manager 
-		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
-			if config.plugins.AltSoftcam.actcam.value != "none": 
-				return config.plugins.AltSoftcam.actcam.value 
-			else: 
+		#Alternative SoftCam Manager
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
+			if config.plugins.AltSoftcam.actcam.value != "none":
+				return config.plugins.AltSoftcam.actcam.value
+			else:
 				return None
 		#Pli
 		elif fileExists("/etc/init.d/softcam") or fileExists("/etc/init.d/cardserver"):

@@ -56,7 +56,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 def mountp():
 	pathmp = []
@@ -67,7 +67,7 @@ def mountp():
 	pathmp.append('/usr/share/enigma2/')
 	pathmp.append('/tmp/')
 	return pathmp
-	
+
 
 def logging(line):
 	log_file = open('/tmp/epgdd.log', 'a')
@@ -134,7 +134,7 @@ class epgdd(ConfigListScreen, Screen):
 		self['key_blue'] = StaticText(_('Source'))
 		self['lastupdate'] = StaticText()
 		self['lastupdate'].text = config.plugins.epgdd.lastupdate.value
-		self.timer = enigma.eTimer() 
+		self.timer = enigma.eTimer()
 		self.timer.callback.append(self.updatestatus)
 		self.timer.start(3000, True)
 		self['setupActions'] = ActionMap(['SetupActions', 'ColorActions'],
@@ -146,10 +146,10 @@ class epgdd(ConfigListScreen, Screen):
 			'blue': self.choicesource,
 			'ok': self.save
 		}, -2)
-		
+
 	def choicesource(self):
 		self.session.open(get_source)
-		
+
 	def updatestatus(self):
 		self.timer.stop()
 		self['lastupdate'].text = config.plugins.epgdd.lastupdate.value
@@ -195,7 +195,7 @@ class epgdd(ConfigListScreen, Screen):
 				if 'openatv' in line or 'openhdf' in line or 'openvix' in line.lower():
 					return True
 		return False
-	
+
 	def image_is_atv6(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
@@ -218,8 +218,8 @@ class Check_EPG():
 	def gotSession(self, session):
 		self.session = session
 		if config.plugins.epgdd.epgupdate.value:
-			self.timer = enigma.eTimer() 
-			self.timermin = enigma.eTimer() 
+			self.timer = enigma.eTimer()
+			self.timermin = enigma.eTimer()
 			self.timermin.callback.append(self.check_change_min)
 			self.timer.callback.append(self.check_change)
 			self.timermin.startLongTimer(30)
@@ -246,7 +246,7 @@ class Check_EPG():
 				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 				logging('%02d:%02d:%d %02d:%02d:%02d - reload epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
-				
+
 		if config.plugins.epgdd.checkepgfile.value and config.plugins.epgdd.nocheck.value:
 			if not os.path.isfile('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value)):
 				logging('%02d:%02d:%d %02d:%02d:%02d - restore epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
@@ -293,7 +293,7 @@ class Check_EPG():
 				epgcache.flushEPG()
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s - image not suuport flushEPG\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-			try:	
+			try:
 				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 			except Exception as e:
@@ -348,7 +348,7 @@ class get_source(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-		
+
 	def CfgMenu(self):
 		self.list = []
 		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/epgdd/epghosts.txt")):
@@ -357,7 +357,7 @@ class get_source(Screen):
 					self.list.append((line.strip().rstrip('\r').rstrip('\n'), line.strip().rstrip('\r').rstrip('\n')))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
-	
+
 	def choice(self):
 		now = time.localtime(time.time())
 		if self["menu"].getCurrent()[0] is not None:
@@ -366,7 +366,7 @@ class get_source(Screen):
 			config.plugins.epgdd.url.save()
 			configfile.save()
 		self.close()
-		
+
 	def cancel(self):
 		self.close()
 
@@ -416,7 +416,7 @@ class get_epgdat(Screen):
 			self['status'].text = _('%s not respond' % config.plugins.epgdd.url.value.split('/')[2])
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s not respond\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.url.value.split('/')[2]))
 		config.plugins.epgdd.nocheck.value = True
-		self.timer = enigma.eTimer() 
+		self.timer = enigma.eTimer()
 		self.timer.callback.append(self.endshow)
 		self.timer.startLongTimer(3)
 
@@ -428,7 +428,7 @@ class get_epgdat(Screen):
 				epgcache.flushEPG()
 			except Exception as e:
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s - image not suuport flushEPG\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-			try:	
+			try:
 				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 			except Exception as e:
@@ -439,7 +439,7 @@ class get_epgdat(Screen):
 	def endshow(self):
 		self.timer.stop()
 		self.close()
-		
+
 	def isServerOnline(self):
 		now = time.localtime(time.time())
 		try:

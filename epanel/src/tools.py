@@ -69,13 +69,13 @@ def mountp():
 	pathmp.append('/etc/enigma2/')
 	pathmp.append('/tmp/')
 	return pathmp
-	
+
 
 def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
 	log_file.write(line)
 	log_file.close()
-	
+
 
 def remove_line(filename, what):
 	if fileExists(filename):
@@ -123,7 +123,7 @@ def cronpath():
 now = time.localtime(time.time())
 ######################################################################################
 config.plugins.epanel = ConfigSubsection()
-	
+
 config.plugins.epgdd = ConfigSubsection()
 config.plugins.epanel.direct = ConfigSelection(choices=mountp())
 config.plugins.epanel.epgname = ConfigText(default='epg.dat', visible_width=50, fixed_size=False)
@@ -449,7 +449,7 @@ class ToolsScreen2(Screen):
 
 	def exit(self):
 		self.close()
-		
+
 	def go(self, num=None):
 		if num is not None:
 			num -= 1
@@ -526,7 +526,7 @@ class ServiceMan(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-		
+
 	def CfgMenu(self):
 		self.list = []
 		self.list.append((_("Manage Networking service"), "networking"))
@@ -545,35 +545,35 @@ class ServiceMan(Screen):
 		menu_item = self["menu"].getCurrent()[1]
 		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s restart" % menu_item, self.info_mess_1, menu_item)
-			
+
 	def info_mess_1(self, result, retval, extra_args):
 		if retval is 0:
 			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
-			
+
 	def startservice(self):
 		menu_item = self["menu"].getCurrent()[1]
 		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s start" % menu_item, self.info_mess_2, menu_item)
-			
+
 	def info_mess_2(self, result, retval, extra_args):
 		if retval is 0:
 			self.session.open(MessageBox, _("Starting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
-			
+
 	def stopservice(self):
 		menu_item = self["menu"].getCurrent()[1]
 		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s stop" % menu_item, self.info_mess_3, menu_item)
-			
+
 	def info_mess_3(self, result, retval, extra_args):
 		if retval is 0:
 			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
-			
+
 	def cancel(self):
 		self.close()
 ######################################################################################
@@ -615,11 +615,11 @@ class SwapScreen2(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.Menu()
-		
+
 	def del_fstab_swap(self, result, retval, extra_args):
 		if retval is 0:
 			remove_line('/etc/fstab', 'swap')
-		
+
 	def Menu(self):
 		self.list = []
 		minispng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/swapmini.png"))
@@ -642,14 +642,14 @@ class SwapScreen2(Screen):
 						self.list.append((_("Manage Swap on %s") % line, _("Start, Stop, Create, Remove Swap file"), minispng, line))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.MenuDo, "cancel": self.close}, -1)
-	
+
 	def is_zram(self):
 		if fileExists("/proc/swaps"):
 			for line in open("/proc/swaps"):
 				if "zram0" in line:
 					return True
 		return False
-		
+
 	def swapiswork(self):
 		if fileExists("/proc/swaps"):
 			for line in open("/proc/swaps"):
@@ -657,7 +657,7 @@ class SwapScreen2(Screen):
 					return line.split()[0][:-9]
 		else:
 			return " "
-		
+
 	def MenuDo(self):
 		try:
 			if "zram" in self["menu"].getCurrent()[3]:
@@ -666,7 +666,7 @@ class SwapScreen2(Screen):
 		except:
 			return
 		self.session.openWithCallback(self.Menu, SwapScreen, swppath)
-	
+
 	def exit(self):
 		self.close()
 ######################################################################################
@@ -719,7 +719,7 @@ class SwapScreen(Screen):
 				else:
 					return False
 		return False
-		
+
 	def isSwapRun(self):
 		if fileExists('/proc/swaps'):
 			for line in open('/proc/swaps'):
@@ -728,7 +728,7 @@ class SwapScreen(Screen):
 			return False
 		else:
 			return False
-			
+
 	def isSwapSize(self):
 		if fileExists(self.swapfile):
 			swapsize = os.path.getsize(self.swapfile) / 1048576
@@ -756,7 +756,7 @@ class SwapScreen(Screen):
 
 	def onSwapFile_step1(self):
 		self.iConsole.ePopen("swapoff %s" % self.swapfile, self.onSwapFile_step2)
-		
+
 	def onSwapFile_step2(self, result, retval, extra_args):
 		remove_line('/etc/fstab', 'swap')
 		with open('/etc/fstab', 'a') as fsatb_file:
@@ -781,7 +781,7 @@ class SwapScreen(Screen):
 				self.list.append((_("Make swap"), "13", _("Make swap on %s (512MB)") % self.swapfile[7:10].upper(), minispng))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.CfgMenuDo, "cancel": self.close}, -1)
-			
+
 	def CfgMenuDo(self):
 		self.setTitle(_("Please wait"))
 		if self.isSwapPossible() == 1:
@@ -799,7 +799,7 @@ class SwapScreen(Screen):
 			elif m_choice is "7":
 				self.removeSwapFle()
 		self.CfgMenu()
-			
+
 	def exit(self):
 		self.close()
 
@@ -823,14 +823,14 @@ class create_swap(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Creating...")
 		self.iConsole.ePopen("dd if=/dev/zero of=%s bs=1024 count=%s" % (self.swapfile, self.size), self.makeSwapFile)
-		
+
 	def makeSwapFile(self, result, retval, extra_args):
 		if retval is 0:
 			self.iConsole.ePopen("mkswap %s" % self.swapfile, self.info_mess)
 		else:
 			self["status"].text = _("Failure...")
 			self.iConsole.ePopen("sleep 4", self.end_func)
-			
+
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
 			self["status"].text = _("Success...")
@@ -888,7 +888,7 @@ class UsbScreen(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-		
+
 	def CfgMenu(self):
 		self.list = []
 		minipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/usbico.png"))
@@ -921,26 +921,26 @@ class UsbScreen(Screen):
 			except Exception as e:
 				now = time.localtime(time.time())
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-			
+
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
 			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
-		
+
 	def filesystem(self, mountpoint):
 		if fileExists("/proc/mounts"):
 			for line in open("/proc/mounts"):
 				if mountpoint in line:
 					return "%s  %s" % (line.split()[2], line.split()[3].split(',')[0])
 		return ''
-			
+
 	def devpoint(self, mountpoint):
 		if fileExists("/proc/mounts"):
 			for line in open("/proc/mounts"):
 				if mountpoint in line:
 					return line.split()[0]
 		return ''
-			
+
 	def exit(self):
 		self.close()
 ######################################################################################
@@ -970,7 +970,7 @@ class ScriptScreen3(Screen):
 		self["key_green"] = StaticText(_("Run"))
 		self["key_yellow"] = StaticText(_("ShadowRun"))
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"ok": self.run, "green": self.run, "yellow": self.shadowrun, "red": self.exit, "cancel": self.close}, -1)
-		
+
 	def scrpit_menu(self):
 		list = []
 		if pathExists(config.plugins.epanel.scriptpath.value):
@@ -980,7 +980,7 @@ class ScriptScreen3(Screen):
 			list = []
 		list.sort()
 		self["list"] = MenuList(list)
-	
+
 	def shadowrun(self):
 		self.script = self["list"].getCurrent()
 		if self.script is not None:
@@ -1050,7 +1050,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Set manual ntp server address"), config.plugins.epanel.manualserver))
 		ConfigListScreen.__init__(self, self.list)
 		self.onShow.append(self.Title)
-		
+
 	def Title(self):
 		self.setTitle(_("NtpTime Updater"))
 
@@ -1061,7 +1061,7 @@ class NTPScreen(ConfigListScreen, Screen):
 
 	def Manual(self):
 		self.session.open(ManualSetTime)
-		
+
 	def image_is_atv(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
@@ -1073,13 +1073,13 @@ class NTPScreen(ConfigListScreen, Screen):
 		script_path = ''
 		if not fileExists(self.path):
 			open(self.path, 'a').close()
-		if config.plugins.epanel.TransponderTime.value is '0': 
+		if config.plugins.epanel.TransponderTime.value is '0':
 			if not self.image_is_atv():
 				config.misc.useTransponderTime.value = False
 			else:
 				config.misc.SyncTimeUsing.value = "1"
 		else:
-			if not self.image_is_atv():	
+			if not self.image_is_atv():
 				config.misc.useTransponderTime.value = True
 			else:
 				config.misc.SyncTimeUsing.value = "0"
@@ -1097,7 +1097,7 @@ class NTPScreen(ConfigListScreen, Screen):
 						file_write.write('NTPSERVERS="%s"\n' % config.plugins.epanel.manualserver.value)
 				else:
 					file_write.write(line)
-			file_write.close() 
+			file_write.close()
 		if os.path.isdir('/etc/rcS.d'):
 			script_path = '/etc/rcS.d/'
 		elif os.path.isdir('/etc/rc.d/rcS.d'):
@@ -1198,30 +1198,30 @@ class ManualSetTime(ConfigListScreen, Screen):
 			"green": self.save_timevalues,
 			"ok": self.save_timevalues
 		}, -2)
-		
+
 	def cfgMenu(self):
 		self.list = []
 		self.list.append(getConfigListEntry(_("Set time"), self.timeinput_time))
 		self.list.append(getConfigListEntry(_("Set date"), self.timeinput_date))
 		ConfigListScreen.__init__(self, self.list)
-		
+
 	def getTimestamp(self, date, newtime):
 		d = time.localtime(date)
 		dt = datetime.datetime(d.tm_year, d.tm_mon, d.tm_mday, newtime[0], newtime[1])
 		return int(time.mktime(dt.timetuple()))
-		
+
 	def save_timevalues(self):
 		self.setTitle(_("Please wait"))
 		self.newtime = self.getTimestamp(self.timeinput_date.value, self.timeinput_time.value)
 		self.iConsole.ePopen("date -s %s" % time.strftime("%Y%m%d%H%M", time.localtime(self.newtime)), self.info_mess)
-		
+
 	def info_mess(self, result, retval, extra_args):
 		if retval is 0:
 			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout=6)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
 		self.setTitle(_("NtpTime Updater"))
-			
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
@@ -1292,7 +1292,7 @@ class SystemScreen(Screen):
 
 	def exit(self):
 		self.close()
-		
+
 	def go(self, num=None):
 		if num is not None:
 			num -= 1
@@ -1378,26 +1378,26 @@ class KernelScreen(Screen):
 		self["key_blue"] = StaticText(_("Reboot"))
 		self.list = []
 		self["menu"] = List(self.list)
-		
+
 	def module_list(self):
 		self.iConsole.ePopen('find /lib/modules/*/kernel/drivers/ | grep .ko', self.IsRunnigModDig)
-		
+
 	def BlueKey(self):
 		self.session.open(TryQuitMainloop, 2)
-		
+
 	def YellowKey(self):
 		self.session.open(lsmodScreen)
-		
+
 	def IsRunnigModDig(self, result, retval, extra_args):
 		self.iConsole.ePopen('lsmod', self.run_modules_list, result)
-		
+
 	def run_modules_list(self, result, retval, extra_args):
 		self.runmodule = ''
 		if retval is 0:
 			for line in result.splitlines():
 				self.runmodule += line.split()[0].replace('-', '_') + ' '
 		self.CfgMenu(extra_args)
-					
+
 	def CfgMenu(self, result):
 		self.list = []
 		minipngmem = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/kernelminimem.png"))
@@ -1420,20 +1420,20 @@ class KernelScreen(Screen):
 		else:
 			self.unload_modele(module_name)
 		self.index = self["menu"].getIndex()
-		
+
 	def unload_modele(self, module_name):
 		self.iConsole.ePopen("modprobe -r %s" % module_name, self.rem_conf, module_name)
-		
+
 	def rem_conf(self, result, retval, extra_args):
 		self.iConsole.ePopen('rm -f /etc/modules-load.d/%s.conf' % extra_args, self.info_mess, extra_args)
-		
+
 	def info_mess(self, result, retval, extra_args):
 		self.mbox = self.session.open(MessageBox, _("UnLoaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4)
 		self.module_list()
-		
+
 	def load_module(self, module_name):
 		self.iConsole.ePopen("modprobe %s" % module_name, self.write_conf, module_name)
-		
+
 	def write_conf(self, result, retval, extra_args):
 		if retval is 0:
 			with open('/etc/modules-load.d/%s.conf' % extra_args, 'w') as autoload_file:
@@ -1441,7 +1441,7 @@ class KernelScreen(Screen):
 				autoload_file.close()
 			self.mbox = self.session.open(MessageBox, _("Loaded %s.ko") % extra_args, MessageBox.TYPE_INFO, timeout=4)
 			self.module_list()
-		
+
 	def exit(self):
 		self.close()
 ######################################################################################
@@ -1485,7 +1485,7 @@ class lsmodScreen(Screen):
 
 	def CfgMenu(self):
 		self.iConsole.ePopen('lsmod', self.run_modules_list)
-		
+
 	def run_modules_list(self, result, retval, extra_args):
 		self.list = []
 		aliasname = ''
@@ -1494,7 +1494,7 @@ class lsmodScreen(Screen):
 			for line in result.splitlines():
 				if len(line.split()) > 3:
 					aliasname = line.split()[-1]
-				else: 
+				else:
 					aliasname = ' '
 				if 'Module' not in line:
 					self.list.append((line.split()[0], (_("size: %s  %s") % (line.split()[1], aliasname)), minipng))
@@ -1555,7 +1555,7 @@ class CrashLogScreen(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-		
+
 	def CfgMenu(self):
 		self.list = []
 		minipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/crashmini.png"))
@@ -1571,7 +1571,7 @@ class CrashLogScreen(Screen):
 		self.list.sort()
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
-		
+
 	def Ok(self):
 		try:
 			if self["menu"].getCurrent()[0] is not None:
@@ -1580,7 +1580,7 @@ class CrashLogScreen(Screen):
 		except Exception as e:
 			now = time.localtime(time.time())
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
-	
+
 	def YellowKey(self):
 		if self["menu"].getCurrent()[0] is not None:
 			item = self.path + self["menu"].getCurrent()[0]
@@ -1588,7 +1588,7 @@ class CrashLogScreen(Screen):
 				os.remove(item)
 			self.mbox = self.session.open(MessageBox, (_("Removed %s") % item), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
-		
+
 	def BlueKey(self):
 		log_name = []
 		dirs = os.listdir(self.path)
@@ -1603,7 +1603,7 @@ class CrashLogScreen(Screen):
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.mbox = self.session.open(MessageBox, (_("Removed All Crashlog Files")), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
-		
+
 	def exit(self):
 		self.close()
 ######################################################################################
@@ -1641,22 +1641,22 @@ class LogScreen(Screen):
 		self["key_yellow"] = StaticText(_("Save"))
 		self["text"] = ScrollLabel("")
 		self.listcrah()
-		
+
 	def exit(self):
 		self.close()
-	
+
 	def GreenKey(self):
 		self.session.open(TryQuitMainloop, 3)
-		
+
 	def YellowKey(self):
 		self.iConsole.ePopen("gzip %s && mv %s.gz /tmp" % (self.crashfile, self.crashfile), self.info_create)
-		
+
 	def info_create(self, result, retval, extra_args):
 		if retval is 0:
 			self.mbox = self.session.open(MessageBox, _("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=4)
-		
+
 	def listcrah(self):
 		list = ""
 		with open(self.crashfile, "r") as files:
@@ -1709,7 +1709,7 @@ class get_source(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.CfgMenu()
-		
+
 	def CfgMenu(self):
 		self.list = []
 		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/epghosts.txt")):
@@ -1718,7 +1718,7 @@ class get_source(Screen):
 					self.list.append((line.strip().rstrip('\r').rstrip('\n'), line.strip().rstrip('\r').rstrip('\n')))
 		self["menu"].setList(self.list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"cancel": self.close}, -1)
-	
+
 	def choice(self):
 		now = time.localtime(time.time())
 		if self["menu"].getCurrent()[0] is not None:
@@ -1727,7 +1727,7 @@ class get_source(Screen):
 			config.plugins.epanel.url.save()
 			configfile.save()
 		self.close()
-		
+
 	def cancel(self):
 		self.close()
 ######################################################################################
@@ -1771,7 +1771,7 @@ class epgdna(ConfigListScreen, Screen):
 		self['key_blue'] = StaticText(_('onid Man'))
 		self['lastupdate'] = StaticText()
 		self['lastupdate'].text = config.plugins.epanel.lastupdate.value
-		self.timer = enigma.eTimer() 
+		self.timer = enigma.eTimer()
 		self.timer.callback.append(self.updatestatus)
 		self.timer.start(3000, True)
 		self['setupActions'] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
@@ -1784,10 +1784,10 @@ class epgdna(ConfigListScreen, Screen):
 			'ok': self.save,
 			'menu': self.choicesource
 		}, -2)
-		
+
 	def choicesource(self):
 		self.session.open(get_source)
-		
+
 	def updatestatus(self):
 		self.timer.stop()
 		self['lastupdate'].text = config.plugins.epanel.lastupdate.value
@@ -1829,7 +1829,7 @@ class epgdna(ConfigListScreen, Screen):
 
 	def loadepgdat(self):
 		self.session.open(get_epg_dat)
-		
+
 	def onidman(self):
 		self.session.open(onidMan)
 
@@ -1839,21 +1839,21 @@ class epgdna(ConfigListScreen, Screen):
 				if 'openatv' in line.lower() or 'openhdf' in line.lower() or 'openvix' in line.lower() or 'opendroid' in line.lower():
 					return True
 		return False
-		
+
 	def image_is_atv6(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openatv 6' in line.lower():
 					return True
 		return False
-	
+
 	def image_is_pli(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openpli' in line.lower():
 					return True
 		return False
-		
+
 
 SKIN_DWN = """
 <screen name="get_epg_dat" position="center,140" size="625,35" title="Please wait">
@@ -1906,14 +1906,14 @@ class get_epg_dat(Screen):
 		else:
 			self['status'].text = _('%s not respond' % config.plugins.epanel.url.value.split('/')[2])
 		config.plugins.epanel.nocheck.value = True
-		self.timer = enigma.eTimer() 
+		self.timer = enigma.eTimer()
 		self.timer.callback.append(self.endshow)
 		self.timer.startLongTimer(3)
 
 	def endshow(self):
 		self.timer.stop()
 		self.close()
-		
+
 	def isServerOnline(self):
 		now = time.localtime(time.time())
 		try:
@@ -1945,7 +1945,7 @@ class onidMan(Screen):
 			</convert>
 		</widget>
 	</screen>"""
-	
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -1968,7 +1968,7 @@ class onidMan(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.cMenu()
-		
+
 	def cMenu(self):
 		self.list = []
 		if fileExists(self.path):
@@ -1980,22 +1980,22 @@ class onidMan(Screen):
 
 	def Ok(self):
 		self.close()
-		
+
 	def GreenKey(self):
 		self.session.openWithCallback(self.cMenu, onidManAdd)
 		#self.close()
-	
+
 	def YellowKey(self):
 		try:
 			remove_line(self.path, self["menu"].getCurrent()[0])
 		except Exception as e:
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 		self.cMenu()
-		
+
 	def exit(self):
 		self.close()
 ######################################################################################
-		
+
 
 class onidManAdd(ConfigListScreen, Screen):
 	skin = """
@@ -2014,7 +2014,7 @@ class onidManAdd(ConfigListScreen, Screen):
 		self.iConsole = iConsole()
 		self.path = '/etc/enigma2/blacklist.onid'
 		self.setTitle(_("add onid - %s") % self.path)
-		
+
 		self.list = []
 		self.list.append(getConfigListEntry(_("Enter a value in hexadecimal format"), config.plugins.epanel.onid))
 		ConfigListScreen.__init__(self, self.list, session=session)
@@ -2027,12 +2027,12 @@ class onidManAdd(ConfigListScreen, Screen):
 			"green": self.ok,
 			"ok": self.ok
 		}, -2)
-		
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
-		
+
 	def ok(self):
 		in_file = ''
 		zero_line = '0000'
@@ -2053,7 +2053,7 @@ class onidManAdd(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
-		
+
 	def is_hex(self, s):
 		hex_digits = set("0123456789abcdefABCDEF")
 		for char in s:
@@ -2085,7 +2085,7 @@ class CrontabMan(Screen):
 			</convert>
 		</widget>
 	</screen>"""
-	
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -2108,7 +2108,7 @@ class CrontabMan(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.cMenu()
-		
+
 	def cMenu(self):
 		self.list = []
 		if fileExists(self.path):
@@ -2119,17 +2119,17 @@ class CrontabMan(Screen):
 
 	def Ok(self):
 		self.close()
-		
+
 	def GreenKey(self):
 		self.session.openWithCallback(self.cMenu, CrontabManAdd)
-	
+
 	def YellowKey(self):
 		remove_line(self.path, self["menu"].getCurrent()[0])
 		with open('%scron.update' % self.path[:-4], 'w') as cron_update:
 			cron_update.write('root')
 			cron_update.close()
 		self.cMenu()
-		
+
 	def exit(self):
 		self.close()
 ######################################################################################
@@ -2170,12 +2170,12 @@ class CrontabManAdd(ConfigListScreen, Screen):
 			"green": self.ok,
 			"ok": self.ok
 		}, -2)
-		
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
-		
+
 	def ok(self):
 		if not fileExists(self.path):
 			open(self.path, 'a').close()
@@ -2234,13 +2234,13 @@ class Info2Screen(Screen):
 			})
 		self["key_red"] = StaticText(_("Close"))
 		self.infoall()
-		
+
 	def exit(self):
 		self.close()
-		
+
 	def infoall(self):
 		self.iConsole.ePopen("df -h", self.outinfo)
-		
+
 	def outinfo(self, result, retval, extra_args):
 		list = ''
 		int_Memtotal, int_Swaptotal = 0, 0
@@ -2297,10 +2297,10 @@ class ViewSet(Screen):
 		self["key_red"] = StaticText(_("Close"))
 		self["text"] = ScrollLabel("")
 		self.viewsettings()
-		
+
 	def exit(self):
 		self.close()
-		
+
 	def viewsettings(self):
 		list = ''
 		if fileExists("/etc/enigma2/settings"):
@@ -2339,7 +2339,7 @@ class HostsScreen(Screen):
 			</convert>
 		</widget>
 	</screen>"""
-	
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -2362,7 +2362,7 @@ class HostsScreen(Screen):
 		self.list = []
 		self["menu"] = List(self.list)
 		self.cMenu()
-		
+
 	def cMenu(self):
 		self.list = []
 		if fileExists(self.path):
@@ -2373,14 +2373,14 @@ class HostsScreen(Screen):
 
 	def Ok(self):
 		self.close()
-		
+
 	def GreenKey(self):
 		self.session.openWithCallback(self.cMenu, AddRecord)
-	
+
 	def YellowKey(self):
 		remove_line(self.path, self["menu"].getCurrent()[0])
 		self.cMenu()
-		
+
 	def exit(self):
 		self.close()
 
@@ -2416,12 +2416,12 @@ class AddRecord(ConfigListScreen, Screen):
 			"green": self.ok,
 			"ok": self.ok
 		}, -2)
-		
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
-		
+
 	def ok(self):
 		ip_str = ''
 		for digit in range(len(config.plugins.epanel.ipadr.value)):
@@ -2489,7 +2489,7 @@ class System2Screen(Screen):
 
 	def exit(self):
 		self.close()
-		
+
 	def go(self, num=None):
 		if num is not None:
 			num -= 1
@@ -2553,7 +2553,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Update Time"), config.plugins.epanel.dnstime))
 		ConfigListScreen.__init__(self, self.list)
 		self.onShow.append(self.Title)
-		
+
 	def Title(self):
 		self.setTitle(_("Dynamic DNS"))
 
@@ -2574,7 +2574,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 			self.cron_setup()
 			self.create_script()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
-		
+
 	def create_script(self):
 		updatestr = ''
 		if config.plugins.epanel.dnsserver.value is '1':
@@ -2651,7 +2651,7 @@ class DropScreen(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Set cache flush mode"), config.plugins.epanel.dropmode))
 		ConfigListScreen.__init__(self, self.list)
 		self.onShow.append(self.Title)
-		
+
 	def Title(self):
 		self.setTitle(_("Cache Flush"))
 		self.infomem()
@@ -2660,7 +2660,7 @@ class DropScreen(ConfigListScreen, Screen):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close()
-		
+
 	def infomem(self):
 		memtotal = memfree = buffers = cached = ''
 		persent = 0
@@ -2705,7 +2705,7 @@ class DropScreen(ConfigListScreen, Screen):
 
 	def ClearNow(self):
 		self.iConsole.ePopen("echo %s > /proc/sys/vm/drop_caches" % config.plugins.epanel.dropmode.value, self.Finish)
-		
+
 	def Finish(self, result, retval, extra_args):
 		if retval is 0:
 			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout=4)

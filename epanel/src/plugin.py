@@ -57,7 +57,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 def mountp():
 	pathmp = []
@@ -68,7 +68,7 @@ def mountp():
 	pathmp.append('/usr/share/enigma2/')
 	pathmp.append('/tmp/')
 	return pathmp
-	
+
 
 def logging(line):
 	log_file = open('/tmp/epanel.log', 'a')
@@ -193,7 +193,7 @@ class easyPanel2(Screen):
 		if self.indexpos != None:
 			self["menu"].setIndex(self.indexpos)
 		self["menu"].setList(self.list)
-		
+
 	def go(self, num=None):
 		if num is not None:
 			num -= 1
@@ -202,7 +202,7 @@ class easyPanel2(Screen):
 			self["menu"].setIndex(num)
 		item = self["menu"].getCurrent()[1]
 		self.select_item(item)
-		
+
 	def keyOK(self, item=None):
 		self.indexpos = self["menu"].getIndex()
 		if item == None:
@@ -233,13 +233,13 @@ class easyPanel2(Screen):
 
 	def keyBlue(self):
 		self.session.open(minstall.IPKToolsScreen2)
-				
+
 	def keyYellow(self):
 		self.session.open(tools.ToolsScreen2)
-		
+
 	def keyGreen(self):
 		self.session.open(emuman.emuSel5)
-	
+
 	def infoKey(self):
 		self.session.open(epanelinfo)
 ######################################################################################
@@ -358,7 +358,7 @@ class epanelinfo(Screen):
 		#self.getLivestreamerVersion()
 		self.getGStreamerVersionString()
 		self.network_info()
-		
+
 	def getLivestreamerVersion(self):
 		if fileExists(resolveFilename(SCOPE_LIBDIR, "python2.7/site-packages/livestreamer/__init__.py")):
 			for line in open(resolveFilename(SCOPE_LIBDIR, "python2.7/site-packages/livestreamer/__init__.py")):
@@ -369,7 +369,7 @@ class epanelinfo(Screen):
 
 	def network_info(self):
 		self.iConsole.ePopen("ifconfig -a", self.network_result)
-		
+
 	def network_result(self, result, retval, extra_args):
 		if retval is 0:
 			ip = ''
@@ -396,13 +396,13 @@ class epanelinfo(Screen):
 			self["gstreamer"].text = enigma.getGStreamerVersionString().strip('GStreamer ')
 		except:
 			self["gstreamer"].text = _("unknown")
-		
+
 	def getFlashDateString(self):
 		try:
 			self["installed"].text = time.strftime(_("%Y-%m-%d %H:%M"), time.localtime(os.stat("/boot").st_ctime))
 		except:
 			self["installed"].text = _("unknown")
-			
+
 	def getPythonVersionString(self):
 		try:
 			try:
@@ -413,7 +413,7 @@ class epanelinfo(Screen):
 			self["python"].text = output.split(' ')[1]
 		except:
 			self["python"].text = _("unknown")
-		
+
 	def cpuinfo(self):
 		if fileExists("/proc/cpuinfo"):
 			cpu_count = 0
@@ -467,7 +467,7 @@ class epanelinfo(Screen):
 		elif fileExists("/var/opkg/status"):
 			status = "/var/opkg/status"
 		return status
-		
+
 	def emuname(self):
 		nameemu = []
 		namecard = []
@@ -491,7 +491,7 @@ class epanelinfo(Screen):
 				self["cardserver"].text = "Not Active"
 		else:
 			self["cardserver"].text = _("Not Installed")
-		
+
 	def devices(self):
 		list = ""
 		hddlist = harddiskmanager.HDDList()
@@ -506,7 +506,7 @@ class epanelinfo(Screen):
 		else:
 			hddinfo = _("none")
 		self["device"].text = list
-			
+
 	def getImageVersionString(self):
 		try:
 			if os.path.isfile('/var/lib/opkg/status'):
@@ -523,7 +523,7 @@ class epanelinfo(Screen):
 		except:
 			pass
 		return _("unavailable")
-		
+
 	def listnims(self):
 		tuner_name = {'0': 'Tuner A:', '1': 'Tuner B:', '2': 'Tuner C:', '3': 'Tuner D:', '4': 'Tuner E:', '5': 'Tuner F:', '6': 'Tuner G:', '7': 'Tuner H:', '8': 'Tuner I:', '9': 'Tuner J:'}
 		nimlist = nims = ''
@@ -536,13 +536,13 @@ class epanelinfo(Screen):
 				elif 'Type:' in line:
 					nimlist += '(%s)' % line.split()[-1].replace('\n', '').strip() + ' '
 				elif 'Name:' in line:
-					nimlist += '%s' % line.split(':')[1].replace('\n', '').strip() + '\n'					
+					nimlist += '%s' % line.split(':')[1].replace('\n', '').strip() + '\n'
 			allnims = []
 			fbc_count = nimlist.count('FBC')
 			if fbc_count / 4 > 0:
 				fbc = fbc_count / 4
 				for line in nimlist.split('\n'):
-					allnims.append(line)  
+					allnims.append(line)
 				for count in range(0, len(allnims)):
 					if count < fbc:
 						nims += allnims[count] + '\n'
@@ -553,7 +553,7 @@ class epanelinfo(Screen):
 				return nimlist
 		else:
 			return _("unavailable")
-			
+
 		nims = nimmanager.nimList(showFBCTuners=False)
 		for count in range(len(nims)):
 			if count < 4:
@@ -561,7 +561,7 @@ class epanelinfo(Screen):
 			else:
 				self["Tuner" + str(count)] = StaticText("")
 			AboutText += nims[count] + "\n"
-			
+
 	def mainInfo(self):
 		package = 0
 		self["Hardware"].text = getBoxType()
@@ -596,14 +596,14 @@ class epanelinfo(Screen):
 				swapfree = line.split()[1]
 		self["memTotal"].text = _("Total: %s Kb  Free: %s Kb") % (memtotal, memfree)
 		self["swapTotal"].text = _("Total: %s Kb  Free: %s Kb") % (swaptotal, swapfree)
-		
+
 	def FlashMem(self):
 		size = avail = 0
 		st = os.statvfs("/")
 		avail = st.f_bsize * st.f_bavail / 1024
 		size = st.f_bsize * st.f_blocks / 1024
 		self["flashTotal"].text = _("Total: %s Kb  Free: %s Kb") % (size, avail)
-		
+
 	def verinfo(self):
 		package = 0
 		self["panelver"].text = " "
@@ -614,7 +614,7 @@ class epanelinfo(Screen):
 				package = 0
 				self["panelver"].text = line.split()[1]
 				break
-		
+
 	def cancel(self):
 		self.close()
 ######################################################################################
@@ -661,7 +661,7 @@ class ConfigExtentions2(ConfigListScreen, Screen):
 			"green": self.save,
 			"ok": self.save
 		}, -2)
-		
+
 	def cancel(self):
 		self.close(False)
 
@@ -684,8 +684,8 @@ class loadEPG():
 		self.session = session
 		self.iConsole = iConsole()
 		if config.plugins.epanel.epgupdate.value:
-			self.timer = enigma.eTimer() 
-			self.timermin = enigma.eTimer() 
+			self.timer = enigma.eTimer()
+			self.timermin = enigma.eTimer()
 			self.timermin.callback.append(self.check_change_min)
 			self.timer.callback.append(self.check_change)
 			self.timermin.startLongTimer(30)
@@ -714,7 +714,7 @@ class loadEPG():
 				epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)
 				epgcache = eEPGCache.getInstance().load()
 				logging('%02d:%02d:%d %02d:%02d:%02d - reload epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
-				
+
 		if config.plugins.epanel.checkepgfile.value and config.plugins.epanel.nocheck.value:
 			if not os.path.isfile('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)):
 				logging('%02d:%02d:%d %02d:%02d:%02d - restore epg.dat\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
@@ -793,23 +793,23 @@ def menu(menuid, **kwargs):
 
 def extsoft(session, **kwargs):
 	session.open(emuman.emuSel5)
-	
+
 
 def einfo(session, **kwargs):
 	session.open(epanelinfo)
-	
+
 
 def clviewer(session, **kwargs):
 	session.open(tools.CrashLogScreen)
-	
+
 
 def scriptex(session, **kwargs):
 	session.open(tools.ScriptScreen3)
-	
+
 
 def epgreload(session, **kwargs):
 	session.open(tools.epgdmanual)
-	
+
 
 def epgdwnload(session, **kwargs):
 	session.open(tools.epgdna)
@@ -817,11 +817,11 @@ def epgdwnload(session, **kwargs):
 
 def usbunmt(session, **kwargs):
 	session.open(tools.UsbScreen)
-	
+
 
 def extdrop(session, **kwargs):
 	session.open(tools.DropScreen)
-	
+
 
 def setupipk(session, **kwargs):
 	session.open(minstall.InstallAll4)
@@ -871,5 +871,3 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name=_("E-Ncam.conf switcher"), description=_("Switch ncam condig with remote control"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=ncam_sw))
 	list.append(PluginDescriptor(name=_("E-Panel"), description=_("E-Panel"), where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart))
 	return list
-
-

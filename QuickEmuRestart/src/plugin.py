@@ -35,7 +35,7 @@ from os import environ
 
 if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/Softcam.pyo")):
 	from Plugins.Extensions.AlternativeSoftCamManager.Softcam import getcamcmd
-	
+
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
 gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
@@ -48,7 +48,7 @@ def _(txt):
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
-	
+
 
 config.plugins.qer = ConfigSubsection()
 config.plugins.qer.keyname = ConfigSelection(default="KEY_TEXT", choices=[
@@ -73,7 +73,7 @@ class QuickEmu():
 		global globalActionMap
 		readKeymap(keymap)
 		globalActionMap.actions['showEmuRestart'] = self.restartCam
-		
+
 	def restartCam(self):
 		camname = emunam = estart = estop = ""
 # Alternative SoftCam Manager
@@ -110,13 +110,13 @@ class QuickEmu():
 	def showcamname(self):
 		nameemu = nameser = []
 		camdlist = serlist = None
-		#Alternative SoftCam Manager 
-		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")): 
-			if config.plugins.AltSoftcam.actcam.value != "none": 
-				return config.plugins.AltSoftcam.actcam.value 
-			else: 
+		#Alternative SoftCam Manager
+		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, "Extensions/AlternativeSoftCamManager/plugin.pyo")):
+			if config.plugins.AltSoftcam.actcam.value != "none":
+				return config.plugins.AltSoftcam.actcam.value
+			else:
 				return None
-		#GlassSysUtil 
+		#GlassSysUtil
 		elif os.path.isfile("/tmp/ucm_cam.info"):
 			return open("/tmp/ucm_cam.info").read()
 		#Pli
@@ -178,12 +178,12 @@ class qer_setup(ConfigListScreen, Screen):
 			"green": self.save,
 			"ok": self.save
 		}, -2)
-	
+
 	def cancel(self):
 		for i in self["config"].list:
 			i[1].cancel()
 		self.close(False)
-		
+
 	def TrueImage(self):
 		if fileExists("/etc/issue"):
 			for line in open("/etc/issue"):

@@ -12,7 +12,7 @@ class Console2(Screen):
 		<screen position="center,140" size="1100,520" title="Upgrade execution..." >
 			<widget name="text" position="10,10" size="1080,470" font="Console;22" />
 		</screen>"""
-		
+
 	def __init__(self, session, title="Console", cmdlist=None, finishedCallback=None, closeOnSuccess=False):
 		Screen.__init__(self, session)
 
@@ -21,24 +21,24 @@ class Console2(Screen):
 		self.errorOcurred = False
 
 		self["text"] = ScrollLabel("")
-		self["actions"] = ActionMap(["WizardActions", "DirectionActions"], 
+		self["actions"] = ActionMap(["WizardActions", "DirectionActions"],
 		{
 			"ok": self.cancel,
 			"back": self.cancel,
 			"up": self["text"].pageUp,
 			"down": self["text"].pageDown
 		}, -1)
-		
+
 		self.cmdlist = cmdlist
 		self.newtitle = title
-		
+
 		self.onShown.append(self.updateTitle)
-		
+
 		self.container = eConsoleAppContainer()
 		self.run = 0
 		self.container.appClosed.append(self.runFinished)
 		self.container.dataAvail.append(self.dataAvail)
-		self.onLayoutFinish.append(self.startRun) 
+		self.onLayoutFinish.append(self.startRun)
 
 	def updateTitle(self):
 		self.setTitle(self.newtitle)
@@ -46,7 +46,7 @@ class Console2(Screen):
 	def startRun(self):
 		self["text"].setText("")
 		print("Console: executing in run", self.run, " the command:", self.cmdlist[self.run])
-		if self.container.execute(self.cmdlist[self.run]): 
+		if self.container.execute(self.cmdlist[self.run]):
 			self.runFinished(-1) # so we must call runFinished manual
 
 	def runFinished(self, retval):
