@@ -986,7 +986,7 @@ class ScriptScreen3(Screen):
 		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
-				os.chmod('%s' % self.name, 0755)
+				os.chmod('%s' % self.name, 0o755)
 			else:
 				self.name = 'python %s' % self.name
 			self.iConsole.ePopen("nohup %s >/dev/null &" % self.name)
@@ -997,7 +997,7 @@ class ScriptScreen3(Screen):
 		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
-				os.chmod('%s' % self.name, 0755)
+				os.chmod('%s' % self.name, 0o755)
 			else:
 				self.name = 'python %s' % self.name
 			self.session.open(Console, self.script.replace("_", " "), cmdlist=[self.name])
@@ -1113,7 +1113,7 @@ class NTPScreen(ConfigListScreen, Screen):
 				if fileExists('%sS42ntpdate.sh' % script_path):
 					os.remove('%sS42ntpdate.sh' % script_path)
 		if fileExists('%sS42ntpdate.sh' % script_path):
-			os.chmod('%sS42ntpdate.sh' % script_path, 0755)
+			os.chmod('%sS42ntpdate.sh' % script_path, 0o755)
 		if config.plugins.epanel.onoff.value is '2':
 			if fileExists(self.path):
 				remove_line(self.path, 'ntpdate')
@@ -1888,7 +1888,7 @@ class get_epg_dat(Screen):
 					if os.path.isfile('/tmp/epg.dat.gz'):
 						os.remove('/tmp/epg.dat.gz')
 					if os.path.isfile('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)):
-						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0755)
+						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0o755)
 					epgcache = eEPGCache.getInstance()
 					epgcache.flushEPG()
 					epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)

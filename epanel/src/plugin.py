@@ -744,7 +744,7 @@ class loadEPG():
 					if os.path.isfile('/tmp/epg.dat.gz'):
 						os.remove('/tmp/epg.dat.gz')
 					if os.path.isfile('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)):
-						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0755)
+						os.chmod('%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value), 0o755)
 					epgcache = eEPGCache.getInstance()
 					epgcache.flushEPG()
 					epgcache = new.instancemethod(_enigma.eEPGCache_load, None, eEPGCache)

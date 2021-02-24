@@ -402,7 +402,7 @@ class get_epgdat(Screen):
 					if os.path.isfile('/tmp/epg.dat.gz'):
 						os.remove('/tmp/epg.dat.gz')
 					if os.path.isfile('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value)):
-						os.chmod('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value), 0755)
+						os.chmod('%s%s' % (config.plugins.epgdd.direct.value, config.plugins.epgdd.epgname.value), 0o755)
 					self.epgcash_do()
 					self['status'].text = _('Download epg.dat successful')
 					logging('%02d:%02d:%d %02d:%02d:%02d - Manual Donwload & Unzip epg.dat.gz successful\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))

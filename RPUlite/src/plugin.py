@@ -263,7 +263,7 @@ class rpulite(Screen, ConfigListScreen):
 			out_script.write("fi\n")
 			out_script.close()
 		if os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
-			os.chmod(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), 0755)
+			os.chmod(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh'), 0o755)
 
 	def cancel(self):
 		for i in self["config"].list:
