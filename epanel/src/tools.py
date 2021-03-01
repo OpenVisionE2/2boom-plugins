@@ -1675,7 +1675,7 @@ class get_source(Screen):
 	skin = """
 	<screen name="get_source" position="center,160" size="850,255" title="Choice epg.dat source">
 		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />	
+		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
 		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
 		<widget source="menu" render="Listbox" position="15,10" size="820,250" itemHeight="25" scrollbarMode="showOnDemand">
