@@ -1062,27 +1062,14 @@ class NTPScreen(ConfigListScreen, Screen):
 	def Manual(self):
 		self.session.open(ManualSetTime)
 
-	def image_is_atv(self):
-		if os.path.isfile('/etc/issue'):
-			for line in open('/etc/issue'):
-				if 'openatv' in line.lower() or 'openhdf' in line.lower() or 'openvix' in line.lower() or 'opendroid' in line.lower():
-					return True
-		return False
-
 	def save_values(self):
 		script_path = ''
 		if not fileExists(self.path):
 			open(self.path, 'a').close()
 		if config.plugins.epanel.TransponderTime.value is '0':
-			if not self.image_is_atv():
-				config.misc.useTransponderTime.value = False
-			else:
-				config.misc.SyncTimeUsing.value = "1"
+			config.misc.useTransponderTime.value = False
 		else:
-			if not self.image_is_atv():
-				config.misc.useTransponderTime.value = True
-			else:
-				config.misc.SyncTimeUsing.value = "0"
+			config.misc.useTransponderTime.value = True
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
@@ -1800,28 +1787,16 @@ class epgdna(ConfigListScreen, Screen):
 		now = time.localtime(time.time())
 		if not config.plugins.epanel.epgupdate.value:
 			config.plugins.epanel.lastupdate.value = _('last epg.dat updated - not yet')
-		if self.image_is_OA():
-			config.misc.epgcachefilename.value = config.plugins.epanel.epgname.value
-			config.misc.epgcachepath.value = config.plugins.epanel.direct.value
-			config.misc.epgcachepath.save()
-			config.misc.epgcachefilename.save()
-			if self.image_is_atv6():
-				config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
-				config.misc.epgcache_filename.save()
-			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' %
-				(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachepath.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcachefilename.value))
-		else:
-			config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
-			config.misc.epgcache_filename.save()
-			logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcache_filename.value))
+		config.misc.epgcache_filename.value = '%s%s' % (config.plugins.epanel.direct.value, config.plugins.epanel.epgname.value)
+		config.misc.epgcache_filename.save()
+		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.misc.epgcache_filename.value))
 		logging('%02d:%02d:%d %02d:%02d:%02d - set %s\r\n%02d:%02d:%d %02d:%02d:%02d - set %s min check period\r\n' %
 			(now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.url.value, now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.checkp.value))
 		configfile.save()
 		if not config.plugins.epanel.epgupdate.value:
 			logging('%02d:%02d:%d %02d:%02d:%02d - set autoupdate epg.dat - off\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec))
-		if self.image_is_pli():
-			from Components.PluginComponent import plugins
-			plugins.reloadPlugins()
+		from Components.PluginComponent import plugins
+		plugins.reloadPlugins()
 		self.mbox = self.session.open(MessageBox, (_('configuration is saved')), MessageBox.TYPE_INFO, timeout=4)
 
 	def cancel(self):
@@ -1832,27 +1807,6 @@ class epgdna(ConfigListScreen, Screen):
 
 	def onidman(self):
 		self.session.open(onidMan)
-
-	def image_is_OA(self):
-		if os.path.isfile('/etc/issue'):
-			for line in open('/etc/issue'):
-				if 'openatv' in line.lower() or 'openhdf' in line.lower() or 'openvix' in line.lower() or 'opendroid' in line.lower():
-					return True
-		return False
-
-	def image_is_atv6(self):
-		if os.path.isfile('/etc/issue'):
-			for line in open('/etc/issue'):
-				if 'openatv 6' in line.lower():
-					return True
-		return False
-
-	def image_is_pli(self):
-		if os.path.isfile('/etc/issue'):
-			for line in open('/etc/issue'):
-				if 'openpli' in line.lower():
-					return True
-		return False
 
 
 SKIN_DWN = """
