@@ -40,7 +40,7 @@ import socket
 import gzip
 import urllib
 import stat
-import boxbranding
+from Components.SystemInfo import BoxInfo
 
 global min, first_start
 min = first_start = 0
@@ -564,9 +564,9 @@ class epanelinfo(Screen):
 
 	def mainInfo(self):
 		package = 0
-		self["Hardware"].text = getBoxType()
-		self["Image"].text = boxbranding.getImageDistro()
-		self["Kernel"].text = boxbranding.getKernelVersion()
+		self["Hardware"].text = BoxInfo.getItem("model")
+		self["Image"].text = BoxInfo.getItem("distro")
+		self["Kernel"].text = BoxInfo.getItem("kernel")
 		self["EnigmaVersion"].text = self.getImageVersionString()
 		self["nim"].text = self.listnims()
 		if fileExists(self.status()):
