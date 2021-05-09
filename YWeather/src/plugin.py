@@ -34,7 +34,7 @@ from Components.Pixmap import Pixmap
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
 from Screens.Screen import Screen
-from keymapparser import readKeymap
+from Components.ActionMap import readKeymap
 from GlobalActions import globalActionMap
 
 lang = language.getLanguage()

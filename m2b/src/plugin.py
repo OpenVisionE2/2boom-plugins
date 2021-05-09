@@ -20,7 +20,7 @@ from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
 from Tools.Directories import fileExists
 from GlobalActions import globalActionMap
-from keymapparser import readKeymap, removeKeymap
+from Components.ActionMap import readKeymap, removeKeymap
 from os import environ
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen

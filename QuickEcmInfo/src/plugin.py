@@ -20,7 +20,7 @@ from Components.ActionMap import ActionMap
 from Components.config import config, getConfigListEntry, ConfigText, ConfigInteger, ConfigClock, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile, NoSave
 from Components.ConfigList import ConfigListScreen
 from GlobalActions import globalActionMap
-from keymapparser import readKeymap, removeKeymap
+from Components.ActionMap import readKeymap, removeKeymap
 from enigma import ePoint, eTimer, getDesktop
 from Components.Pixmap import Pixmap
 from os import environ
