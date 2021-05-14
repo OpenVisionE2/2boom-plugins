@@ -34,7 +34,7 @@ from Components.Pixmap import Pixmap
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
 from Screens.Screen import Screen
-from keymapparser import readKeymap
+from Components.ActionMap import loadKeymap
 from GlobalActions import globalActionMap
 
 lang = language.getLanguage()
@@ -511,7 +511,7 @@ class yweather_main():
 		self.Timer = eTimer()
 		keymap = resolveFilename(SCOPE_PLUGINS, "Extensions/YWeather/keymap.xml")
 		global globalActionMap
-		readKeymap(keymap)
+		loadKeymap(keymap)
 		globalActionMap.actions['showWeather'] = self.autohide
 
 	def autohide(self):

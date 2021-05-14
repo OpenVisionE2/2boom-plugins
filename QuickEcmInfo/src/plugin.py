@@ -20,7 +20,7 @@ from Components.ActionMap import ActionMap
 from Components.config import config, getConfigListEntry, ConfigText, ConfigInteger, ConfigClock, ConfigSelection, ConfigSubsection, ConfigYesNo, configfile, NoSave
 from Components.ConfigList import ConfigListScreen
 from GlobalActions import globalActionMap
-from keymapparser import readKeymap, removeKeymap
+from Components.ActionMap import loadKeymap, removeKeymap
 from enigma import ePoint, eTimer, getDesktop
 from Components.Pixmap import Pixmap
 from os import environ
@@ -110,7 +110,7 @@ class QuickEcm():
 		self.session = session
 		keymap = '%sExtensions/QuickEcmInfo/keymap.xml' % resolveFilename(SCOPE_PLUGINS)
 		global globalActionMap
-		readKeymap(keymap)
+		loadKeymap(keymap)
 		self.dialog = session.instantiateDialog(QuickEcmInfo)
 		if 'displayHelp' in globalActionMap.actions:
 			del globalActionMap.actions['displayHelp']
