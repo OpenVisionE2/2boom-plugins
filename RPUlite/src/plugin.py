@@ -37,7 +37,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from GlobalActions import globalActionMap
 from StringIO import StringIO
-import ref_base
+from . import ref_base
 import pycurl
 
 lang = language.getLanguage()

@@ -22,7 +22,7 @@ from os import environ
 import time
 import os
 import gettext
-import tools
+from . import tools
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]

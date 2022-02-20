@@ -23,9 +23,9 @@ from Components.Harddisk import harddiskmanager
 from os import environ
 import os
 import gettext
-import emuman
-import minstall
-import tools
+from . import emuman
+from . import minstall
+from . import tools
 from enigma import eEPGCache
 from types import *
 from enigma import *
