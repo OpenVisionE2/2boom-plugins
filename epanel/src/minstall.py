@@ -131,7 +131,7 @@ class IPKToolsScreen2(Screen):
 		self.mbox = self.session.open(MessageBox, _("Removing files..."), MessageBox.TYPE_INFO, timeout=4)
 
 	def go(self, num=None):
-		if num is not None:
+		if num != None:
 			num -= 1
 			if not num < self["menu"].count():
 				return
@@ -259,7 +259,7 @@ class downfeed(Screen):
 		self.close()
 
 	def setup(self):
-		if self["menu"].getCurrent() is not None:
+		if self["menu"].getCurrent() != None:
 			self.session.open(Console, title=_("Install extensions from feed"), cmdlist=["opkg install -force-reinstall %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 ##############################################################################
 
@@ -372,11 +372,11 @@ class DownloadFeed(Screen):
 		self["key_yellow"].setText(_("Download -deps"))
 
 	def download(self):
-		if self["menu"].getCurrent() is not None:
+		if self["menu"].getCurrent() != None:
 			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg download %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def download_wdeps(self):
-		if self["menu"].getCurrent() is not None:
+		if self["menu"].getCurrent() != None:
 			self.session.open(Console, title=_("Download extensions from feed"), cmdlist=["cd /tmp && opkg install -download-only %s" % self["menu"].getCurrent()[0]], closeOnSuccess=False)
 
 	def cancel(self):
@@ -465,7 +465,7 @@ class InstallAll4(Screen):
 
 	def mark_list(self):
 		line_old = self["menu"].getCurrent()
-		if line_old is not None:
+		if line_old != None:
 			if not line_old[-2]:
 				if ".ipk" in line_old[0]:
 					pngfile = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/ipkact.png"))
@@ -491,7 +491,7 @@ class InstallAll4(Screen):
 
 	def all_install(self):
 		line_old = self["menu"].getCurrent()
-		if line_old is not None:
+		if line_old != None:
 			if config.plugins.epanel.multifilemode.value is not 'Multi':
 				self.commamd_line_tar = []
 				self.commamd_line_ipk = []

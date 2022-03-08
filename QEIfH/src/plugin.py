@@ -198,7 +198,7 @@ class QEIfH(Screen):
 	def pidsline(self):
 		vpid = apid = tsid = onid = sid = -1
 		service = self.session.nav.getCurrentService()
-		if service is not None:
+		if service != None:
 			info = service and service.info()
 			sid = info.getInfo(iServiceInformation.sSID)
 			vpid = info.getInfo(iServiceInformation.sVideoPID)
@@ -231,7 +231,7 @@ class QEIfH(Screen):
 
 	def ecm_view(self):
 		service = self.session.nav.getCurrentService()
-		if service is not None:
+		if service != None:
 			info = service and service.info()
 			list = caidvalue = ''
 			port_flag = 0
@@ -310,11 +310,11 @@ class QEIfH(Screen):
 						nameser.append(line)
 				if len(nameser) > 1:
 					serlist = "%s" % nameser[1].split('"')[1]
-			if serlist is not None and camdlist is not None:
+			if serlist != None and camdlist != None:
 				return ("%s %s" % (serlist, camdlist))
-			elif camdlist is not None:
+			elif camdlist != None:
 				return "%s" % camdlist
-			elif serlist is not None:
+			elif serlist != None:
 				return "%s" % serlist
 			return ""
 		else:

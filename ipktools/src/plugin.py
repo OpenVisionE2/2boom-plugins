@@ -395,7 +395,7 @@ class InstallAll4(Screen):
 
 	def mark_list(self):
 		line_old = self["menu"].getCurrent()
-		if line_old is not None:
+		if line_old != None:
 			if not line_old[-2]:
 				if ".ipk" in line_old[0]:
 					pngfile = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools/images/ipkact.png"))
@@ -421,7 +421,7 @@ class InstallAll4(Screen):
 
 	def all_install(self):
 		line_old = self["menu"].getCurrent()
-		if line_old is not None:
+		if line_old != None:
 			if config.plugins.ipktools.multifilemode.value is not 'Multi':
 				self.commamd_line_tar = []
 				self.commamd_line_ipk = []

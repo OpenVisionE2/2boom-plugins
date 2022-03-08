@@ -133,11 +133,11 @@ class QuickEmu():
 						nameser.append(line)
 				if len(nameser) > 1:
 					serlist = "%s" % nameser[1].split('"')[1]
-			if serlist is not None and camdlist is not None:
+			if serlist != None and camdlist != None:
 				return ("%s %s" % (serlist, camdlist))
-			elif camdlist is not None:
+			elif camdlist != None:
 				return "%s" % camdlist
-			elif serlist is not None:
+			elif serlist != None:
 				return "%s" % serlist
 			return ""
 		#TS-Panel
