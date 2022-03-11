@@ -400,7 +400,7 @@ class WeatherInfo(Screen):
 			self["sunrise"].text = _('N/A')
 			self.notdata = True
 
-		if self.astronomy['sunset'] !='':
+		if self.astronomy['sunset'] != '':
 			self["sunset"].text = _('%s') % self.time_convert(self.astronomy['sunset'])
 		else:
 			self["sunset"].text = _('N/A')
