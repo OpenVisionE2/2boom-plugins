@@ -202,7 +202,7 @@ class WeatherInfo(Screen):
 		for data in ('day', 'date', 'low', 'high', 'text', 'code'):
 			for daynumber in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
 				self.forecastdata[data + daynumber] = ''
-		if len(self.forecast) is 10:
+		if len(self.forecast) == 10:
 			for data in ('day', 'date', 'low', 'high', 'text', 'code'):
 				for daynumber in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
 					self.forecastdata[data + daynumber] = self.get_data(self.forecast[int(daynumber)], data)
@@ -212,27 +212,27 @@ class WeatherInfo(Screen):
 			self["city_locale"].text = config.plugins.yweather.weather_city_locale.value
 		for daynumber in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
 			day = 'day' + daynumber
-			if self.forecastdata[day] is not '':
+			if self.forecastdata[day] != '':
 				self["forecast_" + day].text = '%s' % self.weekday[self.forecastdata[day]]
 			else:
 				self["forecast_" + day].text = _('N/A')
 				self.notdata = True
 
-			if self.forecastdata['date' + daynumber] is not '':
+			if self.forecastdata['date' + daynumber] != '':
 				tmp_date = self.forecastdata['date' + daynumber]
 				self["forecastdate_" + day].text = '%s %s' % (tmp_date.split()[0], self.month[tmp_date.split()[1]])
 			else:
 				self["forecastdate_" + day].text = _('N/A')
 				self.notdata = True
 
-			if self.forecastdata['low0'] is not '' and self.forecastdata['high0'] is not '':
+			if self.forecastdata['low0'] != '' and self.forecastdata['high0'] != '':
 				self["temp_now_min"].text = _('min: %s') % self.tempsing(self.forecastdata['low0'])
 				self["temp_now_max"].text = _('max: %s') % self.tempsing(self.forecastdata['high0'])
 			else:
 				self["temp_now_min"].text = _('N/A')
 				self["temp_now_max"].text = _('N/A')
 				self.notdata = True
-			if self.forecastdata['low' + daynumber] is not '' and self.forecastdata['high' + daynumber] is not '':
+			if self.forecastdata['low' + daynumber] != '' and self.forecastdata['high' + daynumber] != '':
 				self["temp_" + day].text = '%s / %s' % (self.tempsing_nu(self.forecastdata['low' + daynumber]), self.tempsing_nu(self.forecastdata['high' + daynumber]))
 			else:
 				self["temp_" + day].text = _('N/A')
@@ -241,7 +241,7 @@ class WeatherInfo(Screen):
 		for daynumber in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'):
 			day = 'day' + daynumber
 			self["picon_" + day].instance.setScale(1)
-			if self.forecastdata['code' + daynumber] is not '':
+			if self.forecastdata['code' + daynumber] != '':
 				self["text_" + day].text = self.text[self.forecastdata['code' + daynumber]]
 				self["picon_" + day].instance.setPixmapFromFile("%sExtensions/YWfH/istyle/%s/%s.png" % (resolveFilename(SCOPE_PLUGINS), config.plugins.yweather.istyle.value, self.forecastdata['code' + daynumber]))
 			else:
@@ -249,7 +249,7 @@ class WeatherInfo(Screen):
 				self["picon_" + day].instance.setPixmapFromFile(defpicon)
 				self.notdata = True
 			self["picon_" + day].instance.show()
-		if self.condition['temp'] is not '':
+		if self.condition['temp'] != '':
 			self["temp_now"].text = self.tempsing(self.condition['temp'])
 			self["temp_now_nounits"].text = self.tempsing_nu(self.condition['temp'])
 		else:
@@ -257,18 +257,18 @@ class WeatherInfo(Screen):
 			self["temp_now_nounits"].text = _('N/A')
 			self.notdata = True
 
-		if self.condition['date'] is not '':
+		if self.condition['date'] != '':
 			self["date"].text = self.tempsing(self.condition['date']).replace('+', '')
 		else:
 			self["date"].text = _('N/A')
 			self.notdata = True
 
-		if self.wind['chill'] is not '':
+		if self.wind['chill'] != '':
 			self["feels_like"].text = _('Feels: %s') % self.tempsing(self.wind['chill'])
 		else:
 			self["feels_like"].text = _('N/A')
 			self.notdata = True
-		if not self.condition['code'] is '' and not self.wind['speed'] is '':
+		if self.condition['code'] != '' and self.wind['speed'] != '':
 			direct = int(self.condition['code'])
 			tmp_wind = (float(self.wind['speed']) * 1000) / 3600
 			if direct >= 0 and direct <= 20:
@@ -308,7 +308,7 @@ class WeatherInfo(Screen):
 			else:
 				self["wind"].text = _('N/A')
 				self.notdata = True
-		if not self.condition['code'] is '' and not self.wind['speed'] is '':
+		if self.condition['code'] != '' and self.wind['speed'] != '':
 			direct = int(self.condition['code'])
 			if direct >= 0 and direct <= 20:
 				self["wind_kmh"].text = _('N, %s km/h') % self.wind['speed']
@@ -349,34 +349,34 @@ class WeatherInfo(Screen):
 				self.notdata = True
 		else:
 			self.notdata = True
-		if not self.condition['code'] is '':
+		if self.condition['code'] != '':
 			self["text_now"].text = self.text[self.condition['code']]
 		else:
 			self["text_now"].text = _('N/A')
 			self.notdata = True
-		if not self.atmosphere['pressure'] is '':
+		if self.atmosphere['pressure'] != '':
 			tmp_pressure = round(float(self.atmosphere['pressure']) * 0.75)
 			self["pressure"].text = _("%d mmHg") % tmp_pressure
 		else:
 			self["pressure"].text = _('N/A')
 			self.notdata = True
-		if not self.atmosphere['pressure'] is '':
+		if self.atmosphere['pressure'] != '':
 			self["pressure_hpa"].text = _("%s hPa(mbar)") % self.atmosphere['pressure']
 		else:
 			self["pressure_hpa"].text = _('N/A')
 			self.notdata = True
-		if not self.atmosphere['humidity'] is '':
+		if self.atmosphere['humidity'] != '':
 			self["humidity"].text = _('%s%% humidity') % self.atmosphere['humidity']
 		else:
 			self["humidity"].text = _('N/A')
 			self.notdata = True
-		if not self.atmosphere['visibility'] is '':
+		if self.atmosphere['visibility'] != '':
 			self["visibility"].text = _('%s km') % self.atmosphere['visibility']
 		else:
 			self["visibility"].text = _('N/A')
 			self.notdata = True
 
-		if not self.geo['lat'] is '':
+		if self.geo['lat'] != '':
 			if self.geo['lat'].startswith('-'):
 				self["lat"].text = '%s S' % self.geo['lat']
 			else:
@@ -385,7 +385,7 @@ class WeatherInfo(Screen):
 			self["lat"].text = _('N/A')
 			self.notdata = True
 
-		if not self.geo['long'] is '':
+		if self.geo['long'] != '':
 			if self.geo['long'].startswith('-'):
 				self["long"].text = '%s W' % self.geo['long']
 			else:
@@ -394,30 +394,30 @@ class WeatherInfo(Screen):
 			self["long"].text = _('N/A')
 			self.notdata = True
 
-		if not self.astronomy['sunrise'] is '':
+		if self.astronomy['sunrise'] != '':
 			self["sunrise"].text = _('%s') % self.time_convert(self.astronomy['sunrise'])
 		else:
 			self["sunrise"].text = _('N/A')
 			self.notdata = True
 
-		if not self.astronomy['sunset'] is '':
+		if self.astronomy['sunset'] !='':
 			self["sunset"].text = _('%s') % self.time_convert(self.astronomy['sunset'])
 		else:
 			self["sunset"].text = _('N/A')
 			self.notdata = True
 
 		self["picon_now"].instance.setScale(1)
-		if not self.condition['code'] is '':
+		if self.condition['code'] != '':
 			self["picon_now"].instance.setPixmapFromFile("%sExtensions/YWfH/istyle/%s/%s.png" % (resolveFilename(SCOPE_PLUGINS), config.plugins.yweather.istyle.value, self.condition['code']))
 		else:
 			self["picon_now"].instance.setPixmapFromFile(defpicon)
 		self["picon_now"].instance.show()
-		if not config.plugins.yweather.timeout.value is '0':
+		if config.plugins.yweather.timeout.value != '0':
 			self.Timer.callback.append(self.endshow)
 			self.Timer.startLongTimer(int(config.plugins.yweather.timeout.value))
 
 	def endshow(self):
-		if not config.plugins.yweather.timeout.value is '0':
+		if config.plugins.yweather.timeout.value != '0':
 			self.Timer.stop()
 			self.close(False)
 
@@ -436,7 +436,7 @@ class WeatherInfo(Screen):
 			tmp_time = '%s:%s' % (int(time.split()[0].split(':')[0]) + 12, time.split()[0].split(':')[-1])
 		else:
 			tmp_time = time.replace('am', '').strip()
-		if len(tmp_time) is 4:
+		if len(tmp_time) == 4:
 			return '0%s' % tmp_time
 		else:
 			return tmp_time
@@ -457,13 +457,13 @@ class WeatherInfo(Screen):
 		return line.split('</')[0].split('>')[1]
 
 	def tempsing(self, what):
-		if not what[0] is '-' and not what[0] is '0':
+		if what[0] != '-' and what[0] != '0':
 			return '+' + what + '%s' % unichr(176).encode("latin-1") + self.units['temperature']
 		else:
 			return what + '%s' % unichr(176).encode("latin-1") + self.units['temperature']
 
 	def tempsing_nu(self, what):
-		if not what[0] is '-' and not what[0] is '0':
+		if what[0] != '-' and what[0] != '0':
 			return '+' + what + '%s' % unichr(176).encode("latin-1")
 		else:
 			return what + '%s' % unichr(176).encode("latin-1")

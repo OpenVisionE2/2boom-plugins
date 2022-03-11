@@ -218,10 +218,10 @@ class get_chlist(Screen):
 
 	def user_upg2(self, result, retval, extra_args):
 		self.newproxy = config.plugins.tpulite.ip.value
-		if retval is 0:
+		if retval == 0:
 			tmp_proxy = '%3a//triolan%3a8888/'
 			self.oldproxy = desk_tmp = channel_ref = ''
-			if config.plugins.tpulite.servicetype.value is '2':
+			if config.plugins.tpulite.servicetype.value == '2':
 				stream_tmp = 'http%3a//127.0.0.1%3a88/httpstream%3a//'
 			else:
 				stream_tmp = ''
@@ -233,7 +233,7 @@ class get_chlist(Screen):
 					for line in open('/tmp/triolan.m3u'):
 						if 'udp://@' in line:
 							channel_ref = ':0:1:0:0:0:0:0:0:0'
-							if config.plugins.tpulite.servicetype.value is '4097':
+							if config.plugins.tpulite.servicetype.value == '4097':
 								outfile.write('#SERVICE %s%s:http%s%s:%s\r\n' % (config.plugins.tpulite.servicetype.value, channel_ref, tmp_proxy, line.replace('udp://@', 'udp/')[:-2].replace(':', '%3a'), desk_tmp))
 							else:
 								outfile.write('#SERVICE 1%s:%shttp%s%s:%s\r\n' % (channel_ref, stream_tmp, tmp_proxy, line.replace('udp://@', 'udp/')[:-2].replace(':', '%3a'), desk_tmp))
@@ -265,7 +265,7 @@ class get_ip(Screen):
 
 	def get_ip2(self, result, retval, extra_args):
 		self.newproxy = ''
-		if retval is 0:
+		if retval == 0:
 			if os.path.isfile('/tmp/triolan.m3u'):
 				for line in open('/tmp/triolan.m3u'):
 					if 'http://' in line:

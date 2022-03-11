@@ -33,6 +33,6 @@ for name in emus:
 		script_file.write(script % (startcam, binname, emuname))
 		script_file.close()
 		if os.path.isfile('/etc/init.d/softcam.%s' % name[:-4]):
-			os.chmod('/etc/init.d/softcam.%s' % name[:-4], 0777)
+			os.chmod('/etc/init.d/softcam.%s' % name[:-4], 0o777)
 		print('/etc/init.d/softcam.%s - Done.' % name[:-4])
 print('End...')

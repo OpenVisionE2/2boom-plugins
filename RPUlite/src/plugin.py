@@ -187,7 +187,7 @@ class rpulite(Screen, ConfigListScreen):
 		for i in self["config"].list:
 			i[1].save()
 		configfile.save()
-		if config.plugins.rpulite.startup.value or not config.plugins.rpulite.timeup.value is '0':
+		if config.plugins.rpulite.startup.value or config.plugins.rpulite.timeup.value != '0':
 			if not os.path.isfile(resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')):
 				self.create_script()
 
@@ -203,7 +203,7 @@ class rpulite(Screen, ConfigListScreen):
 				os.unlink('/etc/rcS.d/get_ip_rtc')
 			elif os.path.isfile('/etc/rc.d/rcS.d/S98get_ip_rtc'):
 				os.unlink('/etc/rc.d/rcS.d/S98get_ip_rtc')
-		if not config.plugins.rpulite.timeup.value is '0':
+		if config.plugins.rpulite.timeup.value != '0':
 			if os.path.isfile(self.path):
 				remove_line(self.path, 'get_ip_rtc')
 				add_line(self.path, '15 */%s * * * %s\n' % (config.plugins.rpulite.timeup.value, resolveFilename(SCOPE_PLUGINS, 'Extensions/RPUlite/get_ip_rtc.sh')))
@@ -287,7 +287,7 @@ class rpulite(Screen, ConfigListScreen):
 		self.newproxy = config.plugins.rpulite.ip.value
 		desk_tmp = channel_ref = ''
 		#stream_tmp = 'http%3a//127.0.0.1%3a88/httpstream%3a//'
-		if config.plugins.rpulite.servicetype.value is '2':
+		if config.plugins.rpulite.servicetype.value == '2':
 			stream_tmp = 'http%3a//127.0.0.1%3a88/httpstream%3a//'
 		else:
 			stream_tmp = ''
@@ -305,7 +305,7 @@ class rpulite(Screen, ConfigListScreen):
 						if not channel_ref or not config.plugins.rpulite.ref.value:
 							channel_ref = ':0:1:0:0:0:0:0:0:0'
 						line = line.replace(self.newproxy, 'rostelecom').replace(',ru', '')
-						if config.plugins.rpulite.servicetype.value is '4097':
+						if config.plugins.rpulite.servicetype.value == '4097':
 							outfile.write('#SERVICE %s%s:%s:%s\r\n' % (config.plugins.rpulite.servicetype.value, channel_ref, line.replace(':', '%3a', 3)[:-2], desk_tmp))
 						else:
 							outfile.write('#SERVICE 1%s:%s%s:%s\r\n' % (channel_ref, stream_tmp, line.replace(':', '%3a', 3)[:-2], desk_tmp))
@@ -363,7 +363,7 @@ class get_ip(Screen):
 
 	def get_ip2(self, result, retval, extra_args):
 		self.newproxy = ''
-		if retval is 0:
+		if retval == 0:
 			if os.path.isfile('/tmp/rostelecom.m3u'):
 				for line in open('/tmp/rostelecom.m3u'):
 					if 'udp/233.7.70.' in line:

@@ -346,7 +346,7 @@ class QEIfH(Screen):
 						package = 1
 					if "Version:" in line and package == 1:
 						package = 0
-						if line.count('.') is 3:
+						if line.count('.') == 3:
 							tmp_line = line.split()[-1].split('+')[-1].split('-')[0]
 						else:
 							tmp_line = line.split()[-1].split('-')[-1].split('.')[0]
@@ -399,7 +399,7 @@ class QEIfH(Screen):
 				temp = "%s%s%s" % (open("/proc/stb/sensors/temp0/value").read().strip('\n'), unichr(176).encode("latin-1"), open("/proc/stb/sensors/temp0/unit").read().strip('\n'))
 			elif os.path.isfile("/proc/stb/fp/temp_sensor_avs"):
 				temp = "%s%sC" % (open("/proc/stb/fp/temp_sensor_avs").read().strip('\n'), unichr(176).encode("latin-1"))
-			if cpu_variant is '':
+			if cpu_variant == '':
 				return _("%s, %s Mhz (%d %s) %s") % (processor, cpu_speed, cpu_count, cpu_count > 1 and cores or core, temp)
 			else:
 				return "%s(%s), %s %s" % (processor, cpu_family, cpu_variant, temp)

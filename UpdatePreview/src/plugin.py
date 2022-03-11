@@ -70,7 +70,7 @@ class get_opkg_data(Screen):
 		self.iConsole.ePopen("opkg update", self.preview_list)
 
 	def preview_list(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self["status"].text = _("Updating list installed and upgradable packages")
 			self.iConsole.ePopen("opkg list-upgradable", self.preview)
 		else:
@@ -84,7 +84,7 @@ class get_opkg_data(Screen):
 		self.close()
 
 	def preview(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.session.openWithCallback(self.cancel, updateprv2, result)
 		else:
 			self["status"].text = _("Error receive list-upgradable, try later")
@@ -146,7 +146,7 @@ class updateprv2(Screen):
 				if not line.startswith('Not '):
 					list += line
 					self.count += 1
-			if not self.count is 0:
+			if self.count != 0:
 				title_msg = _("Update preview: %s aviable") % self.count
 				try:
 					status = urlopen("http://openpli.org/status").read().split('!', 1)
@@ -169,8 +169,8 @@ class updateprv2(Screen):
 		self.session.open(commitinfo)
 
 	def update(self):
-		if self.count is not 0:
-			if len(config.plugins.upw.userfiles.value) is 0:
+		if self.count != 0:
+			if len(config.plugins.upw.userfiles.value) == 0:
 				self.session.open(Console2, title=_("Updating..."), cmdlist=["opkg upgrade"])
 			else:
 				for i in range(len(config.plugins.upw.userfiles.value)):

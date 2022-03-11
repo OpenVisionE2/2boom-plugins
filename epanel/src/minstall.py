@@ -220,7 +220,7 @@ class downfeed(Screen):
 					return True
 		return False
 
-   	def image_is_openvision(self):
+	def image_is_openvision(self):
 		if os.path.isfile('/etc/model'):
 			return True
 		return False
@@ -332,7 +332,7 @@ class DownloadFeed(Screen):
 					return True
 		return False
 
-        def image_is_openvision(self):
+	def image_is_openvision(self):
 		if os.path.isfile('/etc/issue'):
 			for line in open('/etc/issue'):
 				if 'openvision develop' in line.lower():

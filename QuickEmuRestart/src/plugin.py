@@ -101,7 +101,7 @@ class QuickEmu():
 			if fileExists("%s " % currentemu):
 				self.Console.ePopen("%s cam_down & && %s cam_up &" % (currentemu, currentemu))
 		try:
-			if not config.plugins.qer.time.value is 0:
+			if config.plugins.qer.time.value != 0:
 				self.mbox = self.session.open(MessageBox, (_("%s  restarted...") % self.showcamname()), MessageBox.TYPE_INFO, timeout=config.plugins.qer.time.value)
 		except:
 			pass

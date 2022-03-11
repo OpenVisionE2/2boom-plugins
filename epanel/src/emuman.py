@@ -254,18 +254,18 @@ class emuSel5(Screen):
 		status = ''
 		name_emu = self.cut_name(self.emuversion('softcam'))
 		name_card = self.cut_name(self.emuversion('cardserver'))
-		if name_card is not ' ':
+		if name_card != ' ':
 			for line in result.splitlines(True):
 				if name_card.split()[0].upper() in result.upper():
 					status += '%s ' % name_card
 					break
-		if name_emu is not ' ':
+		if name_emu != ' ':
 			for line in result.splitlines(True):
 				if name_emu.split()[0].upper() in result.upper():
 					status += '%s' % name_emu
 					break
 		try:
-			if status is not '':
+			if status != '':
 				self["inmemory"].text = _('%s loaded in memory') % status
 			else:
 				self["inmemory"].text = _('not loaded modules')
@@ -307,7 +307,7 @@ class emuSel5(Screen):
 		try:
 			self.setTitle(_("Please wait"))
 			self.emutype = self["menu"].getCurrent()[3]
-			if self.emuversion(self.emutype) is not ' ':
+			if self.emuversion(self.emutype) != ' ':
 				self.indexpos = self["menu"].getIndex()
 				self.session.openWithCallback(self.selemulist, restart_cam, self.emutype)
 		except Exception as e:
@@ -541,11 +541,11 @@ class SoftcamPanel2(Screen):
 
 	def select_item(self, item):
 		if item:
-			if item is 1:
+			if item == 1:
 				self.session.open(emuSel5)
-			elif item is 2:
+			elif item == 2:
 				self.session.open(UniConfigScreen)
-			elif item is 3:
+			elif item == 3:
 				self.session.open(SoftcamUpd2)
 			else:
 				self.close(None)
@@ -610,7 +610,7 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 			(config.plugins.epanel.softcamserver.value, config.plugins.epanel.path.value, config.plugins.epanel.keyname.value), self.CheckNewKeyFile)
 
 	def CheckNewKeyFile(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			if fileExists('%s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value)):
 				self.iConsole.ePopen('rm -f %s%s' % (config.plugins.epanel.path.value, config.plugins.epanel.keyname.value.split('.')[0] + 'old'), self.ChmodKeyFile)
 			else:

@@ -33,7 +33,7 @@ M3UNAME = 'lanettv.m3u'
 HLS = 'hls'
 PASSW = ''
 
-if PASSW is not '':
+if PASSW != '':
 	PASSW = ':%s' % PASSW
 
 
@@ -63,7 +63,7 @@ class get_chlist(Screen):
 		self.iConsole = iConsole()
 		self["status"].text = _("Donwloading channel list")
 		self.address = self.link_file()
-		if self.address is 'None':
+		if self.address == 'None':
 			self["status"].text = _("No link file found")
 			self.iConsole.ePopen('sleep 3', self.cancel)
 		else:
@@ -71,7 +71,7 @@ class get_chlist(Screen):
 
 	def user_upg2(self, result, retval, extra_args):
 		name_key = {}
-		if retval is 0:
+		if retval == 0:
 			if os.path.isfile('%sExtensions/%s/reference.txt' % (resolveFilename(SCOPE_PLUGINS), PLGDIR)):
 				for line in open('%sExtensions/%s/reference.txt' % (resolveFilename(SCOPE_PLUGINS), PLGDIR)):
 					if len(line.split()) > 0:
@@ -105,7 +105,7 @@ class get_chlist(Screen):
 					for line in open('/etc/enigma2/bouquets.tv'):
 						if BFNAME in line:
 							in_bouquets = 1
-					if in_bouquets is 0:
+					if in_bouquets == 0:
 						if os.path.isfile('/etc/enigma2/%s' % BFNAME) and os.path.isfile('/etc/enigma2/bouquets.tv'):
 							remove_line('/etc/enigma2/bouquets.tv', BFNAME)
 							remove_line('/etc/enigma2/bouquets.tv', 'LastScanned')

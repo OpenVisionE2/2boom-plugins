@@ -226,7 +226,7 @@ class QuickEcmInfo2(Poll, Converter, object):
 			yres = info.getInfo(iServiceInformation.sVideoHeight)
 			mode = ('i', 'p', ' ')[info.getInfo(iServiceInformation.sProgressive)]
 			fps = str((info.getInfo(iServiceInformation.sFrameRate) + 500) / 1000)
-			if '0' is fps:
+			if '0' == fps:
 				fps = ''
 			else:
 				fps = '(%s)' % fps
@@ -362,11 +362,11 @@ class QuickEcmInfo2(Poll, Converter, object):
 			audio = service.audioTracks()
 			if audio:
 				if audio.getCurrentTrack() > -1:
-					if self.audio is not 0:
+					if self.audio != 0:
 						audiocodec = '  AUDIO %s: %s%s%s Kbit/s' % (str(audio.getTrackInfo(audio.getCurrentTrack()).getDescription()).replace(",", "").upper(), self.basecolor, self.audio, self.maincolor)
 					else:
 						audiocodec = ''
-			if self.video is not 0:
+			if self.video != 0:
 				videocodec = '  VIDEO %s: %s%s%s Kbit/s' % (("MPEG2", "MPEG4", "MPEG1", "MPEG4-II", "VC1", "VC1-SM", "")[info.getInfo(iServiceInformation.sVideoType)], self.basecolor, self.video, self.maincolor)
 			else:
 				videocodec = ''

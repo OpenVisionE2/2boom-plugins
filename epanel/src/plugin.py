@@ -211,19 +211,19 @@ class easyPanel2(Screen):
 
 	def select_item(self, item):
 		if item:
-			if item is 1:
+			if item == 1:
 				self.session.open(emuman.SoftcamPanel2)
-			elif item is 2:
+			elif item == 2:
 				self.session.open(tools.ToolsScreen2)
-			elif item is 3:
+			elif item == 3:
 				self.session.open(tools.SystemScreen)
-			elif item is 4:
+			elif item == 4:
 				self.session.open(tools.System2Screen)
-			elif item is 5:
+			elif item == 5:
 				self.session.open(minstall.IPKToolsScreen2)
-			elif item is 6:
+			elif item == 6:
 				self.session.open(PluginBrowser)
-			elif item is 7:
+			elif item == 7:
 				self.session.open(ConfigExtentions2)
 			else:
 				self.close(None)
@@ -371,7 +371,7 @@ class epanelinfo(Screen):
 		self.iConsole.ePopen("ifconfig -a", self.network_result)
 
 	def network_result(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			ip = ''
 			mac = []
 			if len(result) > 0:
@@ -385,7 +385,7 @@ class epanelinfo(Screen):
 				self["macInfo"].text = _("unknown")
 		else:
 			self["macInfo"].text = _("unknown")
-		if ip is not '':
+		if ip != '':
 			self["ipInfo"].text = ip
 		else:
 			self["ipInfo"].text = _("unknown")
@@ -449,7 +449,7 @@ class epanelinfo(Screen):
 				temp = "%s%s%s" % (open("/proc/stb/sensors/temp0/value").read().strip('\n'), unichr(176).encode("latin-1"), open("/proc/stb/sensors/temp0/unit").read().strip('\n'))
 			elif fileExists("/proc/stb/fp/temp_sensor_avs"):
 				temp = "%s%sC" % (open("/proc/stb/fp/temp_sensor_avs").read().strip('\n'), unichr(176).encode("latin-1"))
-			if cpu_variant is '':
+			if cpu_variant == '':
 				self["CPU"].text = _("%s, %s Mhz (%d %s) %s") % (processor, cpu_speed, cpu_count, cpu_count > 1 and cores or core, temp)
 			else:
 				self["CPU"].text = "%s(%s), %s %s" % (processor, cpu_family, cpu_variant, temp)
@@ -610,7 +610,7 @@ class epanelinfo(Screen):
 		for line in open(self.status()):
 			if "epanel" in line:
 				package = 1
-			if "Version:" in line and package is 1:
+			if "Version:" in line and package == 1:
 				package = 0
 				self["panelver"].text = line.split()[1]
 				break

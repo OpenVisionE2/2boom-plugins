@@ -155,29 +155,29 @@ class create_bouquet(Screen):
 			print(config.plugins.m2b.type.value)
 			if os.path.isfile('/etc/enigma2/%s' % BFNAME):
 				os.remove('/etc/enigma2/%s' % BFNAME)
-			if config.plugins.m2b.type.value is 'LiveStreamerhls':
+			if config.plugins.m2b.type.value == 'LiveStreamerhls':
 				hls_opt = 'hls'
-			elif config.plugins.m2b.type.value is 'LiveStreamerhlsvariant':
+			elif config.plugins.m2b.type.value == 'LiveStreamerhlsvariant':
 				hls_opt = 'hlsvariant'
 			with open('/etc/enigma2/%s' % BFNAME, 'w') as outfile:
 				outfile.write('#NAME %s\r\n' % config.plugins.m2b.m3ufile.value.capitalize())
 				for line in open('/tmp/%s' % config.plugins.m2b.m3ufile.value):
 					if line.startswith('http://'):
-						if config.plugins.m2b.type.value is 'LiveStreamerhls' or config.plugins.m2b.type.value is 'LiveStreamerhlsvariant':
+						if config.plugins.m2b.type.value == 'LiveStreamerhls' or config.plugins.m2b.type.value == 'LiveStreamerhlsvariant':
 							outfile.write('#SERVICE 1:0:1:0:0:0:0:0:0:0:http%%3a//127.0.0.1%%3a88/%s%%3a//%s' % (hls_opt, line.replace(':', '%3a')))
-						elif config.plugins.m2b.type.value is 'Gstreamer':
+						elif config.plugins.m2b.type.value == 'Gstreamer':
 							outfile.write('#SERVICE 4097:0:1:0:0:0:0:0:0:0:%s' % line.replace(':', '%3a'))
-						elif config.plugins.m2b.type.value is 'Multicast':
+						elif config.plugins.m2b.type.value == 'Multicast':
 							outfile.write('#SERVICE 1:0:1:0:0:0:0:0:0:0:%s' % line.replace(':', '%3a'))
 						outfile.write('#DESCRIPTION %s' % desk_tmp)
 					elif line.startswith('#EXTINF'):
 						desk_tmp = '%s' % line.split(',')[-1]
 					elif '<stream_url><![CDATA' in line:
-						if config.plugins.m2b.type.value is 'LiveStreamerhls' or config.plugins.m2b.type.value is 'LiveStreamerhlsvariant':
+						if config.plugins.m2b.type.value == 'LiveStreamerhls' or config.plugins.m2b.type.value == 'LiveStreamerhlsvariant':
 							outfile.write('#SERVICE 1:0:1:0:0:0:0:0:0:0:http%%3a//127.0.0.1%%3a88/%s%%3a//%s\r\n' % (hls_opt, line.split('[')[-1].split(']')[0].replace(':', '%3a')))
-						elif config.plugins.m2b.type.value is 'Gstreamer':
+						elif config.plugins.m2b.type.value == 'Gstreamer':
 							outfile.write('#SERVICE 4097:0:1:0:0:0:0:0:0:0:%s\r\n' % line.split('[')[-1].split(']')[0].replace(':', '%3a'))
-						elif config.plugins.m2b.type.value is 'Multicast':
+						elif config.plugins.m2b.type.value == 'Multicast':
 							outfile.write('#SERVICE 1:0:1:0:0:0:0:0:0:0:%s\r\n' % line.split('[')[-1].split(']')[0].replace(':', '%3a'))
 						outfile.write('#DESCRIPTION %s\r\n' % desk_tmp)
 					elif '<title>' in line:
@@ -191,7 +191,7 @@ class create_bouquet(Screen):
 				for line in open('/etc/enigma2/bouquets.tv'):
 					if BFNAME in line:
 						in_bouquets = 1
-				if in_bouquets is 0:
+				if in_bouquets == 0:
 					if os.path.isfile('/etc/enigma2/%s' % BFNAME) and os.path.isfile('/etc/enigma2/bouquets.tv'):
 						remove_line('/etc/enigma2/bouquets.tv', BFNAME)
 						remove_line('/etc/enigma2/bouquets.tv', 'LastScanned')
@@ -216,7 +216,7 @@ class get_chlist(Screen):
 		self["status"] = StaticText()
 		self.iConsole = iConsole()
 		self["status"].text = _("Reload servicelist")
-		if config.plugins.m2b.passw.value is not '':
+		if config.plugins.m2b.passw.value != '':
 			config.plugins.m2b.passw.value = ':' + config.plugins.m2b.passw.value
 		self.iConsole.ePopen('wget -q -O - http://root%s@127.0.0.1/web/servicelistreload?mode=0 && sleep 2' % config.plugins.m2b.passw.value, self.quit)
 

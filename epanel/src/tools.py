@@ -467,17 +467,17 @@ class ToolsScreen2(Screen):
 
 	def select_item(self, item):
 		if item:
-			if item is 1:
+			if item == 1:
 				self.session.open(CrashLogScreen)
-			elif item is 2:
+			elif item == 2:
 				self.session.open(ViewSet)
-			elif item is 3:
+			elif item == 3:
 				self.session.open(Info2Screen)
-			elif item is 4:
+			elif item == 4:
 				self.session.open(epgdna)
-			elif item is 5:
+			elif item == 5:
 				self.session.open(NTPScreen)
-			elif item is 6:
+			elif item == 6:
 				self.session.open(ScriptScreen3)
 			else:
 				self.close(None)
@@ -547,7 +547,7 @@ class ServiceMan(Screen):
 			self.iConsole.ePopen("/etc/init.d/%s restart" % menu_item, self.info_mess_1, menu_item)
 
 	def info_mess_1(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.session.open(MessageBox, _("Restarting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
@@ -558,7 +558,7 @@ class ServiceMan(Screen):
 			self.iConsole.ePopen("/etc/init.d/%s start" % menu_item, self.info_mess_2, menu_item)
 
 	def info_mess_2(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.session.open(MessageBox, _("Starting %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
@@ -569,7 +569,7 @@ class ServiceMan(Screen):
 			self.iConsole.ePopen("/etc/init.d/%s stop" % menu_item, self.info_mess_3, menu_item)
 
 	def info_mess_3(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.session.open(MessageBox, _("Stoping %s service") % extra_args, type=MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.session.open(MessageBox, _("UnSuccessfull"), type=MessageBox.TYPE_INFO, timeout=4)
@@ -617,7 +617,7 @@ class SwapScreen2(Screen):
 		self.Menu()
 
 	def del_fstab_swap(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			remove_line('/etc/fstab', 'swap')
 
 	def Menu(self):
@@ -744,7 +744,7 @@ class SwapScreen(Screen):
 
 	def info_mess(self, result, retval, extra_args):
 		self.setTitle(_("Swap on USB/HDD"))
-		if retval is 0:
+		if retval == 0:
 			self.mbox = self.session.open(MessageBox, extra_args, MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
@@ -786,17 +786,17 @@ class SwapScreen(Screen):
 		self.setTitle(_("Please wait"))
 		if self.isSwapPossible() == 1:
 			m_choice = self["menu"].getCurrent()[1]
-			if m_choice is "4":
+			if m_choice == "4":
 				self.onSwapFile_step1()
-			elif m_choice is "5":
+			elif m_choice == "5":
 				self.offSwapFile_step1()
-			elif m_choice is "11":
+			elif m_choice == "11":
 				self.createSwapFile("131072")
-			elif m_choice is "12":
+			elif m_choice == "12":
 				self.createSwapFile("262144")
-			elif m_choice is "13":
+			elif m_choice == "13":
 				self.createSwapFile("524288")
-			elif m_choice is "7":
+			elif m_choice == "7":
 				self.removeSwapFle()
 		self.CfgMenu()
 
@@ -825,14 +825,14 @@ class create_swap(Screen):
 		self.iConsole.ePopen("dd if=/dev/zero of=%s bs=1024 count=%s" % (self.swapfile, self.size), self.makeSwapFile)
 
 	def makeSwapFile(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.iConsole.ePopen("mkswap %s" % self.swapfile, self.info_mess)
 		else:
 			self["status"].text = _("Failure...")
 			self.iConsole.ePopen("sleep 4", self.end_func)
 
 	def info_mess(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self["status"].text = _("Success...")
 			self.iConsole.ePopen("sleep 4", self.end_func)
 		else:
@@ -923,7 +923,7 @@ class UsbScreen(Screen):
 				logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 
 	def info_mess(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.mbox = self.session.open(MessageBox, _("Unmounted %s" % extra_args), MessageBox.TYPE_INFO, timeout=4)
 		self.CfgMenu()
 
@@ -1066,7 +1066,7 @@ class NTPScreen(ConfigListScreen, Screen):
 		script_path = ''
 		if not fileExists(self.path):
 			open(self.path, 'a').close()
-		if config.plugins.epanel.TransponderTime.value is '0':
+		if config.plugins.epanel.TransponderTime.value == '0':
 			config.misc.useTransponderTime.value = False
 		else:
 			config.misc.useTransponderTime.value = True
@@ -1078,7 +1078,7 @@ class NTPScreen(ConfigListScreen, Screen):
 			file_write = open('/etc/default/ntpdate', 'w')
 			for line in file_read:
 				if 'NTPSERVERS="' in line:
-					if config.plugins.epanel.manual.value is '0':
+					if config.plugins.epanel.manual.value == '0':
 						file_write.write('NTPSERVERS="%s"\n' % config.plugins.epanel.server.value)
 					else:
 						file_write.write('NTPSERVERS="%s"\n' % config.plugins.epanel.manualserver.value)
@@ -1089,19 +1089,19 @@ class NTPScreen(ConfigListScreen, Screen):
 			script_path = '/etc/rcS.d/'
 		elif os.path.isdir('/etc/rc.d/rcS.d'):
 			script_path = '/etc/rc.d/rcS.d/'
-		if config.plugins.epanel.cold.value is not '0':
-			if not script_path is '':
+		if config.plugins.epanel.cold.value != '0':
+			if script_path != '':
 				if pathExists("/usr/bin/ntpdate-sync"):
 					with open('%sS42ntpdate.sh' % script_path, 'w') as start_script:
 						start_script.write('#!/bin/sh\n\n[ -x /usr/bin/ntpdate-sync ] && /usr/bin/ntpdate-sync\n\nexit 0')
 						start_script.close()
 		else:
-			if not script_path is '':
+			if script_path != '':
 				if fileExists('%sS42ntpdate.sh' % script_path):
 					os.remove('%sS42ntpdate.sh' % script_path)
 		if fileExists('%sS42ntpdate.sh' % script_path):
 			os.chmod('%sS42ntpdate.sh' % script_path, 0o755)
-		if config.plugins.epanel.onoff.value is '2':
+		if config.plugins.epanel.onoff.value == '2':
 			if fileExists(self.path):
 				remove_line(self.path, 'ntpdate')
 				self.cron_ntpsetup()
@@ -1112,7 +1112,7 @@ class NTPScreen(ConfigListScreen, Screen):
 
 	def cron_ntpsetup(self):
 		with open(self.path, 'a') as cron_root:
-			if config.plugins.epanel.time.value is "30":
+			if config.plugins.epanel.time.value == "30":
 				cron_root.write('*/30 * * * * /usr/bin/ntpdate-sync\n')
 			else:
 				cron_root.write('1 */%s * * * /usr/bin/ntpdate-sync\n' % config.plugins.epanel.time.value)
@@ -1144,7 +1144,7 @@ class update_current_time(Screen):
 		self.iConsole.ePopen("/usr/bin/ntpdate-sync", self.info_mess)
 
 	def info_mess(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self["status"].text = _("Success...")
 			self.iConsole.ePopen("sleep 4", self.end_func)
 		else:
@@ -1203,7 +1203,7 @@ class ManualSetTime(ConfigListScreen, Screen):
 		self.iConsole.ePopen("date -s %s" % time.strftime("%Y%m%d%H%M", time.localtime(self.newtime)), self.info_mess)
 
 	def info_mess(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.mbox = self.session.open(MessageBox, ("%s" % time.strftime("%Y-%m-%d %H:%M", time.localtime(self.newtime))), MessageBox.TYPE_INFO, timeout=6)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=6)
@@ -1297,17 +1297,17 @@ class SystemScreen(Screen):
 
 	def select_item(self, item):
 		if item:
-			if item is 1:
+			if item == 1:
 				self.session.open(KernelScreen)
-			elif item is 2:
+			elif item == 2:
 				self.session.open(ServiceMan)
-			elif item is 3:
+			elif item == 3:
 				self.session.open(CrontabMan)
-			elif item is 4:
+			elif item == 4:
 				self.session.open(SwapScreen2)
-			elif item is 5:
+			elif item == 5:
 				self.session.open(UsbScreen)
-			elif item is 6:
+			elif item == 6:
 				self.session.open(HostsScreen)
 			else:
 				self.close(None)
@@ -1380,7 +1380,7 @@ class KernelScreen(Screen):
 
 	def run_modules_list(self, result, retval, extra_args):
 		self.runmodule = ''
-		if retval is 0:
+		if retval == 0:
 			for line in result.splitlines():
 				self.runmodule += line.split()[0].replace('-', '_') + ' '
 		self.CfgMenu(extra_args)
@@ -1422,7 +1422,7 @@ class KernelScreen(Screen):
 		self.iConsole.ePopen("modprobe %s" % module_name, self.write_conf, module_name)
 
 	def write_conf(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			with open('/etc/modules-load.d/%s.conf' % extra_args, 'w') as autoload_file:
 				autoload_file.write('%s' % extra_args)
 				autoload_file.close()
@@ -1477,7 +1477,7 @@ class lsmodScreen(Screen):
 		self.list = []
 		aliasname = ''
 		minipng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/images/kernelminimem.png"))
-		if retval is 0:
+		if retval == 0:
 			for line in result.splitlines():
 				if len(line.split()) > 3:
 					aliasname = line.split()[-1]
@@ -1639,7 +1639,7 @@ class LogScreen(Screen):
 		self.iConsole.ePopen("gzip %s && mv %s.gz /tmp" % (self.crashfile, self.crashfile), self.info_create)
 
 	def info_create(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.mbox = self.session.open(MessageBox, _("%s.gz created in /tmp") % self.crashfile, MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.mbox = self.session.open(MessageBox, _("Failure..."), MessageBox.TYPE_INFO, timeout=4)
@@ -2134,17 +2134,17 @@ class CrontabManAdd(ConfigListScreen, Screen):
 		if not fileExists(self.path):
 			open(self.path, 'a').close()
 		everymin = everyhour = everydayofmonth = everymonth = everydayofweek = ""
-		if config.plugins.epanel.min.value is not '*' and config.plugins.epanel.every.value is '1':
+		if config.plugins.epanel.min.value != '*' and config.plugins.epanel.every.value == '1':
 			everymin = '*/'
-		elif config.plugins.epanel.hour.value is not '*' and config.plugins.epanel.every.value is '2':
+		elif config.plugins.epanel.hour.value != '*' and config.plugins.epanel.every.value == '2':
 			everyhour = '*/'
-		elif config.plugins.epanel.dayofmonth.value is not '*' and config.plugins.epanel.every.value is '3':
+		elif config.plugins.epanel.dayofmonth.value != '*' and config.plugins.epanel.every.value == '3':
 			everydayofmonth = '*/'
-		elif config.plugins.epanel.month.value is not '*' and config.plugins.epanel.every.value is '4':
+		elif config.plugins.epanel.month.value != '*' and config.plugins.epanel.every.value == '4':
 			everymonth = '*/'
-		elif config.plugins.epanel.dayofweek.value is not '*' and config.plugins.epanel.every.value is '5':
+		elif config.plugins.epanel.dayofweek.value != '*' and config.plugins.epanel.every.value == '5':
 			everydayofweek = '*/'
-		if config.plugins.epanel.min.value is '*' and config.plugins.epanel.hour.value is '*' and config.plugins.epanel.dayofmonth.value is '*' and config.plugins.epanel.month.value is '*' and config.plugins.epanel.dayofweek.value is '*':
+		if config.plugins.epanel.min.value == '*' and config.plugins.epanel.hour.value == '*' and config.plugins.epanel.dayofmonth.value == '*' and config.plugins.epanel.month.value == '*' and config.plugins.epanel.dayofweek.value == '*':
 			print("error")
 		else:
 			with open(self.path, 'a') as cron_root:
@@ -2212,7 +2212,7 @@ class Info2Screen(Screen):
 					int_Swaptotal = int(line.split()[-2])
 				elif 'SwapFree:' in line:
 					list += '  SwapFree: %s Kb  Used: %s Kb\n\n' % (line.split()[-2], int_Swaptotal - int(line.split()[-2]))
-		if retval is 0:
+		if retval == 0:
 			for line in result.splitlines(True):
 				list += line
 		list += '\n'
@@ -2461,9 +2461,9 @@ class System2Screen(Screen):
 
 	def select_item(self, item):
 		if item:
-			if item is 1:
+			if item == 1:
 				self.session.open(DropScreen)
-			elif item is 2:
+			elif item == 2:
 				self.session.open(DDNSScreen)
 			else:
 				self.close(None)
@@ -2524,14 +2524,14 @@ class DDNSScreen(ConfigListScreen, Screen):
 		configfile.save()
 		if fileExists(self.path):
 			remove_line(self.path, 'no-ip.pyo')
-		if config.plugins.epanel.dnstime.value is not '0':
+		if config.plugins.epanel.dnstime.value != '0':
 			self.cron_setup()
 			self.create_script()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
 	def create_script(self):
 		updatestr = ''
-		if config.plugins.epanel.dnsserver.value is '1':
+		if config.plugins.epanel.dnsserver.value == '1':
 			updatestr = "http://%s:%s@dynupdate.no-ip.com/nic/update?hostname=%s" % (config.plugins.epanel.dnsuser.value, config.plugins.epanel.dnspass.value, config.plugins.epanel.dnshost.value)
 		else:
 			updatestr = "https://%s:%s@nic.changeip.com/nic/update?cmd=update&set=$CIPSET&hostname=%s" % (config.plugins.epanel.dnsuser.value, config.plugins.epanel.dnspass.value, config.plugins.epanel.dnshost.value)
@@ -2542,7 +2542,7 @@ class DDNSScreen(ConfigListScreen, Screen):
 			update_script.close()
 
 	def cron_setup(self):
-		if config.plugins.epanel.dnstime.value is not '0':
+		if config.plugins.epanel.dnstime.value != '0':
 			with open(self.path, 'a') as cron_root:
 				if config.plugins.epanel.dnstime.value not in ('1', '2', '3'):
 					cron_root.write('*/%s * * * * python %s\n' % (config.plugins.epanel.dnstime.value, resolveFilename(SCOPE_PLUGINS, "Extensions/epanel/no-ip.pyo")))
@@ -2628,7 +2628,7 @@ class DropScreen(ConfigListScreen, Screen):
 					buffers = line.split()[1]
 				elif 'Cached:' in line:
 					cached = line.split()[1]
-			if '' is not memtotal and '' is not memfree:
+			if '' != memtotal and '' != memfree:
 				persent = int(memfree) / (int(memtotal) / 100)
 			self["memTotal"].text = _("Total: %s Kb  Free: %s Kb (%s %%)") % (memtotal, memfree, persent)
 			self["bufCache"].text = _("Buffers: %s Kb  Cached: %s Kb") % (buffers, cached)
@@ -2641,12 +2641,12 @@ class DropScreen(ConfigListScreen, Screen):
 		configfile.save()
 		if fileExists(self.path):
 			remove_line(self.path, 'drop_caches')
-		if config.plugins.epanel.droptime.value is not '0':
+		if config.plugins.epanel.droptime.value != '0':
 			self.cron_setup()
 		self.mbox = self.session.open(MessageBox, (_("configuration is saved")), MessageBox.TYPE_INFO, timeout=4)
 
 	def cron_setup(self):
-		if config.plugins.epanel.droptime.value is not '0':
+		if config.plugins.epanel.droptime.value != '0':
 			with open(self.path, 'a') as cron_root:
 				if config.plugins.epanel.droptime.value not in ('1', '2', '3'):
 					cron_root.write('*/%s * * * * echo %s > /proc/sys/vm/drop_caches\n' % (config.plugins.epanel.droptime.value, config.plugins.epanel.dropmode.value))
@@ -2661,7 +2661,7 @@ class DropScreen(ConfigListScreen, Screen):
 		self.iConsole.ePopen("echo %s > /proc/sys/vm/drop_caches" % config.plugins.epanel.dropmode.value, self.Finish)
 
 	def Finish(self, result, retval, extra_args):
-		if retval is 0:
+		if retval == 0:
 			self.mbox = self.session.open(MessageBox, (_("Cache flushed")), MessageBox.TYPE_INFO, timeout=4)
 		else:
 			self.mbox = self.session.open(MessageBox, (_("error...")), MessageBox.TYPE_INFO, timeout=4)
