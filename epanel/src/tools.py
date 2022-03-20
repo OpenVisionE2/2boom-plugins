@@ -451,7 +451,7 @@ class ToolsScreen2(Screen):
 		self.close()
 
 	def go(self, num=None):
-		if num != None:
+		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
 				return
@@ -543,7 +543,7 @@ class ServiceMan(Screen):
 
 	def restartservice(self):
 		menu_item = self["menu"].getCurrent()[1]
-		if menu_item != None:
+		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s restart" % menu_item, self.info_mess_1, menu_item)
 
 	def info_mess_1(self, result, retval, extra_args):
@@ -554,7 +554,7 @@ class ServiceMan(Screen):
 
 	def startservice(self):
 		menu_item = self["menu"].getCurrent()[1]
-		if menu_item != None:
+		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s start" % menu_item, self.info_mess_2, menu_item)
 
 	def info_mess_2(self, result, retval, extra_args):
@@ -565,7 +565,7 @@ class ServiceMan(Screen):
 
 	def stopservice(self):
 		menu_item = self["menu"].getCurrent()[1]
-		if menu_item != None:
+		if menu_item is not None:
 			self.iConsole.ePopen("/etc/init.d/%s stop" % menu_item, self.info_mess_3, menu_item)
 
 	def info_mess_3(self, result, retval, extra_args):
@@ -900,7 +900,7 @@ class UsbScreen(Screen):
 					hdd = hddlist[count][1]
 					devpnt = self.devpoint(hdd.mountDevice())
 					if hdd.mountDevice() != '/media/hdd':
-						if devpnt != None:
+						if devpnt is not None:
 							if int(hdd.free()) > 1024:
 								self.list.append(("%s" % hdd.model(), "%s  %s  %s (%d.%03d GB free)" % (devpnt, self.filesystem(hdd.mountDevice()), hdd.capacity(), hdd.free() / 1024, hdd.free() % 1024), minipng, devpnt))
 							else:
@@ -915,7 +915,7 @@ class UsbScreen(Screen):
 
 	def Ok(self):
 		item = self["menu"].getCurrent()[-1]
-		if item != None:
+		if item is not None:
 			try:
 				self.iConsole.ePopen("umount -f %s" % item, self.info_mess, item)
 			except Exception as e:
@@ -983,7 +983,7 @@ class ScriptScreen3(Screen):
 
 	def shadowrun(self):
 		self.script = self["list"].getCurrent()
-		if self.script != None:
+		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
 				os.chmod('%s' % self.name, 0o755)
@@ -994,7 +994,7 @@ class ScriptScreen3(Screen):
 
 	def run(self):
 		self.script = self["list"].getCurrent()
-		if self.script != None:
+		if self.script is not None:
 			self.name = "%s%s" % (config.plugins.epanel.scriptpath.value, self.script)
 			if self.name.endswith('.sh'):
 				os.chmod('%s' % self.name, 0o755)
@@ -1281,7 +1281,7 @@ class SystemScreen(Screen):
 		self.close()
 
 	def go(self, num=None):
-		if num != None:
+		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
 				return
@@ -1561,7 +1561,7 @@ class CrashLogScreen(Screen):
 
 	def Ok(self):
 		try:
-			if self["menu"].getCurrent()[0] != None:
+			if self["menu"].getCurrent()[0] is not None:
 				item = self.path + self["menu"].getCurrent()[0]
 				self.session.openWithCallback(self.CfgMenu, LogScreen, item)
 		except Exception as e:
@@ -1569,7 +1569,7 @@ class CrashLogScreen(Screen):
 			logging('%02d:%02d:%d %02d:%02d:%02d - %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, str(e)))
 
 	def YellowKey(self):
-		if self["menu"].getCurrent()[0] != None:
+		if self["menu"].getCurrent()[0] is not None:
 			item = self.path + self["menu"].getCurrent()[0]
 			if fileExists(item):
 				os.remove(item)
@@ -1708,7 +1708,7 @@ class get_source(Screen):
 
 	def choice(self):
 		now = time.localtime(time.time())
-		if self["menu"].getCurrent()[0] != None:
+		if self["menu"].getCurrent()[0] is not None:
 			config.plugins.epanel.url.value = self["menu"].getCurrent()[0]
 			logging('%02d:%02d:%d %02d:%02d:%02d - set source %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epanel.url.value))
 			config.plugins.epanel.url.save()
@@ -2445,7 +2445,7 @@ class System2Screen(Screen):
 		self.close()
 
 	def go(self, num=None):
-		if num != None:
+		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
 				return

@@ -360,7 +360,7 @@ class get_source(Screen):
 
 	def choice(self):
 		now = time.localtime(time.time())
-		if self["menu"].getCurrent()[0] != None:
+		if self["menu"].getCurrent()[0] is not None:
 			config.plugins.epgdd.url.value = self["menu"].getCurrent()[0]
 			logging('%02d:%02d:%d %02d:%02d:%02d - set source %s\r\n' % (now.tm_mday, now.tm_mon, now.tm_year, now.tm_hour, now.tm_min, now.tm_sec, config.plugins.epgdd.url.value))
 			config.plugins.epgdd.url.save()

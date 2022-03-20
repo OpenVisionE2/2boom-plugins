@@ -147,13 +147,13 @@ class IPKTools2(Screen):
 	def OK(self):
 		item = self["menu"].getCurrent()[1]
 		self.indexpos = self["menu"].getIndex()
-		if item == 1:
+		if item is 1:
 			self.session.open(InstallAll4)
-		elif item == 2:
+		elif item is 2:
 			self.session.open(downfeed)
-		elif item == 3:
+		elif item is 3:
 			self.session.open(DownloadFeed)
-		elif item == 4:
+		elif item is 4:
 			self.session.open(RemoveIPK)
 ###############################################
 
@@ -343,7 +343,7 @@ class InstallAll4(Screen):
 	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/ipktools")
-		if config.plugins.ipktools.multifilemode.value == 'Multi':
+		if config.plugins.ipktools.multifilemode.value is 'Multi':
 			self.setTitle(_('MultiSelect Mode'))
 		else:
 			self.setTitle(_('SingleSelect Mode'))
@@ -384,7 +384,7 @@ class InstallAll4(Screen):
 		return searchPaths
 
 	def press_ok(self):
-		if config.plugins.ipktools.multifilemode.value == 'Multi':
+		if config.plugins.ipktools.multifilemode.value is 'Multi':
 			self.mark_list()
 		else:
 			self.all_install()
@@ -422,7 +422,7 @@ class InstallAll4(Screen):
 	def all_install(self):
 		line_old = self["menu"].getCurrent()
 		if line_old != None:
-			if config.plugins.ipktools.multifilemode.value != 'Multi':
+			if config.plugins.ipktools.multifilemode.value is not 'Multi':
 				self.commamd_line_tar = []
 				self.commamd_line_ipk = []
 				if '.ipk' in self["menu"].getCurrent()[-1]:

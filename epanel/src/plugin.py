@@ -195,7 +195,7 @@ class easyPanel2(Screen):
 		self["menu"].setList(self.list)
 
 	def go(self, num=None):
-		if num != None:
+		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
 				return

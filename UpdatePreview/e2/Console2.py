@@ -64,7 +64,7 @@ class Console2(Screen):
 			self.setTitle(_("Execution finished!!"))
 			if lastpage:
 				self["text"].lastPage()
-			if self.finishedCallback != None:
+			if self.finishedCallback is not None:
 				self.finishedCallback()
 			if not self.errorOcurred and self.closeOnSuccess:
 				self.cancel()

@@ -83,7 +83,7 @@ class QERfH(Screen):
 		self.close()
 
 	def finish(self, result, retval, extra_args):
-		if self.service != None:
+		if self.service is not None:
 			self.session.nav.playService(self.service)
 		self.close()
 
@@ -117,11 +117,11 @@ class QERfH(Screen):
 						nameser.append(line)
 				if len(nameser) > 1:
 					serlist = "%s" % nameser[1].split('"')[1]
-			if serlist != None and camdlist != None:
+			if serlist is not None and camdlist is not None:
 				return ("%s %s" % (serlist, camdlist))
-			elif camdlist != None:
+			elif camdlist is not None:
 				return "%s" % camdlist
-			elif serlist != None:
+			elif serlist is not None:
 				return "%s" % serlist
 			return ""
 		else:

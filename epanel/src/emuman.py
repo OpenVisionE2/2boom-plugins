@@ -220,7 +220,7 @@ class emuSel5(Screen):
 		self.list.sort()
 		self["menu"].setList(self.list)
 		self.setTitle(_("Select SoftCam or CardServer: - %s") % config.plugins.epanel.activeemu.value)
-		if self.indexpos != None:
+		if self.indexpos is not None:
 			self["menu"].setIndex(self.indexpos)
 		self.name_in_memory()
 
@@ -525,7 +525,7 @@ class SoftcamPanel2(Screen):
 		self.close()
 
 	def go(self, num=None):
-		if num != None:
+		if num is not None:
 			num -= 1
 			if not num < self["menu"].count():
 				return
@@ -699,7 +699,7 @@ class uniswitcher(Screen):
 				self["list"].setIndex(self.indexpos)
 
 	def run(self):
-		if self["list"].getCurrent() != None:
+		if self["list"].getCurrent() is not None:
 			config.plugins.usw.activeconf.value = self["list"].getCurrent()[0]
 			if config.plugins.usw.emu.value == "Oscam":
 				config.plugins.uswoscam.activeconf.value = config.plugins.usw.activeconf.value

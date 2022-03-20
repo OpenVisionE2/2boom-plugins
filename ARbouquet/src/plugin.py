@@ -133,7 +133,7 @@ class ARbouquet(Screen):
 									break
 					self.list.append((boquet_name, file_name, png_name))
 		self["menu"].setList(self.list)
-		if self.indexpos != None:
+		if self.indexpos is not None:
 			self["menu"].setIndex(self.indexpos)
 
 	def make_title(self):
@@ -204,7 +204,7 @@ class AddScreen(Screen):
 
 	def run(self):
 		self.file_name = self["list"].getCurrent().rstrip('.del')
-		if self.file_name != None:
+		if self.file_name is not None:
 			if fileExists('/etc/enigma2/%s.del' % self.file_name):
 				os.rename('/etc/enigma2/%s.del' % self.file_name, '/etc/enigma2/%s' % self.file_name)
 			remove_line('/etc/enigma2/bouquets%s' % config.plugins.arbouquet.bouquettype.value, 'LastScanned')

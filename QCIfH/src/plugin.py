@@ -135,7 +135,7 @@ class QCIfH(Screen):
 	def pidsline(self):
 		vpid = apid = tsid = onid = sid = -1
 		service = self.session.nav.getCurrentService()
-		if service != None:
+		if service is not None:
 			info = service and service.info()
 			sid = info.getInfo(iServiceInformation.sSID)
 			vpid = info.getInfo(iServiceInformation.sVideoPID)
