@@ -41,6 +41,7 @@ import gzip
 import urllib
 import stat
 from Components.SystemInfo import BoxInfo
+from Components.About import about
 
 global min, first_start
 min = first_start = 0
@@ -391,9 +392,8 @@ class epanelinfo(Screen):
 			self["ipInfo"].text = _("unknown")
 
 	def getGStreamerVersionString(self):
-		import enigma
 		try:
-			self["gstreamer"].text = enigma.getGStreamerVersionString().strip('GStreamer ')
+			self["gstreamer"].text = BoxInfo.getItem("gstreamer")
 		except:
 			self["gstreamer"].text = _("unknown")
 
@@ -405,56 +405,15 @@ class epanelinfo(Screen):
 
 	def getPythonVersionString(self):
 		try:
-			try:
-				import commands
-			except:
-				import subprocess as commands
-			status, output = commands.getstatusoutput("python -V")
-			self["python"].text = output.split(' ')[1]
+			self["python"].text = BoxInfo.getItem("python")
 		except:
 			self["python"].text = _("unknown")
 
 	def cpuinfo(self):
-		if fileExists("/proc/cpuinfo"):
-			cpu_count = 0
-			processor = cpu_speed = cpu_family = cpu_variant = temp = ''
-			core = _("core")
-			cores = _("cores")
-			for line in open('/proc/cpuinfo'):
-				if "system type" in line:
-					processor = line.split(':')[-1].split()[0].strip().strip('\n')
-				elif "cpu MHz" in line:
-					cpu_speed = line.split(':')[-1].strip().strip('\n')
-					#cpu_count += 1
-				elif "cpu type" in line:
-					processor = line.split(':')[-1].strip().strip('\n')
-				elif "model name" in line:
-					processor = line.split(':')[-1].strip().strip('\n').replace('Processor ', '')
-				elif "cpu family" in line:
-					cpu_family = line.split(':')[-1].strip().strip('\n')
-				elif "cpu variant" in line:
-					cpu_variant = line.split(':')[-1].strip().strip('\n')
-				elif line.startswith('processor'):
-					cpu_count += 1
-			if not cpu_speed:
-				try:
-					cpu_speed = int(open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").read()) / 1000
-				except:
-					try:
-						import binascii
-						cpu_speed = int(int(binascii.hexlify(open('/sys/firmware/devicetree/base/cpus/cpu@0/clock-frequency', 'rb').read()), 16) / 100000000) * 100
-					except:
-						cpu_speed = '-'
-			if fileExists("/proc/stb/sensors/temp0/value") and fileExists("/proc/stb/sensors/temp0/unit"):
-				temp = "%s%s%s" % (open("/proc/stb/sensors/temp0/value").read().strip('\n'), unichr(176).encode("latin-1"), open("/proc/stb/sensors/temp0/unit").read().strip('\n'))
-			elif fileExists("/proc/stb/fp/temp_sensor_avs"):
-				temp = "%s%sC" % (open("/proc/stb/fp/temp_sensor_avs").read().strip('\n'), unichr(176).encode("latin-1"))
-			if cpu_variant == '':
-				self["CPU"].text = _("%s, %s Mhz (%d %s) %s") % (processor, cpu_speed, cpu_count, cpu_count > 1 and cores or core, temp)
-			else:
-				self["CPU"].text = "%s(%s), %s %s" % (processor, cpu_family, cpu_variant, temp)
-		else:
-			self["CPU"].text = _("undefined")
+		try:
+			self["CPU"].text = about.getCPUInfoString()
+		except:
+			self["CPU"].text = _("unknown")
 
 	def status(self):
 		status = ''
@@ -507,23 +466,6 @@ class epanelinfo(Screen):
 			hddinfo = _("none")
 		self["device"].text = list
 
-	def getImageVersionString(self):
-		try:
-			if os.path.isfile('/var/lib/opkg/status'):
-				st = os.stat('/var/lib/opkg/status')
-			elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'ipkg/status')):
-				st = os.stat(resolveFilename(SCOPE_LIBDIR, 'ipkg/status'))
-			elif os.path.isfile(resolveFilename(SCOPE_LIBDIR, 'opkg/status')):
-				st = os.stat(resolveFilename(SCOPE_LIBDIR, 'opkg/status'))
-			elif os.path.isfile('/var/opkg/status'):
-				st = os.stat('/var/opkg/status')
-			tm = time.localtime(st.st_mtime)
-			if tm.tm_year >= 2011:
-				return time.strftime("%Y-%m-%d %H:%M:%S", tm)
-		except:
-			pass
-		return _("unavailable")
-
 	def listnims(self):
 		tuner_name = {'0': 'Tuner A:', '1': 'Tuner B:', '2': 'Tuner C:', '3': 'Tuner D:', '4': 'Tuner E:', '5': 'Tuner F:', '6': 'Tuner G:', '7': 'Tuner H:', '8': 'Tuner I:', '9': 'Tuner J:'}
 		nimlist = nims = ''
@@ -567,17 +509,13 @@ class epanelinfo(Screen):
 		self["Hardware"].text = BoxInfo.getItem("model")
 		self["Image"].text = BoxInfo.getItem("distro")
 		self["Kernel"].text = BoxInfo.getItem("kernel")
-		self["EnigmaVersion"].text = self.getImageVersionString()
+		self["EnigmaVersion"].text = about.getEnigmaVersionString()
 		self["nim"].text = self.listnims()
 		if fileExists(self.status()):
 			for line in open(self.status()):
 				if "-dvb-modules" in line and "Package:" in line:
 					package = 1
-				elif "kernel-module-player2" in line and "Package:" in line:
-					package = 1
-				elif "formuler-dvb-modules" in line and "Package:" in line:
-					package = 1
-				elif "vuplus-dvb-proxy-vusolo4k" in line and "Package:" in line:
+				elif "-dvb-proxy" in line and "Package:" in line:
 					package = 1
 				if "Version:" in line and package == 1:
 					package = 0
