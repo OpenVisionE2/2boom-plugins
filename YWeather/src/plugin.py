@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 # Yahoo! weather
 # Copyright (c) 2boom 2014
 # v.0.7-r1

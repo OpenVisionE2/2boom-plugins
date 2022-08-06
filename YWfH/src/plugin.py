@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
  # Yahoo! weather for Hotkey
 # Copyright (c) 2boom 2015-16
 # v.0.3-r2

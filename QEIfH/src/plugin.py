@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #QuickEcmInfo for Hotkey
 #Copyright (c) 2boom 2014-16

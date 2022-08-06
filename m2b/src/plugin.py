@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 # m2u converter config plugin
 # Copyright (c) 2boom 2015-16
 # This program is free software: you can redistribute it and/or modify

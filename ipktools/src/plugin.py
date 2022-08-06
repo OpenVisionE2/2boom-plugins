@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # 2boom's IPK Tools
 # Copyright (c) 2boom 2011-15

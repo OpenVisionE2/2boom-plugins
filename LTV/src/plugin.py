@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # LIST TV updater
 # Copyright (c) 2boom 2015

@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 # openATV -> openPli emuscript converter
 # Copyright (c) 2boom 2015
 # v.0.1-r0

@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # ReMountNetShare plugin
 # Copyright (c) 2boom 2013-14
