@@ -35,7 +35,7 @@ from Components.Console import Console as iConsole
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from GlobalActions import globalActionMap
-from StringIO import StringIO
+from six.moves import cStringIO as StringIO
 from . import ref_base
 import pycurl
 
