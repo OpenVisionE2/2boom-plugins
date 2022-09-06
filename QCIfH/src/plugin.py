@@ -183,10 +183,10 @@ class QCIfH(Screen):
 SKIN_CONFIG_HD = """
 <screen name="qcifh_setup" position="265,160" size="750,75" title="2boom's QuickChannelInfo setup">
   	<widget position="15,10" size="720,25" name="config" scrollbarMode="showOnDemand" />
- 	 <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+ 	 <ePixmap position="10,70" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  	<widget source="key_red" render="Label" position="10,40" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  	<ePixmap position="175,70" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  	<widget source="key_green" render="Label" position="175,40" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
 </screen>"""
 
 

@@ -386,8 +386,8 @@ config.plugins.epanel.alias = NoSave(ConfigText(default='', visible_width=150, f
 class ToolsScreen2(Screen):
 	skin = """
 	<screen name="ToolsScreen2" position="center,160" size="750,370" title="Service Tools">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/epanel/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/epanel/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="15,10" size="710,300" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -485,12 +485,12 @@ class ToolsScreen2(Screen):
 class ServiceMan(Screen):
 	skin = """
 	<screen name="ServiceMan" position="center,160" size="750,370" title="Service Manager">
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
-		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="20,20" size="710,253" itemHeight="25" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -580,8 +580,8 @@ class ServiceMan(Screen):
 class SwapScreen2(Screen):
 	skin = """
 	<screen name="SwapScreen2" position="center,160" size="750,370" title="Swap on USB/HDD">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="20,20" size="710,253" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -673,8 +673,8 @@ class SwapScreen2(Screen):
 class SwapScreen(Screen):
 	skin = """
 	<screen name="SwapScreen" position="center,160" size="750,370" title="Swap on USB/HDD">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="20,20" size="710,253" scrollbarMode="showOnDemand">
 		<convert type="TemplatedMultiContent">
 			{"template": [
@@ -805,7 +805,7 @@ class SwapScreen(Screen):
 ######################################################################################
 SKIN_CSW = """
 <screen name="create_swap" position="center,140" size="625,30" title="Please wait">
-  	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  	<widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 
@@ -845,12 +845,12 @@ class create_swap(Screen):
 class UsbScreen(Screen):
 	skin = """
 	<screen name="UsbScreen" position="center,160" size="750,370" title="Unmount manager">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
-		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="20,20" size="710,253" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -948,12 +948,12 @@ class ScriptScreen3(Screen):
 	skin = """
 	<screen name="ScriptScreen3" position="center,160" size="750,370" title="Script Executer">
   		<widget name="list" position="20,10" size="710,305" scrollbarMode="showOnDemand" />
-  		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+  		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
+  		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -1009,14 +1009,14 @@ class NTPScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="NTPScreen" position="center,160" size="750,370" title="NtpTime Updater">
 		<widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="535,358" zPosition="1" size="195,2" pixmap="~/images/blue.png" alphatest="blend" />
-		<widget source="key_blue" render="Label" position="535,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="535,358" zPosition="1" size="195,2" pixmap="~/images/blue.png" alphaTest="blend" />
+		<widget source="key_blue" render="Label" position="535,328" zPosition="2" size="195,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -1126,7 +1126,7 @@ class NTPScreen(ConfigListScreen, Screen):
 
 SKIN_UCT = """
 <screen name="update_current_time" position="center,140" size="625,30" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 
@@ -1158,10 +1158,10 @@ class ManualSetTime(ConfigListScreen, Screen):
 	skin = """
 	<screen name="ManualSetTime" position="center,160" size="750,370" title="NtpTime Updater">
 		<widget position="15,10" size="720,200" name="config" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -1217,8 +1217,8 @@ class ManualSetTime(ConfigListScreen, Screen):
 class SystemScreen(Screen):
 	skin = """
 	<screen name="SystemScreen" position="center,160" size="750,370" title="System Tools">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/epanel/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/epanel/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="15,10" size="710,300" scrollbarMode="showOnDemand">
 		<convert type="TemplatedMultiContent">
 		{"template": [
@@ -1316,14 +1316,14 @@ class SystemScreen(Screen):
 class KernelScreen(Screen):
 	skin = """
 	<screen name="KernelScreen" position="center,100" size="750,570" title="Kernel Modules Manager">
-		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="185,528" zPosition="2" size="210,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="190,558" zPosition="1" size="200,2" pixmap="~/images/green.png" alphatest="blend" />
-		<ePixmap position="390,558" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-		<widget source="key_yellow" render="Label" position="390,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_blue" render="Label" position="560,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<ePixmap position="560,558" zPosition="1" size="170,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="185,528" zPosition="2" size="210,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="190,558" zPosition="1" size="200,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<ePixmap position="390,558" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+		<widget source="key_yellow" render="Label" position="390,528" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_blue" render="Label" position="560,528" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<ePixmap position="560,558" zPosition="1" size="170,2" pixmap="~/images/blue.png" transparent="1" alphaTest="on" />
 		<widget source="menu" render="Listbox" position="20,10" size="710,500" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1435,8 +1435,8 @@ class KernelScreen(Screen):
 class lsmodScreen(Screen):
 	skin = """
 	<screen name="lsmodScreen" position="center,100" size="750,570" title="Kernel Drivers in Memory">
-		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="20,10" size="710,500" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1494,14 +1494,14 @@ class lsmodScreen(Screen):
 class CrashLogScreen(Screen):
 	skin = """
 	<screen name="CrashLogScreen" position="center,160" size="750,370" title="View or Remove Crashlog files">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
-		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_blue" render="Label" position="530,328" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<ePixmap position="530,358" zPosition="1" size="170,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="190,358" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<ePixmap position="360,358" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+		<widget source="key_yellow" render="Label" position="360,328" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_blue" render="Label" position="530,328" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<ePixmap position="530,358" zPosition="1" size="170,2" pixmap="~/images/blue.png" transparent="1" alphaTest="on" />
 		<widget source="menu" render="Listbox" position="20,10" size="710,300" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1597,12 +1597,12 @@ class CrashLogScreen(Screen):
 class LogScreen(Screen):
 	skin = """
 	<screen name="LogScreen" position="center,80" size="1170,600" title="View Crashlog file">
-		<ePixmap position="20,590" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,560" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="190,590" zPosition="1" size="200,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="190,560" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="390,590" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="390,560" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,590" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,560" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="190,590" zPosition="1" size="200,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="190,560" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="390,590" zPosition="1" size="170,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="390,560" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget name="text" position="10,10" size="1150,542" font="Console;22" />
 	</screen>"""
 
@@ -1659,10 +1659,10 @@ class LogScreen(Screen):
 class get_source(Screen):
 	skin = """
 	<screen name="get_source" position="center,160" size="850,255" title="Choice epg.dat source">
-		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="15,10" size="820,250" itemHeight="25" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1722,17 +1722,17 @@ class epgdna(ConfigListScreen, Screen):
 	skin = """
 	<screen name="epgdna" position="center,160" size="850,255" title="">
   		<widget position="15,10" size="820,175" name="config" scrollbarMode="showOnDemand" />
- 		 <ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="340,250" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  		<widget source="key_yellow" render="Label" position="340,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-   		<ePixmap position="505,250" zPosition="1" size="200,2" pixmap="~/images/blue.png" alphatest="blend" />
-  		<widget source="key_blue" render="Label" position="505,220" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<widget source="lastupdate" render="Label" position="20,193" zPosition="2" size="810,24" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
+ 		 <ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="340,250" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  		<widget source="key_yellow" render="Label" position="340,220" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+   		<ePixmap position="505,250" zPosition="1" size="200,2" pixmap="~/images/blue.png" alphaTest="blend" />
+  		<widget source="key_blue" render="Label" position="505,220" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<widget source="lastupdate" render="Label" position="20,193" zPosition="2" size="810,24" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
 		<eLabel position="30,187" size="790,2" backgroundColor="grey" />
-		<ePixmap position="763,220" size="70,30" pixmap="~/images/menu.png" zPosition="2" alphatest="blend" />
+		<ePixmap position="763,220" size="70,30" pixmap="~/images/menu.png" zPosition="2" alphaTest="blend" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -1809,7 +1809,7 @@ class epgdna(ConfigListScreen, Screen):
 
 SKIN_DWN = """
 <screen name="get_epg_dat" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 
@@ -1880,12 +1880,12 @@ class get_epg_dat(Screen):
 class onidMan(Screen):
 	skin = """
 	<screen name="onidMan" position="center,160" size="750,255" title="blacklist.onid Manager - %s">
-		<ePixmap position="20,250" zPosition="1" size="175,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="195,220" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="195,250" zPosition="1" size="175,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="370,220" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="370,250" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<ePixmap position="20,250" zPosition="1" size="175,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="195,220" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="195,250" zPosition="1" size="175,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="370,220" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="370,250" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="15,15" size="720,288" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1953,10 +1953,10 @@ class onidManAdd(ConfigListScreen, Screen):
 	skin = """
 	<screen name="onidManAdd" position="center,160" size="750,255" title="add onid - %s" >
 		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,250" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,220" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,250" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,220" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -2020,12 +2020,12 @@ class onidManAdd(ConfigListScreen, Screen):
 class CrontabMan(Screen):
 	skin = """
 	<screen name="CrontabMan" position="center,160" size="750,370" title="CtronTab Manager - %s">
-		<ePixmap position="20,358" zPosition="1" size="175,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="195,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="195,358" zPosition="1" size="175,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="370,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="370,358" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<ePixmap position="20,358" zPosition="1" size="175,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="195,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="195,358" zPosition="1" size="175,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="370,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="370,358" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="15,15" size="720,288" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -2091,10 +2091,10 @@ class CrontabManAdd(ConfigListScreen, Screen):
 	skin = """
 	<screen name="CrontabManAdd" position="center,160" size="750,370" title="add tabs - %s" >
 		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -2162,8 +2162,8 @@ class CrontabManAdd(ConfigListScreen, Screen):
 class Info2Screen(Screen):
 	skin = """
 	<screen name="Info2Screen" position="center,100" size="890,560" title="System Info">
-		<ePixmap position="20,548" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,518" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,548" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,518" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget name="text" position="15,10" size="860,500" font="Console;20" />
 	</screen>"""
 
@@ -2230,8 +2230,8 @@ class Info2Screen(Screen):
 class ViewSet(Screen):
 	skin = """
 	<screen name="ViewSet" position="center,80" size="1170,600" title="View System Settings (/etc/enigma2/settings)">
-		<ePixmap position="20,590" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,560" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,590" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,560" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget name="text" position="20,10" size="1130,542" font="Console;22" />
 	</screen>"""
 
@@ -2274,12 +2274,12 @@ class ViewSet(Screen):
 class HostsScreen(Screen):
 	skin = """
 	<screen name="HostsScreen" position="center,160" size="750,370" title="/etc/hosts editor">
-		<ePixmap position="20,358" zPosition="1" size="175,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="195,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="195,358" zPosition="1" size="175,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="370,328" zPosition="2" size="175,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="370,358" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphatest="blend" />
+		<ePixmap position="20,358" zPosition="1" size="175,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="195,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="195,358" zPosition="1" size="175,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="370,328" zPosition="2" size="175,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="370,358" zPosition="1" size="175,2" pixmap="~/images/yellow.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="15,15" size="720,288" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -2341,10 +2341,10 @@ class AddRecord(ConfigListScreen, Screen):
 	skin = """
 	<screen name="AddRecord" position="center,160" size="750,370" title="add record" >
 		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -2389,8 +2389,8 @@ class AddRecord(ConfigListScreen, Screen):
 class System2Screen(Screen):
 	skin = """
 	<screen name="System2Screen" position="center,160" size="750,370" title="System Tools 2">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="15,10" size="710,300" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -2472,12 +2472,12 @@ class DDNSScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="DDNSScreen" position="center,160" size="750,370" title="Dynamic DNS">
 		<widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -2567,15 +2567,15 @@ class DropScreen(ConfigListScreen, Screen):
 	<screen name="DropScreen" position="center,160" size="750,370" title="Cache Flush">
 		<eLabel position="30,220" size="690,2" backgroundColor="#aaaaaa" />
 		<widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="MemoryLabel" render="Label" position="55,235" size="150,22" font="Regular; 20" halign="right" foregroundColor="#aaaaaa" />
-		<widget source="memTotal" render="Label" position="220,235" zPosition="2" size="450,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="bufCache" render="Label" position="220,260" zPosition="2" size="450,22" font="Regular;20" halign="left" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="MemoryLabel" render="Label" position="55,235" size="150,22" font="Regular; 20" horizontalAlignment="right" foregroundColor="#aaaaaa" />
+		<widget source="memTotal" render="Label" position="220,235" zPosition="2" size="450,22" font="Regular;20" horizontalAlignment="left" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="bufCache" render="Label" position="220,260" zPosition="2" size="450,22" font="Regular;20" horizontalAlignment="left" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):

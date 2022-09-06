@@ -99,15 +99,15 @@ class epgdd(ConfigListScreen, Screen):
 	skin = """
 <screen name="epgdd" position="center,160" size="850,280" title="">
   <widget position="15,5" size="820,200" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="10,275" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,245" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="175,275" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,245" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="340,275" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  <widget source="key_yellow" render="Label" position="340,245" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <ePixmap position="540,275" zPosition="1" size="250,2" pixmap="~/images/blue.png" alphatest="blend" />
-  <widget source="key_blue" render="Label" position="540,245" zPosition="2" size="250,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  <widget source="lastupdate" render="Label" position="20,212" zPosition="2" size="810,24" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
+  <ePixmap position="10,275" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  <widget source="key_red" render="Label" position="10,245" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  <ePixmap position="175,275" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  <widget source="key_green" render="Label" position="175,245" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  <ePixmap position="340,275" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  <widget source="key_yellow" render="Label" position="340,245" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  <ePixmap position="540,275" zPosition="1" size="250,2" pixmap="~/images/blue.png" alphaTest="blend" />
+  <widget source="key_blue" render="Label" position="540,245" zPosition="2" size="250,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  <widget source="lastupdate" render="Label" position="20,212" zPosition="2" size="810,24" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="grey" transparent="1" />
   <eLabel position="30,208" size="790,2" backgroundColor="grey" />
 </screen>"""
 
@@ -313,10 +313,10 @@ class Check_EPG():
 class get_source(Screen):
 	skin = """
 	<screen name="ChoiceSource" position="center,160" size="850,255" title="Choice epg.dat source">
-		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,220" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<widget source="key_green" render="Label" position="190,220" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,250" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<ePixmap position="190,250" zPosition="1" size="170,2" pixmap="~/images/green.png" alphaTest="blend" />
 		<widget source="menu" render="Listbox" position="15,10" size="820,250" itemHeight="25" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -372,7 +372,7 @@ class get_source(Screen):
 
 SKIN_EPG = """
 <screen name="get_epgdat" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 

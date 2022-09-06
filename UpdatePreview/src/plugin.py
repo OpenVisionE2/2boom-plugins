@@ -53,7 +53,7 @@ config.plugins.upw.userfiles = ConfigLocations(default=[])
 
 SKIN_INFO = """
 <screen name="get_opkg_data" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 
@@ -93,15 +93,15 @@ class get_opkg_data(Screen):
 SKIN_VIEW = """
 <screen name="updateprv2" position="center,140" size="1100,520" title="Update Preview">
   	<widget name="text" position="10,10" size="1080,470" font="Console;22" noWrap="1" />
-  	<ePixmap position="10,518" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="red_key" render="Label" position="10,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="175,518" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="green_key" render="Label" position="176,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="340,518" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  	<widget source="yellow_key" render="Label" position="340,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="508,518" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
-  	<widget source="blue_key" render="Label" position="508,488" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-	<ePixmap pixmap="~/images/menu.png" position="1020,488" size="70,30" alphatest="blend" zPosition="3" />
+  	<ePixmap position="10,518" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  	<widget source="red_key" render="Label" position="10,488" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="175,518" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  	<widget source="green_key" render="Label" position="176,488" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="340,518" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  	<widget source="yellow_key" render="Label" position="340,488" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="508,518" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphaTest="blend" />
+  	<widget source="blue_key" render="Label" position="508,488" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+	<ePixmap pixmap="~/images/menu.png" position="1020,488" size="70,30" alphaTest="blend" zPosition="3" />
 </screen>"""
 
 
@@ -226,12 +226,12 @@ class FilesSelection(Screen):
 	skin = """
 	<screen name="FilesSelection" position="265,160" size="750,360" title="Select files">
     		<widget name="checkList" position="15,10" size="720,300" transparent="1" scrollbarMode="showOnDemand" />
-    		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-    		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphatest="blend" />
-    		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-    		<ePixmap position="355,355" zPosition="1" size="180,2" pixmap="~/images/yellow.png" alphatest="blend" />
-    		<widget source="key_yellow" render="Label" position="355,325" zPosition="2" size="180,30" font="Regular;20" halign="center" valign="center" transparent="1" />
+    		<ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+    		<widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+    		<ePixmap position="175,355" zPosition="1" size="180,2" pixmap="~/images/green.png" alphaTest="blend" />
+    		<widget source="key_green" render="Label" position="175,325" zPosition="2" size="180,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+    		<ePixmap position="355,355" zPosition="1" size="180,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+    		<widget source="key_yellow" render="Label" position="355,325" zPosition="2" size="180,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
  	 </screen>"""
 
 	def __init__(self, session):

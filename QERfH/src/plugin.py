@@ -47,7 +47,7 @@ def _(txt):
 
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 

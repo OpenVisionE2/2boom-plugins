@@ -139,16 +139,16 @@ class emuSel5(Screen):
 				}
 			</convert>
   		</widget>
-  		<ePixmap position="20,488" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-  		<ePixmap position="190,488" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-  		<ePixmap position="360,488" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-  		<ePixmap position="530,488" zPosition="1" size="200,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
-  		<widget name="key_red" position="20,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_green" position="190,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_yellow" position="360,458" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="key_blue" position="530,458" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget name="text" position="25,310" size="700,205" font="Regular;22" halign="center" noWrap="1" />
-		<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"  halign="center" noWrap="1" />
+  		<ePixmap position="20,488" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="190,488" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="360,488" zPosition="1" size="170,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="530,488" zPosition="1" size="200,2" pixmap="~/images/blue.png" transparent="1" alphaTest="on" />
+  		<widget name="key_red" position="20,458" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget name="key_green" position="190,458" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget name="key_yellow" position="360,458" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget name="key_blue" position="530,458" zPosition="2" size="200,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget name="text" position="25,310" size="700,205" font="Regular;22" horizontalAlignment="center" noWrap="1" />
+		<widget source="inmemory" render="Label"  position="50,270" size="650,24" font="Regular;22"  horizontalAlignment="center" noWrap="1" />
 		<eLabel position="25,268" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
 		<eLabel position="25,298" size="700,2" backgroundColor="#00aaaaaa" zPosition="3" />
 	</screen>"""
@@ -345,7 +345,7 @@ class emuSel5(Screen):
 #####################################################################################################
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 
@@ -470,8 +470,8 @@ class stop_cam(Screen):
 class SoftcamPanel2(Screen):
 	skin = """
 	<screen name="SoftcamPanel2" position="center,160" size="750,370" title="SoftCam/CardServer Panel">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 		<widget source="menu" render="Listbox" position="15,10" size="720,300" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -556,12 +556,12 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 	skin = """
 	<screen name="SoftcamUpd2" position="center,160" size="750,370" title="SoftCam.Key Updater">
 		<widget position="15,10" size="720,300" name="config" scrollbarMode="showOnDemand" />
-		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-		<ePixmap position="340,358" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphatest="blend" />
-		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+		<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+		<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+		<ePixmap position="340,358" zPosition="1" size="165,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+		<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -626,10 +626,10 @@ class SoftcamUpd2(ConfigListScreen, Screen):
 class uniswitcher(Screen):
 	skin = """
 	<screen name="uniswitcher" position="center,140" size="750,460" title="...">
-  		<ePixmap position="20,455" zPosition="1" size="170,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-  		<ePixmap position="190,455" zPosition="1" size="250,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+  		<ePixmap position="20,455" zPosition="1" size="170,2" pixmap="~/images/red.png" alphaTest="blend" />
+  		<widget source="key_red" render="Label" position="20,425" zPosition="2" size="170,30" font="Regular; 19" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+  		<ePixmap position="190,455" zPosition="1" size="250,2" pixmap="~/images/green.png" alphaTest="blend" />
+  		<widget source="key_green" render="Label" position="190,425" zPosition="2" size="250,30" font="Regular; 19" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="white" transparent="1" />
   		<widget source="list" render="Listbox" position="15,10" size="720,250" scrollbarMode="showOnDemand">
   			 <convert type="TemplatedMultiContent">
    				{"template": [
@@ -642,7 +642,7 @@ class uniswitcher(Screen):
   				}
     			</convert>
       		</widget>
-   		<widget name="text" position="20,280" size="710,205" font="Regular;22" halign="center" noWrap="1" />
+   		<widget name="text" position="20,280" size="710,205" font="Regular;22" horizontalAlignment="center" noWrap="1" />
   		<eLabel position="20,268" size="710,2" backgroundColor="grey" zPosition="3" />
 	</screen>"""
 
@@ -762,10 +762,10 @@ class UniConfigScreen(ConfigListScreen, Screen):
 	skin = """
 	<screen name="UniConfigScreen" position="center,140" size="750,460" title="E-Panel Universal Switcher">
   		<widget position="15,10" size="720,400" name="config" scrollbarMode="showOnDemand" />
-  		<ePixmap position="10,455" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="10,455" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  		<widget source="key_red" render="Label" position="10,425" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,455" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  		<widget source="key_green" render="Label" position="175,425" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):

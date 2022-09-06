@@ -57,16 +57,16 @@ SKIN_HD = """
   <eLabel position="20,319" size="710,2" backgroundColor="grey" zPosition="4" />
   <eLabel position="20,353" size="710,2" backgroundColor="grey" zPosition="4" />
   <eLabel position="50,388" size="650,2" backgroundColor="grey" zPosition="4" />
-  <widget source="boxinfo" render="Label" position="10,5" size="730,25" font="Regular; 23" zPosition="2" foregroundColor="foreground" transparent="1" valign="top" noWrap="1" halign="center" />
-  <widget source="hardinfo" render="Label" position="10,30" size="730,25" font="Regular; 23" zPosition="2" foregroundColor="grey" transparent="1" valign="top" noWrap="1" halign="center" />
-  <widget name="ecmfile" render="Label" position="11,98" size="730,215" font="Regular; 23" zPosition="2" foregroundColor="foreground" transparent="1" valign="top" noWrap="1" halign="center" />
-  <widget source="emuname" render="Label" position="20,62" size="470,25" font="Regular; 22" zPosition="2" foregroundColor="unfec000" transparent="1" valign="top" halign="left" />
-  <widget source="txtcaid" render="Label" position="430,62" size="300,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="right" />
-  <widget source="caids" render="Label" position="6,325" size="740,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="center" />
-  <widget source="pids" render="Label" position="5,359" size="740,25" font="Regular; 22" zPosition="2" foregroundColor="foreground" transparent="1" valign="top" halign="center" />
-  <widget source="res" render="Label" position="14,395" size="180,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="right" />
-<widget source="abit" render="Label" position="485,395" size="230,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="left" />
-<widget source="vbit" render="Label" position="180,395" size="320,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" valign="top" halign="center" />
+  <widget source="boxinfo" render="Label" position="10,5" size="730,25" font="Regular; 23" zPosition="2" foregroundColor="foreground" transparent="1" verticalAlignment="top" noWrap="1" horizontalAlignment="center" />
+  <widget source="hardinfo" render="Label" position="10,30" size="730,25" font="Regular; 23" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" noWrap="1" horizontalAlignment="center" />
+  <widget name="ecmfile" render="Label" position="11,98" size="730,215" font="Regular; 23" zPosition="2" foregroundColor="foreground" transparent="1" verticalAlignment="top" noWrap="1" horizontalAlignment="center" />
+  <widget source="emuname" render="Label" position="20,62" size="470,25" font="Regular; 22" zPosition="2" foregroundColor="unfec000" transparent="1" verticalAlignment="top" horizontalAlignment="left" />
+  <widget source="txtcaid" render="Label" position="430,62" size="300,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" horizontalAlignment="right" />
+  <widget source="caids" render="Label" position="6,325" size="740,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" horizontalAlignment="center" />
+  <widget source="pids" render="Label" position="5,359" size="740,25" font="Regular; 22" zPosition="2" foregroundColor="foreground" transparent="1" verticalAlignment="top" horizontalAlignment="center" />
+  <widget source="res" render="Label" position="14,395" size="180,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" horizontalAlignment="right" />
+<widget source="abit" render="Label" position="485,395" size="230,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" horizontalAlignment="left" />
+<widget source="vbit" render="Label" position="180,395" size="320,25" font="Regular; 22" zPosition="2" foregroundColor="grey" transparent="1" verticalAlignment="top" horizontalAlignment="center" />
 </screen>"""
 
 

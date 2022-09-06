@@ -67,25 +67,25 @@ SKIN_HD = """
   <eLabel position="20,299" size="730,2" backgroundColor="#00aaaaaa" zPosition="4" />
   <eLabel position="20,333" size="730,2" backgroundColor="#00aaaaaa" zPosition="4" />
   <eLabel position="50,368" size="670,2" backgroundColor="#00aaaaaa" zPosition="4" />
-<widget source="session.CurrentService" render="Label" position="10,4" size="750,25" font="Regular; 22" zPosition="2" transparent="1" valign="top" noWrap="1" halign="center">
+<widget source="session.CurrentService" render="Label" position="10,4" size="750,25" font="Regular; 22" zPosition="2" transparent="1" verticalAlignment="top" noWrap="1" horizontalAlignment="center">
     <convert type="QuickEcmInfo2">boxdata</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="10,80" size="750,215" font="Regular; 23" zPosition="2" foregroundColor="#00ffffff" transparent="1" valign="top" noWrap="1" halign="center">
+  <widget source="session.CurrentService" render="Label" position="10,80" size="750,215" font="Regular; 23" zPosition="2" foregroundColor="#00ffffff" transparent="1" verticalAlignment="top" noWrap="1" horizontalAlignment="center">
     <convert type="QuickEcmInfo2">ecmfile</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="20,40" size="480,25" font="Regular; 22" zPosition="2" foregroundColor="#00f0bf4f" transparent="1" valign="top" halign="left">
+  <widget source="session.CurrentService" render="Label" position="20,40" size="480,25" font="Regular; 22" zPosition="2" foregroundColor="#00f0bf4f" transparent="1" verticalAlignment="top" horizontalAlignment="left">
     <convert type="QuickEcmInfo2">emuname</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="500,40" size="250,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" valign="top" halign="right">
+  <widget source="session.CurrentService" render="Label" position="500,40" size="250,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" verticalAlignment="top" horizontalAlignment="right">
     <convert type="QuickEcmInfo2">txtcaid</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="5,304" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" valign="top" halign="center">
+  <widget source="session.CurrentService" render="Label" position="5,304" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" verticalAlignment="top" horizontalAlignment="center">
     <convert type="QuickEcmInfo2">caidbar</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="5,339" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" valign="top" halign="center">
+  <widget source="session.CurrentService" render="Label" position="5,339" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" verticalAlignment="top" horizontalAlignment="center">
     <convert type="QuickEcmInfo2">pids</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="5,375" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" valign="top" halign="center">
+  <widget source="session.CurrentService" render="Label" position="5,375" size="755,25" font="Regular; 22" zPosition="2" foregroundColor="#00aaaaaa" transparent="1" verticalAlignment="top" horizontalAlignment="center">
     <convert type="QuickEcmInfo2">bitrate</convert>
   </widget>
 </screen>"""
@@ -133,22 +133,22 @@ pEcm = QuickEcm()
 skin_hdsetup = """
 <screen name="qei_setup" position="center,160" size="750,370" title="2boom's QuickEcmInfo setup">
   	<widget position="15,10" size="720,200" name="config" scrollbarMode="showOnDemand" />
-   	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+   	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 </screen>"""
 skin_sdsetup = """
 <screen name="qei_setup" position="center,160" size="635,370" title="2boom's QuickEcmInfo setup">
   	<widget position="10,10" size="615,200" name="config" scrollbarMode="showOnDemand" />
-  	 <ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
- 	 <widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	 <ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+ 	 <widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  	<ePixmap position="340,358" zPosition="1" size="200,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  	<widget source="yellow_key" render="Label" position="340,328" zPosition="2" size="200,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
 </screen>"""
 
 

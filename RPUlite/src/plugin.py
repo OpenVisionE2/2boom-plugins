@@ -111,17 +111,17 @@ class rpulite(Screen, ConfigListScreen):
 	skin = """
 <screen name="rpulite" position="265,160" size="750,360" title="2boom's Rostelecom lite proxy updater">
   <widget position="15,10" size="720,225" name="config" scrollbarMode="showOnDemand" />
-  <ePixmap position="635,260" zPosition="2" size="100,60" pixmap="~/images/ROSTELECOM.png" alphatest="blend" />
+  <ePixmap position="635,260" zPosition="2" size="100,60" pixmap="~/images/ROSTELECOM.png" alphaTest="blend" />
   <eLabel position="30,240" size="690,2" backgroundColor="grey" zPosition="5" />
-  <ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  <widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="175,355" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  <widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="340,355" zPosition="1" size="230,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  <widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <ePixmap position="570,355" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphatest="blend" />
-  <widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  <widget name="text" position="20,255" size="720,48" font="Regular;22" halign="left" />
+  <ePixmap position="10,355" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  <widget source="key_red" render="Label" position="10,325" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  <ePixmap position="175,355" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  <widget source="key_green" render="Label" position="175,325" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  <ePixmap position="340,355" zPosition="1" size="230,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  <widget source="key_yellow" render="Label" position="340,325" zPosition="2" size="230,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  <ePixmap position="570,355" zPosition="1" size="165,2" pixmap="~/images/blue.png" alphaTest="blend" />
+  <widget source="key_blue" render="Label" position="570,325" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  <widget name="text" position="20,255" size="720,48" font="Regular;22" horizontalAlignment="left" />
 </screen>"""
 
 	def __init__(self, session):
@@ -341,7 +341,7 @@ class reloadsl(Screen):
 
 SKIN_DWN = """
 <screen name="get_epg_data" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 

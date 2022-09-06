@@ -81,10 +81,10 @@ config.plugins.ipktools.multifilemode = ConfigSelection(default="Multi", choices
 class IPKTools2(Screen):
 	skin = """
 	<screen name="IPKTools2" position="center,160" size="750,370" title="2boom's IPK tools">
-		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="190,358" zPosition="1" size="200,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<ePixmap position="20,358" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+		<ePixmap position="190,358" zPosition="1" size="200,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+		<widget source="key_red" render="Label" position="20,328" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,328" zPosition="2" size="200,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
 		<widget source="menu" render="Listbox" position="15,10" size="710,300">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -172,10 +172,10 @@ class downfeed(Screen):
 				}
 			</convert>
 		</widget>
-		<ePixmap position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="190,512" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-		<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<ePixmap position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+		<ePixmap position="190,512" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+		<widget source="key_red" render="Label" position="20,482" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,482" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session, args=None):
@@ -244,12 +244,12 @@ class DownloadFeed(Screen):
 				}
 			</convert>
 		</widget>
-		<ePixmap name="red" position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-		<ePixmap name="green" position="190,512" zPosition="1" size="220,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-		<ePixmap name="yellow" position="410,512" zPosition="1" size="220,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-		<widget name="key_red" position="20,482" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget name="key_green" position="190,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<ePixmap name="red" position="20,512" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+		<ePixmap name="green" position="190,512" zPosition="1" size="220,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+		<ePixmap name="yellow" position="410,512" zPosition="1" size="220,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+		<widget name="key_red" position="20,482" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget name="key_green" position="190,482" zPosition="2" size="220,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget name="key_yellow" position="410,482" zPosition="2" size="220,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -329,14 +329,14 @@ class InstallAll4(Screen):
       				}
     			</convert>
   		</widget>
-  		<ePixmap position="20,393" zPosition="1" size="165,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-  		<ePixmap position="185,393" zPosition="1" size="165,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-  		<ePixmap position="350,393" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-  		<ePixmap position="550,393" zPosition="1" size="190,2" pixmap="~/images/blue.png" transparent="1" alphatest="on" />
-  		<widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" valign="center" halign="center" font="Regular;22" transparent="1" />
- 	 	<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-  		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+  		<ePixmap position="20,393" zPosition="1" size="165,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="185,393" zPosition="1" size="165,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="350,393" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+  		<ePixmap position="550,393" zPosition="1" size="190,2" pixmap="~/images/blue.png" transparent="1" alphaTest="on" />
+  		<widget source="key_red" render="Label" position="20,363" zPosition="2" size="165,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget source="key_green" render="Label" position="185,363" zPosition="2" size="165,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+ 	 	<widget source="key_yellow" render="Label" position="350,363" zPosition="2" size="200,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+  		<widget source="key_blue" render="Label" position="550,363" zPosition="2" size="190,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session, args=None):
@@ -481,12 +481,12 @@ class RemoveIPK(Screen):
 				}
 			</convert>
 		</widget>
-		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="190,558" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphatest="on" />
-		<ePixmap position="360,558" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphatest="on" />
-		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" valign="center" halign="center" font="Regular;22" transparent="1" />
-		<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" valign="center" halign="center" font="Regular;22" transparent="1" />
+		<ePixmap position="20,558" zPosition="1" size="170,2" pixmap="~/images/red.png" transparent="1" alphaTest="on" />
+		<ePixmap position="190,558" zPosition="1" size="170,2" pixmap="~/images/green.png" transparent="1" alphaTest="on" />
+		<ePixmap position="360,558" zPosition="1" size="200,2" pixmap="~/images/yellow.png" transparent="1" alphaTest="on" />
+		<widget source="key_red" render="Label" position="20,528" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_green" render="Label" position="190,528" zPosition="2" size="170,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
+		<widget source="key_yellow" render="Label" position="360,528" zPosition="2" size="200,30" verticalAlignment="center" horizontalAlignment="center" font="Regular;22" transparent="1" />
 	</screen>"""
 
 	def __init__(self, session, args=None):

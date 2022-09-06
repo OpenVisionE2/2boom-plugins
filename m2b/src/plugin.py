@@ -93,10 +93,10 @@ class m2b_setup(ConfigListScreen, Screen):
 	skin = """
 	<screen name="m2b_setup" position="center,160" size="750,147" title="2boom's m3u/xml bouquet converter">
   		<widget position="15,5" size="720,100" name="config" scrollbarMode="showOnDemand" />
-   		<ePixmap position="10,140" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  		<widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
-  		<ePixmap position="175,140" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  		<widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+   		<ePixmap position="10,140" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  		<widget source="key_red" render="Label" position="10,110" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
+  		<ePixmap position="175,140" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  		<widget source="key_green" render="Label" position="175,110" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="background" foregroundColor="foreground" transparent="1" />
   	</screen>"""
 
 	def __init__(self, session):
@@ -133,7 +133,7 @@ class m2b_setup(ConfigListScreen, Screen):
 
 SKIN_DWN = """
 <screen name="get_chlist" position="center,140" size="625,35" title="Please wait">
-  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" halign="center" transparent="2" />
+  <widget source="status" render="Label" position="10,5" size="605,22" zPosition="2" font="Regular; 20" horizontalAlignment="center" transparent="2" />
 </screen>"""
 
 

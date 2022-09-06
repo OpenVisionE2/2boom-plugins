@@ -161,13 +161,13 @@ class remount_setup(ConfigListScreen, Screen):
 	<screen name="remount_setup" position="center,160" size="750,370" title="2boom's RemountNetShare">
   	<eLabel position="30,145" size="690,2" backgroundColor="#00aaaaaa" zPosition="5" />
   	<widget position="15,10" size="720,125" name="config" scrollbarMode="showOnDemand" />
-  	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphatest="blend" />
-  	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphatest="blend" />
-  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphatest="blend" />
-  	<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" halign="center" valign="center" transparent="1" />
-  	<widget name="text" position="20,160" size="710,160" font="Regular; 20" halign="left" noWrap="1" />
+  	<ePixmap position="10,358" zPosition="1" size="165,2" pixmap="~/images/red.png" alphaTest="blend" />
+  	<widget source="key_red" render="Label" position="10,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  	<ePixmap position="175,358" zPosition="1" size="165,2" pixmap="~/images/green.png" alphaTest="blend" />
+  	<widget source="key_green" render="Label" position="175,328" zPosition="2" size="165,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  	<ePixmap position="340,358" zPosition="1" size="195,2" pixmap="~/images/yellow.png" alphaTest="blend" />
+  	<widget source="key_yellow" render="Label" position="340,328" zPosition="2" size="195,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" transparent="1" />
+  	<widget name="text" position="20,160" size="710,160" font="Regular; 20" horizontalAlignment="left" noWrap="1" />
 	</screen>"""
 
 	def __init__(self, session):
